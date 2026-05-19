@@ -65,7 +65,7 @@ export default function EventsPage() {
         :root{--red:#CC0000;--gold:#C9A84C;--black:#0A0A0A;--dark:#111111;--dark2:#181818}
         .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
         .reveal.revealed{opacity:1;transform:none}
-        .page-hero{position:relative;background:var(--black);padding:140px 64px 100px;overflow:hidden;border-bottom:1px solid #1a1a1a}
+        .page-hero{position:relative;background:linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.55)),url('/images/clients-bts-5.jpg') center/cover no-repeat;padding:140px 64px 100px;overflow:hidden;border-bottom:1px solid #1a1a1a}
         .hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(120px,20vw,280px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
         .hero-inner{position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
         .breadcrumb{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#444;margin-bottom:24px;display:flex;align-items:center;gap:8px}
@@ -79,7 +79,7 @@ export default function EventsPage() {
         .btn-red:hover{background:#aa0000}
         .btn-ghost{border:1px solid #333;color:#fff;padding:14px 36px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:border-color .15s,background .15s;display:inline-block}
         .btn-ghost:hover{border-color:#666;background:rgba(255,255,255,.04)}
-        .stat-card{background:var(--dark2);border:1px solid #222;padding:40px 36px;min-width:220px;flex-shrink:0}
+        .stat-card{background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);padding:40px 36px;min-width:220px;flex-shrink:0}
         .stat-item{text-align:center;padding:20px 0;border-bottom:1px solid #222}
         .stat-item:last-child{border-bottom:none}
         .stat-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:48px;line-height:1;color:var(--gold);letter-spacing:.03em}
@@ -98,7 +98,7 @@ export default function EventsPage() {
         .portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
         .vimeo-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
         .vimeo-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-        .portfolio-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#555;margin-top:10px;padding:0 4px}
+        .portfolio-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-top:10px;padding:0 4px}
         .link-arrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--red);padding-bottom:3px;transition:color .15s}
         .link-arrow:hover{color:var(--red)}
         .process-wrap{background:var(--dark)}

@@ -60,7 +60,7 @@ export default function CorporatePage() {
         /* ── HERO ── */
         .corp-hero {
           position: relative;
-          background: var(--black);
+          background: linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.55)),url('/images/bts-dec-1.jpg') center/cover no-repeat;
           padding: 140px 64px 100px;
           overflow: hidden;
           border-bottom: 1px solid #1a1a1a;
@@ -168,8 +168,9 @@ export default function CorporatePage() {
 
         /* Hero stat card */
         .corp-stat-card {
-          background: var(--dark2);
-          border: 1px solid #222;
+          background: rgba(0,0,0,0.7);
+          backdrop-filter: blur(8px);
+          border: 1px solid rgba(255,255,255,0.1);
           padding: 40px 36px;
           min-width: 220px;
           flex-shrink: 0;
@@ -300,7 +301,7 @@ export default function CorporatePage() {
           font-weight: 600;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: #555;
+          color: #fff;
           margin-top: 10px;
           padding: 0 4px;
         }

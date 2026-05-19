@@ -44,19 +44,19 @@ export default function AboutPage() {
         .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px;position:relative}
         .hero-h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(56px,8vw,100px);line-height:.95;letter-spacing:.02em;color:#fff;text-transform:uppercase;position:relative;margin-bottom:24px}
         .hero-h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:rgba(255,255,255,.55);text-transform:none}
-        .hero-sub{font-size:18px;line-height:1.7;color:#777;max-width:640px;margin:0 auto;position:relative}
+        .hero-sub{font-size:18px;line-height:1.7;color:#C0C0C0;max-width:640px;margin:0 auto;position:relative}
 
         .stats-bar{background:var(--dark);border-bottom:1px solid #1e1e1e;display:flex;justify-content:center;flex-wrap:wrap}
         .stat-item{padding:28px 48px;text-align:center;border-right:1px solid #1e1e1e}
         .stat-item:last-child{border-right:none}
         .stat-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:42px;line-height:1;color:#fff;letter-spacing:.03em}
-        .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#555;margin-top:4px}
+        .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#AAAAAA;margin-top:4px}
 
         .section{padding:96px 64px;max-width:1200px;margin:0 auto}
         .section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
         .section-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:24px}
         .section-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:rgba(255,255,255,.6)}
-        .body-text{font-size:15px;line-height:1.8;color:#888;margin-bottom:20px}
+        .body-text{font-size:15px;line-height:1.8;color:#B0B0B0;margin-bottom:20px}
 
         .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
         .pull-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:26px;line-height:1.4;color:rgba(255,255,255,.7);border-left:3px solid var(--red);padding-left:24px;margin:32px 0}
@@ -75,7 +75,7 @@ export default function AboutPage() {
         .value-card:hover{border-color:#333}
         .value-icon{font-size:32px;margin-bottom:16px}
         .value-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:.05em;color:#fff;margin-bottom:12px}
-        .value-desc{font-size:13px;line-height:1.75;color:#666}
+        .value-desc{font-size:13px;line-height:1.75;color:#B0B0B0}
 
         .clients-strip{background:var(--black);border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:48px 64px}
         .clients-label{text-align:center;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#333;margin-bottom:28px}
@@ -88,7 +88,7 @@ export default function AboutPage() {
         .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(204,0,0,.18) 0%,transparent 70%);pointer-events:none}
         .cta-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(48px,7vw,88px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:16px;position:relative}
         .cta-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:var(--red)}
-        .cta-sub{font-size:16px;color:#666;margin-bottom:48px;position:relative}
+        .cta-sub{font-size:16px;color:#B0B0B0;margin-bottom:48px;position:relative}
         .cta-actions{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;position:relative}
         .btn-red{background:var(--red);color:#fff;padding:16px 48px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:background .15s;display:inline-block}.btn-red:hover{background:#aa0000}
         .cta-phone{font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;letter-spacing:.06em;color:#fff;transition:color .15s}.cta-phone:hover{color:var(--gold)}

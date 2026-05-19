@@ -53,14 +53,14 @@ export default function ContactPage() {
         .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px;position:relative}
         .hero-h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(56px,8vw,100px);line-height:.95;letter-spacing:.02em;color:#fff;text-transform:uppercase;position:relative;margin-bottom:20px}
         .hero-h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:rgba(255,255,255,.55);text-transform:none}
-        .hero-sub{font-size:17px;line-height:1.7;color:#777;max-width:560px;margin:0 auto;position:relative}
+        .hero-sub{font-size:17px;line-height:1.7;color:#C0C0C0;max-width:560px;margin:0 auto;position:relative}
 
         .promises-strip{background:var(--dark);border-bottom:1px solid #1e1e1e;display:flex;justify-content:center;flex-wrap:wrap}
         .promise-item{padding:32px 56px;text-align:center;border-right:1px solid #1e1e1e;flex:1;max-width:360px}
         .promise-item:last-child{border-right:none}
         .promise-icon{font-size:28px;margin-bottom:10px}
         .promise-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;letter-spacing:.06em;color:#fff;margin-bottom:6px}
-        .promise-desc{font-size:12px;color:#666;line-height:1.6}
+        .promise-desc{font-size:12px;color:#B0B0B0;line-height:1.6}
 
         .contact-wrap{background:var(--black)}
         .contact-inner{max-width:1200px;margin:0 auto;padding:96px 64px;display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:start}
@@ -72,10 +72,10 @@ export default function ContactPage() {
         .contact-form{display:flex;flex-direction:column;gap:16px}
         .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
         .form-group{display:flex;flex-direction:column;gap:8px}
-        .form-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#666}
+        .form-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#B0B0B0}
         .form-input,.form-select,.form-textarea{background:var(--dark2);border:1px solid #2a2a2a;color:#fff;padding:14px 16px;font-size:14px;font-family:inherit;transition:border-color .15s;width:100%;appearance:none}
         .form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:#555}
-        .form-input::placeholder,.form-textarea::placeholder{color:#444}
+        .form-input::placeholder,.form-textarea::placeholder{color:#B0B0B0}
         .form-select{cursor:pointer}
         .form-select option{background:var(--dark2);color:#fff}
         .form-textarea{resize:vertical;min-height:130px}
@@ -88,11 +88,11 @@ export default function ContactPage() {
         .info-block-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
         .info-phone{font-family:'Bebas Neue',Impact,sans-serif;font-size:32px;letter-spacing:.05em;color:#fff;transition:color .15s}
         .info-phone:hover{color:var(--gold)}
-        .info-email{font-size:15px;color:#888;transition:color .15s}.info-email:hover{color:#fff}
-        .info-address{font-size:14px;line-height:1.8;color:#888}
+        .info-email{font-size:15px;color:#B0B0B0;transition:color .15s}.info-email:hover{color:#fff}
+        .info-address{font-size:14px;line-height:1.8;color:#B0B0B0}
         .hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px}
         .hours-row:last-child{border-bottom:none}
-        .hours-day{color:#666}.hours-time{color:#888}
+        .hours-day{color:#B0B0B0}.hours-time{color:#B0B0B0}
         .hours-row.today .hours-day,.hours-row.today .hours-time{color:var(--gold);font-weight:600}
         .map-wrap{width:100%;height:400px;overflow:hidden;border:1px solid #1e1e1e;margin-top:24px;border-radius:4px}
         .map-wrap iframe{width:100%;height:100%;border:none}

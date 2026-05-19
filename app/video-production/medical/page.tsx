@@ -66,7 +66,7 @@ export default function MedicalPage() {
         .hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(110px,18vw,250px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
         .hero-inner{position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
         .breadcrumb{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#444;margin-bottom:24px;display:flex;align-items:center;gap:8px}
-        .breadcrumb a{color:#444;transition:color .15s}.breadcrumb a:hover{color:#888}.breadcrumb span{color:#2a2a2a}
+        .breadcrumb a{color:#B0B0B0;transition:color .15s}.breadcrumb a:hover{color:#fff}.breadcrumb span{color:#2a2a2a}
         .eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
         .page-h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(52px,7vw,88px);line-height:.95;letter-spacing:.02em;color:#fff;text-transform:uppercase;margin-bottom:8px}
         .page-h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:.65em;color:rgba(255,255,255,.65);display:block;text-transform:none;letter-spacing:.03em;margin-bottom:4px}
@@ -77,12 +77,12 @@ export default function MedicalPage() {
         .stat-card{background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);padding:40px 36px;min-width:220px;flex-shrink:0}
         .stat-item{text-align:center;padding:20px 0;border-bottom:1px solid #222}.stat-item:last-child{border-bottom:none}
         .stat-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:48px;line-height:1;color:var(--gold);letter-spacing:.03em}
-        .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#555;margin-top:6px}
+        .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#AAAAAA;margin-top:6px}
         .section{padding:96px 64px;max-width:1200px;margin:0 auto}
         .section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
         .section-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:24px}
         .section-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:rgba(255,255,255,.6)}
-        .body-text{font-size:15px;line-height:1.8;color:#888;margin-bottom:20px}
+        .body-text{font-size:15px;line-height:1.8;color:#B0B0B0;margin-bottom:20px}
         .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
         .use-case-cards{display:flex;flex-direction:column;gap:12px;margin-top:8px}
         .use-case-card{display:flex;align-items:center;gap:16px;background:var(--dark2);border-left:3px solid var(--red);padding:16px 20px}
@@ -100,9 +100,9 @@ export default function MedicalPage() {
         .process-card{background:var(--dark2);padding:40px 32px;position:relative;overflow:hidden}
         .process-num{position:absolute;top:-10px;right:16px;font-family:'Bebas Neue',Impact,sans-serif;font-size:120px;line-height:1;color:rgba(204,0,0,.07);pointer-events:none;user-select:none}
         .process-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.05em;color:#fff;margin-bottom:14px;position:relative}
-        .process-desc{font-size:13px;line-height:1.7;color:#666;margin-bottom:20px;position:relative}
+        .process-desc{font-size:13px;line-height:1.7;color:#B0B0B0;margin-bottom:20px;position:relative}
         .process-list{list-style:none;position:relative}
-        .process-list li{font-size:12px;color:#555;padding:4px 0 4px 14px;position:relative;letter-spacing:.03em}
+        .process-list li{font-size:12px;color:#AAAAAA;padding:4px 0 4px 14px;position:relative;letter-spacing:.03em}
         .process-list li::before{content:'—';position:absolute;left:0;color:var(--red);font-size:10px}
         .why-wrap{background:var(--black)}.why-inner{max-width:1200px;margin:0 auto;padding:96px 64px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
         .why-sticky{position:sticky;top:96px}
@@ -110,7 +110,7 @@ export default function MedicalPage() {
         .why-card{background:var(--dark2);border:1px solid #1e1e1e;padding:32px 28px;transition:border-color .2s}.why-card:hover{border-color:#333}
         .why-card-icon{font-size:28px;margin-bottom:14px}
         .why-card-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.05em;color:#fff;margin-bottom:10px}
-        .why-card-desc{font-size:13px;line-height:1.7;color:#666}
+        .why-card-desc{font-size:13px;line-height:1.7;color:#B0B0B0}
         .faq-wrap{background:var(--dark)}.faq-inner{max-width:800px;margin:0 auto;padding:96px 64px}
         .faq-header{text-align:center;margin-bottom:56px}
         .faq-list{display:flex;flex-direction:column;gap:2px}
@@ -120,13 +120,13 @@ export default function MedicalPage() {
         .faq-icon{font-size:20px;color:var(--red);flex-shrink:0;transition:transform .25s;font-style:normal}
         .faq-item.open .faq-icon{transform:rotate(45deg)}
         .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;padding:0 28px}
-        .faq-answer p{font-size:14px;line-height:1.8;color:#777;padding-bottom:24px}
+        .faq-answer p{font-size:14px;line-height:1.8;color:#C0C0C0;padding-bottom:24px}
         .faq-item.open .faq-answer{max-height:300px;padding:0 28px}
         .cta-wrap{background:var(--dark2);position:relative;overflow:hidden;text-align:center;padding:100px 64px}
         .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(204,0,0,.18) 0%,transparent 70%);pointer-events:none}
         .cta-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(48px,7vw,88px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:16px;position:relative}
         .cta-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:var(--red)}
-        .cta-sub{font-size:16px;color:#666;margin-bottom:48px;position:relative}
+        .cta-sub{font-size:16px;color:#B0B0B0;margin-bottom:48px;position:relative}
         .cta-actions{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;position:relative}
         .cta-phone{font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;letter-spacing:.06em;color:#fff;transition:color .15s}.cta-phone:hover{color:var(--gold)}
         @media(max-width:900px){
@@ -147,7 +147,7 @@ export default function MedicalPage() {
             <nav className="breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Home</Link><span>/</span>
               <Link href="/video-production">Services</Link><span>/</span>
-              <span style={{ color: '#888' }}>Medical Video</span>
+              <span style={{ color: '#AAAAAA' }}>Medical Video</span>
             </nav>
             <p className="eyebrow">Healthcare &amp; Medical Video Production</p>
             <h1 className="page-h1"><em>Medical</em>Video Production</h1>

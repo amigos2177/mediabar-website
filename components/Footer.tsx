@@ -11,7 +11,7 @@ const colHeading: React.CSSProperties = {
 
 const footerLink: React.CSSProperties = {
   display: 'block',
-  color: '#888',
+  color: '#B0B0B0',
   textDecoration: 'none',
   fontSize: '14px',
   lineHeight: '2',
@@ -39,13 +39,13 @@ export default function Footer() {
             <Link href="/" style={{ display: 'inline-block', marginBottom: '16px' }}>
               <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '36px', display: 'block' }} />
             </Link>
-            <p style={{ fontSize: '14px', color: '#555', marginBottom: '24px', fontStyle: 'italic' }}>
+            <p style={{ fontSize: '14px', color: '#AAAAAA', marginBottom: '24px', fontStyle: 'italic' }}>
               Your Vision Served Daily
             </p>
-            <p style={{ fontSize: '13px', lineHeight: '1.8', color: '#666' }}>
+            <p style={{ fontSize: '13px', lineHeight: '1.8', color: '#B0B0B0' }}>
               San Antonio, TX<br />
-              <a href="tel:2102799442" style={{ color: '#666', textDecoration: 'none' }}>210-279-9442</a><br />
-              <a href="mailto:contact@mediabarproductions.com" style={{ color: '#666', textDecoration: 'none' }}>
+              <a href="tel:2102799442" style={{ color: '#B0B0B0', textDecoration: 'none' }}>210-279-9442</a><br />
+              <a href="mailto:contact@mediabarproductions.com" style={{ color: '#B0B0B0', textDecoration: 'none' }}>
                 contact@mediabarproductions.com
               </a>
             </p>
@@ -118,7 +118,7 @@ export default function Footer() {
           flexWrap: 'wrap',
           gap: '12px',
         }}>
-          <p style={{ fontSize: '12px', color: '#444', margin: 0 }}>
+          <p style={{ fontSize: '12px', color: '#B0B0B0', margin: 0 }}>
             © 2026 Media Bar Productions, LLC · The Creative Agenda LLC · All Rights Reserved
           </p>
           <p style={{ fontSize: '12px', color: '#C9A84C', margin: 0 }}>

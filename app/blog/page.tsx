@@ -59,7 +59,7 @@ export default function BlogPage() {
         .bl-hero-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(100px,18vw,260px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
         .bl-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px;position:relative}
         .bl-h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(56px,8vw,100px);line-height:.95;letter-spacing:.02em;color:#fff;text-transform:uppercase;position:relative;margin-bottom:20px}
-        .bl-sub{font-size:17px;line-height:1.7;color:#777;max-width:560px;margin:0 auto;position:relative}
+        .bl-sub{font-size:17px;line-height:1.7;color:#C0C0C0;max-width:560px;margin:0 auto;position:relative}
 
         .bl-wrap{background:var(--black);padding:80px 64px}
         .bl-inner{max-width:1200px;margin:0 auto}
@@ -72,7 +72,7 @@ export default function BlogPage() {
         .bl-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
         .bl-card-date{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
         .bl-card-title{font-size:16px;font-weight:700;line-height:1.4;color:#e0e0e0;margin-bottom:12px;letter-spacing:.01em}
-        .bl-card-excerpt{font-size:13px;line-height:1.7;color:#666;margin-bottom:20px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+        .bl-card-excerpt{font-size:13px;line-height:1.7;color:#B0B0B0;margin-bottom:20px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
         .bl-card-more{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--red);padding-bottom:3px;display:inline-block;transition:color .15s;align-self:flex-start}
         .bl-card:hover .bl-card-more{color:var(--red)}
 
@@ -80,7 +80,7 @@ export default function BlogPage() {
         .bl-cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(204,0,0,.18) 0%,transparent 70%);pointer-events:none}
         .bl-cta-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:16px;position:relative}
         .bl-cta-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:var(--red)}
-        .bl-cta-sub{font-size:16px;color:#666;margin-bottom:40px;position:relative}
+        .bl-cta-sub{font-size:16px;color:#B0B0B0;margin-bottom:40px;position:relative}
         .bl-cta-actions{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;position:relative}
         .bl-btn-red{background:var(--red);color:#fff;padding:16px 48px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:background .15s;display:inline-block}.bl-btn-red:hover{background:#aa0000}
         .bl-cta-phone{font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;letter-spacing:.06em;color:#fff;transition:color .15s}.bl-cta-phone:hover{color:var(--gold)}

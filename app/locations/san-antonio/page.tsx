@@ -44,12 +44,12 @@ export default function SanAntonioPage() {
         .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px;position:relative}
         .hero-h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(48px,7vw,90px);line-height:.95;letter-spacing:.02em;color:#fff;text-transform:uppercase;position:relative;margin-bottom:20px}
         .hero-h1 em{color:var(--gold);font-style:normal}
-        .hero-sub{font-size:17px;line-height:1.7;color:#777;max-width:620px;margin:0 auto 32px;position:relative}
+        .hero-sub{font-size:17px;line-height:1.7;color:#C0C0C0;max-width:620px;margin:0 auto 32px;position:relative}
 
         .stat-strip{display:flex;justify-content:center;gap:0;position:relative;z-index:1;flex-wrap:wrap}
         .stat-card{background:var(--dark2);border:1px solid #2a2a2a;padding:20px 40px;text-align:center}
         .stat-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:32px;line-height:1;color:var(--gold);letter-spacing:.04em}
-        .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#555;margin-top:4px}
+        .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#AAAAAA;margin-top:4px}
 
         .section-wrap{background:var(--black);border-bottom:1px solid #1a1a1a}
         .section-inner{max-width:1200px;margin:0 auto;padding:80px 64px}
@@ -61,7 +61,7 @@ export default function SanAntonioPage() {
         .card{background:var(--dark2);border:1px solid #1e1e1e;padding:32px 28px;transition:border-color .2s}.card:hover{border-color:#333}
         .card-icon{font-size:28px;margin-bottom:14px}
         .card-name{font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.05em;color:#fff;margin-bottom:10px}
-        .card-desc{font-size:13px;line-height:1.7;color:#666}
+        .card-desc{font-size:13px;line-height:1.7;color:#B0B0B0}
 
         .dark-wrap{background:var(--dark);border-bottom:1px solid #1a1a1a}
 
@@ -72,13 +72,13 @@ export default function SanAntonioPage() {
         .why-item:last-child{border-bottom:none}
         .why-bullet{width:8px;height:8px;background:var(--red);flex-shrink:0;margin-top:6px}
         .why-text-title{font-size:15px;font-weight:700;color:#ddd;margin-bottom:4px}
-        .why-text-desc{font-size:13px;line-height:1.7;color:#666}
+        .why-text-desc{font-size:13px;line-height:1.7;color:#B0B0B0}
 
         .cta-wrap{background:var(--black);position:relative;overflow:hidden;text-align:center;padding:100px 64px}
         .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(204,0,0,.18) 0%,transparent 70%);pointer-events:none}
         .cta-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:16px;position:relative}
         .cta-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:var(--red)}
-        .cta-sub{font-size:16px;color:#666;margin-bottom:40px;position:relative}
+        .cta-sub{font-size:16px;color:#B0B0B0;margin-bottom:40px;position:relative}
         .cta-actions{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;position:relative}
         .btn-red{background:var(--red);color:#fff;padding:16px 48px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:background .15s;display:inline-block}.btn-red:hover{background:#aa0000}
         .cta-phone{font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;letter-spacing:.06em;color:#fff;transition:color .15s}.cta-phone:hover{color:var(--gold)}

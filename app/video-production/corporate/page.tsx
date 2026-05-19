@@ -99,8 +99,8 @@ export default function CorporatePage() {
           align-items: center;
           gap: 8px;
         }
-        .corp-breadcrumb a { color: #444; text-decoration: none; transition: color 0.15s; }
-        .corp-breadcrumb a:hover { color: #888; }
+        .corp-breadcrumb a { color: #B0B0B0; text-decoration: none; transition: color 0.15s; }
+        .corp-breadcrumb a:hover { color: #fff; }
         .corp-breadcrumb span { color: #2a2a2a; }
         .corp-eyebrow {
           font-size: 11px;
@@ -193,7 +193,7 @@ export default function CorporatePage() {
           font-weight: 700;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: #555;
+          color: #AAAAAA;
           margin-top: 6px;
         }
 
@@ -234,7 +234,7 @@ export default function CorporatePage() {
         .body-text {
           font-size: 15px;
           line-height: 1.8;
-          color: #888;
+          color: #B0B0B0;
           margin-bottom: 20px;
         }
 
@@ -363,7 +363,7 @@ export default function CorporatePage() {
         .process-card-desc {
           font-size: 13px;
           line-height: 1.7;
-          color: #666;
+          color: #B0B0B0;
           margin-bottom: 20px;
           position: relative;
         }
@@ -373,7 +373,7 @@ export default function CorporatePage() {
         }
         .process-card-list li {
           font-size: 12px;
-          color: #555;
+          color: #AAAAAA;
           padding: 4px 0;
           padding-left: 14px;
           position: relative;
@@ -430,7 +430,7 @@ export default function CorporatePage() {
         .why-card-desc {
           font-size: 13px;
           line-height: 1.7;
-          color: #666;
+          color: #B0B0B0;
         }
 
         /* ── FAQ ── */
@@ -491,7 +491,7 @@ export default function CorporatePage() {
         .faq-answer p {
           font-size: 14px;
           line-height: 1.8;
-          color: #777;
+          color: #C0C0C0;
           padding-bottom: 24px;
         }
         .faq-item.open .faq-answer {
@@ -535,7 +535,7 @@ export default function CorporatePage() {
         }
         .cta-sub {
           font-size: 16px;
-          color: #666;
+          color: #B0B0B0;
           margin-bottom: 48px;
           position: relative;
         }
@@ -591,7 +591,7 @@ export default function CorporatePage() {
               <span>/</span>
               <Link href="/video-production">Services</Link>
               <span>/</span>
-              <span style={{ color: '#888' }}>Corporate Video</span>
+              <span style={{ color: '#AAAAAA' }}>Corporate Video</span>
             </nav>
             <p className="corp-eyebrow">Corporate &amp; Business Video</p>
             <h1 className="corp-h1">

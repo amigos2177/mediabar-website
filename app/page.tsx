@@ -415,12 +415,17 @@ export default function HomePage() {
         .service-card:hover .service-card-cta { gap: 10px; }
 
         /* ─── DEMO REEL ─── */
+        .reel-section-inner {
+          padding: 0 48px;
+        }
         .reel-wrap {
           position: relative;
           padding-bottom: 56.25%;
           height: 0;
           overflow: hidden;
-          width: 100%;
+          max-width: 1100px;
+          margin: 0 auto;
+          border-radius: 4px;
         }
         .reel-wrap iframe {
           position: absolute;
@@ -532,6 +537,9 @@ export default function HomePage() {
           .clients-grid { grid-template-columns: repeat(4, 1fr); }
           .client-cell:nth-child(4n) { border-right: none; }
         }
+        @media (max-width: 768px) {
+          .reel-section-inner { padding: 0 24px; }
+        }
         @media (max-width: 600px) {
           .section { padding: 64px 20px; }
           .clients-strip { padding: 28px 16px; }
@@ -606,13 +614,15 @@ export default function HomePage() {
       <section className="section section-dark2" data-reveal>
         <p className="eyebrow">Demo Reel</p>
         <h2 className="section-title" style={{ marginBottom: '40px' }}>See <em>The Work</em></h2>
-        <div className="reel-wrap">
-          <iframe
-            src="https://player.vimeo.com/video/1077104073?title=0&byline=0&portrait=0&color=CC0000"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            title="Media Bar Productions Demo Reel"
-          />
+        <div className="reel-section-inner">
+          <div className="reel-wrap">
+            <iframe
+              src="https://player.vimeo.com/video/1077104073?title=0&byline=0&portrait=0&color=CC0000"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="Media Bar Productions Demo Reel"
+            />
+          </div>
         </div>
       </section>
 

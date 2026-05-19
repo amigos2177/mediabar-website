@@ -28,7 +28,6 @@ const medicalPhotos = [
 const industrialPhotos = [
   { src: '/images/photography/7-Commodities_Port.png', alt: 'Port San Antonio commodities terminal — large-format industrial photography' },
   { src: '/images/photography/11-West-Rail-Bridge-.png', alt: 'West Rail Bridge San Antonio — architectural infrastructure photography' },
-  { src: '/images/photography/2A8A5879.jpg', alt: 'Commercial architectural exterior photography in San Antonio' },
 ]
 
 const cityPhotos = [
@@ -39,6 +38,7 @@ const cityPhotos = [
   { src: '/images/photography/Photography-San-Antonio-10.jpg', alt: 'Visual storytelling photography across San Antonio' },
   { src: '/images/photography/Photography-San-Antonio-14.jpg', alt: 'San Antonio community event photography' },
   { src: '/images/photography/Photography-San-Antonio-20.jpg', alt: 'On-location lifestyle photography in San Antonio, Texas' },
+  { src: '/images/photography/2A8A5879.jpg', alt: 'Strawberry waffles with whipped cream — food and dining photography in San Antonio' },
 ]
 
 const schema = {
@@ -362,7 +362,7 @@ export default function PhotographyPage() {
           <p className="ph-section-desc">
             Large-format industrial and architectural photography — ports, infrastructure, exteriors. Cinematic compositions that scale to print and billboard.
           </p>
-          <div className="ph-grid-3">
+          <div className="ph-grid-2">
             {industrialPhotos.map((photo) => (
               <div key={photo.src} className="ph-photo-item">
                 <Image
@@ -371,7 +371,7 @@ export default function PhotographyPage() {
                   alt={photo.alt}
                   fill
                   style={{ objectFit: 'cover', transition: 'transform 0.4s ease' }}
-                  sizes="(max-width: 900px) 50vw, 33vw"
+                  sizes="(max-width: 600px) 100vw, 50vw"
                 />
               </div>
             ))}

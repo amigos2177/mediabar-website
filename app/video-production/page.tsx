@@ -207,6 +207,7 @@ export default function VideoProductionPage() {
           transition: border-color 0.2s;
           display: flex;
           flex-direction: column;
+          cursor: pointer;
         }
         .svc-card:hover { border-color: rgba(255,255,255,0.2); }
 
@@ -352,29 +353,29 @@ export default function VideoProductionPage() {
       <section className="services-section">
         <div className="services-grid">
           {services.map((svc) => (
-            <div key={svc.num} className="svc-card">
-              <div className="svc-video">
-                <iframe
-                  src={`https://player.vimeo.com/video/${svc.vimeoId}?title=0&byline=0&portrait=0&color=CC0000&badge=0`}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  title={`${svc.title} — Media Bar Productions`}
-                />
-              </div>
-              <div className="svc-body">
-                <p className="svc-num">{svc.num}</p>
-                <h2 className="svc-title">{svc.title}</h2>
-                <p className="svc-desc">{svc.description}</p>
-                <div className="svc-tags">
-                  {svc.tags.map((tag) => (
-                    <span key={tag} className="svc-tag">{tag}</span>
-                  ))}
+            <Link key={svc.num} href={svc.href} style={{ textDecoration: 'none', display: 'block' }}>
+              <div className="svc-card">
+                <div className="svc-video">
+                  <iframe
+                    src={`https://player.vimeo.com/video/${svc.vimeoId}?title=0&byline=0&portrait=0&color=CC0000&badge=0`}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title={`${svc.title} — Media Bar Productions`}
+                  />
                 </div>
-                <Link href={svc.href} className="svc-link">
-                  See Full Service →
-                </Link>
+                <div className="svc-body">
+                  <p className="svc-num">{svc.num}</p>
+                  <h2 className="svc-title">{svc.title}</h2>
+                  <p className="svc-desc">{svc.description}</p>
+                  <div className="svc-tags">
+                    {svc.tags.map((tag) => (
+                      <span key={tag} className="svc-tag">{tag}</span>
+                    ))}
+                  </div>
+                  <span className="svc-link">See Full Service →</span>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

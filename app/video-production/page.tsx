@@ -13,7 +13,7 @@ const services = [
     href: '/video-production/corporate',
     vimeoId: '1193317757',
     description: 'From executive communications and internal training to brand films and investor presentations, we create corporate video that moves people and drives results. We work closely with your team to make the message land — on time and on brand.',
-    tags: ['Brand Films', 'Training & HR', 'Executive Messaging', 'Annual Reports', 'Internal Comms'],
+    tags: ['Brand Films', 'Training & HR', 'Executive Messaging', 'Annual Reports'],
   },
   {
     num: '02',
@@ -21,7 +21,7 @@ const services = [
     href: '/video-production/commercials',
     vimeoId: '1126506220',
     description: 'Broadcast-quality commercials for TV, OTT, and digital platforms. We handle concept development, scripting, casting, production, and post — delivering spots that cut through and convert.',
-    tags: ['TV Spots', 'Digital / Pre-Roll', 'OTT & Streaming', 'Product Ads', 'Brand Campaigns'],
+    tags: ['TV Spots', 'Digital / Pre-Roll', 'OTT & Streaming', 'Brand Campaigns'],
   },
   {
     num: '03',
@@ -29,7 +29,7 @@ const services = [
     href: '/video-production/events',
     vimeoId: '946447253',
     description: 'Multi-camera event coverage for conferences, galas, product launches, and live performances. We capture the energy of the room and deliver polished highlight reels and full-length recordings that live on long after the event.',
-    tags: ['Conferences', 'Galas & Charity Events', 'Product Launches', 'Highlight Reels', 'Multi-Camera'],
+    tags: ['Conferences', 'Galas & Charity Events', 'Highlight Reels', 'Multi-Camera'],
   },
   {
     num: '04',
@@ -37,7 +37,7 @@ const services = [
     href: '/video-production/interview',
     vimeoId: '1180537582',
     description: 'Thought leadership interviews, testimonial series, documentary-style profiles, and panel discussions. We create the right environment for authentic, on-camera conversation and deliver footage that tells a compelling story.',
-    tags: ['Testimonials', 'Thought Leadership', 'Documentary Profiles', 'Panel Discussions', 'Podcast Video'],
+    tags: ['Testimonials', 'Thought Leadership', 'Documentary Profiles', 'Podcast Video'],
   },
   {
     num: '05',
@@ -45,7 +45,7 @@ const services = [
     href: '/video-production/medical',
     vimeoId: '1180540550',
     description: 'Specialized production for healthcare systems, medical device companies, pharmaceutical brands, and research institutions. We understand compliance requirements and produce with the precision and sensitivity the subject demands.',
-    tags: ['Patient Stories', 'Surgical Procedures', 'Medical Device', 'Pharma & Research', 'CME Content'],
+    tags: ['Patient Stories', 'Medical Device', 'Pharma & Research', 'CME Content'],
   },
   {
     num: '06',
@@ -53,7 +53,7 @@ const services = [
     href: '/video-production/aerial',
     vimeoId: '1180537228',
     description: 'FAA-licensed drone operators delivering cinematic aerial footage across Texas. We integrate aerial seamlessly into ground-level productions or execute standalone drone shoots for real estate, construction, events, and more.',
-    tags: ['FAA Licensed', 'Real Estate Aerials', 'Construction Progress', 'Event Aerials', 'Cinematic Drone'],
+    tags: ['FAA Licensed', 'Real Estate Aerials', 'Event Aerials', 'Cinematic Drone'],
   },
   {
     num: '07',
@@ -61,7 +61,7 @@ const services = [
     href: '/video-production/motion-graphics',
     vimeoId: '1180540640',
     description: 'Animated explainers, title sequences, lower-thirds, logo animations, and data visualization. Our motion designers bring your brand to life in motion — for broadcast, digital, or social.',
-    tags: ['Animated Explainers', 'Logo Animation', 'Data Visualization', 'Title Sequences', 'Social Graphics'],
+    tags: ['Animated Explainers', 'Logo Animation', 'Data Visualization', 'Title Sequences'],
   },
   {
     num: '08',
@@ -69,7 +69,7 @@ const services = [
     href: '/video-production/live-streaming',
     vimeoId: '1056209144',
     description: 'Professional multi-camera live streaming and webcasting for hybrid events, town halls, product launches, and worship services. We handle encoding, graphics, switching, and delivery to any platform.',
-    tags: ['Hybrid Events', 'Town Halls', 'YouTube / Vimeo Live', 'Multi-Platform', 'Graphics & Switching'],
+    tags: ['Hybrid Events', 'Town Halls', 'Multi-Platform', 'Graphics & Switching'],
   },
   {
     num: '09',
@@ -77,7 +77,7 @@ const services = [
     href: '/video-production/post-production',
     vimeoId: '1180526566',
     description: 'Full post-production services including editorial, color grading, audio mixing, VFX, and delivery. We work with your existing footage or handle the complete pipeline from acquisition to final deliverable.',
-    tags: ['Editorial', 'Color Grading', 'Audio Mix & Mastering', 'VFX & Compositing', 'Multi-Format Delivery'],
+    tags: ['Editorial', 'Color Grading', 'Audio Mix & Mastering', 'VFX & Compositing'],
   },
   {
     num: '10',
@@ -85,7 +85,7 @@ const services = [
     href: '/video-production/food',
     vimeoId: '697231773',
     description: 'Appetite-driving food and beverage video for restaurants, CPG brands, and hospitality groups. Our culinary production team understands food styling, hero shots, and the visual language that makes viewers hungry.',
-    tags: ['Restaurant Campaigns', 'CPG & Packaging', 'Recipe Content', 'Hero Product Shots', 'Social Content'],
+    tags: ['Restaurant Campaigns', 'CPG & Packaging', 'Recipe Content', 'Hero Product Shots'],
   },
   {
     num: '11',
@@ -93,7 +93,7 @@ const services = [
     href: '/video-production/real-estate',
     vimeoId: '1138383811',
     description: 'Cinematic property tours and lifestyle videos for luxury residential, commercial real estate, and hospitality properties. We combine ground-level walk-throughs with aerial footage to showcase every property at its best.',
-    tags: ['Luxury Residential', 'Commercial Property', 'Aerial + Ground', 'Agent Branding', 'Virtual Tours'],
+    tags: ['Luxury Residential', 'Commercial Property', 'Aerial + Ground', 'Virtual Tours'],
   },
 ]
 
@@ -185,92 +185,104 @@ export default function VideoProductionPage() {
           margin-top: 4px;
         }
 
-        /* ── SERVICE BLOCKS ── */
-        .service-block {
+        /* ── SERVICES GRID ── */
+        .services-section {
+          background: var(--black);
+          padding: 80px 48px;
+        }
+        .services-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          min-height: 500px;
-          border-bottom: 1px solid #1a1a1a;
-          padding: 80px 0;
+          gap: 24px;
+          max-width: 1200px;
+          margin: 0 auto;
         }
-        .service-block.reverse { direction: rtl; }
-        .service-block.reverse > * { direction: ltr; }
 
-        .service-content {
-          background: var(--dark);
-          padding: 72px 64px;
+        /* ── SERVICE CARD ── */
+        .svc-card {
+          background: #111111;
+          border: 0.5px solid rgba(255,255,255,0.08);
+          border-radius: 4px;
+          overflow: hidden;
+          transition: border-color 0.2s;
           display: flex;
           flex-direction: column;
-          justify-content: center;
         }
-        .service-block:nth-child(even) .service-content { background: var(--dark2); }
+        .svc-card:hover { border-color: rgba(255,255,255,0.2); }
 
-        .service-num {
-          font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: 13px;
-          letter-spacing: 0.18em;
-          color: var(--red);
-          margin-bottom: 12px;
-        }
-        .service-title {
-          font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(36px, 4vw, 56px);
-          line-height: 1;
-          letter-spacing: 0.03em;
-          color: #fff;
-          text-transform: uppercase;
-          margin-bottom: 20px;
-        }
-        .service-desc {
-          font-size: 15px;
-          line-height: 1.75;
-          color: #888;
-          margin-bottom: 28px;
-        }
-        .service-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-bottom: 36px;
-        }
-        .service-tag {
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #666;
-          border: 1px solid #2a2a2a;
-          padding: 6px 14px;
-        }
-        .service-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          color: #fff;
-          text-decoration: none;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          border-bottom: 1px solid var(--red);
-          padding-bottom: 4px;
-          width: fit-content;
-          transition: color 0.15s;
-        }
-        .service-link:hover { color: var(--red); }
-        .service-link-arrow { font-size: 14px; }
-
-        .service-video {
+        .svc-video {
           position: relative;
-          overflow: hidden;
+          width: 100%;
+          padding-bottom: 56.25%;
           background: #000;
+          flex-shrink: 0;
         }
-        .service-video iframe {
+        .svc-video iframe {
           position: absolute;
           top: 0; left: 0;
           width: 100%; height: 100%;
           border: none;
         }
+
+        .svc-body {
+          padding: 32px;
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+        .svc-num {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 12px;
+          letter-spacing: 0.18em;
+          color: var(--red);
+          margin-bottom: 8px;
+        }
+        .svc-title {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 32px;
+          line-height: 1;
+          letter-spacing: 0.03em;
+          color: #fff;
+          text-transform: uppercase;
+          margin-bottom: 14px;
+        }
+        .svc-desc {
+          font-size: 14px;
+          line-height: 1.75;
+          color: #777;
+          margin-bottom: 20px;
+          flex: 1;
+        }
+        .svc-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-bottom: 24px;
+        }
+        .svc-tag {
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #555;
+          border: 0.5px solid #2a2a2a;
+          border-radius: 2px;
+          padding: 5px 10px;
+        }
+        .svc-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--red);
+          text-decoration: none;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          width: fit-content;
+          transition: opacity 0.15s;
+        }
+        .svc-link:hover { opacity: 0.75; }
 
         /* ── BOTTOM CTA ── */
         .vp-cta {
@@ -309,9 +321,8 @@ export default function VideoProductionPage() {
           .vp-hero { padding: 120px 24px 60px; }
           .stats-bar { flex-wrap: wrap; }
           .stat-item { padding: 20px 32px; border-right: none; border-bottom: 1px solid #1e1e1e; flex: 1 1 50%; }
-          .service-block { grid-template-columns: 1fr; direction: ltr !important; }
-          .service-video { height: 240px; }
-          .service-content { padding: 48px 24px; }
+          .services-section { padding: 48px 24px; }
+          .services-grid { grid-template-columns: 1fr; }
           .vp-cta { padding: 64px 24px; }
         }
       `}</style>
@@ -337,35 +348,36 @@ export default function VideoProductionPage() {
         ))}
       </div>
 
-      {/* ── SERVICE BLOCKS ── */}
-      {services.map((svc, i) => {
-        const isReverse = i % 2 !== 0
-        return (
-          <div key={svc.num} className={`service-block${isReverse ? ' reverse' : ''}`}>
-            <div className="service-content">
-              <p className="service-num">{svc.num}</p>
-              <h2 className="service-title">{svc.title}</h2>
-              <p className="service-desc">{svc.description}</p>
-              <div className="service-tags">
-                {svc.tags.map((tag) => (
-                  <span key={tag} className="service-tag">{tag}</span>
-                ))}
+      {/* ── SERVICES GRID ── */}
+      <section className="services-section">
+        <div className="services-grid">
+          {services.map((svc) => (
+            <div key={svc.num} className="svc-card">
+              <div className="svc-video">
+                <iframe
+                  src={`https://player.vimeo.com/video/${svc.vimeoId}?title=0&byline=0&portrait=0&color=CC0000&badge=0`}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title={`${svc.title} — Media Bar Productions`}
+                />
               </div>
-              <Link href={svc.href} className="service-link">
-                See Full Service <span className="service-link-arrow">→</span>
-              </Link>
+              <div className="svc-body">
+                <p className="svc-num">{svc.num}</p>
+                <h2 className="svc-title">{svc.title}</h2>
+                <p className="svc-desc">{svc.description}</p>
+                <div className="svc-tags">
+                  {svc.tags.map((tag) => (
+                    <span key={tag} className="svc-tag">{tag}</span>
+                  ))}
+                </div>
+                <Link href={svc.href} className="svc-link">
+                  See Full Service →
+                </Link>
+              </div>
             </div>
-            <div className="service-video">
-              <iframe
-                src={`https://player.vimeo.com/video/${svc.vimeoId}?title=0&byline=0&portrait=0&color=CC0000&badge=0`}
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title={`${svc.title} — Media Bar Productions`}
-              />
-            </div>
-          </div>
-        )
-      })}
+          ))}
+        </div>
+      </section>
 
       {/* ── BOTTOM CTA ── */}
       <section className="vp-cta">

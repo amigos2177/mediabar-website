@@ -55,14 +55,13 @@ export default function AboutPage() {
         .section-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:rgba(255,255,255,.6)}
         .body-text{font-size:15px;line-height:1.8;color:#888;margin-bottom:20px}
 
-        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
         .pull-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:26px;line-height:1.4;color:rgba(255,255,255,.7);border-left:3px solid var(--red);padding-left:24px;margin:32px 0}
-        .bts-section{background:var(--black);padding:0 64px 80px}
-        .bts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:1200px;margin:0 auto}
-        .bts-cell{overflow:hidden;border-radius:4px;border:1px solid #1e1e1e;height:260px}
+        .bts-section{background:#111111;padding:80px 48px}
+        .bts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1200px;margin:0 auto}
+        .bts-cell{overflow:hidden;border-radius:4px}
         .bts-cell.bts-wide{grid-column:span 2}
-        .bts-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
-        .bts-cell:hover img{transform:scale(1.03)}
+        .bts-cell img{width:100%;height:100%;object-fit:cover;display:block}
 
         .values-wrap{background:var(--dark)}
         .values-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
@@ -98,14 +97,13 @@ export default function AboutPage() {
           .section,.values-inner{padding:64px 24px}
           .clients-strip{padding:28px 24px}
           .cta-wrap{padding:72px 24px}
-          .bts-section{padding:0 24px 56px}
+          .bts-section{padding:48px 24px}
           .bts-grid{grid-template-columns:1fr 1fr}
-          .bts-cell.bts-wide{grid-column:span 2}
-          .bts-cell{height:200px}
         }
         @media(max-width:600px){
           .values-grid{grid-template-columns:1fr}
-          .bts-grid{grid-template-columns:1fr 1fr}
+          .bts-grid{grid-template-columns:1fr}
+          .bts-cell.bts-wide{grid-column:span 1}
         }
       `}</style>
 
@@ -153,8 +151,8 @@ export default function AboutPage() {
                 </Link>
               </div>
             </div>
-            <div className="reveal">
-              <div style={{ overflow: 'hidden', borderRadius: '4px', border: '1px solid #1e1e1e', height: '420px' }}>
+            <div className="reveal" style={{ height: '100%' }}>
+              <div style={{ overflow: 'hidden', borderRadius: '4px', border: '1px solid #1e1e1e', height: '100%', minHeight: '400px' }}>
                 <img src="/images/bts-1.jpg" alt="Media Bar Productions behind the scenes" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
@@ -164,16 +162,20 @@ export default function AboutPage() {
 
       <div className="bts-section">
         <div className="bts-grid reveal">
-          <div className="bts-cell bts-wide"><img src="/images/bts-1.jpg" alt="" /></div>
-          <div className="bts-cell"><img src="/images/bts-2.jpg" alt="" /></div>
-          <div className="bts-cell"><img src="/images/bts-3.jpg" alt="" /></div>
-          <div className="bts-cell bts-wide"><img src="/images/bts-4.jpg" alt="" /></div>
-          <div className="bts-cell bts-wide"><img src="/images/bts-5.jpg" alt="" /></div>
-          <div className="bts-cell"><img src="/images/bts-6.jpg" alt="" /></div>
-          <div className="bts-cell"><img src="/images/bts-7.jpg" alt="" /></div>
-          <div className="bts-cell bts-wide"><img src="/images/bts-8.jpg" alt="" /></div>
-          <div className="bts-cell bts-wide"><img src="/images/bts-9.jpg" alt="" /></div>
-          <div className="bts-cell"><img src="/images/bts-10.jpg" alt="" /></div>
+          {/* Row 1 */}
+          <div className="bts-cell bts-wide" style={{ aspectRatio: '16/9' }}><img src="/images/bts-1.jpg" alt="" /></div>
+          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-2.jpg" alt="" /></div>
+          {/* Row 2 */}
+          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-3.jpg" alt="" /></div>
+          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-4.jpg" alt="" /></div>
+          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-5.jpg" alt="" /></div>
+          {/* Row 3 */}
+          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-6.jpg" alt="" /></div>
+          <div className="bts-cell bts-wide" style={{ aspectRatio: '16/9' }}><img src="/images/bts-7.jpg" alt="" /></div>
+          {/* Row 4 */}
+          <div className="bts-cell" style={{ aspectRatio: '1/1' }}><img src="/images/bts-8.jpg" alt="" /></div>
+          <div className="bts-cell" style={{ aspectRatio: '1/1' }}><img src="/images/bts-9.jpg" alt="" /></div>
+          <div className="bts-cell" style={{ aspectRatio: '1/1' }}><img src="/images/bts-10.jpg" alt="" /></div>
         </div>
       </div>
 

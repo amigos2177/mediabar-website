@@ -365,7 +365,10 @@ export default function HomePage() {
           gap: 2px;
         }
         .service-card {
-          display: block;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: 180px;
           background: var(--dark2);
           padding: 32px 28px;
           text-decoration: none;
@@ -377,6 +380,7 @@ export default function HomePage() {
           background: #1a1a1a;
           border-top-color: var(--red);
         }
+        .service-card-top { display: flex; flex-direction: column; }
         .service-icon {
           display: block;
           margin-bottom: 16px;
@@ -396,6 +400,19 @@ export default function HomePage() {
           letter-spacing: 0.05em;
           color: #fff;
         }
+        .service-card-cta {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: var(--red);
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          transition: gap 0.2s;
+        }
+        .service-card:hover .service-card-cta { gap: 10px; }
 
         /* ─── DEMO REEL ─── */
         .reel-wrap {
@@ -570,9 +587,12 @@ export default function HomePage() {
         <div className="services-grid">
           {services.map((svc, i) => (
             <Link key={svc.href} href={svc.href} className="service-card">
-              <span className="service-icon" aria-hidden="true">{serviceIcons[i]}</span>
-              <p className="service-num">{String(i + 1).padStart(2, '0')}</p>
-              <p className="service-title">{svc.label}</p>
+              <div className="service-card-top">
+                <span className="service-icon" aria-hidden="true">{serviceIcons[i]}</span>
+                <p className="service-num">{String(i + 1).padStart(2, '0')}</p>
+                <p className="service-title">{svc.label}</p>
+              </div>
+              <span className="service-card-cta">See Examples →</span>
             </Link>
           ))}
         </div>

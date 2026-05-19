@@ -10,9 +10,9 @@ const featuredClients = [
   { name: 'Unilever', src: '/images/client-unilever.png' },
   { name: 'Frost Bank', src: '/images/client-frost.png' },
   { name: 'Bass Pro Shops', src: '/images/client-bass-pro.png' },
+  { name: 'Kiolbassa', src: '/images/client-kiolbassa.png' },
   { name: 'Blue Moon', src: '/images/client-blue-moon.png' },
   { name: 'Carrier', src: '/images/client-carrier.png' },
-  { name: 'Texas Tech', src: '/images/client-texas-tech.png' },
 ]
 
 const additionalClients = [

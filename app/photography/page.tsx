@@ -251,7 +251,7 @@ export default function PhotographyPage() {
           <div className="ph-stat-card">
             {[
               { value: '13+', label: 'Years Experience' },
-              { value: '1000+', label: 'Events Covered' },
+              { value: '300+', label: 'Events Covered' },
               { value: '★', label: 'Professional Headshots' },
             ].map((s) => (
               <div key={s.label} className="ph-stat-item">

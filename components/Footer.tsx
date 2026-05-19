@@ -25,14 +25,18 @@ export default function Footer() {
         .mbp-footer-link:hover { color: #fff !important; }
         .mbp-social-link { color: rgba(255,255,255,0.4); border-color: rgba(255,255,255,0.1) !important; }
         .mbp-social-link:hover { color: #fff !important; border-color: rgba(255,255,255,0.4) !important; }
+        .mbp-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        @media(max-width:768px){
+          .mbp-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+          footer { padding: 48px 24px 32px !important; }
+        }
+        @media(max-width:480px){
+          .mbp-footer-grid { grid-template-columns: 1fr; }
+          footer { padding: 40px 20px 28px !important; }
+        }
       `}</style>
       <footer style={{ background: '#0A0A0A', padding: '60px 48px 40px', color: '#888' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '2fr 1fr 1fr 1fr',
-          gap: '48px',
-          marginBottom: '48px',
-        }}>
+        <div className="mbp-footer-grid">
 
           {/* Brand column */}
           <div>

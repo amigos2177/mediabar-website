@@ -202,7 +202,7 @@ export default function HomePage() {
         }
         .hero-headline {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(74px, 11vw, 130px);
+          font-size: clamp(48px, 13vw, 130px);
           line-height: 0.9;
           letter-spacing: 0.04em;
           color: #fff;
@@ -493,7 +493,7 @@ export default function HomePage() {
         }
         .cta-headline {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(54px, 8vw, 108px);
+          font-size: clamp(38px, 10vw, 108px);
           letter-spacing: 0.03em;
           color: #fff;
           line-height: 1;

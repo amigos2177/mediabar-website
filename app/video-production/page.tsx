@@ -181,7 +181,7 @@ export default function VideoProductionPage() {
           font-weight: 700;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: #555;
+          color: #AAAAAA;
           margin-top: 4px;
         }
 
@@ -250,7 +250,7 @@ export default function VideoProductionPage() {
         .svc-desc {
           font-size: 14px;
           line-height: 1.75;
-          color: #777;
+          color: #C0C0C0;
           margin-bottom: 20px;
           flex: 1;
         }
@@ -328,7 +328,7 @@ export default function VideoProductionPage() {
         }
         .vp-cta-sub {
           font-size: 15px;
-          color: #666;
+          color: #B0B0B0;
           margin-bottom: 48px;
           position: relative;
         }

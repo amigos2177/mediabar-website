@@ -133,7 +133,7 @@ export default function WorkPage() {
           text-transform: uppercase; position: relative; margin-bottom: 24px;
         }
         .wk-sub {
-          font-size: 17px; line-height: 1.7; color: #777;
+          font-size: 17px; line-height: 1.7; color: #C0C0C0;
           max-width: 640px; margin: 0 auto; position: relative;
         }
 
@@ -186,14 +186,14 @@ export default function WorkPage() {
         }
         .reel-stat-label {
           font-size: 10px; font-weight: 700; letter-spacing: .14em;
-          text-transform: uppercase; color: #555; margin-top: 4px;
+          text-transform: uppercase; color: #AAAAAA; margin-top: 4px;
         }
 
         /* ── CATEGORY SECTIONS ── */
         .cat-section { padding: 80px 48px; border-bottom: 0.5px solid rgba(255,255,255,0.06); }
         .cat-inner { max-width: 1100px; margin: 0 auto; }
         .cat-desc {
-          font-size: 15px; line-height: 1.75; color: #777;
+          font-size: 15px; line-height: 1.75; color: #C0C0C0;
           max-width: 700px; margin-bottom: 12px;
         }
         .cat-link {
@@ -255,7 +255,7 @@ export default function WorkPage() {
           font-style: italic; text-transform: none; color: var(--red);
         }
         .wk-cta-sub {
-          font-size: 15px; color: #666;
+          font-size: 15px; color: #B0B0B0;
           margin-bottom: 48px; position: relative;
         }
         .wk-cta-actions {

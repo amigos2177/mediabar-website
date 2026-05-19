@@ -94,12 +94,12 @@ export default function AwardsPage() {
           font-weight: 600;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: #444;
+          color: #B0B0B0;
           margin-bottom: 20px;
           position: relative;
         }
-        .aw-breadcrumb a { color: #444; text-decoration: none; transition: color 0.15s; }
-        .aw-breadcrumb a:hover { color: #888; }
+        .aw-breadcrumb a { color: #B0B0B0; text-decoration: none; transition: color 0.15s; }
+        .aw-breadcrumb a:hover { color: #fff; }
         .aw-breadcrumb span { margin: 0 8px; }
         .aw-eyebrow {
           font-size: 11px;
@@ -129,7 +129,7 @@ export default function AwardsPage() {
         .aw-sub {
           font-size: 17px;
           line-height: 1.75;
-          color: #666;
+          color: #B0B0B0;
           max-width: 700px;
           margin: 0 auto;
           position: relative;
@@ -168,7 +168,7 @@ export default function AwardsPage() {
         .aw-body {
           font-size: 15px;
           line-height: 1.8;
-          color: #777;
+          color: #C0C0C0;
           max-width: 760px;
           margin-bottom: 56px;
         }
@@ -206,7 +206,7 @@ export default function AwardsPage() {
           font-weight: 700;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: #555;
+          color: #AAAAAA;
         }
 
         /* ── NOMINATIONS ── */
@@ -215,7 +215,7 @@ export default function AwardsPage() {
           font-weight: 700;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: #444;
+          color: #B0B0B0;
           margin-bottom: 20px;
         }
         .nom-grid {
@@ -241,7 +241,7 @@ export default function AwardsPage() {
         }
         .nom-category {
           font-size: 13px;
-          color: #666;
+          color: #B0B0B0;
           line-height: 1.5;
           padding-top: 4px;
         }
@@ -278,7 +278,7 @@ export default function AwardsPage() {
         }
         .telly-client {
           font-size: 11px;
-          color: #555;
+          color: #AAAAAA;
           line-height: 1.4;
           margin-bottom: 6px;
         }
@@ -293,7 +293,7 @@ export default function AwardsPage() {
           font-weight: 700;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: #444;
+          color: #B0B0B0;
         }
         .telly-silver {
           font-size: 10px;
@@ -332,7 +332,7 @@ export default function AwardsPage() {
         }
         .aw-cta-sub {
           font-size: 15px;
-          color: #555;
+          color: #AAAAAA;
           margin-bottom: 44px;
           position: relative;
         }

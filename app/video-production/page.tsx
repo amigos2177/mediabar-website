@@ -190,14 +190,15 @@ export default function VideoProductionPage() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           min-height: 500px;
-          border-bottom: 1px solid #1a1a1a;
+          border-bottom: 0.5px solid rgba(255,255,255,0.06);
+          padding: 80px 0;
         }
         .service-block.reverse { direction: rtl; }
         .service-block.reverse > * { direction: ltr; }
 
         .service-content {
           background: var(--dark);
-          padding: 72px 64px;
+          padding: 96px 64px;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -356,7 +357,7 @@ export default function VideoProductionPage() {
             </div>
             <div className="service-video">
               <iframe
-                src={`https://player.vimeo.com/video/${svc.vimeoId}?title=0&byline=0&portrait=0&color=CC0000`}
+                src={`https://player.vimeo.com/video/${svc.vimeoId}?title=0&byline=0&portrait=0&color=CC0000&badge=0&background=0&quality=1080p&dnt=1&transparent=0`}
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
                 title={`${svc.title} — Media Bar Productions`}

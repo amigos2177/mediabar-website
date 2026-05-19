@@ -30,10 +30,7 @@ const nextConfig: NextConfig = {
       { source: '/web', destination: '/contact', permanent: true },
       { source: '/Jobs', destination: '/contact', permanent: true },
       { source: '/jobs', destination: '/contact', permanent: true },
-      { source: '/FAQs', destination: '/faq', permanent: true },
-      { source: '/Faqs', destination: '/faq', permanent: true },
-      { source: '/Contact', destination: '/contact', permanent: true },
-      { source: '/About', destination: '/about', permanent: true },
+
       { source: '/News', destination: '/blog', permanent: true },
       { source: '/News/Get/:id/:slug', destination: '/blog/:slug', permanent: true },
       { source: '/news', destination: '/blog', permanent: true },

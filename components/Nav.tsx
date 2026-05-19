@@ -209,6 +209,9 @@ export default function Nav() {
           .mbp-desktop-right { display: none !important; }
           .mbp-burger { display: flex !important; }
         }
+        @media (max-width: 480px) {
+          nav { padding: 0 20px !important; }
+        }
       `}</style>
 
       <nav style={{
@@ -225,7 +228,7 @@ export default function Nav() {
         padding: '0 48px',
       }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-          <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '48px', display: 'block' }} />
+          <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '48px', maxWidth: '180px', display: 'block' }} />
         </Link>
 
         {/* Desktop center links */}

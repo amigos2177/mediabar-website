@@ -112,7 +112,7 @@ export default function AwardsPage() {
         }
         .aw-h1 {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(56px, 8vw, 108px);
+          font-size: clamp(40px, 10vw, 108px);
           line-height: 0.95;
           letter-spacing: 0.02em;
           color: #fff;

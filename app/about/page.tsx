@@ -111,6 +111,9 @@ export default function AboutPage() {
         @media(max-width:600px){
           .values-grid{grid-template-columns:1fr}
         }
+        @media(max-width:480px){
+          .bts-grid{grid-template-columns:1fr}
+        }
       `}</style>
 
       <section className="page-hero">

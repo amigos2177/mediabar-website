@@ -120,7 +120,9 @@ export default function StudioPage() {
         }
         @media(max-width:600px){
           .features-grid{grid-template-columns:1fr}
-          .studio-gallery{grid-template-columns:1fr 1fr}
+          .studio-gallery{grid-template-columns:1fr}
+          .gallery-cell{height:220px}
+          .gallery-cell.gallery-wide{grid-column:span 1}
         }
       `}</style>
 

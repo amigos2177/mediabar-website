@@ -189,6 +189,8 @@ export default function FAQPage() {
         .hero-h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:rgba(255,255,255,.55);text-transform:none}
         .hero-sub{font-size:17px;line-height:1.7;color:#C0C0C0;max-width:560px;margin:0 auto;position:relative}
 
+        .filter-bar-wrap{position:relative}
+        .filter-bar-wrap::after{content:'';position:absolute;right:0;top:0;bottom:0;width:40px;background:linear-gradient(to right,transparent,rgba(0,0,0,0.95));pointer-events:none;display:none}
         .filter-bar{background:var(--dark);border-bottom:1px solid #1e1e1e;padding:0 64px;display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
         .filter-bar::-webkit-scrollbar{display:none}
         .filter-pill{background:none;border:none;padding:20px 20px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#AAAAAA;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;font-family:inherit}
@@ -225,6 +227,9 @@ export default function FAQPage() {
           .faq-inner{padding:56px 24px}
           .cta-wrap{padding:72px 24px}
         }
+        @media(max-width:768px){
+          .filter-bar-wrap::after{display:block}
+        }
       `}</style>
 
       <section className="page-hero">
@@ -234,16 +239,18 @@ export default function FAQPage() {
         <p className="hero-sub">Everything you need to know about working with Media Bar Productions — pricing, process, ownership, and more.</p>
       </section>
 
-      <div className="filter-bar">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            className={`filter-pill${activeCategory === cat ? ' active' : ''}`}
-            onClick={() => setActiveCategory(cat)}
-          >
-            {cat}
-          </button>
-        ))}
+      <div className="filter-bar-wrap">
+        <div className="filter-bar">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`filter-pill${activeCategory === cat ? ' active' : ''}`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="faq-wrap">

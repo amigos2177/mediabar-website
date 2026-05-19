@@ -1,10 +1,8 @@
+'use client'
+
+import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
-
-export const metadata = {
-  title: 'Video Production San Antonio | Media Bar Productions',
-  description: "San Antonio's award-winning video production company. 3 Emmy Awards, 15 Telly Awards, 13+ years. Corporate, commercial, event & medical video across Texas.",
-}
 
 const services = [
   { label: 'Corporate Video', href: '/video-production/corporate' },
@@ -26,10 +24,27 @@ const clients = [
 ]
 
 export default function HomePage() {
+  useEffect(() => {
+    const els = document.querySelectorAll<HTMLElement>('[data-reveal]')
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            ;(e.target as HTMLElement).classList.add('revealed')
+            obs.unobserve(e.target)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+    els.forEach((el) => obs.observe(el))
+    return () => obs.disconnect()
+  }, [])
+
   return (
     <Layout>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&family=DM+Sans:wght@400;600;700&display=swap');
 
         :root {
           --red: #CC0000;
@@ -40,10 +55,19 @@ export default function HomePage() {
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--black); color: #fff; font-family: 'DM Sans', system-ui, sans-serif; }
 
-        body { background: var(--black); color: #fff; font-family: system-ui, sans-serif; }
+        [data-reveal] {
+          opacity: 0;
+          transform: translateY(28px);
+          transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        [data-reveal].revealed {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-        /* ── HERO ── */
+        /* ─── HERO ─── */
         .hero {
           position: relative;
           height: 100vh;
@@ -74,7 +98,7 @@ export default function HomePage() {
         .hero-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.72) 100%);
+          background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.78) 100%);
         }
         .hero-content {
           position: relative;
@@ -84,16 +108,16 @@ export default function HomePage() {
         .hero-eyebrow {
           font-family: 'Playfair Display', Georgia, serif;
           font-style: italic;
-          font-size: clamp(22px, 3vw, 36px);
-          color: rgba(255,255,255,0.75);
-          letter-spacing: 0.03em;
-          margin-bottom: 4px;
+          font-size: clamp(22px, 3vw, 38px);
+          color: rgba(255,255,255,0.78);
+          letter-spacing: 0.04em;
+          margin-bottom: 6px;
         }
         .hero-headline {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(72px, 12vw, 148px);
+          font-size: clamp(74px, 11vw, 130px);
           line-height: 0.9;
-          letter-spacing: 0.02em;
+          letter-spacing: 0.04em;
           color: #fff;
           text-transform: uppercase;
         }
@@ -101,111 +125,123 @@ export default function HomePage() {
           display: flex;
           justify-content: center;
           gap: 12px;
-          margin-top: 32px;
+          margin-top: 36px;
           flex-wrap: wrap;
         }
         .hero-pill {
-          border: 1px solid rgba(255,255,255,0.25);
-          padding: 8px 20px;
-          font-size: 12px;
+          border: 1px solid rgba(255,255,255,0.22);
+          padding: 9px 22px;
+          font-size: 11px;
           font-weight: 600;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.85);
-          backdrop-filter: blur(4px);
+          color: rgba(255,255,255,0.82);
+          backdrop-filter: blur(6px);
+          background: rgba(0,0,0,0.18);
         }
         .hero-ctas {
           display: flex;
           justify-content: center;
           gap: 16px;
-          margin-top: 36px;
+          margin-top: 40px;
           flex-wrap: wrap;
         }
-        .btn-primary {
+        .btn-outline {
+          border: 1px solid rgba(255,255,255,0.42);
+          color: #fff;
+          text-decoration: none;
+          padding: 15px 38px;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          display: inline-block;
+          transition: border-color 0.15s, background 0.15s;
+        }
+        .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
+        .btn-red {
           background: var(--red);
           color: #fff;
           text-decoration: none;
-          padding: 14px 36px;
-          font-size: 12px;
+          padding: 15px 38px;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
           font-weight: 700;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.15em;
           text-transform: uppercase;
+          display: inline-block;
           transition: background 0.15s;
         }
-        .btn-primary:hover { background: #aa0000; }
-        .btn-outline {
-          border: 1px solid rgba(255,255,255,0.4);
-          color: #fff;
-          text-decoration: none;
-          padding: 14px 36px;
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          transition: border-color 0.15s, background 0.15s;
-        }
-        .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
+        .btn-red:hover { background: #aa0000; }
 
-        /* ── CLIENTS STRIP ── */
+        /* ─── CLIENTS STRIP ─── */
         .clients-strip {
           background: var(--dark);
-          border-top: 1px solid #1e1e1e;
-          border-bottom: 1px solid #1e1e1e;
-          padding: 28px 48px;
-          overflow: hidden;
+          border-top: 1px solid #1d1d1d;
+          border-bottom: 1px solid #1d1d1d;
+          padding: 32px 40px;
         }
         .clients-label {
           text-align: center;
           font-size: 10px;
           font-weight: 700;
-          letter-spacing: 0.18em;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: #444;
-          margin-bottom: 20px;
+          color: #3a3a3a;
+          margin-bottom: 22px;
         }
-        .clients-row {
-          display: flex;
-          justify-content: center;
+        .clients-grid {
+          display: grid;
+          grid-template-columns: repeat(10, 1fr);
           align-items: center;
-          flex-wrap: wrap;
-          gap: 0;
         }
         .client-name {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.14em;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 14px;
+          letter-spacing: 0.08em;
           text-transform: uppercase;
-          color: #555;
-          padding: 8px 28px;
-          border-right: 1px solid #222;
+          color: rgba(255,255,255,0.26);
+          text-align: center;
+          padding: 6px 8px;
+          border-right: 1px solid #1e1e1e;
           white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           transition: color 0.15s;
         }
         .client-name:last-child { border-right: none; }
-        .client-name:hover { color: #999; }
+        .client-name:hover { color: rgba(255,255,255,0.55); }
 
-        /* ── SERVICES GRID ── */
-        .section {
-          padding: 96px 48px;
-        }
-        .section-dark { background: var(--dark); }
+        /* ─── SHARED SECTION ─── */
+        .section { padding: 96px 48px; }
+        .section-dark  { background: var(--dark); }
         .section-dark2 { background: var(--dark2); }
-        .section-label {
+
+        .eyebrow {
           font-size: 10px;
           font-weight: 700;
-          letter-spacing: 0.18em;
+          letter-spacing: 0.22em;
           text-transform: uppercase;
           color: var(--red);
-          margin-bottom: 12px;
+          margin-bottom: 14px;
         }
         .section-title {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(42px, 6vw, 72px);
+          font-size: clamp(46px, 6vw, 78px);
           letter-spacing: 0.03em;
           color: #fff;
           line-height: 1;
           margin-bottom: 56px;
         }
+        .section-title em {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-style: italic;
+          font-size: 0.85em;
+          letter-spacing: 0.01em;
+        }
+
+        /* ─── SERVICES GRID ─── */
         .services-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -217,11 +253,11 @@ export default function HomePage() {
           padding: 32px 28px;
           text-decoration: none;
           border: 1px solid #1e1e1e;
-          transition: background 0.15s, border-color 0.15s;
           position: relative;
           overflow: hidden;
+          transition: background 0.15s, border-color 0.15s;
         }
-        .service-card::before {
+        .service-card::after {
           content: '';
           position: absolute;
           bottom: 0;
@@ -229,101 +265,151 @@ export default function HomePage() {
           width: 0;
           height: 2px;
           background: var(--red);
-          transition: width 0.25s;
+          transition: width 0.25s ease;
         }
         .service-card:hover { background: #1e1e1e; border-color: #2a2a2a; }
-        .service-card:hover::before { width: 100%; }
-        .service-card-num {
+        .service-card:hover::after { width: 100%; }
+        .service-num {
           font-size: 11px;
           font-weight: 700;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.14em;
           color: var(--red);
           margin-bottom: 12px;
         }
-        .service-card-title {
+        .service-title {
           font-family: 'Bebas Neue', Impact, sans-serif;
           font-size: 22px;
           letter-spacing: 0.05em;
           color: #fff;
         }
 
-        /* ── DEMO REEL ── */
+        /* ─── DEMO REEL ─── */
         .reel-wrap {
           position: relative;
           padding-bottom: 56.25%;
           height: 0;
           overflow: hidden;
-          max-width: 1100px;
-          margin: 0 auto;
+          width: 100%;
         }
         .reel-wrap iframe {
           position: absolute;
-          top: 0; left: 0;
-          width: 100%; height: 100%;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
           border: none;
         }
 
-        /* ── AWARDS ── */
+        /* ─── AWARDS ─── */
         .awards-grid {
           display: flex;
-          gap: 48px;
+          gap: 40px;
           justify-content: center;
           flex-wrap: wrap;
           margin-top: 56px;
         }
         .award-card {
           text-align: center;
-          padding: 40px 48px;
+          padding: 48px 56px;
           border: 1px solid #222;
           background: var(--dark2);
-          min-width: 200px;
+          min-width: 210px;
         }
         .award-count {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: 80px;
+          font-size: 96px;
           line-height: 1;
           color: var(--gold);
           letter-spacing: 0.02em;
         }
+        .award-count sup {
+          font-size: 0.44em;
+          vertical-align: super;
+          line-height: 0;
+        }
         .award-name {
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 700;
-          letter-spacing: 0.16em;
+          letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: #888;
-          margin-top: 8px;
+          color: #555;
+          margin-top: 10px;
         }
 
-        /* ── FINAL CTA ── */
+        /* ─── FINAL CTA ─── */
         .cta-section {
-          background: var(--red);
-          padding: 96px 48px;
+          background: var(--dark);
+          padding: 112px 48px;
           text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        .cta-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse 65% 85% at 50% 50%, rgba(204,0,0,0.16) 0%, transparent 68%);
+          pointer-events: none;
         }
         .cta-headline {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(48px, 7vw, 96px);
+          font-size: clamp(54px, 8vw, 108px);
           letter-spacing: 0.03em;
           color: #fff;
-          margin-bottom: 36px;
           line-height: 1;
+          margin-bottom: 20px;
+          position: relative;
         }
-        .btn-white {
-          background: #fff;
-          color: var(--red);
-          text-decoration: none;
-          padding: 16px 48px;
+        .cta-headline em {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-style: italic;
+          font-size: 0.85em;
+          letter-spacing: 0.01em;
+        }
+        .cta-sub {
+          font-size: 15px;
+          color: rgba(255,255,255,0.45);
+          letter-spacing: 0.03em;
+          margin-bottom: 44px;
+          position: relative;
+        }
+        .cta-actions {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 36px;
+          flex-wrap: wrap;
+          position: relative;
+        }
+        .cta-phone {
           font-size: 13px;
           font-weight: 700;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.14em;
           text-transform: uppercase;
-          display: inline-block;
-          transition: background 0.15s;
+          color: rgba(255,255,255,0.45);
+          text-decoration: none;
+          transition: color 0.15s;
         }
-        .btn-white:hover { background: rgba(255,255,255,0.88); }
+        .cta-phone:hover { color: #fff; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 960px) {
+          .clients-grid { grid-template-columns: repeat(5, 1fr); }
+          .client-name:nth-child(5n) { border-right: none; }
+          .client-name:nth-child(10) { border-right: none; }
+        }
+        @media (max-width: 600px) {
+          .section { padding: 64px 20px; }
+          .clients-strip { padding: 28px 16px; }
+          .clients-grid { grid-template-columns: repeat(2, 1fr); }
+          .client-name:nth-child(2n) { border-right: none; }
+          .client-name { font-size: 12px; }
+          .award-card { padding: 36px 28px; min-width: 160px; }
+          .award-count { font-size: 72px; }
+        }
       `}</style>
 
-      {/* ── HERO ── */}
+      {/* ─── 1. HERO ─── */}
       <section className="hero">
         <div className="hero-video-wrap">
           <iframe
@@ -342,40 +428,40 @@ export default function HomePage() {
             <span className="hero-pill">15 Telly Awards</span>
           </div>
           <div className="hero-ctas">
-            <Link href="/work" className="btn-primary">See Our Work</Link>
-            <Link href="/contact" className="btn-outline">Get a Quote</Link>
+            <Link href="/work" className="btn-outline">See Our Work</Link>
+            <Link href="/contact" className="btn-red">Get a Quote</Link>
           </div>
         </div>
       </section>
 
-      {/* ── CLIENTS STRIP ── */}
+      {/* ─── 2. CLIENTS STRIP ─── */}
       <div className="clients-strip">
-        <p className="clients-label">Trusted By</p>
-        <div className="clients-row">
+        <p className="clients-label">Trusted by Texas&rsquo;s Most Recognized Brands</p>
+        <div className="clients-grid">
           {clients.map((name) => (
             <span key={name} className="client-name">{name}</span>
           ))}
         </div>
       </div>
 
-      {/* ── SERVICES GRID ── */}
-      <section className="section section-dark">
-        <p className="section-label">What We Do</p>
-        <h2 className="section-title">Production Services</h2>
+      {/* ─── 3. SERVICES GRID ─── */}
+      <section className="section section-dark" data-reveal>
+        <p className="eyebrow">Our Services</p>
+        <h2 className="section-title">Full-Service <em>Video Production</em></h2>
         <div className="services-grid">
           {services.map((svc, i) => (
             <Link key={svc.href} href={svc.href} className="service-card">
-              <p className="service-card-num">{String(i + 1).padStart(2, '0')}</p>
-              <p className="service-card-title">{svc.label}</p>
+              <p className="service-num">{String(i + 1).padStart(2, '0')}</p>
+              <p className="service-title">{svc.label}</p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* ── DEMO REEL ── */}
-      <section className="section section-dark2" style={{ paddingBottom: '80px' }}>
-        <p className="section-label">Demo Reel</p>
-        <h2 className="section-title" style={{ marginBottom: '40px' }}>See The Work</h2>
+      {/* ─── 4. DEMO REEL ─── */}
+      <section className="section section-dark2" data-reveal>
+        <p className="eyebrow">Demo Reel</p>
+        <h2 className="section-title" style={{ marginBottom: '40px' }}>See <em>The Work</em></h2>
         <div className="reel-wrap">
           <iframe
             src="https://player.vimeo.com/video/1077104073?title=0&byline=0&portrait=0&color=CC0000"
@@ -386,10 +472,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── AWARDS ── */}
-      <section className="section section-dark" style={{ textAlign: 'center' }}>
-        <p className="section-label">Recognition</p>
-        <h2 className="section-title" style={{ marginBottom: 0 }}>Award-Winning Work</h2>
+      {/* ─── 5. AWARDS ─── */}
+      <section className="section section-dark" style={{ textAlign: 'center' }} data-reveal>
+        <p className="eyebrow">Recognition</p>
+        <h2 className="section-title" style={{ marginBottom: 0 }}>Award-Winning <em>Production</em></h2>
         <div className="awards-grid">
           <div className="award-card">
             <p className="award-count">3</p>
@@ -400,16 +486,20 @@ export default function HomePage() {
             <p className="award-name">Telly Awards</p>
           </div>
           <div className="award-card">
-            <p className="award-count">13<span style={{ fontSize: '48px' }}>+</span></p>
+            <p className="award-count">13<sup>+</sup></p>
             <p className="award-name">Years in Business</p>
           </div>
         </div>
       </section>
 
-      {/* ── FINAL CTA ── */}
-      <section className="cta-section">
-        <h2 className="cta-headline">Let's Make Something Great</h2>
-        <Link href="/contact" className="btn-white">Get a Quote</Link>
+      {/* ─── 6. FINAL CTA ─── */}
+      <section className="cta-section" data-reveal>
+        <h2 className="cta-headline">Let&rsquo;s Make <em>Something Great</em></h2>
+        <p className="cta-sub">Ready to tell your story? Let&rsquo;s build something memorable together.</p>
+        <div className="cta-actions">
+          <Link href="/contact" className="btn-red">Get a Quote</Link>
+          <a href="tel:2102799442" className="cta-phone">210-279-9442</a>
+        </div>
       </section>
     </Layout>
   )

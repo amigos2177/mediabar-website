@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Media Bar Productions | Video Production San Antonio',
+  title: 'Video Production San Antonio | Media Bar Productions',
   description: "San Antonio's award-winning video production company. 3 Emmy Awards, 15 Telly Awards, 13+ years producing corporate, commercial, and event video across Texas.",
 }
 

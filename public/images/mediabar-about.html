@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Media Bar Productions | San Antonio's Award-Winning Video Production Company</title>
+<meta name="description" content="Media Bar Productions is San Antonio's most decorated video production company. 3 Emmy Awards, 15 Telly Awards, 13+ years serving Texas businesses. Learn our story.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://player.vimeo.com/api/player.js" defer></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #CC0000;
+    --red-dark: #990000;
+    --gold: #C9A84C;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #181818;
+    --gray: #888888;
+    --light: #CCCCCC;
+    --white: #F5F5F5;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10,10,10,0.97);
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-logo img { height: 48px; width: auto; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--light); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a.active { color: var(--red); }
+  .nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 2px; }
+  .nav-cta:hover { background: var(--red-dark) !important; }
+
+  /* ── HERO ── */
+  .page-hero {
+    padding: 160px 48px 100px;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 0.5px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(204,0,0,0.06) 0%, transparent 70%);
+  }
+
+  .page-hero-bg-text {
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    font-family: var(--font-display);
+    font-size: 260px;
+    color: rgba(255,255,255,0.02);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .page-hero-container { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .breadcrumb { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 40px; font-size: 12px; color: var(--gray); }
+  .breadcrumb a { color: var(--gray); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--red); }
+  .breadcrumb span { color: rgba(255,255,255,0.2); }
+  .breadcrumb .current { color: var(--light); }
+
+  .hero-eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 24px; }
+  .eyebrow-line { width: 32px; height: 1px; background: var(--red); }
+  .eyebrow-text { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(60px, 9vw, 120px);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+  }
+
+  .hero-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--red);
+    font-size: 0.75em;
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--light);
+    line-height: 1.8;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-weight: 300;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    padding: 60px 48px;
+    background: var(--black);
+    border-bottom: 0.5px solid rgba(255,255,255,0.06);
+  }
+
+  .stats-bar-container { max-width: 1100px; margin: 0 auto; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .stat-card { background: var(--dark); padding: 32px 24px; text-align: center; transition: background 0.2s; }
+  .stat-card:hover { background: var(--dark2); }
+  .stat-num { font-family: var(--font-display); font-size: 52px; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-size: 12px; color: var(--gray); line-height: 1.5; }
+  .stat-label strong { display: block; color: var(--light); font-weight: 400; font-size: 13px; margin-bottom: 2px; }
+
+  /* ── STORY ── */
+  .story-section { padding: 120px 48px; background: var(--dark); border-bottom: 0.5px solid rgba(255,255,255,0.06); }
+  .story-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+
+  .section-label { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .section-label-line { width: 32px; height: 1px; background: var(--red); }
+  .section-label span { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); }
+
+  .section-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); line-height: 0.95; margin-bottom: 28px; }
+  .section-title em { font-family: var(--font-serif); font-style: italic; color: var(--red); }
+
+  .body-text { font-size: 15px; color: var(--gray); line-height: 1.9; margin-bottom: 20px; }
+
+  .pull-quote {
+    border-left: 2px solid var(--red);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--dark2);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .pull-quote p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  .pull-quote cite {
+    display: block;
+    font-size: 12px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 12px;
+    font-style: normal;
+  }
+
+  /* BTS image placeholder */
+  .bts-image-slot {
+    background: var(--dark2);
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--gray);
+    font-size: 13px;
+    text-align: center;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .bts-image-slot-icon { font-size: 32px; opacity: 0.4; }
+  .bts-image-slot-text { font-size: 12px; color: var(--gray); line-height: 1.5; }
+
+  .bts-image-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  /* ── BTS GRID ── */
+  .bts-section { padding: 100px 48px; background: var(--black); border-bottom: 0.5px solid rgba(255,255,255,0.06); }
+  .bts-container { max-width: 1100px; margin: 0 auto; }
+
+  .bts-header { text-align: center; margin-bottom: 56px; }
+
+  .bts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .bts-item {
+    background: var(--dark2);
+    border: 0.5px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 12px;
+    text-align: center;
+    padding: 16px;
+    position: relative;
+  }
+
+  .bts-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bts-item-large {
+    grid-column: span 2;
+    aspect-ratio: 16/9;
+  }
+
+  .bts-placeholder { display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0.4; }
+  .bts-placeholder span { font-size: 28px; }
+
+  /* ── AWARDS ── */
+  .awards-section { padding: 100px 48px; background: var(--dark); border-bottom: 0.5px solid rgba(255,255,255,0.06); }
+  .awards-container { max-width: 1100px; margin: 0 auto; }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 56px;
+    align-items: start;
+  }
+
+  .award-block {
+    background: var(--dark2);
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .award-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .award-icon { font-size: 40px; margin-bottom: 16px; display: block; }
+  .award-count { font-family: var(--font-display); font-size: 72px; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .award-name { font-family: var(--font-display); font-size: 28px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 16px; }
+  .award-desc { font-size: 14px; color: var(--gray); line-height: 1.8; }
+
+  .award-list { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .award-list-item { display: flex; align-items: flex-start; gap: 12px; }
+  .award-year { font-family: var(--font-display); font-size: 18px; color: var(--gold); flex-shrink: 0; width: 48px; }
+  .award-detail { font-size: 13px; color: var(--light); line-height: 1.5; }
+  .award-detail span { display: block; font-size: 12px; color: var(--gray); }
+
+  /* ── VALUES ── */
+  .values-section { padding: 100px 48px; background: var(--black); border-bottom: 0.5px solid rgba(255,255,255,0.06); }
+  .values-container { max-width: 1100px; margin: 0 auto; }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 56px;
+  }
+
+  .value-card { background: var(--dark); padding: 40px 32px; transition: background 0.2s; position: relative; overflow: hidden; }
+  .value-card:hover { background: var(--dark2); }
+  .value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .value-card:hover::before { transform: scaleX(1); }
+  .value-icon { font-size: 32px; margin-bottom: 20px; display: block; }
+  .value-title { font-family: var(--font-display); font-size: 24px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 12px; }
+  .value-desc { font-size: 13px; color: var(--gray); line-height: 1.8; }
+
+  /* ── CLIENTS STRIP ── */
+  .clients-section { padding: 80px 48px; background: var(--dark); border-bottom: 0.5px solid rgba(255,255,255,0.06); }
+  .clients-container { max-width: 1100px; margin: 0 auto; }
+  .clients-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gray); margin-bottom: 40px; text-align: center; }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .client-item { background: var(--dark2); padding: 24px 16px; text-align: center; transition: background 0.2s; }
+  .client-item:hover { background: var(--black); }
+  .client-name-display { font-family: var(--font-display); font-size: 16px; letter-spacing: 0.06em; color: rgba(255,255,255,0.3); transition: color 0.2s; }
+  .client-item:hover .client-name-display { color: rgba(255,255,255,0.7); }
+
+  /* ── CTA ── */
+  .cta-section { padding: 120px 48px; background: var(--dark2); text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--red), transparent); }
+  .cta-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(204,0,0,0.06) 0%, transparent 70%); }
+  .cta-container { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+  .cta-title { font-family: var(--font-display); font-size: clamp(48px, 6vw, 80px); line-height: 0.95; margin-bottom: 20px; }
+  .cta-title em { font-family: var(--font-serif); font-style: italic; color: var(--red); font-size: 0.85em; }
+  .cta-sub { font-size: 16px; color: var(--gray); line-height: 1.7; margin-bottom: 44px; }
+  .cta-actions { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+
+  .btn-primary { background: var(--red); color: var(--white); padding: 16px 36px; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s, transform 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  .btn-ghost { color: var(--light); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+  .btn-ghost:hover { color: var(--white); }
+  .btn-ghost::after { content: '→'; transition: transform 0.2s; }
+  .btn-ghost:hover::after { transform: translateX(4px); }
+
+  .cta-phone { font-family: var(--font-display); font-size: 26px; letter-spacing: 0.05em; color: var(--white); text-decoration: none; transition: color 0.2s; }
+  .cta-phone:hover { color: var(--red); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--black); padding: 60px 48px 40px; border-top: 0.5px solid rgba(255,255,255,0.06); }
+  .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-brand img { height: 56px; width: auto; display: block; margin-bottom: 12px; }
+  .footer-tagline { font-family: var(--font-serif); font-style: italic; font-size: 13px; color: var(--gray); margin-bottom: 20px; }
+  .footer-contact { font-size: 13px; color: var(--gray); line-height: 2; }
+  .footer-contact a { color: var(--gray); text-decoration: none; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--red); }
+  .footer-col h4 { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); margin-bottom: 20px; font-weight: 500; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { font-size: 13px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding-top: 32px; border-top: 0.5px solid rgba(255,255,255,0.06); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+  .footer-awards { font-size: 11px; color: var(--gold); letter-spacing: 0.08em; }
+
+  /* ── ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="mediabar-logo-transparent.png" alt="Media Bar Productions">
+  </a>
+  <ul class="nav-links">
+    <li><a href="/video-production">Services</a></li>
+    <li><a href="/work">Our Work</a></li>
+    <li><a href="/about" class="active">About</a></li>
+    <li><a href="/studio">Studio</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="page-hero">
+  <div class="page-hero-bg-text">MEDIA BAR</div>
+  <div class="page-hero-container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <span class="current">About Us</span>
+    </div>
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">San Antonio's Award-Winning Production Company</span>
+      <div class="eyebrow-line"></div>
+    </div>
+    <h1 class="hero-title">
+      <em>About</em>
+      MEDIA BAR<br>PRODUCTIONS
+    </h1>
+    <p class="hero-sub">
+      13 years. 3 Emmy Awards. 15 Telly Awards. Hundreds of videos for 
+      some of Texas's most recognized brands. We started in San Antonio 
+      and we're still here — because this city is worth showing up for.
+    </p>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<section class="stats-bar">
+  <div class="stats-bar-container">
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <div class="stat-num">13+</div>
+        <div class="stat-label"><strong>Years in Business</strong>San Antonio based since day one</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label"><strong>Emmy Awards</strong>Lone Star Region</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">15</div>
+        <div class="stat-label"><strong>Telly Awards</strong>National recognition</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">500+</div>
+        <div class="stat-label"><strong>Videos Produced</strong>For brands across Texas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-label"><strong>Production Studios</strong>In San Antonio</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORY ── -->
+<section class="story-section">
+  <div class="story-container">
+    <div class="reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span>Our Story</span>
+      </div>
+      <h2 class="section-title">BUILT IN<br>SAN ANTONIO.<br><em>For San Antonio.</em></h2>
+
+      <div class="pull-quote">
+        <p>"Your Vision Served Daily."</p>
+        <cite>— Media Bar Productions, Founder</cite>
+      </div>
+
+      <p class="body-text">
+        Media Bar Productions was founded over 13 years ago with a simple 
+        belief: San Antonio businesses deserved access to the same level 
+        of video production quality that national brands in major markets 
+        took for granted. Not overpriced agency work. Not cut-rate production 
+        that made companies look small. Real broadcast-quality video, produced 
+        by a team that genuinely cared about the outcome.
+      </p>
+      <p class="body-text">
+        What started as a focused video production operation has grown into 
+        one of San Antonio's most decorated production companies — 3 Emmy 
+        Awards, 15 Telly Awards, and a client list that includes the San 
+        Antonio Spurs, HEB, Unilever, Frost Bank, and hundreds of businesses 
+        across Texas who trusted us to represent their brand on screen.
+      </p>
+      <p class="body-text">
+        We're still based in San Antonio. We still believe the work speaks 
+        for itself. And we still approach every project — from a 30-second 
+        social media clip to a full national commercial — with the same 
+        level of commitment we brought to our very first shoot.
+      </p>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <img src="bts-10.jpg" alt="Media Bar Productions on set — multi-camera interview production" style="width:100%;border-radius:4px;margin-bottom:16px;object-fit:cover;max-height:340px;">
+      <img src="bts-3.jpg" alt="Media Bar Productions on location — F1 paddock shoot" style="width:100%;border-radius:4px;object-fit:cover;max-height:240px;">
+    </div>
+  </div>
+</section>
+
+<!-- ── BTS GRID ── -->
+<section class="bts-section">
+  <div class="bts-container">
+    <div class="bts-header reveal">
+      <div class="section-label" style="justify-content:center;margin-bottom:16px">
+        <div class="section-label-line"></div>
+        <span>Behind the Scenes</span>
+        <div class="section-label-line"></div>
+      </div>
+      <h2 class="section-title" style="text-align:center;font-family:var(--font-display);font-size:clamp(36px,5vw,60px);line-height:0.95">ON SET WITH<br><span style="font-family:var(--font-serif);font-style:italic;color:var(--red)">Media Bar</span></h2>
+    </div>
+
+    <!-- BTS photo grid -->
+    <div class="bts-grid reveal">
+      <div class="bts-item bts-item-large">
+        <img src="bts-1.jpg" alt="Media Bar Productions — interview production set">
+      </div>
+      <div class="bts-item">
+        <img src="bts-9.jpg" alt="Media Bar Productions — camera operator on location">
+      </div>
+      <div class="bts-item">
+        <img src="bts-2.jpg" alt="Media Bar Productions — on location shoot with teleprompter">
+      </div>
+      <div class="bts-item">
+        <img src="bts-5.jpg" alt="Media Bar Productions — shooting at San Antonio missions">
+      </div>
+      <div class="bts-item bts-item-large">
+        <img src="bts-7.jpg" alt="Media Bar Productions — interview production setup">
+      </div>
+      <div class="bts-item">
+        <img src="bts-8.jpg" alt="Media Bar Productions — Steadicam operator with longhorn in San Antonio">
+      </div>
+      <div class="bts-item">
+        <img src="bts-6.jpg" alt="Media Bar Productions — studio shoot with monitor">
+      </div>
+      <div class="bts-item">
+        <img src="bts-4.jpg" alt="Media Bar Productions team — Emmy Award at AT&T Stadium">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCAL PHILOSOPHY ── -->
+<section style="padding:100px 48px;background:var(--dark);border-top:0.5px solid rgba(255,255,255,0.06);border-bottom:0.5px solid rgba(255,255,255,0.06);">
+  <div style="max-width:1100px;margin:0 auto;">
+
+    <div class="reveal" style="text-align:center;margin-bottom:56px;">
+      <div class="section-label" style="justify-content:center;margin-bottom:16px;">
+        <div class="section-label-line"></div>
+        <span>Why It Matters</span>
+        <div class="section-label-line"></div>
+      </div>
+      <h2 class="section-title" style="text-align:center;font-family:var(--font-display);font-size:clamp(36px,5vw,60px);line-height:0.95;">KEEP VIDEO PRODUCTION<br><span style="font-family:var(--font-serif);font-style:italic;color:var(--red)">In San Antonio</span></h2>
+      <p class="body-text" style="max-width:640px;margin:20px auto 0;text-align:center;">
+        When you hire a local video production company, you're not just getting a video. 
+        You're investing in your city, supporting local jobs, and working with a team 
+        that knows San Antonio — its people, its culture, its story. That matters to us, 
+        and we believe it matters to the quality of the work we produce together.
+      </p>
+    </div>
+
+    <!-- Main YouTube video -->
+    <div class="reveal" style="margin-bottom:48px;">
+      <div style="position:relative;padding:56.25% 0 0 0;border-radius:4px;overflow:hidden;background:var(--dark2);border:0.5px solid rgba(255,255,255,0.08);">
+        <iframe
+          src="https://www.youtube.com/embed/tXBiLbTVdlM?rel=0&modestbranding=1"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+          title="Keep Video Production in San Antonio — Media Bar Productions">
+        </iframe>
+      </div>
+      <p style="font-size:13px;color:var(--gray);margin-top:12px;text-align:center;font-style:italic;">Why hiring local matters — our founder shares his perspective on keeping production in San Antonio.</p>
+    </div>
+
+    <!-- YouTube Shorts — vertical grid -->
+    <div class="reveal">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+        <div class="section-label-line"></div>
+        <span style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--red);">From Our Socials</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+        <div style="position:relative;padding:177.78% 0 0 0;border-radius:4px;overflow:hidden;background:var(--dark2);border:0.5px solid rgba(255,255,255,0.08);">
+          <iframe
+            src="https://www.youtube.com/embed/rTryVvnMkqQ?rel=0&modestbranding=1"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+            title="Media Bar Productions Short 1">
+          </iframe>
+        </div>
+        <div style="position:relative;padding:177.78% 0 0 0;border-radius:4px;overflow:hidden;background:var(--dark2);border:0.5px solid rgba(255,255,255,0.08);">
+          <iframe
+            src="https://www.youtube.com/embed/LJJ8lM8YEiE?rel=0&modestbranding=1"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+            title="Media Bar Productions Short 2">
+          </iframe>
+        </div>
+        <div style="position:relative;padding:177.78% 0 0 0;border-radius:4px;overflow:hidden;background:var(--dark2);border:0.5px solid rgba(255,255,255,0.08);">
+          <iframe
+            src="https://www.youtube.com/embed/ztFZpLsD14Y?rel=0&modestbranding=1"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+            title="Media Bar Productions Short 3">
+          </iframe>
+        </div>
+        <div style="position:relative;padding:177.78% 0 0 0;border-radius:4px;overflow:hidden;background:var(--dark2);border:0.5px solid rgba(255,255,255,0.08);">
+          <iframe
+            src="https://www.youtube.com/embed/GxYp6HCVKIw?rel=0&modestbranding=1"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+            title="Media Bar Productions Short 4">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AWARDS ── -->
+<section class="awards-section">
+  <div class="awards-container">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center;margin-bottom:16px">
+        <div class="section-label-line"></div>
+        <span>Recognition</span>
+        <div class="section-label-line"></div>
+      </div>
+      <h2 class="section-title" style="text-align:center;font-family:var(--font-display);font-size:clamp(36px,5vw,60px);line-height:0.95">AWARD-WINNING<br><span style="font-family:var(--font-serif);font-style:italic;color:var(--red)">Production</span></h2>
+      <p class="body-text" style="max-width:560px;margin:16px auto 0;text-align:center">
+        Our awards aren't trophies on a shelf. They're proof that the work we produce 
+        is held to broadcast television standards — on every project, for every client.
+      </p>
+    </div>
+
+    <div class="awards-grid">
+      <div class="award-block reveal">
+        <span class="award-icon">🏆</span>
+        <div class="award-count">3</div>
+        <div class="award-name">Emmy Awards</div>
+        <p class="award-desc">
+          The Emmy Award is the highest honor in television production. 
+          Winning three from the Lone Star Emmy chapter places Media Bar 
+          among the elite production companies in Texas — and means 
+          every client benefits from that broadcast standard on their project.
+        </p>
+        <div class="award-list">
+          <div class="award-list-item">
+            <div class="award-year">⭐</div>
+            <div class="award-detail">Lone Star Emmy Award<span>Outstanding Achievement in Video Production</span></div>
+          </div>
+          <div class="award-list-item">
+            <div class="award-year">⭐</div>
+            <div class="award-detail">Lone Star Emmy Award<span>Outstanding Achievement in Video Production</span></div>
+          </div>
+          <div class="award-list-item">
+            <div class="award-year">⭐</div>
+            <div class="award-detail">Lone Star Emmy Award<span>Outstanding Achievement in Video Production</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-block reveal reveal-delay-1">
+        <span class="award-icon">🥇</span>
+        <div class="award-count">15</div>
+        <div class="award-name">Telly Awards</div>
+        <p class="award-desc">
+          The Telly Awards are the premier award honoring video and television 
+          content across all screens. 15 Telly Awards spanning commercials, 
+          corporate video, non-profit work, and branded content — recognized 
+          by judges who include executives from the world's top production companies.
+        </p>
+        <div class="award-list">
+          <div class="award-list-item">
+            <div class="award-year">🥇</div>
+            <div class="award-detail">Telly Award — Gold<span>Television Commercial Production</span></div>
+          </div>
+          <div class="award-list-item">
+            <div class="award-year">🥇</div>
+            <div class="award-detail">Telly Award — Gold<span>Corporate Video Production</span></div>
+          </div>
+          <div class="award-list-item">
+            <div class="award-year">🥇</div>
+            <div class="award-detail">Telly Award — Silver<span>Non-Profit Video Production</span></div>
+          </div>
+          <div class="award-list-item">
+            <div class="award-year">🥇</div>
+            <div class="award-detail">Telly Award — Bronze<span>Branded Content</span></div>
+          </div>
+          <div class="award-list-item">
+            <div class="award-year">+11</div>
+            <div class="award-detail">Additional Telly Awards<span>Across multiple categories and years</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUES ── -->
+<section class="values-section">
+  <div class="values-container">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center;margin-bottom:16px">
+        <div class="section-label-line"></div>
+        <span>How We Work</span>
+        <div class="section-label-line"></div>
+      </div>
+      <h2 class="section-title" style="text-align:center;font-family:var(--font-display);font-size:clamp(36px,5vw,60px);line-height:0.95">WHAT WE<br><span style="font-family:var(--font-serif);font-style:italic;color:var(--red)">Believe In</span></h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <span class="value-icon">🎯</span>
+        <div class="value-title">The Work First</div>
+        <p class="value-desc">Every decision we make — camera, lighting, edit, music — is in service of making the work better. Not faster. Not cheaper. Better. The clients who work with us long-term understand that distinction.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <span class="value-icon">🤝</span>
+        <div class="value-title">Your Footage Belongs to You</div>
+        <p class="value-desc">We believe the footage we film for you belongs to you — not us. Every raw file from every project is delivered to you at close. No licensing, no storage fees, no conditions. It's yours.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <span class="value-icon">📞</span>
+        <div class="value-title">We're Always Available</div>
+        <p class="value-desc">You should be able to call or email at any stage of a project and get a real answer from a real person. No runaround, no waiting for a project manager to relay a message. Direct access, always.</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-icon">💡</span>
+        <div class="value-title">Honest Pricing</div>
+        <p class="value-desc">We quote projects clearly and completely upfront. No hidden fees, no scope creep surprises, no billing for things we didn't agree to. What we quote is what you pay — unless you change the scope.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <span class="value-icon">🏆</span>
+        <div class="value-title">Broadcast Standards, Every Time</div>
+        <p class="value-desc">Three Emmy Awards aren't something you win by doing work that's "pretty good." The standard we hold ourselves to on every project is the same one that earns broadcast industry recognition.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <span class="value-icon">🌆</span>
+        <div class="value-title">San Antonio Is Home</div>
+        <p class="value-desc">We've been part of this city for over 13 years. We've watched it grow, worked with the businesses that define it, and we're deeply invested in its continued success. This isn't just where we work — it's home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLIENTS ── -->
+<section class="clients-section">
+  <div class="clients-container">
+    <p class="clients-label reveal">Some of the brands we've had the privilege of working with</p>
+    <div class="clients-grid reveal">
+      <div class="client-item"><div class="client-name-display">San Antonio Spurs</div></div>
+      <div class="client-item"><div class="client-name-display">HEB</div></div>
+      <div class="client-item"><div class="client-name-display">Unilever</div></div>
+      <div class="client-item"><div class="client-name-display">Frost Bank</div></div>
+      <div class="client-item"><div class="client-name-display">Texas Tech</div></div>
+      <div class="client-item"><div class="client-name-display">Baker Hughes</div></div>
+      <div class="client-item"><div class="client-name-display">Kia</div></div>
+      <div class="client-item"><div class="client-name-display">Bass Pro Shops</div></div>
+      <div class="client-item"><div class="client-name-display">Kiolbassa</div></div>
+      <div class="client-item"><div class="client-name-display">Blue Moon</div></div>
+      <div class="client-item"><div class="client-name-display">Carrier</div></div>
+      <div class="client-item"><div class="client-name-display">United Health</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-container">
+    <h2 class="cta-title reveal">
+      LET'S MAKE<br><em>Something Great</em>
+    </h2>
+    <p class="cta-sub reveal">
+      13 years in, we're still as excited about a great project as we 
+      were on day one. Tell us what you're working on.
+    </p>
+    <div class="cta-actions reveal">
+      <a href="/contact" class="btn-primary">Start a Project</a>
+      <a href="tel:2102799442" class="cta-phone">210-279-9442</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="mediabar-logo-transparent.png" alt="Media Bar Productions">
+      <div class="footer-tagline">"Your Vision Served Daily."</div>
+      <div class="footer-contact">
+        <a href="tel:2102799442">210-279-9442</a><br>
+        <a href="mailto:contact@mediabarproductions.com">contact@mediabarproductions.com</a><br>
+        8610 N New Braunfels, Suite 704<br>
+        San Antonio, Texas 78217
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/video-production/corporate">Corporate Video</a></li>
+        <li><a href="/video-production/commercials">TV Commercials</a></li>
+        <li><a href="/video-production/events">Events</a></li>
+        <li><a href="/video-production/medical">Medical Video</a></li>
+        <li><a href="/video-production/aerial">Aerial & Drone</a></li>
+        <li><a href="/video-production/motion-graphics">Motion Graphics</a></li>
+        <li><a href="/video-production/food">Food Video</a></li>
+        <li><a href="/video-production/real-estate">Real Estate</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/about/awards">Our Awards</a></li>
+        <li><a href="/clients">Our Clients</a></li>
+        <li><a href="/studio">Production Studio</a></li>
+        <li><a href="/work">Portfolio</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>We Serve</h4>
+      <ul>
+        <li><a href="/locations/san-antonio">San Antonio</a></li>
+        <li><a href="/locations/austin">Austin</a></li>
+        <li><a href="/locations/dallas">Dallas-Fort Worth</a></li>
+        <li><a href="/locations/houston">Houston</a></li>
+        <li><a href="/locations/texas">All of Texas</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Media Bar Productions, LLC · The Creative Agenda LLC · All Rights Reserved</div>
+    <div class="footer-awards">⭐ 3 Emmy Awards &nbsp;·&nbsp; 15 Telly Awards</div>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

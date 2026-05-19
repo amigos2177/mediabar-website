@@ -19,8 +19,16 @@ const services = [
 ]
 
 const clients = [
-  'San Antonio Spurs', 'HEB', 'Unilever', 'Frost Bank',
-  'Texas Tech', 'Baker Hughes', 'Kia', 'Bass Pro', 'Carrier', 'Blue Moon',
+  { name: 'San Antonio Spurs', logo: '/images/client-spurs.png' },
+  { name: 'HEB',               logo: '/images/client-heb.png' },
+  { name: 'Unilever',          logo: '/images/client-unilever.png' },
+  { name: 'Frost Bank',        logo: '/images/client-frost.png' },
+  { name: 'Texas Tech',        logo: '/images/client-texas-tech.png' },
+  { name: 'Baker Hughes',      logo: null },
+  { name: 'Kia',               logo: null },
+  { name: 'Bass Pro Shops',    logo: '/images/client-bass-pro.png' },
+  { name: 'Carrier',           logo: '/images/client-carrier.png' },
+  { name: 'Blue Moon',         logo: '/images/client-blue-moon.png' },
 ]
 
 export default function HomePage() {
@@ -196,22 +204,37 @@ export default function HomePage() {
           grid-template-columns: repeat(10, 1fr);
           align-items: center;
         }
-        .client-name {
+        .client-cell {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 60px;
+          padding: 6px 12px;
+          border-right: 1px solid #1e1e1e;
+        }
+        .client-cell:last-child { border-right: none; }
+        .client-cell img {
+          max-height: 40px;
+          max-width: 100%;
+          width: auto;
+          object-fit: contain;
+          filter: grayscale(100%) brightness(0.6);
+          transition: filter 0.2s;
+        }
+        .client-cell img:hover { filter: grayscale(0%) brightness(1); }
+        .client-text {
           font-family: 'Bebas Neue', Impact, sans-serif;
           font-size: 14px;
           letter-spacing: 0.08em;
           text-transform: uppercase;
           color: rgba(255,255,255,0.26);
           text-align: center;
-          padding: 6px 8px;
-          border-right: 1px solid #1e1e1e;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
           transition: color 0.15s;
         }
-        .client-name:last-child { border-right: none; }
-        .client-name:hover { color: rgba(255,255,255,0.55); }
+        .client-cell:hover .client-text { color: rgba(255,255,255,0.55); }
 
         /* ─── SHARED SECTION ─── */
         .section { padding: 96px 48px; }
@@ -392,15 +415,16 @@ export default function HomePage() {
         /* ─── RESPONSIVE ─── */
         @media (max-width: 960px) {
           .clients-grid { grid-template-columns: repeat(5, 1fr); }
-          .client-name:nth-child(5n) { border-right: none; }
-          .client-name:nth-child(10) { border-right: none; }
+          .client-cell:nth-child(5n) { border-right: none; }
+          .client-cell:nth-child(10) { border-right: none; }
         }
         @media (max-width: 600px) {
           .section { padding: 64px 20px; }
           .clients-strip { padding: 28px 16px; }
           .clients-grid { grid-template-columns: repeat(2, 1fr); }
-          .client-name:nth-child(2n) { border-right: none; }
-          .client-name { font-size: 12px; }
+          .client-cell:nth-child(2n) { border-right: none; }
+          .client-cell img { max-height: 28px; }
+          .client-text { font-size: 12px; }
           .award-card { padding: 36px 28px; min-width: 160px; }
           .award-count { font-size: 72px; }
         }
@@ -435,8 +459,13 @@ export default function HomePage() {
       <div className="clients-strip">
         <p className="clients-label">Trusted by Texas&rsquo;s Most Recognized Brands</p>
         <div className="clients-grid">
-          {clients.map((name) => (
-            <span key={name} className="client-name">{name}</span>
+          {clients.map((client) => (
+            <div key={client.name} className="client-cell">
+              {client.logo
+                ? <img src={client.logo} alt={client.name} />
+                : <span className="client-text">{client.name}</span>
+              }
+            </div>
           ))}
         </div>
       </div>

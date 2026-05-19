@@ -19,8 +19,7 @@ const clients = [
   { name: 'Unilever', src: '/images/client-unilever.png' },
   { name: 'Frost Bank', src: '/images/client-frost.png' },
   { name: 'Bass Pro Shops', src: '/images/client-bass-pro.png' },
-  { name: 'Blue Moon', src: '/images/client-blue-moon.png' },
-  { name: 'Carrier', src: '/images/client-carrier.png' },
+  { name: 'Kiolbassa', src: '/images/client-kiolbassa.png' },
 ]
 
 export default function AboutPage() {
@@ -80,7 +79,7 @@ export default function AboutPage() {
 
         .clients-strip{background:var(--black);border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:48px 64px}
         .clients-label{text-align:center;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#333;margin-bottom:28px}
-        .clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1100px;margin:0 auto}
+        .clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:900px;margin:0 auto}
         .client-logo-card{background:var(--dark2);border:1px solid #1e1e1e;padding:36px 28px;display:flex;align-items:center;justify-content:center;transition:border-color .2s}.client-logo-card:hover{border-color:#444}
         .client-logo-card img{max-height:80px;width:auto;max-width:100%;filter:grayscale(1) brightness(.7);transition:filter .2s;object-fit:contain}
         .client-logo-card:hover img{filter:grayscale(0) brightness(1)}
@@ -101,7 +100,7 @@ export default function AboutPage() {
           .values-grid{grid-template-columns:1fr 1fr}
           .section,.values-inner{padding:64px 24px}
           .clients-strip{padding:32px 24px}
-          .clients-grid{grid-template-columns:repeat(2,1fr)}
+          .clients-grid{grid-template-columns:repeat(2,1fr);max-width:100%}
           .cta-wrap{padding:72px 24px}
           .bts-section{padding:48px 24px}
         }

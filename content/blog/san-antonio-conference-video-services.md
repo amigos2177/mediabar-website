@@ -5,6 +5,7 @@ date: "2024-09-23"
 excerpt: "Are you planning a conference in the heart of Texas? Look no further than San Antonio for top-notch conference video production services. With its vibrant"
 legacyId: 40
 legacyUrl: "/News/Get/40/capture-your-conference-san-antonios-best-con"
+featuredImage: /images/blog/san-antonio-conference-video-services.png
 ---
 
 ### Conference Video Production Services in San Antonio

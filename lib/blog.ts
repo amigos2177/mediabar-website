@@ -13,6 +13,7 @@ export type Post = {
   legacyId: number
   legacyUrl: string
   content: string
+  featuredImage?: string
 }
 
 function parseFile(file: string): Post {
@@ -26,6 +27,7 @@ function parseFile(file: string): Post {
     legacyId: data.legacyId as number,
     legacyUrl: data.legacyUrl as string,
     content: marked.parse(content) as string,
+    featuredImage: data.featuredImage as string | undefined,
   }
 }
 

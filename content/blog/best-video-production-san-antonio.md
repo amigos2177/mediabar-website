@@ -5,6 +5,7 @@ date: "2024-10-21"
 excerpt: "Looking for a way to make your business stand"
 legacyId: 43
 legacyUrl: "/News/Get/43/unlock-your-brands-potential-with-the-best-vi"
+featuredImage: /images/blog/best-video-production-san-antonio.png
 ---
 
 [Watch on YouTube](https://www.youtube.com/watch?v=ZsydgRx2kEE)

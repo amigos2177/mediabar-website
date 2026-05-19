@@ -5,6 +5,7 @@ date: "2023-09-26"
 excerpt: "In today's fast-paced, digitally-driven world, visual communication has ascended to the forefront of how businesses reach, engage, and influence their"
 legacyId: 34
 legacyUrl: "/News/Get/34/the-importance-of-corporate-video-production"
+featuredImage: /images/blog/importance-of-corporate-video-production.png
 ---
 
 By Ruben Garcia: Owner, Media Bar Productions, San Antonio, Texas

@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug)
   if (!post) return {}
   const canonical = `https://www.mediabarproductions.com/blog/${slug}`
+  const ogImage = post.featuredImage
+    ? `https://www.mediabarproductions.com${post.featuredImage}`
+    : undefined
   return {
     title: `${post.title} | Media Bar Productions`,
     description: post.excerpt,
@@ -28,8 +31,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.date,
       url: canonical,
+      ...(ogImage && { images: [{ url: ogImage, width: 1600, height: 900, alt: post.title }] }),
     },
-    twitter: { card: 'summary_large_image', title: post.title, description: post.excerpt },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      ...(ogImage && { images: [ogImage] }),
+    },
     alternates: { canonical },
   }
 }

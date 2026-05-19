@@ -5,6 +5,7 @@ date: "2023-09-27"
 excerpt: "Showcasing San Antonio's Video Production Talent: Why Local Companies Are the Way to"
 legacyId: 37
 legacyUrl: "/News/Get/37/showcasing-san-antonios-video-production-tale"
+featuredImage: /images/blog/san-antonio-video-production-talent-local-companies.png
 ---
 
 ******Showcasing San Antonio's Video Production Talent: Why Local Companies Are the Way to Go**

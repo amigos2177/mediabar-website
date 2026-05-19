@@ -5,6 +5,7 @@ date: "2024-10-21"
 excerpt: "Why Video is Key in the Age of AI and"
 legacyId: 41
 legacyUrl: "/News/Get/41/stay-ahead-in-the-ai-era-boost-your-seo-with"
+featuredImage: /images/blog/boost-seo-with-video-production-ai-era.png
 ---
 
 [Watch on YouTube](https://www.youtube.com/watch?v=e4OwvPg5ftM)

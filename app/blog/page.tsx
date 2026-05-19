@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Layout from '../../components/Layout'
 import { getAllPosts } from '../../lib/blog'
 
@@ -67,7 +68,7 @@ export default function BlogPage() {
         .bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
         .bl-card{background:var(--dark2);border:1px solid #1e1e1e;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s}
         .bl-card:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 0 24px rgba(204,0,0,.15)}
-        .bl-card-thumb{height:160px;background:linear-gradient(135deg,#0d1520 0%,#0a0a0a 100%);border-bottom:2px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .bl-card-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#0d1520 0%,#0a0a0a 100%);border-bottom:2px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden}
         .bl-card-logo{font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.2em;color:rgba(255,255,255,.08);text-transform:uppercase}
         .bl-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
         .bl-card-date{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
@@ -113,8 +114,18 @@ export default function BlogPage() {
           <div className="bl-grid">
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="bl-card">
-                <div className="bl-card-thumb" aria-hidden="true">
-                  <span className="bl-card-logo">MB</span>
+                <div className="bl-card-thumb">
+                  {post.featuredImage ? (
+                    <Image
+                      src={post.featuredImage}
+                      alt={post.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <span className="bl-card-logo" aria-hidden="true">MB</span>
+                  )}
                 </div>
                 <div className="bl-card-body">
                   <p className="bl-card-date">{formatDate(post.date)}</p>

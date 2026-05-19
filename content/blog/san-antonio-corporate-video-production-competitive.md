@@ -5,6 +5,7 @@ date: "2024-10-21"
 excerpt: "In today's fast-paced digital world, San Antonio businesses must keep up with the latest trends to stay ahead of their competition. One of the most effective"
 legacyId: 44
 legacyUrl: "/News/Get/44/why-san-antonio-businesses-need-corporate-vid"
+featuredImage: /images/blog/san-antonio-corporate-video-production-competitive.png
 ---
 
 [Watch on YouTube](https://www.youtube.com/watch?v=n1oA510Cj-g)

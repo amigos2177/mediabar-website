@@ -5,6 +5,7 @@ date: "2025-07-08"
 excerpt: "In a city as rich in talent as San Antonio, it's time to stop outsourcing creativity and start recognizing the professionals right here at home. From"
 legacyId: 45
 legacyUrl: "/News/Get/45/why-keeping-creative-in-san-antonio-matters-n"
+featuredImage: /images/blog/keeping-creative-in-san-antonio.png
 ---
 
 [Watch on YouTube](https://www.youtube.com/watch?v=tXBiLbTVdlM)

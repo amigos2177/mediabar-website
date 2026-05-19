@@ -5,6 +5,7 @@ date: "2024-10-21"
 excerpt: "Want to make your brand stand out, no matter where your business is located? Video is the"
 legacyId: 42
 legacyUrl: "/News/Get/42/elevate-your-brand-with-expert-video-producti"
+featuredImage: /images/blog/elevate-your-brand-with-expert-video-production.png
 ---
 
 [Watch on YouTube](https://www.youtube.com/watch?v=I_rg8iAPByc)

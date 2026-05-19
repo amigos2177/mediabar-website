@@ -5,6 +5,7 @@ date: "2023-09-27"
 excerpt: "How Hiring Local Video Production Companies Can Boost Your San Antonio BusinessBy Ruben Garcia, Owner of Media Bar"
 legacyId: 36
 legacyUrl: "/News/Get/36/how-hiring-local-video-production-companies-c"
+featuredImage: /images/blog/hire-local-video-production-companies-san-antonio.png
 ---
 
 How Hiring Local Video Production Companies Can Boost Your San Antonio Business

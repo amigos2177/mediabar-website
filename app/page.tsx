@@ -24,8 +24,6 @@ const clients = [
   { name: 'Unilever',          logo: '/images/client-unilever.png' },
   { name: 'Frost Bank',        logo: '/images/client-frost.png' },
   { name: 'Texas Tech',        logo: '/images/client-texas-tech.png' },
-  { name: 'Baker Hughes',      logo: null },
-  { name: 'Kia',               logo: null },
   { name: 'Bass Pro Shops',    logo: '/images/client-bass-pro.png' },
   { name: 'Carrier',           logo: '/images/client-carrier.png' },
   { name: 'Blue Moon',         logo: '/images/client-blue-moon.png' },
@@ -201,7 +199,7 @@ export default function HomePage() {
         }
         .clients-grid {
           display: grid;
-          grid-template-columns: repeat(10, 1fr);
+          grid-template-columns: repeat(8, 1fr);
           align-items: center;
         }
         .client-cell {
@@ -414,9 +412,8 @@ export default function HomePage() {
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 960px) {
-          .clients-grid { grid-template-columns: repeat(5, 1fr); }
-          .client-cell:nth-child(5n) { border-right: none; }
-          .client-cell:nth-child(10) { border-right: none; }
+          .clients-grid { grid-template-columns: repeat(4, 1fr); }
+          .client-cell:nth-child(4n) { border-right: none; }
         }
         @media (max-width: 600px) {
           .section { padding: 64px 20px; }

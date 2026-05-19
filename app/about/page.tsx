@@ -14,9 +14,13 @@ const values = [
 ]
 
 const clients = [
-  'San Antonio Spurs', 'HEB', 'Unilever', 'Frost Bank',
-  'Baker Hughes', 'Kia', 'Bass Pro Shops', 'Kiolbassa',
-  'Blue Moon', 'Carrier',
+  { name: 'San Antonio Spurs', src: '/images/client-spurs.png' },
+  { name: 'HEB', src: '/images/client-heb.png' },
+  { name: 'Unilever', src: '/images/client-unilever.png' },
+  { name: 'Frost Bank', src: '/images/client-frost.png' },
+  { name: 'Bass Pro Shops', src: '/images/client-bass-pro.png' },
+  { name: 'Blue Moon', src: '/images/client-blue-moon.png' },
+  { name: 'Carrier', src: '/images/client-carrier.png' },
 ]
 
 export default function AboutPage() {
@@ -74,12 +78,12 @@ export default function AboutPage() {
         .value-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:.05em;color:#fff;margin-bottom:12px}
         .value-desc{font-size:13px;line-height:1.75;color:#666}
 
-        .clients-strip{background:var(--black);border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:36px 64px}
-        .clients-label{text-align:center;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#333;margin-bottom:24px}
-        .clients-row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap}
-        .client-name{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#444;padding:10px 28px;border-right:1px solid #1e1e1e;white-space:nowrap;transition:color .15s}
-        .client-name:last-child{border-right:none}
-        .client-name:hover{color:#888}
+        .clients-strip{background:var(--black);border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:48px 64px}
+        .clients-label{text-align:center;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#333;margin-bottom:28px}
+        .clients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1100px;margin:0 auto}
+        .client-logo-card{background:var(--dark2);border:1px solid #1e1e1e;padding:36px 28px;display:flex;align-items:center;justify-content:center;transition:border-color .2s}.client-logo-card:hover{border-color:#444}
+        .client-logo-card img{max-height:80px;width:auto;max-width:100%;filter:grayscale(1) brightness(.7);transition:filter .2s;object-fit:contain}
+        .client-logo-card:hover img{filter:grayscale(0) brightness(1)}
 
         .cta-wrap{background:var(--dark2);position:relative;overflow:hidden;text-align:center;padding:100px 64px}
         .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(204,0,0,.18) 0%,transparent 70%);pointer-events:none}
@@ -96,7 +100,8 @@ export default function AboutPage() {
           .story-grid{grid-template-columns:1fr;gap:48px}
           .values-grid{grid-template-columns:1fr 1fr}
           .section,.values-inner{padding:64px 24px}
-          .clients-strip{padding:28px 24px}
+          .clients-strip{padding:32px 24px}
+          .clients-grid{grid-template-columns:repeat(2,1fr)}
           .cta-wrap{padding:72px 24px}
           .bts-section{padding:48px 24px}
         }
@@ -197,9 +202,11 @@ export default function AboutPage() {
 
       <div className="clients-strip">
         <p className="clients-label">Trusted By</p>
-        <div className="clients-row">
-          {clients.map((name) => (
-            <span key={name} className="client-name">{name}</span>
+        <div className="clients-grid">
+          {clients.map((c) => (
+            <div key={c.name} className="client-logo-card">
+              <img src={c.src} alt={c.name} />
+            </div>
           ))}
         </div>
       </div>

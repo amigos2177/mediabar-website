@@ -58,10 +58,11 @@ export default function AboutPage() {
         .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
         .pull-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:26px;line-height:1.4;color:rgba(255,255,255,.7);border-left:3px solid var(--red);padding-left:24px;margin:32px 0}
         .bts-section{background:#111111;padding:80px 48px}
-        .bts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:1200px;margin:0 auto}
-        .bts-cell{overflow:hidden;border-radius:4px}
-        .bts-cell.bts-wide{grid-column:span 2}
-        .bts-cell img{width:100%;height:100%;object-fit:cover;display:block}
+        .bts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:48px}
+        .bts-item{aspect-ratio:16/9;overflow:hidden;border-radius:4px;background:#111}
+        .bts-item:first-child{grid-column:span 2;aspect-ratio:21/9}
+        .bts-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+        .bts-item:hover img{transform:scale(1.03)}
 
         .values-wrap{background:var(--dark)}
         .values-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
@@ -98,12 +99,13 @@ export default function AboutPage() {
           .clients-strip{padding:28px 24px}
           .cta-wrap{padding:72px 24px}
           .bts-section{padding:48px 24px}
+        }
+        @media(max-width:768px){
           .bts-grid{grid-template-columns:1fr 1fr}
+          .bts-item:first-child{grid-column:span 1;aspect-ratio:16/9}
         }
         @media(max-width:600px){
           .values-grid{grid-template-columns:1fr}
-          .bts-grid{grid-template-columns:1fr}
-          .bts-cell.bts-wide{grid-column:span 1}
         }
       `}</style>
 
@@ -153,7 +155,7 @@ export default function AboutPage() {
             </div>
             <div className="reveal" style={{ height: '100%' }}>
               <div style={{ overflow: 'hidden', borderRadius: '4px', border: '1px solid #1e1e1e', height: '100%', minHeight: '400px' }}>
-                <img src="/images/bts-1.jpg" alt="Media Bar Productions behind the scenes" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src="/images/clients-bts-1.jpg" alt="Media Bar Productions behind the scenes" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
           </div>
@@ -162,20 +164,15 @@ export default function AboutPage() {
 
       <div className="bts-section">
         <div className="bts-grid reveal">
-          {/* Row 1 */}
-          <div className="bts-cell bts-wide" style={{ aspectRatio: '16/9' }}><img src="/images/bts-1.jpg" alt="" /></div>
-          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-2.jpg" alt="" /></div>
-          {/* Row 2 */}
-          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-3.jpg" alt="" /></div>
-          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-4.jpg" alt="" /></div>
-          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-5.jpg" alt="" /></div>
-          {/* Row 3 */}
-          <div className="bts-cell" style={{ aspectRatio: '4/3' }}><img src="/images/bts-6.jpg" alt="" /></div>
-          <div className="bts-cell bts-wide" style={{ aspectRatio: '16/9' }}><img src="/images/bts-7.jpg" alt="" /></div>
-          {/* Row 4 */}
-          <div className="bts-cell" style={{ aspectRatio: '1/1' }}><img src="/images/bts-8.jpg" alt="" /></div>
-          <div className="bts-cell" style={{ aspectRatio: '1/1' }}><img src="/images/bts-9.jpg" alt="" /></div>
-          <div className="bts-cell" style={{ aspectRatio: '1/1' }}><img src="/images/bts-10.jpg" alt="" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-1.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-2.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-3.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-4.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-5.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-6.png" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-7.png" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-8.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-9.jpg" alt="Media Bar Productions on set" /></div>
         </div>
       </div>
 

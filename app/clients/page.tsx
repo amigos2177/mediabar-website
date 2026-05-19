@@ -5,14 +5,14 @@ import Link from 'next/link'
 import Layout from '../../components/Layout'
 
 const featuredClients = [
-  { name: 'San Antonio Spurs', industry: 'Sports & Entertainment' },
-  { name: 'HEB', industry: 'Retail & Grocery' },
-  { name: 'Unilever', industry: 'Consumer Goods' },
-  { name: 'Frost Bank', industry: 'Financial Services' },
-  { name: 'Baker Hughes', industry: 'Energy' },
-  { name: 'Kia', industry: 'Automotive' },
-  { name: 'Bass Pro Shops', industry: 'Retail' },
-  { name: 'Kiolbassa', industry: 'Food & Beverage' },
+  { name: 'San Antonio Spurs', src: '/images/client-spurs.png' },
+  { name: 'HEB', src: '/images/client-heb.png' },
+  { name: 'Unilever', src: '/images/client-unilever.png' },
+  { name: 'Frost Bank', src: '/images/client-frost.png' },
+  { name: 'Bass Pro Shops', src: '/images/client-bass-pro.png' },
+  { name: 'Blue Moon', src: '/images/client-blue-moon.png' },
+  { name: 'Carrier', src: '/images/client-carrier.png' },
+  { name: 'Texas Tech', src: '/images/client-texas-tech.png' },
 ]
 
 const additionalClients = [
@@ -68,9 +68,9 @@ export default function ClientsPage() {
         .section-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:rgba(255,255,255,.6)}
 
         .logo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:2px}
-        .logo-card{background:var(--dark2);border:1px solid #1e1e1e;padding:40px 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;transition:border-color .2s}.logo-card:hover{border-color:#333}
-        .logo-name{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:.06em;color:#fff}
-        .logo-industry{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#444}
+        .logo-card{background:var(--dark2);border:1px solid #1e1e1e;padding:40px 28px;display:flex;align-items:center;justify-content:center;transition:border-color .2s}.logo-card:hover{border-color:#444}
+        .logo-card img{max-height:80px;width:auto;max-width:100%;filter:grayscale(1) brightness(.7);transition:filter .2s,opacity .2s;object-fit:contain}
+        .logo-card:hover img{filter:grayscale(0) brightness(1)}
 
         .more-clients-wrap{background:var(--dark);border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:36px 64px}
         .more-clients-label{text-align:center;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#333;margin-bottom:20px}
@@ -144,8 +144,7 @@ export default function ClientsPage() {
           <div className="logo-grid reveal">
             {featuredClients.map((c) => (
               <div key={c.name} className="logo-card">
-                <p className="logo-name">{c.name}</p>
-                <p className="logo-industry">{c.industry}</p>
+                <img src={c.src} alt={c.name} />
               </div>
             ))}
           </div>

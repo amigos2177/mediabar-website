@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <Link href="/" style={{ display: 'inline-block', marginBottom: '16px' }}>
-              <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '36px', display: 'block' }} />
+              <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '36px', maxWidth: '100%', display: 'block' }} />
             </Link>
             <p style={{ fontSize: '14px', color: '#AAAAAA', marginBottom: '24px', fontStyle: 'italic' }}>
               Your Vision Served Daily

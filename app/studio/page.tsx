@@ -199,14 +199,14 @@ export default function StudioPage() {
           <p className="section-label" style={{ textAlign: 'center' }}>Studio Gallery</p>
           <h2 className="section-h2">Inside the <em>Studio</em></h2>
           <div className="studio-gallery reveal">
-            <div className="gallery-cell gallery-wide"><img src="/images/studio-1.jpg" alt="" /></div>
-            <div className="gallery-cell"><img src="/images/studio-2.jpg" alt="" /></div>
-            <div className="gallery-cell"><img src="/images/studio-3.jpg" alt="" /></div>
-            <div className="gallery-cell gallery-wide"><img src="/images/studio-4.jpg" alt="" /></div>
-            <div className="gallery-cell gallery-wide"><img src="/images/studio-5.jpg" alt="" /></div>
-            <div className="gallery-cell"><img src="/images/studio-6.jpg" alt="" /></div>
-            <div className="gallery-cell"><img src="/images/studio-8.jpg" alt="" /></div>
-            <div className="gallery-cell gallery-wide"><img src="/images/studio-9.jpg" alt="" /></div>
+            <div className="gallery-cell gallery-wide"><img src="/images/studio-1.jpg" alt="" loading="lazy" /></div>
+            <div className="gallery-cell"><img src="/images/studio-2.jpg" alt="" loading="lazy" /></div>
+            <div className="gallery-cell"><img src="/images/studio-3.jpg" alt="" loading="lazy" /></div>
+            <div className="gallery-cell gallery-wide"><img src="/images/studio-4.jpg" alt="" loading="lazy" /></div>
+            <div className="gallery-cell gallery-wide"><img src="/images/studio-5.jpg" alt="" loading="lazy" /></div>
+            <div className="gallery-cell"><img src="/images/studio-6.jpg" alt="" loading="lazy" /></div>
+            <div className="gallery-cell"><img src="/images/studio-8.jpg" alt="" loading="lazy" /></div>
+            <div className="gallery-cell gallery-wide"><img src="/images/studio-9.jpg" alt="" loading="lazy" /></div>
           </div>
         </div>
       </div>

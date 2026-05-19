@@ -533,7 +533,7 @@ export default function HomePage() {
         .cta-phone:hover { color: #fff; }
 
         /* ─── RESPONSIVE ─── */
-        @media (max-width: 960px) {
+        @media (max-width: 1024px) {
           .clients-grid { grid-template-columns: repeat(4, 1fr); }
           .client-cell:nth-child(4n) { border-right: none; }
         }

@@ -94,7 +94,7 @@ export default function ContactPage() {
         .hours-row:last-child{border-bottom:none}
         .hours-day{color:#666}.hours-time{color:#888}
         .hours-row.today .hours-day,.hours-row.today .hours-time{color:var(--gold);font-weight:600}
-        .map-wrap{width:100%;height:240px;overflow:hidden;border:1px solid #1e1e1e;margin-top:24px;filter:grayscale(1) brightness(.7)}
+        .map-wrap{width:100%;height:400px;overflow:hidden;border:1px solid #1e1e1e;margin-top:24px;border-radius:4px}
         .map-wrap iframe{width:100%;height:100%;border:none}
 
         @media(max-width:900px){

@@ -5,17 +5,17 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 
 const services = [
-  { label: 'Corporate Video', href: '/video-production/corporate' },
-  { label: 'Commercials', href: '/video-production/commercials' },
-  { label: 'Event Coverage', href: '/video-production/events' },
-  { label: 'Interview & Discussion', href: '/video-production/interview' },
-  { label: 'Medical Video', href: '/video-production/medical' },
-  { label: 'Aerial Video', href: '/video-production/aerial' },
-  { label: 'Motion Graphics', href: '/video-production/motion-graphics' },
-  { label: 'Live Streaming', href: '/video-production/live-streaming' },
-  { label: 'Post Production', href: '/video-production/post-production' },
-  { label: 'Food Video', href: '/video-production/food' },
-  { label: 'Real Estate Video', href: '/video-production/real-estate' },
+  { label: 'Corporate Video',       href: '/video-production/corporate',       icon: '🏢' },
+  { label: 'Commercials',           href: '/video-production/commercials',      icon: '📺' },
+  { label: 'Event Coverage',        href: '/video-production/events',           icon: '🎪' },
+  { label: 'Interview & Discussion',href: '/video-production/interview',        icon: '🎙️' },
+  { label: 'Medical Video',         href: '/video-production/medical',          icon: '🏥' },
+  { label: 'Aerial Video',          href: '/video-production/aerial',           icon: '🚁' },
+  { label: 'Motion Graphics',       href: '/video-production/motion-graphics',  icon: '✨' },
+  { label: 'Live Streaming',        href: '/video-production/live-streaming',   icon: '🔴' },
+  { label: 'Post Production',       href: '/video-production/post-production',  icon: '✂️' },
+  { label: 'Food Video',            href: '/video-production/food',             icon: '🍽️' },
+  { label: 'Real Estate Video',     href: '/video-production/real-estate',      icon: '🏠' },
 ]
 
 const clients = [
@@ -253,28 +253,25 @@ export default function HomePage() {
           padding: 32px 28px;
           text-decoration: none;
           border: 1px solid #1e1e1e;
-          position: relative;
-          overflow: hidden;
-          transition: background 0.15s, border-color 0.15s;
+          border-left: 2px solid var(--red);
+          transition: background 0.15s, border-top-color 0.15s;
         }
-        .service-card::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: var(--red);
-          transition: width 0.25s ease;
+        .service-card:hover {
+          background: #1a1a1a;
+          border-top-color: var(--red);
         }
-        .service-card:hover { background: #1e1e1e; border-color: #2a2a2a; }
-        .service-card:hover::after { width: 100%; }
+        .service-icon {
+          font-size: 28px;
+          line-height: 1;
+          margin-bottom: 14px;
+          display: block;
+        }
         .service-num {
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 0.14em;
           color: var(--red);
-          margin-bottom: 12px;
+          margin-bottom: 8px;
         }
         .service-title {
           font-family: 'Bebas Neue', Impact, sans-serif;
@@ -451,6 +448,7 @@ export default function HomePage() {
         <div className="services-grid">
           {services.map((svc, i) => (
             <Link key={svc.href} href={svc.href} className="service-card">
+              <span className="service-icon" aria-hidden="true">{svc.icon}</span>
               <p className="service-num">{String(i + 1).padStart(2, '0')}</p>
               <p className="service-title">{svc.label}</p>
             </Link>

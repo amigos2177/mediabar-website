@@ -5,17 +5,95 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 
 const services = [
-  { label: 'Corporate Video',       href: '/video-production/corporate',       icon: '🏢' },
-  { label: 'Commercials',           href: '/video-production/commercials',      icon: '📺' },
-  { label: 'Event Coverage',        href: '/video-production/events',           icon: '🎪' },
-  { label: 'Interview & Discussion',href: '/video-production/interview',        icon: '🎙️' },
-  { label: 'Medical Video',         href: '/video-production/medical',          icon: '🏥' },
-  { label: 'Aerial Video',          href: '/video-production/aerial',           icon: '🚁' },
-  { label: 'Motion Graphics',       href: '/video-production/motion-graphics',  icon: '✨' },
-  { label: 'Live Streaming',        href: '/video-production/live-streaming',   icon: '🔴' },
-  { label: 'Post Production',       href: '/video-production/post-production',  icon: '✂️' },
-  { label: 'Food Video',            href: '/video-production/food',             icon: '🍽️' },
-  { label: 'Real Estate Video',     href: '/video-production/real-estate',      icon: '🏠' },
+  { label: 'Corporate Video',        href: '/video-production/corporate' },
+  { label: 'Commercials',            href: '/video-production/commercials' },
+  { label: 'Event Coverage',         href: '/video-production/events' },
+  { label: 'Interview & Discussion', href: '/video-production/interview' },
+  { label: 'Medical Video',          href: '/video-production/medical' },
+  { label: 'Aerial Video',           href: '/video-production/aerial' },
+  { label: 'Motion Graphics',        href: '/video-production/motion-graphics' },
+  { label: 'Live Streaming',         href: '/video-production/live-streaming' },
+  { label: 'Post Production',        href: '/video-production/post-production' },
+  { label: 'Food Video',             href: '/video-production/food' },
+  { label: 'Real Estate Video',      href: '/video-production/real-estate' },
+]
+
+const svgProps = {
+  width: 28, height: 28, viewBox: '0 0 24 24',
+  fill: 'none', stroke: '#CC0000', strokeWidth: 1.5,
+  strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const,
+}
+
+const serviceIcons = [
+  // Corporate Video — briefcase
+  <svg key="corporate" {...svgProps}>
+    <rect x="2" y="7" width="20" height="14" rx="2"/>
+    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+  </svg>,
+  // Commercials — play circle
+  <svg key="commercials" {...svgProps}>
+    <circle cx="12" cy="12" r="10"/>
+    <polygon points="10 8 16 12 10 16 10 8"/>
+  </svg>,
+  // Event Coverage — calendar
+  <svg key="events" {...svgProps}>
+    <rect x="3" y="4" width="18" height="18" rx="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+  </svg>,
+  // Interview & Discussion — mic
+  <svg key="interview" {...svgProps}>
+    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+    <line x1="12" y1="19" x2="12" y2="22"/>
+    <line x1="8" y1="22" x2="16" y2="22"/>
+  </svg>,
+  // Medical Video — plus square
+  <svg key="medical" {...svgProps}>
+    <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <line x1="12" y1="8" x2="12" y2="16"/>
+    <line x1="8" y1="12" x2="16" y2="12"/>
+  </svg>,
+  // Aerial Video — arrow up
+  <svg key="aerial" {...svgProps}>
+    <line x1="12" y1="19" x2="12" y2="5"/>
+    <polyline points="5 12 12 5 19 12"/>
+  </svg>,
+  // Motion Graphics — layers
+  <svg key="motion" {...svgProps}>
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg>,
+  // Live Streaming — wifi
+  <svg key="streaming" {...svgProps}>
+    <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+    <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+    <line x1="12" y1="20" x2="12.01" y2="20"/>
+  </svg>,
+  // Post Production — scissors
+  <svg key="post" {...svgProps}>
+    <circle cx="6" cy="6" r="3"/>
+    <circle cx="6" cy="18" r="3"/>
+    <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+    <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+    <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+  </svg>,
+  // Food Video — coffee
+  <svg key="food" {...svgProps}>
+    <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+    <line x1="6" y1="1" x2="6" y2="4"/>
+    <line x1="10" y1="1" x2="10" y2="4"/>
+    <line x1="14" y1="1" x2="14" y2="4"/>
+  </svg>,
+  // Real Estate Video — home
+  <svg key="realestate" {...svgProps}>
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>,
 ]
 
 const clients = [
@@ -282,10 +360,10 @@ export default function HomePage() {
           border-top-color: var(--red);
         }
         .service-icon {
-          font-size: 28px;
-          line-height: 1;
-          margin-bottom: 14px;
           display: block;
+          margin-bottom: 16px;
+          width: 28px;
+          height: 28px;
         }
         .service-num {
           font-size: 11px;
@@ -474,7 +552,7 @@ export default function HomePage() {
         <div className="services-grid">
           {services.map((svc, i) => (
             <Link key={svc.href} href={svc.href} className="service-card">
-              <span className="service-icon" aria-hidden="true">{svc.icon}</span>
+              <span className="service-icon" aria-hidden="true">{serviceIcons[i]}</span>
               <p className="service-num">{String(i + 1).padStart(2, '0')}</p>
               <p className="service-title">{svc.label}</p>
             </Link>

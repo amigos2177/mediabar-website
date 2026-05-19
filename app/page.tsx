@@ -213,51 +213,66 @@ export default function HomePage() {
           flex-wrap: wrap;
         }
         .hero-pill {
-          border: 1px solid rgba(255,255,255,0.22);
-          padding: 9px 22px;
+          background: rgba(255,255,255,0.08);
+          backdrop-filter: blur(8px);
+          border: 0.5px solid rgba(255,255,255,0.15);
+          border-radius: 2px;
+          padding: 10px 24px;
           font-size: 11px;
           font-weight: 600;
-          letter-spacing: 0.14em;
+          letter-spacing: 0.18em;
           text-transform: uppercase;
           color: rgba(255,255,255,0.82);
-          backdrop-filter: blur(6px);
-          background: rgba(0,0,0,0.18);
+        }
+        .hero-pill::before {
+          content: '';
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          background: var(--red);
+          border-radius: 50%;
+          margin-right: 10px;
+          vertical-align: middle;
         }
         .hero-ctas {
           display: flex;
           justify-content: center;
           gap: 16px;
-          margin-top: 40px;
+          margin-top: 48px;
           flex-wrap: wrap;
         }
         .btn-outline {
-          border: 1px solid rgba(255,255,255,0.42);
+          border: 1px solid rgba(255,255,255,0.35);
+          background: transparent;
           color: #fff;
           text-decoration: none;
-          padding: 15px 38px;
+          padding: 16px 44px;
           font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 11px;
           font-weight: 700;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
           display: inline-block;
+          border-radius: 2px;
           transition: border-color 0.15s, background 0.15s;
         }
-        .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
+        .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
         .btn-red {
           background: var(--red);
           color: #fff;
           text-decoration: none;
-          padding: 15px 38px;
+          padding: 16px 44px;
           font-family: 'DM Sans', system-ui, sans-serif;
           font-size: 11px;
           font-weight: 700;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
           display: inline-block;
-          transition: background 0.15s;
+          border-radius: 2px;
+          border: none;
+          transition: background 0.15s, box-shadow 0.15s;
         }
-        .btn-red:hover { background: #aa0000; }
+        .btn-red:hover { background: #aa0000; box-shadow: 0 4px 24px rgba(204,0,0,0.4); }
 
         /* ─── CLIENTS STRIP ─── */
         .clients-strip {

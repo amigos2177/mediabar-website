@@ -60,9 +60,9 @@ export default function AboutPage() {
         .bts-section{background:#111111;padding:80px 48px}
         .bts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:48px}
         .bts-item{aspect-ratio:16/9;overflow:hidden;border-radius:4px;background:#111}
-        .bts-item:first-child{grid-column:span 2;aspect-ratio:21/9}
-        .bts-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
-        .bts-item:hover img{transform:scale(1.03)}
+        .bts-item-wide{grid-column:span 2;aspect-ratio:21/9;overflow:hidden;border-radius:4px;background:#111}
+        .bts-item img,.bts-item-wide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+        .bts-item:hover img,.bts-item-wide:hover img{transform:scale(1.03)}
 
         .values-wrap{background:var(--dark)}
         .values-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
@@ -102,7 +102,7 @@ export default function AboutPage() {
         }
         @media(max-width:768px){
           .bts-grid{grid-template-columns:1fr 1fr}
-          .bts-item:first-child{grid-column:span 1;aspect-ratio:16/9}
+          .bts-item-wide{grid-column:span 1;aspect-ratio:16/9}
         }
         @media(max-width:600px){
           .values-grid{grid-template-columns:1fr}
@@ -164,14 +164,15 @@ export default function AboutPage() {
 
       <div className="bts-section">
         <div className="bts-grid reveal">
-          <div className="bts-item"><img src="/images/clients-bts-1.jpg" alt="Media Bar Productions on set" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-2.jpg" alt="Media Bar Productions on set" /></div>
+          {/* Row 1: wide + normal */}
+          <div className="bts-item-wide"><img src="/images/clients-bts-1.jpg" alt="Media Bar Productions on set" /></div>
           <div className="bts-item"><img src="/images/clients-bts-3.jpg" alt="Media Bar Productions on set" /></div>
+          {/* Row 2: three normal */}
           <div className="bts-item"><img src="/images/clients-bts-4.jpg" alt="Media Bar Productions on set" /></div>
           <div className="bts-item"><img src="/images/clients-bts-5.jpg" alt="Media Bar Productions on set" /></div>
           <div className="bts-item"><img src="/images/clients-bts-6.png" alt="Media Bar Productions on set" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-7.png" alt="Media Bar Productions on set" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-8.jpg" alt="Media Bar Productions on set" /></div>
+          {/* Row 3: wide + normal */}
+          <div className="bts-item-wide"><img src="/images/clients-bts-7.png" alt="Media Bar Productions on set" /></div>
           <div className="bts-item"><img src="/images/clients-bts-9.jpg" alt="Media Bar Productions on set" /></div>
         </div>
       </div>

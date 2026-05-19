@@ -31,10 +31,37 @@ const nextConfig: NextConfig = {
       { source: '/Jobs', destination: '/contact', permanent: true },
       { source: '/jobs', destination: '/contact', permanent: true },
 
+      // ── BLOG MIGRATION ──
+      // Specific ID redirects must come before catch-alls
+      // Migrate to new blog URLs
+      { source: '/News/Get/45/:rest*', destination: '/blog/keeping-creative-in-san-antonio', statusCode: 301 },
+      { source: '/News/Get/44/:rest*', destination: '/blog/san-antonio-corporate-video-production-competitive', statusCode: 301 },
+      { source: '/News/Get/43/:rest*', destination: '/blog/best-video-production-san-antonio', statusCode: 301 },
+      { source: '/News/Get/42/:rest*', destination: '/blog/elevate-your-brand-with-expert-video-production', statusCode: 301 },
+      { source: '/News/Get/41/:rest*', destination: '/blog/boost-seo-with-video-production-ai-era', statusCode: 301 },
+      { source: '/News/Get/40/:rest*', destination: '/blog/san-antonio-conference-video-services', statusCode: 301 },
+      { source: '/News/Get/38/:rest*', destination: '/blog/importance-of-video-production-services', statusCode: 301 },
+      { source: '/News/Get/37/:rest*', destination: '/blog/san-antonio-video-production-talent-local-companies', statusCode: 301 },
+      { source: '/News/Get/36/:rest*', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
+      { source: '/News/Get/34/:rest*', destination: '/blog/importance-of-corporate-video-production', statusCode: 301 },
+      // Retire to relevant pages
+      { source: '/News/Get/35/:rest*', destination: '/work', statusCode: 301 },
+      { source: '/News/Get/33/:rest*', destination: '/work', statusCode: 301 },
+      { source: '/News/Get/31/:rest*', destination: '/video-production/medical', statusCode: 301 },
+      { source: '/News/Get/30/:rest*', destination: '/video-production/commercials', statusCode: 301 },
+      { source: '/News/Get/29/:rest*', destination: '/video-production/motion-graphics', statusCode: 301 },
+      { source: '/News/Get/28/:rest*', destination: '/video-production/medical', statusCode: 301 },
+      { source: '/News/Get/27/:rest*', destination: '/studio', statusCode: 301 },
+      { source: '/News/Get/26/:rest*', destination: '/video-production/commercials', statusCode: 301 },
+      { source: '/News/Get/25/:rest*', destination: '/video-production/commercials', statusCode: 301 },
+      { source: '/News/Get/24/:rest*', destination: '/work', statusCode: 301 },
+      { source: '/News/Get/23/:rest*', destination: '/video-production/corporate', statusCode: 301 },
+      { source: '/News/Get/22/:rest*', destination: '/video-production/commercials', statusCode: 301 },
+      { source: '/News/Get/21/:rest*', destination: '/video-production/commercials', statusCode: 301 },
+      // Catch-alls — after specific ID redirects
+      { source: '/News/:rest*', destination: '/blog', statusCode: 301 },
       { source: '/News', destination: '/blog', permanent: true },
-      { source: '/News/Get/:id/:slug', destination: '/blog/:slug', permanent: true },
       { source: '/news', destination: '/blog', permanent: true },
-      { source: '/news/get/:id/:slug', destination: '/blog/:slug', permanent: true },
       { source: '/locations/texas', destination: '/locations/san-antonio', permanent: true },
     ]
   },

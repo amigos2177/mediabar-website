@@ -155,7 +155,7 @@ export default function AboutPage() {
             </div>
             <div className="reveal" style={{ height: '100%' }}>
               <div style={{ overflow: 'hidden', borderRadius: '4px', border: '1px solid #1e1e1e', height: '100%', minHeight: '400px' }}>
-                <img src="/images/clients-bts-1.jpg" alt="Media Bar Productions behind the scenes" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <img src="/images/bts-dec-1.jpg" alt="Media Bar Productions studio interview" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
           </div>
@@ -165,15 +165,15 @@ export default function AboutPage() {
       <div className="bts-section">
         <div className="bts-grid reveal">
           {/* Row 1: wide + normal */}
-          <div className="bts-item-wide"><img src="/images/clients-bts-1.jpg" alt="Media Bar Productions on set" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-3.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item-wide"><img src="/images/bts-spurs-coyote.jpg" alt="Media Bar Productions on set with San Antonio Spurs" /></div>
+          <div className="bts-item"><img src="/images/bts-dsc-1.jpg" alt="Media Bar Productions on set" /></div>
           {/* Row 2: three normal */}
+          <div className="bts-item"><img src="/images/bts-dsc-2.jpg" alt="Media Bar Productions on set" /></div>
           <div className="bts-item"><img src="/images/clients-bts-4.jpg" alt="Media Bar Productions on set" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-5.jpg" alt="Media Bar Productions on set" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-6.png" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/bts-dec-2.jpg" alt="Media Bar Productions on set" /></div>
           {/* Row 3: wide + normal */}
-          <div className="bts-item-wide"><img src="/images/clients-bts-7.png" alt="Media Bar Productions on set" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-9.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item-wide"><img src="/images/clients-bts-9.jpg" alt="Media Bar Productions on set" /></div>
+          <div className="bts-item"><img src="/images/clients-bts-6.png" alt="Media Bar Productions on set" /></div>
         </div>
       </div>
 

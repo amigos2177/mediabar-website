@@ -188,6 +188,9 @@ export default function HomePage() {
           position: relative;
           z-index: 2;
           padding: 0 24px;
+          max-width: 900px;
+          margin: 0 auto;
+          text-align: center;
         }
         .hero-eyebrow {
           font-family: 'Playfair Display', Georgia, serif;

@@ -440,6 +440,10 @@ export default function HomePage() {
           margin-top: 56px;
         }
         .award-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
           text-align: center;
           padding: 48px 56px;
           border: 1px solid #222;
@@ -637,6 +641,10 @@ export default function HomePage() {
             <p className="award-name">Telly Awards</p>
           </div>
           <div className="award-card">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{margin: '0 auto 12px', display: 'block'}}>
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
             <p className="award-count">13<sup>+</sup></p>
             <p className="award-name">Years in Business</p>
           </div>

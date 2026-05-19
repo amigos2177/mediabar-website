@@ -287,36 +287,81 @@ export default function VideoProductionPage() {
 
         /* ── BOTTOM CTA ── */
         .vp-cta {
-          background: var(--red);
-          padding: 96px 48px;
+          background: var(--dark);
+          border-top: 0.5px solid rgba(255,255,255,0.06);
+          padding: 100px 48px;
           text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        .vp-cta::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 1px;
+          background: linear-gradient(to right, transparent, var(--red), transparent);
+        }
+        .vp-cta-glow {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(204,0,0,0.15) 0%, transparent 70%);
+          pointer-events: none;
         }
         .vp-cta-headline {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(42px, 6vw, 80px);
+          font-size: clamp(54px, 7vw, 96px);
           color: #fff;
           letter-spacing: 0.03em;
           line-height: 1;
-          margin-bottom: 12px;
+          text-transform: uppercase;
+          margin-bottom: 16px;
+          position: relative;
+        }
+        .vp-cta-headline em {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-style: italic;
+          text-transform: none;
+          color: var(--red);
         }
         .vp-cta-sub {
           font-size: 15px;
-          color: rgba(255,255,255,0.75);
-          margin-bottom: 36px;
+          color: #666;
+          margin-bottom: 48px;
+          position: relative;
         }
-        .btn-white {
-          background: #fff;
-          color: var(--red);
+        .vp-cta-actions {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+          flex-wrap: wrap;
+          position: relative;
+        }
+        .btn-red {
+          background: var(--red);
+          color: #fff;
           text-decoration: none;
           padding: 16px 48px;
-          font-size: 12px;
+          font-size: 13px;
           font-weight: 700;
           letter-spacing: 0.12em;
           text-transform: uppercase;
           display: inline-block;
           transition: background 0.15s;
         }
-        .btn-white:hover { background: rgba(255,255,255,0.88); }
+        .btn-red:hover { background: #aa0000; }
+        .vp-cta-phone {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 36px;
+          letter-spacing: 0.06em;
+          color: #fff;
+          text-decoration: none;
+          transition: color 0.15s;
+        }
+        .vp-cta-phone:hover { color: var(--gold); }
 
         @media (max-width: 768px) {
           .vp-hero { padding: 120px 24px 60px; }
@@ -382,9 +427,13 @@ export default function VideoProductionPage() {
 
       {/* ── BOTTOM CTA ── */}
       <section className="vp-cta">
-        <h2 className="vp-cta-headline">Ready to Get Started?</h2>
+        <div className="vp-cta-glow" aria-hidden="true" />
+        <h2 className="vp-cta-headline">Ready To <em>Get Started?</em></h2>
         <p className="vp-cta-sub">Tell us about your project and we'll put together a custom quote.</p>
-        <Link href="/contact" className="btn-white">Get a Quote</Link>
+        <div className="vp-cta-actions">
+          <Link href="/contact" className="btn-red">Get a Quote</Link>
+          <a href="tel:2102799442" className="vp-cta-phone">210-279-9442</a>
+        </div>
       </section>
     </Layout>
   )

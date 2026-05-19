@@ -17,8 +17,24 @@ const timelines = [
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
+type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
+
+const EMPTY = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  company: '',
+  service: '',
+  timeline: '',
+  message: '',
+}
+
 export default function ContactPage() {
   const [todayIndex, setTodayIndex] = useState<number>(-1)
+  const [fields, setFields] = useState(EMPTY)
+  const [status, setStatus] = useState<SubmitStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
     setTodayIndex(new Date().getDay())
@@ -41,6 +57,38 @@ export default function ContactPage() {
     { day: 'Saturday', time: '8:00 AM – 5:00 PM' },
     { day: 'Sunday', time: 'Closed' },
   ]
+
+  function set(field: keyof typeof EMPTY) {
+    return (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+      setFields((f) => ({ ...f, [field]: e.target.value }))
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setStatus('submitting')
+    setErrorMessage('')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      })
+
+      const data = await res.json()
+
+      if (res.ok) {
+        setStatus('success')
+        setFields(EMPTY)
+      } else {
+        setStatus('error')
+        setErrorMessage(data.error ?? 'Something went wrong. Please try again.')
+      }
+    } catch {
+      setStatus('error')
+      setErrorMessage('Network error. Please check your connection and try again.')
+    }
+  }
 
   return (
     <Layout>
@@ -80,7 +128,17 @@ export default function ContactPage() {
         .form-select option{background:var(--dark2);color:#fff}
         .form-textarea{resize:vertical;min-height:130px}
         .form-submit{background:var(--red);color:#fff;border:none;padding:16px 48px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .15s;align-self:flex-start;font-family:inherit}
-        .form-submit:hover{background:#aa0000}
+        .form-submit:hover:not(:disabled){background:#aa0000}
+        .form-submit:disabled{opacity:.6;cursor:not-allowed}
+
+        .form-error{background:#1a0000;border:1px solid #CC0000;color:#ff9999;padding:12px 16px;font-size:13px;line-height:1.5;border-radius:2px}
+
+        .success-state{display:flex;flex-direction:column;align-items:flex-start;gap:20px;padding:48px 0}
+        .success-check{width:56px;height:56px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .success-h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:32px;letter-spacing:.04em;color:#fff;margin:0}
+        .success-body{font-size:15px;line-height:1.7;color:#B0B0B0;margin:0}
+        .success-reset{background:none;border:1px solid #333;color:#B0B0B0;padding:10px 24px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:color .15s,border-color .15s}
+        .success-reset:hover{color:#fff;border-color:#666}
 
         .info-panel{position:sticky;top:96px}
         .info-block{margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid #1e1e1e}
@@ -111,7 +169,7 @@ export default function ContactPage() {
         <div className="hero-bg-text" aria-hidden="true">CONTACT</div>
         <p className="hero-eyebrow">Get In Touch</p>
         <h1 className="hero-h1">Start Your <em>Project</em></h1>
-        <p className="hero-sub">Tell us what you're working on. We respond within one business day — no sales pressure, no runaround.</p>
+        <p className="hero-sub">Tell us what you&apos;re working on. We respond within one business day — no sales pressure, no runaround.</p>
       </section>
 
       <div className="promises-strip">
@@ -133,60 +191,86 @@ export default function ContactPage() {
           <div className="reveal">
             <p className="form-section-label">Send a Message</p>
             <h2 className="form-h2">Tell Us About <em>Your Project</em></h2>
-            <form
-              className="contact-form"
-              action="https://formsubmit.co/contact@mediabarproductions.com"
-              method="POST"
-            >
-              <input type="hidden" name="_subject" value="New Project Inquiry — Media Bar Productions" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label" htmlFor="first_name">First Name</label>
-                  <input className="form-input" id="first_name" name="first_name" type="text" placeholder="Jane" required />
+
+            {status === 'success' ? (
+              <div className="success-state">
+                <div className="success-check" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                 </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="last_name">Last Name</label>
-                  <input className="form-input" id="last_name" name="last_name" type="text" placeholder="Smith" required />
-                </div>
+                <h3 className="success-h3">Thanks — we got your message</h3>
+                <p className="success-body">
+                  We&apos;ll respond within 1 business day. If it&apos;s urgent, call us at{' '}
+                  <a href="tel:2102799442" style={{ color: '#C9A84C', textDecoration: 'none' }}>210-279-9442</a>.
+                </p>
+                <button
+                  className="success-reset"
+                  onClick={() => { setStatus('idle'); setErrorMessage('') }}
+                >
+                  Send another message
+                </button>
               </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label className="form-label" htmlFor="email">Email</label>
-                  <input className="form-input" id="email" name="email" type="email" placeholder="jane@company.com" required />
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit} noValidate>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="first_name">First Name</label>
+                    <input className="form-input" id="first_name" name="first_name" type="text" placeholder="Jane" required value={fields.firstName} onChange={set('firstName')} />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="last_name">Last Name</label>
+                    <input className="form-input" id="last_name" name="last_name" type="text" placeholder="Smith" required value={fields.lastName} onChange={set('lastName')} />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="email">Email</label>
+                    <input className="form-input" id="email" name="email" type="email" placeholder="jane@company.com" required value={fields.email} onChange={set('email')} />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="phone">Phone</label>
+                    <input className="form-input" id="phone" name="phone" type="tel" placeholder="210-555-0100" value={fields.phone} onChange={set('phone')} />
+                  </div>
                 </div>
                 <div className="form-group">
-                  <label className="form-label" htmlFor="phone">Phone</label>
-                  <input className="form-input" id="phone" name="phone" type="tel" placeholder="210-555-0100" />
+                  <label className="form-label" htmlFor="company">Company</label>
+                  <input className="form-input" id="company" name="company" type="text" placeholder="Your Company Name" value={fields.company} onChange={set('company')} />
                 </div>
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="company">Company</label>
-                <input className="form-input" id="company" name="company" type="text" placeholder="Your Company Name" />
-              </div>
-              <div className="form-row">
+                <div className="form-row">
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="service">Service Needed</label>
+                    <select className="form-select" id="service" name="service" value={fields.service} onChange={set('service')}>
+                      <option value="">Select a service…</option>
+                      {services.map((s) => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="timeline">Timeline</label>
+                    <select className="form-select" id="timeline" name="timeline" value={fields.timeline} onChange={set('timeline')}>
+                      <option value="">When do you need it?</option>
+                      {timelines.map((t) => <option key={t} value={t}>{t}</option>)}
+                    </select>
+                  </div>
+                </div>
                 <div className="form-group">
-                  <label className="form-label" htmlFor="service">Service Needed</label>
-                  <select className="form-select" id="service" name="service">
-                    <option value="">Select a service…</option>
-                    {services.map((s) => <option key={s} value={s}>{s}</option>)}
-                  </select>
+                  <label className="form-label" htmlFor="message">Tell Us About Your Project</label>
+                  <textarea className="form-textarea" id="message" name="message" placeholder="What are you trying to accomplish? Who's the audience? Any budget range in mind?" required value={fields.message} onChange={set('message')} />
                 </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="timeline">Timeline</label>
-                  <select className="form-select" id="timeline" name="timeline">
-                    <option value="">When do you need it?</option>
-                    {timelines.map((t) => <option key={t} value={t}>{t}</option>)}
-                  </select>
-                </div>
-              </div>
-              <div className="form-group">
-                <label className="form-label" htmlFor="message">Tell Us About Your Project</label>
-                <textarea className="form-textarea" id="message" name="message" placeholder="What are you trying to accomplish? Who's the audience? Any budget range in mind?" required />
-              </div>
-              <button type="submit" className="form-submit">Send Message →</button>
-            </form>
+
+                {status === 'error' && (
+                  <div className="form-error" role="alert">{errorMessage}</div>
+                )}
+
+                <button
+                  type="submit"
+                  className="form-submit"
+                  disabled={status === 'submitting'}
+                >
+                  {status === 'submitting' ? 'Sending…' : status === 'error' ? 'Try Again →' : 'Send Message →'}
+                </button>
+              </form>
+            )}
           </div>
 
           <div className="info-panel reveal">

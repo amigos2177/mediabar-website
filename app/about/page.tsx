@@ -57,8 +57,12 @@ export default function AboutPage() {
 
         .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
         .pull-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:26px;line-height:1.4;color:rgba(255,255,255,.7);border-left:3px solid var(--red);padding-left:24px;margin:32px 0}
-        .bts-placeholder{background:var(--dark2);border:1px solid #222;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:#333;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
-        .bts-placeholder-icon{font-size:40px;opacity:.3}
+        .bts-section{background:var(--black);padding:0 64px 80px}
+        .bts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:1200px;margin:0 auto}
+        .bts-cell{overflow:hidden;border-radius:4px;border:1px solid #1e1e1e;height:260px}
+        .bts-cell.bts-wide{grid-column:span 2}
+        .bts-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+        .bts-cell:hover img{transform:scale(1.03)}
 
         .values-wrap{background:var(--dark)}
         .values-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
@@ -94,8 +98,15 @@ export default function AboutPage() {
           .section,.values-inner{padding:64px 24px}
           .clients-strip{padding:28px 24px}
           .cta-wrap{padding:72px 24px}
+          .bts-section{padding:0 24px 56px}
+          .bts-grid{grid-template-columns:1fr 1fr}
+          .bts-cell.bts-wide{grid-column:span 2}
+          .bts-cell{height:200px}
         }
-        @media(max-width:600px){.values-grid{grid-template-columns:1fr}}
+        @media(max-width:600px){
+          .values-grid{grid-template-columns:1fr}
+          .bts-grid{grid-template-columns:1fr 1fr}
+        }
       `}</style>
 
       <section className="page-hero">
@@ -143,12 +154,26 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="reveal">
-              <div className="bts-placeholder">
-                <span className="bts-placeholder-icon">📷</span>
-                <span>BTS Photos</span>
+              <div style={{ overflow: 'hidden', borderRadius: '4px', border: '1px solid #1e1e1e', height: '420px' }}>
+                <img src="/images/bts-1.jpg" alt="Media Bar Productions behind the scenes" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="bts-section">
+        <div className="bts-grid reveal">
+          <div className="bts-cell bts-wide"><img src="/images/bts-1.jpg" alt="" /></div>
+          <div className="bts-cell"><img src="/images/bts-2.jpg" alt="" /></div>
+          <div className="bts-cell"><img src="/images/bts-3.jpg" alt="" /></div>
+          <div className="bts-cell bts-wide"><img src="/images/bts-4.jpg" alt="" /></div>
+          <div className="bts-cell bts-wide"><img src="/images/bts-5.jpg" alt="" /></div>
+          <div className="bts-cell"><img src="/images/bts-6.jpg" alt="" /></div>
+          <div className="bts-cell"><img src="/images/bts-7.jpg" alt="" /></div>
+          <div className="bts-cell bts-wide"><img src="/images/bts-8.jpg" alt="" /></div>
+          <div className="bts-cell bts-wide"><img src="/images/bts-9.jpg" alt="" /></div>
+          <div className="bts-cell"><img src="/images/bts-10.jpg" alt="" /></div>
         </div>
       </div>
 

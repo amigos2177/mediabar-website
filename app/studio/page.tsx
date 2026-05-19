@@ -77,6 +77,12 @@ export default function StudioPage() {
         .space-tags{display:flex;flex-wrap:wrap;gap:6px}
         .space-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#555;border:1px solid #2a2a2a;padding:4px 10px}
 
+        .studio-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+        .gallery-cell{overflow:hidden;border-radius:4px;border:1px solid #1e1e1e;height:260px}
+        .gallery-cell.gallery-wide{grid-column:span 2}
+        .gallery-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+        .gallery-cell:hover img{transform:scale(1.03)}
+
         .features-wrap{background:var(--dark)}
         .features-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
         .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
@@ -109,8 +115,13 @@ export default function StudioPage() {
           .facts-strip{flex-wrap:wrap}.fact-item{flex:1 1 50%;border-right:none;border-bottom:1px solid #1e1e1e}
           .spaces-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr 1fr}
           .section,.features-inner,.faq-inner{padding:64px 24px}.cta-wrap{padding:72px 24px}
+          .studio-gallery{grid-template-columns:1fr 1fr}
+          .gallery-cell{height:200px}
         }
-        @media(max-width:600px){.features-grid{grid-template-columns:1fr}}
+        @media(max-width:600px){
+          .features-grid{grid-template-columns:1fr}
+          .studio-gallery{grid-template-columns:1fr 1fr}
+        }
       `}</style>
 
       <section className="studio-hero">
@@ -177,6 +188,23 @@ export default function StudioPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div style={{ background: 'var(--dark2)', borderBottom: '1px solid #1a1a1a' }}>
+        <div className="section">
+          <p className="section-label" style={{ textAlign: 'center' }}>Studio Gallery</p>
+          <h2 className="section-h2">Inside the <em>Studio</em></h2>
+          <div className="studio-gallery reveal">
+            <div className="gallery-cell gallery-wide"><img src="/images/studio-1.jpg" alt="" /></div>
+            <div className="gallery-cell"><img src="/images/studio-2.jpg" alt="" /></div>
+            <div className="gallery-cell"><img src="/images/studio-3.jpg" alt="" /></div>
+            <div className="gallery-cell gallery-wide"><img src="/images/studio-4.jpg" alt="" /></div>
+            <div className="gallery-cell gallery-wide"><img src="/images/studio-5.jpg" alt="" /></div>
+            <div className="gallery-cell"><img src="/images/studio-6.jpg" alt="" /></div>
+            <div className="gallery-cell"><img src="/images/studio-8.jpg" alt="" /></div>
+            <div className="gallery-cell gallery-wide"><img src="/images/studio-9.jpg" alt="" /></div>
           </div>
         </div>
       </div>

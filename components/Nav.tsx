@@ -31,7 +31,7 @@ export default function Nav() {
         padding: '0 48px',
       }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-          <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '40px', display: 'block' }} />
+          <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '48px', display: 'block' }} />
         </Link>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>

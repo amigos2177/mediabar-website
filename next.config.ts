@@ -30,6 +30,9 @@ const nextConfig: NextConfig = {
       { source: '/web', destination: '/contact', permanent: true },
       { source: '/Jobs', destination: '/contact', permanent: true },
       { source: '/jobs', destination: '/contact', permanent: true },
+      { source: '/Contact', destination: '/contact', permanent: true },
+      { source: '/FAQs', destination: '/faq', permanent: true },
+      { source: '/Job/:rest*', destination: '/contact', permanent: true },
 
       // ── BLOG MIGRATION ──
       // Specific ID redirects must come before catch-alls

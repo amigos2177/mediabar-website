@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
+const PRODUCTION_HOSTS = new Set([
+  'www.mediabarproductions.com',
+  'mediabarproductions.com',
+])
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
@@ -12,9 +17,21 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308)
   }
 
-  return NextResponse.next()
+  // Block search engines from indexing non-production hosts (Vercel previews,
+  // localhost, etc.). Production gets normal indexing.
+  const host = request.headers.get('host') ?? ''
+  const isProduction = PRODUCTION_HOSTS.has(host)
+
+  const response = NextResponse.next()
+  if (!isProduction) {
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+  }
+  return response
 }
 
 export const config = {
-  matcher: ['/Contact'],
+  matcher: [
+    // Run on all paths except Next internals and static files
+    '/((?!_next/|favicon\\.ico|images/|.*\\..*).*)',
+  ],
 }

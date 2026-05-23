@@ -43,6 +43,8 @@ Site is live and stable. SEO metadata pass DONE for all 38 routes.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
 - **San Antonio location page expansion**: audit wants a FAQ section, keyword-rich internal links into service pages, and client names on app/locations/san-antonio.
 - **Service page body copy**: add natural "San Antonio" mentions to the body of motion-graphics, live-streaming, post-production, real-estate, and medical service pages (currently only in footer).
+- **Photography page fixes**: add "San Antonio" to the H1, add an internal link from app/photography to the San Antonio location page, and add the page to the main navigation (currently orphaned).
+- **Blog content depth**: expand thin blog posts (several are 300-600 words); the "Keeping Creative in San Antonio" post is a stub pointing offsite — either expand it into a real post or set it to noindex.
 
 ## How to update this file
 At the end of each session, update the "Current State" section above so the next session knows where things stand. Verify claims with the codebase (e.g. grep for a field) rather than assuming.

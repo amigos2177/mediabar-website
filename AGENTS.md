@@ -40,7 +40,7 @@ Site is live and stable. SEO metadata pass DONE for all 38 routes.
 - **H1 template fix**: audit flagged a duplicate/template H1 pattern — likely in `components/Layout`. Investigate before fixing.
 - **Client logo alt text**: audit flagged missing or generic alt text on client logo images.
 - **/work video captions**: audit flagged missing captions on Vimeo embeds in `app/work/page.tsx`.
-- **Vercel apex redirect**: switch the apex → www redirect from 307 to 308 in Vercel dashboard (Domains settings).
+- **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
 
 ## How to update this file
 At the end of each session, update the "Current State" section above so the next session knows where things stand. Verify claims with the codebase (e.g. grep for a field) rather than assuming.

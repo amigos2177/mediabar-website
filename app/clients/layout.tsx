@@ -1,0 +1,12 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Our Clients | San Antonio Video Production',
+  description:
+    "Media Bar Productions has produced video for the Spurs, H-E-B, USAA, Frost Bank, and more. See the San Antonio and Texas brands we've worked with.",
+  alternates: { canonical: '/clients' },
+}
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return children
+}

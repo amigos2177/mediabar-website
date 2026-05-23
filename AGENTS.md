@@ -41,6 +41,8 @@ Site is live and stable. SEO metadata pass DONE for all 38 routes.
 - **Client logo alt text**: audit flagged missing or generic alt text on client logo images.
 - **/work video captions**: audit flagged missing captions on Vimeo embeds in `app/work/page.tsx`.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
+- **San Antonio location page expansion**: audit wants a FAQ section, keyword-rich internal links into service pages, and client names on app/locations/san-antonio.
+- **Service page body copy**: add natural "San Antonio" mentions to the body of motion-graphics, live-streaming, post-production, real-estate, and medical service pages (currently only in footer).
 
 ## How to update this file
 At the end of each session, update the "Current State" section above so the next session knows where things stand. Verify claims with the codebase (e.g. grep for a field) rather than assuming.

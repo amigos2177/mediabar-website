@@ -10,8 +10,8 @@ export type Post = {
   title: string
   date: string
   excerpt: string
-  legacyId: number
-  legacyUrl: string
+  legacyId?: number
+  legacyUrl?: string
   content: string
   featuredImage?: string
 }

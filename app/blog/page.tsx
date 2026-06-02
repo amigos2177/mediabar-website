@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  alternates: { canonical: 'https://www.mediabarproductions.com/blog' },
+  alternates: { canonical: '/blog' },
 }
 
 function formatDate(dateStr: string): string {

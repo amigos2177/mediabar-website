@@ -1,12 +1,21 @@
 import type { Metadata } from 'next'
+import { BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Production Studio San Antonio',
   description:
-    'A full production studio in San Antonio for filming, interviews, and creative shoots. Tour Media Bar Productions’ purpose-built studio space.',
+    "A full production studio in San Antonio for filming, interviews, and creative shoots. Tour Media Bar Productions' purpose-built studio space.",
   alternates: { canonical: '/studio' },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Studio', url: '/studio' },
+      ]} />
+      {children}
+    </>
+  )
 }

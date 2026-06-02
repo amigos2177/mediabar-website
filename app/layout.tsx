@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { LocalBusinessJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Video Production San Antonio | Media Bar Productions',
@@ -13,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><LocalBusinessJsonLd />{children}</body>
     </html>
   )
 }

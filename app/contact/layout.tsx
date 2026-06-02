@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Contact Media Bar Productions | San Antonio Video',
@@ -8,5 +9,13 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Contact', url: '/contact' },
+      ]} />
+      {children}
+    </>
+  )
 }

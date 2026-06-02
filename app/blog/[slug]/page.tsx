@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Layout from '../../../components/Layout'
 import { getAllPosts, getPostBySlug } from '../../../lib/blog'
 import CopyLinkButton from '../_components/CopyLinkButton'
+import { BreadcrumbJsonLd } from '../../../components/JsonLd'
 
 export const dynamicParams = false
 
@@ -73,6 +74,12 @@ export default async function BlogPostPage({ params }: Props) {
     datePublished: post.date,
     dateModified: post.date,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    ...(post.featuredImage && {
+      image: {
+        '@type': 'ImageObject',
+        url: `https://www.mediabarproductions.com${post.featuredImage}`,
+      },
+    }),
     author: {
       '@type': 'Organization',
       name: 'Media Bar Productions',
@@ -83,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
       name: 'Media Bar Productions',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.mediabarproductions.com/images/logo.png',
+        url: 'https://www.mediabarproductions.com/images/mediabar-logo.png',
       },
     },
   }
@@ -152,6 +159,11 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
       />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Blog', url: '/blog' },
+        { name: post.title, url: `/blog/${slug}` },
+      ]} />
 
       <section className="bp-hero">
         <div className="bp-hero-bg" aria-hidden="true">BLOG</div>

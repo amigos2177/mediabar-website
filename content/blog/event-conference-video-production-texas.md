@@ -6,7 +6,7 @@ excerpt: "Planning event or conference video production in Texas? How to set goa
 featuredImage: /images/blog/event-conference-video-production-texas.png
 ---
 
-# Event & Conference Video Production in Texas: 2026 Guide
+## Event & Conference Video Production in Texas: 2026 Guide
 
 You've booked the venue, lined up the speakers, and sold the seats. Then someone asks the question that should have come months earlier: who's capturing all of this on video? Too often, event video production is the last item on the planning list — and that timing is exactly why so many companies walk away from a great conference with shaky phone footage and nothing worth reusing. A well-planned event video does the opposite. It turns one day into a year of content: highlight reels, speaker clips, testimonials, and proof for next year's promotion. This guide walks through how to plan event and conference video production in Texas the right way — what to decide first, what it costs, and how to hire a crew that delivers.
 

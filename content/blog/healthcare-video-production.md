@@ -6,7 +6,7 @@ excerpt: "Healthcare video production done right builds patient trust and drives
 featuredImage: /images/blog/healthcare-video-production.png
 ---
 
-# Healthcare Video Production: The HIPAA-Ready Playbook for 2026
+## Healthcare Video Production: The HIPAA-Ready Playbook for 2026
 
 Most video production companies will film your hospital's new wing and hand you a nice highlight reel. But the moment someone asks, "Did we get signed consent from every patient in that hallway shot?" the project falls apart.
 

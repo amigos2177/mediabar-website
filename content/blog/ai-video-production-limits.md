@@ -6,7 +6,7 @@ excerpt: "AI video tools are everywhere, but they can't replace a real crew. Her
 featuredImage: /images/blog/ai-video-production-limits.png
 ---
 
-# Why AI Can't Replace Your Video Crew (Yet)
+## Why AI Can't Replace Your Video Crew (Yet)
 
 Let's get the obvious out of the way: AI video tools are impressive. You can type a sentence and get a moving image back in under a minute. That was science fiction three years ago.
 

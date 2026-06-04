@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { BreadcrumbJsonLd } from '@/components/JsonLd'
+import { VideoObjectSchema, type PortfolioVideo } from '@/components/VideoObjectSchema'
+import workVideos from '@/data/work-videos.json'
 
 export const metadata: Metadata = {
   title: 'Our Work | San Antonio Video Production Portfolio',
@@ -15,6 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: 'Home', url: '/' },
         { name: 'Our Work', url: '/work' },
       ]} />
+      <VideoObjectSchema videos={workVideos as PortfolioVideo[]} />
       {children}
     </>
   )

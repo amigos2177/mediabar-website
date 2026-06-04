@@ -4,6 +4,7 @@ import { LocalBusinessJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mediabarproductions.com'),
+  alternates: { canonical: '/' },
   title: 'Video Production San Antonio | Media Bar Productions',
   description: "San Antonio's award-winning video production company. 3 Emmy Awards, 15 Telly Awards, 13+ years producing corporate, commercial, and event video across Texas.",
   openGraph: {

@@ -208,6 +208,11 @@ export default function HomePage() {
           color: #fff;
           text-transform: uppercase;
         }
+        .hero-headline-geo {
+          font-size: 0.65em;
+          color: var(--gold);
+          letter-spacing: 0.06em;
+        }
         .hero-pills {
           display: flex;
           justify-content: center;
@@ -564,7 +569,7 @@ export default function HomePage() {
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="hero-eyebrow">San Antonio</p>
-          <h1 className="hero-headline">Video Production</h1>
+          <h1 className="hero-headline">Video Production <span className="hero-headline-geo">in San Antonio</span></h1>
           <div className="hero-pills">
             <span className="hero-pill">13+ Years</span>
             <span className="hero-pill">3 Emmy Awards</span>

@@ -23,11 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ogImage = post.featuredImage
     ? `https://www.mediabarproductions.com${post.featuredImage}`
     : undefined
+  const pageTitle = post.seoTitle ?? `${post.title} | Media Bar Productions`
   return {
-    title: `${post.title} | Media Bar Productions`,
+    title: pageTitle,
     description: post.excerpt,
     openGraph: {
-      title: `${post.title} | Media Bar Productions`,
+      title: pageTitle,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,

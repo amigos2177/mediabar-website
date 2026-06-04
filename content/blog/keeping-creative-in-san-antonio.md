@@ -1,5 +1,6 @@
 ---
 title: "Why “Keeping Creative in San Antonio” Matters Now More Than Ever"
+seoTitle: 'Keeping Creative in San Antonio: Why It Matters'
 slug: "keeping-creative-in-san-antonio"
 date: "2025-07-08"
 excerpt: "In a city as rich in talent as San Antonio, it's time to stop outsourcing creativity and start recognizing the professionals right here at home. From"

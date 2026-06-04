@@ -1,8 +1,9 @@
 ---
 title: "Stay Ahead in the AI Era: Boost Your SEO with Expert Video Production"
+seoTitle: "Boost Your SEO with Video Production in the AI Era"
 slug: "boost-seo-with-video-production-ai-era"
 date: "2024-10-21"
-excerpt: "Why Video is Key in the Age of AI and"
+excerpt: "Learn how professional video production strengthens your SEO in the AI era, boosting visibility, engagement, and search rankings for your business."
 legacyId: 41
 legacyUrl: "/News/Get/41/stay-ahead-in-the-ai-era-boost-your-seo-with"
 featuredImage: /images/blog/boost-seo-with-video-production-ai-era.png

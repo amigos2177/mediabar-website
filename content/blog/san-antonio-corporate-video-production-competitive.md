@@ -1,5 +1,6 @@
 ---
 title: "Why San Antonio Businesses Need Corporate Video Production to Stay Competitive"
+seoTitle: "Corporate Video: How San Antonio Brands Compete"
 slug: "san-antonio-corporate-video-production-competitive"
 date: "2024-10-21"
 excerpt: "In today's fast-paced digital world, San Antonio businesses must keep up with the latest trends to stay ahead of their competition. One of the most effective"

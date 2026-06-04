@@ -8,6 +8,7 @@ const CONTENT_DIR = path.join(process.cwd(), 'content/blog')
 export type Post = {
   slug: string
   title: string
+  seoTitle?: string
   date: string
   excerpt: string
   legacyId?: number
@@ -22,6 +23,7 @@ function parseFile(file: string): Post {
   return {
     slug: data.slug as string,
     title: data.title as string,
+    seoTitle: data.seoTitle as string | undefined,
     date: data.date as string,
     excerpt: data.excerpt as string,
     legacyId: data.legacyId as number,

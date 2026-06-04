@@ -1,5 +1,6 @@
 ---
 title: "Event & Conference Video Production in Texas"
+seoTitle: 'Event & Conference Video Production in Texas'
 slug: "event-conference-video-production-texas"
 date: "2026-05-30"
 excerpt: "Planning event or conference video production in Texas? How to set goals, budget, and hire the right crew for recordings, livestreams, and highlight reels."

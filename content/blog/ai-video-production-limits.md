@@ -1,5 +1,6 @@
 ---
 title: "AI Video Production: What It Can't Do"
+seoTitle: "AI Video Production: What It Can't Do"
 slug: "ai-video-production-limits"
 date: "2026-06-01"
 excerpt: "AI video tools are everywhere, but they can't replace a real crew. Here's what AI actually does well — and where it falls apart."

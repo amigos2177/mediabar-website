@@ -1,8 +1,9 @@
 ---
 title: "Unlock Your Brand's Potential with the Best Video Production in San Antonio"
+seoTitle: "Best Video Production in San Antonio for Your Brand"
 slug: "best-video-production-san-antonio"
 date: "2024-10-21"
-excerpt: "Looking for a way to make your business stand"
+excerpt: "Discover what makes the best video production in San Antonio: award-winning corporate, commercial, and event work from Media Bar Productions."
 legacyId: 43
 legacyUrl: "/News/Get/43/unlock-your-brands-potential-with-the-best-vi"
 featuredImage: /images/blog/best-video-production-san-antonio.png

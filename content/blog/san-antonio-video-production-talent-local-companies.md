@@ -1,5 +1,6 @@
 ---
 title: "Showcasing San Antonio's Video Production Talent: Why Local Companies Are the Way to Go!"
+seoTitle: "San Antonio Video Production Talent: Hire Local"
 slug: "san-antonio-video-production-talent-local-companies"
 date: "2023-09-27"
 excerpt: "Showcasing San Antonio's Video Production Talent: Why Local Companies Are the Way to"

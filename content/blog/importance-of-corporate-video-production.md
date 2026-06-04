@@ -1,5 +1,6 @@
 ---
 title: "The Importance of Corporate Video Production in Today's World: Insights from Media Bar Productions"
+seoTitle: "Why Corporate Video Production Matters Today"
 slug: "importance-of-corporate-video-production"
 date: "2023-09-26"
 excerpt: "In today's fast-paced, digitally-driven world, visual communication has ascended to the forefront of how businesses reach, engage, and influence their"

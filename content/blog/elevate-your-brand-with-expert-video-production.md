@@ -1,5 +1,6 @@
 ---
 title: "Elevate Your Brand with Expert Video Production, Wherever You Are"
+seoTitle: "Elevate Your Brand with Expert Video Production"
 slug: "elevate-your-brand-with-expert-video-production"
 date: "2024-10-21"
 excerpt: "Want to make your brand stand out, no matter where your business is located? Video is the"

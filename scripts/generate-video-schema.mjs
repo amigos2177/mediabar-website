@@ -1,9 +1,17 @@
-import { writeFileSync } from "node:fs";
+import { writeFileSync, readFileSync, existsSync } from "node:fs";
 const [out, ...ids] = process.argv.slice(2);
 function isoDuration(sec) {
   const m = Math.floor(sec / 60), s = sec % 60;
   return `PT${m}M${s}S`;
 }
+const existing = existsSync(out)
+  ? JSON.parse(readFileSync(out, "utf8"))
+  : [];
+const existingDesc = Object.fromEntries(
+  existing
+    .filter((v) => v.embedUrl)
+    .map((v) => [v.embedUrl.split("/").at(-1), v.description])
+);
 const videos = [];
 const failed = [];
 for (const id of ids) {
@@ -13,7 +21,7 @@ for (const id of ids) {
     const d = await r.json();
     videos.push({
       name: d.title,
-      description: (d.description || "").trim() || undefined,
+      description: (d.description || "").trim() || existingDesc[id] || undefined,
       thumbnailUrl: d.thumbnail_url,
       uploadDate: (d.upload_date || "").split(" ")[0],
       duration: isoDuration(d.duration),

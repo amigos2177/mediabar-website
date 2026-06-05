@@ -160,10 +160,21 @@ export default function PricingPage() {
         }
         .btn-red:hover { background: #aa0000; }
 
+        /* ── FAQ ── */
+        .pr-faq { padding: 96px 64px; max-width: 860px; margin: 0 auto; }
+        .pr-faq-item {
+          border-top: 1px solid #1e1e1e;
+          padding: 28px 0;
+        }
+        .pr-faq-item:last-child { border-bottom: 1px solid #1e1e1e; }
+        .pr-faq-q { font-size: 16px; font-weight: 700; color: #eee; margin-bottom: 10px; }
+        .pr-faq-a { font-size: 15px; line-height: 1.75; color: #888; }
+
         @media (max-width: 900px) {
           .pr-hero { padding: 120px 24px 72px; }
           .pr-section { padding: 64px 24px; }
           .pr-driver-grid { grid-template-columns: 1fr; }
+          .pr-faq { padding: 64px 24px; }
           .pr-cta-wrap { padding: 72px 24px; }
         }
       `}</style>
@@ -207,6 +218,36 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
+
+      {/* ── FAQ ── */}
+      <section style={{ background: 'var(--black)', borderBottom: '1px solid #1a1a1a' }}>
+        <div className="pr-faq reveal">
+          <p className="pr-section-label">Frequently Asked Questions</p>
+          {[
+            {
+              q: 'What does video production cost in San Antonio?',
+              a: 'Every project is scoped individually, so cost depends on the work involved — creative and pre-production, the number of shoot days and crew size, locations and talent, specialized capture like aerial or multi-cam, post-production depth, and how the final video will be used. We recommend the right scope for your goals rather than a one-size-fits-all package.',
+            },
+            {
+              q: "Why don't you list fixed prices?",
+              a: 'A 30-second social spot and a multi-day brand film are very different productions, so a flat price list would be misleading. We give every client a custom quote based on their specific goals, scope, and deliverables.',
+            },
+            {
+              q: "What's included in a video production quote?",
+              a: 'Our quotes account for creative and pre-production, filming, post-production (editing, color, and sound), and your final deliverables. When we wrap, you own all the footage we shoot at no extra charge.',
+            },
+            {
+              q: 'How do I get an accurate quote for my project?',
+              a: "Tell us what you're trying to accomplish — your goals, audience, timeline, and where the video will run — and we'll build a custom quote with no guesswork and no hidden fees.",
+            },
+          ].map(({ q, a }) => (
+            <div key={q} className="pr-faq-item">
+              <p className="pr-faq-q">{q}</p>
+              <p className="pr-faq-a">{a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* ── CTA ── */}
       <section className="pr-cta-wrap">

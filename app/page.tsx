@@ -122,7 +122,13 @@ export default function HomePage() {
       { threshold: 0.1 }
     )
     els.forEach((el) => obs.observe(el))
-    return () => obs.disconnect()
+    const fallback = setTimeout(() => {
+      els.forEach((el) => el.classList.add('revealed'))
+    }, 1500)
+    return () => {
+      obs.disconnect()
+      clearTimeout(fallback)
+    }
   }, [])
 
   return (
@@ -145,10 +151,23 @@ export default function HomePage() {
           opacity: 0;
           transform: translateY(28px);
           transition: opacity 0.65s ease, transform 0.65s ease;
+          animation: reveal-fallback 0.001s 3s forwards;
         }
         [data-reveal].revealed {
           opacity: 1;
           transform: translateY(0);
+          animation: none;
+        }
+        @keyframes reveal-fallback {
+          to { opacity: 1; transform: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [data-reveal] {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+            animation: none !important;
+          }
         }
 
         /* ─── HERO ─── */
@@ -666,7 +685,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 6. FINAL CTA ─── */}
+      {/* ─── 6. COST TEASER ─── */}
+      <section className="section section-dark2" style={{ textAlign: 'center' }} data-reveal>
+        <p className="eyebrow">What It Costs</p>
+        <h2 className="section-title" style={{ marginBottom: '24px' }}>What Goes Into the Cost of a <em>Video Production</em></h2>
+        <p style={{ fontSize: '16px', lineHeight: '1.75', color: 'rgba(255,255,255,0.55)', maxWidth: '680px', margin: '0 auto 44px' }}>
+          Every project is scoped individually — a 30-second social spot and a multi-day brand film don&rsquo;t carry the same budget. We&rsquo;ll recommend the right scope for your goals, and you own all the footage we shoot.
+        </p>
+        <Link href="/pricing" className="btn-red">See What Drives Cost</Link>
+      </section>
+
+      {/* ─── 7. FINAL CTA ─── */}
       <section className="cta-section" data-reveal>
         <h2 className="cta-headline">Let&rsquo;s Make <em>Something Great</em></h2>
         <p className="cta-sub">Ready to tell your story? Let&rsquo;s build something memorable together.</p>

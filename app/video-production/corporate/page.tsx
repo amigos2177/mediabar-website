@@ -595,7 +595,7 @@ export default function CorporatePage() {
             </nav>
             <p className="corp-eyebrow">Corporate &amp; Business Video</p>
             <h1 className="corp-h1">
-              <em>Corporate</em>
+              <em>Corporate </em>
               Video Production
             </h1>
             <p className="corp-subtitle">

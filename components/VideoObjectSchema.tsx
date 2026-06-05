@@ -9,8 +9,7 @@ export type PortfolioVideo = {
 };
 
 export function VideoObjectSchema({ videos }: { videos: PortfolioVideo[] }) {
-  const data = videos.map((v) => ({
-    "@context": "https://schema.org",
+  const nodes = videos.map((v) => ({
     "@type": "VideoObject",
     name: v.name,
     ...(v.description ? { description: v.description } : {}),
@@ -19,6 +18,10 @@ export function VideoObjectSchema({ videos }: { videos: PortfolioVideo[] }) {
     ...(v.duration ? { duration: v.duration } : {}),
     ...(v.embedUrl ? { embedUrl: v.embedUrl } : {}),
   }));
-  const json = JSON.stringify(data.length === 1 ? data[0] : data).replace(/</g, "\\u003c");
+  const schema =
+    nodes.length === 1
+      ? { "@context": "https://schema.org", ...nodes[0] }
+      : { "@context": "https://schema.org", "@graph": nodes };
+  const json = JSON.stringify(schema).replace(/</g, "\\u003c");
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />;
 }

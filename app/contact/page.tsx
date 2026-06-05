@@ -15,6 +15,14 @@ const timelines = [
   '1–3 Months Out', 'Planning Ahead (3+ Months)', 'Not Sure Yet',
 ]
 
+const budgets = [
+  'Under $5,000',
+  '$5,000 – $15,000',
+  '$15,000 – $50,000',
+  '$50,000+',
+  'Not sure yet',
+]
+
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
@@ -26,6 +34,7 @@ const EMPTY = {
   phone: '',
   company: '',
   service: '',
+  budget: '',
   timeline: '',
   message: '',
 }
@@ -252,6 +261,16 @@ export default function ContactPage() {
                       {timelines.map((t) => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
+                </div>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="budget">
+                    Project Budget
+                    <span style={{ fontWeight: 400, letterSpacing: 0, textTransform: 'none', color: '#666', fontSize: '11px', marginLeft: '8px' }}>Helps us tailor your quote</span>
+                  </label>
+                  <select className="form-select" id="budget" name="budget" value={fields.budget} onChange={set('budget')}>
+                    <option value="">Select a range</option>
+                    {budgets.map((b) => <option key={b} value={b}>{b}</option>)}
+                  </select>
                 </div>
                 <div className="form-group">
                   <label className="form-label" htmlFor="message">Tell Us About Your Project</label>

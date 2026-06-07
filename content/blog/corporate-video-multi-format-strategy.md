@@ -14,6 +14,56 @@ At Media Bar Productions, we have spent more than 13 years helping Texas compani
 
 Here is how the multi-format approach works, and how to make sure your next corporate video earns its budget for months, not minutes.
 
+<style>
+.mb-audio{
+  --mb-red:#C8102E;
+  margin:2.25rem 0;
+  padding:1.25rem 1.5rem;
+  background:#161616;
+  border:1px solid #2a2a2a;
+  border-left:3px solid var(--mb-red);
+  border-radius:12px;
+}
+.mb-audio figcaption{
+  display:flex;align-items:center;gap:.55rem;
+  font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mb-red);margin-bottom:.85rem;
+}
+.mb-audio figcaption::before{content:"►";font-size:.7em;}
+.mb-audio audio{width:100%;display:block;}
+.mb-transcript{margin-top:1rem;border-top:1px solid #2a2a2a;padding-top:.85rem;}
+.mb-transcript summary{
+  cursor:pointer;list-style:none;
+  font-size:.9rem;font-weight:600;color:#cfcfcf;
+  display:flex;align-items:center;gap:.45rem;
+}
+.mb-transcript summary::-webkit-details-marker{display:none;}
+.mb-transcript summary::before{
+  content:"";width:0;height:0;
+  border-left:6px solid var(--mb-red);
+  border-top:4px solid transparent;border-bottom:4px solid transparent;
+  transition:transform .2s ease;
+}
+.mb-transcript[open] summary::before{transform:rotate(90deg);}
+.mb-transcript summary:hover{color:#fff;}
+.mb-transcript p{color:#b8b8b8;font-size:.95rem;line-height:1.75;margin:.8rem 0;}
+</style>
+
+<figure class="mb-audio">
+  <figcaption>Listen — One Shoot, Many Cuts · 2 min</figcaption>
+  <audio controls preload="none" src="/audio/blog/corporate-video-multi-format-strategy.mp3"></audio>
+  <details class="mb-transcript">
+    <summary>Audio transcript</summary>
+    <p>Your audience doesn't watch video in one place anymore. The same message has to land on a phone during a coffee break, on a homepage above the fold, inside a sales deck, and on a lobby monitor at an event. Shooting a separate video for each of those is slow and expensive. Shooting once and cutting smart is how the best brands keep up.</p>
+    <p>At Media Bar Productions, we've spent more than thirteen years helping Texas companies turn a single production day into a library of content. As a San Antonio team with three Emmy Awards and fifteen Telly Awards, we plan every corporate shoot around one question: how many places can this footage go?</p>
+    <p>Here's the mistake to avoid. A company shoots a beautiful two-minute hero video, then a week later asks an intern to crop it for TikTok. The pacing breaks, the graphics get cut off, and it reads as a recycled hand-me-down. You didn't just hurt the brand — you set fire to most of your production budget.</p>
+    <p>The fix is what we call backward mapping. Before the cameras roll, you define every deliverable — the hero video, the vertical social cuts, the recruiting reel, the square email teaser — and build one shot list that feeds all of them. The footage is the asset. The formats are just how you spend it.</p>
+    <p>On set, three things change. Shoot wider than feels natural, so editors have room to reframe for vertical and square. Capture far more B-roll than the hero edit needs — that's the fuel for months of short clips. And record pristine audio, because sound-off social cuts need accurate captions, and clean audio is what makes those captions possible.</p>
+    <p>Done right, one day of filming becomes a hero piece for your website, vertical clips for social, an explainer your sales reps drop into proposals, a culture reel for recruiting, and an internal training video. The crew cost stays flat. The output multiplies.</p>
+    <p>If you're a San Antonio or wider Texas brand weighing a corporate video, that planning conversation is exactly where we start. Reach out to Media Bar Productions, and let's build a shoot that works everywhere your audience does.</p>
+  </details>
+</figure>
+
 ## Why One Format Is No Longer Enough
 
 A few years ago, a corporate video meant one polished two-minute piece for your website. That single deliverable still matters, but on its own it leaves most of your investment on the table.

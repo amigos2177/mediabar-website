@@ -385,29 +385,44 @@ export default function HomePage() {
         /* ─── SERVICES GRID ─── */
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-          gap: 2px;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 1px;
+          background: #242424;
+          border: 1px solid #242424;
         }
         .service-card {
+          position: relative;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          min-height: 180px;
+          min-height: 210px;
           background: var(--dark2);
           padding: 32px 28px;
           text-decoration: none;
-          border: 1px solid #1e1e1e;
-          border-left: 2px solid var(--red);
-          transition: background 0.15s, border-top-color 0.15s;
+          transition: background 0.2s ease;
+        }
+        .service-card::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background: var(--red);
+          transform: scaleY(0);
+          transform-origin: top;
+          transition: transform 0.25s ease;
         }
         .service-card:hover {
-          background: #1a1a1a;
-          border-top-color: var(--red);
+          background: #1c1c1c;
+        }
+        .service-card:hover::before {
+          transform: scaleY(1);
         }
         .service-card-top { display: flex; flex-direction: column; }
         .service-icon {
           display: block;
-          margin-bottom: 16px;
+          margin-bottom: 18px;
           width: 28px;
           height: 28px;
         }
@@ -415,8 +430,8 @@ export default function HomePage() {
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 0.14em;
-          color: var(--red);
-          margin-bottom: 8px;
+          color: #5a5a5a;
+          margin-bottom: 10px;
         }
         .service-title {
           font-family: 'Bebas Neue', Impact, sans-serif;
@@ -429,14 +444,14 @@ export default function HomePage() {
           font-weight: 700;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: var(--red);
+          color: #5a5a5a;
           margin-top: 20px;
           display: flex;
           align-items: center;
           gap: 6px;
-          transition: gap 0.2s;
+          transition: color 0.2s ease, gap 0.2s ease;
         }
-        .service-card:hover .service-card-cta { gap: 10px; }
+        .service-card:hover .service-card-cta { color: var(--red); gap: 10px; }
 
         /* ─── DEMO REEL ─── */
         .reel-section-inner {

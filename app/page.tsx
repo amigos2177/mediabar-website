@@ -384,13 +384,14 @@ export default function HomePage() {
 
         /* ─── SERVICES GRID ─── */
         .services-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          display: flex;
+          flex-wrap: wrap;
           gap: 1px;
           background: #242424;
           border: 1px solid #242424;
         }
         .service-card {
+          flex: 1 1 220px;
           position: relative;
           display: flex;
           flex-direction: column;

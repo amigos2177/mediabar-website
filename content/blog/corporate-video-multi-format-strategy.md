@@ -4,6 +4,15 @@ slug: "corporate-video-multi-format-strategy"
 date: "2026-06-06"
 excerpt: "One corporate video shoot can fuel months of content. See how Texas brands turn a single production day into social, web, and internal video."
 featuredImage: /images/blog/corporate-video-multi-format-strategy.png
+faqs:
+  - question: "How many videos can come from one corporate shoot?"
+    answer: "With the right plan, a single day commonly yields one hero video plus several short social cuts, an internal version, and teaser clips. The limit is set by how much B-roll and how many setups you capture."
+  - question: "Should corporate videos be horizontal or vertical?"
+    answer: "Both. Capture with vertical and square in mind so the same footage can be reframed, rather than committing to one aspect ratio and reshooting later."
+  - question: "How long should a corporate video be?"
+    answer: "The hero piece usually lands around 60–120 seconds; social cuts run far shorter, often 15–30 seconds. The point of multi-format is that one shoot serves every length."
+  - question: "How far ahead should we plan?"
+    answer: "The earlier the better. Mapping deliverables before the shoot is what makes the one-shoot, many-cuts model work without surprises or added cost."
 ---
 
 # Corporate Video Production in San Antonio: One Shoot, a Month of Content

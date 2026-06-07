@@ -5,6 +5,8 @@ import { marked } from 'marked'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content/blog')
 
+export type FaqItem = { question: string; answer: string }
+
 export type Post = {
   slug: string
   title: string
@@ -15,6 +17,7 @@ export type Post = {
   legacyUrl?: string
   content: string
   featuredImage?: string
+  faqs?: FaqItem[]
 }
 
 function parseFile(file: string): Post {
@@ -30,6 +33,7 @@ function parseFile(file: string): Post {
     legacyUrl: data.legacyUrl as string,
     content: marked.parse(content) as string,
     featuredImage: data.featuredImage as string | undefined,
+    faqs: data.faqs as FaqItem[] | undefined,
   }
 }
 

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '../../../components/Layout'
 import { getAllPosts, getPostBySlug } from '../../../lib/blog'
 import CopyLinkButton from '../_components/CopyLinkButton'
-import { BreadcrumbJsonLd } from '../../../components/JsonLd'
+import { BreadcrumbJsonLd, FAQPageJsonLd } from '../../../components/JsonLd'
 
 export const dynamicParams = false
 
@@ -160,6 +160,7 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}
       />
+      {post.faqs?.length && <FAQPageJsonLd faqs={post.faqs} />}
       <BreadcrumbJsonLd items={[
         { name: 'Home', url: '/' },
         { name: 'Blog', url: '/blog' },

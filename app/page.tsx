@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import GoogleReviews from '../components/GoogleReviews'
 
 const services = [
   { label: 'Corporate Video',        href: '/video-production/corporate' },
@@ -710,6 +711,9 @@ export default function HomePage() {
         </p>
         <Link href="/pricing" className="btn-red">See What Drives Cost</Link>
       </section>
+
+      {/* ─── 7. GOOGLE REVIEWS ─── */}
+      <GoogleReviews />
 
       {/* ─── 7. FINAL CTA ─── */}
       <section className="cta-section" data-reveal>

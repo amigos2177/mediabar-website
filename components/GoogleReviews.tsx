@@ -35,14 +35,8 @@ export default function GoogleReviews() {
   }, [loaded]);
 
   return (
-    <section className="bg-[#1A1A1A] px-6 py-20">
-      <div className="mx-auto max-w-5xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-[#CC0000]">
-          Client Reviews
-        </p>
-        <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
-          Trusted Across San Antonio
-        </h2>
+    <section className="bg-[#1A1A1A] px-6 pt-20 pb-20">
+      <div className="mx-auto max-w-5xl">
         <div ref={containerRef} className="mt-12 min-h-[320px]" aria-label="Google customer reviews" />
       </div>
     </section>

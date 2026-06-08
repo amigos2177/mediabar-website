@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import TrustBadge from './TrustBadge'
 
 const colHeading: React.CSSProperties = {
   color: '#fff',
@@ -129,6 +130,7 @@ export default function Footer() {
             ⭐ 3 Emmy Awards · 15 Telly Awards
           </p>
         </div>
+        <TrustBadge />
       </footer>
     </>
   )

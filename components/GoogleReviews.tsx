@@ -43,11 +43,7 @@ export default function GoogleReviews() {
         <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
           Trusted Across San Antonio
         </h2>
-        <div className="mt-5 flex items-center justify-center gap-3">
-          <span className="text-2xl tracking-tight text-[#C9A84C]">★★★★★</span>
-          <span className="text-lg font-medium text-white">5.0 · 37 Google Reviews</span>
-        </div>
-        <div ref={containerRef} className="mt-10 min-h-[320px]" aria-label="Google customer reviews" />
+        <div ref={containerRef} className="mt-12 min-h-[320px]" aria-label="Google customer reviews" />
       </div>
     </section>
   );

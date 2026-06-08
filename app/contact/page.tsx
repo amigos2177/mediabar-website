@@ -265,7 +265,7 @@ export default function ContactPage() {
                 <div className="form-group">
                   <label className="form-label" htmlFor="budget">
                     Project Budget
-                    <span style={{ fontWeight: 400, letterSpacing: 0, textTransform: 'none', color: '#666', fontSize: '11px', marginLeft: '8px' }}>Helps us tailor your quote</span>
+                    <span style={{ fontWeight: 400, letterSpacing: 0, textTransform: 'none', color: '#666', fontSize: '11px', marginLeft: '8px' }}>Optional</span>
                   </label>
                   <select className="form-select" id="budget" name="budget" value={fields.budget} onChange={set('budget')}>
                     <option value="">Select a range</option>

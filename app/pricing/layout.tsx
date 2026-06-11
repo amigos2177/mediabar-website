@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
+import { buildMetadata } from '@/lib/seo'
 import { FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Video Production Cost in San Antonio | Media Bar Productions',
-  description:
-    'What drives video production cost in San Antonio — scope, crew, locations, post-production depth, and deliverables. Plan your budget before you call.',
-  alternates: { canonical: '/pricing' },
-}
+  description: 'What drives video production cost in San Antonio — scope, crew, locations, post-production depth, and deliverables. Plan your budget before you call.',
+  path: '/pricing',
+})
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

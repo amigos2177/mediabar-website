@@ -1,22 +1,14 @@
-import type { Metadata } from 'next'
+import { buildMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '../../components/Layout'
 import { getAllPosts } from '../../lib/blog'
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Blog | Media Bar Productions',
-  description:
-    'Insights and stories from San Antonio\'s Emmy and Telly award-winning video production team.',
-  openGraph: {
-    title: 'Blog | Media Bar Productions',
-    description:
-      'Insights and stories from San Antonio\'s Emmy and Telly award-winning video production team.',
-    type: 'website',
-  },
-  twitter: { card: 'summary_large_image' },
-  alternates: { canonical: '/blog' },
-}
+  description: "Insights and stories from San Antonio's Emmy and Telly award-winning video production team.",
+  path: '/blog',
+})
 
 function formatDate(dateStr: string): string {
   const [year, month, day] = dateStr.split('-').map(Number)

@@ -23,12 +23,18 @@ export function buildMetadata({ title, description, path, ogImage }: BuildMetada
       siteName: SITE_NAME,
       locale: 'en_US',
       type: 'website',
-      ...(ogImage && { images: [{ url: ogImage }] }),
+      images: [{
+        url: ogImage ?? '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Media Bar Productions — Video Production in San Antonio',
+      }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [ogImage ?? '/opengraph-image'],
     },
   }
 }

@@ -1,11 +1,12 @@
+import { buildMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 
-export const metadata = {
-  title: { absolute: 'Video Production Services San Antonio | Media Bar Productions' },
+export const metadata = buildMetadata({
+  title: 'Video Production Services San Antonio | Media Bar Productions',
   description: 'Full-service video production in San Antonio. Corporate, commercial, events, medical, aerial, motion graphics, live streaming & more. 3 Emmy Awards. Get a quote.',
-  alternates: { canonical: '/video-production' },
-}
+  path: '/video-production',
+})
 
 const services = [
   {

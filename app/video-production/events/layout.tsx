@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
+import { buildMetadata } from '@/lib/seo'
 import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Event Videography San Antonio',
-  description:
-    "Event video coverage in San Antonio — conferences, galas, and corporate events. Multi-camera production that captures your event in full.",
-  alternates: { canonical: '/video-production/events' },
-}
+  description: 'Event video coverage in San Antonio — conferences, galas, and corporate events. Multi-camera production that captures your event in full.',
+  path: '/video-production/events',
+})
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

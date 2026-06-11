@@ -1,12 +1,11 @@
-import type { Metadata } from 'next'
+import { buildMetadata } from '@/lib/seo'
 import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: 'Motion Graphics & Animation San Antonio',
-  description:
-    "Motion graphics and animation in San Antonio — explainer videos, animated logos, and branded visuals that bring Texas companies' ideas to life.",
-  alternates: { canonical: '/video-production/motion-graphics' },
-}
+  description: "Motion graphics and animation in San Antonio — explainer videos, animated logos, and branded visuals that bring Texas companies' ideas to life.",
+  path: '/video-production/motion-graphics',
+})
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

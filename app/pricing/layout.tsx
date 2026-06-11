@@ -27,6 +27,22 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           question: 'How do I get an accurate quote for my project?',
           answer: "Tell us what you're trying to accomplish — your goals, audience, timeline, and where the video will run — and we'll build a custom quote with no guesswork and no hidden fees.",
         },
+        {
+          question: 'How much does a corporate video cost in San Antonio?',
+          answer: "It depends on scope — the honest range runs from a single-day brand story production to a multi-day campaign. The biggest cost drivers are shoot days, crew size, and post-production depth. Tell us your goal and we'll recommend the right scope, not the biggest one.",
+        },
+        {
+          question: 'Do you have minimum project sizes?',
+          answer: "No. We scope to the goal — if a half-day shoot gets you what you need, that's what we'll recommend.",
+        },
+        {
+          question: 'Do we own the footage?',
+          answer: 'Yes — everything we shoot for you is yours, including the raw footage.',
+        },
+        {
+          question: 'How far in advance should we book?',
+          answer: "Typically one to two weeks for production scheduling. Larger campaigns with casting and locations need more runway — reach out early and we'll build the timeline together.",
+        },
       ]} />
       <BreadcrumbJsonLd items={[
         { name: 'Home', url: '/' },

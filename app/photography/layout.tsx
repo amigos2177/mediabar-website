@@ -2,7 +2,7 @@ import { buildMetadata } from '@/lib/seo'
 import { BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Photography Services San Antonio',
+  title: 'Photography Services San Antonio | Media Bar Productions',
   description: 'Professional photography in San Antonio for brands, events, and architecture. Media Bar Productions delivers polished commercial imagery across Texas.',
   path: '/photography',
 })

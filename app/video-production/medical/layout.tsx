@@ -2,7 +2,7 @@ import { buildMetadata } from '@/lib/seo'
 import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Medical Video Production San Antonio',
+  title: 'Medical Video Production San Antonio | Media Bar Productions',
   description: 'Medical and healthcare video production in San Antonio — patient education, facility tours, and provider profiles for Texas healthcare organizations.',
   path: '/video-production/medical',
 })

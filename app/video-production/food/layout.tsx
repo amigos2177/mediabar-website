@@ -2,7 +2,7 @@ import { buildMetadata } from '@/lib/seo'
 import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Food Video Production San Antonio',
+  title: 'Food Video Production San Antonio | Media Bar Productions',
   description: 'Appetizing food and beverage video production in San Antonio. Media Bar Productions creates mouth-watering content for restaurants and Texas food brands.',
   path: '/video-production/food',
 })

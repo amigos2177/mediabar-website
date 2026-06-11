@@ -2,7 +2,7 @@ import { buildMetadata } from '@/lib/seo'
 import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Aerial & Drone Video San Antonio',
+  title: 'Aerial & Drone Video San Antonio | Media Bar Productions',
   description: 'Licensed aerial and drone videography in San Antonio. Media Bar Productions captures cinematic aerial footage for brands and events across Texas.',
   path: '/video-production/aerial',
 })

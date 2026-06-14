@@ -48,4 +48,45 @@ Site is live and stable. SEO metadata pass DONE for all 38 routes.
 
 ## How to update this file
 At the end of each session, update the "Current State" section above so the next session knows where things stand. Verify claims with the codebase (e.g. grep for a field) rather than assuming.
+
+## SEO & content system
+
+Two docs in `docs/` are the source of truth for all blog and SEO work. Read the
+relevant one before acting:
+
+- **`docs/blog-engine.md`** — how to produce a ranking-ready blog post end to end:
+  topic radar → committable `.md` → optional audio overview → matching GBP promo.
+  Use it for any "run it" / "new blog post" request.
+- **`docs/seo-playbook.md`** — daily SEO ops: GBP rules, reviews, measurement, and
+  the canonical two-mode instructions. Use it for GBP posts, review asks, the
+  weekday rotation, and measurement.
+
+When the spec doc and the live repo disagree, the **live repo wins** — confirm new
+work against an existing published post.
+
+## Repo conventions (blog)
+
+- Posts: `content/blog/<slug>.md` — slug = filename; `sitemap.ts` auto-discovers every `.md`.
+- Images: `public/images/blog/<slug>.png` (referenced `/images/blog/<slug>.png`).
+- Audio: `public/audio/blog/<slug>.mp3` (referenced `/audio/blog/<slug>.mp3`).
+- Markdown renders **raw HTML** (`marked` → `dangerouslySetInnerHTML`) — `<figure>`,
+  `<audio>`, `<details>`, and inline `<style>` work directly in a `.md`. No MDX needed.
+- Front-matter keys: `title` (≤40 chars, keyword front-loaded), `slug`, `date`,
+  `excerpt` (120–155 chars), `featuredImage`, plus `faqs:` (live-site standard;
+  powers `FAQPageJsonLd` in `components/JsonLd.tsx`).
+- Match an existing live post's front-matter before committing a new one.
+
+## Hard rules (do not violate)
+
+- **Manual gates are the human's:** merge/publish, GSC URL Inspection → Request
+  Indexing, GBP posting, and sending any email. Agents draft; Ruben executes.
+- **Canonical domain:** `mediabarproductions.com` — use it for all internal links
+  and GBP CTAs.
+- **No invented statistics.** Keep cost talk in ranges, never fabricated figures.
+- **Reviews:** genuine clients only — never vendors, freelancers, or staff. No
+  incentives, no scripted wording. Link: `https://g.page/r/CU_xOVu2pdSuEBM/review`
+- **GBP posts:** front-load the first ~120 chars, no phone numbers in the body,
+  1200×900 4:3 image (subject centered), UTM-tag links
+  (`?utm_source=gbp&utm_medium=organic&utm_campaign=<name>`). "What's New" posts
+  archive after 7 days; also add images to the Photos tab (those don't expire).
 <!-- END:mediabar-project-context -->

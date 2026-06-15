@@ -159,8 +159,8 @@ export default function HowWeWorkPage() {
         .vp-icon{margin-bottom:16px}
         .vp-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:.05em;color:#fff;margin-bottom:10px}
         .vp-desc{font-size:13px;line-height:1.75;color:#B0B0B0}
-        .vp-img-wrap{border:1px solid #1e1e1e;overflow:hidden;border-radius:4px;aspect-ratio:16/10;background:#0d0d0d;flex:1}
-        .vp-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+        .vp-img-wrap{border:1px solid rgba(255,255,255,0.12);overflow:hidden;border-radius:12px;aspect-ratio:16/10;background:#1c1c1c;flex:1;box-shadow:0 4px 24px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.04)}
+        .vp-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;transition:transform .4s ease}
         .vp-card:hover .vp-img-wrap img{transform:scale(1.03)}
 
         /* ─── PRICING TEXT ─── */

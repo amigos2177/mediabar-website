@@ -667,6 +667,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── HOW WE WORK TEASER ─── */}
+      <section className="section" style={{ background: 'var(--black)', textAlign: 'center' }} data-reveal>
+        <p className="eyebrow">The Media Bar Experience</p>
+        <h2 className="section-title">You&rsquo;ll never wonder where <em>your project stands.</em></h2>
+        <p style={{ fontSize: '16px', lineHeight: '1.75', color: 'rgba(255,255,255,0.55)', maxWidth: '600px', margin: '0 auto 44px' }}>
+          {/* TODO: Replace with your copy */}
+          A private client space, a four-phase process, and a direct line to the people doing the work — visible to you at every step.
+        </p>
+        <Link href="/how-we-work" className="btn-red">See how we work &rarr;</Link>
+      </section>
+
       {/* ─── 5. AWARDS ─── */}
       <section className="section section-dark" style={{ textAlign: 'center' }} data-reveal>
         <p className="eyebrow">Recognition</p>

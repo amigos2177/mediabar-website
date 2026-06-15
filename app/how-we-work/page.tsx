@@ -87,6 +87,15 @@ const faqs = [
 
 export default function HowWeWorkPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
+  const [lightboxAlt, setLightboxAlt] = useState<string>('')
+
+  useEffect(() => {
+    if (!lightboxSrc) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightboxSrc(null) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [lightboxSrc])
 
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal')
@@ -159,9 +168,20 @@ export default function HowWeWorkPage() {
         .vp-icon{margin-bottom:16px}
         .vp-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:.05em;color:#fff;margin-bottom:10px}
         .vp-desc{font-size:13px;line-height:1.75;color:#B0B0B0}
-        .vp-img-wrap{border:1px solid rgba(255,255,255,0.12);overflow:hidden;border-radius:12px;aspect-ratio:16/10;background:#1c1c1c;flex:1;box-shadow:0 4px 24px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.04)}
+        .vp-img-wrap{border:1px solid rgba(255,255,255,0.12);overflow:hidden;border-radius:12px;aspect-ratio:16/10;background:#1c1c1c;flex:1;box-shadow:0 4px 24px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.04);position:relative}
         .vp-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;transition:transform .4s ease}
         .vp-card:hover .vp-img-wrap img{transform:scale(1.03)}
+        .vp-img-btn{background:none;border:none;padding:0;cursor:pointer;display:flex;flex:1;flex-direction:column;text-align:left;-webkit-appearance:none}
+        .vp-img-btn:focus-visible{outline:2px solid var(--red);outline-offset:4px;border-radius:14px}
+        .vp-img-wrap::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .2s;border-radius:12px;pointer-events:none}
+        .vp-img-btn:hover .vp-img-wrap::after,.vp-img-btn:focus-visible .vp-img-wrap::after{background:rgba(0,0,0,0.18)}
+        .vp-expand-icon{position:absolute;bottom:10px;right:10px;z-index:2;background:rgba(0,0,0,0.72);color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;opacity:0;transition:opacity .2s;pointer-events:none}
+        .vp-img-btn:hover .vp-expand-icon,.vp-img-btn:focus-visible .vp-expand-icon{opacity:1}
+        .vp-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px}
+        .vp-lightbox-img{max-width:min(90vw,1200px);max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:4px;box-shadow:0 8px 60px rgba(0,0,0,0.8);cursor:default}
+        .vp-lightbox-close{position:fixed;top:16px;right:20px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;line-height:1;padding:0;-webkit-appearance:none}
+        .vp-lightbox-close:hover{background:rgba(255,255,255,0.25)}
+        .vp-lightbox-close:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
         /* ─── PRICING TEXT ─── */
         .pricing-wrap{background:var(--dark2);border-bottom:1px solid #1a1a1a}
@@ -312,9 +332,16 @@ export default function HowWeWorkPage() {
                   Replace placeholder images with real portal screenshots.
                   Paths: /portal-timeline.jpg, /portal-files.jpg, /portal-messages.jpg
                 */}
-                <div className="vp-img-wrap">
-                  <img src={vp.image} alt={vp.alt} loading="lazy" />
-                </div>
+                <button
+                  type="button"
+                  className="vp-img-btn"
+                  onClick={() => { setLightboxSrc(vp.image); setLightboxAlt(vp.alt) }}
+                >
+                  <div className="vp-img-wrap">
+                    <img src={vp.image} alt={vp.alt} loading="lazy" />
+                    <span className="vp-expand-icon" aria-hidden="true">⤢</span>
+                  </div>
+                </button>
               </div>
             ))}
           </div>
@@ -406,6 +433,33 @@ export default function HowWeWorkPage() {
           <Link href="/work" className="btn-outline">See Our Work</Link>
         </div>
       </section>
+
+      {lightboxSrc && (
+        <div
+          className="vp-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Full-size portal screenshot"
+          onClick={() => setLightboxSrc(null)}
+        >
+          <button
+            type="button"
+            className="vp-lightbox-close"
+            onClick={() => setLightboxSrc(null)}
+            aria-label="Close lightbox"
+            // eslint-disable-next-line jsx-a11y/no-autofocus
+            autoFocus
+          >
+            ✕
+          </button>
+          <img
+            className="vp-lightbox-img"
+            src={lightboxSrc}
+            alt={lightboxAlt}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </Layout>
   )
 }

@@ -76,7 +76,7 @@ We've spent more than 13 years producing video for Texas brands, earned an Emmy 
 
 Hiring is a two-way audition. While you're evaluating candidates, they're evaluating you — your culture, your leadership, and whether the day-to-day actually matches the pitch. Video is the only format that answers all three questions at once.
 
-It also reflects where marketing has moved. The brands winning attention in 2026 are leaning into proof over polish: credibility has become the real storytelling asset, and audiences trust what looks and sounds real far more than what looks manufactured. The same instinct applies to hiring. A scripted, stock-footage "culture" video reads as a commercial. A real employee talking about real work reads as the truth.
+It also reflects where marketing has moved. The brands winning attention in 2026 are leaning into proof over polish: credibility has become the real storytelling asset, and audiences trust what looks and sounds real far more than what looks manufactured. It's part of a broader [authentic-versus-polished shift](/blog/authentic-video-marketing-2026) reshaping brand video, and the same instinct applies to hiring. A scripted, stock-footage "culture" video reads as a commercial. A real employee talking about real work reads as the truth.
 
 A strong recruiting video does three things a job post simply can't:
 

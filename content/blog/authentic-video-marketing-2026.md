@@ -97,7 +97,7 @@ Here's what we actually build with clients, and it ends the raw-versus-polished 
 
 One production day, scoped right, can yield a polished hero film *and* a stack of raw, real social cuts from the same footage. The cinematic piece carries your brand; the human clips feed your feed all month. That's the most efficient dollar in video, because you pay for the crew and the day once.
 
-AI fits in here too — as a tool, not the talent. It's genuinely useful for volume B-roll, quick drafts, and multilingual versions. It's still a poor substitute for the moments that carry your brand: real faces, real emotion, real stakes. Use it to extend a shoot, not to replace the parts that make people trust you.
+AI fits in here too — as a tool, not the talent. It's genuinely useful for volume B-roll, quick drafts, and multilingual versions. It's still a [poor substitute for the moments that carry your brand](/blog/ai-video-production-limits): real faces, real emotion, real stakes. Use it to extend a shoot, not to replace the parts that make people trust you.
 
 On budget: a polished brand film sits at the top of your video spend, and raw social cuts cost a fraction of that — especially when both come out of one shoot. We scope every project around the videos you'll actually use, so you're never paying for footage that sits on a shelf.
 

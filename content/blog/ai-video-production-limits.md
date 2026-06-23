@@ -51,7 +51,7 @@ Here's the trend that matters most for marketing directors and business owners t
 
 Audiences aren't just consuming content anymore. They're evaluating it. Is this real? Does this company actually look like this? Did a human being make this, or did someone type a prompt and call it a day?
 
-The brands winning with video right now are the ones investing in real crews, real locations, real people on camera, and real stories. Not because they're anti-technology, but because they understand that trust is the asset AI can't manufacture.
+The brands winning with video right now are the ones investing in real crews, real locations, real people on camera, and real stories. Not because they're anti-technology, but because they understand that trust is the asset AI can't manufacture. Knowing [when polished video still pays versus when raw wins](/blog/authentic-video-marketing-2026) is a separate decision worth getting right.
 
 That's true whether you're a restaurant in [San Antonio](/locations/san-antonio) shooting behind-the-scenes kitchen content, a hospital producing physician introductions, or a corporation filming a keynote for 5,000 employees.
 

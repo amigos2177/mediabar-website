@@ -57,6 +57,16 @@ That's true whether you're a restaurant in [San Antonio](/locations/san-antonio)
 
 The human element isn't a nice-to-have. It's the whole point.
 
+## A Simple Buy-vs-Build Test
+
+Not sure which way to go? Run your project through three quick questions:
+
+1. **Does it feature real people, your space, or your product?** If yes, lean toward a crew.
+2. **How high are the stakes?** A throwaway social test can ride on AI. A homepage hero, a brand film, or a launch should not.
+3. **How long does it need to last?** Disposable content can be cheap and fast. Evergreen, flagship content is worth doing properly once.
+
+If you answered "real people," "high stakes," and "long shelf life," you are looking at a production, not a prompt.
+
 ## The Smart Play: AI-Assisted, Human-Led
 
 The companies getting the best results aren't choosing between AI and professional production. They're using both — strategically.

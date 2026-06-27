@@ -65,6 +65,12 @@ const nextConfig: NextConfig = {
       { source: '/News', destination: '/blog', permanent: true },
       { source: '/news', destination: '/blog', permanent: true },
       { source: '/locations/texas', destination: '/locations/san-antonio', permanent: true },
+
+      // ── BLOG CONSOLIDATION (301) ──
+      // Healthcare: retired generic playbook → geo-optimized pillar
+      { source: '/blog/healthcare-video-production', destination: '/blog/healthcare-video-production-san-antonio', permanent: true },
+      // AI: retired "vs hiring a crew" → comprehensive keeper
+      { source: '/blog/ai-video-tools-vs-hiring-a-crew', destination: '/blog/ai-video-production-limits', permanent: true },
     ]
   },
 }

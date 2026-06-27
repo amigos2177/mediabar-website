@@ -163,7 +163,7 @@ export default function EventsPage() {
               <span style={{ color: '#AAAAAA' }}>Event Video</span>
             </nav>
             <p className="eyebrow">Event Coverage &amp; Documentation</p>
-            <h1 className="page-h1"><em>Event</em>Video Production</h1>
+            <h1 className="page-h1"><em>Event</em>Video Production in San Antonio</h1>
             <p className="hero-sub">Multi-camera event coverage that captures every moment with broadcast quality — from the keynote to the closing toast. Same-day edits available for events that can't wait.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>
@@ -186,6 +186,7 @@ export default function EventsPage() {
               <h2 className="section-h2">Every Moment <em>Preserved</em></h2>
               <p className="body-text">Events happen once. The keynote address, the award presentation, the surprise announcement — you can't call a do-over. That's why having the right video team matters: a crew that moves like they're invisible, anticipates the moment before it happens, and has the technical infrastructure to capture everything cleanly.</p>
               <p className="body-text">We bring multi-camera crews, professional audio engineers, and on-site editors to events of every size across San Antonio and Texas.</p>
+              <p className="body-text">Planning a larger program? See our guide to <Link href="/blog/event-conference-video-production-texas" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>conference and event video production across Texas</Link>.</p>
             </div>
             <div className="reveal">
               <p className="section-label">Events We Cover</p>

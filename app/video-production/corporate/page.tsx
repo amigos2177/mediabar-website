@@ -596,7 +596,7 @@ export default function CorporatePage() {
             <p className="corp-eyebrow">Corporate &amp; Business Video</p>
             <h1 className="corp-h1">
               <em>Corporate </em>
-              Video Production
+              Video Production in San Antonio
             </h1>
             <p className="corp-subtitle">
               Professional corporate video production for San Antonio businesses and beyond. From brand films and executive interviews to training videos and company culture docs.
@@ -635,6 +635,9 @@ export default function CorporatePage() {
               </p>
               <p className="body-text">
                 We handle everything from scripting and storyboarding through production and final delivery. You show up, we make you look great — on time, on brand, and on budget.
+              </p>
+              <p className="body-text">
+                Want to get more from a single shoot? Read our guide to <Link href="/blog/corporate-video-multi-format-strategy" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>building a multi-format corporate video strategy</Link>.
               </p>
             </div>
             <div className="reveal">

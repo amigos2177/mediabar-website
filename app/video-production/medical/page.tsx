@@ -150,7 +150,7 @@ export default function MedicalPage() {
               <span style={{ color: '#AAAAAA' }}>Medical Video</span>
             </nav>
             <p className="eyebrow">Healthcare &amp; Medical Video Production</p>
-            <h1 className="page-h1"><em>Medical</em>Video Production</h1>
+            <h1 className="page-h1"><em>Medical</em>Video Production in San Antonio</h1>
             <p className="hero-sub">Precision video production for healthcare systems, medical device companies, and clinical institutions. We understand the environment, the compliance requirements, and the stakes.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>
@@ -173,6 +173,7 @@ export default function MedicalPage() {
               <h2 className="section-h2">Production With <em>Clinical Precision</em></h2>
               <p className="body-text">Medical video requires a level of care that goes far beyond typical production work. The environment is sensitive. The subjects are patients and physicians. The content may be regulated. One mistake — a privacy violation, a contamination incident, a factual inaccuracy — can have real consequences.</p>
               <p className="body-text">We've built protocols for every type of medical production environment, from bedside patient testimonials to live surgical documentation. We operate with the professionalism and attention to detail your institution demands.</p>
+              <p className="body-text">Learn more in our guide to <Link href="/blog/healthcare-video-production-san-antonio" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>healthcare video production in San Antonio</Link>.</p>
             </div>
             <div className="reveal">
               <p className="section-label">What We Produce</p>

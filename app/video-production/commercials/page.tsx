@@ -180,7 +180,7 @@ export default function CommercialsPage() {
               <span style={{ color: '#AAAAAA' }}>Commercials</span>
             </nav>
             <p className="eyebrow">TV &amp; Digital Commercial Production</p>
-            <h1 className="page-h1"><em>TV &amp; Web </em>Commercials</h1>
+            <h1 className="page-h1"><em>TV &amp; Web </em>Commercials in San Antonio</h1>
             <p className="hero-sub">Broadcast-quality commercial production for TV, OTT, and digital platforms. From 15-second pre-rolls to 60-second brand spots — we handle concept through delivery.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>

@@ -150,7 +150,7 @@ export default function LiveStreamingPage() {
               <span style={{ color: '#AAAAAA' }}>Live Streaming</span>
             </nav>
             <p className="eyebrow">Live Streaming &amp; Webcasting</p>
-            <h1 className="page-h1"><em>Live Streaming</em>&amp; Webcasting</h1>
+            <h1 className="page-h1"><em>Live Streaming</em>&amp; Webcasting in San Antonio</h1>
             <p className="hero-sub">Professional multi-camera live streaming to any platform. Redundant systems, broadcast-quality graphics, and an experienced technical director — so your event goes live without a hitch.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>

@@ -150,7 +150,7 @@ export default function FoodPage() {
               <span style={{ color: '#AAAAAA' }}>Food Video</span>
             </nav>
             <p className="eyebrow">Food &amp; Beverage Video Production</p>
-            <h1 className="page-h1"><em>Food</em>Video Production</h1>
+            <h1 className="page-h1"><em>Food</em>Video Production in San Antonio</h1>
             <p className="hero-sub">Appetite-driving food and beverage video for restaurants, CPG brands, and hospitality groups. Trusted by HEB and Unilever — we know how to make food look extraordinary on screen.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>
@@ -173,6 +173,7 @@ export default function FoodPage() {
               <h2 className="section-h2">Making Food <em>Irresistible</em> On Screen</h2>
               <p className="body-text">Food video is a highly specialized craft. The gap between food that photographs beautifully and food that looks appetizing in motion is enormous — and it requires a team that understands culinary styling, the right lighting for specific textures, and the camera movement that builds anticipation.</p>
               <p className="body-text">We've produced food and beverage video for HEB, Unilever, and dozens of restaurant groups across San Antonio and Texas. From 6-second social clips to 60-second broadcast spots, we create food content that makes people hungry.</p>
+              <p className="body-text">Running a restaurant? See our guide to <Link href="/blog/restaurant-video-production-san-antonio" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>restaurant video production in San Antonio</Link>.</p>
             </div>
             <div className="reveal">
               <p className="section-label">What We Produce</p>

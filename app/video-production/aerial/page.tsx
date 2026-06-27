@@ -150,7 +150,7 @@ export default function AerialPage() {
               <span style={{ color: '#AAAAAA' }}>Aerial Video</span>
             </nav>
             <p className="eyebrow">FAA Part 107 Certified Drone Production</p>
-            <h1 className="page-h1"><em>Aerial &amp; Drone</em>Video</h1>
+            <h1 className="page-h1"><em>Aerial &amp; Drone</em>Video in San Antonio</h1>
             <p className="hero-sub">Cinematic aerial footage that elevates your production — from sweeping establishing shots to tight detail passes. FAA certified, fully insured, operating throughout Texas.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>

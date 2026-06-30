@@ -89,7 +89,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: "What's included in a studio rental?",
-          answer: 'Studio rental includes access to the main production stage with the cyc wall, the DMX lighting grid, the control room, the hair and makeup station, and on-site parking. Production equipment (cameras, lenses, audio) is available as an add-on. A Media Bar crew member is available for technical support.',
+          answer: 'Studio rental includes access to the main production stage, the DMX lighting grid, the control room, the hair and makeup station, and on-site parking. Production equipment (cameras, lenses, audio) is available as an add-on. A Media Bar crew member is available for technical support.',
         },
         {
           question: 'Can I rent the studio without hiring your crew?',

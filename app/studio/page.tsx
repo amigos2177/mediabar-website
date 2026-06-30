@@ -15,8 +15,8 @@ const features = [
 
 const faqs = [
   { q: 'How do I book the studio?', a: 'Studio bookings are handled through our production team. Call us at 210-279-9442 or use the contact form to request a date. We\'ll confirm availability and send a studio rental agreement. Full-day and half-day rates are available.' },
-  { q: 'What backdrops and backgrounds are available?', a: 'Our primary stage features a seamless cyclorama (cyc) wall that can be lit any color. We also have a collection of fabric backdrops in white, black, grey, and a selection of printed/textured options. Custom set builds are available for productions with specific background requirements.' },
-  { q: 'Can I rent the studio for photography as well as video?', a: 'Yes. Our studio is fully equipped for stills photography as well as video production. We have lighting equipment that works for both disciplines and the cyc wall is particularly popular for product and portrait photography.' },
+  { q: 'What backdrops and backgrounds are available?', a: 'We have a collection of fabric backdrops in white, black, grey, and a selection of printed/textured options. Custom set builds are available for productions with specific background requirements.' },
+  { q: 'Can I rent the studio for photography as well as video?', a: 'Yes. Our studio is fully equipped for stills photography as well as video production. We have lighting equipment that works for both disciplines, and the space is particularly popular for product and portrait photography.' },
   { q: 'Where is the studio located?', a: 'We\'re located at 8610 N New Braunfels Ave, Suite 704, San Antonio, TX 78217 — just off Loop 410 on the north side. There\'s ample parking and we have a loading dock for production equipment.' },
   { q: 'Do you provide hair and makeup services?', a: 'We have an on-site hair and makeup station. We can refer you to trusted local MUA and hair stylists who work regularly in our space, or you\'re welcome to bring your own. The station is equipped with a large mirror, proper lighting, and dedicated power for styling tools.' },
 ]
@@ -143,7 +143,7 @@ export default function StudioPage() {
       <div className="facts-strip">
         {[
           { value: '2', label: 'Production Stages' },
-          { value: 'Cyc', label: 'Cyclorama Wall' },
+          { value: '✓', label: 'DMX Lighting Grid' },
           { value: '4K', label: 'Production Ready' },
           { value: '✓', label: 'Full Control Room' },
         ].map((f) => (
@@ -163,8 +163,8 @@ export default function StudioPage() {
               {
                 icon: '🎬',
                 title: 'Production Studio',
-                desc: 'Our primary stage features a seamless cyclorama wall that can be lit any color, a ceiling-mounted DMX lighting grid, and full acoustic treatment. Ideal for interviews, commercials, product shots, and scripted productions.',
-                tags: ['Cyc Wall', 'DMX Grid', 'Acoustic Treatment', 'Drive-In Access'],
+                desc: 'Our primary stage features a ceiling-mounted DMX lighting grid and full acoustic treatment. Ideal for interviews, commercials, product shots, and scripted productions.',
+                tags: ['DMX Grid', 'Acoustic Treatment', '4K Ready', 'Drive-In Access'],
               },
               {
                 icon: '🖥️',
@@ -175,7 +175,7 @@ export default function StudioPage() {
               {
                 icon: '🛋️',
                 title: 'Interview Lounge',
-                desc: 'A dedicated interview setup with a warm, furnished aesthetic. Perfect for executive interviews, testimonials, and podcast-style shoots where you want a natural, comfortable environment rather than a clean cyc look.',
+                desc: 'A dedicated interview setup with a warm, furnished aesthetic. Perfect for executive interviews, testimonials, and podcast-style shoots where you want a natural, comfortable environment rather than a clean studio look.',
                 tags: ['Furnished Set', 'Warm Aesthetic', 'Interview Ready', '2-Camera Setup'],
               },
             ].map((space) => (

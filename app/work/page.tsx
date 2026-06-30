@@ -20,7 +20,7 @@ const categories = [
     eyebrow: 'TV Commercials',
     href: '/video-production/commercials',
     description: 'Broadcast-quality TV and digital commercials for local and national brands. From concept through final delivery, we produce spots that cut through and convert.',
-    videos: ['1203197473', '1126506220', '1142308210', '1142308227', '1138375371'],
+    videos: ['1126506220', '1142308210', '1142308227', '1138375371'],
   },
   {
     label: 'Event Coverage',
@@ -166,6 +166,16 @@ export default function WorkPage() {
           position: absolute; top: 0; left: 0;
           width: 100%; height: 100%; border: none;
         }
+        .reel-duo {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+        }
+        .reel-label {
+          font-size: 10px; font-weight: 700; letter-spacing: .16em;
+          text-transform: uppercase; color: rgba(255,255,255,0.55);
+          margin-bottom: 12px;
+        }
         .reel-stats {
           display: flex; justify-content: center; gap: 0;
           margin-top: 32px;
@@ -283,6 +293,7 @@ export default function WorkPage() {
           .reel-stats { flex-direction: column; }
           .reel-stat { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
           .reel-stat:last-child { border-bottom: none; }
+          .reel-duo { grid-template-columns: 1fr; gap: 32px; }
         }
         @media (max-width: 640px) {
           .portfolio-grid, .portfolio-grid.wide { grid-template-columns: 1fr; }
@@ -308,13 +319,29 @@ export default function WorkPage() {
         >
           <p className="section-label">Demo Reel</p>
           <h2 className="section-h2">FULL-SERVICE <em>Video Production</em></h2>
-          <div className="reel-wrap">
-            <iframe
-              src={`${VIMEO}/1077104073${PARAMS}`}
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              title="Media Bar Productions — Demo Reel"
-            />
+          <div className="reel-duo">
+            <div>
+              <p className="reel-label">Studio Showreel</p>
+              <div className="reel-wrap">
+                <iframe
+                  src={`${VIMEO}/1077104073${PARAMS}`}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Media Bar Productions — Demo Reel"
+                />
+              </div>
+            </div>
+            <div>
+              <p className="reel-label">Commercials Reel</p>
+              <div className="reel-wrap">
+                <iframe
+                  src={`${VIMEO}/1203197473${PARAMS}`}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Media Bar Productions — Commercials Reel"
+                />
+              </div>
+            </div>
           </div>
           <div className="reel-stats">
             <div className="reel-stat">

@@ -476,6 +476,26 @@ export default function HomePage() {
           height: 100%;
           border: none;
         }
+        .reel-duo {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+        .reel-duo .reel-wrap { max-width: none; margin: 0; }
+        .reel-label {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.55);
+          margin-bottom: 12px;
+          text-align: center;
+        }
+        @media (max-width: 768px) {
+          .reel-duo { grid-template-columns: 1fr; gap: 32px; }
+        }
 
         /* ─── AWARDS ─── */
         .awards-grid {
@@ -656,13 +676,29 @@ export default function HomePage() {
         <p className="eyebrow">Demo Reel</p>
         <h2 className="section-title" style={{ marginBottom: '40px' }}>See <em>The Work</em></h2>
         <div className="reel-section-inner">
-          <div className="reel-wrap">
-            <iframe
-              src="https://player.vimeo.com/video/1077104073?title=0&byline=0&portrait=0&color=CC0000"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              title="Media Bar Productions Demo Reel"
-            />
+          <div className="reel-duo">
+            <div>
+              <p className="reel-label">Studio Showreel</p>
+              <div className="reel-wrap">
+                <iframe
+                  src="https://player.vimeo.com/video/1077104073?title=0&byline=0&portrait=0&color=CC0000"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Media Bar Productions Demo Reel"
+                />
+              </div>
+            </div>
+            <div>
+              <p className="reel-label">Commercials Reel</p>
+              <div className="reel-wrap">
+                <iframe
+                  src="https://player.vimeo.com/video/1203197473?title=0&byline=0&portrait=0&color=CC0000"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Media Bar Productions Commercials Reel"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

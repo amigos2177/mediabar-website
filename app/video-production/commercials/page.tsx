@@ -101,6 +101,7 @@ export default function CommercialsPage() {
 
         .portfolio-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px; }
         .portfolio-grid { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+        .reel-wrap { margin-bottom:32px; }
         .vimeo-wrap { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#000; }
         .vimeo-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
         .portfolio-label { font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#fff; margin-top:10px; padding:0 4px; }
@@ -227,6 +228,12 @@ export default function CommercialsPage() {
               <h2 className="section-h2" style={{ marginBottom: 0 }}>Commercial <em>Portfolio</em></h2>
             </div>
             <Link href="/work" className="link-arrow">View All Work →</Link>
+          </div>
+          <div className="reel-wrap reveal">
+            <div className="vimeo-wrap">
+              <iframe src="https://player.vimeo.com/video/1203197473?title=0&byline=0&portrait=0&color=CC0000" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="Commercials Demo Reel" />
+            </div>
+            <p className="portfolio-label">Commercials Demo Reel</p>
           </div>
           <div className="portfolio-grid reveal">
             {[

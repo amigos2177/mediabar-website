@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import { RbfcuFeatureCard } from '../../../components/CaseStudyLinks'
 
 
 const useCases = [
@@ -249,6 +250,9 @@ export default function CommercialsPage() {
                 <p className="portfolio-label">{v.label}</p>
               </div>
             ))}
+          </div>
+          <div className="reveal" style={{ marginTop: 40 }}>
+            <RbfcuFeatureCard />
           </div>
         </div>
       </div>

@@ -3,6 +3,10 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import { RbfcuWorkCard } from '../../components/CaseStudyLinks'
+import { BreadcrumbJsonLd } from '../../components/JsonLd'
+import { VideoObjectSchema, type PortfolioVideo } from '../../components/VideoObjectSchema'
+import workVideos from '../../data/work-videos.json'
 
 const VIMEO = 'https://player.vimeo.com/video'
 const PARAMS = '?title=0&byline=0&portrait=0&color=CC0000&badge=0'
@@ -95,6 +99,11 @@ export default function WorkPage() {
 
   return (
     <Layout>
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: '/' },
+        { name: 'Our Work', url: '/work' },
+      ]} />
+      <VideoObjectSchema videos={workVideos as PortfolioVideo[]} />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&display=swap');
 
@@ -390,6 +399,11 @@ export default function WorkPage() {
                 </div>
               ))}
             </div>
+            {cat.label === 'TV Commercials' && (
+              <div style={{ marginTop: 24 }}>
+                <RbfcuWorkCard />
+              </div>
+            )}
           </div>
         </section>
       ))}

@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/about`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/about/awards`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/work`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/work/rbfcu-go-beyond-banking`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/photography`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/studio`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },

@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import { RbfcuLocationNote } from '../../../components/CaseStudyLinks'
 
 const industries = [
   { icon: '💻', name: 'Technology & Silicon Hills', desc: 'Apple, Tesla, Meta, Oracle, and thousands of growing startups. Austin\'s tech sector represents 16.3% of regional employment and growing.' },
@@ -153,6 +154,12 @@ export default function AustinPage() {
           </div>
         </div>
       </div>
+
+      <section style={{ background: '#0A0A0A', padding: '72px 24px 80px' }}>
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
+          <RbfcuLocationNote city="Austin" />
+        </div>
+      </section>
 
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />

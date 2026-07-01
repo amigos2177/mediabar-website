@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import { RbfcuLocationNote } from '../../../components/CaseStudyLinks'
 
 const industries = [
   { icon: '🏦', name: 'Financial Services', desc: 'Charles Schwab, Goldman Sachs Regional HQ, Wells Fargo, and dozens of financial institutions have relocated or expanded in Dallas-Fort Worth.' },
@@ -153,6 +154,12 @@ export default function DallasPage() {
           </div>
         </div>
       </div>
+
+      <section style={{ background: '#0A0A0A', padding: '72px 24px 80px' }}>
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
+          <RbfcuLocationNote city="Dallas" />
+        </div>
+      </section>
 
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />

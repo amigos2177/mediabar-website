@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import { RbfcuLocationNote } from '../../../components/CaseStudyLinks'
 
 const industries = [
   { icon: '🎖️', name: 'Military & Defense', desc: 'Military City USA. Joint Base San Antonio is one of the largest military installations in the world, anchoring a robust defense contractor ecosystem.' },
@@ -165,6 +166,12 @@ export default function SanAntonioPage() {
           </div>
         </div>
       </div>
+
+      <section style={{ background: '#0A0A0A', padding: '72px 24px 80px' }}>
+        <div style={{ maxWidth: 760, margin: '0 auto' }}>
+          <RbfcuLocationNote city="San Antonio" />
+        </div>
+      </section>
 
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />

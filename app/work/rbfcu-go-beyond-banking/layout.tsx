@@ -45,42 +45,43 @@ export const metadata: Metadata = {
   },
 }
 
-// Real YouTube publish dates (verified from each video's watch page) for VideoObject.uploadDate
+// Real YouTube publish timestamps (ISO 8601 with timezone, from each video's watch page)
+// for VideoObject.uploadDate — full datetime clears Google's optional timezone warning.
 const videos = [
   {
     name: 'We Go Beyond Banking',
     description:
       'The campaign’s flagship anthem spot that establishes the “Go Beyond Banking” promise and sets the visual and emotional tone for the entire library.',
     id: 'cQHqvEHFx2M',
-    uploadDate: '2025-10-08',
+    uploadDate: '2025-10-08T12:30:28-07:00',
   },
   {
     name: 'RBFCU Finances the Miles That Matter',
     description:
       "A story about the journeys a vehicle makes possible, positioning RBFCU's auto financing around the moments and memories it helps members reach.",
     id: 'M44en_QEBlQ',
-    uploadDate: '2025-12-01',
+    uploadDate: '2025-12-01T10:00:25-08:00',
   },
   {
     name: 'Generations of Trust at RBFCU',
     description:
       "A portrait of long-term membership, showing how families bank with RBFCU across generations and reinforcing trust as the brand's core equity.",
     id: 'AT59Z4LIu8Y',
-    uploadDate: '2025-10-08',
+    uploadDate: '2025-10-08T12:25:24-07:00',
   },
   {
     name: 'Experience More with Every Purchase',
     description:
       "An everyday-value story built around RBFCU's cards and rewards, turning routine purchases into a benefit members feel.",
     id: 'hpHKrVXhWnY',
-    uploadDate: '2025-12-01',
+    uploadDate: '2025-12-01T12:00:42-08:00',
   },
   {
     name: 'From First Steps to Forever Memories',
     description:
       'A milestone-driven narrative following members through life’s biggest moments, the emotional heart of the “Go Beyond” promise.',
     id: 'CuJdvSJ9bAE',
-    uploadDate: '2025-12-01',
+    uploadDate: '2025-12-01T08:42:41-08:00',
   },
 ]
 

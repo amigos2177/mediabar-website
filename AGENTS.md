@@ -35,7 +35,12 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - trailingSlash: false set in next.config.ts.
 - All batches build clean, 0 errors.
 - **RBFCU "Go Beyond Banking" case study (DONE, pushed June 30):** new route `/work/rbfcu-go-beyond-banking` (client `page.tsx` + sibling `layout.tsx`). layout.tsx maps all SEO into Next metadata and emits the full JSON-LD graph (WebSite, Organization/LocalBusiness, WebPage, BreadcrumbList, Article, FAQPage) with real `uploadDate` on each of the 5 VideoObjects. Assets: `public/images/rbfcu-*.jpg` + `public/static/RBFCU_Go_Beyond_Banking_Case_Study.pdf`. Internal links live in `components/CaseStudyLinks.tsx` (`.mbcs-` styles in globals.css): Component 1 on /work TV Commercials, Component 2 featured card on /video-production/commercials (campfire BTS bg), Component 3A/B/C on the austin/dallas/san-antonio location pages. Added to sitemap.ts. NOTE: the /work portfolio JSON-LD (BreadcrumbList + VideoObjectSchema) was moved out of `app/work/layout.tsx` into `app/work/page.tsx` so it no longer leaks into nested /work routes.
-- **TODO (RBFCU):** run Google Rich Results Test against the live production URL to confirm Article / Breadcrumb / FAQ / Video validate.
+- **RBFCU Rich Results Test (DONE, June 30):** live URL passed, 9 valid items (Article, Breadcrumb, 5 Videos, LocalBusiness, Organization). FAQPage markup is valid but no longer a rich-result type (Google restricted FAQ rich results to gov/health sites in 2023 — expected, not an error). VideoObject `uploadDate` upgraded from date-only to full ISO 8601 with timezone to clear the optional datetime/timezone warnings.
+- **TODO (RBFCU) — GSC indexing, Ruben executes (manual gate):** after the current deploy, in Google Search Console:
+  - [ ] URL Inspection → Request Indexing: `/work/rbfcu-go-beyond-banking` (the new page — highest priority)
+  - [ ] Request recrawl of the 5 pages that now link to it: `/work`, `/video-production/commercials`, `/locations/austin`, `/locations/dallas`, `/locations/san-antonio`
+  - [ ] Sitemaps → resubmit `sitemap.xml` (new URL already included at priority 0.8)
+  - Note: Request Indexing is rate-limited (~10/day); do the new page first, then commercials + /work, then the 3 location pages. Footer link is site-wide but does not need per-page reindexing.
 
 ## Remaining work
 - **Batch 6 — blog post meta descriptions**: posts have an `excerpt` field but it is truncated/unusable as a meta description. Plan: add a separate `description` field to each post's front-matter (do NOT overwrite `excerpt`), then read it via `generateMetadata` in `app/blog/[slug]/page.tsx`.

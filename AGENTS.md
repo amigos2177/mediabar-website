@@ -27,13 +27,15 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Small, focused commits on main
 - SEO-optimized descriptive slugs on any new routes
 
-## Current State (as of May 23, 2026)
-Site is live and stable. SEO metadata pass DONE for all 38 routes.
+## Current State (as of June 30, 2026)
+Site is live and stable. SEO metadata pass DONE for all routes.
 - Root layout: title template + metadataBase set in app/layout.tsx.
-- Per-route metadata: all 38 routes have unique title + description + canonical. Client-component pages use a sibling layout.tsx; server-component pages have the export directly in page.tsx.
+- Per-route metadata: every route has unique title + description + canonical. Client-component pages use a sibling layout.tsx; server-component pages have the export directly in page.tsx.
 - sitemap.ts: lastModified fixed to LAUNCH = 2026-05-22 (was `new Date()` on every deploy).
 - trailingSlash: false set in next.config.ts.
-- All batches build clean (42 routes, 0 errors).
+- All batches build clean, 0 errors.
+- **RBFCU "Go Beyond Banking" case study (DONE, pushed June 30):** new route `/work/rbfcu-go-beyond-banking` (client `page.tsx` + sibling `layout.tsx`). layout.tsx maps all SEO into Next metadata and emits the full JSON-LD graph (WebSite, Organization/LocalBusiness, WebPage, BreadcrumbList, Article, FAQPage) with real `uploadDate` on each of the 5 VideoObjects. Assets: `public/images/rbfcu-*.jpg` + `public/static/RBFCU_Go_Beyond_Banking_Case_Study.pdf`. Internal links live in `components/CaseStudyLinks.tsx` (`.mbcs-` styles in globals.css): Component 1 on /work TV Commercials, Component 2 featured card on /video-production/commercials (campfire BTS bg), Component 3A/B/C on the austin/dallas/san-antonio location pages. Added to sitemap.ts. NOTE: the /work portfolio JSON-LD (BreadcrumbList + VideoObjectSchema) was moved out of `app/work/layout.tsx` into `app/work/page.tsx` so it no longer leaks into nested /work routes.
+- **TODO (RBFCU):** run Google Rich Results Test against the live production URL to confirm Article / Breadcrumb / FAQ / Video validate.
 
 ## Remaining work
 - **Batch 6 — blog post meta descriptions**: posts have an `excerpt` field but it is truncated/unusable as a meta description. Plan: add a separate `description` field to each post's front-matter (do NOT overwrite `excerpt`), then read it via `generateMetadata` in `app/blog/[slug]/page.tsx`.

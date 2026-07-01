@@ -80,6 +80,7 @@ export default function Footer() {
             <Link href="/clients" className="mbp-footer-link" style={footerLink}>Clients</Link>
             <Link href="/studio" className="mbp-footer-link" style={footerLink}>Studio</Link>
             <Link href="/work" className="mbp-footer-link" style={footerLink}>Work</Link>
+            <Link href="/work/rbfcu-go-beyond-banking" className="mbp-footer-link" style={footerLink}>RBFCU Case Study</Link>
             <Link href="/faq" className="mbp-footer-link" style={footerLink}>FAQ</Link>
             <Link href="/blog" className="mbp-footer-link" style={footerLink}>Blog</Link>
           </div>

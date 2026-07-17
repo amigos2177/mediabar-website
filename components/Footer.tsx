@@ -79,7 +79,9 @@ export default function Footer() {
             <Link href="/about/awards" className="mbp-footer-link" style={footerLink}>Awards</Link>
             <Link href="/clients" className="mbp-footer-link" style={footerLink}>Clients</Link>
             <Link href="/studio" className="mbp-footer-link" style={footerLink}>Studio</Link>
+            <Link href="/photography" className="mbp-footer-link" style={footerLink}>Photography</Link>
             <Link href="/work" className="mbp-footer-link" style={footerLink}>Work</Link>
+            <Link href="/project-planner" className="mbp-footer-link" style={footerLink}>Project Planner</Link>
             <Link href="/work/rbfcu-go-beyond-banking" className="mbp-footer-link" style={footerLink}>RBFCU Case Study</Link>
             <Link href="/faq" className="mbp-footer-link" style={footerLink}>FAQ</Link>
             <Link href="/blog" className="mbp-footer-link" style={footerLink}>Blog</Link>

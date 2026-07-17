@@ -3,7 +3,7 @@ title: "Capture Your Conference: San Antonio's Best Conference Video Services"
 seoTitle: "San Antonio Conference Video Production Services"
 slug: "san-antonio-conference-video-services"
 date: "2024-09-23"
-excerpt: "Are you planning a conference in the heart of Texas? Look no further than San Antonio for top-notch conference video production services. With its vibrant"
+excerpt: "Plan conference video coverage in San Antonio, from keynote recordings and interviews to highlight reels, livestreams, and post-event marketing assets."
 legacyId: 40
 legacyUrl: "/News/Get/40/capture-your-conference-san-antonios-best-con"
 featuredImage: /images/blog/san-antonio-conference-video-services.png

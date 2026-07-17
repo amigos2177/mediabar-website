@@ -453,8 +453,8 @@ export default function PricingPage() {
           The fastest way to a real number is a 15-minute conversation about what you&rsquo;re trying to accomplish. We&rsquo;ll tell you which engagement level fits — and if a smaller scope gets you there, we&rsquo;ll say so.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', position: 'relative' }}>
-          <Link href="/contact" className="btn-red" style={{ padding: '16px 48px', fontSize: '13px' }}>
-            Get a Quote
+          <Link href="/project-planner" className="btn-red" style={{ padding: '16px 48px', fontSize: '13px' }}>
+            Plan Your Project
           </Link>
           <Link href="/work" className="pr-cta-secondary">
             See the work first &rarr;

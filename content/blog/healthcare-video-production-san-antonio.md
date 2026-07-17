@@ -1,6 +1,6 @@
 ---
 title: "Healthcare Video Production in San Antonio"
-seoTitle: "Healthcare Video Production in San Antonio: The 2026 Playbook | Media Bar Productions"
+seoTitle: "San Antonio Healthcare Video Production Guide"
 slug: "healthcare-video-production-san-antonio"
 date: "2026-06-14"
 excerpt: "HIPAA-ready healthcare video production in San Antonio — the 2026 playbook for clinician-led, patient-first video that builds trust and brings in patients."

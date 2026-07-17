@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 const BASE = 'https://www.mediabarproductions.com'
 const URL = `${BASE}/work/rbfcu-go-beyond-banking`
 const OG_IMAGE = 'https://i.ytimg.com/vi/cQHqvEHFx2M/maxresdefault.jpg'
-const TITLE = 'RBFCU "Go Beyond Banking" Broadcast Campaign | Media Bar Productions'
+const TITLE = 'RBFCU Go Beyond Banking Case Study | Media Bar Productions'
 const DESCRIPTION =
-  'See how San Antonio video production company Media Bar Productions produced, edited, and co-wrote a five-spot broadcast commercial campaign for RBFCU that aired across San Antonio, Austin, Corpus Christi, and Dallas and earned 5M+ views.'
+  'How Media Bar Productions produced and edited RBFCU’s five-spot “Go Beyond Banking” broadcast campaign across four Texas markets, earning 5M+ views.'
 const OG_SOCIAL_DESC =
   'A five-spot Texas broadcast campaign produced and edited by Media Bar Productions. 4 markets, 5M+ views.'
 
@@ -93,51 +93,7 @@ const jsonLd = {
       '@id': `${BASE}/#website`,
       url: `${BASE}/`,
       name: 'Media Bar Productions',
-      publisher: { '@id': `${BASE}/#org` },
-    },
-    {
-      '@type': ['Organization', 'LocalBusiness'],
-      '@id': `${BASE}/#org`,
-      name: 'Media Bar Productions',
-      alternateName: 'Media Bar Productions, LLC',
-      url: `${BASE}/`,
-      logo: `${BASE}/images/mediabar-logo.png`,
-      image: `${BASE}/images/mediabar-logo.png`,
-      slogan: 'Your Vision Served Daily',
-      telephone: '+1-210-279-9442',
-      email: 'contact@mediabarproductions.com',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'San Antonio',
-        addressRegion: 'TX',
-        addressCountry: 'US',
-      },
-      areaServed: [
-        { '@type': 'City', name: 'San Antonio' },
-        { '@type': 'City', name: 'Austin' },
-        { '@type': 'City', name: 'Corpus Christi' },
-        { '@type': 'City', name: 'Dallas' },
-        { '@type': 'State', name: 'Texas' },
-      ],
-      knowsAbout: [
-        'Broadcast commercial production',
-        'TV commercials',
-        'Video production',
-        'Brand storytelling',
-        'Post-production',
-        'Cinematography',
-      ],
-      award: ['3 Emmy Awards', '15 Telly Awards'],
-      sameAs: [
-        'https://www.youtube.com/@MediaBarProductions',
-        'https://www.linkedin.com/company/media-bar-productions-llc/',
-        'https://www.instagram.com/mediabarsanantonio',
-        'https://facebook.com/mediabarproductions',
-        'https://x.com/mediabarsa',
-        'https://www.tiktok.com/@mediabarsa',
-      ],
-      description:
-        'San Antonio video production company specializing in broadcast commercials and brand storytelling. 3 Emmy Awards, 15 Telly Awards.',
+      publisher: { '@id': `${BASE}/#business` },
     },
     {
       '@type': 'WebPage',
@@ -165,9 +121,9 @@ const jsonLd = {
       description: DESCRIPTION,
       image: OG_IMAGE,
       inLanguage: 'en-US',
-      author: { '@id': `${BASE}/#org` },
-      creator: { '@id': `${BASE}/#org` },
-      publisher: { '@id': `${BASE}/#org` },
+      author: { '@id': `${BASE}/#business` },
+      creator: { '@id': `${BASE}/#business` },
+      publisher: { '@id': `${BASE}/#business` },
       mainEntityOfPage: { '@id': `${URL}#webpage` },
       keywords: [
         'RBFCU',
@@ -190,7 +146,7 @@ const jsonLd = {
         uploadDate: v.uploadDate,
         embedUrl: `https://www.youtube.com/embed/${v.id}`,
         contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
-        publisher: { '@id': `${BASE}/#org` },
+        publisher: { '@id': `${BASE}/#business` },
       })),
     },
     {

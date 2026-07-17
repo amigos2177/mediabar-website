@@ -6,8 +6,6 @@ excerpt: "AI made polished video cheap and everywhere—so trust dropped. Here's
 featuredImage: /images/blog/authentic-video-marketing-2026.png
 ---
 
-# Authentic Video Marketing in 2026: When Raw Wins, When Polish Still Pays
-
 Open any feed in 2026 and you'll see it: a wall of glossy, AI-assembled video that all looks vaguely the same. The tools got cheap, the output got polished, and somewhere in that flood, audiences quietly stopped trusting what they were watching. A 2026 Animoto report found that 36% of consumers say AI-generated video actually *lowers* their trust in a brand. Read that twice — the polish is now working against the brands paying for it.
 
 So "authentic" became the word of the year in marketing. Real people. Real moments. Proof over polish. And mostly, that's right. But it's only half the story — and the half nobody tells you is where it gets expensive to be wrong.

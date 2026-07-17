@@ -15,8 +15,6 @@ faqs:
     answer: "Cost depends on scope and how many clips you need, but a batched Q&A library shoot — one provider, one half-day, many clips — is one of the most cost-effective formats in healthcare video, because a single production day stocks months of content."
 ---
 
-# Healthcare Provider Q&A Video: The Highest-Impact Format for Patient Trust in 2026
-
 The decision now happens before the phone ever rings. A prospective patient searches a symptom, watches a few clips, reads a couple of reviews, and decides who feels trustworthy — all before they reach your front desk. If your providers aren't part of that moment, you're invisible at exactly the point where patients choose.
 
 This piece zooms in on the single highest-impact format for winning that moment: the provider Q&A. If you want the full compliance-and-planning picture first, start with our [healthcare video production guide](https://www.mediabarproductions.com/blog/healthcare-video-production-san-antonio) — then come back here for the format that does the heaviest lifting on patient trust, at the lowest cost to produce.

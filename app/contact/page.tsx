@@ -1,13 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
+import { track } from '@vercel/analytics'
 import Layout from '../../components/Layout'
 
 const services = [
   'Corporate Video', 'Commercials', 'Event Coverage', 'Interview & Discussion',
   'Medical Video', 'Aerial Video', 'Motion Graphics', 'Live Streaming',
   'Post Production', 'Food Video', 'Real Estate Video', 'Studio Rental', 'Other',
+  'Photography',
 ]
 
 const timelines = [
@@ -37,6 +38,7 @@ const EMPTY = {
   budget: '',
   timeline: '',
   message: '',
+  website: '',
 }
 
 export default function ContactPage() {
@@ -46,7 +48,7 @@ export default function ContactPage() {
   const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
-    setTodayIndex(new Date().getDay())
+    const frame = requestAnimationFrame(() => setTodayIndex(new Date().getDay()))
 
     const reveals = document.querySelectorAll('.reveal')
     const obs = new IntersectionObserver(
@@ -54,7 +56,10 @@ export default function ContactPage() {
       { threshold: 0.1 }
     )
     reveals.forEach((el) => obs.observe(el))
-    return () => obs.disconnect()
+    return () => {
+      cancelAnimationFrame(frame)
+      obs.disconnect()
+    }
   }, [])
 
   const hours: { day: string; time: string }[] = [
@@ -87,6 +92,11 @@ export default function ContactPage() {
       const data = await res.json()
 
       if (res.ok) {
+        track('Contact Form Submitted', {
+          service: fields.service || 'Not specified',
+          budget: fields.budget || 'Not specified',
+          timeline: fields.timeline || 'Not specified',
+        })
         setStatus('success')
         setFields(EMPTY)
       } else {
@@ -127,6 +137,7 @@ export default function ContactPage() {
         .form-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:rgba(255,255,255,.55)}
 
         .contact-form{display:flex;flex-direction:column;gap:16px}
+        .form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
         .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
         .form-group{display:flex;flex-direction:column;gap:8px}
         .form-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#B0B0B0}
@@ -221,30 +232,42 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form className="contact-form" onSubmit={handleSubmit} noValidate>
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-honeypot" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={fields.website}
+                    onChange={set('website')}
+                  />
+                </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label" htmlFor="first_name">First Name</label>
-                    <input className="form-input" id="first_name" name="first_name" type="text" placeholder="Jane" required value={fields.firstName} onChange={set('firstName')} />
+                    <input className="form-input" id="first_name" name="first_name" type="text" placeholder="Jane" autoComplete="given-name" maxLength={80} required value={fields.firstName} onChange={set('firstName')} />
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="last_name">Last Name</label>
-                    <input className="form-input" id="last_name" name="last_name" type="text" placeholder="Smith" required value={fields.lastName} onChange={set('lastName')} />
+                    <input className="form-input" id="last_name" name="last_name" type="text" placeholder="Smith" autoComplete="family-name" maxLength={80} required value={fields.lastName} onChange={set('lastName')} />
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label" htmlFor="email">Email</label>
-                    <input className="form-input" id="email" name="email" type="email" placeholder="jane@company.com" required value={fields.email} onChange={set('email')} />
+                    <input className="form-input" id="email" name="email" type="email" placeholder="jane@company.com" autoComplete="email" maxLength={254} required value={fields.email} onChange={set('email')} />
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="phone">Phone</label>
-                    <input className="form-input" id="phone" name="phone" type="tel" placeholder="210-555-0100" value={fields.phone} onChange={set('phone')} />
+                    <input className="form-input" id="phone" name="phone" type="tel" placeholder="210-555-0100" autoComplete="tel" maxLength={40} value={fields.phone} onChange={set('phone')} />
                   </div>
                 </div>
                 <div className="form-group">
                   <label className="form-label" htmlFor="company">Company</label>
-                  <input className="form-input" id="company" name="company" type="text" placeholder="Your Company Name" value={fields.company} onChange={set('company')} />
+                  <input className="form-input" id="company" name="company" type="text" placeholder="Your Company Name" autoComplete="organization" maxLength={120} value={fields.company} onChange={set('company')} />
                 </div>
                 <div className="form-row">
                   <div className="form-group">
@@ -274,17 +297,18 @@ export default function ContactPage() {
                 </div>
                 <div className="form-group">
                   <label className="form-label" htmlFor="message">Tell Us About Your Project</label>
-                  <textarea className="form-textarea" id="message" name="message" placeholder="What are you trying to accomplish? Who's the audience? Any budget range in mind?" required value={fields.message} onChange={set('message')} />
+                  <textarea className="form-textarea" id="message" name="message" placeholder="What are you trying to accomplish? Who's the audience? Any budget range in mind?" maxLength={4000} required value={fields.message} onChange={set('message')} />
                 </div>
 
                 {status === 'error' && (
-                  <div className="form-error" role="alert">{errorMessage}</div>
+                  <div id="contact-error" className="form-error" role="alert">{errorMessage}</div>
                 )}
 
                 <button
                   type="submit"
                   className="form-submit"
                   disabled={status === 'submitting'}
+                  aria-describedby={status === 'error' ? 'contact-error' : undefined}
                 >
                   {status === 'submitting' ? 'Sending…' : status === 'error' ? 'Try Again →' : 'Send Message →'}
                 </button>

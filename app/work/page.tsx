@@ -1,15 +1,20 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import { RbfcuWorkCard } from '../../components/CaseStudyLinks'
 import { BreadcrumbJsonLd } from '../../components/JsonLd'
 import { VideoObjectSchema, type PortfolioVideo } from '../../components/VideoObjectSchema'
 import workVideos from '../../data/work-videos.json'
+import VimeoPlayer from '../../components/VimeoPlayer'
 
-const VIMEO = 'https://player.vimeo.com/video'
-const PARAMS = '?title=0&byline=0&portrait=0&color=CC0000&badge=0'
+const videoById = new Map(
+  (workVideos as PortfolioVideo[]).flatMap((video) => {
+    const id = video.embedUrl?.split('/').pop()
+    return id ? [[id, video] as const] : []
+  }),
+)
 
 const categories = [
   {
@@ -78,6 +83,8 @@ const categories = [
 ]
 
 export default function WorkPage() {
+  const [activeCategory, setActiveCategory] = useState('All')
+
   useEffect(() => {
     document.title = 'Our Work | Media Bar Productions'
     const reveals = document.querySelectorAll('[data-reveal]')
@@ -105,8 +112,6 @@ export default function WorkPage() {
       ]} />
       <VideoObjectSchema videos={workVideos as PortfolioVideo[]} />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&display=swap');
-
         :root { --red: #CC0000; --gold: #C9A84C; --black: #0A0A0A; --dark: #111111; --dark2: #181818; }
         * { box-sizing: border-box; }
 
@@ -223,6 +228,37 @@ export default function WorkPage() {
           margin-bottom: 32px;
         }
         .cat-link:hover { opacity: .7; }
+        .portfolio-filters {
+          position: sticky;
+          top: 72px;
+          z-index: 8;
+          display: flex;
+          gap: 8px;
+          overflow-x: auto;
+          padding: 18px 48px;
+          border-bottom: 1px solid rgba(255,255,255,.08);
+          background: rgba(10,10,10,.94);
+          backdrop-filter: blur(14px);
+          scrollbar-width: none;
+        }
+        .portfolio-filters::-webkit-scrollbar { display: none; }
+        .portfolio-filter {
+          flex: 0 0 auto;
+          border: 1px solid rgba(255,255,255,.16);
+          border-radius: 999px;
+          background: transparent;
+          color: #c8c8c8;
+          padding: 9px 15px;
+          font: inherit;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: color .15s, background .15s, border-color .15s;
+        }
+        .portfolio-filter:hover { color: #fff; border-color: rgba(255,255,255,.4); }
+        .portfolio-filter.active { color: #fff; background: var(--red); border-color: var(--red); }
 
         /* ── VIDEO GRID ── */
         .portfolio-grid {
@@ -232,13 +268,33 @@ export default function WorkPage() {
           margin-top: 32px;
         }
         .portfolio-grid.wide { grid-template-columns: repeat(2, 1fr); }
+        .video-card {
+          overflow: hidden;
+          border: 1px solid rgba(255,255,255,.09);
+          border-radius: 4px;
+          background: #111;
+        }
         .video-wrap {
           position: relative; padding-bottom: 56.25%; height: 0;
-          overflow: hidden; border-radius: 4px; background: #000;
+          overflow: hidden; background: #000;
         }
         .video-wrap iframe {
           position: absolute; top: 0; left: 0;
           width: 100%; height: 100%; border: none;
+        }
+        .video-meta { padding: 16px 18px 18px; }
+        .video-service {
+          margin-bottom: 7px;
+          color: var(--red);
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: .14em;
+          text-transform: uppercase;
+        }
+        .video-description {
+          color: #b8b8b8;
+          font-size: 13px;
+          line-height: 1.6;
         }
 
         /* ── BOTTOM CTA ── */
@@ -303,6 +359,7 @@ export default function WorkPage() {
           .reel-stat { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
           .reel-stat:last-child { border-bottom: none; }
           .reel-duo { grid-template-columns: 1fr; gap: 32px; }
+          .portfolio-filters { top: 64px; padding: 14px 24px; }
         }
         @media (max-width: 640px) {
           .portfolio-grid, .portfolio-grid.wide { grid-template-columns: 1fr; }
@@ -319,6 +376,20 @@ export default function WorkPage() {
         </p>
       </section>
 
+      <nav className="portfolio-filters" aria-label="Filter portfolio by service">
+        {['All', ...categories.map((category) => category.label)].map((label) => (
+          <button
+            key={label}
+            type="button"
+            className={`portfolio-filter${activeCategory === label ? ' active' : ''}`}
+            aria-pressed={activeCategory === label}
+            onClick={() => setActiveCategory(label)}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+
       {/* ── FEATURED REEL ── */}
       <section className="reel-section">
         <div
@@ -332,21 +403,19 @@ export default function WorkPage() {
             <div>
               <p className="reel-label">Studio Showreel</p>
               <div className="reel-wrap">
-                <iframe
-                  src={`${VIMEO}/1077104073${PARAMS}`}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
+                <VimeoPlayer
+                  videoId="1077104073"
                   title="Media Bar Productions — Demo Reel"
+                  thumbnailUrl={videoById.get('1077104073')?.thumbnailUrl as string | undefined}
+                  eager
                 />
               </div>
             </div>
             <div>
               <p className="reel-label">Commercials Reel</p>
               <div className="reel-wrap">
-                <iframe
-                  src={`${VIMEO}/1203197473${PARAMS}`}
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
+                <VimeoPlayer
+                  videoId="1203197473"
                   title="Media Bar Productions — Commercials Reel"
                 />
               </div>
@@ -370,7 +439,7 @@ export default function WorkPage() {
       </section>
 
       {/* ── CATEGORY SECTIONS ── */}
-      {categories.map((cat, i) => (
+      {categories.filter((cat) => activeCategory === 'All' || cat.label === activeCategory).map((cat, i) => (
         <section
           key={cat.label}
           className="cat-section"
@@ -388,16 +457,26 @@ export default function WorkPage() {
               See Full Service →
             </Link>
             <div className={`portfolio-grid${cat.videos.length === 2 ? ' wide' : ''}`}>
-              {cat.videos.map((id) => (
-                <div key={id} className="video-wrap">
-                  <iframe
-                    src={`${VIMEO}/${id}${PARAMS}`}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    title={`${cat.label} — Media Bar Productions`}
-                  />
-                </div>
-              ))}
+              {cat.videos.map((id, videoIndex) => {
+                const video = videoById.get(id)
+                return (
+                  <article key={id} className="video-card">
+                    <div className="video-wrap">
+                      <VimeoPlayer
+                        videoId={id}
+                        title={`${cat.label} project ${videoIndex + 1} — Media Bar Productions`}
+                        thumbnailUrl={video?.thumbnailUrl as string | undefined}
+                      />
+                    </div>
+                    <div className="video-meta">
+                      <p className="video-service">{cat.label}</p>
+                      <p className="video-description">
+                        {video?.description || `${cat.label} work produced by Media Bar Productions in San Antonio.`}
+                      </p>
+                    </div>
+                  </article>
+                )
+              })}
             </div>
             {cat.label === 'TV Commercials' && (
               <div style={{ marginTop: 24 }}>
@@ -412,7 +491,7 @@ export default function WorkPage() {
       <section className="wk-cta">
         <div className="wk-cta-glow" aria-hidden="true" />
         <h2 className="wk-cta-h2">Ready To <em>Start Your Project?</em></h2>
-        <p className="wk-cta-sub">Tell us about your project and we'll put together a custom quote.</p>
+        <p className="wk-cta-sub">Tell us about your project and we&apos;ll put together a custom quote.</p>
         <div className="wk-cta-actions">
           <Link href="/contact" className="btn-red">Get a Quote</Link>
           <a href="tel:2102799442" className="wk-cta-phone">210-279-9442</a>

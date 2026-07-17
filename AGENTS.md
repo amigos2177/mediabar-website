@@ -42,16 +42,27 @@ Site is live and stable. SEO metadata pass DONE for all routes.
   - [ ] Sitemaps → resubmit `sitemap.xml` (new URL already included at priority 0.8)
   - Note: Request Indexing is rate-limited (~10/day); do the new page first, then commercials + /work, then the 3 location pages. Footer link is site-wide but does not need per-page reindexing.
 
+## July 17, 2026 audit sprint — implemented locally
+- Added a four-step `/project-planner` that submits through the hardened contact API.
+- Added filterable portfolio categories, visible project descriptions, and click-to-play Vimeo embeds.
+- Added Vercel Analytics and Speed Insights with non-PII conversion events.
+- Hardened the contact endpoint with input limits, allowlists, HTML escaping, honeypot handling, origin/request-size checks, and best-effort rate limiting.
+- Added Photography to the main navigation and added the project planner to navigation, footer, pricing, homepage CTAs, and sitemap.
+- Consolidated sitewide structured-data identity on `#business`, added a homepage `VideoObject`, and removed the duplicate RBFCU organization node.
+- Corrected duplicate blog H1 output, repaired truncated excerpts, improved blog metadata, and optimized studio gallery images and alt text.
+- Added keyboard focus and reduced-motion support, `next/font`, and video poster fallbacks.
+- Verification: production build passes all 57 routes; targeted ESLint passes with zero errors; `git diff --check` passes.
+- Not deployed. Vercel dashboard activation, GSC/Bing/IndexNow actions, durable distributed rate limiting, and transcript/watch-page content remain manual or source-content gates.
+
 ## Remaining work
-- **Batch 6 — blog post meta descriptions**: posts have an `excerpt` field but it is truncated/unusable as a meta description. Plan: add a separate `description` field to each post's front-matter (do NOT overwrite `excerpt`), then read it via `generateMetadata` in `app/blog/[slug]/page.tsx`.
-- **H1 template fix**: audit flagged a duplicate/template H1 pattern — likely in `components/Layout`. Investigate before fixing.
-- **Client logo alt text**: audit flagged missing or generic alt text on client logo images.
-- **/work video captions**: audit flagged missing captions on Vimeo embeds in `app/work/page.tsx`.
+- **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
+- **Video transcripts/watch pages**: add only when factual source transcripts and project details are available.
+- **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.
+- **/work video captions**: verify caption availability in Vimeo and add transcript/caption links where source material exists.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
 - **San Antonio location page expansion**: audit wants a FAQ section, keyword-rich internal links into service pages, and client names on app/locations/san-antonio.
 - **Service page body copy**: add natural "San Antonio" mentions to the body of motion-graphics, live-streaming, post-production, real-estate, and medical service pages (currently only in footer).
-- **Photography page fixes**: add "San Antonio" to the H1, add an internal link from app/photography to the San Antonio location page, and add the page to the main navigation (currently orphaned).
-- **Blog content depth**: expand thin blog posts (several are 300-600 words); the "Keeping Creative in San Antonio" post is a stub pointing offsite — either expand it into a real post or set it to noindex.
+- **Search and analytics activation**: after deployment, confirm Vercel Analytics and Speed Insights, then complete GSC, Bing Webmaster Tools, and IndexNow account actions.
 
 ## How to update this file
 At the end of each session, update the "Current State" section above so the next session knows where things stand. Verify claims with the codebase (e.g. grep for a field) rather than assuming.

@@ -1,6 +1,15 @@
 import { buildMetadata } from '@/lib/seo'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import VimeoPlayer from '../../components/VimeoPlayer'
+import workVideos from '../../data/work-videos.json'
+
+const serviceThumbnailById = new Map(
+  workVideos.flatMap((video) => {
+    const id = video.embedUrl?.split('/').pop()
+    return id ? [[id, video.thumbnailUrl] as const] : []
+  }),
+)
 
 export const metadata = buildMetadata({
   title: 'Video Production Services San Antonio | Media Bar Productions',
@@ -110,8 +119,6 @@ export default function VideoProductionPage() {
   return (
     <Layout>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&display=swap');
-
         :root {
           --red: #CC0000;
           --gold: #C9A84C;
@@ -232,6 +239,7 @@ export default function VideoProductionPage() {
           display: flex;
           flex-direction: column;
           flex: 1;
+          text-decoration: none;
         }
         .svc-num {
           font-family: 'Bebas Neue', Impact, sans-serif;
@@ -400,17 +408,15 @@ export default function VideoProductionPage() {
       <section className="services-section">
         <div className="services-grid">
           {services.map((svc) => (
-            <Link key={svc.num} href={svc.href} style={{ textDecoration: 'none', display: 'block' }}>
-              <div className="svc-card">
+              <article key={svc.num} className="svc-card">
                 <div className="svc-video">
-                  <iframe
-                    src={`https://player.vimeo.com/video/${svc.vimeoId}?title=0&byline=0&portrait=0&color=CC0000&badge=0`}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
+                  <VimeoPlayer
+                    videoId={svc.vimeoId}
                     title={`${svc.title} — Media Bar Productions`}
+                    thumbnailUrl={serviceThumbnailById.get(svc.vimeoId)}
                   />
                 </div>
-                <div className="svc-body">
+                <Link href={svc.href} className="svc-body">
                   <p className="svc-num">{svc.num}</p>
                   <h2 className="svc-title">{svc.title}</h2>
                   <p className="svc-desc">{svc.description}</p>
@@ -420,9 +426,8 @@ export default function VideoProductionPage() {
                     ))}
                   </div>
                   <span className="svc-link">See Full Service →</span>
-                </div>
-              </div>
-            </Link>
+                </Link>
+              </article>
           ))}
         </div>
       </section>
@@ -431,7 +436,7 @@ export default function VideoProductionPage() {
       <section className="vp-cta">
         <div className="vp-cta-glow" aria-hidden="true" />
         <h2 className="vp-cta-headline">Ready To <em>Get Started?</em></h2>
-        <p className="vp-cta-sub">Tell us about your project and we'll put together a custom quote.</p>
+        <p className="vp-cta-sub">Tell us about your project and we&apos;ll put together a custom quote.</p>
         <div className="vp-cta-actions">
           <Link href="/contact" className="btn-red">Get a Quote</Link>
           <a href="tel:2102799442" className="vp-cta-phone">210-279-9442</a>

@@ -3,7 +3,7 @@ title: "How Hiring Local Video Production Companies Can Boost Your San Antonio B
 seoTitle: "Hire Local Video Production in San Antonio"
 slug: "hire-local-video-production-companies-san-antonio"
 date: "2023-09-27"
-excerpt: "How Hiring Local Video Production Companies Can Boost Your San Antonio BusinessBy Ruben Garcia, Owner of Media Bar"
+excerpt: "Learn where a local San Antonio video production partner can reduce logistics, improve collaboration, and bring useful knowledge of the Texas market."
 legacyId: 36
 legacyUrl: "/News/Get/36/how-hiring-local-video-production-companies-c"
 featuredImage: /images/blog/hire-local-video-production-companies-san-antonio.png

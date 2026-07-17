@@ -15,8 +15,6 @@ faqs:
     answer: "It ranges with scope. A focused half-day capture sits at the lighter end; a full production day with multiple dishes and a ready-to-post content library sits higher. Reach out for a quote built around your menu."
 ---
 
-# Restaurant Video Production: Why Recent Beats Polished in 2026
-
 In San Antonio, diners decide where to eat before they ever read your menu. They open Instagram, tap through a few Reels, glance at your Google profile — and in a handful of seconds, they've either added you to tonight's shortlist or scrolled right past. That snap judgment is happening to your restaurant right now, whether or not you're feeding it.
 
 Here's the part most owners get backward: the video that wins that moment isn't the glossy, once-a-year brand film. It's the clip you shot last week. Recent beats polished — and in 2026 that gap is wider than ever.

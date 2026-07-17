@@ -15,8 +15,6 @@ faqs:
     answer: "The earlier the better. Mapping deliverables before the shoot is what makes the one-shoot, many-cuts model work without surprises or added cost."
 ---
 
-# Corporate Video Production in San Antonio: One Shoot, a Month of Content
-
 Your audience does not watch video in one place anymore. The same message has to land on a phone screen during a coffee break, on your homepage above the fold, inside a sales deck, and on a lobby monitor at your next event. Shooting a separate video for each of those is slow and expensive. Shooting once and cutting smart is how the best brands keep up.
 
 At Media Bar Productions, we have spent more than 13 years helping Texas companies turn a single production day into a library of content. As an Emmy Award–winning team based in San Antonio, we plan every corporate shoot around one question: how many places can this footage go?

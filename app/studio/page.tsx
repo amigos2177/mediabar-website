@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 
@@ -78,7 +79,7 @@ export default function StudioPage() {
         .space-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#AAAAAA;border:1px solid #2a2a2a;padding:4px 10px}
 
         .studio-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
-        .gallery-cell{overflow:hidden;border-radius:4px;border:1px solid #1e1e1e;height:260px}
+        .gallery-cell{position:relative;overflow:hidden;border-radius:4px;border:1px solid #1e1e1e;height:260px}
         .gallery-cell.gallery-wide{grid-column:span 2}
         .gallery-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
         .gallery-cell:hover img{transform:scale(1.03)}
@@ -199,21 +200,21 @@ export default function StudioPage() {
           <p className="section-label" style={{ textAlign: 'center' }}>Studio Gallery</p>
           <h2 className="section-h2">Inside the <em>Studio</em></h2>
           <div className="studio-gallery reveal">
-            <div className="gallery-cell gallery-wide"><img src="/images/studio-1.jpg" alt="" loading="lazy" /></div>
-            <div className="gallery-cell"><img src="/images/studio-2.jpg" alt="" loading="lazy" /></div>
-            <div className="gallery-cell"><img src="/images/studio-3.jpg" alt="" loading="lazy" /></div>
-            <div className="gallery-cell gallery-wide"><img src="/images/studio-4.jpg" alt="" loading="lazy" /></div>
-            <div className="gallery-cell gallery-wide"><img src="/images/studio-5.jpg" alt="" loading="lazy" /></div>
-            <div className="gallery-cell"><img src="/images/studio-6.jpg" alt="" loading="lazy" /></div>
-            <div className="gallery-cell"><img src="/images/studio-8.jpg" alt="" loading="lazy" /></div>
-            <div className="gallery-cell gallery-wide"><img src="/images/studio-9.jpg" alt="" loading="lazy" /></div>
+            <div className="gallery-cell gallery-wide"><Image src="/images/studio-1.jpg" alt="Camera operator filming on the Media Bar production stage" fill sizes="(max-width: 600px) 100vw, 66vw" /></div>
+            <div className="gallery-cell"><Image src="/images/studio-2.jpg" alt="Cinema camera monitor being adjusted during a studio shoot" fill sizes="(max-width: 600px) 100vw, 33vw" /></div>
+            <div className="gallery-cell"><Image src="/images/studio-3.jpg" alt="Crew preparing the lighting grid for an interview shoot" fill sizes="(max-width: 600px) 100vw, 33vw" /></div>
+            <div className="gallery-cell gallery-wide"><Image src="/images/studio-4.jpg" alt="Video switching and lighting controls in the studio control room" fill sizes="(max-width: 600px) 100vw, 66vw" /></div>
+            <div className="gallery-cell gallery-wide"><Image src="/images/studio-5.jpg" alt="Acoustically treated production space with camera and grip equipment" fill sizes="(max-width: 600px) 100vw, 66vw" /></div>
+            <div className="gallery-cell"><Image src="/images/studio-6.jpg" alt="Grip cart and camera support equipment inside the production studio" fill sizes="(max-width: 600px) 100vw, 33vw" /></div>
+            <div className="gallery-cell"><Image src="/images/studio-8.jpg" alt="White cyclorama stage beneath the ceiling-mounted lighting grid" fill sizes="(max-width: 600px) 100vw, 33vw" /></div>
+            <div className="gallery-cell gallery-wide"><Image src="/images/studio-9.jpg" alt="Control room view of the production stage and lighting grid" fill sizes="(max-width: 600px) 100vw, 66vw" /></div>
           </div>
         </div>
       </div>
 
       <div className="features-wrap">
         <div className="features-inner">
-          <p className="section-label" style={{ textAlign: 'center' }}>What's Included</p>
+          <p className="section-label" style={{ textAlign: 'center' }}>What&apos;s Included</p>
           <h2 className="section-h2">Studio <em>Features</em></h2>
           <div className="features-grid">
             {features.map((f, i) => (
@@ -247,7 +248,7 @@ export default function StudioPage() {
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />
         <h2 className="cta-h2">Book Your <em>Studio Date</em></h2>
-        <p className="cta-sub">Check availability and get a studio rental quote — we'll get back to you within one business day.</p>
+        <p className="cta-sub">Check availability and get a studio rental quote — we&apos;ll get back to you within one business day.</p>
         <div className="cta-actions">
           <Link href="/contact" className="btn-red">Check Availability</Link>
           <a href="tel:2102799442" className="cta-phone">210-279-9442</a>

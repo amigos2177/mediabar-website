@@ -1,9 +1,11 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import GoogleReviews from '../../components/GoogleReviews'
+import VimeoPlayer from '../../components/VimeoPlayer'
+import { VideoObjectJsonLd } from '../../components/JsonLd'
 
 const services = [
   { label: 'Corporate Video',        href: '/video-production/corporate' },
@@ -109,7 +111,15 @@ const clients = [
 ]
 
 export default function HomePage() {
+  const [heroVideoReady, setHeroVideoReady] = useState(false)
+  const [reduceMotion, setReduceMotion] = useState(false)
+
   useEffect(() => {
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const updateMotionPreference = () => setReduceMotion(motionPreference.matches)
+    updateMotionPreference()
+    motionPreference.addEventListener('change', updateMotionPreference)
+
     const els = document.querySelectorAll<HTMLElement>('[data-reveal]')
     const obs = new IntersectionObserver(
       (entries) => {
@@ -129,14 +139,21 @@ export default function HomePage() {
     return () => {
       obs.disconnect()
       clearTimeout(fallback)
+      motionPreference.removeEventListener('change', updateMotionPreference)
     }
   }, [])
 
   return (
     <Layout>
+      <VideoObjectJsonLd
+        name="2025 Corporate Video Demo Reel"
+        description="Media Bar Productions demo reel featuring corporate, commercial, event, healthcare, and branded video work produced in San Antonio and across Texas."
+        thumbnailUrl="https://i.vimeocdn.com/video/2007121987-d46882b6b21b356f6dfc32d487245d5802d9508db9e6d9c699a70c7156f7da6c-d_1280?region=us"
+        uploadDate="2025-04-20"
+        duration="PT2M38S"
+        embedUrl="https://player.vimeo.com/video/1077104073"
+      />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&family=DM+Sans:wght@400;600;700&display=swap');
-
         :root {
           --red: #CC0000;
           --gold: #C9A84C;
@@ -187,6 +204,12 @@ export default function HomePage() {
           inset: 0;
           pointer-events: none;
           overflow: hidden;
+          background: #080808;
+        }
+        .hero-poster {
+          position: absolute;
+          inset: 0;
+          background: url('/images/hero-aerial.jpg') center / cover no-repeat;
         }
         .hero-video-wrap iframe {
           position: absolute;
@@ -198,7 +221,10 @@ export default function HomePage() {
           min-height: 100vh;
           min-width: 177.78vh;
           border: none;
+          opacity: 0;
+          transition: opacity .45s ease;
         }
+        .hero-video-wrap iframe.ready { opacity: 1; }
         .hero-overlay {
           position: absolute;
           inset: 0;
@@ -616,11 +642,16 @@ export default function HomePage() {
       {/* ─── 1. HERO ─── */}
       <section className="hero">
         <div className="hero-video-wrap">
-          <iframe
-            src="https://player.vimeo.com/video/1077104073?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&controls=0"
-            allow="autoplay; fullscreen"
-            title="Media Bar Productions showreel background"
-          />
+          <div className="hero-poster" aria-hidden="true" />
+          {!reduceMotion && (
+            <iframe
+              className={heroVideoReady ? 'ready' : undefined}
+              src="https://player.vimeo.com/video/1077104073?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&controls=0"
+              allow="autoplay; fullscreen"
+              title="Media Bar Productions showreel background"
+              onLoad={() => setHeroVideoReady(true)}
+            />
+          )}
         </div>
         <div className="hero-overlay" />
         <div className="hero-content">
@@ -633,7 +664,7 @@ export default function HomePage() {
           </div>
           <div className="hero-ctas">
             <Link href="/work" className="btn-outline">See Our Work</Link>
-            <Link href="/contact" className="btn-red">Get a Quote</Link>
+            <Link href="/project-planner" className="btn-red">Start a Project</Link>
           </div>
         </div>
       </section>
@@ -680,21 +711,19 @@ export default function HomePage() {
             <div>
               <p className="reel-label">Studio Showreel</p>
               <div className="reel-wrap">
-                <iframe
-                  src="https://player.vimeo.com/video/1077104073?title=0&byline=0&portrait=0&color=CC0000"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
+                <VimeoPlayer
+                  videoId="1077104073"
                   title="Media Bar Productions Demo Reel"
+                  thumbnailUrl="https://i.vimeocdn.com/video/2007121987-d46882b6b21b356f6dfc32d487245d5802d9508db9e6d9c699a70c7156f7da6c-d_1280?region=us"
+                  eager
                 />
               </div>
             </div>
             <div>
               <p className="reel-label">Commercials Reel</p>
               <div className="reel-wrap">
-                <iframe
-                  src="https://player.vimeo.com/video/1203197473?title=0&byline=0&portrait=0&color=CC0000"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
+                <VimeoPlayer
+                  videoId="1203197473"
                   title="Media Bar Productions Commercials Reel"
                 />
               </div>

@@ -5,8 +5,8 @@ import Layout from '../../components/Layout'
 import { getAllPosts } from '../../lib/blog'
 
 export const metadata = buildMetadata({
-  title: 'Blog | Media Bar Productions',
-  description: "Insights and stories from San Antonio's Emmy and Telly award-winning video production team.",
+  title: 'Video Production Insights | Media Bar Productions',
+  description: 'Practical guides to corporate, commercial, healthcare, event, and social video production from an award-winning San Antonio production team.',
   path: '/blog',
 })
 
@@ -30,9 +30,7 @@ export default function BlogPage() {
       'Insights and stories from San Antonio\'s Emmy and Telly award-winning video production team.',
     url: 'https://www.mediabarproductions.com/blog',
     publisher: {
-      '@type': 'Organization',
-      name: 'Media Bar Productions',
-      url: 'https://www.mediabarproductions.com',
+      '@id': 'https://www.mediabarproductions.com/#business',
     },
     blogPost: posts.map((p) => ({
       '@type': 'BlogPosting',

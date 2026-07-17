@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 const SERVICE_LINKS = [
   { href: '/video-production/corporate', label: 'Corporate Video' },
@@ -32,12 +31,8 @@ const TOP_LINKS = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
-  const pathname = usePathname()
 
   const close = useCallback(() => setOpen(false), [])
-
-  // Close on route change
-  useEffect(() => { close() }, [pathname, close])
 
   // Lock body scroll when overlay is open
   useEffect(() => {
@@ -52,7 +47,6 @@ export default function Nav() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
         .mbp-nav-link {
           color: #fff;
           text-decoration: none;
@@ -235,6 +229,7 @@ export default function Nav() {
         <div className="mbp-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
           <Link href="/video-production" className="mbp-nav-link">Services</Link>
           <Link href="/work" className="mbp-nav-link">Our Work</Link>
+          <Link href="/photography" className="mbp-nav-link">Photography</Link>
           <Link href="/about" className="mbp-nav-link">About</Link>
           <Link href="/studio" className="mbp-nav-link">Studio</Link>
           <Link href="/blog" className="mbp-nav-link">Blog</Link>
@@ -245,8 +240,8 @@ export default function Nav() {
           <a href="tel:2102799442" style={{ color: '#fff', textDecoration: 'none', fontFamily: "'Bebas Neue', cursive", fontSize: '22px', letterSpacing: '0.06em' }}>
             210-279-9442
           </a>
-          <Link href="/contact" className="mbp-quote-btn" style={{ background: '#CC0000', color: '#fff', textDecoration: 'none', padding: '10px 22px', fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
-            Get a Quote
+          <Link href="/project-planner" className="mbp-quote-btn" style={{ background: '#CC0000', color: '#fff', textDecoration: 'none', padding: '10px 22px', fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+            Start a Project
           </Link>
         </div>
 
@@ -304,8 +299,8 @@ export default function Nav() {
 
             {/* CTA */}
             <div className="mbp-overlay-cta">
-              <Link href="/contact" className="mbp-overlay-cta-btn" onClick={close}>
-                Get a Free Quote
+              <Link href="/project-planner" className="mbp-overlay-cta-btn" onClick={close}>
+                Start a Project
               </Link>
               <a href="tel:2102799442" className="mbp-overlay-phone">
                 210-279-9442

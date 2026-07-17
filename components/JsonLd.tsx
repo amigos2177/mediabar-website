@@ -12,10 +12,14 @@ function JsonLdScript({ data }: { data: Record<string, unknown> }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, '\\u003c'),
+      }}
     />
   )
 }
+
+const BUSINESS_ID = 'https://www.mediabarproductions.com/#business'
 
 // ============================================================
 // 1. LocalBusiness — Homepage, About, Contact
@@ -23,7 +27,8 @@ function JsonLdScript({ data }: { data: Record<string, unknown> }) {
 export function LocalBusinessJsonLd() {
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'VideoProductionCompany',
+    '@type': 'LocalBusiness',
+    '@id': BUSINESS_ID,
     name: 'Media Bar Productions',
     legalName: 'Media Bar Productions, LLC',
     url: 'https://www.mediabarproductions.com',
@@ -49,7 +54,7 @@ export function LocalBusinessJsonLd() {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         opens: '08:00',
         closes: '17:00',
       },
@@ -134,17 +139,7 @@ export function ServiceJsonLd({ name, description, url, image }: ServiceProps) {
     url: `https://www.mediabarproductions.com${url}`,
     ...(image && { image }),
     provider: {
-      '@type': 'VideoProductionCompany',
-      name: 'Media Bar Productions',
-      url: 'https://www.mediabarproductions.com',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '8610 N New Braunfels Ave, Suite 704',
-        addressLocality: 'San Antonio',
-        addressRegion: 'TX',
-        postalCode: '78217',
-        addressCountry: 'US',
-      },
+      '@id': BUSINESS_ID,
     },
     areaServed: {
       '@type': 'State',
@@ -189,18 +184,10 @@ export function ArticleJsonLd({
       },
     }),
     author: {
-      '@type': 'Organization',
-      name: 'Media Bar Productions',
-      url: 'https://www.mediabarproductions.com',
+      '@id': BUSINESS_ID,
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'Media Bar Productions',
-      url: 'https://www.mediabarproductions.com',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.mediabarproductions.com/images/mediabar-logo.png',
-      },
+      '@id': BUSINESS_ID,
     },
   }
   return <JsonLdScript data={data} />
@@ -258,13 +245,7 @@ export function VideoObjectJsonLd({
     embedUrl,
     ...(duration && { duration }),
     publisher: {
-      '@type': 'Organization',
-      name: 'Media Bar Productions',
-      url: 'https://www.mediabarproductions.com',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.mediabarproductions.com/images/mediabar-logo.png',
-      },
+      '@id': BUSINESS_ID,
     },
   }
   return <JsonLdScript data={data} />

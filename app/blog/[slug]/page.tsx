@@ -82,17 +82,10 @@ export default async function BlogPostPage({ params }: Props) {
       },
     }),
     author: {
-      '@type': 'Organization',
-      name: 'Media Bar Productions',
-      url: 'https://www.mediabarproductions.com',
+      '@id': 'https://www.mediabarproductions.com/#business',
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'Media Bar Productions',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.mediabarproductions.com/images/mediabar-logo.png',
-      },
+      '@id': 'https://www.mediabarproductions.com/#business',
     },
   }
 

@@ -17,8 +17,6 @@ faqs:
     answer: "We're based in San Antonio and shoot regularly across Austin, Houston, and the Dallas–Fort Worth metro, plus the rest of Texas."
 ---
 
-# Conference Video Production: Turn One Event Into 60 Marketing Assets
-
 Most organizations treat conference video as an afterthought — one recap reel that lands three weeks late, earns a single LinkedIn post, and disappears. You spent months planning and a serious budget filling that room. Walking away with one video leaves the real value on the table.
 
 Here's the reframe that changes how Texas event teams plan: a conference isn't a video shoot. It's a content production opportunity. The right crew turns two days in a ballroom into a library you'll pull from for the next six months — and the math behind it is hard to argue with.

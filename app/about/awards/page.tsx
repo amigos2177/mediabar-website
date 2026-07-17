@@ -58,8 +58,6 @@ export default function AwardsPage() {
   return (
     <Layout>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital@1&family=DM+Sans:wght@400;600;700&display=swap');
-
         :root { --red:#CC0000; --gold:#C9A84C; --black:#0A0A0A; --dark:#111111; --dark2:#181818; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--black); color: #fff; font-family: 'DM Sans', system-ui, sans-serif; }

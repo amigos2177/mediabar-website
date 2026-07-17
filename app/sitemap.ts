@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/photography`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/studio`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/project-planner`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/faq`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/clients`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/blog`, lastModified: LAUNCH, changeFrequency: 'monthly', priority: 0.8 },

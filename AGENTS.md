@@ -120,7 +120,7 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Added stronger metadata plus `Service`, `VideoObject`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
 - Mobbin enterprise-service references informed the outcome-led hero, immediate client proof, use-case organization, process clarity, and consultation CTA while preserving Media Bar's visual system.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
-- Released to production July 18, 2026 as `dpl_DwhZPuPPorHkXXooQXiRiWJQxXZz`; source is committed and pushed with the release.
+- Reviewed preview `dpl_DwhZPuPPorHkXXooQXiRiWJQxXZz` was promoted to production July 18, 2026 as `dpl_Cu684yyunHQeHXecaeCstZ1bUFKg`; source is committed and pushed with the release.
 
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.

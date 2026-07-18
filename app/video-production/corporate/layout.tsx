@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'How long does the process take from start to finish?',
-          answer: 'A standard corporate video project takes 3–6 weeks from kickoff to final delivery. That includes scripting, scheduling, production, and post. Rush delivery is available if you have a hard deadline — we can turn some projects around in under two weeks depending on scope.',
+          answer: 'A standard corporate video project takes 3-6 weeks from kickoff to final delivery. That includes scripting, scheduling, production, and post. Rush delivery is available if you have a hard deadline — we can turn some projects around in under two weeks depending on scope.',
         },
         {
           question: 'Do you write the script, or do we need to provide one?',

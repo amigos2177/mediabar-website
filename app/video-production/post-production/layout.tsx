@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'What is your standard turnaround time for editing?',
-          answer: "A simple 2–3 minute edit with basic color and audio typically takes 3–5 business days. A full corporate video or commercial with color grading, sound design, and motion graphics takes 10–15 business days. We'll give you a firm delivery date in your quote before any work begins.",
+          answer: "A simple 2-3 minute edit with basic color and audio typically takes 3-5 business days. A full corporate video or commercial with color grading, sound design, and motion graphics takes 10-15 business days. We'll give you a firm delivery date in your quote before any work begins.",
         },
         {
           question: 'What formats do you deliver in?',

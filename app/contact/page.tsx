@@ -13,13 +13,13 @@ const services = [
 
 const timelines = [
   'ASAP / Rush', 'Within 2 Weeks', 'Within a Month',
-  '1–3 Months Out', 'Planning Ahead (3+ Months)', 'Not Sure Yet',
+  '1-3 Months Out', 'Planning Ahead (3+ Months)', 'Not Sure Yet',
 ]
 
 const budgets = [
   'Under $5,000',
-  '$5,000 – $15,000',
-  '$15,000 – $50,000',
+  '$5,000 - $15,000',
+  '$15,000 - $50,000',
   '$50,000+',
   'Not sure yet',
 ]
@@ -63,12 +63,12 @@ export default function ContactPage() {
   }, [])
 
   const hours: { day: string; time: string }[] = [
-    { day: 'Monday', time: '8:00 AM – 5:00 PM' },
-    { day: 'Tuesday', time: '8:00 AM – 5:00 PM' },
-    { day: 'Wednesday', time: '8:00 AM – 5:00 PM' },
-    { day: 'Thursday', time: '8:00 AM – 5:00 PM' },
-    { day: 'Friday', time: '8:00 AM – 5:00 PM' },
-    { day: 'Saturday', time: '8:00 AM – 5:00 PM' },
+    { day: 'Monday', time: '8:00 AM - 5:00 PM' },
+    { day: 'Tuesday', time: '8:00 AM - 5:00 PM' },
+    { day: 'Wednesday', time: '8:00 AM - 5:00 PM' },
+    { day: 'Thursday', time: '8:00 AM - 5:00 PM' },
+    { day: 'Friday', time: '8:00 AM - 5:00 PM' },
+    { day: 'Saturday', time: '8:00 AM - 5:00 PM' },
     { day: 'Sunday', time: 'Closed' },
   ]
 

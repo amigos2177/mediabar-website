@@ -394,7 +394,7 @@ the apex redirect to `www`. This must match or canonicals fight the redirect.
 ## VERIFY (after deploy)
 
 1. `npm run build` compiles clean.
-2. View source on 3–4 live pages — confirm each `<title>` and
+2. View source on 3-4 live pages — confirm each `<title>` and
    `<meta name="description">` is unique.
 3. Run homepage + /contact + /faq through
    https://search.google.com/test/rich-results (schema — see schema file).

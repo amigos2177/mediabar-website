@@ -14,7 +14,7 @@ const TIERS = [
       'One full production day with a professional crew — director, director of photography, and audio',
       'Interview and b-roll capture at your location or in our studio',
       'Professional editing, color grading, and audio mix',
-      'One primary brand film, typically 2–3 minutes',
+      'One primary brand film, typically 2-3 minutes',
       'Social cutdowns available when your distribution plan calls for them',
     ],
     note: null,

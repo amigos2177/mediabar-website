@@ -18,12 +18,12 @@ const processSteps = [
   { num: '01', title: 'Property Walkthrough', desc: 'We preview the property to plan camera positions and key features to highlight.', bullets: ['Feature identification', 'Lighting assessment', 'Staging recommendations', 'Shot list development'] },
   { num: '02', title: 'Aerial Planning', desc: 'FAA authorization and flight plan filed for your property\'s location.', bullets: ['Airspace authorization', 'Optimal flight paths', 'Best time of day', 'Neighborhood context shots'] },
   { num: '03', title: 'Full Shoot Day', desc: 'Ground and aerial captured in a single coordinated shoot day.', bullets: ['Interior walkthrough', 'Exterior & curb appeal', 'Aerial wide & close', 'Twilight option available'] },
-  { num: '04', title: 'Edit & Delivery', desc: 'Cinematic cut delivered in 3–5 business days.', bullets: ['Music & pacing edit', 'Color grade', 'Title cards & address', 'MLS & social formats'] },
+  { num: '04', title: 'Edit & Delivery', desc: 'Cinematic cut delivered in 3-5 business days.', bullets: ['Music & pacing edit', 'Color grade', 'Title cards & address', 'MLS & social formats'] },
 ]
 
 const whyCards = [
   { icon: '✈️', title: 'FAA Certified Aerial', desc: 'All aerial is flown by FAA Part 107 certified pilots with proper airspace authorization. No cutting corners, no compliance risk for you.' },
-  { icon: '📅', title: '3–5 Day Turnaround', desc: 'We know the real estate market moves fast. Our standard turnaround is 3–5 business days from shoot to delivery — faster than most in the market.' },
+  { icon: '📅', title: '3-5 Day Turnaround', desc: 'We know the real estate market moves fast. Our standard turnaround is 3-5 business days from shoot to delivery — faster than most in the market.' },
   { icon: '🎬', title: 'Ground + Air Same Day', desc: 'We coordinate interior and exterior ground production with aerial operations in the same shoot day. One booking, complete coverage.' },
   { icon: '🌅', title: 'Twilight Shoots', desc: 'Twilight exteriors create the most dramatic property visuals. We offer twilight as an add-on or standalone shoot for properties where the evening look is key.' },
   { icon: '📐', title: 'MLS-Ready Formats', desc: 'We deliver in the formats and specs required by MLS platforms, real estate portals, and social media. Every listing is covered.' },
@@ -31,10 +31,10 @@ const whyCards = [
 ]
 
 const faqs = [
-  { q: 'How quickly do you deliver real estate video?', a: 'Our standard turnaround is 3–5 business days from the shoot date. For listings with time-sensitive launch dates, we offer rush delivery in 24–48 hours for an additional fee. Just let us know your go-live date when you book and we\'ll confirm the timeline.' },
+  { q: 'How quickly do you deliver real estate video?', a: 'Our standard turnaround is 3-5 business days from the shoot date. For listings with time-sensitive launch dates, we offer rush delivery in 24-48 hours for an additional fee. Just let us know your go-live date when you book and we\'ll confirm the timeline.' },
   { q: 'Do you combine ground and aerial in the same shoot?', a: 'Yes — and that\'s our recommended approach for almost every property. Ground interior and exterior production combined with aerial coverage in a single coordinated shoot day is the most efficient and cost-effective way to get complete property coverage. Separate aerial-only shoots are available but typically less efficient.' },
   { q: 'What\'s your process for getting aerial authorization?', a: 'Our pilots handle all FAA airspace authorization as part of every aerial shoot. We file LAANC authorizations for controlled airspace, obtain waivers where required, and check NOTAMs before every flight. You don\'t need to do anything — just confirm the property address when you book.' },
-  { q: 'Do you shoot twilight?', a: 'Yes. Twilight exterior shots are one of the most impactful visuals in luxury real estate marketing. We offer twilight as an add-on to any ground/aerial package, or as a standalone shoot. Twilight windows are typically 20–30 minutes long, so precise timing and pre-planning are essential — we handle all of that.' },
+  { q: 'Do you shoot twilight?', a: 'Yes. Twilight exterior shots are one of the most impactful visuals in luxury real estate marketing. We offer twilight as an add-on to any ground/aerial package, or as a standalone shoot. Twilight windows are typically 20-30 minutes long, so precise timing and pre-planning are essential — we handle all of that.' },
   { q: 'What formats do you deliver in for MLS?', a: 'We deliver a primary MP4 at 1080p suitable for MLS, Zillow, Realtor.com, and other portals, plus a full-quality master file and social-optimized cuts for Instagram, Facebook, and YouTube. If your specific MLS has particular technical requirements, just let us know and we\'ll match them.' },
 ]
 
@@ -151,7 +151,7 @@ export default function RealEstatePage() {
             </nav>
             <p className="eyebrow">Real Estate &amp; Property Video</p>
             <h1 className="page-h1"><em>Real Estate</em>Video Production in San Antonio</h1>
-            <p className="hero-sub">Cinematic property walkthroughs and aerial coverage that showcase every property at its absolute best. FAA certified, ground and air in the same shoot day, delivered in 3–5 days.</p>
+            <p className="hero-sub">Cinematic property walkthroughs and aerial coverage that showcase every property at its absolute best. FAA certified, ground and air in the same shoot day, delivered in 3-5 days.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>
               <Link href="#portfolio" className="btn-ghost">See Our Work</Link>
@@ -160,7 +160,7 @@ export default function RealEstatePage() {
           <div className="stat-card reveal">
             <div className="stat-item"><p className="stat-value">107</p><p className="stat-label">FAA Certified Aerial</p></div>
             <div className="stat-item"><p className="stat-value">1</p><p className="stat-label">Ground + Air One Shoot</p></div>
-            <div className="stat-item"><p className="stat-value">3–5</p><p className="stat-label">Day Turnaround</p></div>
+            <div className="stat-item"><p className="stat-value">3-5</p><p className="stat-label">Day Turnaround</p></div>
           </div>
         </div>
       </section>
@@ -172,7 +172,7 @@ export default function RealEstatePage() {
               <p className="section-label">What We Do</p>
               <h2 className="section-h2">Every Property at Its <em>Best</em></h2>
               <p className="body-text">Real estate video has one job: make a buyer want to see the property in person. That means capturing the spaces that photograph well, finding the angles that convey scale and flow, and using aerial footage to show the location and surroundings in context.</p>
-              <p className="body-text">We combine ground-level interior and exterior production with FAA certified aerial coverage in a single coordinated shoot day — delivering a complete, cinematic property video in 3–5 business days, ready for MLS, social media, and every listing platform.</p>
+              <p className="body-text">We combine ground-level interior and exterior production with FAA certified aerial coverage in a single coordinated shoot day — delivering a complete, cinematic property video in 3-5 business days, ready for MLS, social media, and every listing platform.</p>
             </div>
             <div className="reveal">
               <p className="section-label">What We Shoot</p>

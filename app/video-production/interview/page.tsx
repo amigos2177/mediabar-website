@@ -27,14 +27,14 @@ const whyCards = [
   { icon: '🎤', title: 'Clean Audio Always', desc: 'We use broadcast-grade lavalier and boom mics with professional audio monitoring. Bad audio is the #1 reason interview videos fail — we don\'t compromise on it.' },
   { icon: '📱', title: 'Multi-Format Delivery', desc: 'Long-form interview, short social cut, subtitle version, thumbnail pull — we deliver every format you need from the same shoot.' },
   { icon: '🔒', title: 'Confidential Productions', desc: 'Executive interviews and legal testimonials require discretion. We operate under NDA and handle sensitive productions with complete professionalism.' },
-  { icon: '⚡', title: 'Fast Turnaround', desc: 'Most single-interview edits are delivered within 3–5 business days. Rush delivery available.' },
+  { icon: '⚡', title: 'Fast Turnaround', desc: 'Most single-interview edits are delivered within 3-5 business days. Rush delivery available.' },
 ]
 
 const faqs = [
   { q: 'Do you direct the talent or just record?', a: 'We actively direct every interview. Before the camera rolls, we brief the subject on what to expect, help them feel comfortable, and give them guidance on pacing and delivery. During the interview, our director is on set coaching for natural, confident answers. The difference between a coached interview and an uncoached one is dramatic.' },
   { q: 'Can you shoot at our office or do we come to your studio?', a: 'Both options are available. We frequently shoot on location at client offices, conference rooms, and branded environments. We also have two production stages in San Antonio that are ready for interview setups. Location shoots require slightly more setup time but often produce more authentic, contextual results.' },
-  { q: 'How long does a typical interview shoot take?', a: 'A single-subject interview shoot typically takes 2–4 hours including setup, the interview itself, and b-roll capture. If you\'re recording multiple subjects in the same day, we can often batch them efficiently. We\'ll give you a detailed timeline estimate before your shoot day.' },
-  { q: 'Do you shoot with one camera or multiple?', a: 'Most interview setups use 2 cameras — a primary wide or medium shot and a closer single. This gives us cutaway coverage during editing without losing the natural flow of the conversation. For panel discussions, we scale up to 3–5 cameras depending on the number of participants.' },
+  { q: 'How long does a typical interview shoot take?', a: 'A single-subject interview shoot typically takes 2-4 hours including setup, the interview itself, and b-roll capture. If you\'re recording multiple subjects in the same day, we can often batch them efficiently. We\'ll give you a detailed timeline estimate before your shoot day.' },
+  { q: 'Do you shoot with one camera or multiple?', a: 'Most interview setups use 2 cameras — a primary wide or medium shot and a closer single. This gives us cutaway coverage during editing without losing the natural flow of the conversation. For panel discussions, we scale up to 3-5 cameras depending on the number of participants.' },
   { q: 'Can you add b-roll and graphics to the interview?', a: 'Absolutely. B-roll footage (contextual shots of your workplace, product, or team in action) is what takes an interview from raw to polished. We typically capture b-roll the same day as the interview. We also add lower-thirds, motion graphic titles, and branded end cards as part of our standard post-production.' },
 ]
 

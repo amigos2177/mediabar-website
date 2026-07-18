@@ -6,7 +6,7 @@ excerpt: "Recruiting video production helps Texas brands win talent. See how one
 featuredImage: /images/blog/recruiting-video-production.png
 faqs:
   - question: "How long should a recruiting video be?"
-    answer: "Aim for 60–90 seconds for a careers-page hero and 15–30 seconds for social cuts. Long enough to feel human, short enough to hold attention."
+    answer: "Aim for 60-90 seconds for a careers-page hero and 15-30 seconds for social cuts. Long enough to feel human, short enough to hold attention."
   - question: "Should we use real employees or actors?"
     answer: "Real employees, every time. Authenticity is the entire point — candidates can spot a hired smile instantly, and it undercuts the trust you're trying to build."
   - question: "What does recruiting video production cost?"
@@ -126,7 +126,7 @@ Once the footage is cut, distribution is where it earns its keep. The same hero 
 ## FAQ
 
 **How long should a recruiting video be?**
-Aim for 60–90 seconds for a careers-page hero and 15–30 seconds for social cuts. Long enough to feel human, short enough to hold attention.
+Aim for 60-90 seconds for a careers-page hero and 15-30 seconds for social cuts. Long enough to feel human, short enough to hold attention.
 
 **Should we use real employees or actors?**
 Real employees, every time. Authenticity is the entire point — candidates can spot a hired smile instantly, and it undercuts the trust you're trying to build.

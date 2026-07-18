@@ -18,11 +18,11 @@ const processSteps = [
   { num: '01', title: 'Pre-Event Planning', desc: 'We map the event flow and plan our coverage before arrival.', bullets: ['Venue walkthrough', 'Run-of-show review', 'Camera placement plan', 'Audio source map'] },
   { num: '02', title: 'Setup & Rehearsal', desc: 'Equipment installed and tested before guests arrive.', bullets: ['Multi-camera rig', 'Audio tie-ins', 'Lighting check', 'Tech rehearsal'] },
   { num: '03', title: 'Live Coverage', desc: 'Full-event capture with a dedicated director calling shots.', bullets: ['Multi-camera live switch', 'Lavalier & podium audio', 'B-roll & cutaways', 'Same-day edit option'] },
-  { num: '04', title: 'Edit & Delivery', desc: 'Highlight reel and full-length cut delivered post-event.', bullets: ['Highlight reel (2–5 min)', 'Full-length recording', 'Social media cuts', 'Multi-format delivery'] },
+  { num: '04', title: 'Edit & Delivery', desc: 'Highlight reel and full-length cut delivered post-event.', bullets: ['Highlight reel (2-5 min)', 'Full-length recording', 'Social media cuts', 'Multi-format delivery'] },
 ]
 
 const whyCards = [
-  { icon: '📷', title: 'Multi-Camera Coverage', desc: 'We typically deploy 3–6 cameras depending on event size, ensuring complete coverage from every angle.' },
+  { icon: '📷', title: 'Multi-Camera Coverage', desc: 'We typically deploy 3-6 cameras depending on event size, ensuring complete coverage from every angle.' },
   { icon: '⚡', title: 'Same-Day Edits', desc: 'Need a highlight reel ready before the event ends? Our on-site editor can deliver a cut while the event is still happening.' },
   { icon: '🎙️', title: 'Professional Audio', desc: 'Crisp audio is what separates professional event video from an iPhone recording. We tie into house sound and deploy backup mics throughout.' },
   { icon: '📡', title: 'Livestream Integration', desc: 'We can simultaneously capture and live stream your event to any platform — YouTube, Vimeo, Facebook, or a private webcast URL.' },
@@ -31,10 +31,10 @@ const whyCards = [
 ]
 
 const faqs = [
-  { q: 'Do you do same-day edits?', a: 'Yes. For events where you need a highlight reel the same night — a gala, conference closing, or awards ceremony — we deploy an on-site editor who cuts in real time. The final reel can be ready within 1–2 hours of your event ending, or even during the event itself.' },
-  { q: 'How many cameras do you use?', a: 'It depends on the event size and complexity. A typical corporate conference uses 3–4 cameras. A large gala or multi-stage event may use 5–7. We do a pre-event walkthrough to determine the right coverage plan and include that recommendation in your quote.' },
+  { q: 'Do you do same-day edits?', a: 'Yes. For events where you need a highlight reel the same night — a gala, conference closing, or awards ceremony — we deploy an on-site editor who cuts in real time. The final reel can be ready within 1-2 hours of your event ending, or even during the event itself.' },
+  { q: 'How many cameras do you use?', a: 'It depends on the event size and complexity. A typical corporate conference uses 3-4 cameras. A large gala or multi-stage event may use 5-7. We do a pre-event walkthrough to determine the right coverage plan and include that recommendation in your quote.' },
   { q: 'Do you also livestream events?', a: 'Yes — livestreaming is a natural extension of our event production work. We can stream to YouTube Live, Vimeo, Facebook, LinkedIn, or a custom private webcast URL while simultaneously recording broadcast-quality footage for your archive. Ask about our hybrid event packages.' },
-  { q: 'How long until I receive the final video?', a: 'Same-day edits (highlight reels) are delivered the night of or morning after the event. A full edited video — full-length recording with color grade, titles, and audio mix — is typically delivered within 5–10 business days depending on length and complexity.' },
+  { q: 'How long until I receive the final video?', a: 'Same-day edits (highlight reels) are delivered the night of or morning after the event. A full edited video — full-length recording with color grade, titles, and audio mix — is typically delivered within 5-10 business days depending on length and complexity.' },
   { q: 'Do you handle audio for the event itself, or just for the video?', a: 'We capture audio for the video production. If you need a full event audio/AV company to run sound for the room, we\'re happy to refer you to trusted partners. For video, we tie into your existing house sound system and deploy our own backup mics to ensure clean recorded audio regardless of venue conditions.' },
 ]
 

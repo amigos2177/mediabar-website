@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <FAQPageJsonLd faqs={[
         {
           question: 'How quickly do you deliver real estate video?',
-          answer: "Our standard turnaround is 3–5 business days from the shoot date. For listings with time-sensitive launch dates, we offer rush delivery in 24–48 hours for an additional fee. Just let us know your go-live date when you book and we'll confirm the timeline.",
+          answer: "Our standard turnaround is 3-5 business days from the shoot date. For listings with time-sensitive launch dates, we offer rush delivery in 24-48 hours for an additional fee. Just let us know your go-live date when you book and we'll confirm the timeline.",
         },
         {
           question: 'Do you combine ground and aerial in the same shoot?',
@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'Do you shoot twilight?',
-          answer: 'Yes. Twilight exterior shots are one of the most impactful visuals in luxury real estate marketing. We offer twilight as an add-on to any ground/aerial package, or as a standalone shoot. Twilight windows are typically 20–30 minutes long, so precise timing and pre-planning are essential — we handle all of that.',
+          answer: 'Yes. Twilight exterior shots are one of the most impactful visuals in luxury real estate marketing. We offer twilight as an add-on to any ground/aerial package, or as a standalone shoot. Twilight windows are typically 20-30 minutes long, so precise timing and pre-planning are essential — we handle all of that.',
         },
         {
           question: 'What formats do you deliver in for MLS?',

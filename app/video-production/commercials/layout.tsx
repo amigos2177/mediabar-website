@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'How long does it take to produce a TV spot?',
-          answer: 'A standard 30-second commercial takes 3–5 weeks from kickoff to delivery. That covers creative development, pre-production, production day, and post. If you have a tight air date, we offer rush production — some projects can be completed in under two weeks depending on scope.',
+          answer: 'A standard 30-second commercial takes 3-5 weeks from kickoff to delivery. That covers creative development, pre-production, production day, and post. If you have a tight air date, we offer rush production — some projects can be completed in under two weeks depending on scope.',
         },
         {
           question: 'Do you handle casting?',

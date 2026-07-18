@@ -56,15 +56,15 @@ const timelines = [
   'ASAP / Rush',
   'Within 2 Weeks',
   'Within a Month',
-  '1–3 Months Out',
+  '1-3 Months Out',
   'Planning Ahead (3+ Months)',
   'Not Sure Yet',
 ]
 
 const budgets = [
   'Under $5,000',
-  '$5,000 – $15,000',
-  '$15,000 – $50,000',
+  '$5,000 - $15,000',
+  '$15,000 - $50,000',
   '$50,000+',
   'Not sure yet',
 ]

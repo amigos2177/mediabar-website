@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import GoogleReviews from '../../components/GoogleReviews'
@@ -8,17 +9,42 @@ import VimeoPlayer from '../../components/VimeoPlayer'
 import { VideoObjectJsonLd } from '../../components/JsonLd'
 
 const services = [
-  { label: 'Corporate Video',        href: '/video-production/corporate' },
-  { label: 'Commercials',            href: '/video-production/commercials' },
-  { label: 'Event Coverage',         href: '/video-production/events' },
-  { label: 'Interview & Discussion', href: '/video-production/interview' },
-  { label: 'Medical Video',          href: '/video-production/medical' },
-  { label: 'Aerial Video',           href: '/video-production/aerial' },
-  { label: 'Motion Graphics',        href: '/video-production/motion-graphics' },
-  { label: 'Live Streaming',         href: '/video-production/live-streaming' },
-  { label: 'Post Production',        href: '/video-production/post-production' },
-  { label: 'Food Video',             href: '/video-production/food' },
-  { label: 'Real Estate Video',      href: '/video-production/real-estate' },
+  {
+    label: 'Corporate Video',
+    href: '/video-production/corporate',
+    description: 'Brand films, executive stories, recruiting, training, and internal communications.',
+    iconIndex: 0,
+  },
+  {
+    label: 'Commercials',
+    href: '/video-production/commercials',
+    description: 'Broadcast and digital campaigns built to earn attention and stay memorable.',
+    iconIndex: 1,
+  },
+  {
+    label: 'Event Coverage',
+    href: '/video-production/events',
+    description: 'Conferences, galas, keynotes, and recaps captured without missing the moment.',
+    iconIndex: 2,
+  },
+  {
+    label: 'Live Streaming',
+    href: '/video-production/live-streaming',
+    description: 'Multi-camera live production for audiences in the room and around the world.',
+    iconIndex: 7,
+  },
+  {
+    label: 'Post Production',
+    href: '/video-production/post-production',
+    description: 'Editorial, color, audio, graphics, captions, and delivery for every channel.',
+    iconIndex: 8,
+  },
+  {
+    label: 'Motion Graphics',
+    href: '/video-production/motion-graphics',
+    description: 'Animation and visual systems that make complex ideas clear and compelling.',
+    iconIndex: 6,
+  },
 ]
 
 const svgProps = {
@@ -234,36 +260,49 @@ export default function HomePage() {
           position: relative;
           z-index: 2;
           padding: 0 24px;
-          max-width: 900px;
+          max-width: 1040px;
           margin: 0 auto;
           text-align: center;
         }
         .hero-eyebrow {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-style: italic;
-          font-size: clamp(22px, 3vw, 38px);
-          color: rgba(255,255,255,0.78);
-          letter-spacing: 0.04em;
-          margin-bottom: 6px;
+          font-size: 11px;
+          font-weight: 700;
+          color: var(--gold);
+          letter-spacing: 0.2em;
+          margin-bottom: 18px;
+          text-transform: uppercase;
         }
         .hero-headline {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(48px, 13vw, 130px);
-          line-height: 0.9;
-          letter-spacing: 0.04em;
+          font-size: clamp(54px, 10vw, 116px);
+          line-height: 0.88;
+          letter-spacing: 0.025em;
           color: #fff;
           text-transform: uppercase;
         }
         .hero-headline-geo {
-          font-size: 0.65em;
-          color: var(--gold);
-          letter-spacing: 0.06em;
+          display: block;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 0.48em;
+          font-style: italic;
+          font-weight: 600;
+          color: rgba(255,255,255,0.76);
+          letter-spacing: 0.01em;
+          text-transform: none;
+          margin-top: 12px;
+        }
+        .hero-sub {
+          max-width: 690px;
+          margin: 28px auto 0;
+          color: rgba(255,255,255,.72);
+          font-size: clamp(15px, 1.8vw, 18px);
+          line-height: 1.65;
         }
         .hero-pills {
           display: flex;
           justify-content: center;
           gap: 12px;
-          margin-top: 36px;
+          margin-top: 28px;
           flex-wrap: wrap;
         }
         .hero-pill {
@@ -292,7 +331,7 @@ export default function HomePage() {
           display: flex;
           justify-content: center;
           gap: 16px;
-          margin-top: 48px;
+          margin-top: 36px;
           flex-wrap: wrap;
         }
         .btn-outline {
@@ -381,6 +420,117 @@ export default function HomePage() {
         }
         .client-cell:hover .client-text { color: rgba(255,255,255,0.55); }
 
+        /* ─── FEATURED WORK ─── */
+        .featured-work {
+          background: var(--black);
+          padding: 112px 48px;
+        }
+        .featured-inner {
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+        .featured-card {
+          display: grid;
+          grid-template-columns: minmax(0, 1.3fr) minmax(360px, .7fr);
+          min-height: 610px;
+          background: var(--dark2);
+          border: 1px solid rgba(255,255,255,.1);
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        .featured-visual {
+          position: relative;
+          min-height: 520px;
+          overflow: hidden;
+        }
+        .featured-visual::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, transparent 55%, rgba(10,10,10,.2));
+        }
+        .featured-visual img {
+          object-fit: cover;
+          transition: transform .7s ease;
+        }
+        .featured-card:hover .featured-visual img { transform: scale(1.025); }
+        .featured-copy {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 56px;
+        }
+        .featured-kicker {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .2em;
+          text-transform: uppercase;
+          color: var(--red);
+          margin-bottom: 18px;
+        }
+        .featured-title {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: clamp(44px, 5vw, 68px);
+          line-height: .95;
+          letter-spacing: .03em;
+          color: #fff;
+        }
+        .featured-title span {
+          display: block;
+          margin-top: 8px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: .54em;
+          font-style: italic;
+          letter-spacing: 0;
+          color: var(--gold);
+          text-transform: none;
+        }
+        .featured-description {
+          color: rgba(255,255,255,.6);
+          font-size: 15px;
+          line-height: 1.75;
+          margin: 24px 0 30px;
+        }
+        .featured-stats {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1px;
+          background: rgba(255,255,255,.1);
+          border: 1px solid rgba(255,255,255,.1);
+          margin-bottom: 34px;
+        }
+        .featured-stat {
+          background: #141414;
+          padding: 15px 12px;
+          text-align: center;
+        }
+        .featured-stat strong {
+          display: block;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          color: #fff;
+          font-size: 25px;
+          line-height: 1;
+          letter-spacing: .04em;
+        }
+        .featured-stat span {
+          display: block;
+          margin-top: 6px;
+          color: #777;
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: .13em;
+          text-transform: uppercase;
+        }
+        .text-link {
+          color: #fff;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: .17em;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+        .text-link span { color: var(--red); margin-left: 8px; }
+
         /* ─── SHARED SECTION ─── */
         .section { padding: 96px 48px; }
         .section-dark  { background: var(--dark); }
@@ -411,14 +561,13 @@ export default function HomePage() {
 
         /* ─── SERVICES GRID ─── */
         .services-grid {
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
           gap: 1px;
           background: #242424;
           border: 1px solid #242424;
         }
         .service-card {
-          flex: 1 1 220px;
           position: relative;
           display: flex;
           flex-direction: column;
@@ -467,6 +616,13 @@ export default function HomePage() {
           letter-spacing: 0.05em;
           color: #fff;
         }
+        .service-description {
+          color: #888;
+          font-size: 13px;
+          line-height: 1.6;
+          margin-top: 12px;
+          max-width: 260px;
+        }
         .service-card-cta {
           font-size: 10px;
           font-weight: 700;
@@ -480,6 +636,135 @@ export default function HomePage() {
           transition: color 0.2s ease, gap 0.2s ease;
         }
         .service-card:hover .service-card-cta { color: var(--red); gap: 10px; }
+        .specialty-card {
+          grid-column: span 4;
+          position: relative;
+          display: grid;
+          grid-template-columns: minmax(260px, .7fr) minmax(420px, 1.3fr);
+          gap: 44px;
+          align-items: center;
+          min-height: 210px;
+          padding: 34px 40px;
+          overflow: hidden;
+          background:
+            radial-gradient(circle at 92% 10%, rgba(201,168,76,.13), transparent 30%),
+            linear-gradient(120deg, #151515, #101010);
+        }
+        .specialty-card::after {
+          content: '11';
+          position: absolute;
+          right: 26px;
+          bottom: -46px;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 210px;
+          line-height: 1;
+          letter-spacing: -.03em;
+          color: rgba(255,255,255,.025);
+          pointer-events: none;
+        }
+        .specialty-kicker {
+          color: var(--gold);
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: .19em;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+        .specialty-title {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          color: #fff;
+          font-size: clamp(30px, 3vw, 44px);
+          font-weight: 400;
+          line-height: 1;
+          letter-spacing: .04em;
+        }
+        .specialty-copy {
+          max-width: 420px;
+          margin-top: 12px;
+          color: #888;
+          font-size: 13px;
+          line-height: 1.6;
+        }
+        .specialty-links {
+          position: relative;
+          z-index: 1;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 9px;
+        }
+        .specialty-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+          min-height: 46px;
+          padding: 11px 15px;
+          border: 1px solid rgba(255,255,255,.1);
+          color: rgba(255,255,255,.72);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+          transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+        .specialty-link:hover {
+          border-color: rgba(204,0,0,.65);
+          background: rgba(204,0,0,.08);
+          color: #fff;
+        }
+        .specialty-link:last-child {
+          border-color: rgba(201,168,76,.35);
+          color: var(--gold);
+        }
+
+        /* ─── PROCESS ─── */
+        .process-layout {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: .85fr 1.15fr;
+          gap: 72px;
+          align-items: center;
+        }
+        .process-intro .section-title { margin-bottom: 24px; }
+        .process-intro > p {
+          color: rgba(255,255,255,.58);
+          font-size: 16px;
+          line-height: 1.75;
+          margin-bottom: 34px;
+        }
+        .process-steps {
+          border-top: 1px solid rgba(255,255,255,.12);
+        }
+        .process-step {
+          display: grid;
+          grid-template-columns: 48px 1fr auto;
+          gap: 20px;
+          align-items: center;
+          padding: 25px 0;
+          border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+        .process-num {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          color: var(--red);
+          font-size: 19px;
+          letter-spacing: .08em;
+        }
+        .process-step h3 {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          color: #fff;
+          font-size: 26px;
+          letter-spacing: .05em;
+          font-weight: 400;
+        }
+        .process-step p {
+          grid-column: 2 / 4;
+          color: #777;
+          font-size: 13px;
+          line-height: 1.55;
+          margin-top: -12px;
+        }
+        .process-arrow { color: #555; }
 
         /* ─── DEMO REEL ─── */
         .reel-section-inner {
@@ -623,6 +908,11 @@ export default function HomePage() {
         @media (max-width: 1024px) {
           .clients-grid { grid-template-columns: repeat(4, 1fr); }
           .client-cell:nth-child(4n) { border-right: none; }
+          .featured-card { grid-template-columns: 1fr; }
+          .featured-copy { padding: 48px; }
+          .process-layout { grid-template-columns: 1fr; gap: 48px; }
+          .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .specialty-card { grid-column: span 3; }
         }
         @media (max-width: 768px) {
           .reel-section-inner { padding: 0 24px; }
@@ -636,6 +926,21 @@ export default function HomePage() {
           .client-text { font-size: 12px; }
           .award-card { padding: 36px 28px; min-width: 160px; }
           .award-count { font-size: 72px; }
+          .hero { min-height: 720px; }
+          .hero-content { padding-top: 64px; }
+          .featured-work { padding: 72px 20px; }
+          .featured-card { min-height: 0; }
+          .featured-visual { min-height: 300px; }
+          .featured-copy { padding: 34px 24px 38px; }
+          .featured-stats { grid-template-columns: 1fr; }
+          .services-grid { grid-template-columns: 1fr; }
+          .specialty-card {
+            grid-column: span 1;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 32px 24px;
+          }
+          .specialty-links { grid-template-columns: 1fr; }
         }
       `}</style>
 
@@ -655,16 +960,23 @@ export default function HomePage() {
         </div>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="hero-eyebrow">San Antonio</p>
-          <h1 className="hero-headline">Video Production <span className="hero-headline-geo">in San Antonio</span></h1>
+          <p className="hero-eyebrow">Award-winning video production · San Antonio, Texas</p>
+          <h1 className="hero-headline">
+            Stories Built to Move
+            <span className="hero-headline-geo">people—and business.</span>
+          </h1>
+          <p className="hero-sub">
+            Media Bar Productions turns complex ideas into cinematic brand stories, commercials,
+            and campaigns—planned, produced, and finished by one experienced team.
+          </p>
           <div className="hero-pills">
-            <span className="hero-pill">13+ Years</span>
+            <span className="hero-pill">Strategy to Delivery</span>
             <span className="hero-pill">3 Emmy Awards</span>
-            <span className="hero-pill">15 Telly Awards</span>
+            <span className="hero-pill">Your Footage, Yours to Keep</span>
           </div>
           <div className="hero-ctas">
-            <Link href="/work" className="btn-outline">See Our Work</Link>
             <Link href="/project-planner" className="btn-red">Start a Project</Link>
+            <Link href="/work" className="btn-outline">Watch Our Work</Link>
           </div>
         </div>
       </section>
@@ -676,7 +988,15 @@ export default function HomePage() {
           {clients.map((client) => (
             <div key={client.name} className="client-cell">
               {client.logo
-                ? <img src={client.logo} alt={client.name} />
+                ? (
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={160}
+                    height={56}
+                    sizes="(max-width: 600px) 42vw, (max-width: 1024px) 21vw, 11vw"
+                  />
+                )
                 : <span className="client-text">{client.name}</span>
               }
             </div>
@@ -684,25 +1004,87 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ─── 3. SERVICES GRID ─── */}
+      {/* ─── 3. FEATURED CASE STUDY ─── */}
+      <section className="featured-work" data-reveal>
+        <div className="featured-inner">
+          <p className="eyebrow">Featured Work</p>
+          <h2 className="section-title">A Campaign Built to <em>Go Beyond</em></h2>
+          <article className="featured-card">
+            <div className="featured-visual">
+              <Image
+                src="/images/rbfcu-bts-riverside.jpg"
+                alt="Media Bar Productions filming the RBFCU Go Beyond Banking commercial campaign beside a Texas river"
+                fill
+                sizes="(max-width: 1024px) 100vw, 62vw"
+              />
+            </div>
+            <div className="featured-copy">
+              <p className="featured-kicker">RBFCU · Broadcast Campaign</p>
+              <h3 className="featured-title">
+                Five Stories
+                <span>One human promise.</span>
+              </h3>
+              <p className="featured-description">
+                Media Bar co-wrote, produced, and finished a five-commercial campaign designed
+                to make one of Texas&rsquo;s largest credit unions feel personal in every market.
+              </p>
+              <div className="featured-stats" aria-label="Campaign highlights">
+                <div className="featured-stat"><strong>5</strong><span>Broadcast spots</span></div>
+                <div className="featured-stat"><strong>4</strong><span>Texas markets</span></div>
+                <div className="featured-stat"><strong>5M+</strong><span>Online views</span></div>
+              </div>
+              <Link href="/work/rbfcu-go-beyond-banking" className="text-link">
+                Explore the case study <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* ─── 4. SERVICES GRID ─── */}
       <section className="section section-dark" data-reveal>
         <p className="eyebrow">Our Services</p>
-        <h2 className="section-title">Full-Service <em>Video Production</em></h2>
+        <h2 className="section-title">One Team, <em>Every Frame</em></h2>
         <div className="services-grid">
           {services.map((svc, i) => (
             <Link key={svc.href} href={svc.href} className="service-card">
               <div className="service-card-top">
-                <span className="service-icon" aria-hidden="true">{serviceIcons[i]}</span>
+                <span className="service-icon" aria-hidden="true">{serviceIcons[svc.iconIndex]}</span>
                 <p className="service-num">{String(i + 1).padStart(2, '0')}</p>
                 <p className="service-title">{svc.label}</p>
+                <p className="service-description">{svc.description}</p>
               </div>
-              <span className="service-card-cta">See Examples →</span>
+              <span className="service-card-cta">Explore service →</span>
             </Link>
           ))}
+          <aside className="specialty-card">
+            <div>
+              <p className="specialty-kicker">More ways to create</p>
+              <h3 className="specialty-title">Specialized Production</h3>
+              <p className="specialty-copy">
+                The same experienced crew, adapted to the subject, setting, and audience your
+                story requires.
+              </p>
+            </div>
+            <nav className="specialty-links" aria-label="Specialized video production services">
+              {[
+                ['Interview & Discussion', '/video-production/interview'],
+                ['Medical & Healthcare', '/video-production/medical'],
+                ['Aerial & Drone', '/video-production/aerial'],
+                ['Food & Beverage', '/video-production/food'],
+                ['Real Estate', '/video-production/real-estate'],
+                ['Explore All Services', '/video-production'],
+              ].map(([label, href]) => (
+                <Link className="specialty-link" href={href} key={href}>
+                  <span>{label}</span><span aria-hidden="true">→</span>
+                </Link>
+              ))}
+            </nav>
+          </aside>
         </div>
       </section>
 
-      {/* ─── 4. DEMO REEL ─── */}
+      {/* ─── 5. DEMO REEL ─── */}
       <section className="section section-dark2" data-reveal>
         <p className="eyebrow">Demo Reel</p>
         <h2 className="section-title" style={{ marginBottom: '40px' }}>See <em>The Work</em></h2>
@@ -725,6 +1107,7 @@ export default function HomePage() {
                 <VimeoPlayer
                   videoId="1203197473"
                   title="Media Bar Productions Commercials Reel"
+                  thumbnailUrl="/images/commercials-reel-spurs-coyote.jpg"
                 />
               </div>
             </div>
@@ -732,15 +1115,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── HOW WE WORK TEASER ─── */}
-      <section className="section" style={{ background: 'var(--black)', textAlign: 'center' }} data-reveal>
-        <p className="eyebrow">The Media Bar Experience</p>
-        <h2 className="section-title">You&rsquo;ll never wonder where <em>your project stands.</em></h2>
-        <p style={{ fontSize: '16px', lineHeight: '1.75', color: 'rgba(255,255,255,0.55)', maxWidth: '600px', margin: '0 auto 44px' }}>
-          {/* TODO: Replace with your copy */}
-          A private client space, a four-phase process, and a direct line to the people doing the work — visible to you at every step.
-        </p>
-        <Link href="/how-we-work" className="btn-red">See how we work &rarr;</Link>
+      {/* ─── HOW WE WORK ─── */}
+      <section className="section" style={{ background: 'var(--black)' }} data-reveal>
+        <div className="process-layout">
+          <div className="process-intro">
+            <p className="eyebrow">The Media Bar Experience</p>
+            <h2 className="section-title">Big Production. <em>No Black Box.</em></h2>
+            <p>
+              You get a clear plan, a direct line to the team, and a private project space
+              where timelines, files, feedback, approvals, and final delivery stay together.
+            </p>
+            <Link href="/how-we-work" className="btn-red">See How We Work</Link>
+          </div>
+          <div className="process-steps">
+            {[
+              ['01', 'Plan', 'Goals, audience, script, schedule, and approvals before cameras roll.'],
+              ['02', 'Produce', 'An experienced crew, a detailed call sheet, and a calm, prepared set.'],
+              ['03', 'Refine', 'Structured review rounds with feedback and versions visible in your portal.'],
+              ['04', 'Deliver', 'Final files prepared for every channel, with the footage yours to keep.'],
+            ].map(([num, title, description]) => (
+              <div className="process-step" key={num}>
+                <span className="process-num">{num}</span>
+                <h3>{title}</h3>
+                <span className="process-arrow" aria-hidden="true">→</span>
+                <p>{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ─── 5. AWARDS ─── */}

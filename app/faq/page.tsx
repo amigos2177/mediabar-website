@@ -19,7 +19,7 @@ const faqs = [
   {
     category: 'Pricing',
     q: 'How much does a video cost?',
-    a: 'It depends on the scope — but we give you a fully itemized quote so there are no surprises. A basic testimonial or interview video starts around $1,500–$3,000. A polished commercial or brand film typically runs $5,000–$25,000+. We\'ll ask the right questions and give you a real number fast.',
+    a: 'It depends on the scope — but we give you a fully itemized quote so there are no surprises. A basic testimonial or interview video starts around $1,500-$3,000. A polished commercial or brand film typically runs $5,000-$25,000+. We\'ll ask the right questions and give you a real number fast.',
   },
   {
     category: 'Pricing',
@@ -39,7 +39,7 @@ const faqs = [
   {
     category: 'Process & Timeline',
     q: 'How long does the production process take?',
-    a: 'From kickoff to final delivery, most projects take 2–4 weeks. Rush turnarounds are available — we\'ve delivered same-day edits for live events and 48-hour cuts for time-sensitive campaigns. Timeline depends on complexity, revision rounds, and your approval speed.',
+    a: 'From kickoff to final delivery, most projects take 2-4 weeks. Rush turnarounds are available — we\'ve delivered same-day edits for live events and 48-hour cuts for time-sensitive campaigns. Timeline depends on complexity, revision rounds, and your approval speed.',
   },
   {
     category: 'Process & Timeline',

@@ -26,7 +26,7 @@ const whyCards = [
   { icon: '🎥', title: 'Cinema-Grade Aerial', desc: 'We fly Inspire and Mavic 3 Cine platforms with interchangeable lens systems, capturing aerial footage that matches your ground cameras in quality and color.' },
   { icon: '🤝', title: 'Ground + Air Same Day', desc: 'We integrate aerial and ground production in a single shoot day. No need to coordinate two separate crews — one team handles everything.' },
   { icon: '🗺️', title: 'All of Texas', desc: 'We fly throughout San Antonio, Austin, Dallas, Houston, and across Texas. Travel costs are bundled into your quote upfront.' },
-  { icon: '⚡', title: 'Fast Turnaround', desc: 'Most aerial-only projects are delivered within 3–5 business days. Combined aerial + ground productions follow standard post timelines.' },
+  { icon: '⚡', title: 'Fast Turnaround', desc: 'Most aerial-only projects are delivered within 3-5 business days. Combined aerial + ground productions follow standard post timelines.' },
   { icon: '🏆', title: 'Emmy Award-Winning Team', desc: 'The same award-winning crew that handles ground production brings that same craft to the air. Aerial footage is only as good as the people operating it.' },
 ]
 

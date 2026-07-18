@@ -17,7 +17,7 @@ Before you talk to a single videographer, decide what you need the footage to *d
 
 Most event and conference video production breaks down into a few core deliverables:
 
-- **A highlight or sizzle reel** — a short, energetic recap (60–120 seconds) for social media, sponsors, and next year's marketing.
+- **A highlight or sizzle reel** — a short, energetic recap (60-120 seconds) for social media, sponsors, and next year's marketing.
 - **Full session recordings** — complete captures of keynotes, panels, and breakouts, often used for on-demand libraries or paid replays.
 - **Speaker and attendee testimonials** — short interviews shot on-site that become some of your most persuasive marketing assets.
 - **Social clips** — vertical, caption-ready cutdowns built specifically for Reels, Shorts, and LinkedIn.

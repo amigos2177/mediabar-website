@@ -18,11 +18,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <FAQPageJsonLd faqs={[
         {
           question: 'Do you do same-day edits?',
-          answer: 'Yes. For events where you need a highlight reel the same night — a gala, conference closing, or awards ceremony — we deploy an on-site editor who cuts in real time. The final reel can be ready within 1–2 hours of your event ending, or even during the event itself.',
+          answer: 'Yes. For events where you need a highlight reel the same night — a gala, conference closing, or awards ceremony — we deploy an on-site editor who cuts in real time. The final reel can be ready within 1-2 hours of your event ending, or even during the event itself.',
         },
         {
           question: 'How many cameras do you use?',
-          answer: 'It depends on the event size and complexity. A typical corporate conference uses 3–4 cameras. A large gala or multi-stage event may use 5–7. We do a pre-event walkthrough to determine the right coverage plan and include that recommendation in your quote.',
+          answer: 'It depends on the event size and complexity. A typical corporate conference uses 3-4 cameras. A large gala or multi-stage event may use 5-7. We do a pre-event walkthrough to determine the right coverage plan and include that recommendation in your quote.',
         },
         {
           question: 'Do you also livestream events?',
@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'How long until I receive the final video?',
-          answer: 'Same-day edits (highlight reels) are delivered the night of or morning after the event. A full edited video — full-length recording with color grade, titles, and audio mix — is typically delivered within 5–10 business days depending on length and complexity.',
+          answer: 'Same-day edits (highlight reels) are delivered the night of or morning after the event. A full edited video — full-length recording with color grade, titles, and audio mix — is typically delivered within 5-10 business days depending on length and complexity.',
         },
         {
           question: 'Do you handle audio for the event itself, or just for the video?',

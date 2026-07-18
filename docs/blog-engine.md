@@ -37,7 +37,7 @@ indexing request** (Google's Indexing API isn't meant for general pages — clic
 title: "≤40 chars, primary keyword front-loaded"   # template appends " | Media Bar Productions"
 slug: "keyword-rich-hyphenated-slug"
 date: "YYYY-MM-DD"
-excerpt: "120–155 chars — this is the meta description; keyword + reason to click"
+excerpt: "120-155 chars — this is the meta description; keyword + reason to click"
 featuredImage: /images/blog/keyword-rich-hyphenated-slug.png
 ---
 ```
@@ -51,7 +51,7 @@ featuredImage: /images/blog/keyword-rich-hyphenated-slug.png
 
 ## Internal-link map
 
-Every post links to 3–4 of these, using real paths:
+Every post links to 3-4 of these, using real paths:
 
 - Services: `/video-production` (hub) and the 11 sub-pages —
   `/video-production/{corporate, events, medical, live-streaming, food, motion-graphics,
@@ -71,7 +71,7 @@ food ↔ commercials · motion-graphics ↔ post-production · real-estate ↔ a
 - **Track B — Evergreen:** durable, ranking-focused pieces mapped to keyword gaps and the
   four Texas metros. The workhorses. ~2 of every 3 posts. Current priority.
 
-Ranking gaps to target (impressions but stuck page 2–3): event/conference video, medical/
+Ranking gaps to target (impressions but stuck page 2-3): event/conference video, medical/
 healthcare video, live-streaming/webcasting, corporate video, food/restaurant video.
 
 ---
@@ -86,8 +86,8 @@ marketing and the video production industry that marketing directors,
 small-business owners, and ad agencies would want to read THIS WEEK, and
 cross-check against Media Bar's ranking gaps (event/conference video,
 medical/healthcare video, live-streaming/webcasting, corporate video,
-food/restaurant video — terms we get impressions for but rank page 2–3 on).
-Give me 5–7 candidates. Tag each Track A (timely/shareable) or Track B
+food/restaurant video — terms we get impressions for but rank page 2-3 on).
+Give me 5-7 candidates. Tag each Track A (timely/shareable) or Track B
 (evergreen/ranking), each with: target keyword, target reader, the on-site
 page it should link to, and why it's worth writing now. Then STOP and let me
 pick. Don't draft yet.
@@ -100,16 +100,16 @@ Front-matter (these keys ONLY):
     " | Media Bar Productions", so keep it short)
   slug: keyword-rich, lowercase, hyphenated
   date: today's date, YYYY-MM-DD
-  excerpt: 120–155 chars — this IS the meta description; keyword + reason to click
+  excerpt: 120-155 chars — this IS the meta description; keyword + reason to click
   featuredImage: /images/blog/<slug>.png
 
 Body:
   - One H1 (may carry a fuller headline than the title tag, e.g. add ": 2026 Guide")
-  - ~1,200–1,500 words. Media Bar voice: confident, benefit-led, locally rooted
+  - ~1,200-1,500 words. Media Bar voice: confident, benefit-led, locally rooted
     (San Antonio / Texas), Emmy + 13-years credibility, active voice, short paragraphs.
-  - 3–5 H2 sections, lists where useful, a short FAQ for snippet capture, and a
+  - 3-5 H2 sections, lists where useful, a short FAQ for snippet capture, and a
     CTA to /contact at the end.
-  - 3–4 internal links using REAL paths from this map: the matching
+  - 3-4 internal links using REAL paths from this map: the matching
     /video-production/<service> page, /video-production/live-streaming if relevant,
     the relevant /locations/<city> page, and /contact.
   - No invented statistics. Keep any cost talk to ranges, not fabricated figures.
@@ -153,7 +153,7 @@ reinforcing each other.
 ```
 Write the audio narration script for the post at content/blog/<slug>.md.
 
-- 350–450 words (~2–3 minutes spoken). One single narrator — NOT a two-host dialogue.
+- 350-450 words (~2-3 minutes spoken). One single narrator — NOT a two-host dialogue.
 - First person, Media Bar voice: confident, benefit-led, San Antonio / Texas rooted,
   Emmy + Telly + 13 years credibility, active voice, short sentences.
 - A genuine SUMMARY / spin of the whole post — do NOT copy the intro paragraphs
@@ -169,7 +169,7 @@ Then give me the same script formatted as <p> paragraphs for the transcript bloc
 ### File + embed
 
 - **Save the MP3 as:** `public/audio/blog/<slug>.mp3` (match the post slug exactly).
-  Served at `/audio/blog/<slug>.mp3`. A 2–3 min MP3 is a few MB — fine to keep in the repo.
+  Served at `/audio/blog/<slug>.mp3`. A 2-3 min MP3 is a few MB — fine to keep in the repo.
 - **Insert this block** right after the intro paragraph, before the first `## ` heading.
   Keep `preload="none"` so it never slows page load. Drop the narration script in as the
   `<details>` paragraphs.

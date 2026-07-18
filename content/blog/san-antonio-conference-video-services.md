@@ -93,7 +93,7 @@ San Antonio's unique blend of culture, technology, and expertise makes it an ide
 ### Maximize Your Conference Impact with Video
 
 
-By choosing conference video production services in San Antonio, you're not just documenting your event – you're creating a lasting legacy. High-quality video content can:
+By choosing conference video production services in San Antonio, you're not just documenting your event - you're creating a lasting legacy. High-quality video content can:
 
 
 - Boost post-event engagement

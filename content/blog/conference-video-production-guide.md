@@ -14,7 +14,7 @@ faqs:
   - question: "Can you live stream the conference too?"
     answer: "Yes. We run multi-camera live streaming for hybrid events, broadcasting keynotes and sessions to remote attendees on the platform of your choice while capturing everything for post-event content."
   - question: "Do you cover events outside San Antonio?"
-    answer: "We're based in San Antonio and shoot regularly across Austin, Houston, and the Dallas–Fort Worth metro, plus the rest of Texas."
+    answer: "We're based in San Antonio and shoot regularly across Austin, Houston, and the Dallas-Fort Worth metro, plus the rest of Texas."
 ---
 
 Most organizations treat conference video as an afterthought — one recap reel that lands three weeks late, earns a single LinkedIn post, and disappears. You spent months planning and a serious budget filling that room. Walking away with one video leaves the real value on the table.
@@ -66,7 +66,7 @@ Here's the reframe that changes how Texas event teams plan: a conference isn't a
     <p>But volume isn't the goal. Outcomes are. Two pieces do the heavy lifting. The first is registration. Post-event video creates real FOMO in everyone who missed it, and that feeling is strongest in the first two weeks. A great highlight reel does more to fill next year's room than any email blast. The second is sponsor proof. A recap that shows booth traffic and real audience reactions makes renewing — and raising — sponsorship dollars easy. Honestly, the sponsor cuts alone can pay for the production.</p>
     <p>Speed matters too. In 2026, a highlight reel that shows up next week is already late. Attendees expect clips from the morning keynote by that afternoon. So we plan every deliverable before the doors open, capture against that plan on-site, and turn highlights around in 24 to 72 hours — while the attention is still there.</p>
     <p>People ask about cost. The honest answer is, it depends on scope. But the number that matters isn't the invoice — it's the cost per asset. Full multi-camera coverage usually lands in the low-to-mid five figures, and once you spread that across 50-plus deliverables, the per-piece cost is a fraction of producing each one on its own.</p>
-    <p>We've covered events across Texas for more than a decade. Emmy- and Telly-winning work, anchored right here in San Antonio, shooting regularly in Austin, Houston, and Dallas–Fort Worth.</p>
+    <p>We've covered events across Texas for more than a decade. Emmy- and Telly-winning work, anchored right here in San Antonio, shooting regularly in Austin, Houston, and Dallas-Fort Worth.</p>
     <p>So if you've got a conference, summit, or annual meeting coming up this year, let's turn it into a content library that works long after the lights come down. Reach out to Media Bar Productions, and we'll build the coverage around what you actually need.</p>
   </details>
 </figure>
@@ -75,7 +75,7 @@ Here's the reframe that changes how Texas event teams plan: a conference isn't a
 
 A single, professionally covered conference can yield as many as 50 to 60 distinct, usable assets. Not 60 versions of the same reel — 60 different pieces, each with its own job to do:
 
-- A 2–3 minute cinematic highlight reel for your recap page, email, and LinkedIn.
+- A 2-3 minute cinematic highlight reel for your recap page, email, and LinkedIn.
 - Full multi-camera recordings of every keynote, panel, and breakout. Gate them behind a registration form and they become a year-round lead-generation library.
 - 20 to 30 short vertical clips, 15 to 60 seconds each, cut for Reels, Shorts, and TikTok.
 - On-camera attendee testimonials — the most persuasive sales tool you own for next year's registrations.
@@ -110,7 +110,7 @@ Treated as a line item, professional coverage looks pricey. Treated as a content
 
 Conference coverage is logistics as much as cinematography. Multiple cameras, clean audio pulled straight off the soundboard, synced presentation capture, and a team that moves quietly through a live program without ever disrupting it — that's difficult to coordinate with a crew you've never met flying in cold.
 
-Media Bar Productions has covered events across Texas for over a decade, with Emmy- and Telly-winning work behind us. We're anchored in San Antonio and shoot regularly across [Austin, Houston, and the Dallas–Fort Worth metro](/locations/dallas) — one of the densest conference and convention markets in the country. Whether it's an association annual meeting, an industry summit, a product launch, or a corporate town hall, we bring a full multi-camera [event production team](/video-production/events) and the [live-streaming setup](/video-production/live-streaming) to serve your in-room and remote audiences at the same time.
+Media Bar Productions has covered events across Texas for over a decade, with Emmy- and Telly-winning work behind us. We're anchored in San Antonio and shoot regularly across [Austin, Houston, and the Dallas-Fort Worth metro](/locations/dallas) — one of the densest conference and convention markets in the country. Whether it's an association annual meeting, an industry summit, a product launch, or a corporate town hall, we bring a full multi-camera [event production team](/video-production/events) and the [live-streaming setup](/video-production/live-streaming) to serve your in-room and remote audiences at the same time.
 
 Your conference is already the hard part — the speakers booked, the room filled, the program built. Capturing it properly is how you make that investment work for the eleven months that follow.
 

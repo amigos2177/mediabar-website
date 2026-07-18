@@ -26,11 +26,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'How long does a typical interview shoot take?',
-          answer: "A single-subject interview shoot typically takes 2–4 hours including setup, the interview itself, and b-roll capture. If you're recording multiple subjects in the same day, we can often batch them efficiently. We'll give you a detailed timeline estimate before your shoot day.",
+          answer: "A single-subject interview shoot typically takes 2-4 hours including setup, the interview itself, and b-roll capture. If you're recording multiple subjects in the same day, we can often batch them efficiently. We'll give you a detailed timeline estimate before your shoot day.",
         },
         {
           question: 'Do you shoot with one camera or multiple?',
-          answer: 'Most interview setups use 2 cameras — a primary wide or medium shot and a closer single. This gives us cutaway coverage during editing without losing the natural flow of the conversation. For panel discussions, we scale up to 3–5 cameras depending on the number of participants.',
+          answer: 'Most interview setups use 2 cameras — a primary wide or medium shot and a closer single. This gives us cutaway coverage during editing without losing the natural flow of the conversation. For panel discussions, we scale up to 3-5 cameras depending on the number of participants.',
         },
         {
           question: 'Can you add b-roll and graphics to the interview?',

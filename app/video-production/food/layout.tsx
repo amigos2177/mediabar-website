@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'Can you produce social media content at volume?',
-          answer: 'Yes. We have clients who commission 10–30 social food videos per quarter. For volume content, we develop an efficient workflow — batching shoot days, standardizing setups, and building a post-production pipeline that allows us to deliver consistent quality at scale. Volume pricing is available for ongoing content commitments.',
+          answer: 'Yes. We have clients who commission 10-30 social food videos per quarter. For volume content, we develop an efficient workflow — batching shoot days, standardizing setups, and building a post-production pipeline that allows us to deliver consistent quality at scale. Volume pricing is available for ongoing content commitments.',
         },
         {
           question: 'Do you produce beverage video as well as food?',

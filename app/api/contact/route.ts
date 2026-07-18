@@ -14,10 +14,10 @@ const SERVICES = new Set([
 ])
 const TIMELINES = new Set([
   'ASAP / Rush', 'Within 2 Weeks', 'Within a Month',
-  '1–3 Months Out', 'Planning Ahead (3+ Months)', 'Not Sure Yet',
+  '1-3 Months Out', 'Planning Ahead (3+ Months)', 'Not Sure Yet',
 ])
 const BUDGETS = new Set([
-  'Under $5,000', '$5,000 – $15,000', '$15,000 – $50,000',
+  'Under $5,000', '$5,000 - $15,000', '$15,000 - $50,000',
   '$50,000+', 'Not sure yet',
 ])
 

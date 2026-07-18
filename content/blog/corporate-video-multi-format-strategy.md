@@ -10,14 +10,14 @@ faqs:
   - question: "Should corporate videos be horizontal or vertical?"
     answer: "Both. Capture with vertical and square in mind so the same footage can be reframed, rather than committing to one aspect ratio and reshooting later."
   - question: "How long should a corporate video be?"
-    answer: "The hero piece usually lands around 60–120 seconds; social cuts run far shorter, often 15–30 seconds. The point of multi-format is that one shoot serves every length."
+    answer: "The hero piece usually lands around 60-120 seconds; social cuts run far shorter, often 15-30 seconds. The point of multi-format is that one shoot serves every length."
   - question: "How far ahead should we plan?"
     answer: "The earlier the better. Mapping deliverables before the shoot is what makes the one-shoot, many-cuts model work without surprises or added cost."
 ---
 
 Your audience does not watch video in one place anymore. The same message has to land on a phone screen during a coffee break, on your homepage above the fold, inside a sales deck, and on a lobby monitor at your next event. Shooting a separate video for each of those is slow and expensive. Shooting once and cutting smart is how the best brands keep up.
 
-At Media Bar Productions, we have spent more than 13 years helping Texas companies turn a single production day into a library of content. As an Emmy Award–winning team based in San Antonio, we plan every corporate shoot around one question: how many places can this footage go?
+At Media Bar Productions, we have spent more than 13 years helping Texas companies turn a single production day into a library of content. As an Emmy Award-winning team based in San Antonio, we plan every corporate shoot around one question: how many places can this footage go?
 
 Here is how the multi-format approach works, and how to make sure your next corporate video earns its budget for months, not minutes.
 
@@ -139,7 +139,7 @@ With the right plan, a single day commonly yields one hero video plus several sh
 Both. Capture with vertical and square in mind so the same footage can be reframed, rather than committing to one aspect ratio and reshooting later.
 
 **How long should a corporate video be?**
-The hero piece usually lands around 60–120 seconds; social cuts run far shorter, often 15–30 seconds. The point of multi-format is that one shoot serves every length.
+The hero piece usually lands around 60-120 seconds; social cuts run far shorter, often 15-30 seconds. The point of multi-format is that one shoot serves every length.
 
 **How far ahead should we plan?**
 The earlier the better. Mapping deliverables before the shoot is what makes the one-shoot, many-cuts model work without surprises or added cost.

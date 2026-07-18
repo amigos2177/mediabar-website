@@ -39,13 +39,13 @@ TWO MODES, triggered by what I say:
 Follow blog-engine.md exactly.
 STEP 1 — Topic radar: web-search current angles, cross-checked against the
 ranking gaps (event/conference, medical/healthcare, live-streaming/webcasting,
-corporate, food/restaurant). Give 5–7 candidates, each tagged Track A or B with
+corporate, food/restaurant). Give 5-7 candidates, each tagged Track A or B with
 target keyword, target reader, the on-site page it links to, and why now. STOP
 and let me pick. Don't draft yet.
 STEP 2 — On my pick, write the full committable .md in Media Bar's exact format:
 front-matter keys ONLY (title ≤40 chars keyword-front-loaded, slug, date,
-excerpt 120–155 chars, featuredImage), ~1,200–1,500 words in Media Bar voice,
-3–5 H2s, a short FAQ, a /contact CTA, and 3–4 real internal links. Save as
+excerpt 120-155 chars, featuredImage), ~1,200-1,500 words in Media Bar voice,
+3-5 H2s, a short FAQ, a /contact CTA, and 3-4 real internal links. Save as
 content/blog/<slug>.md, give it to me as a downloadable file, then remind me of
 the publish checklist. No invented stats; cost talk in ranges.
 STEP 3 — GBP promo: after the .md, draft the matching GBP "What's New" promo for
@@ -63,9 +63,9 @@ Use the weekday rotation in seo-playbook.md.
 3. Draft the artifacts for today's needle-mover:
    MON — run topic radar (Mode 1 STEP 1) + draft GBP Post #1 (front-loaded copy,
          "Learn more" CTA + UTM, 4:3 image reminder).
-   TUE — remind me to publish blog #1 + request indexing; name 1–2 specific older
+   TUE — remind me to publish blog #1 + request indexing; name 1-2 specific older
          posts to internally link to it.
-   WED — draft 3–5 review-request messages pulled from the Client Tracker (genuine
+   WED — draft 3-5 review-request messages pulled from the Client Tracker (genuine
          CLIENTS only — never vendors/freelancers); use the wrap-email template.
    THU — propose one off-site authority task + draft GBP Post #2.
    FRI — remind me to publish blog #2 + request indexing; produce the weekly
@@ -88,7 +88,7 @@ ALWAYS-ON RULES:
 
 ---
 
-## 1. Daily rhythm (~20–40 min weekdays)
+## 1. Daily rhythm (~20-40 min weekdays)
 
 **Fixed daily (every weekday, ~10 min):**
 - [ ] Respond to any new review — same day, even one line
@@ -96,8 +96,8 @@ ALWAYS-ON RULES:
 
 **Weekday rotation (one needle-mover/day):**
 - **MON — Plan & post** (~30m): Blog Engine topic radar / draft pick · publish/schedule GBP Post #1
-- **TUE — Ship content** (~35m): publish blog #1 → request indexing in GSC · link 1–2 older posts to it
-- **WED — Reviews push** (~20m): 3–5 review requests (new clients + back-catalog via `mediabar-reconnect`)
+- **TUE — Ship content** (~35m): publish blog #1 → request indexing in GSC · link 1-2 older posts to it
+- **WED — Reviews push** (~20m): 3-5 review requests (new clients + back-catalog via `mediabar-reconnect`)
 - **THU — Authority** (~30m): one off-site task (citation / backlink ask / local PR / Emmy mention) · publish GBP Post #2
 - **FRI — Ship + measure** (~40m): publish blog #2 → request indexing · weekly metrics check · note 1 insight for Monday
 - **WEEKEND (optional):** cut 1 short vertical clip from recent footage → Short/Reel + embed on a page
@@ -107,11 +107,11 @@ ALWAYS-ON RULES:
 
 *Order of protection when slammed: Reviews + GBP → blog posts → off-site can wait.*
 
-**Weekly anchors:** 2 blog posts indexed · 2 GBP posts + 5 daily GBP actions · 3–5 review
+**Weekly anchors:** 2 blog posts indexed · 2 GBP posts + 5 daily GBP actions · 3-5 review
 requests · 1 internal-link pass · 1 off-site task · 1 Friday measurement loop.
 
 **Monthly deep work (~2 hrs):** refresh 1 older post + re-index · audit 1 page (title, excerpt,
-headings, links, embedded video, schema) · build 3–5 citations / fix NAP · competitor glance ·
+headings, links, embedded video, schema) · build 3-5 citations / fix NAP · competitor glance ·
 GSC trend review · technical hygiene (sitemap, Core Web Vitals, mobile).
 
 ---

@@ -54,6 +54,19 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: production build passes all 57 routes; targeted ESLint passes with zero errors; `git diff --check` passes.
 - Not deployed. Vercel dashboard activation, GSC/Bing/IndexNow actions, durable distributed rate limiting, and transcript/watch-page content remain manual or source-content gates.
 
+## July 18, 2026 homepage redesign — implemented locally
+- Reworked the homepage around a clearer conversion story while preserving the cinematic showreel hero and Media Bar visual identity.
+- Added outcome-led hero messaging, stronger primary/secondary CTAs, an above-the-fold proof strip, and optimized client-logo images.
+- Elevated the RBFCU campaign into a large featured case-study module with factual campaign highlights and a direct case-study path.
+- Reduced homepage service choice overload to six high-intent offerings, added useful service descriptions, and retained a path to all specialist services.
+- Reframed the client portal and four-phase workflow as a concrete differentiator instead of a generic process teaser.
+- Design direction was informed by Mobbin creative-agency hero and selected-work patterns, adapted to Media Bar rather than copied.
+- Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; desktop (1440px) and mobile (390px) full-page browser captures reviewed successfully.
+- Latest protected Vercel preview deployed July 18, 2026 (`dpl_2LQxWL13NUTaYtWJxkGMQajw49nh`); not yet committed, pushed, or promoted to production.
+- Homepage imagery follow-up: replaced the grainy RBFCU campfire frame with the sharp riverside production still and replaced the Commercials Reel helicopter poster with a web-optimized 2400px Spurs Coyote production photo supplied by Ruben.
+- En-dash cleanup: removed every `U+2013` character from authored site content, metadata, form/API values, blog content, scripts, and project documentation; standardized numeric ranges and compound terms to normal hyphens. Repository scan returns zero en-dash matches and the 57-route production build passes.
+- Homepage services follow-up: replaced the empty four-column area beside Motion Graphics with a responsive Specialized Production panel linking directly to interview, medical, aerial, food, real-estate, and all-service routes. Desktop and 390px mobile captures reviewed successfully.
+
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
 - **Video transcripts/watch pages**: add only when factual source transcripts and project details are available.
@@ -90,7 +103,7 @@ work against an existing published post.
 - Markdown renders **raw HTML** (`marked` → `dangerouslySetInnerHTML`) — `<figure>`,
   `<audio>`, `<details>`, and inline `<style>` work directly in a `.md`. No MDX needed.
 - Front-matter keys: `title` (≤40 chars, keyword front-loaded), `slug`, `date`,
-  `excerpt` (120–155 chars), `featuredImage`, plus `faqs:` (live-site standard;
+  `excerpt` (120-155 chars), `featuredImage`, plus `faqs:` (live-site standard;
   powers `FAQPageJsonLd` in `components/JsonLd.tsx`).
 - Match an existing live post's front-matter before committing a new one.
 

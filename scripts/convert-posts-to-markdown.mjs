@@ -34,7 +34,7 @@ function decodeEntities(str) {
     .replace(/&#8221;/g, '”')
     .replace(/&#8216;/g, '‘')
     .replace(/&#8217;/g, '’')
-    .replace(/&#8211;/g, '–')
+    .replace(/&#8211;/g, '-')
     .replace(/&#8212;/g, '—')
     .replace(/​/g, '') // zero-width space
 }

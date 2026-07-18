@@ -75,7 +75,15 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Design direction was informed by Mobbin service-page, proof, case-study, and FAQ patterns while retaining Media Bar's established visual system.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; desktop and 390px mobile deployed previews reviewed successfully; no broken images, horizontal overflow, console errors, or en-dash characters.
 - Hero spacing follow-up: added a 32px desktop/tablet inset to keep the hero copy clear of narrow browser edges and side rails; mobile retains its existing alignment.
-- Deployed to production July 18, 2026 as `dpl_NicJYXzKBKEYrBGoAQsewg1HqG8f`; the public San Antonio route returns HTTP 200 with the expected metadata. Source changes are not yet committed or pushed.
+- Deployed to production July 18, 2026 as `dpl_NicJYXzKBKEYrBGoAQsewg1HqG8f`; the public San Antonio route returns HTTP 200 with the expected metadata. Source is committed and pushed as `4dadae9`.
+
+## July 18, 2026 Austin location redesign — preview ready
+- Rebuilt `/locations/austin` as an Austin buyer journey with a production-led hero, Texas client proof, five service paths, an RBFCU campaign case study, Central Texas logistics, industry relevance, FAQs, and project-planner CTA.
+- Removed generic city-guide content, emoji cards, unsupported economic rankings, and brittle client-side reveal behavior.
+- Added improved Austin metadata plus `Service`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
+- Mobbin service-page references informed the proof-first hierarchy, service-card rhythm, case-study emphasis, FAQ treatment, and final conversion section.
+- Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
+- Promoted to production July 18, 2026 as `dpl_8is34R44KwMuhx57DkR8C9UkLYBF`; the public Austin route returns HTTP 200 with the expected title and no production errors were found in the post-deploy scan. Source changes are not yet committed or pushed.
 
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
@@ -83,7 +91,7 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.
 - **/work video captions**: verify caption availability in Vimeo and add transcript/caption links where source material exists.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
-- **Other location pages**: apply the San Antonio page's stronger local-proof, service, FAQ, and conversion structure to Austin, Dallas, and Houston with market-specific content.
+- **Other location pages**: apply the stronger local-proof, service, FAQ, and conversion structure to Dallas and Houston with market-specific content.
 - **Service page body copy**: add natural "San Antonio" mentions to the body of motion-graphics, live-streaming, post-production, real-estate, and medical service pages (currently only in footer).
 - **Search and analytics activation**: after deployment, confirm Vercel Analytics and Speed Insights, then complete GSC, Bing Webmaster Tools, and IndexNow account actions.
 

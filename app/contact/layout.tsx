@@ -2,8 +2,8 @@ import { buildMetadata } from '@/lib/seo'
 import { BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Contact Media Bar Productions | San Antonio Video',
-  description: 'Get in touch with Media Bar Productions in San Antonio. Call 210-279-9442 or request a quote for your corporate, commercial, or event video project.',
+  title: 'Contact Media Bar Productions | San Antonio Video Production',
+  description: 'Contact Media Bar Productions in San Antonio, ask a quick question, find the studio, or build a guided brief for your next video production.',
   path: '/contact',
 })
 

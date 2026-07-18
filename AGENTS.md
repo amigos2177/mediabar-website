@@ -83,7 +83,16 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Added improved Austin metadata plus `Service`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
 - Mobbin service-page references informed the proof-first hierarchy, service-card rhythm, case-study emphasis, FAQ treatment, and final conversion section.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
-- Promoted to production July 18, 2026 as `dpl_8is34R44KwMuhx57DkR8C9UkLYBF`; the public Austin route returns HTTP 200 with the expected title and no production errors were found in the post-deploy scan. Source changes are not yet committed or pushed.
+- Promoted to production July 18, 2026 as `dpl_8is34R44KwMuhx57DkR8C9UkLYBF`; the public Austin route returns HTTP 200 with the expected title and no production errors were found in the post-deploy scan. Source is committed and pushed as `4088b72`.
+
+## July 18, 2026 Dallas-Fort Worth location redesign — live
+- Rebuilt `/locations/dallas` as an enterprise and operations-focused DFW buyer journey with a production-led hero, Texas client proof, five service paths, an RBFCU campaign case study, production-management proof, six industry entry points, FAQs, and a project-planner CTA.
+- Removed the generic city-guide content, emoji cards, unsupported market superlatives and statistics, and client-side reveal behavior.
+- Added improved Dallas-Fort Worth metadata plus `Service`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
+- Mobbin professional-services and B2B service-page references informed the operational headline, proof-first hierarchy, structured capabilities, case-study treatment, process proof, FAQ, and consultation CTA.
+- Replaced the soft RBFCU camera frame with the sharper 1920px farmers-market production still and verified the crop at desktop and mobile sizes.
+- Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
+- Promoted to production July 18, 2026 as `dpl_HPt1fbAjCFjtMGwULm65zoc1pSVs`; source is committed and pushed with the release.
 
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
@@ -91,7 +100,7 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.
 - **/work video captions**: verify caption availability in Vimeo and add transcript/caption links where source material exists.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
-- **Other location pages**: apply the stronger local-proof, service, FAQ, and conversion structure to Dallas and Houston with market-specific content.
+- **Other location pages**: apply the stronger local-proof, service, FAQ, and conversion structure to Houston with market-specific content.
 - **Service page body copy**: add natural "San Antonio" mentions to the body of motion-graphics, live-streaming, post-production, real-estate, and medical service pages (currently only in footer).
 - **Search and analytics activation**: after deployment, confirm Vercel Analytics and Speed Insights, then complete GSC, Bing Webmaster Tools, and IndexNow account actions.
 

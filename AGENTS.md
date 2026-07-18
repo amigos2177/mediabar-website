@@ -94,13 +94,21 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
 - Released to production July 18, 2026; source is committed and pushed with the release.
 
+## July 18, 2026 Houston location redesign — live
+- Rebuilt `/locations/houston` as a technical and regulated-industry buyer journey with a cinematic production hero, Texas client proof, six service paths, technical-planning proof, subject-matter interview guidance, six industry entry points, FAQs, and a project-planner CTA.
+- Removed generic city-guide content, emoji cards, unsupported market claims and statistics, and client-side reveal behavior.
+- Added improved Houston metadata plus `Service`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
+- Mobbin enterprise and B2B professional-services references informed the operational headline, proof-first hierarchy, capability structure, technical workflow, FAQ treatment, and consultation CTA.
+- Selected high-resolution, production-owned imagery for the hero, technical workflow, and executive interview sections; converted the Houston logo strip to `next/image`.
+- Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
+- Released to production July 18, 2026 as `dpl_GLdZo3Ch3SZg4bMgjQYiM5yKPeru`; the canonical Houston route returns HTTP 200 with the new content and metadata, and no Houston runtime errors were found. Source is committed and pushed as `5086e44`.
+
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
 - **Video transcripts/watch pages**: add only when factual source transcripts and project details are available.
 - **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.
 - **/work video captions**: verify caption availability in Vimeo and add transcript/caption links where source material exists.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
-- **Other location pages**: apply the stronger local-proof, service, FAQ, and conversion structure to Houston with market-specific content.
 - **Service page body copy**: add natural "San Antonio" mentions to the body of motion-graphics, live-streaming, post-production, real-estate, and medical service pages (currently only in footer).
 - **Search and analytics activation**: after deployment, confirm Vercel Analytics and Speed Insights, then complete GSC, Bing Webmaster Tools, and IndexNow account actions.
 

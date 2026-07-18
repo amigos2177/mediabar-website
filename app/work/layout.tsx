@@ -2,8 +2,9 @@ import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
   title: 'Our Work | San Antonio Video Production Portfolio',
-  description: "Explore Media Bar Productions' video portfolio — corporate films, commercials, and event coverage for top Texas brands. See San Antonio production work.",
+  description: "Explore Media Bar Productions' video portfolio, including corporate films, commercials, event coverage, patient stories, and motion graphics.",
   path: '/work',
+  ogImage: '/images/rbfcu-stills-grid.jpg',
 })
 
 // NOTE: the /work portfolio JSON-LD (BreadcrumbList + VideoObjectSchema) lives in

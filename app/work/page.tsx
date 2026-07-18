@@ -1,13 +1,12 @@
-'use client'
-
-import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
-import { RbfcuWorkCard } from '../../components/CaseStudyLinks'
 import { BreadcrumbJsonLd } from '../../components/JsonLd'
 import { VideoObjectSchema, type PortfolioVideo } from '../../components/VideoObjectSchema'
-import workVideos from '../../data/work-videos.json'
 import VimeoPlayer from '../../components/VimeoPlayer'
+import WorkGallery from '../../components/WorkGallery'
+import workVideos from '../../data/work-videos.json'
+import styles from './work.module.css'
 
 const videoById = new Map(
   (workVideos as PortfolioVideo[]).flatMap((video) => {
@@ -16,93 +15,20 @@ const videoById = new Map(
   }),
 )
 
-const categories = [
-  {
-    label: 'Corporate Video',
-    eyebrow: 'Corporate Video',
-    href: '/video-production/corporate',
-    description: 'Brand films, executive interviews, training content, and internal communications for businesses of every size. We work with companies ranging from local San Antonio brands to national Fortune 500s.',
-    videos: ['1193317757', '1193318299', '1193318830', '1056209144'],
-  },
-  {
-    label: 'TV Commercials',
-    eyebrow: 'TV Commercials',
-    href: '/video-production/commercials',
-    description: 'Broadcast-quality TV and digital commercials for local and national brands. From concept through final delivery, we produce spots that cut through and convert.',
-    videos: ['1126506220', '1142308210', '1142308227', '1138375371'],
-  },
-  {
-    label: 'Event Coverage',
-    eyebrow: 'Event Coverage',
-    href: '/video-production/events',
-    description: 'Multi-camera event coverage for conferences, galas, product launches, and live performances. We capture the energy of the room and deliver polished highlight reels that live on long after the event.',
-    videos: ['946447253', '1056208254', '163617404', '299504298'],
-  },
-  {
-    label: 'Interview & Discussion',
-    eyebrow: 'Interview & Discussion',
-    href: '/video-production/interview',
-    description: 'Thought leadership interviews, testimonial series, and documentary-style profiles. We create the right environment for authentic, on-camera conversation that tells a compelling story.',
-    videos: ['1180537582', '1180540188', '1180540381', '298919239'],
-  },
-  {
-    label: 'Medical Video',
-    eyebrow: 'Medical Video',
-    href: '/video-production/medical',
-    description: 'Specialized production for healthcare systems, medical device companies, and physicians. We understand compliance requirements and produce with the precision and sensitivity the subject demands.',
-    videos: ['1180540550', '697230305', '298194779', '1066804582'],
-  },
-  {
-    label: 'Aerial Video',
-    eyebrow: 'Aerial Video',
-    href: '/video-production/aerial',
-    description: 'FAA-licensed drone operators delivering cinematic aerial footage across Texas. We integrate aerial seamlessly into ground-level productions or execute standalone drone shoots.',
-    videos: ['1180537228', '1180540292'],
-  },
-  {
-    label: 'Motion Graphics',
-    eyebrow: 'Motion Graphics',
-    href: '/video-production/motion-graphics',
-    description: 'Animated explainers, logo animations, title sequences, and data visualization. Our motion designers bring your brand to life in motion — for broadcast, digital, or social.',
-    videos: ['1180540640', '849834914', '557693922', '803316101'],
-  },
-  {
-    label: 'Post Production',
-    eyebrow: 'Post Production',
-    href: '/video-production/post-production',
-    description: 'Full post-production including editorial, color grading, audio mixing, and VFX. We work with your existing footage or handle the complete pipeline from acquisition to final deliverable.',
-    videos: ['1180526566', '1067207585', '298056449', '666115814'],
-  },
-  {
-    label: 'Food Video',
-    eyebrow: 'Food Video',
-    href: '/video-production/food',
-    description: 'Appetite-driving food and beverage video for restaurants and CPG brands. Our culinary production team understands food styling and the visual language that makes viewers hungry.',
-    videos: ['298056449', '697231773', '697232139', '358864530'],
-  },
+const serviceLinks = [
+  ['Corporate Video', '/video-production/corporate'],
+  ['TV Commercials', '/video-production/commercials'],
+  ['Event Coverage', '/video-production/events'],
+  ['Interviews', '/video-production/interview'],
+  ['Medical Video', '/video-production/medical'],
+  ['Live Streaming', '/video-production/live-streaming'],
+  ['Motion Graphics', '/video-production/motion-graphics'],
+  ['Post Production', '/video-production/post-production'],
+  ['Food Video', '/video-production/food'],
 ]
 
 export default function WorkPage() {
-  const [activeCategory, setActiveCategory] = useState('All')
-
-  useEffect(() => {
-    document.title = 'Our Work | Media Bar Productions'
-    const reveals = document.querySelectorAll('[data-reveal]')
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            ;(e.target as HTMLElement).style.opacity = '1'
-            ;(e.target as HTMLElement).style.transform = 'none'
-            obs.unobserve(e.target)
-          }
-        })
-      },
-      { threshold: 0.08 }
-    )
-    reveals.forEach((el) => obs.observe(el))
-    return () => obs.disconnect()
-  }, [])
+  const showreel = videoById.get('1077104073')
 
   return (
     <Layout>
@@ -111,392 +37,116 @@ export default function WorkPage() {
         { name: 'Our Work', url: '/work' },
       ]} />
       <VideoObjectSchema videos={workVideos as PortfolioVideo[]} />
-      <style>{`
-        :root { --red: #CC0000; --gold: #C9A84C; --black: #0A0A0A; --dark: #111111; --dark2: #181818; }
-        * { box-sizing: border-box; }
 
-        /* ── HERO ── */
-        .wk-hero {
-          position: relative;
-          background: var(--black);
-          padding: 160px 64px 100px;
-          overflow: hidden;
-          border-bottom: 1px solid #1a1a1a;
-          text-align: center;
-        }
-        .wk-hero-bg {
-          position: absolute; top: 50%; left: 50%;
-          transform: translate(-50%, -50%);
-          font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(120px, 20vw, 300px);
-          letter-spacing: .05em;
-          color: rgba(255,255,255,.025);
-          white-space: nowrap;
-          pointer-events: none;
-          user-select: none;
-          line-height: 1;
-        }
-        .wk-eyebrow {
-          font-size: 11px; font-weight: 700; letter-spacing: .18em;
-          text-transform: uppercase; color: var(--red); margin-bottom: 16px; position: relative;
-        }
-        .wk-h1 {
-          font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(56px, 8vw, 100px);
-          line-height: .95; letter-spacing: .02em; color: #fff;
-          text-transform: uppercase; position: relative; margin-bottom: 24px;
-        }
-        .wk-sub {
-          font-size: 17px; line-height: 1.7; color: #C0C0C0;
-          max-width: 640px; margin: 0 auto; position: relative;
-        }
-
-        /* ── REEL SECTION ── */
-        .reel-section {
-          background: var(--black);
-          padding: 80px 48px;
-          border-bottom: 1px solid #1a1a1a;
-        }
-        .reel-inner { max-width: 1100px; margin: 0 auto; }
-        .section-label {
-          font-size: 10px; font-weight: 700; letter-spacing: .18em;
-          text-transform: uppercase; color: var(--red); margin-bottom: 12px;
-        }
-        .section-h2 {
-          font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(36px, 5vw, 64px);
-          line-height: 1; letter-spacing: .03em; color: #fff;
-          text-transform: uppercase; margin-bottom: 32px;
-        }
-        .section-h2 em {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-style: italic; text-transform: none; color: rgba(255,255,255,.55);
-        }
-        .reel-wrap {
-          position: relative; padding-bottom: 56.25%; height: 0;
-          overflow: hidden; border-radius: 4px; background: #000;
-        }
-        .reel-wrap iframe {
-          position: absolute; top: 0; left: 0;
-          width: 100%; height: 100%; border: none;
-        }
-        .reel-duo {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 24px;
-        }
-        .reel-label {
-          font-size: 10px; font-weight: 700; letter-spacing: .16em;
-          text-transform: uppercase; color: rgba(255,255,255,0.55);
-          margin-bottom: 12px;
-        }
-        .reel-stats {
-          display: flex; justify-content: center; gap: 0;
-          margin-top: 32px;
-          border: 0.5px solid rgba(255,255,255,0.08);
-          border-radius: 4px;
-          overflow: hidden;
-        }
-        .reel-stat {
-          flex: 1;
-          padding: 20px 32px;
-          text-align: center;
-          border-right: 0.5px solid rgba(255,255,255,0.08);
-        }
-        .reel-stat:last-child { border-right: none; }
-        .reel-stat-value {
-          font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: 28px; letter-spacing: .04em; color: #fff; line-height: 1;
-        }
-        .reel-stat-label {
-          font-size: 10px; font-weight: 700; letter-spacing: .14em;
-          text-transform: uppercase; color: #AAAAAA; margin-top: 4px;
-        }
-
-        /* ── CATEGORY SECTIONS ── */
-        .cat-section { padding: 80px 48px; border-bottom: 0.5px solid rgba(255,255,255,0.06); }
-        .cat-inner { max-width: 1100px; margin: 0 auto; }
-        .cat-desc {
-          font-size: 15px; line-height: 1.75; color: #C0C0C0;
-          max-width: 700px; margin-bottom: 12px;
-        }
-        .cat-link {
-          display: inline-flex; align-items: center; gap: 8px;
-          color: var(--red); text-decoration: none;
-          font-size: 11px; font-weight: 700; letter-spacing: .12em;
-          text-transform: uppercase; transition: opacity .15s;
-          margin-bottom: 32px;
-        }
-        .cat-link:hover { opacity: .7; }
-        .portfolio-filters {
-          position: sticky;
-          top: 72px;
-          z-index: 8;
-          display: flex;
-          gap: 8px;
-          overflow-x: auto;
-          padding: 18px 48px;
-          border-bottom: 1px solid rgba(255,255,255,.08);
-          background: rgba(10,10,10,.94);
-          backdrop-filter: blur(14px);
-          scrollbar-width: none;
-        }
-        .portfolio-filters::-webkit-scrollbar { display: none; }
-        .portfolio-filter {
-          flex: 0 0 auto;
-          border: 1px solid rgba(255,255,255,.16);
-          border-radius: 999px;
-          background: transparent;
-          color: #c8c8c8;
-          padding: 9px 15px;
-          font: inherit;
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: .12em;
-          text-transform: uppercase;
-          cursor: pointer;
-          transition: color .15s, background .15s, border-color .15s;
-        }
-        .portfolio-filter:hover { color: #fff; border-color: rgba(255,255,255,.4); }
-        .portfolio-filter.active { color: #fff; background: var(--red); border-color: var(--red); }
-
-        /* ── VIDEO GRID ── */
-        .portfolio-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 16px;
-          margin-top: 32px;
-        }
-        .portfolio-grid.wide { grid-template-columns: repeat(2, 1fr); }
-        .video-card {
-          overflow: hidden;
-          border: 1px solid rgba(255,255,255,.09);
-          border-radius: 4px;
-          background: #111;
-        }
-        .video-wrap {
-          position: relative; padding-bottom: 56.25%; height: 0;
-          overflow: hidden; background: #000;
-        }
-        .video-wrap iframe {
-          position: absolute; top: 0; left: 0;
-          width: 100%; height: 100%; border: none;
-        }
-        .video-meta { padding: 16px 18px 18px; }
-        .video-service {
-          margin-bottom: 7px;
-          color: var(--red);
-          font-size: 9px;
-          font-weight: 700;
-          letter-spacing: .14em;
-          text-transform: uppercase;
-        }
-        .video-description {
-          color: #b8b8b8;
-          font-size: 13px;
-          line-height: 1.6;
-        }
-
-        /* ── BOTTOM CTA ── */
-        .wk-cta {
-          background: var(--dark);
-          border-top: 0.5px solid rgba(255,255,255,0.06);
-          padding: 100px 48px;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
-        }
-        .wk-cta::before {
-          content: '';
-          position: absolute; top: 0; left: 0; right: 0;
-          height: 1px;
-          background: linear-gradient(to right, transparent, var(--red), transparent);
-        }
-        .wk-cta-glow {
-          position: absolute; top: 50%; left: 50%;
-          transform: translate(-50%, -50%);
-          width: 100%; height: 100%;
-          background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(204,0,0,0.15) 0%, transparent 70%);
-          pointer-events: none;
-        }
-        .wk-cta-h2 {
-          font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: clamp(54px, 7vw, 96px);
-          line-height: 1; letter-spacing: .03em; color: #fff;
-          text-transform: uppercase; margin-bottom: 16px; position: relative;
-        }
-        .wk-cta-h2 em {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-style: italic; text-transform: none; color: var(--red);
-        }
-        .wk-cta-sub {
-          font-size: 15px; color: #B0B0B0;
-          margin-bottom: 48px; position: relative;
-        }
-        .wk-cta-actions {
-          display: flex; justify-content: center;
-          align-items: center; gap: 40px; flex-wrap: wrap; position: relative;
-        }
-        .btn-red {
-          background: var(--red); color: #fff; text-decoration: none;
-          padding: 16px 48px; font-size: 13px; font-weight: 700;
-          letter-spacing: .12em; text-transform: uppercase;
-          display: inline-block; transition: background .15s;
-        }
-        .btn-red:hover { background: #aa0000; }
-        .wk-cta-phone {
-          font-family: 'Bebas Neue', Impact, sans-serif;
-          font-size: 36px; letter-spacing: .06em; color: #fff;
-          text-decoration: none; transition: color .15s;
-        }
-        .wk-cta-phone:hover { color: var(--gold); }
-
-        @media (max-width: 900px) {
-          .wk-hero { padding: 120px 24px 72px; }
-          .reel-section, .cat-section { padding: 56px 24px; }
-          .wk-cta { padding: 72px 24px; }
-          .reel-stats { flex-direction: column; }
-          .reel-stat { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
-          .reel-stat:last-child { border-bottom: none; }
-          .reel-duo { grid-template-columns: 1fr; gap: 32px; }
-          .portfolio-filters { top: 64px; padding: 14px 24px; }
-        }
-        @media (max-width: 640px) {
-          .portfolio-grid, .portfolio-grid.wide { grid-template-columns: 1fr; }
-        }
-      `}</style>
-
-      {/* ── HERO ── */}
-      <section className="wk-hero">
-        <div className="wk-hero-bg" aria-hidden="true">OUR WORK</div>
-        <p className="wk-eyebrow">13+ Years of Award-Winning Production</p>
-        <h1 className="wk-h1">Our Portfolio</h1>
-        <p className="wk-sub">
-          A selection of video production work from Media Bar Productions — corporate, commercial, event, medical and more across Texas and beyond.
-        </p>
-      </section>
-
-      <nav className="portfolio-filters" aria-label="Filter portfolio by service">
-        {['All', ...categories.map((category) => category.label)].map((label) => (
-          <button
-            key={label}
-            type="button"
-            className={`portfolio-filter${activeCategory === label ? ' active' : ''}`}
-            aria-pressed={activeCategory === label}
-            onClick={() => setActiveCategory(label)}
-          >
-            {label}
-          </button>
-        ))}
-      </nav>
-
-      {/* ── FEATURED REEL ── */}
-      <section className="reel-section">
-        <div
-          className="reel-inner"
-          data-reveal
-          style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity .6s ease, transform .6s ease' }}
-        >
-          <p className="section-label">Demo Reel</p>
-          <h2 className="section-h2">FULL-SERVICE <em>Video Production</em></h2>
-          <div className="reel-duo">
-            <div>
-              <p className="reel-label">Studio Showreel</p>
-              <div className="reel-wrap">
-                <VimeoPlayer
-                  videoId="1077104073"
-                  title="Media Bar Productions — Demo Reel"
-                  thumbnailUrl={videoById.get('1077104073')?.thumbnailUrl as string | undefined}
-                  eager
-                />
-              </div>
-            </div>
-            <div>
-              <p className="reel-label">Commercials Reel</p>
-              <div className="reel-wrap">
-                <VimeoPlayer
-                  videoId="1203197473"
-                  title="Media Bar Productions — Commercials Reel"
-                />
-              </div>
+      <main className={styles.page}>
+        <section className={styles.hero}>
+          <div className={styles.heroCopy}>
+            <p className={styles.eyebrow}>Selected Work</p>
+            <h1 className={styles.heroTitle}>
+              Stories built
+              <span>to be seen.</span>
+            </h1>
+            <p className={styles.heroIntro}>
+              Commercials, corporate films, patient stories, event recaps, and
+              campaign systems produced in San Antonio for audiences across Texas
+              and beyond.
+            </p>
+            <div className={styles.heroActions}>
+              <a href="#selected-work" className={styles.primaryAction}>Explore the work</a>
+              <Link href="/contact" className={styles.textAction}>Start a project <span>↗</span></Link>
             </div>
           </div>
-          <div className="reel-stats">
-            <div className="reel-stat">
-              <p className="reel-stat-value">3</p>
-              <p className="reel-stat-label">Emmy Awards</p>
-            </div>
-            <div className="reel-stat">
-              <p className="reel-stat-value">15</p>
-              <p className="reel-stat-label">Telly Awards</p>
-            </div>
-            <div className="reel-stat">
-              <p className="reel-stat-value">13+</p>
-              <p className="reel-stat-label">Years</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── CATEGORY SECTIONS ── */}
-      {categories.filter((cat) => activeCategory === 'All' || cat.label === activeCategory).map((cat, i) => (
-        <section
-          key={cat.label}
-          className="cat-section"
-          style={{ background: i % 2 === 0 ? '#0A0A0A' : '#111111' }}
-        >
-          <div
-            className="cat-inner"
-            data-reveal
-            style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity .6s ease, transform .6s ease' }}
-          >
-            <p className="section-label">{cat.eyebrow}</p>
-            <h2 className="section-h2">{cat.label}</h2>
-            <p className="cat-desc">{cat.description}</p>
-            <Link href={cat.href} className="cat-link">
-              See Full Service →
-            </Link>
-            <div className={`portfolio-grid${cat.videos.length === 2 ? ' wide' : ''}`}>
-              {cat.videos.map((id, videoIndex) => {
-                const video = videoById.get(id)
-                return (
-                  <article key={id} className="video-card">
-                    <div className="video-wrap">
-                      <VimeoPlayer
-                        videoId={id}
-                        title={`${cat.label} project ${videoIndex + 1} — Media Bar Productions`}
-                        thumbnailUrl={video?.thumbnailUrl as string | undefined}
-                      />
-                    </div>
-                    <div className="video-meta">
-                      <p className="video-service">{cat.label}</p>
-                      <p className="video-description">
-                        {video?.description || `${cat.label} work produced by Media Bar Productions in San Antonio.`}
-                      </p>
-                    </div>
-                  </article>
-                )
-              })}
+          <div className={styles.showreel}>
+            <div className={styles.showreelFrame}>
+              <VimeoPlayer
+                videoId="1077104073"
+                title="Media Bar Productions 2025 showreel"
+                thumbnailUrl={showreel?.thumbnailUrl as string | undefined}
+                eager
+              />
             </div>
-            {cat.label === 'TV Commercials' && (
-              <div style={{ marginTop: 24 }}>
-                <RbfcuWorkCard />
-              </div>
-            )}
+            <div className={styles.showreelMeta}>
+              <span>2025 Studio Showreel</span>
+              <span>Play film</span>
+            </div>
           </div>
         </section>
-      ))}
 
-      {/* ── BOTTOM CTA ── */}
-      <section className="wk-cta">
-        <div className="wk-cta-glow" aria-hidden="true" />
-        <h2 className="wk-cta-h2">Ready To <em>Start Your Project?</em></h2>
-        <p className="wk-cta-sub">Tell us about your project and we&apos;ll put together a custom quote.</p>
-        <div className="wk-cta-actions">
-          <Link href="/contact" className="btn-red">Get a Quote</Link>
-          <a href="tel:2102799442" className="wk-cta-phone">210-279-9442</a>
-        </div>
-      </section>
+        <section className={styles.proof} aria-label="Media Bar Productions experience">
+          <div>
+            <strong>3</strong>
+            <span>Emmy Awards</span>
+          </div>
+          <div>
+            <strong>15</strong>
+            <span>Telly Awards</span>
+          </div>
+          <div>
+            <strong>13+</strong>
+            <span>Years Producing</span>
+          </div>
+          <p>One experienced production partner from first idea through final delivery.</p>
+        </section>
+
+        <section className={styles.caseStudy}>
+          <div className={styles.caseImage}>
+            <Image
+              src="/images/rbfcu-stills-grid.jpg"
+              alt="Scenes from the RBFCU Go Beyond Banking campaign"
+              fill
+              sizes="(max-width: 900px) 100vw, 58vw"
+            />
+          </div>
+          <div className={styles.caseCopy}>
+            <p className={styles.eyebrow}>Featured Case Study</p>
+            <h2>Five stories.<br /><em>One campaign.</em></h2>
+            <p>
+              Media Bar partnered with RBFCU to produce five broadcast commercials
+              built around real Texas lives, each with its own cast, location, and
+              production design.
+            </p>
+            <dl className={styles.caseMetrics}>
+              <div><dt>5</dt><dd>Broadcast spots</dd></div>
+              <div><dt>4</dt><dd>Texas markets</dd></div>
+              <div><dt>5M+</dt><dd>Campaign views</dd></div>
+            </dl>
+            <Link href="/work/rbfcu-go-beyond-banking" className={styles.primaryAction}>
+              Read the case study
+            </Link>
+          </div>
+        </section>
+
+        <WorkGallery videos={workVideos as PortfolioVideo[]} />
+
+        <section className={styles.services}>
+          <div className={styles.sectionHeading}>
+            <div>
+              <p className={styles.eyebrow}>Production Capabilities</p>
+              <h2>Explore by service.</h2>
+            </div>
+            <p>Every discipline is available as a standalone service or as part of a complete production.</p>
+          </div>
+          <div className={styles.serviceGrid}>
+            {serviceLinks.map(([label, href], index) => (
+              <Link href={href} key={href}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <strong>{label}</strong>
+                <i aria-hidden="true">↗</i>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.cta}>
+          <p className={styles.eyebrow}>Have a project in mind?</p>
+          <h2>Let&apos;s make something<br /><em>worth watching.</em></h2>
+          <div className={styles.ctaActions}>
+            <Link href="/contact" className={styles.primaryAction}>Plan your project</Link>
+            <a href="tel:2102799442" className={styles.phone}>210-279-9442</a>
+          </div>
+        </section>
+      </main>
     </Layout>
   )
 }

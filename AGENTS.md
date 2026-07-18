@@ -92,7 +92,7 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Mobbin professional-services and B2B service-page references informed the operational headline, proof-first hierarchy, structured capabilities, case-study treatment, process proof, FAQ, and consultation CTA.
 - Replaced the soft RBFCU camera frame with the sharper 1920px farmers-market production still and verified the crop at desktop and mobile sizes.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
-- Promoted to production July 18, 2026 as `dpl_HPt1fbAjCFjtMGwULm65zoc1pSVs`; source is committed and pushed with the release.
+- Promoted to production July 18, 2026 as `dpl_4wwrDTZjtEubitppNFHM3AXmdz7p`; source is committed and pushed with the release.
 
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.

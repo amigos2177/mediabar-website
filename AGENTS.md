@@ -66,6 +66,16 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Homepage imagery follow-up: replaced the grainy RBFCU campfire frame with the sharp riverside production still and replaced the Commercials Reel helicopter poster with a web-optimized 2400px Spurs Coyote production photo supplied by Ruben.
 - En-dash cleanup: removed every `U+2013` character from authored site content, metadata, form/API values, blog content, scripts, and project documentation; standardized numeric ranges and compound terms to normal hyphens. Repository scan returns zero en-dash matches and the 57-route production build passes.
 - Homepage services follow-up: replaced the empty four-column area beside Motion Graphics with a responsive Specialized Production panel linking directly to interview, medical, aerial, food, real-estate, and all-service routes. Desktop and 390px mobile captures reviewed successfully.
+- Homepage redesign is live in production as of July 18, 2026 (`dpl_6WNttTVd63SU4b1ammswfX16dL5e`, commit `ccb1f1d`).
+
+## July 18, 2026 San Antonio location redesign — preview ready
+- Rebuilt `/locations/san-antonio` as a local conversion page with a cinematic hero, local awards and longevity proof, San Antonio client logos, five high-intent service paths, and a featured RBFCU case study.
+- Added a local production advantage section, six industry-specific entry points, five visible FAQs, and a focused project-planner CTA.
+- Strengthened local SEO with improved title/description/Open Graph metadata, `Service` schema, `FAQPage` schema, breadcrumb schema, and keyword-rich service links.
+- Design direction was informed by Mobbin service-page, proof, case-study, and FAQ patterns while retaining Media Bar's established visual system.
+- Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; desktop and 390px mobile deployed previews reviewed successfully; no broken images, horizontal overflow, console errors, or en-dash characters.
+- Hero spacing follow-up: added a 32px desktop/tablet inset to keep the hero copy clear of narrow browser edges and side rails; mobile retains its existing alignment.
+- Deployed to production July 18, 2026 as `dpl_NicJYXzKBKEYrBGoAQsewg1HqG8f`; the public San Antonio route returns HTTP 200 with the expected metadata. Source changes are not yet committed or pushed.
 
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
@@ -73,7 +83,7 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.
 - **/work video captions**: verify caption availability in Vimeo and add transcript/caption links where source material exists.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
-- **San Antonio location page expansion**: audit wants a FAQ section, keyword-rich internal links into service pages, and client names on app/locations/san-antonio.
+- **Other location pages**: apply the San Antonio page's stronger local-proof, service, FAQ, and conversion structure to Austin, Dallas, and Houston with market-specific content.
 - **Service page body copy**: add natural "San Antonio" mentions to the body of motion-graphics, live-streaming, post-production, real-estate, and medical service pages (currently only in footer).
 - **Search and analytics activation**: after deployment, confirm Vercel Analytics and Speed Insights, then complete GSC, Bing Webmaster Tools, and IndexNow account actions.
 

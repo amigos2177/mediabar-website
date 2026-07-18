@@ -43,9 +43,9 @@ export default function MedicalVideoPage() {
         emphasis: 'the Entire Shoot.',
         copy:
           'Access, consent, comfort, terminology, scheduling, and review responsibilities are defined before the production team arrives.',
-        image: '/images/media-library/healthcare-video-production-san-antonio.jpg',
-        alt: 'Healthcare video production crew filming in a clinical environment',
-        position: 'center',
+        image: '/images/media-library/medical-doctor-patient-consultation.jpg',
+        alt: 'Doctor speaking with a patient in a medical office',
+        position: 'center 28%',
         items: [
           'Clinical and communications stakeholders',
           'Consent, access, and privacy requirements',
@@ -75,9 +75,9 @@ export default function MedicalVideoPage() {
         emphasis: 'Many Useful Formats.',
         copy:
           'The delivery set can support patients, providers, internal teams, campaigns, recruiting, or education without forcing one edit to do every job.',
-        image: '/images/media-library/media-bar-bts-11.jpg',
-        alt: 'Interview production with cameras, lighting, and sound',
-        position: 'center',
+        image: '/images/media-library/medical-provider-profile.jpg',
+        alt: 'Primary care physician featured in a provider profile video',
+        position: '72% center',
         items: [
           'Patient or provider story',
           'Service-line campaign video',

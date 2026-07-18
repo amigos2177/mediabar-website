@@ -42,8 +42,8 @@ export default function LiveStreamingPage() {
         emphasis: 'at the Venue.',
         copy:
           'We review the environment, connectivity, program, presenters, and platform before equipment and crew are finalized.',
-        image: '/images/studio-4.jpg',
-        alt: 'Live video switcher and production control equipment',
+        image: '/images/media-library/concert-stage-performance.jpg',
+        alt: 'Singer performing on a brightly lit concert stage',
         position: 'center',
         items: [
           'Venue internet and technical access',

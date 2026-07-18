@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
   title: 'Motion Graphics Production San Antonio',
   description,
   path,
-  ogImage: '/images/studio-2.jpg',
+  ogImage: '/images/media-library/motion-graphics-spider-verse.jpg',
 })
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -25,7 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         name="Motion Graphics Production"
         description={description}
         url={path}
-        image="https://www.mediabarproductions.com/images/studio-2.jpg"
+        image="https://www.mediabarproductions.com/images/media-library/motion-graphics-spider-verse.jpg"
       />
       <VideoObjectJsonLd
         name={motionGraphicsVideo.title}

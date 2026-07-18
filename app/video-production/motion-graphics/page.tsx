@@ -10,8 +10,8 @@ export default function MotionGraphicsPage() {
         emphasis: 'Give It Motion.',
         copy:
           'Explainers, titles, product visuals, animated data, and branded systems designed to guide attention and make information easier to understand.',
-        image: '/images/studio-2.jpg',
-        alt: 'Production monitor showing a composed frame on set',
+        image: '/images/media-library/motion-graphics-spider-verse.jpg',
+        alt: 'Animated Spider-Man title frame with layered comic-book textures',
         position: 'center',
         primaryCta: 'Plan a Motion Project',
         secondaryCta: 'Watch Featured Motion',
@@ -43,8 +43,8 @@ export default function MotionGraphicsPage() {
         emphasis: 'Before Animation.',
         copy:
           'The message, script, storyboard, style frames, sound, and delivery plan are approved in stages before the full piece is built.',
-        image: '/images/media-library/media-bar-bts-25.jpg',
-        alt: 'Cinema camera and production team preparing a shot',
+        image: '/images/media-library/motion-graphics-marvel-ages.jpg',
+        alt: 'Animated Marvel trading card package with comic-book graphics',
         position: 'center',
         items: [
           'Audience and communication objective',
@@ -75,8 +75,8 @@ export default function MotionGraphicsPage() {
         emphasis: 'Publish With Intention.',
         copy:
           'The final package is organized around the places the motion will appear, from a master film to shorter campaign and presentation assets.',
-        image: '/images/media-library/media-bar-bts-15.jpg',
-        alt: 'Professional cinema camera with monitor and production accessories',
+        image: '/images/media-library/motion-graphics-superman.jpg',
+        alt: 'Animated Superman trading card arranged with branded typography',
         position: 'center',
         items: [
           'Master animation',

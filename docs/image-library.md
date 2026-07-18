@@ -19,6 +19,11 @@ All paths below are public website paths under `/images/media-library/`.
 | `documentary-interview-portrait.png` | Interview page, documentary storytelling, human stories |
 | `concert-stage-performance.jpg` | Events, performances, live production, concert coverage |
 | `healthcare-video-production-san-antonio.jpg` | Medical page, healthcare production, clinical environments |
+| `medical-doctor-patient-consultation.jpg` | Medical page, patient communication, clinical consultation |
+| `medical-provider-profile.jpg` | Medical page, provider stories, healthcare expertise |
+| `motion-graphics-marvel-ages.jpg` | Motion graphics page, package animation, comic-book design |
+| `motion-graphics-spider-verse.jpg` | Motion graphics page, title animation, layered visual design |
+| `motion-graphics-superman.jpg` | Motion graphics page, product animation, branded typography |
 | `media-bar-crew-group-heb.jpg` | Team history, retail production, H-E-B work |
 | `media-bar-crew-wrap-photo.jpg` | Crew culture, wrap-day proof, behind-the-scenes team moments |
 | `media-bar-emmy-award.jpg` | Awards page, Emmy proof, company history |

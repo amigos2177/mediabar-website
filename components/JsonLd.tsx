@@ -213,7 +213,48 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
 }
 
 // ============================================================
-// 6. VideoObject — Pages with embedded Vimeo videos
+// 6. AboutPage and Person — /about
+// ============================================================
+export function AboutPageJsonLd() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': 'https://www.mediabarproductions.com/about#about',
+    name: 'About Media Bar Productions',
+    url: 'https://www.mediabarproductions.com/about',
+    description:
+      'The story, team, awards, and production values behind Media Bar Productions in San Antonio, Texas.',
+    mainEntity: {
+      '@id': BUSINESS_ID,
+    },
+  }
+  return <JsonLdScript data={data} />
+}
+
+type PersonProps = {
+  name: string
+  jobTitle: string
+  image: string
+}
+
+export function PersonJsonLd({ name, jobTitle, image }: PersonProps) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://www.mediabarproductions.com/about#founder',
+    name,
+    jobTitle,
+    image: `https://www.mediabarproductions.com${image}`,
+    worksFor: {
+      '@id': BUSINESS_ID,
+    },
+    url: 'https://www.mediabarproductions.com/about',
+  }
+  return <JsonLdScript data={data} />
+}
+
+// ============================================================
+// 7. VideoObject — Pages with embedded Vimeo videos
 // ============================================================
 type VideoProps = {
   name: string

@@ -1,10 +1,11 @@
 import { buildMetadata } from '@/lib/seo'
-import { BreadcrumbJsonLd } from '@/components/JsonLd'
+import { AboutPageJsonLd, BreadcrumbJsonLd, PersonJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
   title: 'About Media Bar Productions | San Antonio Video Company',
-  description: "Meet the San Antonio video production team behind 3 Emmy and 15 Telly Awards. 13+ years telling Texas brands' stories. Learn what drives our work.",
+  description: "Meet Media Bar Productions, the San Antonio video company founded by Ruben Garcia. Explore our team, story, 3 Emmy Awards, and production values.",
   path: '/about',
+  ogImage: '/images/media-library/media-bar-team-photo.jpg',
 })
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -14,6 +15,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: 'Home', url: '/' },
         { name: 'About', url: '/about' },
       ]} />
+      <AboutPageJsonLd />
+      <PersonJsonLd
+        name="Ruben Garcia"
+        jobTitle="Founder and Executive Producer"
+        image="/images/media-library/ruben-garcia-founder-headshot-02.jpg"
+      />
       {children}
     </>
   )

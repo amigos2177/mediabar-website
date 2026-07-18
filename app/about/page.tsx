@@ -1,16 +1,29 @@
-'use client'
-
-import { useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import styles from './about.module.css'
 
-const values = [
-  { icon: '🎬', title: 'The Work First', desc: 'Awards are a byproduct of doing great work — not the goal. Every project gets our full attention regardless of budget or brand size.' },
-  { icon: '📁', title: 'Your Footage Belongs to You', desc: 'No licensing traps. No footage held hostage. Everything we shoot for you belongs to you, period.' },
-  { icon: '📞', title: "We're Always Available", desc: 'You won\'t get passed to an account coordinator. You\'ll have direct access to the people doing the work.' },
-  { icon: '💰', title: 'Honest Pricing', desc: 'Itemized quotes, no hidden fees, no scope creep surprises. You know exactly what you\'re paying for before we start.' },
-  { icon: '📺', title: 'Broadcast Standards Every Time', desc: 'We apply the same technical and creative rigor to a $5,000 social video as we do to a $50,000 broadcast campaign.' },
-  { icon: '🤠', title: 'San Antonio Is Home', desc: 'We\'ve been here for 13 years and we plan to stay. We\'re invested in the businesses and brands that make this city great.' },
+const principles = [
+  {
+    number: '01',
+    title: 'The work comes first',
+    description: 'Every production gets the same creative attention and technical rigor, regardless of format, budget, or brand size.',
+  },
+  {
+    number: '02',
+    title: 'Direct access',
+    description: 'Clients work with the people making the work. Clear communication stays close to the crew, the schedule, and the decisions.',
+  },
+  {
+    number: '03',
+    title: 'Straight answers',
+    description: 'Itemized estimates, realistic schedules, and honest conversations about what will make the final piece stronger.',
+  },
+  {
+    number: '04',
+    title: 'Your footage is yours',
+    description: 'No licensing traps and no footage held hostage. Everything we capture for your production belongs to you.',
+  },
 ]
 
 const clients = [
@@ -23,205 +36,236 @@ const clients = [
 ]
 
 export default function AboutPage() {
-  useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal')
-    const obs = new IntersectionObserver(
-      (entries) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target) } }) },
-      { threshold: 0.12 }
-    )
-    reveals.forEach((el) => obs.observe(el))
-    return () => obs.disconnect()
-  }, [])
-
   return (
     <Layout>
-      <style>{`
-        :root{--red:#CC0000;--gold:#C9A84C;--black:#0A0A0A;--dark:#111111;--dark2:#181818}
-        .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}.reveal.revealed{opacity:1;transform:none}
-
-        .page-hero{position:relative;background:var(--black);padding:160px 64px 100px;overflow:hidden;border-bottom:1px solid #1a1a1a;text-align:center}
-        .hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(140px,22vw,320px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
-        .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px;position:relative}
-        .hero-h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(56px,8vw,100px);line-height:.95;letter-spacing:.02em;color:#fff;text-transform:uppercase;position:relative;margin-bottom:24px}
-        .hero-h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;color:rgba(255,255,255,.55);text-transform:none}
-        .hero-sub{font-size:18px;line-height:1.7;color:#C0C0C0;max-width:640px;margin:0 auto;position:relative}
-
-        .stats-bar{background:var(--dark);border-bottom:1px solid #1e1e1e;display:flex;justify-content:center;flex-wrap:wrap}
-        .stat-item{padding:28px 48px;text-align:center;border-right:1px solid #1e1e1e}
-        .stat-item:last-child{border-right:none}
-        .stat-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:42px;line-height:1;color:#fff;letter-spacing:.03em}
-        .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#AAAAAA;margin-top:4px}
-
-        .section{padding:96px 64px;max-width:1200px;margin:0 auto}
-        .section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
-        .section-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:24px}
-        .section-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:rgba(255,255,255,.6)}
-        .body-text{font-size:15px;line-height:1.8;color:#B0B0B0;margin-bottom:20px}
-
-        .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
-        .pull-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:26px;line-height:1.4;color:rgba(255,255,255,.7);border-left:3px solid var(--red);padding-left:24px;margin:32px 0}
-        .bts-section{background:#111111;padding:80px 48px}
-        .bts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:48px}
-        .bts-item{aspect-ratio:16/9;overflow:hidden;border-radius:4px;background:#111}
-        .bts-item-wide{grid-column:span 2;aspect-ratio:21/9;overflow:hidden;border-radius:4px;background:#111}
-        .bts-item img,.bts-item-wide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
-        .bts-item:hover img,.bts-item-wide:hover img{transform:scale(1.03)}
-
-        .values-wrap{background:var(--dark)}
-        .values-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
-        .values-header{text-align:center;margin-bottom:64px}
-        .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-        .value-card{background:var(--dark2);padding:40px 32px;border:1px solid #1e1e1e;transition:border-color .2s}
-        .value-card:hover{border-color:#333}
-        .value-icon{font-size:32px;margin-bottom:16px}
-        .value-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:.05em;color:#fff;margin-bottom:12px}
-        .value-desc{font-size:13px;line-height:1.75;color:#B0B0B0}
-
-        .clients-strip{background:var(--black);border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:48px 64px}
-        .clients-label{text-align:center;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#333;margin-bottom:28px}
-        .clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:900px;margin:0 auto}
-        .client-logo-card{background:var(--dark2);border:1px solid #1e1e1e;padding:36px 28px;display:flex;align-items:center;justify-content:center;transition:border-color .2s}.client-logo-card:hover{border-color:#444}
-        .client-logo-card img{max-height:80px;width:auto;max-width:100%;filter:grayscale(1) brightness(.7);transition:filter .2s;object-fit:contain}
-        .client-logo-card:hover img{filter:grayscale(0) brightness(1)}
-
-        .cta-wrap{background:var(--dark2);position:relative;overflow:hidden;text-align:center;padding:100px 64px}
-        .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(204,0,0,.18) 0%,transparent 70%);pointer-events:none}
-        .cta-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(48px,7vw,88px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:16px;position:relative}
-        .cta-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:var(--red)}
-        .cta-sub{font-size:16px;color:#B0B0B0;margin-bottom:48px;position:relative}
-        .cta-actions{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;position:relative}
-        .btn-red{background:var(--red);color:#fff;padding:16px 48px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:background .15s;display:inline-block}.btn-red:hover{background:#aa0000}
-        .cta-phone{font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;letter-spacing:.06em;color:#fff;transition:color .15s}.cta-phone:hover{color:var(--gold)}
-
-        @media(max-width:900px){
-          .page-hero{padding:120px 24px 72px}
-          .stats-bar{flex-wrap:wrap}.stat-item{flex:1 1 50%;border-right:none;border-bottom:1px solid #1e1e1e}
-          .story-grid{grid-template-columns:1fr;gap:48px}
-          .values-grid{grid-template-columns:1fr 1fr}
-          .section,.values-inner{padding:64px 24px}
-          .clients-strip{padding:32px 24px}
-          .clients-grid{grid-template-columns:repeat(2,1fr);max-width:100%}
-          .cta-wrap{padding:72px 24px}
-          .bts-section{padding:48px 24px}
-        }
-        @media(max-width:768px){
-          .bts-grid{grid-template-columns:1fr 1fr}
-          .bts-item-wide{grid-column:span 1;aspect-ratio:16/9}
-        }
-        @media(max-width:600px){
-          .values-grid{grid-template-columns:1fr}
-        }
-        @media(max-width:480px){
-          .bts-grid{grid-template-columns:1fr}
-        }
-      `}</style>
-
-      <section className="page-hero">
-        <div className="hero-bg-text" aria-hidden="true">ABOUT</div>
-        <p className="hero-eyebrow">Media Bar Productions</p>
-        <h1 className="hero-h1">About <em>Media Bar</em> Productions</h1>
-        <p className="hero-sub">13 years. 3 Emmy Awards. 15 Telly Awards. Hundreds of videos for some of Texas's most recognized brands.</p>
-      </section>
-
-      <div className="stats-bar">
-        {[
-          { value: '13+', label: 'Years in Business' },
-          { value: '3', label: 'Emmy Awards' },
-          { value: '15', label: 'Telly Awards' },
-          { value: '500+', label: 'Videos Produced' },
-          { value: '2', label: 'Production Studios' },
-        ].map((s) => (
-          <div key={s.label} className="stat-item">
-            <p className="stat-value">{s.value}</p>
-            <p className="stat-label">{s.label}</p>
+      <main className={styles.page}>
+        <section className={styles.hero}>
+          <Image
+            src="/images/media-library/media-bar-team-photo.jpg"
+            alt="Media Bar Productions cast and crew on set in San Antonio"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className={styles.heroScrim} />
+          <div className={styles.heroContent}>
+            <p className={styles.eyebrow}>About Media Bar</p>
+            <h1>
+              Built by people
+              <em>who love the work.</em>
+            </h1>
+            <p>
+              An award-winning production company rooted in San Antonio and built
+              for brands that value craft, clarity, and a crew they can trust.
+            </p>
           </div>
-        ))}
-      </div>
+          <div className={styles.heroCaption}>
+            <span>Media Bar cast and crew</span>
+            <span>San Antonio, Texas</span>
+          </div>
+        </section>
 
-      <div style={{ background: 'var(--black)', borderBottom: '1px solid #1a1a1a' }}>
-        <div className="section">
-          <div className="story-grid">
-            <div className="reveal">
-              <p className="section-label">Our Story</p>
-              <h2 className="section-h2">Built in San Antonio <em>For San Antonio</em></h2>
-              <div className="pull-quote">"Your Vision Served Daily"</div>
-              <p className="body-text">
-                Media Bar Productions was founded in San Antonio in 2011 with a simple idea: that businesses in this city deserved the same quality of video production that brands in New York and Los Angeles were getting — without having to fly in a crew from either coast.
-              </p>
-              <p className="body-text">
-                In the years since, we've grown into one of the most decorated production companies in South Texas, earning 3 Emmy Awards and 15 Telly Awards while working with everyone from the San Antonio Spurs to HEB to Unilever. Our client list has grown, our studio space has expanded, and our team has deepened — but the foundation hasn't changed.
-              </p>
-              <p className="body-text">
-                We're still based here, still shooting here, and still betting on San Antonio. This city has given us more than we can repay, and the work we do every day is our way of paying it forward.
-              </p>
-              <div style={{ marginTop: '32px' }}>
-                <Link href="/about/awards" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: '#fff', borderBottom: '1px solid var(--red)', paddingBottom: '3px', transition: 'color .15s' }}>
-                  View Our Awards →
-                </Link>
-              </div>
+        <section className={styles.intro}>
+          <p className={styles.sectionLabel}>Who we are</p>
+          <div>
+            <h2>
+              Media Bar is a San Antonio production company helping businesses
+              turn important ideas into films people remember.
+            </h2>
+            <p>
+              Since 2011, we have produced commercials, corporate films, patient
+              stories, event coverage, live broadcasts, and campaign content for
+              organizations across Texas and beyond.
+            </p>
+          </div>
+        </section>
+
+        <section className={styles.stats} aria-label="Media Bar Productions achievements">
+          <div>
+            <strong>2011</strong>
+            <span>Founded in San Antonio</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>Emmy Awards</span>
+          </div>
+          <div>
+            <strong>15</strong>
+            <span>Telly Awards</span>
+          </div>
+          <div>
+            <strong>13+</strong>
+            <span>Years producing</span>
+          </div>
+        </section>
+
+        <section className={styles.founder}>
+          <div className={styles.founderImage}>
+            <Image
+              src="/images/media-library/ruben-garcia-founder-headshot-02.jpg"
+              alt="Ruben Garcia, founder of Media Bar Productions"
+              fill
+              sizes="(max-width: 850px) 100vw, 42vw"
+            />
+          </div>
+          <div className={styles.founderCopy}>
+            <p className={styles.eyebrow}>Founder and Executive Producer</p>
+            <h2>Ruben Garcia</h2>
+            <p className={styles.founderStatement}>
+              San Antonio brands deserve exceptional production without having
+              to bring in a crew from either coast.
+            </p>
+            <p>
+              Ruben founded Media Bar with a simple belief: the best productions
+              happen when experienced people stay close to the client, the story,
+              and the details. That hands-on approach still shapes every project.
+            </p>
+            <p>
+              The company has grown from a local production partner into one of
+              South Texas&apos; most recognized video teams, while keeping its
+              creative leadership and production relationships firmly rooted in
+              San Antonio.
+            </p>
+            <Link href="/contact" className={styles.textLink}>
+              Talk with our team <span>↗</span>
+            </Link>
+          </div>
+        </section>
+
+        <section className={styles.crew}>
+          <div className={styles.sectionHeading}>
+            <div>
+              <p className={styles.eyebrow}>On Set</p>
+              <h2>Good work is<br /><em>a team sport.</em></h2>
             </div>
-            <div className="reveal" style={{ height: '100%' }}>
-              <div style={{ overflow: 'hidden', borderRadius: '4px', border: '1px solid #1e1e1e', height: '100%', minHeight: '400px' }}>
-                <img src="/images/bts-dec-1.jpg" alt="Media Bar Productions studio interview" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              </div>
+            <p>
+              Producers, directors, camera crews, audio specialists, editors, and
+              trusted collaborators assembled around the needs of each production.
+            </p>
+          </div>
+
+          <div className={styles.crewGrid}>
+            <figure className={styles.crewWide}>
+              <Image
+                src="/images/media-library/media-bar-bts-15.jpg"
+                alt="Cinema camera prepared by the Media Bar crew"
+                fill
+                sizes="(max-width: 760px) 100vw, 66vw"
+              />
+              <figcaption>Production craft</figcaption>
+            </figure>
+            <figure>
+              <Image
+                src="/images/media-library/media-bar-bts-25.jpg"
+                alt="Media Bar camera department working on set"
+                fill
+                sizes="(max-width: 760px) 100vw, 33vw"
+              />
+              <figcaption>Camera department</figcaption>
+            </figure>
+            <figure>
+              <Image
+                src="/images/media-library/media-bar-crew-group-heb.jpg"
+                alt="Media Bar production crew together on location at HEB"
+                fill
+                sizes="(max-width: 760px) 100vw, 33vw"
+              />
+              <figcaption>HEB production crew</figcaption>
+            </figure>
+            <figure className={styles.crewWide}>
+              <Image
+                src="/images/media-library/media-bar-crew-wrap-photo.jpg"
+                alt="Media Bar crew and cast at the end of a production day"
+                fill
+                sizes="(max-width: 760px) 100vw, 66vw"
+              />
+              <figcaption>At wrap</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section className={styles.awards}>
+          <div className={styles.awardsImage}>
+            <Image
+              src="/images/media-library/media-bar-emmy-award.jpg"
+              alt="Media Bar Productions team holding an Emmy Award"
+              fill
+              sizes="(max-width: 850px) 100vw, 43vw"
+            />
+          </div>
+          <div className={styles.awardsCopy}>
+            <p className={styles.sectionLabel}>Recognition</p>
+            <div className={styles.awardNumber}>
+              <strong>3</strong>
+              <span>Emmy Awards</span>
             </div>
+            <div className={styles.awardNumber}>
+              <strong>15</strong>
+              <span>Telly Awards</span>
+            </div>
+            <p>
+              The awards matter because they recognize the standard our clients
+              receive every day. The relationships and the work that earns them
+              matter even more.
+            </p>
+            <Link href="/about/awards" className={styles.darkLink}>
+              Explore our awards <span>↗</span>
+            </Link>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div className="bts-section">
-        <div className="bts-grid reveal">
-          {/* Row 1: wide + normal */}
-          <div className="bts-item-wide"><img src="/images/bts-spurs-coyote.jpg" alt="Media Bar Productions on set with San Antonio Spurs" loading="lazy" /></div>
-          <div className="bts-item"><img src="/images/bts-dsc-1.jpg" alt="Media Bar Productions on set" loading="lazy" /></div>
-          {/* Row 2: three normal */}
-          <div className="bts-item"><img src="/images/bts-dsc-2.jpg" alt="Media Bar Productions on set" loading="lazy" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-4.jpg" alt="Media Bar Productions on set" loading="lazy" /></div>
-          <div className="bts-item"><img src="/images/bts-dec-2.jpg" alt="Media Bar Productions on set" loading="lazy" /></div>
-          {/* Row 3: wide + normal */}
-          <div className="bts-item-wide"><img src="/images/clients-bts-9.jpg" alt="Media Bar Productions on set" loading="lazy" /></div>
-          <div className="bts-item"><img src="/images/clients-bts-6.png" alt="Media Bar Productions on set" loading="lazy" /></div>
-        </div>
-      </div>
-
-      <div className="values-wrap">
-        <div className="values-inner">
-          <div className="values-header reveal">
-            <p className="section-label" style={{ textAlign: 'center' }}>How We Operate</p>
-            <h2 className="section-h2" style={{ textAlign: 'center', marginBottom: 0 }}>What We <em>Believe</em></h2>
+        <section className={styles.principles}>
+          <div className={styles.sectionHeading}>
+            <div>
+              <p className={styles.eyebrow}>How we operate</p>
+              <h2>What clients<br /><em>can count on.</em></h2>
+            </div>
+            <p>
+              A clear production process, direct relationships, and no mystery
+              around ownership, scope, or delivery.
+            </p>
           </div>
-          <div className="values-grid">
-            {values.map((v, i) => (
-              <div key={v.title} className="value-card reveal" style={{ transitionDelay: `${i * 0.08}s` }}>
-                <div className="value-icon">{v.icon}</div>
-                <h3 className="value-title">{v.title}</h3>
-                <p className="value-desc">{v.desc}</p>
+
+          <div className={styles.principleList}>
+            {principles.map((principle) => (
+              <article key={principle.number}>
+                <span>{principle.number}</span>
+                <h3>{principle.title}</h3>
+                <p>{principle.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.clients}>
+          <div className={styles.clientsHeader}>
+            <p className={styles.sectionLabel}>Trusted by teams across Texas</p>
+            <Link href="/clients">View client relationships <span>↗</span></Link>
+          </div>
+          <div className={styles.clientGrid}>
+            {clients.map((client) => (
+              <div key={client.name}>
+                <Image
+                  src={client.src}
+                  alt={client.name}
+                  width={190}
+                  height={90}
+                  sizes="180px"
+                />
               </div>
             ))}
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div className="clients-strip">
-        <p className="clients-label">Trusted By</p>
-        <div className="clients-grid">
-          {clients.map((c) => (
-            <div key={c.name} className="client-logo-card">
-              <img src={c.src} alt={c.name} loading="lazy" />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <section className="cta-wrap">
-        <div className="cta-glow" aria-hidden="true" />
-        <h2 className="cta-h2">Let's Make <em>Something Great</em></h2>
-        <p className="cta-sub">Tell us about your project and we'll put together a custom proposal — fast.</p>
-        <div className="cta-actions">
-          <Link href="/contact" className="btn-red">Start a Project</Link>
-          <a href="tel:2102799442" className="cta-phone">210-279-9442</a>
-        </div>
-      </section>
+        <section className={styles.cta}>
+          <p className={styles.eyebrow}>Your production partner</p>
+          <h2>Bring us the idea.<br /><em>We&apos;ll build the rest.</em></h2>
+          <div className={styles.ctaActions}>
+            <Link href="/contact" className={styles.primaryAction}>Plan your project</Link>
+            <Link href="/work" className={styles.secondaryAction}>See our work <span>↗</span></Link>
+          </div>
+        </section>
+      </main>
     </Layout>
   )
 }

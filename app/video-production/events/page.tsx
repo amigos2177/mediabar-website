@@ -1,298 +1,446 @@
-'use client'
-
-import { useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import VimeoPlayer from '@/components/VimeoPlayer'
+import { eventVideoFaqs } from './content'
 
-
-const useCases = [
-  { icon: '🎤', title: 'Corporate Conferences' },
-  { icon: '🏆', title: 'Galas & Award Ceremonies' },
-  { icon: '🚀', title: 'Product Launches' },
-  { icon: '🎵', title: 'Concerts & Performances' },
-  { icon: '⚽', title: 'Sports Events' },
-  { icon: '💛', title: 'Nonprofit Events' },
+const clients = [
+  { name: 'H-E-B', logo: '/images/client-heb.png' },
+  { name: 'San Antonio Spurs', logo: '/images/client-spurs.png' },
+  { name: 'Texas Tech University', logo: '/images/client-texas-tech.png' },
+  { name: 'Frost Bank', logo: '/images/client-frost.png' },
 ]
 
-const processSteps = [
-  { num: '01', title: 'Pre-Event Planning', desc: 'We map the event flow and plan our coverage before arrival.', bullets: ['Venue walkthrough', 'Run-of-show review', 'Camera placement plan', 'Audio source map'] },
-  { num: '02', title: 'Setup & Rehearsal', desc: 'Equipment installed and tested before guests arrive.', bullets: ['Multi-camera rig', 'Audio tie-ins', 'Lighting check', 'Tech rehearsal'] },
-  { num: '03', title: 'Live Coverage', desc: 'Full-event capture with a dedicated director calling shots.', bullets: ['Multi-camera live switch', 'Lavalier & podium audio', 'B-roll & cutaways', 'Same-day edit option'] },
-  { num: '04', title: 'Edit & Delivery', desc: 'Highlight reel and full-length cut delivered post-event.', bullets: ['Highlight reel (2-5 min)', 'Full-length recording', 'Social media cuts', 'Multi-format delivery'] },
+const eventTypes = [
+  {
+    number: '01',
+    title: 'Conferences & Keynotes',
+    copy: 'Stage coverage, speaker audio, presentations, audience reactions, and the connective moments that tell the full story.',
+  },
+  {
+    number: '02',
+    title: 'Galas & Awards',
+    copy: 'Polished coverage of arrivals, remarks, honorees, performances, sponsors, and the energy in the room.',
+  },
+  {
+    number: '03',
+    title: 'Product Launches',
+    copy: 'A clear record of the reveal plus the reactions, demonstrations, interviews, and details that support the launch.',
+  },
+  {
+    number: '04',
+    title: 'Corporate Meetings',
+    copy: 'Executive messages, town halls, training sessions, panels, and internal programs captured with discretion.',
+  },
+  {
+    number: '05',
+    title: 'Community & Nonprofit',
+    copy: 'Mission-driven events shaped into useful stories for donors, partners, participants, and future audiences.',
+  },
+  {
+    number: '06',
+    title: 'Performances & Sports',
+    copy: 'Multi-angle coverage built around the action, atmosphere, crowd, and moments that cannot be repeated.',
+  },
 ]
 
-const whyCards = [
-  { icon: '📷', title: 'Multi-Camera Coverage', desc: 'We typically deploy 3-6 cameras depending on event size, ensuring complete coverage from every angle.' },
-  { icon: '⚡', title: 'Same-Day Edits', desc: 'Need a highlight reel ready before the event ends? Our on-site editor can deliver a cut while the event is still happening.' },
-  { icon: '🎙️', title: 'Professional Audio', desc: 'Crisp audio is what separates professional event video from an iPhone recording. We tie into house sound and deploy backup mics throughout.' },
-  { icon: '📡', title: 'Livestream Integration', desc: 'We can simultaneously capture and live stream your event to any platform — YouTube, Vimeo, Facebook, or a private webcast URL.' },
-  { icon: '🗺️', title: 'Any Venue in Texas', desc: 'From the Henry B. González Convention Center to boutique San Antonio venues, we work any space, any size.' },
-  { icon: '🤝', title: '13+ Years of Events', desc: 'Hundreds of events captured over more than a decade. We know how to stay invisible while getting every moment that matters.' },
+const planItems = [
+  'Run of show and priority moments',
+  'Stage, speaker, and camera positions',
+  'Venue audio and backup recording',
+  'Screens, lighting, and presentation content',
+  'Audience, sponsor, and room coverage',
+  'Final edits, formats, and deadlines',
 ]
 
-const faqs = [
-  { q: 'Do you do same-day edits?', a: 'Yes. For events where you need a highlight reel the same night — a gala, conference closing, or awards ceremony — we deploy an on-site editor who cuts in real time. The final reel can be ready within 1-2 hours of your event ending, or even during the event itself.' },
-  { q: 'How many cameras do you use?', a: 'It depends on the event size and complexity. A typical corporate conference uses 3-4 cameras. A large gala or multi-stage event may use 5-7. We do a pre-event walkthrough to determine the right coverage plan and include that recommendation in your quote.' },
-  { q: 'Do you also livestream events?', a: 'Yes — livestreaming is a natural extension of our event production work. We can stream to YouTube Live, Vimeo, Facebook, LinkedIn, or a custom private webcast URL while simultaneously recording broadcast-quality footage for your archive. Ask about our hybrid event packages.' },
-  { q: 'How long until I receive the final video?', a: 'Same-day edits (highlight reels) are delivered the night of or morning after the event. A full edited video — full-length recording with color grade, titles, and audio mix — is typically delivered within 5-10 business days depending on length and complexity.' },
-  { q: 'Do you handle audio for the event itself, or just for the video?', a: 'We capture audio for the video production. If you need a full event audio/AV company to run sound for the room, we\'re happy to refer you to trusted partners. For video, we tie into your existing house sound system and deploy our own backup mics to ensure clean recorded audio regardless of venue conditions.' },
+const deliverables = [
+  'Event recap film',
+  'Keynote and session edits',
+  'Speaker social clips',
+  'Sponsor and partner content',
+  'Captioned versions',
+  'Channel-ready exports',
+]
+
+const process = [
+  {
+    number: '01',
+    title: 'Event Brief',
+    copy: 'Align on the program, audience, venue, schedule, priority moments, stakeholders, and intended uses.',
+  },
+  {
+    number: '02',
+    title: 'Coverage Plan',
+    copy: 'Map camera positions, audio sources, crew movement, production timing, and the complete deliverable list.',
+  },
+  {
+    number: '03',
+    title: 'Live Coverage',
+    copy: 'Capture the stage and the room with a coordinated crew that respects the program and attendee experience.',
+  },
+  {
+    number: '04',
+    title: 'Post & Delivery',
+    copy: 'Edit, review, caption, version, and prepare the event content for every audience and destination.',
+  },
 ]
 
 export default function EventsPage() {
-  useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal')
-    const obs = new IntersectionObserver(
-      (entries) => { entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target) } }) },
-      { threshold: 0.12 }
-    )
-    reveals.forEach((el) => obs.observe(el))
-
-    const faqs = document.querySelectorAll('.faq-item')
-    faqs.forEach((item) => {
-      item.querySelector('.faq-question')?.addEventListener('click', () => {
-        const open = item.classList.contains('open')
-        faqs.forEach((f) => f.classList.remove('open'))
-        if (!open) item.classList.add('open')
-      })
-    })
-
-    return () => obs.disconnect()
-  }, [])
-
   return (
     <Layout>
       <style>{`
-        :root{--red:#CC0000;--gold:#C9A84C;--black:#0A0A0A;--dark:#111111;--dark2:#181818}
-        .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
-        .reveal.revealed{opacity:1;transform:none}
-        .page-hero{position:relative;background:linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.55)),url('/images/clients-bts-5.jpg') center/cover no-repeat;padding:140px 64px 100px;overflow:hidden;border-bottom:1px solid #1a1a1a}
-        .hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(120px,20vw,280px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
-        .hero-inner{position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
-        .breadcrumb{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#444;margin-bottom:24px;display:flex;align-items:center;gap:8px}
-        .breadcrumb a{color:#B0B0B0;transition:color .15s}.breadcrumb a:hover{color:#fff}.breadcrumb span{color:#2a2a2a}
-        .eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
-        .page-h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(52px,7vw,88px);line-height:.95;letter-spacing:.02em;color:#fff;text-transform:uppercase;margin-bottom:8px}
-        .page-h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:.65em;color:rgba(255,255,255,.65);display:block;text-transform:none;letter-spacing:.03em;margin-bottom:4px}
-        .hero-sub{font-size:16px;line-height:1.75;color:#888;max-width:560px;margin:20px 0 36px}
-        .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-        .btn-red{background:var(--red);color:#fff;padding:14px 36px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:background .15s;display:inline-block}
-        .btn-red:hover{background:#aa0000}
-        .btn-ghost{border:1px solid #333;color:#fff;padding:14px 36px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:border-color .15s,background .15s;display:inline-block}
-        .btn-ghost:hover{border-color:#666;background:rgba(255,255,255,.04)}
-        .stat-card{background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);padding:40px 36px;min-width:220px;flex-shrink:0}
-        .stat-item{text-align:center;padding:20px 0;border-bottom:1px solid #222}
-        .stat-item:last-child{border-bottom:none}
-        .stat-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:48px;line-height:1;color:var(--gold);letter-spacing:.03em}
-        .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#AAAAAA;margin-top:6px}
-        .section{padding:96px 64px;max-width:1200px;margin:0 auto}
-        .section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
-        .section-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:24px}
-        .section-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:rgba(255,255,255,.6)}
-        .body-text{font-size:15px;line-height:1.8;color:#B0B0B0;margin-bottom:20px}
-        .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-        .use-case-cards{display:flex;flex-direction:column;gap:12px;margin-top:8px}
-        .use-case-card{display:flex;align-items:center;gap:16px;background:var(--dark2);border-left:3px solid var(--red);padding:16px 20px}
-        .use-case-icon{font-size:22px;flex-shrink:0;width:32px;text-align:center}
-        .use-case-title{font-size:13px;font-weight:600;letter-spacing:.04em;color:#ddd}
-        .portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
-        .portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-        .vimeo-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
-        .vimeo-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-        .portfolio-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-top:10px;padding:0 4px}
-        .link-arrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--red);padding-bottom:3px;transition:color .15s}
-        .link-arrow:hover{color:var(--red)}
-        .process-wrap{background:var(--dark)}
-        .process-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
-        .process-header{text-align:center;margin-bottom:64px}
-        .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
-        .process-card{background:var(--dark2);padding:40px 32px;position:relative;overflow:hidden}
-        .process-num{position:absolute;top:-10px;right:16px;font-family:'Bebas Neue',Impact,sans-serif;font-size:120px;line-height:1;color:rgba(204,0,0,.07);pointer-events:none;user-select:none}
-        .process-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.05em;color:#fff;margin-bottom:14px;position:relative}
-        .process-desc{font-size:13px;line-height:1.7;color:#B0B0B0;margin-bottom:20px;position:relative}
-        .process-list{list-style:none;position:relative}
-        .process-list li{font-size:12px;color:#AAAAAA;padding:4px 0 4px 14px;position:relative;letter-spacing:.03em}
-        .process-list li::before{content:'—';position:absolute;left:0;color:var(--red);font-size:10px}
-        .why-wrap{background:var(--black)}
-        .why-inner{max-width:1200px;margin:0 auto;padding:96px 64px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
-        .why-sticky{position:sticky;top:96px}
-        .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-        .why-card{background:var(--dark2);border:1px solid #1e1e1e;padding:32px 28px;transition:border-color .2s}
-        .why-card:hover{border-color:#333}
-        .why-card-icon{font-size:28px;margin-bottom:14px}
-        .why-card-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.05em;color:#fff;margin-bottom:10px}
-        .why-card-desc{font-size:13px;line-height:1.7;color:#B0B0B0}
-        .faq-wrap{background:var(--dark)}
-        .faq-inner{max-width:800px;margin:0 auto;padding:96px 64px}
-        .faq-header{text-align:center;margin-bottom:56px}
-        .faq-list{display:flex;flex-direction:column;gap:2px}
-        .faq-item{background:var(--dark2);border:1px solid #1e1e1e;overflow:hidden}
-        .faq-question{width:100%;background:none;border:none;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px}
-        .faq-question-text{font-size:15px;font-weight:600;color:#ddd;letter-spacing:.01em}
-        .faq-icon{font-size:20px;color:var(--red);flex-shrink:0;transition:transform .25s;font-style:normal}
-        .faq-item.open .faq-icon{transform:rotate(45deg)}
-        .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;padding:0 28px}
-        .faq-answer p{font-size:14px;line-height:1.8;color:#C0C0C0;padding-bottom:24px}
-        .faq-item.open .faq-answer{max-height:300px;padding:0 28px}
-        .cta-wrap{background:var(--dark2);position:relative;overflow:hidden;text-align:center;padding:100px 64px}
-        .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(204,0,0,.18) 0%,transparent 70%);pointer-events:none}
-        .cta-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(48px,7vw,88px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:16px;position:relative}
-        .cta-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:var(--red)}
-        .cta-sub{font-size:16px;color:#B0B0B0;margin-bottom:48px;position:relative}
-        .cta-actions{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;position:relative}
-        .cta-phone{font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;letter-spacing:.06em;color:#fff;transition:color .15s}
-        .cta-phone:hover{color:var(--gold)}
-        @media(max-width:900px){
-          .hero-inner{grid-template-columns:1fr}.stat-card{display:flex;gap:0;min-width:0;width:100%}
-          .stat-item{flex:1;border-bottom:none;border-right:1px solid #222}.stat-item:last-child{border-right:none}
-          .intro-grid{grid-template-columns:1fr;gap:48px}.portfolio-grid{grid-template-columns:1fr}
-          .process-grid{grid-template-columns:1fr 1fr}.why-inner{grid-template-columns:1fr}
-          .why-sticky{position:static}.why-grid{grid-template-columns:1fr}
-          .section{padding:64px 24px}.process-inner,.why-inner,.faq-inner{padding:64px 24px}
-          .cta-wrap{padding:72px 24px}.page-hero{padding:120px 24px 72px}
+        .evt-page{--line:rgba(255,255,255,.1);--panel:#141414;--muted:#96969b;background:#090909;color:#fff}
+        .evt-container{width:min(1240px,calc(100% - 96px));margin:0 auto}
+        .evt-eyebrow{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+        .evt-display{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.025em;line-height:.94;text-transform:uppercase}
+        .evt-display em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;letter-spacing:0;text-transform:none}
+        .evt-button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;padding:0 34px;border:1px solid transparent;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .18s,border-color .18s}
+        .evt-button-primary{background:var(--red);color:#fff}.evt-button-primary:hover{background:#aa0000}
+        .evt-button-secondary{border-color:rgba(255,255,255,.32);color:#fff}.evt-button-secondary:hover{border-color:#fff;background:rgba(255,255,255,.05)}
+        .evt-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+
+        .evt-hero{position:relative;min-height:800px;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)}
+        .evt-hero-image{object-fit:cover;object-position:center}
+        .evt-hero-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.98) 0%,rgba(0,0,0,.82) 45%,rgba(0,0,0,.14) 78%),linear-gradient(0deg,#090909 0%,transparent 35%)}
+        .evt-hero-inner{position:relative;z-index:1;width:100%;padding:180px 0 68px}
+        .evt-hero-copy{max-width:920px;padding-left:32px}
+        .evt-hero h1{font-size:clamp(68px,8.5vw,118px);margin:18px 0 24px}
+        .evt-hero h1 em{display:block;color:var(--gold);font-size:.56em;margin-top:9px}
+        .evt-hero-deck{max-width:680px;color:rgba(255,255,255,.8);font-size:17px;line-height:1.75}
+        .evt-proof{display:grid;grid-template-columns:repeat(4,1fr);margin-top:62px;border:1px solid var(--line);background:rgba(9,9,9,.78);backdrop-filter:blur(10px)}
+        .evt-proof-item{padding:21px 24px;border-right:1px solid var(--line)}
+        .evt-proof-item:last-child{border-right:0}
+        .evt-proof-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:30px;line-height:1;letter-spacing:.04em}
+        .evt-proof-label{margin-top:6px;color:#888;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+
+        .evt-clients{background:#101010;border-bottom:1px solid var(--line)}
+        .evt-clients-inner{display:grid;grid-template-columns:250px 1fr;align-items:center;min-height:132px}
+        .evt-clients-title{color:#676767;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .evt-client-grid{display:grid;grid-template-columns:repeat(4,1fr);height:100%;border-left:1px solid var(--line)}
+        .evt-client{display:flex;min-height:132px;align-items:center;justify-content:center;border-right:1px solid var(--line)}
+        .evt-client:last-child{border-right:0}
+        .evt-client img{width:auto;height:40px;max-width:130px;object-fit:contain;filter:grayscale(1) brightness(1.5);opacity:.66}
+
+        .evt-section{padding:106px 0;border-bottom:1px solid var(--line)}
+        .evt-section-head{display:grid;grid-template-columns:1fr .82fr;gap:90px;align-items:end;margin-bottom:54px}
+        .evt-section-title{font-size:clamp(54px,6vw,84px);margin-top:16px}
+        .evt-section-title em{color:var(--gold)}
+        .evt-section-intro{max-width:630px;color:var(--muted);font-size:16px;line-height:1.75}
+
+        .evt-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+        .evt-type{min-height:290px;display:flex;flex-direction:column;padding:31px;background:var(--panel);transition:background .18s}
+        .evt-type:hover{background:#181818}
+        .evt-type-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;letter-spacing:.08em}
+        .evt-type h3{margin-top:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:31px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
+        .evt-type p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
+
+        .evt-plan{background:#101010}
+        .evt-plan-grid{display:grid;grid-template-columns:1.08fr .92fr;min-height:730px;border:1px solid var(--line);background:#151515}
+        .evt-plan-image{position:relative;min-height:620px;overflow:hidden}
+        .evt-plan-image img{object-fit:cover;object-position:center}
+        .evt-plan-copy{display:flex;flex-direction:column;justify-content:center;padding:62px}
+        .evt-plan-copy h2{font-size:clamp(54px,5.8vw,82px);margin:17px 0 23px}
+        .evt-plan-copy h2 em{display:block;color:var(--gold);font-size:.64em;margin-top:8px}
+        .evt-plan-copy>p{color:var(--muted);font-size:15px;line-height:1.75}
+        .evt-plan-list{display:grid;grid-template-columns:1fr 1fr;margin-top:34px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+        .evt-plan-item{min-height:92px;display:flex;align-items:center;padding:19px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:#ddd;font-size:10px;font-weight:700;letter-spacing:.1em;line-height:1.5;text-transform:uppercase}
+        .evt-plan-item:before{content:'';width:7px;height:7px;margin-right:13px;background:var(--red);flex:0 0 auto}
+
+        .evt-film-grid{display:grid;grid-template-columns:1.12fr .88fr;min-height:640px;border:1px solid var(--line)}
+        .evt-film-media{position:relative;min-height:540px;overflow:hidden}
+        .evt-film-copy{display:flex;flex-direction:column;justify-content:center;padding:64px}
+        .evt-film-copy h2{font-size:clamp(54px,5.8vw,82px);margin:17px 0 23px}
+        .evt-film-copy h2 em{display:block;color:var(--gold);font-size:.64em;margin-top:8px}
+        .evt-film-copy p{color:var(--muted);font-size:15px;line-height:1.75}
+        .evt-inline-link{display:inline-flex;margin-top:29px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+        .evt-inline-link span{color:var(--red);margin-left:8px}
+
+        .evt-content{background:#101010}
+        .evt-content-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:76px;align-items:stretch}
+        .evt-content-image{position:relative;min-height:690px;border:1px solid var(--line);overflow:hidden}
+        .evt-content-image img{object-fit:cover;object-position:center}
+        .evt-content-copy{display:flex;flex-direction:column;justify-content:center}
+        .evt-content-copy h2{font-size:clamp(54px,5.8vw,82px);margin:16px 0 24px}
+        .evt-content-copy h2 em{display:block;color:var(--gold);font-size:.64em;margin-top:8px}
+        .evt-content-copy>p{color:var(--muted);font-size:15px;line-height:1.75}
+        .evt-deliverables{display:grid;grid-template-columns:repeat(2,1fr);margin-top:36px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+        .evt-deliverable{min-height:92px;display:flex;align-items:center;padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+        .evt-deliverable:before{content:'';width:7px;height:7px;margin-right:13px;background:var(--red)}
+        .evt-live-note{margin-top:26px;padding:20px 22px;border-left:3px solid var(--gold);background:#151515;color:#8f8f94;font-size:13px;line-height:1.7}
+        .evt-live-note a{color:#fff;border-bottom:1px solid var(--red)}
+
+        .evt-process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+        .evt-process-card{min-height:330px;padding:34px 30px;background:#141414}
+        .evt-process-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.08em}
+        .evt-process-card h3{margin-top:96px;font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.04em;line-height:1;text-transform:uppercase}
+        .evt-process-card p{margin-top:16px;color:#85858a;font-size:13px;line-height:1.7}
+
+        .evt-faq-wrap{max-width:1000px}
+        .evt-faq-head{text-align:center;margin-bottom:44px}
+        .evt-faq-head h2{font-size:clamp(52px,6vw,80px);margin-top:13px}
+        .evt-faq-head h2 em{color:var(--gold)}
+        .evt-faq{border-top:1px solid var(--line)}
+        .evt-faq details{border-bottom:1px solid var(--line);padding:0 4px}
+        .evt-faq summary{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px;cursor:pointer;list-style:none;color:#eee;font-size:16px;font-weight:600}
+        .evt-faq summary::-webkit-details-marker{display:none}
+        .evt-faq summary:after{content:'+';color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;font-weight:400}
+        .evt-faq details[open] summary:after{content:'-'}
+        .evt-faq details p{max-width:820px;padding:0 0 26px;color:#8f8f94;font-size:14px;line-height:1.75}
+
+        .evt-cta{padding:118px 0;text-align:center;background:radial-gradient(circle at 50% 110%,rgba(204,0,0,.18),transparent 45%),#0c0c0c}
+        .evt-cta h2{font-size:clamp(56px,7vw,96px);margin-top:17px}
+        .evt-cta h2 em{color:var(--gold)}
+        .evt-cta p{margin:22px auto 0;max-width:660px;color:#9c9ca0;font-size:16px;line-height:1.7}
+        .evt-cta .evt-actions{justify-content:center}
+
+        @media(max-width:1050px){
+          .evt-plan-grid,.evt-film-grid,.evt-content-grid{grid-template-columns:1fr}
+          .evt-content-grid{gap:42px}
+          .evt-process-grid{grid-template-columns:repeat(2,1fr)}
+          .evt-content-image{min-height:570px}
         }
-        @media(max-width:600px){.process-grid{grid-template-columns:1fr}}
+        @media(max-width:760px){
+          .evt-container{width:min(100% - 40px,1240px)}
+          .evt-hero{min-height:0;display:block}
+          .evt-hero-image{object-position:54% center}
+          .evt-hero-scrim{background:linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.4)),linear-gradient(0deg,#090909 0%,transparent 39%)}
+          .evt-hero-inner{padding:138px 0 42px}
+          .evt-hero-copy{padding-left:0}
+          .evt-hero h1{font-size:58px}
+          .evt-hero-deck{font-size:15px}
+          .evt-proof{grid-template-columns:repeat(2,1fr);margin-top:42px}
+          .evt-proof-item:nth-child(2){border-right:0}.evt-proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+          .evt-clients-inner{grid-template-columns:1fr;padding-top:24px}
+          .evt-clients-title{text-align:center;padding-bottom:20px}
+          .evt-client-grid{grid-template-columns:repeat(2,1fr);border-left:0;border-top:1px solid var(--line)}
+          .evt-client:nth-child(2){border-right:0}.evt-client:nth-child(-n+2){border-bottom:1px solid var(--line)}
+          .evt-section{padding:76px 0}
+          .evt-section-head{grid-template-columns:1fr;gap:24px}
+          .evt-type-grid{grid-template-columns:1fr}
+          .evt-type{min-height:250px;padding:26px 23px}
+          .evt-plan-image{min-height:410px}
+          .evt-plan-copy,.evt-film-copy{padding:39px 25px}
+          .evt-plan-list{grid-template-columns:1fr}
+          .evt-film-media{min-height:360px}
+          .evt-content-image{min-height:500px}
+          .evt-deliverables{grid-template-columns:1fr}
+          .evt-process-grid{grid-template-columns:1fr}
+          .evt-process-card{min-height:270px;padding:27px 24px}
+          .evt-process-card h3{margin-top:64px}
+          .evt-faq summary{font-size:14px}
+          .evt-cta{padding:84px 0}
+          .evt-button{width:100%}
+        }
       `}</style>
 
-      <section className="page-hero">
-        <div className="hero-bg-text" aria-hidden="true">EVENTS</div>
-        <div className="hero-inner">
-          <div>
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link><span>/</span>
-              <Link href="/video-production">Services</Link><span>/</span>
-              <span style={{ color: '#AAAAAA' }}>Event Video</span>
-            </nav>
-            <p className="eyebrow">Event Coverage &amp; Documentation</p>
-            <h1 className="page-h1"><em>Event</em>Video Production in San Antonio</h1>
-            <p className="hero-sub">Multi-camera event coverage that captures every moment with broadcast quality — from the keynote to the closing toast. Same-day edits available for events that can't wait.</p>
-            <div className="hero-btns">
-              <Link href="/contact" className="btn-red">Get a Free Quote</Link>
-              <Link href="#portfolio" className="btn-ghost">See Our Work</Link>
-            </div>
-          </div>
-          <div className="stat-card reveal">
-            <div className="stat-item"><p className="stat-value">6+</p><p className="stat-label">Multi-Camera Coverage</p></div>
-            <div className="stat-item"><p className="stat-value">✓</p><p className="stat-label">Same-Day Delivery Available</p></div>
-            <div className="stat-item"><p className="stat-value">Any</p><p className="stat-label">Size Event</p></div>
-          </div>
-        </div>
-      </section>
-
-      <div style={{ background: 'var(--dark)', borderBottom: '1px solid #1a1a1a' }}>
-        <div className="section">
-          <div className="intro-grid">
-            <div className="reveal">
-              <p className="section-label">What We Do</p>
-              <h2 className="section-h2">Every Moment <em>Preserved</em></h2>
-              <p className="body-text">Events happen once. The keynote address, the award presentation, the surprise announcement — you can't call a do-over. That's why having the right video team matters: a crew that moves like they're invisible, anticipates the moment before it happens, and has the technical infrastructure to capture everything cleanly.</p>
-              <p className="body-text">We bring multi-camera crews, professional audio engineers, and on-site editors to events of every size across San Antonio and Texas.</p>
-              <p className="body-text">Planning a larger program? See our guide to <Link href="/blog/event-conference-video-production-texas" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>conference and event video production across Texas</Link>.</p>
-            </div>
-            <div className="reveal">
-              <p className="section-label">Events We Cover</p>
-              <div className="use-case-cards">
-                {useCases.map((u) => (
-                  <div key={u.title} className="use-case-card">
-                    <span className="use-case-icon">{u.icon}</span>
-                    <span className="use-case-title">{u.title}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="portfolio" style={{ background: 'var(--black)', borderBottom: '1px solid #1a1a1a' }}>
-        <div className="section">
-          <div className="portfolio-header reveal">
-            <div>
-              <p className="section-label">Our Work</p>
-              <h2 className="section-h2" style={{ marginBottom: 0 }}>Event <em>Portfolio</em></h2>
-            </div>
-            <Link href="/work" className="link-arrow">View All Work →</Link>
-          </div>
-          <div className="portfolio-grid reveal">
-            {[
-              { id: '946447253', label: 'Event Coverage' },
-              { id: '1056208254', label: 'Event Coverage' },
-              { id: '163617404', label: 'Event Coverage' },
-              { id: '299504298', label: 'Event Coverage' },
-            ].map((v) => (
-              <div key={v.id}>
-                <div className="vimeo-wrap">
-                  <iframe src={`https://player.vimeo.com/video/${v.id}?title=0&byline=0&portrait=0&color=CC0000`} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={v.label} />
+      <main className="evt-page">
+        <section className="evt-hero">
+          <Image
+            className="evt-hero-image"
+            src="/images/bts-8.jpg"
+            alt="Media Bar camera operator filming a San Antonio event"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="evt-hero-scrim" />
+          <div className="evt-hero-inner">
+            <div className="evt-container">
+              <div className="evt-hero-copy">
+                <p className="evt-eyebrow">Event video production in San Antonio and across Texas</p>
+                <h1 className="evt-display">Capture the Room. <em>Extend the Moment.</em></h1>
+                <p className="evt-hero-deck">
+                  Media Bar plans and produces event coverage that preserves what happened live
+                  and turns it into useful content for the audiences who could not be in the room.
+                </p>
+                <div className="evt-actions">
+                  <Link href="/project-planner" className="evt-button evt-button-primary">Plan Event Coverage</Link>
+                  <Link href="#event-film" className="evt-button evt-button-secondary">Watch Event Work</Link>
                 </div>
-                <p className="portfolio-label">{v.label}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="process-wrap">
-        <div className="process-inner">
-          <div className="process-header reveal">
-            <p className="section-label" style={{ textAlign: 'center' }}>How We Work</p>
-            <h2 className="section-h2" style={{ textAlign: 'center' }}>Our <em>Process</em></h2>
-          </div>
-          <div className="process-grid">
-            {processSteps.map((s, i) => (
-              <div key={s.num} className="process-card reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="process-num" aria-hidden="true">{s.num}</div>
-                <h3 className="process-title">{s.title}</h3>
-                <p className="process-desc">{s.desc}</p>
-                <ul className="process-list">{s.bullets.map((b) => <li key={b}>{b}</li>)}</ul>
+              <div className="evt-proof" aria-label="Event production capabilities">
+                <div className="evt-proof-item"><div className="evt-proof-value">13+</div><div className="evt-proof-label">Years producing</div></div>
+                <div className="evt-proof-item"><div className="evt-proof-value">Multi</div><div className="evt-proof-label">Camera coverage</div></div>
+                <div className="evt-proof-item"><div className="evt-proof-value">Clean</div><div className="evt-proof-label">Speaker audio</div></div>
+                <div className="evt-proof-item"><div className="evt-proof-value">One</div><div className="evt-proof-label">Team through post</div></div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div className="why-wrap">
-        <div className="why-inner">
-          <div className="why-sticky reveal">
-            <p className="section-label">Why Media Bar</p>
-            <h2 className="section-h2">Why Event Planners Choose <em>Us</em></h2>
+        <section className="evt-clients" aria-label="Selected clients">
+          <div className="evt-container evt-clients-inner">
+            <p className="evt-clients-title">Trusted by Texas organizations and national brands</p>
+            <div className="evt-client-grid">
+              {clients.map((client) => (
+                <div className="evt-client" key={client.name}>
+                  <Image src={client.logo} alt={`${client.name} logo`} width={150} height={54} sizes="150px" />
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="why-grid">
-            {whyCards.map((c, i) => (
-              <div key={c.title} className="why-card reveal" style={{ transitionDelay: `${i * 0.08}s` }}>
-                <div className="why-card-icon">{c.icon}</div>
-                <h3 className="why-card-title">{c.title}</h3>
-                <p className="why-card-desc">{c.desc}</p>
+        </section>
+
+        <section className="evt-section">
+          <div className="evt-container">
+            <div className="evt-section-head">
+              <div>
+                <p className="evt-eyebrow">Coverage built around the program</p>
+                <h2 className="evt-display evt-section-title">Every Kind of Room. <em>One Clear Plan.</em></h2>
               </div>
-            ))}
+              <p className="evt-section-intro">
+                Every event has a different rhythm. We build the crew, camera, audio, and post-production
+                approach around the program instead of forcing the event into a standard package.
+              </p>
+            </div>
+            <div className="evt-type-grid">
+              {eventTypes.map((item) => (
+                <article className="evt-type" key={item.title}>
+                  <span className="evt-type-number">{item.number}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div className="faq-wrap">
-        <div className="faq-inner">
-          <div className="faq-header reveal">
-            <p className="section-label" style={{ textAlign: 'center' }}>FAQ</p>
-            <h2 className="section-h2" style={{ textAlign: 'center' }}>Common <em>Questions</em></h2>
-          </div>
-          <div className="faq-list">
-            {faqs.map((f) => (
-              <div key={f.q} className="faq-item">
-                <button className="faq-question"><span className="faq-question-text">{f.q}</span><em className="faq-icon">+</em></button>
-                <div className="faq-answer"><p>{f.a}</p></div>
+        <section className="evt-section evt-plan">
+          <div className="evt-container">
+            <div className="evt-plan-grid">
+              <div className="evt-plan-image">
+                <Image
+                  src="/images/clients-bts-5.jpg"
+                  alt="Camera operator covering guests at an outdoor event"
+                  fill
+                  sizes="(max-width: 1050px) 100vw, 54vw"
+                />
               </div>
-            ))}
+              <div className="evt-plan-copy">
+                <p className="evt-eyebrow">Coverage starts before doors open</p>
+                <h2 className="evt-display">Know the Moment. <em>Know Where to Be.</em></h2>
+                <p>
+                  A useful coverage plan connects the run of show to camera positions, audio sources,
+                  crew movement, presentation screens, and the final edits. That preparation helps
+                  the production stay present without becoming a distraction.
+                </p>
+                <div className="evt-plan-list">
+                  {planItems.map((item) => <div className="evt-plan-item" key={item}>{item}</div>)}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <section className="cta-wrap">
-        <div className="cta-glow" aria-hidden="true" />
-        <h2 className="cta-h2">Ready To <em>Get Started?</em></h2>
-        <p className="cta-sub">Tell us about your event and we'll put together a custom coverage plan.</p>
-        <div className="cta-actions">
-          <Link href="/contact" className="btn-red" style={{ padding: '16px 48px', fontSize: '13px' }}>Plan Your Coverage</Link>
-          <a href="tel:2102799442" className="cta-phone">210-279-9442</a>
-        </div>
-      </section>
+        <section className="evt-section" id="event-film">
+          <div className="evt-container">
+            <div className="evt-film-grid">
+              <div className="evt-film-media">
+                <VimeoPlayer
+                  videoId="946447253"
+                  title="NAFA conference day two recap"
+                  thumbnailUrl="https://i.vimeocdn.com/video/2092713706-9d1a0e7015828edf8e0a8d84c008d3e2ca70f844461c954092850ae214a9e460-d_1280?region=us"
+                />
+              </div>
+              <div className="evt-film-copy">
+                <p className="evt-eyebrow">Watch an event recap</p>
+                <h2 className="evt-display">The Day Moves Fast. <em>The Story Should Still Land.</em></h2>
+                <p>
+                  A recap film condenses the speakers, atmosphere, audience, details, and momentum
+                  of a live program into a piece that can extend the experience after the venue clears.
+                </p>
+                <Link href="/work" className="evt-inline-link">Explore more event work <span>→</span></Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="evt-section evt-content">
+          <div className="evt-container evt-content-grid">
+            <div className="evt-content-image">
+              <Image
+                src="/images/media-library/concert-stage-performance.jpg"
+                alt="Singer performing on a large concert stage captured by Media Bar"
+                fill
+                sizes="(max-width: 1050px) 100vw, 41vw"
+              />
+            </div>
+            <div className="evt-content-copy">
+              <p className="evt-eyebrow">The event becomes a content library</p>
+              <h2 className="evt-display">One Program. <em>More Ways to Use It.</em></h2>
+              <p>
+                Plan the final assets before the event and the crew can capture with every destination
+                in mind. The same program can support attendees, internal teams, speakers, sponsors,
+                social channels, and next year&apos;s promotion.
+              </p>
+              <div className="evt-deliverables">
+                {deliverables.map((item) => <div className="evt-deliverable" key={item}>{item}</div>)}
+              </div>
+              <p className="evt-live-note">
+                Need the event delivered in real time? Explore our{' '}
+                <Link href="/video-production/live-streaming">live streaming production</Link>{' '}
+                and include venue connectivity in the event brief.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="evt-section">
+          <div className="evt-container">
+            <div className="evt-section-head">
+              <div>
+                <p className="evt-eyebrow">From schedule to screen</p>
+                <h2 className="evt-display evt-section-title">A Calm Process <em>For a Live Day.</em></h2>
+              </div>
+              <p className="evt-section-intro">
+                Live programs leave no room for guesswork. We define responsibilities, technical
+                needs, priority moments, and delivery requirements before the production begins.
+              </p>
+            </div>
+            <div className="evt-process-grid">
+              {process.map((item) => (
+                <article className="evt-process-card" key={item.title}>
+                  <span className="evt-process-number">{item.number}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="evt-section">
+          <div className="evt-container evt-faq-wrap">
+            <div className="evt-faq-head">
+              <p className="evt-eyebrow">Event video production FAQ</p>
+              <h2 className="evt-display">What Event Teams <em>Ask First.</em></h2>
+            </div>
+            <div className="evt-faq">
+              {eventVideoFaqs.map((faq) => (
+                <details key={faq.question}>
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="evt-cta">
+          <div className="evt-container">
+            <p className="evt-eyebrow">Start with the run of show</p>
+            <h2 className="evt-display">Tell Us What Cannot <em>Be Missed.</em></h2>
+            <p>
+              Share the event date, venue, schedule, audience, speakers, priority moments, and
+              deliverables. We will turn them into a practical coverage plan.
+            </p>
+            <div className="evt-actions">
+              <Link href="/project-planner" className="evt-button evt-button-primary">Start the Project Planner</Link>
+              <Link href="/contact" className="evt-button evt-button-secondary">Talk With Our Team</Link>
+            </div>
+          </div>
+        </section>
+      </main>
     </Layout>
   )
 }

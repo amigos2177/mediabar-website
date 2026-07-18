@@ -1,47 +1,46 @@
 import { buildMetadata } from '@/lib/seo'
-import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
+import {
+  BreadcrumbJsonLd,
+  FAQPageJsonLd,
+  ServiceJsonLd,
+  VideoObjectJsonLd,
+} from '@/components/JsonLd'
+import { eventVideoFaqs } from './content'
 
 export const metadata = buildMetadata({
-  title: 'Event Videography San Antonio | Media Bar Productions',
-  description: 'Event video coverage in San Antonio — conferences, galas, and corporate events. Multi-camera production that captures your event in full.',
+  title: 'Event Video Production in San Antonio | Media Bar',
+  description:
+    'Multi-camera event video production for conferences, keynotes, galas, launches, recaps, speaker content, and live programs across Texas.',
   path: '/video-production/events',
+  ogImage: '/images/bts-8.jpg',
 })
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ServiceJsonLd
-        name="Event & Conference Video Production"
-        description="Event video coverage in San Antonio — conferences, galas, and corporate events. Multi-camera production that captures your event in full."
+        name="Event Video Production"
+        description="Multi-camera event video production for conferences, keynotes, galas, launches, recaps, speaker content, and live programs across Texas."
         url="/video-production/events"
+        image="https://www.mediabarproductions.com/images/bts-8.jpg"
       />
-      <FAQPageJsonLd faqs={[
-        {
-          question: 'Do you do same-day edits?',
-          answer: 'Yes. For events where you need a highlight reel the same night — a gala, conference closing, or awards ceremony — we deploy an on-site editor who cuts in real time. The final reel can be ready within 1-2 hours of your event ending, or even during the event itself.',
-        },
-        {
-          question: 'How many cameras do you use?',
-          answer: 'It depends on the event size and complexity. A typical corporate conference uses 3-4 cameras. A large gala or multi-stage event may use 5-7. We do a pre-event walkthrough to determine the right coverage plan and include that recommendation in your quote.',
-        },
-        {
-          question: 'Do you also livestream events?',
-          answer: 'Yes — livestreaming is a natural extension of our event production work. We can stream to YouTube Live, Vimeo, Facebook, LinkedIn, or a custom private webcast URL while simultaneously recording broadcast-quality footage for your archive. Ask about our hybrid event packages.',
-        },
-        {
-          question: 'How long until I receive the final video?',
-          answer: 'Same-day edits (highlight reels) are delivered the night of or morning after the event. A full edited video — full-length recording with color grade, titles, and audio mix — is typically delivered within 5-10 business days depending on length and complexity.',
-        },
-        {
-          question: 'Do you handle audio for the event itself, or just for the video?',
-          answer: "We capture audio for the video production. If you need a full event audio/AV company to run sound for the room, we're happy to refer you to trusted partners. For video, we tie into your existing house sound system and deploy our own backup mics to ensure clean recorded audio regardless of venue conditions.",
-        },
-      ]} />
-      <BreadcrumbJsonLd items={[
-        { name: 'Home', url: '/' },
-        { name: 'Services', url: '/video-production' },
-        { name: 'Event Video', url: '/video-production/events' },
-      ]} />
+      <VideoObjectJsonLd
+        name="NAFA Conference Day Two Recap"
+        description="A day-two conference recap produced by Media Bar Productions, capturing event highlights and key moments."
+        thumbnailUrl="https://i.vimeocdn.com/video/2092713706-9d1a0e7015828edf8e0a8d84c008d3e2ca70f844461c954092850ae214a9e460-d_1280?region=us"
+        uploadDate="2024-05-15T00:00:00-05:00"
+        duration="PT1M29S"
+        embedUrl="https://player.vimeo.com/video/946447253"
+        contentUrl="https://vimeo.com/946447253"
+      />
+      <FAQPageJsonLd faqs={eventVideoFaqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Video Production Services', url: '/video-production' },
+          { name: 'Event Video Production', url: '/video-production/events' },
+        ]}
+      />
       {children}
     </>
   )

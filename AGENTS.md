@@ -131,6 +131,15 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
 - Reviewed preview `dpl_CBBYY1EiEvPcPbYJNX5gANfkvma5` was promoted to production July 18, 2026 as `dpl_G7gdbMC8cmNrBAmWAfPck8LiSX6b`; source is committed and pushed with the release.
 
+## July 18, 2026 Event Video Production redesign — preview ready
+- Rebuilt `/video-production/events` around event types, coverage planning, venue and audio coordination, post-event content value, live-streaming cross-navigation, and a four-step event workflow.
+- Added selected client proof, one click-to-play NAFA conference recap, six practical deliverable examples, six visible FAQs, and focused project-planner CTAs.
+- Removed four eager Vimeo embeds, emoji cards, manual reveal and FAQ event code, fixed camera-count and turnaround promises, and unsupported claims about event volume or universal venue coverage.
+- Added stronger metadata plus `Service`, `VideoObject`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
+- Mobbin event and professional-services references informed the coverage-first hierarchy, immediate proof, editorial video feature, event-to-content story, and consultation CTA while preserving Media Bar's visual system.
+- Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; protected preview `dpl_5i3Rf2G2MmE8LWccUVRdLXSPWtxe` reviewed at 1280px and 390px with no broken images, horizontal overflow, console errors, or en-dash characters.
+- Added 14 new production, final-still, team, award, and founder assets under `public/images/media-library/`; use `docs/image-library.md` before selecting imagery so redesigned pages do not repeat the same photographs.
+
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
 - **Video transcripts/watch pages**: add only when factual source transcripts and project details are available.

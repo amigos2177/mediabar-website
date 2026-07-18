@@ -1,47 +1,46 @@
 import { buildMetadata } from '@/lib/seo'
-import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
+import {
+  BreadcrumbJsonLd,
+  FAQPageJsonLd,
+  ServiceJsonLd,
+  VideoObjectJsonLd,
+} from '@/components/JsonLd'
+import { commercialVideoFaqs } from './content'
 
 export const metadata = buildMetadata({
-  title: 'Commercial Video Production San Antonio',
-  description: 'TV and digital commercial production in San Antonio. Media Bar Productions creates broadcast-quality commercials that perform for Texas brands.',
+  title: 'Commercial Video Production in San Antonio | Media Bar',
+  description:
+    'Commercial production for broadcast, connected TV, digital, paid social, product launches, and multi-format campaigns across Texas.',
   path: '/video-production/commercials',
+  ogImage: '/images/rbfcu-bts-porch.jpg',
 })
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ServiceJsonLd
-        name="TV Commercial Production"
-        description="TV and digital commercial production in San Antonio. Media Bar Productions creates broadcast-quality commercials that perform for Texas brands."
+        name="Commercial Video Production"
+        description="Commercial production for broadcast, connected TV, digital, paid social, product launches, and multi-format campaigns across Texas."
         url="/video-production/commercials"
+        image="https://www.mediabarproductions.com/images/rbfcu-bts-porch.jpg"
       />
-      <FAQPageJsonLd faqs={[
-        {
-          question: 'How much does a commercial cost to produce?',
-          answer: 'Commercial production budgets in San Antonio range from around $5,000 for a simple single-location spot to $50,000+ for multi-day productions with actors, multiple locations, and complex post. The biggest cost drivers are shoot days, talent fees, and post-production complexity. We provide detailed quotes after a brief call — no vague estimates.',
-        },
-        {
-          question: 'How long does it take to produce a TV spot?',
-          answer: 'A standard 30-second commercial takes 3-5 weeks from kickoff to delivery. That covers creative development, pre-production, production day, and post. If you have a tight air date, we offer rush production — some projects can be completed in under two weeks depending on scope.',
-        },
-        {
-          question: 'Do you handle casting?',
-          answer: 'Yes. We have relationships with local talent agencies and maintain our own talent pool for on-camera work. We handle casting, direction, and talent waivers as part of our full-service production process. If you already have talent in mind — a spokesperson, employee, or customer — we can work with them too.',
-        },
-        {
-          question: 'Can you produce a commercial for social media only?',
-          answer: "Absolutely — and we do it regularly. Social-first production is different from broadcast work: different aspect ratios, shorter attention windows, different pacing. We're fluent in both. We can produce a primary broadcast cut and then reformat for every social platform in the same project.",
-        },
-        {
-          question: 'Do you coordinate media buying or just production?',
-          answer: "Our core business is production, not media buying. However, we work with trusted local media buying partners and can refer you to the right agency for ad placement if needed. We ensure all finished spots are delivered in the correct specs for wherever they're running.",
-        },
-      ]} />
-      <BreadcrumbJsonLd items={[
-        { name: 'Home', url: '/' },
-        { name: 'Services', url: '/video-production' },
-        { name: 'Commercials', url: '/video-production/commercials' },
-      ]} />
+      <VideoObjectJsonLd
+        name="RBFCU Coyote Commercial"
+        description="A brand commercial produced for RBFCU by Media Bar Productions in San Antonio."
+        thumbnailUrl="https://i.vimeocdn.com/video/2084915704-7da55912ad6af7c76d003d5a84c9b2667b1338afb9f36bd09b64d2d3d27d0bb4-d_1280?region=us"
+        uploadDate="2025-11-19T00:00:00-06:00"
+        duration="PT30S"
+        embedUrl="https://player.vimeo.com/video/1138375371"
+        contentUrl="https://vimeo.com/1138375371"
+      />
+      <FAQPageJsonLd faqs={commercialVideoFaqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Video Production Services', url: '/video-production' },
+          { name: 'Commercial Video Production', url: '/video-production/commercials' },
+        ]}
+      />
       {children}
     </>
   )

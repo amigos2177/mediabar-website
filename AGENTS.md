@@ -103,6 +103,16 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
 - Released to production July 18, 2026 as `dpl_GLdZo3Ch3SZg4bMgjQYiM5yKPeru`; the canonical Houston route returns HTTP 200 with the new content and metadata, and no Houston runtime errors were found. Source is committed and pushed as `5086e44`.
 
+## July 18, 2026 Video Production Services redesign — live
+- Rebuilt `/video-production` as a guided services hub organized around four buyer outcomes instead of eleven equally weighted video cards, while preserving direct crawlable links to every service page.
+- Added a production-led hero, client proof, RBFCU campaign example, four-step workflow, Texas market paths, five visible FAQs, and a focused project-planner CTA.
+- Replaced eleven landing-page Vimeo embeds with optimized production imagery and direct service links to reduce page weight and decision overload.
+- Added stronger metadata plus `Service`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
+- Mobbin B2B hero, agency capability, and professional-services process patterns informed the proof-first hierarchy, grouped capabilities, workflow, FAQ, and consultation CTA.
+- Fixed sitewide navigation crowding at 1280px and converted both navigation logo treatments to `next/image`.
+- Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
+- Released to production July 18, 2026 as `dpl_GRSzMUs2y1ttN4V87iFJK3aL5S3u`; the canonical services route returns HTTP 200 with the new content and metadata, and no route-specific runtime errors were found. Source is committed and pushed as `646268a`.
+
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
 - **Video transcripts/watch pages**: add only when factual source transcripts and project details are available.

@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const SERVICE_LINKS = [
@@ -198,6 +199,13 @@ export default function Nav() {
           justify-content: center;
         }
 
+        @media (max-width: 1320px) and (min-width: 769px) {
+          .mbp-nav { padding: 0 28px !important; }
+          .mbp-desktop-links { gap: 22px !important; }
+          .mbp-nav-link { font-size: 12px; }
+          .mbp-desktop-right { gap: 14px !important; }
+          .mbp-quote-btn { padding: 10px 16px !important; }
+        }
         @media (max-width: 768px) {
           .mbp-desktop-links { display: none !important; }
           .mbp-desktop-right { display: none !important; }
@@ -208,7 +216,7 @@ export default function Nav() {
         }
       `}</style>
 
-      <nav style={{
+      <nav className="mbp-nav" style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -220,9 +228,9 @@ export default function Nav() {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '0 48px',
-      }}>
+        }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-          <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '48px', maxWidth: '180px', display: 'block' }} />
+          <Image src="/images/mediabar-logo.png" alt="Media Bar Productions" width={165} height={48} priority style={{ width: 'auto', height: '48px', maxWidth: '180px', display: 'block' }} />
         </Link>
 
         {/* Desktop center links */}
@@ -270,7 +278,7 @@ export default function Nav() {
 
           <div className="mbp-overlay-header">
             <Link href="/" onClick={close} style={{ display: 'flex', alignItems: 'center' }}>
-              <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '40px', display: 'block' }} />
+              <Image src="/images/mediabar-logo.png" alt="Media Bar Productions" width={137} height={40} style={{ width: 'auto', height: '40px', display: 'block' }} />
             </Link>
             <button className="mbp-overlay-close" aria-label="Close menu" onClick={close}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

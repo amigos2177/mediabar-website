@@ -122,14 +122,14 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
 - Reviewed preview `dpl_DwhZPuPPorHkXXooQXiRiWJQxXZz` was promoted to production July 18, 2026 as `dpl_Cu684yyunHQeHXecaeCstZ1bUFKg`; source is committed and pushed with the release.
 
-## July 18, 2026 Commercial Video Production redesign — preview ready
+## July 18, 2026 Commercial Video Production redesign — live
 - Rebuilt `/video-production/commercials` as a campaign-focused buyer journey for broadcast, connected TV, paid social, pre-roll, brand campaigns, product launches, and public-facing messages.
 - Added verified campaign proof, brand logos, a large RBFCU case-study feature, one click-to-play finished spot, multi-format deliverable planning, a launch-date-driven production process, six visible FAQs, and focused project-planner CTAs.
 - Removed five eager Vimeo embeds, emoji cards, manual reveal and FAQ event code, exact budget and rush promises, and generic unsupported performance language.
 - Added stronger metadata plus `Service`, `VideoObject`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
 - Mobbin campaign and creative-agency references informed the bold outcome-led hero, immediate proof, editorial case-study scale, capability rhythm, process clarity, and consultation CTA while preserving Media Bar's visual system.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
-- Latest protected Vercel preview: `dpl_CBBYY1EiEvPcPbYJNX5gANfkvma5`; not yet committed, pushed, or promoted to production.
+- Reviewed preview `dpl_CBBYY1EiEvPcPbYJNX5gANfkvma5` was promoted to production July 18, 2026 as `dpl_G7gdbMC8cmNrBAmWAfPck8LiSX6b`; source is committed and pushed with the release.
 
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.

@@ -113,6 +113,15 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
 - Released to production July 18, 2026 as `dpl_GRSzMUs2y1ttN4V87iFJK3aL5S3u`; the canonical services route returns HTTP 200 with the new content and metadata, and no route-specific runtime errors were found. Source is committed and pushed as `646268a`.
 
+## July 18, 2026 Corporate Video Production redesign — live
+- Rebuilt `/video-production/corporate` as a corporate buyer journey around brand films, leadership communications, customer stories, recruiting and culture, training, and product or service storytelling.
+- Added verified company proof, client logos, a click-to-play corporate reel, multi-format content planning, a stakeholder-friendly production process, cross-functional use cases, six visible FAQs, and focused project-planner CTAs.
+- Removed the unsupported `500+ videos` claim, exact pricing and turnaround promises, revision and footage-ownership claims, four eager Vimeo embeds, emoji cards, manual reveal code, and client-side FAQ event handling.
+- Added stronger metadata plus `Service`, `VideoObject`, `FAQPage`, and breadcrumb schema with visible page content matching the structured data.
+- Mobbin enterprise-service references informed the outcome-led hero, immediate client proof, use-case organization, process clarity, and consultation CTA while preserving Media Bar's visual system.
+- Verification: production build passes all 57 routes; targeted ESLint and `git diff --check` pass; deployed desktop and 390px mobile previews reviewed successfully with no broken images, horizontal overflow, console errors, or en-dash characters.
+- Released to production July 18, 2026 as `dpl_DwhZPuPPorHkXXooQXiRiWJQxXZz`; source is committed and pushed with the release.
+
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
 - **Video transcripts/watch pages**: add only when factual source transcripts and project details are available.

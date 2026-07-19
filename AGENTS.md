@@ -27,7 +27,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Small, focused commits on main
 - SEO-optimized descriptive slugs on any new routes
 
-## Current State (as of June 30, 2026)
+## Current State (as of July 19, 2026)
 Site is live and stable. SEO metadata pass DONE for all routes.
 - Root layout: title template + metadataBase set in app/layout.tsx.
 - Per-route metadata: every route has unique title + description + canonical. Client-component pages use a sibling layout.tsx; server-component pages have the export directly in page.tsx.
@@ -160,8 +160,17 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: targeted ESLint, TypeScript, `git diff --check`, and the webpack production build pass. The build generates 65 pages. Local desktop and 390px checks show no horizontal overflow, Vimeo playback loads correctly, and the existing logo aspect-ratio warning is unchanged.
 - Reviewed preview `dpl_BNTH5QdMoTcFpePSaUKgt4rm5y2q` was promoted to production July 18, 2026 as `dpl_DbpDvHMZTgRNKhCY8WY7Xt64S6Yo`. Live checks return HTTP 200 for the new watch page, medical page, and sitemap; the retired corporate article returns a direct 301 to its keeper. Application code is committed and pushed as `2e5b5e6`, with the preview handoff recorded in `15b95ed`.
 
+## July 19, 2026 pre-SEO technical quality pass - local
+- Cleared the four remaining JSX apostrophe lint errors on the RBFCU case study.
+- Converted all five RBFCU YouTube thumbnails to `next/image` and restricted the optimizer allowlist to `https://i.ytimg.com/vi/**`.
+- Removed three unused script declarations so full-repository ESLint now passes without warnings.
+- Verification: `git diff --check`, full ESLint, TypeScript, and the webpack production build pass. The build generates 65 static pages.
+- Browser verification passes for the RBFCU route at 1440px desktop, 820px tablet, and 390px mobile with no horizontal overflow, error overlays, or console errors. All five optimized thumbnails render, the first play control loads the privacy-enhanced YouTube embed, and the home route also passes.
+- The default Turbopack production build stalled without output in this local environment; the supported webpack build path completed successfully.
+- This batch is local only and has not been committed, pushed, previewed, or deployed.
+
 ## Remaining work
-- **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.
+- **Vimeo poster optimization**: `components/VimeoPlayer.tsx` retains the only intentional raw `<img>` because Vimeo CDN poster URLs are dynamic. Vimeo follow-up is paused at Ruben's request.
 - **Video transcripts and captions**: verify caption availability in Vimeo and add reviewed transcript or caption links only where source material exists.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
 - **Search and analytics activation**: after deployment, confirm Vercel Analytics and Speed Insights, then complete GSC, Bing Webmaster Tools, and IndexNow account actions.

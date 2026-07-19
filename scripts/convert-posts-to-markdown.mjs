@@ -82,7 +82,7 @@ function htmlToMarkdown(html) {
   md = md.replace(/<i[^>]*>([\s\S]*?)<\/i>/gi, (_, inner) => `_${stripTags(inner).trim()}_`)
 
   // Images
-  md = md.replace(/<img[^>]+src=["']([^"']+)["'][^>]*(?:alt=["']([^"']*)["'])?[^>]*\/?>/gi, (match, src, alt) => {
+  md = md.replace(/<img[^>]+src=["']([^"']+)["'][^>]*(?:alt=["']([^"']*)["'])?[^>]*\/?>/gi, (match, src) => {
     const altMatch = match.match(/alt=["']([^"']*)["']/i)
     const altText = altMatch ? altMatch[1] : ''
     return `\n![${altText}](${src})\n`

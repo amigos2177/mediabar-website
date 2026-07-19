@@ -3,6 +3,17 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   // Pin the workspace root so Next/Turbopack stops inferring ~/ as the root.
   turbopack: { root: import.meta.dirname },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        port: '',
+        pathname: '/vi/**',
+        search: '',
+      },
+    ],
+  },
   trailingSlash: false,
   async redirects() {
     return [

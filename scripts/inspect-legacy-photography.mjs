@@ -3,7 +3,6 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 
 function extract(html) {
   const get = (pattern) => { const m = html.match(pattern); return m ? m[1].trim() : null }
-  const getAll = (pattern) => [...html.matchAll(pattern)].map(m => m[1].trim())
 
   const title = get(/<title[^>]*>([^<]+)<\/title>/i)
   const metaDesc = get(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)

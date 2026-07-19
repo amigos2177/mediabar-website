@@ -48,12 +48,6 @@ async function fetchWithRetry(url, retries = 5, delayMs = 1500) {
   }
 }
 
-function attr(html, tag, attrName) {
-  // Match <tag ... attrName="value" ...> or <tag ... attrName='value' ...>
-  const re = new RegExp(`<${tag}[^>]*\\s${attrName}=["']([^"']+)["']`, 'i')
-  return (html.match(re) || [])[1] ?? null
-}
-
 function metaProp(html, property) {
   // property="og:X" content="..." or content="..." property="og:X"
   const fwd = new RegExp(`<meta[^>]*property=["']${property}["'][^>]*content=["']([^"']+)["']`, 'i')

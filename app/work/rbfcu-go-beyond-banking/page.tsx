@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Layout from '../../../components/Layout'
 
 const spots = [
@@ -159,7 +160,7 @@ export default function RbfcuCaseStudyPage() {
                 <span className="rb-l2">Go Beyond Banking</span>
               </h1>
               <p className="rb-deck">
-                A five-spot broadcast campaign for one of Texas's largest credit unions, produced, edited, and co-written by Media Bar Productions and aired to millions across four major Texas markets.
+                A five-spot broadcast campaign for one of Texas&apos;s largest credit unions, produced, edited, and co-written by Media Bar Productions and aired to millions across four major Texas markets.
               </p>
               <div className="rb-pills">
                 <span className="rb-pill"><span className="rb-dot" />5 Broadcast Spots</span>
@@ -200,7 +201,7 @@ export default function RbfcuCaseStudyPage() {
               <div className="rb-two">
                 <div>
                   <h4>The Challenge</h4>
-                  <p>Make a financial institution feel personal. Banking advertising tends to default to rate tables and stock footage. RBFCU wanted the opposite: emotional, cinematic storytelling that showed how the credit union shows up in real members' lives, and that held up at broadcast quality across four distinct Texas audiences.</p>
+                  <p>Make a financial institution feel personal. Banking advertising tends to default to rate tables and stock footage. RBFCU wanted the opposite: emotional, cinematic storytelling that showed how the credit union shows up in real members&apos; lives, and that held up at broadcast quality across four distinct Texas audiences.</p>
                 </div>
                 <div>
                   <h4>The Approach</h4>
@@ -245,11 +246,12 @@ export default function RbfcuCaseStudyPage() {
                         />
                       ) : (
                         <>
-                          <img
+                          <Image
                             className="rb-thumb"
-                            loading="lazy"
                             src={`https://i.ytimg.com/vi/${s.vid}/hqdefault.jpg`}
                             alt={s.alt}
+                            fill
+                            sizes="(max-width: 900px) 100vw, 50vw"
                           />
                           <span className="rb-playbtn" aria-hidden="true" />
                         </>
@@ -308,7 +310,7 @@ export default function RbfcuCaseStudyPage() {
                 RBFCU Campaign <span className="rb-it">FAQ</span>
               </h2>
               <div className="rb-qa">
-                <div className="rb-qitem"><h3 className="rb-q">Who produced RBFCU's &ldquo;Go Beyond Banking&rdquo; commercial campaign?</h3><p className="rb-a">Media Bar Productions, an Emmy-winning video production company based in San Antonio, Texas, produced and edited the &ldquo;Go Beyond Banking&rdquo; campaign for RBFCU and co-wrote two of the five spots.</p></div>
+                <div className="rb-qitem"><h3 className="rb-q">Who produced RBFCU&apos;s &ldquo;Go Beyond Banking&rdquo; commercial campaign?</h3><p className="rb-a">Media Bar Productions, an Emmy-winning video production company based in San Antonio, Texas, produced and edited the &ldquo;Go Beyond Banking&rdquo; campaign for RBFCU and co-wrote two of the five spots.</p></div>
                 <div className="rb-qitem"><h3 className="rb-q">Where did the RBFCU &ldquo;Go Beyond Banking&rdquo; campaign air?</h3><p className="rb-a">The commercials aired on broadcast television across four major Texas markets, San Antonio, Austin, Corpus Christi, and Dallas, and are also published on YouTube.</p></div>
                 <div className="rb-qitem"><h3 className="rb-q">How many commercials were in the campaign, and how many views did it earn?</h3><p className="rb-a">The campaign included five broadcast spots that together have earned more than five million views on YouTube.</p></div>
                 <div className="rb-qitem"><h3 className="rb-q">What did Media Bar Productions handle on the RBFCU campaign?</h3><p className="rb-a">Media Bar Productions handled full production and post-production, including directing, cinematography, editing, color, and final broadcast delivery, and wrote two of the five commercials.</p></div>
@@ -323,7 +325,7 @@ export default function RbfcuCaseStudyPage() {
           <div className="rb-wrap">
             <span className="rb-eyebrow rb-lab">Start a Project</span>
             <h2 className="rb-sec rb-disp">
-              Let's Create Your Next <span className="rb-it">Campaign.</span>
+              Let&apos;s Create Your Next <span className="rb-it">Campaign.</span>
             </h2>
             <p className="rb-intro" style={{ margin: '0 auto' }}>
               Cinematic, broadcast-ready brand storytelling, concept through final delivery.

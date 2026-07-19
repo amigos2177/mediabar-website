@@ -250,8 +250,8 @@ export default function EventsPage() {
                 <p className="evt-eyebrow">Event video production in San Antonio and across Texas</p>
                 <h1 className="evt-display">Capture the Room. <em>Extend the Moment.</em></h1>
                 <p className="evt-hero-deck">
-                  Media Bar plans and produces event coverage that preserves what happened live
-                  and turns it into useful content for the audiences who could not be in the room.
+                  Media Bar plans and produces San Antonio event coverage that preserves what happened
+                  live and turns it into useful content for audiences who could not be in the room.
                 </p>
                 <div className="evt-actions">
                   <Link href="/project-planner" className="evt-button evt-button-primary">Plan Event Coverage</Link>

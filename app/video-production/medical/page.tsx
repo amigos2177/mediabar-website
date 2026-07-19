@@ -67,7 +67,7 @@ export default function MedicalVideoPage() {
           thumbnailUrl: medicalVideo.thumbnail,
         },
         linkLabel: 'Explore More Work',
-        linkHref: '/our-work',
+        linkHref: '/work',
       }}
       deliverables={{
         eyebrow: 'Communication System',

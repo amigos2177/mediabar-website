@@ -65,7 +65,7 @@ export default function PostProductionPage() {
           thumbnailUrl: postProductionVideo.thumbnail,
         },
         linkLabel: 'Explore More Work',
-        linkHref: '/our-work',
+        linkHref: '/work',
       }}
       deliverables={{
         eyebrow: 'Final Delivery',

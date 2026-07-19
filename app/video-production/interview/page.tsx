@@ -65,7 +65,7 @@ export default function InterviewPage() {
           thumbnailUrl: interviewVideo.thumbnail,
         },
         linkLabel: 'Explore More Work',
-        linkHref: '/our-work',
+        linkHref: '/work',
       }}
       deliverables={{
         eyebrow: 'Built for the Edit',

@@ -9,7 +9,7 @@ export default function LiveStreamingPage() {
         title: 'Plan the Signal.',
         emphasis: 'Protect the Moment.',
         copy:
-          'Multi-camera production, event audio, graphics, remote contributors, and platform delivery planned as one live system.',
+          'San Antonio multi-camera production, event audio, graphics, remote contributors, and platform delivery planned as one reliable live system.',
         image: '/images/studio-9.jpg',
         alt: 'Video production control room with monitors and switching equipment',
         primaryCta: 'Plan a Live Stream',
@@ -66,7 +66,7 @@ export default function LiveStreamingPage() {
           alt: 'Professional cinema camera configured for production',
         },
         linkLabel: 'Explore Event Production',
-        linkHref: '/video-production/event-video',
+        linkHref: '/video-production/events',
       }}
       deliverables={{
         eyebrow: 'After the Broadcast',

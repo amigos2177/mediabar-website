@@ -11,6 +11,7 @@ export type Post = {
   slug: string
   title: string
   seoTitle?: string
+  author?: string
   date: string
   updated?: string
   excerpt: string
@@ -28,6 +29,7 @@ function parseFile(file: string): Post {
     slug: data.slug as string,
     title: data.title as string,
     seoTitle: data.seoTitle as string | undefined,
+    author: data.author as string | undefined,
     date: data.date as string,
     updated: data.updated as string | undefined,
     excerpt: data.excerpt as string,

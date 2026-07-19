@@ -175,7 +175,7 @@ export default function HomePage() {
         name="2025 Corporate Video Demo Reel"
         description="Media Bar Productions demo reel featuring corporate, commercial, event, healthcare, and branded video work produced in San Antonio and across Texas."
         thumbnailUrl="https://i.vimeocdn.com/video/2007121987-d46882b6b21b356f6dfc32d487245d5802d9508db9e6d9c699a70c7156f7da6c-d_1280?region=us"
-        uploadDate="2025-04-20"
+        uploadDate="2025-04-20T00:00:00-05:00"
         duration="PT2M38S"
         embedUrl="https://player.vimeo.com/video/1077104073"
       />

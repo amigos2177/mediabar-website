@@ -40,6 +40,6 @@ export const interviewVideo = {
     'The camera is only part of the work. The real craft is creating enough trust, focus, and context for the person on screen to say something worth hearing.',
   thumbnail:
     'https://i.vimeocdn.com/video/736927195-4648208b9e3a496a5ada78d59915b36f8857d2e95a9287e1a22e15888fe2b804-d_1280?region=us',
-  uploadDate: '2018-11-04',
+  uploadDate: '2018-11-04T00:00:00-05:00',
   duration: 'PT1M7S',
 }

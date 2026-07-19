@@ -9,7 +9,7 @@ export default function MotionGraphicsPage() {
         title: 'Make the Idea Clear.',
         emphasis: 'Give It Motion.',
         copy:
-          'Explainers, titles, product visuals, animated data, and branded systems designed to guide attention and make information easier to understand.',
+          'San Antonio motion graphics for explainers, titles, product visuals, animated data, and branded systems that make information easier to understand.',
         image: '/images/media-library/motion-graphics-spider-verse.jpg',
         alt: 'Animated Spider-Man title frame with layered comic-book textures',
         position: 'center',
@@ -67,7 +67,7 @@ export default function MotionGraphicsPage() {
           thumbnailUrl: motionGraphicsVideo.thumbnail,
         },
         linkLabel: 'Explore More Work',
-        linkHref: '/our-work',
+        linkHref: '/work',
       }}
       deliverables={{
         eyebrow: 'A Flexible System',

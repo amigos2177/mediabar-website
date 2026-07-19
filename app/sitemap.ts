@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/photography`, lastModified: SITE_UPDATED },
     { url: `${BASE}/studio`, lastModified: SITE_UPDATED },
     { url: `${BASE}/contact`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/careers`, lastModified: SITE_UPDATED },
     { url: `${BASE}/project-planner`, lastModified: SITE_UPDATED },
     { url: `${BASE}/faq`, lastModified: SITE_UPDATED },
     { url: `${BASE}/clients`, lastModified: SITE_UPDATED },

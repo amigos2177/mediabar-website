@@ -9,10 +9,10 @@ import { motionGraphicsFaqs, motionGraphicsVideo } from './content'
 
 const path = '/video-production/motion-graphics'
 const description =
-  'Motion graphics production in San Antonio for explainers, titles, animated data, product visualization, brand systems, and live-action integration.'
+  'San Antonio motion graphics production for explainers, titles, animated data, product visualization, brand systems, and live-action integration.'
 
 export const metadata = buildMetadata({
-  title: 'Motion Graphics Production San Antonio',
+  title: 'Motion Graphics Production in San Antonio | Media Bar',
   description,
   path,
   ogImage: '/images/media-library/motion-graphics-spider-verse.jpg',

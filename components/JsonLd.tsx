@@ -251,7 +251,7 @@ export function PersonJsonLd({ name, jobTitle, image }: PersonProps) {
     worksFor: {
       '@id': BUSINESS_ID,
     },
-    url: 'https://www.mediabarproductions.com/about',
+    url: 'https://www.mediabarproductions.com/about#founder',
   }
   return <JsonLdScript data={data} />
 }

@@ -3,7 +3,7 @@ title: "Elevate Your Brand with Expert Video Production, Wherever You Are"
 seoTitle: "Elevate Your Brand with Expert Video Production"
 slug: "elevate-your-brand-with-expert-video-production"
 date: "2024-10-21"
-excerpt: "Want to make your brand stand out, no matter where your business is located? Video is the"
+excerpt: "See how strategic corporate video helps brands communicate clearly, earn attention, and make a stronger impression in any market."
 legacyId: 42
 legacyUrl: "/News/Get/42/elevate-your-brand-with-expert-video-producti"
 featuredImage: /images/blog/elevate-your-brand-with-expert-video-production.png
@@ -64,4 +64,4 @@ Whether your business is in **San Antonio** or halfway around the world, you des
 
 Ready to elevate your brand with video? Let's chat about how we can help you, no matter where you are. **Contact us** today to start planning your next corporate video project.
 
-[Check out some of our corporate production work.](http://mediabarproductions.com/business)
+[Check out some of our corporate production work.](/video-production/corporate)

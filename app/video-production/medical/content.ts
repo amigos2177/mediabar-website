@@ -39,6 +39,6 @@ export const medicalVideo = {
     'A patient story works when care, context, and credibility stay visible. The production should support the person speaking and help the audience understand why the experience matters.',
   thumbnail:
     'https://i.vimeocdn.com/video/2142672747-63089bd83a4963a84458183a59c9307db2652588974754ce440e68165db6b975-d_1280?region=us',
-  uploadDate: '2026-04-06',
+  uploadDate: '2026-04-06T00:00:00-05:00',
   duration: 'PT2M25S',
 }

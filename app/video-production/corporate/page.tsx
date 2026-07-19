@@ -243,8 +243,8 @@ export default function CorporatePage() {
                 <p className="corp-eyebrow">Corporate video production in San Antonio</p>
                 <h1 className="corp-display">Turn Business Goals <em>Into Stories People Remember.</em></h1>
                 <p className="corp-hero-deck">
-                  Media Bar helps companies turn leadership, expertise, customer experience, and
-                  complex ideas into clear corporate films built for the people who need to act.
+                  Media Bar helps San Antonio companies turn leadership, expertise, customer experience,
+                  and complex ideas into clear corporate films built for the people who need to act.
                 </p>
                 <div className="corp-actions">
                   <Link href="/project-planner" className="corp-button corp-button-primary">Plan a Corporate Project</Link>

@@ -40,7 +40,7 @@ Some of the video types we specialize in:
 
 We manage every step of the production process—from the initial concept to post-production. And with our knowledge of San Antonio production services, we ensure that your video reflects the spirit of your brand while appealing to your target audience.
 
-If you want to learn more about how we approach business-focused video, check out our [Business Services page](http://mediabarproductions.com/business).
+If you want to learn more about how we approach business-focused video, check out our [Business Services page](/video-production/corporate).
 
 Video Marketing in San Antonio: How We Make Your Brand Unforgettable
 

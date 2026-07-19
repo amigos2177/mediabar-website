@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
 import { getAllPosts, getPostBySlug } from '../../../lib/blog'
+import { getBlogAuthor } from '../../../lib/authors'
 import CopyLinkButton from '../_components/CopyLinkButton'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '../../../components/JsonLd'
 
@@ -67,6 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const canonical = `https://www.mediabarproductions.com/blog/${slug}`
   const mins = readingTime(post.content)
+  const author = getBlogAuthor(post.author)
 
   const schema = {
     '@context': 'https://schema.org',
@@ -83,7 +86,15 @@ export default async function BlogPostPage({ params }: Props) {
       },
     }),
     author: {
-      '@id': 'https://www.mediabarproductions.com/#business',
+      '@type': 'Person',
+      '@id': author.schemaId,
+      name: author.name,
+      jobTitle: author.jobTitle,
+      url: `https://www.mediabarproductions.com${author.url}`,
+      image: `https://www.mediabarproductions.com${author.image}`,
+      worksFor: {
+        '@id': 'https://www.mediabarproductions.com/#business',
+      },
     },
     publisher: {
       '@id': 'https://www.mediabarproductions.com/#business',
@@ -125,8 +136,13 @@ export default async function BlogPostPage({ params }: Props) {
         .bp-content blockquote{border-left:3px solid var(--red);padding-left:1.25em;margin:1.5em 0;color:#C0C0C0;font-style:italic}
 
         .bp-footer{max-width:720px;margin:0 auto;padding:48px 0 0;border-top:1px solid #1a1a1a}
-        .bp-author{font-size:14px;color:#AAAAAA;margin-bottom:32px}
-        .bp-author strong{color:#B0B0B0}
+        .bp-author{display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:center;margin-bottom:32px;padding:22px;border:1px solid #242424;background:#111}
+        .bp-author-image{width:72px;height:72px;object-fit:cover;border-radius:50%;filter:grayscale(.2)}
+        .bp-author-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+        .bp-author-name{display:inline-block;color:#fff;font-size:17px;font-weight:700;text-decoration:none}
+        .bp-author-name:hover{color:var(--gold)}
+        .bp-author-role{color:#aaa;font-size:12px;margin-top:3px}
+        .bp-author-bio{color:#888;font-size:13px;line-height:1.55;margin-top:8px}
         .bp-share{margin-bottom:40px}
         .bp-share-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B0B0B0;margin-bottom:14px}
         .bp-share-btns{display:flex;flex-wrap:wrap;gap:8px}
@@ -186,10 +202,21 @@ export default async function BlogPostPage({ params }: Props) {
           />
 
           <footer className="bp-footer">
-            <p className="bp-author">
-              <strong>By the Media Bar Productions team</strong>, San Antonio&apos;s Emmy and Telly
-              award-winning video production company.
-            </p>
+            <div className="bp-author">
+              <Image
+                className="bp-author-image"
+                src={author.image}
+                alt={`${author.name}, ${author.jobTitle} at Media Bar Productions`}
+                width={72}
+                height={72}
+              />
+              <div>
+                <p className="bp-author-label">Written by</p>
+                <Link className="bp-author-name" href={author.url} rel="author">{author.name}</Link>
+                <p className="bp-author-role">{author.jobTitle}</p>
+                <p className="bp-author-bio">{author.bio}</p>
+              </div>
+            </div>
 
             <div className="bp-share">
               <p className="bp-share-label">Share this article</p>

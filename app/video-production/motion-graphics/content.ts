@@ -39,6 +39,6 @@ export const motionGraphicsVideo = {
     'Motion works best when it does more than decorate. It should reveal information, guide attention, and make the central idea easier to understand.',
   thumbnail:
     'https://i.vimeocdn.com/video/2143088826-56135f2076b3f77710a0be575e322fd68adb53699cd66c09a4131a92d53658c2-d_1280?region=us',
-  uploadDate: '2026-04-06',
+  uploadDate: '2026-04-06T00:00:00-05:00',
   duration: 'PT0M30S',
 }

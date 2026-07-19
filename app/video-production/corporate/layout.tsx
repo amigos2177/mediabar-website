@@ -10,7 +10,7 @@ import { corporateVideoFaqs } from './content'
 export const metadata = buildMetadata({
   title: 'Corporate Video Production in San Antonio | Media Bar',
   description:
-    'Corporate video production for brand films, leadership communications, customer stories, recruiting, training, and multi-format content across Texas.',
+    'San Antonio corporate video production for brand films, executive communications, customer stories, recruiting, training, and campaign content.',
   path: '/video-production/corporate',
   ogImage: '/images/clients-bts-9.jpg',
 })
@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <ServiceJsonLd
         name="Corporate Video Production"
-        description="Corporate video production for brand films, leadership communications, customer stories, recruiting, training, and multi-format content across Texas."
+        description="San Antonio corporate video production for brand films, executive communications, customer stories, recruiting, training, and campaign content."
         url="/video-production/corporate"
         image="https://www.mediabarproductions.com/images/clients-bts-9.jpg"
       />

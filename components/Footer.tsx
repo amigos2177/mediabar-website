@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import TrustBadge from './TrustBadge'
 
@@ -42,7 +43,13 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <Link href="/" style={{ display: 'inline-block', marginBottom: '16px' }}>
-              <img src="/images/mediabar-logo.png" alt="Media Bar Productions" style={{ height: '36px', maxWidth: '100%', display: 'block' }} />
+              <Image
+                src="/images/mediabar-logo.png"
+                alt="Media Bar Productions"
+                width={250}
+                height={42}
+                style={{ width: 'auto', height: '36px', maxWidth: '100%', display: 'block' }}
+              />
             </Link>
             <p style={{ fontSize: '14px', color: '#AAAAAA', marginBottom: '24px', fontStyle: 'italic' }}>
               Your Vision Served Daily
@@ -77,6 +84,7 @@ export default function Footer() {
             <p style={colHeading}>Company</p>
             <Link href="/about" className="mbp-footer-link" style={footerLink}>About</Link>
             <Link href="/about/awards" className="mbp-footer-link" style={footerLink}>Awards</Link>
+            <Link href="/careers" className="mbp-footer-link" style={footerLink}>Crew & Careers</Link>
             <Link href="/clients" className="mbp-footer-link" style={footerLink}>Clients</Link>
             <Link href="/studio" className="mbp-footer-link" style={footerLink}>Studio</Link>
             <Link href="/photography" className="mbp-footer-link" style={footerLink}>Photography</Link>

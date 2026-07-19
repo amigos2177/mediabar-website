@@ -141,13 +141,23 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Added 14 new production, final-still, team, award, and founder assets under `public/images/media-library/`; use `docs/image-library.md` before selecting imagery so redesigned pages do not repeat the same photographs.
 - Released to production July 18, 2026 as `dpl_5G7WrNycepuARyqySBsPGvKKF2RV`; the canonical Events route returns HTTP 200 with the new content, metadata, and concert performance still. Source is committed and pushed as `9874df6`, with this release note following.
 
+## July 18, 2026 SEO implementation batch — preview pending
+- Converted every VideoObject `uploadDate` to a complete ISO 8601 datetime with the correct Central Time offset.
+- Replaced internal links that depended on redirects with their canonical service and portfolio routes.
+- Repaired two legacy blog service links and completed four truncated blog excerpts.
+- Added reusable named blog-author infrastructure for Ruben Garcia, visible author cards, and connected Person schema.
+- Refined Search Console priority metadata and San Antonio body copy on the video-production hub plus corporate, events, live-streaming, and motion-graphics pages.
+- Added `/careers` as a truthful Crew & Careers landing page, remapped legacy job and crew URLs to it, and added it to the footer and sitemap.
+- Verification: the webpack production build passes all 58 routes; targeted ESLint passes. Full-repository lint retains pre-existing apostrophe errors on unrelated legacy pages.
+- Preview deployment is the next and final gate for this batch. Do not promote it to production until Ruben reviews it.
+
 ## Remaining work
 - **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
 - **Video transcripts/watch pages**: add only when factual source transcripts and project details are available.
 - **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.
 - **/work video captions**: verify caption availability in Vimeo and add transcript/caption links where source material exists.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
-- **Service page body copy**: add natural "San Antonio" mentions to the body of motion-graphics, live-streaming, post-production, real-estate, and medical service pages (currently only in footer).
+- **Service page body copy**: add natural "San Antonio" mentions to post-production, real-estate, and medical service pages.
 - **Search and analytics activation**: after deployment, confirm Vercel Analytics and Speed Insights, then complete GSC, Bing Webmaster Tools, and IndexNow account actions.
 
 ## How to update this file

@@ -85,6 +85,12 @@ export type ServiceEditorialPageProps = {
     copy: string
   }
   process: Card[]
+  relatedLinks?: {
+    eyebrow: string
+    title: string
+    copy: string
+    links: Array<{ label: string; href: string; description: string }>
+  }
   faqEyebrow: string
   faqTitle: string
   faqEmphasis: string
@@ -109,6 +115,7 @@ export function ServiceEditorialPage({
   deliverables,
   processIntro,
   process,
+  relatedLinks,
   faqEyebrow,
   faqTitle,
   faqEmphasis,
@@ -197,6 +204,14 @@ export function ServiceEditorialPage({
         .sep-process-card h3{margin-top:96px;font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.04em;line-height:1;text-transform:uppercase}
         .sep-process-card p{margin-top:16px;color:#85858a;font-size:13px;line-height:1.7}
 
+        .sep-related{background:#101010}
+        .sep-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:42px;background:var(--sep-line);border:1px solid var(--sep-line)}
+        .sep-related-card{display:flex;min-height:220px;flex-direction:column;padding:30px;background:#141414;color:#fff}
+        .sep-related-card:hover{background:#181818}
+        .sep-related-card h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+        .sep-related-card p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
+        .sep-related-card span{margin-top:auto;padding-top:28px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
         .sep-faq-wrap{max-width:1000px}
         .sep-faq-head{text-align:center;margin-bottom:44px}
         .sep-faq-head h2{font-size:clamp(52px,6vw,80px);margin-top:13px}
@@ -219,6 +234,7 @@ export function ServiceEditorialPage({
           .sep-plan-grid,.sep-feature-grid,.sep-deliverables-grid{grid-template-columns:1fr}
           .sep-deliverables-grid{gap:42px}
           .sep-process-grid{grid-template-columns:repeat(2,1fr)}
+          .sep-related-grid{grid-template-columns:1fr}
           .sep-deliverables-image{min-height:570px}
         }
         @media(max-width:760px){
@@ -381,6 +397,29 @@ export function ServiceEditorialPage({
             </div>
           </div>
         </section>
+
+        {relatedLinks ? (
+          <section className="sep-section sep-related">
+            <div className="sep-container">
+              <div className="sep-section-head">
+                <div>
+                  <p className="sep-eyebrow">{relatedLinks.eyebrow}</p>
+                  <h2 className="sep-display sep-section-title">{relatedLinks.title}</h2>
+                </div>
+                <p className="sep-section-intro">{relatedLinks.copy}</p>
+              </div>
+              <div className="sep-related-grid">
+                {relatedLinks.links.map((link) => (
+                  <Link className="sep-related-card" href={link.href} key={link.href}>
+                    <h3>{link.label}</h3>
+                    <p>{link.description}</p>
+                    <span>Explore →</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="sep-section">
           <div className="sep-container">

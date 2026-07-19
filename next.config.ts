@@ -48,16 +48,16 @@ const nextConfig: NextConfig = {
       // ── BLOG MIGRATION ──
       // Specific ID redirects must come before catch-alls
       // Migrate to new blog URLs
-      { source: '/News/Get/45/:rest*', destination: '/blog/keeping-creative-in-san-antonio', statusCode: 301 },
-      { source: '/News/Get/44/:rest*', destination: '/blog/san-antonio-corporate-video-production-competitive', statusCode: 301 },
+      { source: '/News/Get/45/:rest*', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
+      { source: '/News/Get/44/:rest*', destination: '/blog/corporate-video-multi-format-strategy', statusCode: 301 },
       { source: '/News/Get/43/:rest*', destination: '/blog/best-video-production-san-antonio', statusCode: 301 },
       { source: '/News/Get/42/:rest*', destination: '/blog/elevate-your-brand-with-expert-video-production', statusCode: 301 },
-      { source: '/News/Get/41/:rest*', destination: '/blog/boost-seo-with-video-production-ai-era', statusCode: 301 },
+      { source: '/News/Get/41/:rest*', destination: '/blog/ai-video-production-limits', statusCode: 301 },
       { source: '/News/Get/40/:rest*', destination: '/blog/san-antonio-conference-video-services', statusCode: 301 },
       { source: '/News/Get/38/:rest*', destination: '/blog/importance-of-video-production-services', statusCode: 301 },
-      { source: '/News/Get/37/:rest*', destination: '/blog/san-antonio-video-production-talent-local-companies', statusCode: 301 },
+      { source: '/News/Get/37/:rest*', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
       { source: '/News/Get/36/:rest*', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
-      { source: '/News/Get/34/:rest*', destination: '/blog/importance-of-corporate-video-production', statusCode: 301 },
+      { source: '/News/Get/34/:rest*', destination: '/blog/corporate-video-multi-format-strategy', statusCode: 301 },
       // Retire to relevant pages
       { source: '/News/Get/35/:rest*', destination: '/work', statusCode: 301 },
       { source: '/News/Get/33/:rest*', destination: '/work', statusCode: 301 },
@@ -83,7 +83,12 @@ const nextConfig: NextConfig = {
       { source: '/blog/healthcare-video-production', destination: '/blog/healthcare-video-production-san-antonio', statusCode: 301 },
       // AI: retired "vs hiring a crew" → comprehensive keeper
       { source: '/blog/ai-video-tools-vs-hiring-a-crew', destination: '/blog/ai-video-production-limits', statusCode: 301 },
-      { source: '/blog/boost', destination: '/blog/boost-seo-with-video-production-ai-era', statusCode: 301 },
+      { source: '/blog/boost', destination: '/blog/ai-video-production-limits', statusCode: 301 },
+      { source: '/blog/boost-seo-with-video-production-ai-era', destination: '/blog/ai-video-production-limits', statusCode: 301 },
+      { source: '/blog/importance-of-corporate-video-production', destination: '/blog/corporate-video-multi-format-strategy', statusCode: 301 },
+      { source: '/blog/san-antonio-corporate-video-production-competitive', destination: '/blog/corporate-video-multi-format-strategy', statusCode: 301 },
+      { source: '/blog/keeping-creative-in-san-antonio', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
+      { source: '/blog/san-antonio-video-production-talent-local-companies', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
     ]
   },
 }

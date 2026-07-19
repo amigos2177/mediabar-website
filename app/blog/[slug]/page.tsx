@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
 import { getAllPosts, getPostBySlug } from '../../../lib/blog'
+import { getRelatedPosts } from '../../../lib/blog-related'
 import { getBlogAuthor } from '../../../lib/authors'
 import CopyLinkButton from '../_components/CopyLinkButton'
 import { BreadcrumbJsonLd, FAQPageJsonLd } from '../../../components/JsonLd'
@@ -70,6 +71,7 @@ export default async function BlogPostPage({ params }: Props) {
   const canonical = `https://www.mediabarproductions.com/blog/${slug}`
   const mins = readingTime(post.content)
   const author = getBlogAuthor(post.author)
+  const relatedPosts = getRelatedPosts(post, getAllPosts())
 
   const schema = {
     '@context': 'https://schema.org',
@@ -143,6 +145,13 @@ export default async function BlogPostPage({ params }: Props) {
         .bp-author-name:hover{color:var(--gold)}
         .bp-author-role{color:#aaa;font-size:12px;margin-top:3px}
         .bp-author-bio{color:#888;font-size:13px;line-height:1.55;margin-top:8px}
+        .bp-related{margin-bottom:40px}
+        .bp-related-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+        .bp-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+        .bp-related-card{display:flex;min-height:148px;flex-direction:column;padding:18px;border:1px solid #242424;background:#111;color:#fff;text-decoration:none}
+        .bp-related-card:hover{border-color:#555}
+        .bp-related-card strong{font-size:14px;line-height:1.35}
+        .bp-related-card span{margin-top:auto;padding-top:18px;color:#777;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
         .bp-share{margin-bottom:40px}
         .bp-share-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B0B0B0;margin-bottom:14px}
         .bp-share-btns{display:flex;flex-wrap:wrap;gap:8px}
@@ -163,6 +172,7 @@ export default async function BlogPostPage({ params }: Props) {
           .bp-hero{padding:120px 24px 60px}
           .bp-body-wrap{padding:48px 24px}
           .bp-cta{padding:72px 24px}
+          .bp-related-grid{grid-template-columns:1fr}
         }
       `}</style>
 
@@ -215,6 +225,18 @@ export default async function BlogPostPage({ params }: Props) {
                 <Link className="bp-author-name" href={author.url} rel="author">{author.name}</Link>
                 <p className="bp-author-role">{author.jobTitle}</p>
                 <p className="bp-author-bio">{author.bio}</p>
+              </div>
+            </div>
+
+            <div className="bp-related">
+              <p className="bp-related-label">Related reading</p>
+              <div className="bp-related-grid">
+                {relatedPosts.map((related) => (
+                  <Link className="bp-related-card" href={`/blog/${related.slug}`} key={related.slug}>
+                    <strong>{related.title}</strong>
+                    <span>Read article →</span>
+                  </Link>
+                ))}
               </div>
             </div>
 

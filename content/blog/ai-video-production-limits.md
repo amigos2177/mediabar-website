@@ -82,6 +82,16 @@ Here's what that looks like in practice:
 
 **Never let AI be the first impression.** If a prospect, a patient, a recruit, or a partner is seeing your brand for the first time through video, that video should have a human crew behind it. Full stop.
 
+## Make Video Easier for Search and AI Systems to Understand
+
+Producing the film is only part of the job. A search engine or AI answer system needs useful page context before it can understand what the video covers and when it should be surfaced.
+
+Give important videos their own page with a specific title, an accurate description, a representative thumbnail, and structured video metadata. Add a reviewed transcript when one exists. Link that page to the service, location, article, or case study that explains the subject in more depth. Those steps are more durable than vague promises that simply embedding a video will improve rankings.
+
+The same principle applies to the video itself. A clear script, focused subject, and useful spoken answers create better source material for captions, transcripts, clips, and written follow-up content. AI can accelerate that repurposing, but it cannot supply the experience, customer evidence, or point of view your brand never captured.
+
+For a practical example, explore our [San Antonio video production work](/work) and the individual film pages connected to each selected project.
+
 ## Frequently Asked Questions
 
 **Is AI-generated video good enough for social media?**

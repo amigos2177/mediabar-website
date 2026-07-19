@@ -1,5 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { getAllPosts } from '../lib/blog'
+import workVideos from '../data/work-videos.json'
+import { workProjects } from '../data/work-projects'
+import type { PortfolioVideo } from '../components/VideoObjectSchema'
 
 const BASE = 'https://www.mediabarproductions.com'
 
@@ -53,5 +56,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.updated ?? post.date),
   }))
 
-  return [...staticPages, ...blogEntries]
+  const videos = workVideos as PortfolioVideo[]
+  const watchEntries: MetadataRoute.Sitemap = workProjects.flatMap((project) => {
+    const video = videos.find((item) => item.embedUrl?.endsWith(`/${project.id}`))
+    if (!video) return []
+    const thumbnail = Array.isArray(video.thumbnailUrl) ? video.thumbnailUrl[0] : video.thumbnailUrl
+
+    return [{
+      url: `${BASE}/work/watch/${project.slug}`,
+      lastModified: new Date(video.uploadDate),
+      videos: [{
+        title: project.title,
+        thumbnail_loc: thumbnail,
+        description: video.description || `${project.title}, produced by Media Bar Productions in San Antonio.`,
+      }],
+    }]
+  })
+
+  return [...staticPages, ...watchEntries, ...blogEntries]
 }

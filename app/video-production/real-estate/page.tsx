@@ -111,6 +111,13 @@ export default function RealEstatePage() {
         .why-card-icon{font-size:28px;margin-bottom:14px}
         .why-card-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.05em;color:#fff;margin-bottom:10px}
         .why-card-desc{font-size:13px;line-height:1.7;color:#B0B0B0}
+        .related-wrap{background:var(--black)}.related-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:42px}
+        .related-card{display:flex;min-height:210px;flex-direction:column;padding:30px;background:var(--dark2);border:1px solid #1e1e1e;color:#fff}
+        .related-card:hover{border-color:#444}
+        .related-card h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;letter-spacing:.05em}
+        .related-card p{margin-top:13px;color:#999;font-size:13px;line-height:1.7}
+        .related-card span{margin-top:auto;padding-top:24px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
         .faq-wrap{background:var(--dark)}.faq-inner{max-width:800px;margin:0 auto;padding:96px 64px}
         .faq-header{text-align:center;margin-bottom:56px}
         .faq-list{display:flex;flex-direction:column;gap:2px}
@@ -136,6 +143,7 @@ export default function RealEstatePage() {
           .process-grid{grid-template-columns:1fr 1fr}.why-inner{grid-template-columns:1fr}.why-sticky{position:static}
           .why-grid{grid-template-columns:1fr}.section{padding:64px 24px}
           .process-inner,.why-inner,.faq-inner{padding:64px 24px}.cta-wrap{padding:72px 24px}.page-hero{padding:120px 24px 72px}
+          .related-inner{padding:64px 24px}.related-grid{grid-template-columns:1fr}
         }
         @media(max-width:600px){.process-grid{grid-template-columns:1fr}}
       `}</style>
@@ -151,7 +159,7 @@ export default function RealEstatePage() {
             </nav>
             <p className="eyebrow">Real Estate &amp; Property Video</p>
             <h1 className="page-h1"><em>Real Estate</em>Video Production in San Antonio</h1>
-            <p className="hero-sub">Cinematic property walkthroughs and aerial coverage that showcase every property at its absolute best. FAA certified, ground and air in the same shoot day, delivered in 3-5 days.</p>
+            <p className="hero-sub">Cinematic property walkthroughs and aerial coverage for San Antonio agents, developers, builders, and property teams. Ground and air can be coordinated in one practical shoot plan.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>
               <Link href="#portfolio" className="btn-ghost">See Our Work</Link>
@@ -172,7 +180,7 @@ export default function RealEstatePage() {
               <p className="section-label">What We Do</p>
               <h2 className="section-h2">Every Property at Its <em>Best</em></h2>
               <p className="body-text">Real estate video has one job: make a buyer want to see the property in person. That means capturing the spaces that photograph well, finding the angles that convey scale and flow, and using aerial footage to show the location and surroundings in context.</p>
-              <p className="body-text">We combine ground-level interior and exterior production with FAA certified aerial coverage in a single coordinated shoot day — delivering a complete, cinematic property video in 3-5 business days, ready for MLS, social media, and every listing platform.</p>
+              <p className="body-text">Because our crew is based in San Antonio, we can plan around local access, weather, airspace, travel, and listing schedules. Ground-level interior and exterior production can be coordinated with aerial coverage, then delivered for websites, sales presentations, social media, and listing platforms.</p>
             </div>
             <div className="reveal">
               <p className="section-label">What We Shoot</p>
@@ -251,6 +259,30 @@ export default function RealEstatePage() {
         </div>
       </div>
 
+      <div className="related-wrap">
+        <div className="related-inner">
+          <p className="section-label">Keep Exploring</p>
+          <h2 className="section-h2">Plan the Full <em>Property Story</em></h2>
+          <div className="related-grid">
+            <Link className="related-card" href="/video-production/aerial">
+              <h3>Aerial Video</h3>
+              <p>Plan property context, location coverage, and FAA compliant aerial production.</p>
+              <span>Explore aerial →</span>
+            </Link>
+            <Link className="related-card" href="/locations/san-antonio">
+              <h3>San Antonio Production</h3>
+              <p>See how our local crew supports productions across San Antonio and South Texas.</p>
+              <span>Explore San Antonio →</span>
+            </Link>
+            <Link className="related-card" href="/work">
+              <h3>Selected Work</h3>
+              <p>Watch commercial, corporate, event, healthcare, food, and property projects.</p>
+              <span>View the work →</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <div className="faq-wrap">
         <div className="faq-inner">
           <div className="faq-header reveal">
@@ -271,7 +303,7 @@ export default function RealEstatePage() {
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />
         <h2 className="cta-h2">Ready To <em>List?</em></h2>
-        <p className="cta-sub">Tell us about the property and we'll get you on the calendar — fast turnaround guaranteed.</p>
+        <p className="cta-sub">Tell us about the property, location, and launch date. We will help confirm a practical production schedule.</p>
         <div className="cta-actions">
           <Link href="/contact" className="btn-red" style={{ padding: '16px 48px', fontSize: '13px' }}>Book Your Shoot</Link>
           <a href="tel:2102799442" className="cta-phone">210-279-9442</a>

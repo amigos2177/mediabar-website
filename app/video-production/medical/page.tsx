@@ -9,7 +9,7 @@ export default function MedicalVideoPage() {
         title: 'Make Complex Care Clear.',
         emphasis: 'Protect What Matters.',
         copy:
-          'Patient stories, provider expertise, education, and clinical communication produced with careful planning and a human point of view.',
+          'Patient stories, provider expertise, education, and clinical communication produced for San Antonio healthcare teams with careful planning and a human point of view.',
         image: '/images/bts-10.jpg',
         alt: 'Multi-camera healthcare interview production at a San Antonio clinic',
         position: 'center',
@@ -27,7 +27,7 @@ export default function MedicalVideoPage() {
         title: 'Clear Information.',
         emphasis: 'Human Stories.',
         copy:
-          'Healthcare content has to be understandable, credible, and useful to the people it is meant to serve.',
+          'San Antonio healthcare organizations need content that is understandable, credible, useful, and practical to review with clinical and communications stakeholders.',
       }}
       capabilities={[
         { number: '01', title: 'Patient Education', copy: 'Clear explanations that help people understand care, preparation, and next steps.' },
@@ -102,6 +102,29 @@ export default function MedicalVideoPage() {
         { number: '03', title: 'Production', copy: 'Film with a focused footprint and a patient, supportive approach.' },
         { number: '04', title: 'Review & Delivery', copy: 'Complete creative, clinical, and stakeholder reviews before final versions.' },
       ]}
+      relatedLinks={{
+        eyebrow: 'Healthcare Resources',
+        title: 'Build Trust Across Every Format.',
+        copy:
+          'Explore practical guidance for provider-led content, complete healthcare productions, and interview planning.',
+        links: [
+          {
+            label: 'Healthcare Video Guide',
+            href: '/blog/healthcare-video-production-san-antonio',
+            description: 'Plan patient stories, service-line content, consent, access, and stakeholder review.',
+          },
+          {
+            label: 'Provider Q&A Video',
+            href: '/blog/healthcare-provider-video',
+            description: 'Turn provider expertise into a useful library of focused patient answers.',
+          },
+          {
+            label: 'Interview Production',
+            href: '/video-production/interview',
+            description: 'Create a comfortable interview environment for credible, natural stories.',
+          },
+        ],
+      }}
       faqEyebrow="Questions"
       faqTitle="Planning Medical"
       faqEmphasis="Video Production."

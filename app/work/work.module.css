@@ -386,6 +386,18 @@
   white-space: nowrap;
 }
 
+.projectLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.projectLinks a:last-child {
+  color: #6f6f6d;
+  font-size: 8px;
+}
+
 .services {
   padding-top: 120px;
   border-top: 1px solid rgba(255, 255, 255, .12);

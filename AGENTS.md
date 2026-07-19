@@ -160,14 +160,14 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: targeted ESLint, TypeScript, `git diff --check`, and the webpack production build pass. The build generates 65 pages. Local desktop and 390px checks show no horizontal overflow, Vimeo playback loads correctly, and the existing logo aspect-ratio warning is unchanged.
 - Reviewed preview `dpl_BNTH5QdMoTcFpePSaUKgt4rm5y2q` was promoted to production July 18, 2026 as `dpl_DbpDvHMZTgRNKhCY8WY7Xt64S6Yo`. Live checks return HTTP 200 for the new watch page, medical page, and sitemap; the retired corporate article returns a direct 301 to its keeper. Application code is committed and pushed as `2e5b5e6`, with the preview handoff recorded in `15b95ed`.
 
-## July 19, 2026 pre-SEO technical quality pass - local
+## July 19, 2026 pre-SEO technical quality pass - live
 - Cleared the four remaining JSX apostrophe lint errors on the RBFCU case study.
 - Converted all five RBFCU YouTube thumbnails to `next/image` and restricted the optimizer allowlist to `https://i.ytimg.com/vi/**`.
 - Removed three unused script declarations so full-repository ESLint now passes without warnings.
 - Verification: `git diff --check`, full ESLint, TypeScript, and the webpack production build pass. The build generates 65 static pages.
 - Browser verification passes for the RBFCU route at 1440px desktop, 820px tablet, and 390px mobile with no horizontal overflow, error overlays, or console errors. All five optimized thumbnails render, the first play control loads the privacy-enhanced YouTube embed, and the home route also passes.
 - The default Turbopack production build stalled without output in this local environment; the supported webpack build path completed successfully.
-- This batch is local only and has not been committed, pushed, previewed, or deployed.
+- Released to production July 19, 2026 as `dpl_9VXKDSmS8GabhzdxhKSeGf9UW9iS`. The canonical homepage and RBFCU route return HTTP 200, and the post-deploy runtime error scan is clean. Application changes are committed and pushed as `c96321c`, with this release note following.
 
 ## Remaining work
 - **Vimeo poster optimization**: `components/VimeoPlayer.tsx` retains the only intentional raw `<img>` because Vimeo CDN poster URLs are dynamic. Vimeo follow-up is paused at Ruben's request.

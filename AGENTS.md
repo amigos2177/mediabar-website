@@ -151,14 +151,14 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: the webpack production build passes all 58 routes; targeted ESLint passes. Full-repository lint retains pre-existing apostrophe errors on unrelated legacy pages.
 - Released to production July 18, 2026 as `dpl_9YtJezQWmEkrmfA59A2uuHZtSmn1`; source is committed and pushed as `65569ec`.
 
-## July 18, 2026 content consolidation and video watch batch — preview ready
+## July 18, 2026 content consolidation and video watch batch — live
 - Added 12 static film watch pages under `/work/watch/[slug]` using the verified Vimeo metadata in `data/work-videos.json`, with canonical metadata, breadcrumbs, VideoObject schema, responsive players, and video sitemap entries.
 - Added transcript support to the curated project model but intentionally left transcripts empty because no verified source transcripts exist for these films.
 - Added natural San Antonio service copy plus useful service, article, location, and work links on post-production, medical, and real-estate pages.
 - Added curated related-reading cards to every retained blog post.
 - Consolidated five thin or overlapping legacy posts into the stronger AI, corporate multi-format, and hire-local keepers. Direct 301 redirects cover both the retired article URLs and their legacy `/News/Get` routes.
 - Verification: targeted ESLint, TypeScript, `git diff --check`, and the webpack production build pass. The build generates 65 pages. Local desktop and 390px checks show no horizontal overflow, Vimeo playback loads correctly, and the existing logo aspect-ratio warning is unchanged.
-- Protected preview `dpl_BNTH5QdMoTcFpePSaUKgt4rm5y2q` is ready at `https://mediabar-website-ow9hz9d68-amigos2177s-projects.vercel.app`. Authenticated preview checks return HTTP 200 for the new watch and medical pages, and the retired corporate article returns a direct 301 to its keeper. Code is committed locally as `2e5b5e6`; it is not pushed or promoted.
+- Reviewed preview `dpl_BNTH5QdMoTcFpePSaUKgt4rm5y2q` was promoted to production July 18, 2026 as `dpl_DbpDvHMZTgRNKhCY8WY7Xt64S6Yo`. Live checks return HTTP 200 for the new watch page, medical page, and sitemap; the retired corporate article returns a direct 301 to its keeper. Application code is committed and pushed as `2e5b5e6`, with the preview handoff recorded in `15b95ed`.
 
 ## Remaining work
 - **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.

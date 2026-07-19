@@ -229,14 +229,14 @@ export default function Nav() {
           justify-content: center;
         }
 
-        @media (max-width: 1320px) and (min-width: 769px) {
+        @media (max-width: 1320px) and (min-width: 961px) {
           .mbp-nav { padding: 0 28px !important; }
           .mbp-desktop-links { gap: 22px !important; }
           .mbp-nav-link { font-size: 12px; }
           .mbp-desktop-right { gap: 14px !important; }
           .mbp-quote-btn { padding: 10px 16px !important; }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 960px) {
           .mbp-desktop-links { display: none !important; }
           .mbp-desktop-right { display: none !important; }
           .mbp-burger { display: flex !important; }

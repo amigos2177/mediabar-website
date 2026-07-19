@@ -3,6 +3,7 @@ import { Bebas_Neue, DM_Sans, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
+import { AnalyticsInteractions } from '@/components/AnalyticsInteractions'
 import { LocalBusinessJsonLd } from '@/components/JsonLd'
 
 const bebasNeue = Bebas_Neue({
@@ -40,6 +41,7 @@ export default function RootLayout({
     >
       <body>
         <LocalBusinessJsonLd />
+        <AnalyticsInteractions />
         {children}
         <Analytics />
         <SpeedInsights />

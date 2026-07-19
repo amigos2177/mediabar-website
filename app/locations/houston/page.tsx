@@ -255,7 +255,7 @@ export default function HoustonPage() {
             <div className="hou-client-grid">
               {clients.map((client) => (
                 <div className="hou-client" key={client.name}>
-                  <Image src={client.logo} alt={client.name} width={160} height={54} />
+                  <Image src={client.logo} alt={client.name} width={160} height={54} sizes="160px" />
                 </div>
               ))}
             </div>

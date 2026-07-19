@@ -36,7 +36,7 @@ export default function VimeoPlayer({
             track('Portfolio Video Played', { videoId, title })
             setPlaying(true)
           }}
-          aria-label={`Play ${title}`}
+          aria-label={`Play film: ${title}`}
         >
           {/* Vimeo CDN URLs are dynamic; the browser lazy-loads these lightweight poster images. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}

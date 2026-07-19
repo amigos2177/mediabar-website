@@ -95,14 +95,23 @@ export default function PhotographyPage() {
 
         .ph-hero {
           position: relative;
-          background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.55)),
-                      url('/images/photography/DSC_6557.JPG') center/cover no-repeat;
+          background: #0a0a0a;
           padding: 140px 64px 100px;
           overflow: hidden;
           border-bottom: 1px solid #1a1a1a;
         }
+        .ph-hero-image {
+          object-fit: cover;
+          z-index: 0;
+        }
+        .ph-hero-scrim {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.55));
+        }
         .ph-hero-ghost {
-          position: absolute; top: 50%; left: 50%;
+          position: absolute; z-index: 2; top: 50%; left: 50%;
           transform: translate(-50%, -50%);
           font-family: 'Bebas Neue', Impact, sans-serif;
           font-size: clamp(80px, 16vw, 240px);
@@ -112,7 +121,7 @@ export default function PhotographyPage() {
           pointer-events: none; user-select: none; line-height: 1;
         }
         .ph-hero-inner {
-          position: relative;
+          position: relative; z-index: 2;
           max-width: 1200px; margin: 0 auto;
           display: grid; grid-template-columns: 1fr auto;
           gap: 64px; align-items: center;
@@ -239,6 +248,15 @@ export default function PhotographyPage() {
 
       {/* ── HERO ── */}
       <section className="ph-hero">
+        <Image
+          className="ph-hero-image"
+          src="/images/photography/DSC_6557.JPG"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="ph-hero-scrim" aria-hidden="true" />
         <div className="ph-hero-ghost" aria-hidden="true">PHOTOGRAPHY</div>
         <div className="ph-hero-inner">
           <div>
@@ -412,7 +430,7 @@ export default function PhotographyPage() {
       <section className="ph-cta">
         <div className="ph-cta-glow" aria-hidden="true" />
         <h2 className="ph-cta-h2">Ready to Book a <em>Photo Shoot?</em></h2>
-        <p className="ph-cta-sub">Tell us about your project and we'll put together a custom quote — fast.</p>
+        <p className="ph-cta-sub">Tell us about your project and we&apos;ll put together a custom quote — fast.</p>
         <div className="ph-cta-actions">
           <Link href="/contact" className="btn-red">Get a Quote</Link>
           <a href="tel:2102799442" className="ph-cta-phone">210-279-9442</a>

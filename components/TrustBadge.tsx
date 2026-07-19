@@ -38,6 +38,7 @@ export default function TrustBadge() {
     <div
       ref={containerRef}
       className="mt-6 flex justify-center min-h-[80px]"
+      role="region"
       aria-label="Verified Google reviews badge"
     />
   );

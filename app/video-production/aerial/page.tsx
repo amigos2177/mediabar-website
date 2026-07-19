@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
 
@@ -62,9 +63,11 @@ export default function AerialPage() {
       <style>{`
         :root{--red:#CC0000;--gold:#C9A84C;--black:#0A0A0A;--dark:#111111;--dark2:#181818}
         .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}.reveal.revealed{opacity:1;transform:none}
-        .page-hero{position:relative;background:linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.55)),url('/images/hero-aerial.jpg') center/cover no-repeat;padding:140px 64px 100px;overflow:hidden;border-bottom:1px solid #1a1a1a}
-        .hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(120px,18vw,260px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
-        .hero-inner{position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
+        .page-hero{position:relative;background:#0a0a0a;padding:140px 64px 100px;overflow:hidden;border-bottom:1px solid #1a1a1a}
+        .page-hero-image{object-fit:cover;z-index:0}
+        .page-hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.55))}
+        .hero-bg-text{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(120px,18vw,260px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
+        .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
         .breadcrumb{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#444;margin-bottom:24px;display:flex;align-items:center;gap:8px}
         .breadcrumb a{color:#B0B0B0;transition:color .15s}.breadcrumb a:hover{color:#fff}.breadcrumb span{color:#2a2a2a}
         .eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
@@ -141,6 +144,15 @@ export default function AerialPage() {
       `}</style>
 
       <section className="page-hero">
+        <Image
+          className="page-hero-image"
+          src="/images/hero-aerial.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="page-hero-scrim" aria-hidden="true" />
         <div className="hero-bg-text" aria-hidden="true">AERIAL</div>
         <div className="hero-inner">
           <div>
@@ -171,7 +183,7 @@ export default function AerialPage() {
             <div className="reveal">
               <p className="section-label">What We Do</p>
               <h2 className="section-h2">The View From <em>Above</em></h2>
-              <p className="body-text">Aerial footage changes the way audiences see a subject. A single sweeping drone shot can establish scale, reveal context, and create a cinematic quality that ground cameras simply can't match. Done right, it's invisible — it serves the story rather than showing off.</p>
+              <p className="body-text">Aerial footage changes the way audiences see a subject. A single sweeping drone shot can establish scale, reveal context, and create a cinematic quality that ground cameras simply can&apos;t match. Done right, it&apos;s invisible — it serves the story rather than showing off.</p>
               <p className="body-text">We integrate aerial seamlessly with ground-level production. Our FAA Part 107 certified pilots operate cinema-grade drone systems and work in coordination with your ground crew to ensure every aerial shot matches the look of your overall production.</p>
             </div>
             <div className="reveal">
@@ -271,7 +283,7 @@ export default function AerialPage() {
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />
         <h2 className="cta-h2">Ready To <em>Fly?</em></h2>
-        <p className="cta-sub">Tell us about your aerial production needs and we'll put together a custom plan.</p>
+        <p className="cta-sub">Tell us about your aerial production needs and we&apos;ll put together a custom plan.</p>
         <div className="cta-actions">
           <Link href="/contact" className="btn-red" style={{ padding: '16px 48px', fontSize: '13px' }}>Get a Quote</Link>
           <a href="tel:2102799442" className="cta-phone">210-279-9442</a>

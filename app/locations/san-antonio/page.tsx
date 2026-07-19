@@ -237,7 +237,7 @@ export default function SanAntonioPage() {
               {clients.map((client) => (
                 <div className="sa-client" key={client.name}>
                   {client.logo ? (
-                    <Image src={client.logo} alt={client.name} width={160} height={54} />
+                    <Image src={client.logo} alt={client.name} width={160} height={54} sizes="160px" />
                   ) : (
                     <span className="sa-client-name">{client.name}</span>
                   )}

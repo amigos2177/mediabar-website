@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
 
@@ -62,9 +63,11 @@ export default function FoodPage() {
       <style>{`
         :root{--red:#CC0000;--gold:#C9A84C;--black:#0A0A0A;--dark:#111111;--dark2:#181818}
         .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}.reveal.revealed{opacity:1;transform:none}
-        .page-hero{position:relative;background:linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.55)),url('/images/hero-food.jpg') center/cover no-repeat;padding:140px 64px 100px;overflow:hidden;border-bottom:1px solid #1a1a1a}
-        .hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(140px,22vw,320px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
-        .hero-inner{position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
+        .page-hero{position:relative;background:#0a0a0a;padding:140px 64px 100px;overflow:hidden;border-bottom:1px solid #1a1a1a}
+        .page-hero-image{object-fit:cover;z-index:0}
+        .page-hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.55))}
+        .hero-bg-text{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(140px,22vw,320px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
+        .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
         .breadcrumb{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#444;margin-bottom:24px;display:flex;align-items:center;gap:8px}
         .breadcrumb a{color:#B0B0B0;transition:color .15s}.breadcrumb a:hover{color:#fff}.breadcrumb span{color:#2a2a2a}
         .eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
@@ -141,6 +144,15 @@ export default function FoodPage() {
       `}</style>
 
       <section className="page-hero">
+        <Image
+          className="page-hero-image"
+          src="/images/hero-food.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="page-hero-scrim" aria-hidden="true" />
         <div className="hero-bg-text" aria-hidden="true">FOOD</div>
         <div className="hero-inner">
           <div>
@@ -172,7 +184,7 @@ export default function FoodPage() {
               <p className="section-label">What We Do</p>
               <h2 className="section-h2">Making Food <em>Irresistible</em> On Screen</h2>
               <p className="body-text">Food video is a highly specialized craft. The gap between food that photographs beautifully and food that looks appetizing in motion is enormous — and it requires a team that understands culinary styling, the right lighting for specific textures, and the camera movement that builds anticipation.</p>
-              <p className="body-text">We've produced food and beverage video for HEB, Unilever, and dozens of restaurant groups across San Antonio and Texas. From 6-second social clips to 60-second broadcast spots, we create food content that makes people hungry.</p>
+              <p className="body-text">We&apos;ve produced food and beverage video for HEB, Unilever, and dozens of restaurant groups across San Antonio and Texas. From 6-second social clips to 60-second broadcast spots, we create food content that makes people hungry.</p>
               <p className="body-text">Running a restaurant? See our guide to <Link href="/blog/restaurant-video-production-san-antonio" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>restaurant video production in San Antonio</Link>.</p>
             </div>
             <div className="reveal">
@@ -274,7 +286,7 @@ export default function FoodPage() {
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />
         <h2 className="cta-h2">Ready To <em>Look Delicious?</em></h2>
-        <p className="cta-sub">Tell us about your food video project and we'll put together a custom proposal.</p>
+        <p className="cta-sub">Tell us about your food video project and we&apos;ll put together a custom proposal.</p>
         <div className="cta-actions">
           <Link href="/contact" className="btn-red" style={{ padding: '16px 48px', fontSize: '13px' }}>Start Your Project</Link>
           <a href="tel:2102799442" className="cta-phone">210-279-9442</a>

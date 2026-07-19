@@ -37,7 +37,12 @@ export default function GoogleReviews() {
   return (
     <section className="bg-[#1A1A1A] px-6 pt-20 pb-20">
       <div className="mx-auto max-w-5xl">
-        <div ref={containerRef} className="mt-12 min-h-[320px]" aria-label="Google customer reviews" />
+        <div
+          ref={containerRef}
+          className="mt-12 min-h-[320px]"
+          role="region"
+          aria-label="Google customer reviews"
+        />
       </div>
     </section>
   );

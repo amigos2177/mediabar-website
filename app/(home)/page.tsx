@@ -138,6 +138,7 @@ const clients = [
 
 export default function HomePage() {
   const [heroVideoReady, setHeroVideoReady] = useState(false)
+  const [heroVideoEnabled, setHeroVideoEnabled] = useState(false)
   const [reduceMotion, setReduceMotion] = useState(false)
 
   useEffect(() => {
@@ -145,6 +146,19 @@ export default function HomePage() {
     const updateMotionPreference = () => setReduceMotion(motionPreference.matches)
     updateMotionPreference()
     motionPreference.addEventListener('change', updateMotionPreference)
+
+    let videoDelay = 0
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean }
+    }).connection
+    const shouldLoadBackgroundVideo = (
+      !motionPreference.matches
+      && !connection?.saveData
+      && !window.matchMedia('(max-width: 768px)').matches
+    )
+    if (shouldLoadBackgroundVideo) {
+      videoDelay = window.setTimeout(() => setHeroVideoEnabled(true), 1800)
+    }
 
     const els = document.querySelectorAll<HTMLElement>('[data-reveal]')
     const obs = new IntersectionObserver(
@@ -165,6 +179,7 @@ export default function HomePage() {
     return () => {
       obs.disconnect()
       clearTimeout(fallback)
+      window.clearTimeout(videoDelay)
       motionPreference.removeEventListener('change', updateMotionPreference)
     }
   }, [])
@@ -235,7 +250,7 @@ export default function HomePage() {
         .hero-poster {
           position: absolute;
           inset: 0;
-          background: url('/images/hero-aerial.jpg') center / cover no-repeat;
+          object-fit: cover;
         }
         .hero-video-wrap iframe {
           position: absolute;
@@ -380,7 +395,7 @@ export default function HomePage() {
           font-weight: 700;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: #3a3a3a;
+          color: #7f7f7f;
           margin-bottom: 22px;
         }
         .clients-grid {
@@ -465,7 +480,7 @@ export default function HomePage() {
           font-weight: 700;
           letter-spacing: .2em;
           text-transform: uppercase;
-          color: var(--red);
+          color: #ff4d4d;
           margin-bottom: 18px;
         }
         .featured-title {
@@ -515,7 +530,7 @@ export default function HomePage() {
         .featured-stat span {
           display: block;
           margin-top: 6px;
-          color: #777;
+          color: #999;
           font-size: 8px;
           font-weight: 700;
           letter-spacing: .13em;
@@ -541,7 +556,7 @@ export default function HomePage() {
           font-weight: 700;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: var(--red);
+          color: #ff4d4d;
           margin-bottom: 14px;
         }
         .section-title {
@@ -607,7 +622,7 @@ export default function HomePage() {
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 0.14em;
-          color: #5a5a5a;
+          color: #8a8a8a;
           margin-bottom: 10px;
         }
         .service-title {
@@ -628,7 +643,7 @@ export default function HomePage() {
           font-weight: 700;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: #5a5a5a;
+          color: #8a8a8a;
           margin-top: 20px;
           display: flex;
           align-items: center;
@@ -746,7 +761,7 @@ export default function HomePage() {
         }
         .process-num {
           font-family: 'Bebas Neue', Impact, sans-serif;
-          color: var(--red);
+          color: #ff4d4d;
           font-size: 19px;
           letter-spacing: .08em;
         }
@@ -759,7 +774,7 @@ export default function HomePage() {
         }
         .process-step p {
           grid-column: 2 / 4;
-          color: #777;
+          color: #999;
           font-size: 13px;
           line-height: 1.55;
           margin-top: -12px;
@@ -844,7 +859,7 @@ export default function HomePage() {
           font-weight: 700;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: #555;
+          color: #888;
           margin-top: 10px;
         }
 
@@ -947,8 +962,15 @@ export default function HomePage() {
       {/* ─── 1. HERO ─── */}
       <section className="hero">
         <div className="hero-video-wrap">
-          <div className="hero-poster" aria-hidden="true" />
-          {!reduceMotion && (
+          <Image
+            className="hero-poster"
+            src="/images/hero-aerial.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+          />
+          {heroVideoEnabled && !reduceMotion && (
             <iframe
               className={heroVideoReady ? 'ready' : undefined}
               src="https://player.vimeo.com/video/1077104073?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&controls=0"

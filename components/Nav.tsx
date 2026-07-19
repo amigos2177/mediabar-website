@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -32,18 +32,48 @@ const TOP_LINKS = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const overlayRef = useRef<HTMLDivElement>(null)
 
   const close = useCallback(() => setOpen(false), [])
 
-  // Lock body scroll when overlay is open
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
+    if (!open) return
+
+    document.body.style.overflow = 'hidden'
+    const menuButton = menuButtonRef.current
+    const overlay = overlayRef.current
+    const focusable = overlay?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    )
+    overlay?.querySelector<HTMLElement>('[aria-label="Close menu"]')?.focus()
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        close()
+        return
+      }
+
+      if (event.key !== 'Tab' || !focusable?.length) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
     }
-    return () => { document.body.style.overflow = '' }
-  }, [open])
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = ''
+      document.removeEventListener('keydown', handleKeyDown)
+      menuButton?.focus()
+    }
+  }, [close, open])
 
   return (
     <>
@@ -255,9 +285,11 @@ export default function Nav() {
 
         {/* Hamburger — mobile only */}
         <button
+          ref={menuButtonRef}
           className="mbp-burger"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="mbp-burger-line" />
@@ -268,7 +300,14 @@ export default function Nav() {
 
       {/* Mobile overlay */}
       {open && (
-        <div className="mbp-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div
+          ref={overlayRef}
+          id="mobile-navigation"
+          className="mbp-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="mobile-navigation-title"
+        >
           {/* Tap outside to close — sits behind content */}
           <div
             style={{ position: 'fixed', inset: 0, zIndex: -1 }}
@@ -290,7 +329,7 @@ export default function Nav() {
 
           <div className="mbp-overlay-body">
             {/* Top-level pages */}
-            <p className="mbp-overlay-section-label">Menu</p>
+            <p id="mobile-navigation-title" className="mbp-overlay-section-label">Menu</p>
             {TOP_LINKS.map((l) => (
               <Link key={l.href} href={l.href} className="mbp-overlay-link" onClick={close}>
                 {l.label}

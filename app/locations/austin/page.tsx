@@ -234,7 +234,7 @@ export default function AustinPage() {
             <div className="atx-client-grid">
               {clients.map((client) => (
                 <div className="atx-client" key={client.name}>
-                  <Image src={client.logo} alt={client.name} width={160} height={54} />
+                  <Image src={client.logo} alt={client.name} width={160} height={54} sizes="160px" />
                 </div>
               ))}
             </div>

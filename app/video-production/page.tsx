@@ -298,7 +298,7 @@ export default function VideoProductionPage() {
             <div className="vps-client-grid">
               {clients.map((client) => (
                 <div className="vps-client" key={client.name}>
-                  <Image src={client.logo} alt={client.name} width={160} height={54} />
+                  <Image src={client.logo} alt={client.name} width={160} height={54} sizes="160px" />
                 </div>
               ))}
             </div>

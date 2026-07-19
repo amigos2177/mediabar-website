@@ -1,0 +1,631 @@
+.page {
+  --client-red: #d20b0b;
+  --client-gold: #c9a84c;
+  --client-black: #080808;
+  --client-panel: #111;
+  --client-line: rgba(255, 255, 255, 0.12);
+  --client-muted: #aaa;
+  overflow: clip;
+  background: var(--client-black);
+  color: #fff;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--client-red);
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.hero {
+  position: relative;
+  padding: 10rem clamp(1.5rem, 5vw, 5rem) 0;
+  border-bottom: 1px solid var(--client-line);
+  background:
+    linear-gradient(90deg, rgba(210, 11, 11, 0.09), transparent 36%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08), transparent 28%);
+}
+
+.hero::after {
+  position: absolute;
+  inset: auto clamp(1.5rem, 5vw, 5rem) 0;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, var(--client-red), transparent 32%);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: end;
+  width: min(100%, 92rem);
+  margin: 0 auto;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.heroCopy h1 {
+  max-width: 10ch;
+  margin: 1.2rem 0 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(5rem, 9.8vw, 10rem);
+  font-weight: 400;
+  letter-spacing: 0.012em;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.heroCopy h1 span {
+  display: block;
+  margin-top: 0.15em;
+  color: var(--client-gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.58em;
+  font-style: italic;
+  line-height: 0.95;
+  text-transform: none;
+}
+
+.heroIntro {
+  padding-bottom: 0.4rem;
+}
+
+.heroIntro > p {
+  margin: 0 0 2rem;
+  color: #c6c6c6;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.72;
+}
+
+.textLink,
+.caseLink {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.textLink span,
+.caseLink span {
+  color: var(--client-red);
+  font-size: 1rem;
+  transition: transform 160ms ease;
+}
+
+.textLink:hover span,
+.textLink:focus-visible span,
+.caseLink:hover span,
+.caseLink:focus-visible span {
+  transform: translateX(0.25rem);
+}
+
+.proofBar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(100%, 102rem);
+  margin: 0 auto;
+  border-top: 1px solid var(--client-line);
+  border-left: 1px solid var(--client-line);
+}
+
+.proofBar > div {
+  display: flex;
+  min-height: 8.75rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.6rem 2rem;
+  border-right: 1px solid var(--client-line);
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.proofBar strong {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.proofBar span {
+  margin-top: 0.55rem;
+  color: #8d8d8d;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.logoSection,
+.industrySection,
+.registry {
+  width: min(100%, 102rem);
+  margin: 0 auto;
+  padding: clamp(5.5rem, 9vw, 9rem) clamp(1.5rem, 5vw, 5rem);
+}
+
+.sectionIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.55fr);
+  column-gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+}
+
+.sectionIntro .eyebrow {
+  grid-column: 1 / -1;
+}
+
+.sectionIntro h2,
+.registryHeader h2,
+.cta h2 {
+  margin: 0.9rem 0 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3.2rem, 6vw, 6.25rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.sectionIntro > p:last-child {
+  margin: 0;
+  color: var(--client-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--client-line);
+  border-left: 1px solid var(--client-line);
+}
+
+.logoCard {
+  display: flex;
+  position: relative;
+  min-height: clamp(10rem, 16vw, 14rem);
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--client-line);
+  border-bottom: 1px solid var(--client-line);
+  background: #0d0d0d;
+}
+
+.logoCard img {
+  object-fit: contain;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  filter: grayscale(1) brightness(0.82);
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.logoCard:hover img {
+  filter: grayscale(0) brightness(1);
+  transform: scale(1.025);
+}
+
+.clientName {
+  color: #bdbdbd;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.caseStudy {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(23rem, 0.72fr);
+  min-height: 46rem;
+  border-top: 1px solid var(--client-line);
+  border-bottom: 1px solid var(--client-line);
+}
+
+.caseImage {
+  position: relative;
+  min-height: 38rem;
+  overflow: hidden;
+}
+
+.caseImage::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.78));
+}
+
+.caseImage img {
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.caseStudy:hover .caseImage img {
+  transform: scale(1.02);
+}
+
+.caseImageLabel {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  inset: auto 2rem 2rem;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.caseCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3rem, 6vw, 6rem);
+  background:
+    linear-gradient(150deg, rgba(210, 11, 11, 0.11), transparent 45%),
+    var(--client-panel);
+}
+
+.caseCopy h2 {
+  margin: 1rem 0 1.7rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3.5rem, 6.2vw, 6.4rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.87;
+  text-transform: uppercase;
+}
+
+.caseCopy h2 span {
+  display: block;
+  margin-top: 0.15em;
+  color: var(--client-gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.68em;
+  font-style: italic;
+  text-transform: none;
+}
+
+.caseCopy > p:not(.eyebrow) {
+  margin: 0;
+  color: #b7b7b7;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.caseMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 2.4rem 0 2.2rem;
+  border-top: 1px solid var(--client-line);
+  border-left: 1px solid var(--client-line);
+}
+
+.caseMetrics div {
+  display: flex;
+  min-height: 7.4rem;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding: 1rem;
+  border-right: 1px solid var(--client-line);
+  border-bottom: 1px solid var(--client-line);
+}
+
+.caseMetrics dt {
+  margin-top: 0.4rem;
+  color: #777;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.caseMetrics dd {
+  margin: 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.industrySection {
+  border-bottom: 1px solid var(--client-line);
+}
+
+.industryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--client-line);
+  border-left: 1px solid var(--client-line);
+}
+
+.industryCard {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  gap: 1.2rem;
+  min-height: 14rem;
+  align-items: start;
+  padding: clamp(1.6rem, 3vw, 2.6rem);
+  border-right: 1px solid var(--client-line);
+  border-bottom: 1px solid var(--client-line);
+  background: #0d0d0d;
+  color: inherit;
+  text-decoration: none;
+  transition: background 180ms ease;
+}
+
+.industryCard:hover,
+.industryCard:focus-visible {
+  background: #151515;
+}
+
+.industryNumber {
+  color: var(--client-red);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.industryCard h3 {
+  margin: 0 0 0.85rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.industryCard p {
+  max-width: 32rem;
+  margin: 0;
+  color: #999;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.industryArrow {
+  color: #666;
+  font-size: 1.2rem;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.industryCard:hover .industryArrow,
+.industryCard:focus-visible .industryArrow {
+  color: var(--client-red);
+  transform: translate(0.18rem, -0.18rem);
+}
+
+.registry {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.68fr) minmax(0, 1.32fr);
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.registryHeader h2 {
+  max-width: 8ch;
+}
+
+.registryGrid {
+  border-top: 1px solid var(--client-line);
+}
+
+.registryGroup {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 1.3fr);
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--client-line);
+}
+
+.registryGroup h3 {
+  margin: 0;
+  color: var(--client-gold);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.registryGroup ul {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.registryGroup li {
+  color: #d0d0d0;
+  font-size: 0.96rem;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) auto;
+  gap: 3rem;
+  align-items: end;
+  padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 7vw, 8rem);
+  border-top: 1px solid var(--client-line);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(210, 11, 11, 0.17), transparent 38%),
+    #101010;
+}
+
+.cta h2 {
+  max-width: 12ch;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.7rem;
+  border: 1px solid transparent;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.primaryButton {
+  background: var(--client-red);
+  color: #fff;
+}
+
+.primaryButton:hover,
+.primaryButton:focus-visible {
+  background: #ad0000;
+}
+
+.secondaryButton {
+  border-color: rgba(255, 255, 255, 0.36);
+  color: #fff;
+}
+
+.secondaryButton:hover,
+.secondaryButton:focus-visible {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 980px) {
+  .heroGrid,
+  .sectionIntro,
+  .registry,
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .heroIntro,
+  .sectionIntro > p:last-child {
+    max-width: 42rem;
+  }
+
+  .proofBar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proofBar > div {
+    border-bottom: 1px solid var(--client-line);
+  }
+
+  .logoGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .caseStudy {
+    grid-template-columns: 1fr;
+  }
+
+  .caseImage {
+    min-height: 34rem;
+  }
+
+  .caseCopy {
+    padding: 4rem clamp(1.5rem, 7vw, 5rem);
+  }
+
+  .registryHeader h2 {
+    max-width: 11ch;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 8rem;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(4.4rem, 22vw, 7rem);
+  }
+
+  .proofBar {
+    margin-inline: 0;
+  }
+
+  .proofBar > div {
+    min-height: 7.5rem;
+    padding: 1.3rem;
+  }
+
+  .logoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .logoCard {
+    min-height: 9.5rem;
+  }
+
+  .logoCard img {
+    padding: 2rem 1.4rem;
+  }
+
+  .logoCard:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .caseImage {
+    min-height: 27rem;
+  }
+
+  .caseMetrics,
+  .industryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .caseMetrics {
+    margin-right: 0;
+  }
+
+  .caseMetrics div {
+    min-height: 6.2rem;
+  }
+
+  .industryCard {
+    grid-template-columns: 2.2rem minmax(0, 1fr) auto;
+    min-height: 0;
+  }
+
+  .registryGroup {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .ctaActions {
+    display: grid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoCard img,
+  .caseImage img,
+  .textLink span,
+  .caseLink span,
+  .industryArrow {
+    transition: none;
+  }
+}

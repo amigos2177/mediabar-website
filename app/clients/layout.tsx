@@ -2,8 +2,8 @@ import { buildMetadata } from '@/lib/seo'
 import { BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Our Clients | San Antonio Video Production',
-  description: "Media Bar Productions has produced video for the Spurs, H-E-B, USAA, Frost Bank, and more. See the San Antonio and Texas brands we've worked with.",
+  title: 'Clients | Media Bar Productions',
+  description: 'See organizations and industries that trust Media Bar Productions for corporate, commercial, event, medical, and campaign video across Texas.',
   path: '/clients',
 })
 

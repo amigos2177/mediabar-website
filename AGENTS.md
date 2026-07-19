@@ -141,7 +141,7 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Added 14 new production, final-still, team, award, and founder assets under `public/images/media-library/`; use `docs/image-library.md` before selecting imagery so redesigned pages do not repeat the same photographs.
 - Released to production July 18, 2026 as `dpl_5G7WrNycepuARyqySBsPGvKKF2RV`; the canonical Events route returns HTTP 200 with the new content, metadata, and concert performance still. Source is committed and pushed as `9874df6`, with this release note following.
 
-## July 18, 2026 SEO implementation batch — preview pending
+## July 18, 2026 SEO implementation batch — released
 - Converted every VideoObject `uploadDate` to a complete ISO 8601 datetime with the correct Central Time offset.
 - Replaced internal links that depended on redirects with their canonical service and portfolio routes.
 - Repaired two legacy blog service links and completed four truncated blog excerpts.
@@ -149,15 +149,21 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Refined Search Console priority metadata and San Antonio body copy on the video-production hub plus corporate, events, live-streaming, and motion-graphics pages.
 - Added `/careers` as a truthful Crew & Careers landing page, remapped legacy job and crew URLs to it, and added it to the footer and sitemap.
 - Verification: the webpack production build passes all 58 routes; targeted ESLint passes. Full-repository lint retains pre-existing apostrophe errors on unrelated legacy pages.
-- Preview deployment is the next and final gate for this batch. Do not promote it to production until Ruben reviews it.
+- Released to production July 18, 2026 as `dpl_9YtJezQWmEkrmfA59A2uuHZtSmn1`; source is committed and pushed as `65569ec`.
+
+## July 18, 2026 content consolidation and video watch batch — preview ready
+- Added 12 static film watch pages under `/work/watch/[slug]` using the verified Vimeo metadata in `data/work-videos.json`, with canonical metadata, breadcrumbs, VideoObject schema, responsive players, and video sitemap entries.
+- Added transcript support to the curated project model but intentionally left transcripts empty because no verified source transcripts exist for these films.
+- Added natural San Antonio service copy plus useful service, article, location, and work links on post-production, medical, and real-estate pages.
+- Added curated related-reading cards to every retained blog post.
+- Consolidated five thin or overlapping legacy posts into the stronger AI, corporate multi-format, and hire-local keepers. Direct 301 redirects cover both the retired article URLs and their legacy `/News/Get` routes.
+- Verification: targeted ESLint, TypeScript, `git diff --check`, and the webpack production build pass. The build generates 65 pages. Local desktop and 390px checks show no horizontal overflow, Vimeo playback loads correctly, and the existing logo aspect-ratio warning is unchanged.
+- Protected preview `dpl_BNTH5QdMoTcFpePSaUKgt4rm5y2q` is ready at `https://mediabar-website-ow9hz9d68-amigos2177s-projects.vercel.app`. Authenticated preview checks return HTTP 200 for the new watch and medical pages, and the retired corporate article returns a direct 301 to its keeper. Code is committed locally as `2e5b5e6`; it is not pushed or promoted.
 
 ## Remaining work
-- **Blog content consolidation**: several thin or overlapping posts still need an editorial keep/merge/noindex decision.
-- **Video transcripts/watch pages**: add only when factual source transcripts and project details are available.
 - **Client logo optimization**: convert the remaining intentional `<img>` logo treatments to `next/image` where sizing behavior permits.
-- **/work video captions**: verify caption availability in Vimeo and add transcript/caption links where source material exists.
+- **Video transcripts and captions**: verify caption availability in Vimeo and add reviewed transcript or caption links only where source material exists.
 - **GSC sitemap check**: Verify Google Search Console sitemap 'discovered pages' count (~1 week after May 23) — showed 36 vs ~38 routes; if still short, a route is missing from sitemap.ts.
-- **Service page body copy**: add natural "San Antonio" mentions to post-production, real-estate, and medical service pages.
 - **Search and analytics activation**: after deployment, confirm Vercel Analytics and Speed Insights, then complete GSC, Bing Webmaster Tools, and IndexNow account actions.
 
 ## How to update this file

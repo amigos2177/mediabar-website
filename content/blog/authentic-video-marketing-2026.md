@@ -2,6 +2,7 @@
 title: "Authentic Video Marketing in 2026"
 slug: "authentic-video-marketing-2026"
 date: "2026-06-23"
+updated: "2026-07-18"
 excerpt: "AI made polished video cheap and everywhere—so trust dropped. Here's when authentic video wins, when polish still pays, and how Texas brands decide."
 featuredImage: /images/blog/authentic-video-marketing-2026.png
 ---
@@ -10,7 +11,7 @@ Open any feed in 2026 and you'll see it: a wall of glossy, AI-assembled video th
 
 So "authentic" became the word of the year in marketing. Real people. Real moments. Proof over polish. And mostly, that's right. But it's only half the story — and the half nobody tells you is where it gets expensive to be wrong.
 
-We're Media Bar Productions. We've spent more than thirteen years making video here in San Antonio — three Emmys and fifteen Tellys along the way — for Texas brands that need their video to do a job, not just look nice. Here's the honest version of the authenticity conversation: when raw, real video wins, when polish still pays for itself, and how to decide without setting your budget on fire.
+We're Media Bar Productions. We've been making video here in San Antonio since 2011, earning three Emmys and fifteen Tellys along the way, for Texas brands that need their video to do a job, not just look nice. Here's the honest version of the authenticity conversation: when raw, real video wins, when polish still pays for itself, and how to decide without setting your budget on fire.
 
 <style>
 .mb-audio{
@@ -51,7 +52,7 @@ We're Media Bar Productions. We've spent more than thirteen years making video h
     <summary>Audio transcript</summary>
     <p>Let me tell you what changed in 2026. Video got cheap. AI tools can spin up something polished in minutes, and suddenly every feed looks the same — glossy, smooth, and somehow forgettable. Here's the part that surprised a lot of people. All that polish started working against the brands paying for it. When audiences sense a video was churned out by a machine, their trust actually drops.</p>
     <p>So the whole industry swung toward one word. Authentic. Real people. Real moments. And mostly, that's the right instinct. But it's only half the story — and the other half is where it gets expensive to guess wrong.</p>
-    <p>I'm Ruben, with Media Bar Productions. We've spent more than thirteen years making video here in San Antonio. Three Emmys, fifteen Tellys, and a lot of Texas brands later, here's the honest version nobody tells you.</p>
+    <p>I'm Ruben, with Media Bar Productions. We've been making video here in San Antonio since 2011. Three Emmys, fifteen Tellys, and a lot of Texas brands later, here's the honest version nobody tells you.</p>
     <p>First, a trap. When people hear authentic, they think it means grab a phone, shoot in the hallway, call it raw. That's not authentic. That's just bad video wearing a good excuse. Real and intentional — that's the goal. Real people, lit so you can see their faces, mic'd so you can hear them, edited so it actually holds attention.</p>
     <p>Now, when does raw, human video win? Social. Recruiting. Behind the scenes. Testimonials. Anywhere trust and relatability carry the result, real beats slick every time. And it's faster, and friendlier on the budget.</p>
     <p>But there's a flip side the authenticity crowd skips. Some jobs need polish, because the polish is the message. Your homepage hero film. A commercial running against national brands. Healthcare, finance, luxury — anywhere credibility is the whole purchase. There, viewers read production quality as proof you're the real deal.</p>

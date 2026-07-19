@@ -94,8 +94,8 @@ export default function AboutPage() {
             <span>Telly Awards</span>
           </div>
           <div>
-            <strong>13+</strong>
-            <span>Years producing</span>
+            <strong>2011</strong>
+            <span>Producing since</span>
           </div>
         </section>
 
@@ -268,7 +268,7 @@ export default function AboutPage() {
           <p className={styles.eyebrow}>Your production partner</p>
           <h2>Bring us the idea.<br /><em>We&apos;ll build the rest.</em></h2>
           <div className={styles.ctaActions}>
-            <Link href="/contact/project-planner" className={styles.primaryAction}>Plan your project</Link>
+            <Link href="/project-planner" className={styles.primaryAction}>Plan your project</Link>
             <Link href="/work" className={styles.secondaryAction}>See our work <span>↗</span></Link>
           </div>
         </section>

@@ -2,6 +2,7 @@
 title: "Healthcare Provider Q&A Video"
 slug: "healthcare-provider-video"
 date: "2026-06-17"
+updated: "2026-07-18"
 excerpt: "Healthcare provider video that turns Q&A clips into patient trust. How Texas practices use short, on-camera answers to win new patients."
 featuredImage: /images/blog/healthcare-provider-video.png
 faqs:
@@ -57,7 +58,7 @@ This piece zooms in on the single highest-impact format for winning that moment:
   <details class="mb-transcript">
     <summary>Audio transcript</summary>
     <p>Hi, I'm Ruben Garcia, owner of Media Bar Productions here in San Antonio, Texas. And here's something most healthcare practices miss. The patient decides whether to trust you long before they ever pick up the phone. They search a symptom, they watch a few clips, they read a couple of reviews… and they've made up their mind. If you're not part of that moment, you don't exist for them.</p>
-    <p>The fix is simpler than you'd think. It's one of your providers, on camera, answering a single question in under a minute. That's it. We've spent thirteen years filming people across Texas, and this is the most powerful format we see in healthcare right now.</p>
+    <p>The fix is simpler than you'd think. It's one of your providers, on camera, answering a single question in under a minute. That's it. We've been filming people across Texas since 2011, and this is the most powerful format we see in healthcare right now.</p>
     <p>Why does it work? Because patients have gotten sharp. They can spot a scripted spokesperson and a stock-footage clinic in half a second, and they scroll right past. What stops them is a real person who clearly knows their stuff and talks like a human being. A doctor answering, does this hurt. A dentist explaining what to bring to a first visit. Thirty to sixty seconds, honest and clear. Each answer earns a little more trust… and trust is what fills your schedule.</p>
     <p>Now here's the part that makes the budget work. You don't film these one at a time. You batch them. We sit one provider down for a half day, run through the questions patients ask most, and walk away with a dozen or more clips. For about what a single polished brand film would cost, you've banked a whole quarter of content. Your website, your social feeds, your Google profile, even the screens in your waiting room.</p>
     <p>And don't worry about compliance. Provider education videos hold no patient information, and any patient who appears signs a release first. We plan the whole day with your team, so nothing protected ever lands on camera. With an Emmy and a Telly to our name, we know how to run a careful shoot… without it ever feeling stiff. A big part of our job is simply making your providers comfortable.</p>
@@ -102,7 +103,7 @@ Healthcare has guardrails that most marketing doesn't, and that's a feature, not
 
 Provider-led education videos are inherently safe: there's no patient information in a doctor explaining how a procedure works. When a real patient does appear, they sign a release before a single frame is shot, and we plan the day with your team so nothing protected ever lands on camera. We also caption everything, which keeps content accessible and keeps it watchable in a silent feed.
 
-None of this is legal advice, and your compliance team stays the final word — but after 13 years and an Emmy and Telly to show for it, we know how to get a careful, regulated shoot done without it feeling stiff. Part of our job is simply making providers comfortable, because a relaxed expert on camera is worth more than any script.
+None of this is legal advice, and your compliance team stays the final word. Since 2011, we have learned how to get a careful, regulated shoot done without it feeling stiff. Part of our job is simply making providers comfortable, because a relaxed expert on camera is worth more than any script.
 
 ## Why a Texas crew makes the difference
 

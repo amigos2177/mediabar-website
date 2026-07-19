@@ -155,7 +155,7 @@ export default function BlogPage() {
             <em>worth making?</em>
           </h2>
           <div className={styles.ctaActions}>
-            <Link href="/contact/project-planner" className={styles.primaryAction}>
+            <Link href="/project-planner" className={styles.primaryAction}>
               Plan your project
             </Link>
             <Link href="/work" className={styles.secondaryAction}>

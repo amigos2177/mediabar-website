@@ -2,6 +2,7 @@
 title: "Corporate Video: One Shoot, Many Cuts"
 slug: "corporate-video-multi-format-strategy"
 date: "2026-06-06"
+updated: "2026-07-18"
 excerpt: "One corporate video shoot can fuel months of content. See how Texas brands turn a single production day into social, web, and internal video."
 featuredImage: /images/blog/corporate-video-multi-format-strategy.png
 faqs:
@@ -17,7 +18,7 @@ faqs:
 
 Your audience does not watch video in one place anymore. The same message has to land on a phone screen during a coffee break, on your homepage above the fold, inside a sales deck, and on a lobby monitor at your next event. Shooting a separate video for each of those is slow and expensive. Shooting once and cutting smart is how the best brands keep up.
 
-At Media Bar Productions, we have spent more than 13 years helping Texas companies turn a single production day into a library of content. As an Emmy Award-winning team based in San Antonio, we plan every corporate shoot around one question: how many places can this footage go?
+At Media Bar Productions, we have helped Texas companies turn a single production day into a library of content since 2011. As an Emmy Award-winning team based in San Antonio, we plan every corporate shoot around one question: how many places can this footage go?
 
 Here is how the multi-format approach works, and how to make sure your next corporate video earns its budget for months, not minutes.
 
@@ -62,7 +63,7 @@ Here is how the multi-format approach works, and how to make sure your next corp
   <details class="mb-transcript">
     <summary>Audio transcript</summary>
     <p>Your audience doesn't watch video in one place anymore. The same message has to land on a phone during a coffee break, on a homepage above the fold, inside a sales deck, and on a lobby monitor at an event. Shooting a separate video for each of those is slow and expensive. Shooting once and cutting smart is how the best brands keep up.</p>
-    <p>At Media Bar Productions, we've spent more than thirteen years helping Texas companies turn a single production day into a library of content. As a San Antonio team with three Emmy Awards and fifteen Telly Awards, we plan every corporate shoot around one question: how many places can this footage go?</p>
+    <p>At Media Bar Productions, we've helped Texas companies turn a single production day into a library of content since 2011. As a San Antonio team with three Emmy Awards and fifteen Telly Awards, we plan every corporate shoot around one question: how many places can this footage go?</p>
     <p>Here's the mistake to avoid. A company shoots a beautiful two-minute hero video, then a week later asks an intern to crop it for TikTok. The pacing breaks, the graphics get cut off, and it reads as a recycled hand-me-down. You didn't just hurt the brand — you set fire to most of your production budget.</p>
     <p>The fix is what we call backward mapping. Before the cameras roll, you define every deliverable — the hero video, the vertical social cuts, the recruiting reel, the square email teaser — and build one shot list that feeds all of them. The footage is the asset. The formats are just how you spend it.</p>
     <p>On set, three things change. Shoot wider than feels natural, so editors have room to reframe for vertical and square. Capture far more B-roll than the hero edit needs — that's the fuel for months of short clips. And record pristine audio, because sound-off social cuts need accurate captions, and clean audio is what makes those captions possible.</p>

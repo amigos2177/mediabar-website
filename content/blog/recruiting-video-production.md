@@ -2,6 +2,7 @@
 title: "Recruiting Video Production: 2026 Guide"
 slug: "recruiting-video-production"
 date: "2026-06-08"
+updated: "2026-07-18"
 excerpt: "Recruiting video production helps Texas brands win talent. See how one shoot fuels employer-brand, culture, and hiring videos that actually convert."
 featuredImage: /images/blog/recruiting-video-production.png
 faqs:
@@ -19,7 +20,7 @@ The best candidates do their homework long before they hit "apply." They scroll 
 
 Recruiting video closes that gap. It shows talent who you actually are — the people, the work, and the reason your team shows up every morning — before the first interview is ever scheduled.
 
-We've spent more than 13 years producing video for Texas brands, earned an Emmy along the way, and watched recruiting video quietly become one of the highest-leverage productions a company can commission. Here's how to do it right in 2026.
+We've produced video for Texas brands since 2011, earned Emmy recognition along the way, and watched recruiting video quietly become one of the highest-leverage productions a company can commission. Here's how to do it right in 2026.
 
 <style>
 .mb-audio{
@@ -60,7 +61,7 @@ We've spent more than 13 years producing video for Texas brands, earned an Emmy 
     <summary>Audio transcript</summary>
     <p>Let me tell you what's really happening when you post a job opening. Before anyone fills out an application, they're already sizing you up. Your website. Your LinkedIn. Any video they can dig up. And within just a few seconds, they've decided whether your company feels like a place worth committing to.</p>
     <p>If all they find is a stock photo and a list of bullet points… you've probably already lost them.</p>
-    <p>I'm Ruben, with Media Bar Productions. After more than thirteen years making video here in San Antonio, and earning an Emmy and a Telly along the way, I've watched recruiting video quietly become one of the smartest moves a company can make when it's trying to hire. Not the flashiest move. The smartest.</p>
+    <p>I'm Ruben, with Media Bar Productions. Since starting this work in San Antonio in 2011 and earning Emmy and Telly recognition along the way, I've watched recruiting video quietly become one of the smartest moves a company can make when it's trying to hire. Not the flashiest move. The smartest.</p>
     <p>Here's why it works. A recruiting video shows people who you really are. Your team. Your space. The energy in the room, and the reason everyone shows up in the morning. It does three things a job post simply can't. It shows your culture, instead of just claiming it. It builds trust before the first interview ever happens. And it quietly does your screening for you… so the right people lean in, and the wrong fits move along.</p>
     <p>The real secret these days is authenticity. Proof over polish. A scripted, stock-footage culture video reads like a commercial. But a real employee, talking about real work, reads like the truth. And candidates can feel that difference instantly.</p>
     <p>Now here's the part that surprises people. This doesn't have to be expensive. One well-planned day of filming can become a whole library. A hero video for your careers page. Short vertical clips for LinkedIn and Instagram. Pieces aimed at the exact roles you're trying to fill. Even a warm welcome video for new hires. One shoot… working everywhere a candidate might find you.</p>

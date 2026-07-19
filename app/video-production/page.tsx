@@ -283,7 +283,7 @@ export default function VideoProductionPage() {
                 </div>
               </div>
               <div className="vps-proof" aria-label="Media Bar Productions credentials">
-                <div className="vps-proof-item"><div className="vps-proof-value">13+</div><div className="vps-proof-label">Years producing in Texas</div></div>
+                <div className="vps-proof-item"><div className="vps-proof-value">2011</div><div className="vps-proof-label">Producing in Texas since</div></div>
                 <div className="vps-proof-item"><div className="vps-proof-value">3</div><div className="vps-proof-label">Emmy Awards</div></div>
                 <div className="vps-proof-item"><div className="vps-proof-value">15</div><div className="vps-proof-label">Telly Awards</div></div>
                 <div className="vps-proof-item"><div className="vps-proof-value">One</div><div className="vps-proof-label">Team from brief to delivery</div></div>

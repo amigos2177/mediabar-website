@@ -3,6 +3,7 @@ title: "Healthcare Video Production in San Antonio"
 seoTitle: "San Antonio Healthcare Video Production Guide"
 slug: "healthcare-video-production-san-antonio"
 date: "2026-06-14"
+updated: "2026-07-18"
 excerpt: "HIPAA-ready healthcare video production in San Antonio — the 2026 playbook for clinician-led, patient-first video that builds trust and brings in patients."
 featuredImage: /images/blog/healthcare-video-production-san-antonio.png
 faqs:
@@ -63,7 +64,7 @@ The healthcare organizations winning that trust aren't the ones with the slickes
   <audio controls preload="none" src="/audio/blog/healthcare-video-production-san-antonio.mp3"></audio>
   <details class="mb-transcript">
     <summary>Audio transcript</summary>
-    <p>Here's something I've learned in thirteen years of making video in Texas. When a patient goes looking for a new doctor, they're not just comparing degrees. They're deciding who to trust with something personal. And most of that decision happens online, before anyone ever picks up the phone.</p>
+    <p>Here's something I've learned from making video in Texas since 2011. When a patient goes looking for a new doctor, they're not just comparing degrees. They're deciding who to trust with something personal. And most of that decision happens online, before anyone ever picks up the phone.</p>
     <p>So the real job of a healthcare video isn't to look impressive. It's to build trust. A patient who feels reassured before they walk in is more likely to book, more likely to show up, and more likely to follow through on their care. Video does that in a way a wall of text never can. They hear the tone. They see the face. They get a feel for the person they'll be sitting across from.</p>
     <p>That's why I always start with one question. What are your patients unsure about, or a little scared of, and which of your people can put them at ease? Because the most valuable asset you can build is a clinician on camera, talking plainly and warmly. Not a polished voiceover over stock footage. The real provider. Patients respond to that. They want authenticity, not gloss.</p>
     <p>And no, your doctors don't need to be performers. That's our problem to solve, not yours. We keep the set calm, the questions easy, and the whole thing painless. For most providers, it's just an interview-style setup where they answer questions like a patient's in the room.</p>
@@ -101,7 +102,7 @@ The instinct in healthcare marketing is to keep everything polished and corporat
 
 A clinician on camera, speaking directly and warmly, is the single most valuable asset you can build. It humanizes your practice, builds credibility, and — handled well — even helps recruit talent who want to see the people they'd be working alongside.
 
-The good news: your providers don't need to be performers. Our job is to make the set calm, the questions easy, and the process painless. We've spent thirteen years getting non-actors to relax on camera. For a clinician, that usually means a comfortable [interview-style setup](/video-production/interview) where they simply answer questions as if a patient were sitting across from them.
+The good news: your providers don't need to be performers. Our job is to make the set calm, the questions easy, and the process painless. We have been helping non-actors relax on camera since 2011. For a clinician, that usually means a comfortable [interview-style setup](/video-production/interview) where they simply answer questions as if a patient were sitting across from them.
 
 ## The Types of Healthcare Video That Actually Move the Needle
 
@@ -172,7 +173,7 @@ The entire process typically runs four to eight weeks depending on the scope, nu
 
 A clinical environment is a working one, and a crew that understands that is worth its weight. Our shoots get scheduled around patient care, kept tight and unobtrusive, and run by people comfortable in hospitals, clinics, and private practices across [San Antonio and the surrounding region](/locations/san-antonio).
 
-Emmy and Telly recognition, thirteen years on Texas sets, and a calm hand in sensitive environments — that's what we bring to every healthcare project, whether you're a single clinic or a multi-location system across the state.
+Emmy and Telly recognition, experience on Texas sets since 2011, and a calm hand in sensitive environments: that's what we bring to every healthcare project, whether you're a single clinic or a multi-location system across the state.
 
 ## Frequently Asked Questions
 

@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <PersonJsonLd
         name="Ruben Garcia"
         jobTitle="Founder and Executive Producer"
-        image="/images/media-library/ruben-garcia-founder-headshot-02.jpg"
+        image="/images/media-library/ruben-garcia-founder-headshot-01.jpeg"
       />
       {children}
     </>

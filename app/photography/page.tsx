@@ -45,7 +45,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Photography Services San Antonio — Media Bar Productions',
-  description: 'Professional event, corporate, healthcare, and architectural photography in San Antonio, TX. Emmy Award-winning production team with 13+ years of experience.',
+  description: 'Professional event, corporate, healthcare, and architectural photography in San Antonio, TX from an Emmy Award-winning production team founded in 2011.',
   url: 'https://www.mediabarproductions.com/photography',
   image: 'https://www.mediabarproductions.com/images/photography/DSC_6557.JPG',
   provider: {
@@ -245,12 +245,12 @@ export default function PhotographyPage() {
             <p className="ph-eyebrow">Professional Photography Services</p>
             <h1 className="ph-h1">Photography</h1>
             <p className="ph-hero-sub">
-              From executive headshots and corporate portraits to large-scale event coverage, healthcare facilities, and industrial architecture — Media Bar Productions delivers professional photography across every category San Antonio businesses need. Our Emmy and Telly Award-winning production team has been based here for 13+ years, bringing the same cinematic eye to stills that we apply to every video project.
+              From executive headshots and corporate portraits to large-scale event coverage, healthcare facilities, and industrial architecture, Media Bar Productions delivers professional photography across every category San Antonio businesses need. Our Emmy and Telly Award-winning production team has been based here since 2011, bringing the same cinematic eye to stills that we apply to every video project.
             </p>
           </div>
           <div className="ph-stat-card">
             {[
-              { value: '13+', label: 'Years Experience' },
+              { value: '2011', label: 'Producing Since' },
               { value: '300+', label: 'Events Covered' },
               { value: '★', label: 'Professional Headshots' },
             ].map((s) => (

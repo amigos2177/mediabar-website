@@ -214,7 +214,7 @@ export default function AustinPage() {
             </div>
             <div className="atx-proof">
               {[
-                ['13+', 'Years producing in Texas'],
+                ['2011', 'Producing in Texas since'],
                 ['3', 'Emmy Awards'],
                 ['15', 'Telly Awards'],
                 ['Full', 'Creative through delivery'],

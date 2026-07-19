@@ -12,6 +12,7 @@ export type Post = {
   title: string
   seoTitle?: string
   date: string
+  updated?: string
   excerpt: string
   legacyId?: number
   legacyUrl?: string
@@ -28,6 +29,7 @@ function parseFile(file: string): Post {
     title: data.title as string,
     seoTitle: data.seoTitle as string | undefined,
     date: data.date as string,
+    updated: data.updated as string | undefined,
     excerpt: data.excerpt as string,
     legacyId: data.legacyId as number,
     legacyUrl: data.legacyUrl as string,

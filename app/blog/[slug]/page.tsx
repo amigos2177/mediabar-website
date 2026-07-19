@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.updated ?? post.date,
       url: canonical,
       ...(ogImage && { images: [{ url: ogImage, width: 1600, height: 900, alt: post.title }] }),
     },
@@ -73,7 +74,7 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated ?? post.date,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     ...(post.featuredImage && {
       image: {

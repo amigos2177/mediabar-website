@@ -1174,8 +1174,8 @@ export default function HomePage() {
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <p className="award-count">13<sup>+</sup></p>
-            <p className="award-name">Years in Business</p>
+            <p className="award-count">2011</p>
+            <p className="award-name">Producing Since</p>
           </div>
         </div>
       </section>

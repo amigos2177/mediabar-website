@@ -27,7 +27,7 @@ export function buildMetadata({ title, description, path, ogImage }: BuildMetada
         url: ogImage ?? '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Media Bar Productions — Video Production in San Antonio',
+        alt: 'Media Bar Productions, Video Production in San Antonio',
       }],
     },
     twitter: {

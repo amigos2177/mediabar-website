@@ -216,7 +216,7 @@ export default function SanAntonioPage() {
             </div>
             <div className="sa-proof" aria-label="Media Bar Productions credentials">
               {[
-                ['13+', 'Years in San Antonio'],
+                ['2011', 'Producing in San Antonio since'],
                 ['3', 'Emmy Awards'],
                 ['15', 'Telly Awards'],
                 ['Local', 'Studio and Crew'],

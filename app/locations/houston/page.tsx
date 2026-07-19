@@ -240,7 +240,7 @@ export default function HoustonPage() {
                 </div>
               </div>
               <div className="hou-proof" aria-label="Media Bar Productions credentials">
-                <div className="hou-proof-item"><div className="hou-proof-value">13+</div><div className="hou-proof-label">Years producing in Texas</div></div>
+                <div className="hou-proof-item"><div className="hou-proof-value">2011</div><div className="hou-proof-label">Producing in Texas since</div></div>
                 <div className="hou-proof-item"><div className="hou-proof-value">3</div><div className="hou-proof-label">Emmy Awards</div></div>
                 <div className="hou-proof-item"><div className="hou-proof-value">15</div><div className="hou-proof-label">Telly Awards</div></div>
                 <div className="hou-proof-item"><div className="hou-proof-value">One</div><div className="hou-proof-label">Team from brief to delivery</div></div>

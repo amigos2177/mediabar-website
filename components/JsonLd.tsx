@@ -33,9 +33,9 @@ export function LocalBusinessJsonLd() {
     legalName: 'Media Bar Productions, LLC',
     url: 'https://www.mediabarproductions.com',
     logo: 'https://www.mediabarproductions.com/images/mediabar-logo.png',
-    image: 'https://www.mediabarproductions.com/images/mediabar-logo.png',
+    image: 'https://www.mediabarproductions.com/images/media-library/media-bar-team-photo.jpg',
     description:
-      'Award-winning video production company in San Antonio, Texas. 3 Emmy Awards, 15 Telly Awards, 13+ years producing corporate, commercial, and event video across Texas.',
+      'Award-winning video production company founded in San Antonio in 2011. The team has earned 3 Emmy Awards and 15 Telly Awards while producing corporate, commercial, and event video across Texas.',
     telephone: '+1-210-279-9442',
     email: 'contact@mediabarproductions.com',
     address: {
@@ -61,6 +61,9 @@ export function LocalBusinessJsonLd() {
     ],
     priceRange: '$$$',
     foundingDate: '2011',
+    founder: {
+      '@id': 'https://www.mediabarproductions.com/about#founder',
+    },
     numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 2, maxValue: 10 },
     areaServed: [
       { '@type': 'City', name: 'San Antonio', addressRegion: 'TX' },
@@ -78,7 +81,7 @@ export function LocalBusinessJsonLd() {
       'https://www.tiktok.com/@mediabarsa',
     ],
     award: [
-      '3 Emmy Awards — Lone Star Chapter, NATAS',
+      '3 Lone Star Emmy Awards from NATAS',
       '15 Telly Awards',
     ],
     knowsAbout: [

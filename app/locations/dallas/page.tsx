@@ -214,7 +214,7 @@ export default function DallasPage() {
             </div>
             <div className="dfw-proof">
               {[
-                ['13+', 'Years producing in Texas'],
+                ['2011', 'Producing in Texas since'],
                 ['3', 'Emmy Awards'],
                 ['15', 'Telly Awards'],
                 ['One', 'Team from brief to delivery'],

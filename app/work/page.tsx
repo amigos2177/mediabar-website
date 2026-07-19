@@ -83,8 +83,8 @@ export default function WorkPage() {
             <span>Telly Awards</span>
           </div>
           <div>
-            <strong>13+</strong>
-            <span>Years Producing</span>
+            <strong>2011</strong>
+            <span>Producing Since</span>
           </div>
           <p>One experienced production partner from first idea through final delivery.</p>
         </section>

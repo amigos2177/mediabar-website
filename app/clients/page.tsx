@@ -96,8 +96,8 @@ export default function ClientsPage() {
 
           <div className={styles.proofBar} aria-label="Media Bar credentials">
             <div>
-              <strong>13+</strong>
-              <span>Years producing</span>
+              <strong>2011</strong>
+              <span>Producing since</span>
             </div>
             <div>
               <strong>3</strong>

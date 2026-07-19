@@ -1,0 +1,386 @@
+.page {
+  --red: #d20a0a;
+  --gold: #c9a54a;
+  background: #101010;
+  color: #f6f5f1;
+}
+
+.eyebrow,
+.articleMeta,
+.cardCopy time {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: var(--red);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, .55fr);
+  gap: clamp(45px, 8vw, 140px);
+  align-items: end;
+  min-height: 720px;
+  padding: 180px clamp(28px, 6vw, 90px) 80px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .94) 0%, rgba(0, 0, 0, .48) 61%, rgba(0, 0, 0, .7) 100%),
+    url('/images/media-library/media-bar-bts-15.jpg') center 42% / cover;
+  border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+
+.hero h1,
+.archiveHeader h2,
+.cta h2 {
+  margin: 22px 0 0;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(84px, 11vw, 168px);
+  font-weight: 400;
+  letter-spacing: -.015em;
+  line-height: .79;
+  text-transform: uppercase;
+}
+
+.hero h1 em,
+.cta h2 em {
+  display: block;
+  margin-top: 24px;
+  color: var(--gold);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: .58em;
+  font-weight: 600;
+  letter-spacing: -.04em;
+  line-height: .95;
+  text-transform: none;
+}
+
+.heroIntro {
+  padding: 30px 0 6px;
+  border-top: 1px solid rgba(255, 255, 255, .3);
+}
+
+.heroIntro p {
+  margin: 0;
+  color: #d0cfcb;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.heroIntro span {
+  display: block;
+  margin-top: 35px;
+  color: #777773;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(380px, .85fr);
+  min-height: 720px;
+  border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+
+.featuredImage {
+  position: relative;
+  display: grid;
+  min-height: 720px;
+  place-items: center;
+  overflow: hidden;
+  background: #191919;
+  color: rgba(255, 255, 255, .12);
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 120px;
+  text-decoration: none;
+}
+
+.featuredImage img,
+.cardImage img {
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.featuredImage:hover img,
+.cardImage:hover img {
+  transform: scale(1.02);
+}
+
+.featuredCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(55px, 7vw, 115px);
+}
+
+.articleMeta {
+  display: flex;
+  gap: 20px;
+  color: #777773;
+}
+
+.articleMeta span {
+  color: var(--red);
+}
+
+.featuredCopy h2 {
+  margin: 38px 0 28px;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(48px, 5.2vw, 78px);
+  font-weight: 400;
+  letter-spacing: .005em;
+  line-height: .98;
+  text-transform: uppercase;
+}
+
+.featuredCopy h2 a,
+.cardCopy h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.featuredCopy > p:not(.articleMeta) {
+  margin: 0;
+  color: #9e9d99;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.textLink,
+.secondaryAction {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  width: fit-content;
+  margin-top: 38px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, .32);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.textLink:hover,
+.secondaryAction:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.archive {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 150px clamp(28px, 6vw, 90px);
+}
+
+.archiveHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 55px;
+}
+
+.archiveHeader h2 {
+  margin: 0;
+  font-size: clamp(64px, 8vw, 112px);
+}
+
+.articleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, .13);
+  border-left: 1px solid rgba(255, 255, 255, .13);
+}
+
+.card {
+  min-width: 0;
+  border-right: 1px solid rgba(255, 255, 255, .13);
+  border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+
+.cardImage {
+  position: relative;
+  display: grid;
+  aspect-ratio: 16 / 10;
+  place-items: center;
+  overflow: hidden;
+  background: #191919;
+  color: rgba(255, 255, 255, .1);
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 64px;
+  text-decoration: none;
+}
+
+.cardNumber {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 1;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, .75);
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: .12em;
+}
+
+.cardCopy {
+  display: flex;
+  min-height: 330px;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.cardCopy time {
+  color: var(--gold);
+}
+
+.cardCopy h3 {
+  margin: 22px 0 16px;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(27px, 2.2vw, 36px);
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 1.04;
+  text-transform: uppercase;
+}
+
+.cardCopy > p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: #8f8e8a;
+  font-size: 13px;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.cardCopy .textLink {
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.cta {
+  padding: 150px 28px;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(210, 10, 10, .2), transparent 43%),
+    #151515;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: clamp(70px, 9vw, 132px);
+}
+
+.ctaActions {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.primaryAction {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  background: var(--red);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.primaryAction:hover {
+  background: #f00;
+  transform: translateY(-2px);
+}
+
+.secondaryAction {
+  margin-top: 0;
+}
+
+@media (max-width: 1040px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-content: end;
+  }
+
+  .heroIntro {
+    max-width: 580px;
+  }
+
+  .featured {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredImage {
+    min-height: 600px;
+  }
+
+  .articleGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    min-height: 690px;
+    padding: 140px 20px 60px;
+    background-position: 57% center;
+  }
+
+  .hero h1 {
+    font-size: clamp(74px, 22vw, 104px);
+  }
+
+  .featuredImage {
+    min-height: 410px;
+  }
+
+  .featuredCopy {
+    padding: 60px 20px 80px;
+  }
+
+  .archive {
+    padding: 100px 20px;
+  }
+
+  .archiveHeader {
+    display: block;
+  }
+
+  .archiveHeader h2 {
+    margin-top: 15px;
+  }
+
+  .articleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardCopy {
+    min-height: 290px;
+    padding: 26px 22px;
+  }
+
+  .cta {
+    padding: 110px 20px;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+  }
+}

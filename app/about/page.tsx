@@ -26,10 +26,10 @@ const principles = [
   },
 ]
 
-const clients = [
+const clients: Array<{ name: string; src?: string }> = [
   { name: 'San Antonio Spurs', src: '/images/client-spurs.png' },
-  { name: 'HEB', src: '/images/client-heb.png' },
-  { name: 'Unilever', src: '/images/client-unilever.png' },
+  { name: 'H-E-B', src: '/images/client-heb.png' },
+  { name: 'Unilever' },
   { name: 'Frost Bank', src: '/images/client-frost.png' },
   { name: 'Bass Pro Shops', src: '/images/client-bass-pro.png' },
   { name: 'Kiolbassa', src: '/images/client-kiolbassa.png' },
@@ -102,7 +102,7 @@ export default function AboutPage() {
         <section className={styles.founder}>
           <div className={styles.founderImage}>
             <Image
-              src="/images/media-library/ruben-garcia-founder-headshot-02.jpg"
+              src="/images/media-library/ruben-garcia-founder-headshot-01.jpeg"
               alt="Ruben Garcia, founder of Media Bar Productions"
               fill
               sizes="(max-width: 850px) 100vw, 42vw"
@@ -235,6 +235,9 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
+          <Link href="/how-we-work" className={styles.processLink}>
+            See the full production process <span aria-hidden="true">↗</span>
+          </Link>
         </section>
 
         <section className={styles.clients}>
@@ -245,13 +248,17 @@ export default function AboutPage() {
           <div className={styles.clientGrid}>
             {clients.map((client) => (
               <div key={client.name}>
-                <Image
-                  src={client.src}
-                  alt={client.name}
-                  width={190}
-                  height={90}
-                  sizes="180px"
-                />
+                {client.src ? (
+                  <Image
+                    src={client.src}
+                    alt={client.name}
+                    width={190}
+                    height={90}
+                    sizes="180px"
+                  />
+                ) : (
+                  <span className={styles.clientName}>{client.name}</span>
+                )}
               </div>
             ))}
           </div>
@@ -261,7 +268,7 @@ export default function AboutPage() {
           <p className={styles.eyebrow}>Your production partner</p>
           <h2>Bring us the idea.<br /><em>We&apos;ll build the rest.</em></h2>
           <div className={styles.ctaActions}>
-            <Link href="/contact" className={styles.primaryAction}>Plan your project</Link>
+            <Link href="/contact/project-planner" className={styles.primaryAction}>Plan your project</Link>
             <Link href="/work" className={styles.secondaryAction}>See our work <span>↗</span></Link>
           </div>
         </section>

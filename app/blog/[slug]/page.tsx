@@ -186,7 +186,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           <footer className="bp-footer">
             <p className="bp-author">
-              <strong>By the Media Bar Productions team</strong> — San Antonio&apos;s Emmy and Telly
+              <strong>By the Media Bar Productions team</strong>, San Antonio&apos;s Emmy and Telly
               award-winning video production company.
             </p>
 

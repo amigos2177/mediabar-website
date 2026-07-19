@@ -1,0 +1,297 @@
+.page {
+  --faq-red: #d20b0b;
+  --faq-gold: #c9a84c;
+  --faq-black: #080808;
+  --faq-line: rgba(255, 255, 255, 0.12);
+  --faq-muted: #a5a5a5;
+  overflow: clip;
+  background: var(--faq-black);
+  color: #fff;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--faq-red);
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(20rem, 0.75fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: end;
+  min-height: 42rem;
+  padding: 10rem clamp(1.5rem, 6vw, 6rem) 6rem;
+  border-bottom: 1px solid var(--faq-line);
+  background:
+    linear-gradient(90deg, rgba(210, 11, 11, 0.1), transparent 36%),
+    radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.08), transparent 28%);
+}
+
+.hero h1 {
+  max-width: 9ch;
+  margin: 1.15rem 0 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(5rem, 9.5vw, 9.5rem);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+  margin-top: 0.17em;
+  color: var(--faq-gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.53em;
+  font-style: italic;
+  line-height: 0.98;
+  text-transform: none;
+}
+
+.heroIntro {
+  padding-bottom: 0.4rem;
+}
+
+.heroIntro > p {
+  max-width: 34rem;
+  margin: 0 0 2rem;
+  color: #b7b7b7;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.textLink {
+  display: inline-flex;
+  gap: 0.65rem;
+  align-items: center;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.textLink span {
+  color: var(--faq-red);
+}
+
+.categoryNav {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--faq-line);
+  background: #0d0d0d;
+  scrollbar-width: none;
+}
+
+.categoryNav::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryNav a {
+  flex: 1 0 auto;
+  padding: 1.5rem 1.8rem;
+  border-right: 1px solid var(--faq-line);
+  color: #999;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.categoryNav a:hover,
+.categoryNav a:focus-visible {
+  color: #fff;
+  background: #151515;
+}
+
+.faqLayout {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  width: min(100%, 94rem);
+  margin: 0 auto;
+  padding: clamp(5.5rem, 9vw, 9rem) clamp(1.5rem, 5vw, 5rem);
+}
+
+.faqAside {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+}
+
+.faqAside h2 {
+  max-width: 9ch;
+  margin: 1rem 0 1.5rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.faqAside > p:not(.eyebrow) {
+  margin: 0 0 2rem;
+  color: var(--faq-muted);
+  line-height: 1.7;
+}
+
+.faqGroup {
+  scroll-margin-top: 7rem;
+  margin-bottom: 4.5rem;
+}
+
+.groupLabel {
+  margin: 0 0 1rem;
+  color: var(--faq-gold);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.faqList {
+  border-top: 1px solid var(--faq-line);
+}
+
+.faqList details {
+  border-bottom: 1px solid var(--faq-line);
+}
+
+.faqList summary {
+  display: flex;
+  min-height: 6.4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #e3e3e3;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+  list-style: none;
+}
+
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqList summary span {
+  color: var(--faq-red);
+  font-size: 1.45rem;
+  transition: transform 160ms ease;
+}
+
+.faqList details[open] summary span {
+  transform: rotate(45deg);
+}
+
+.faqList details > p {
+  max-width: 48rem;
+  margin: -0.7rem 0 2rem;
+  color: #999;
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto;
+  gap: 3rem;
+  align-items: end;
+  padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 7vw, 8rem);
+  border-top: 1px solid var(--faq-line);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(210, 11, 11, 0.18), transparent 36%),
+    #111;
+}
+
+.cta h2 {
+  max-width: 12ch;
+  margin: 0.9rem 0 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3.2rem, 6vw, 6.2rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.primaryButton {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.7rem;
+  background: var(--faq-red);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.phoneLink {
+  color: #fff;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .faqLayout,
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .faqAside {
+    position: static;
+  }
+
+  .faqAside h2 {
+    max-width: 12ch;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero {
+    min-height: 0;
+    padding-top: 8rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(4.5rem, 22vw, 7rem);
+  }
+
+  .categoryNav a {
+    padding-inline: 1.3rem;
+  }
+
+  .faqList summary {
+    min-height: 5.6rem;
+  }
+
+  .ctaActions {
+    display: grid;
+  }
+}

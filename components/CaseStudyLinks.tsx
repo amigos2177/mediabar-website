@@ -4,7 +4,7 @@ import Link from 'next/link'
 // Shared styles live in app/globals.css under the .mbcs- namespace.
 const HREF = '/work/rbfcu-go-beyond-banking'
 
-// Component 1 — placed on /work inside the "TV Commercials" section.
+// Component 1 - placed on /work inside the "TV Commercials" section.
 export function RbfcuWorkCard() {
   return (
     <Link className="mbcs-workcard" href={HREF}>
@@ -19,7 +19,7 @@ export function RbfcuWorkCard() {
   )
 }
 
-// Component 2 — placed on /video-production/commercials as the Featured Case Study.
+// Component 2 - placed on /video-production/commercials as the Featured Case Study.
 // Uses the campfire behind-the-scenes photo as its background.
 export function RbfcuFeatureCard() {
   return (
@@ -43,7 +43,7 @@ export function RbfcuFeatureCard() {
   )
 }
 
-// Component 3 — placed on each /locations/* page. Pass the market name.
+// Component 3 - placed on each /locations/* page. Pass the market name.
 export function RbfcuLocationNote({ city }: { city: string }) {
   return (
     <Link className="mbcs-locnote" href={HREF}>

@@ -7,18 +7,18 @@ excerpt: "Healthcare provider video that turns Q&A clips into patient trust. How
 featuredImage: /images/blog/healthcare-provider-video.png
 faqs:
   - question: "What is a provider Q&A video?"
-    answer: "A provider Q&A video is a short clip — usually 30 to 60 seconds — where a physician, dentist, therapist, or nurse practitioner answers one common patient question on camera. It builds trust and gives prospective patients a real sense of the provider before they ever book."
+    answer: "A provider Q&A video is a short clip - usually 30 to 60 seconds - where a physician, dentist, therapist, or nurse practitioner answers one common patient question on camera. It builds trust and gives prospective patients a real sense of the provider before they ever book."
   - question: "How long should a provider Q&A video be?"
     answer: "Aim for 30 to 60 seconds, one question per clip, shot vertical and subtitled for sound-off viewing. Short, single-topic answers are what patients actually watch and share, and they are easy to repurpose across your site, social feeds, and waiting room."
   - question: "Are provider Q&A videos HIPAA-compliant?"
     answer: "Yes, when produced correctly. A provider answering a general patient question contains no protected health information. Any patient who appears on camera signs a release first, and we plan each shoot with your team so nothing protected ends up on screen."
   - question: "How much does a provider Q&A video shoot cost?"
-    answer: "Cost depends on scope and how many clips you need, but a batched Q&A library shoot — one provider, one half-day, many clips — is one of the most cost-effective formats in healthcare video, because a single production day stocks months of content."
+    answer: "Cost depends on scope and how many clips you need, but a batched Q&A library shoot - one provider, one half-day, many clips - is one of the most cost-effective formats in healthcare video, because a single production day stocks months of content."
 ---
 
-The decision now happens before the phone ever rings. A prospective patient searches a symptom, watches a few clips, reads a couple of reviews, and decides who feels trustworthy — all before they reach your front desk. If your providers aren't part of that moment, you're invisible at exactly the point where patients choose.
+The decision now happens before the phone ever rings. A prospective patient searches a symptom, watches a few clips, reads a couple of reviews, and decides who feels trustworthy - all before they reach your front desk. If your providers aren't part of that moment, you're invisible at exactly the point where patients choose.
 
-This piece zooms in on the single highest-impact format for winning that moment: the provider Q&A. If you want the full compliance-and-planning picture first, start with our [healthcare video production guide](https://www.mediabarproductions.com/blog/healthcare-video-production-san-antonio) — then come back here for the format that does the heaviest lifting on patient trust, at the lowest cost to produce.
+This piece zooms in on the single highest-impact format for winning that moment: the provider Q&A. If you want the full compliance-and-planning picture first, start with our [healthcare video production guide](https://www.mediabarproductions.com/blog/healthcare-video-production-san-antonio) - then come back here for the format that does the heaviest lifting on patient trust, at the lowest cost to produce.
 
 <style>
 .mb-audio{
@@ -53,7 +53,7 @@ This piece zooms in on the single highest-impact format for winning that moment:
 </style>
 
 <figure class="mb-audio">
-  <figcaption>Listen — Healthcare Provider Q&A Video · 2 min</figcaption>
+  <figcaption>Listen - Healthcare Provider Q&A Video · 2 min</figcaption>
   <audio controls preload="none" src="/audio/blog/healthcare-provider-video.mp3"></audio>
   <details class="mb-transcript">
     <summary>Audio transcript</summary>
@@ -71,7 +71,7 @@ This piece zooms in on the single highest-impact format for winning that moment:
 
 Patients have gotten sharp. They can spot a stock-footage clinic and a scripted spokesperson in half a second, and they scroll right past both. What they stop for is a real person who clearly knows their stuff and talks like a human being.
 
-That's why the single most effective format in healthcare right now is the provider Q&A: a physician, dentist, therapist, or nurse practitioner spending 30 to 60 seconds answering one question patients actually ask. "Does this procedure hurt?" "What should I bring to my first visit?" "How do I know if I need to be seen?" Each answer builds a little more confidence — and confidence is what turns a searcher into a booked appointment.
+That's why the single most effective format in healthcare right now is the provider Q&A: a physician, dentist, therapist, or nurse practitioner spending 30 to 60 seconds answering one question patients actually ask. "Does this procedure hurt?" "What should I bring to my first visit?" "How do I know if I need to be seen?" Each answer builds a little more confidence - and confidence is what turns a searcher into a booked appointment.
 
 It also lines up with how search itself has changed. AI summaries and answer engines increasingly pull from clear, expert-authored content, and a provider explaining a topic in plain language is exactly the kind of source they favor. Video built around real clinical expertise does double duty: it reassures the patient and signals authority to the algorithms deciding who gets seen.
 
@@ -79,11 +79,11 @@ It also lines up with how search itself has changed. AI summaries and answer eng
 
 You don't need a dozen different video styles. A focused set covers nearly every practice:
 
-- **Single-question Q&A clips** — one provider, one question, 30 to 60 seconds, shot vertical and subtitled for sound-off viewing.
-- **Meet-the-provider introductions** — a short, warm bio that lets a nervous patient feel like they've already met you.
-- **Procedure and condition explainers** — walk through what to expect, in calm, non-technical language, to cut anxiety and no-shows.
-- **Patient stories** — a real patient, on camera with a signed release, telling their experience in their own words.
-- **Facility tours** — a quick look at the space so first-timers know exactly where they're going.
+- **Single-question Q&A clips** - one provider, one question, 30 to 60 seconds, shot vertical and subtitled for sound-off viewing.
+- **Meet-the-provider introductions** - a short, warm bio that lets a nervous patient feel like they've already met you.
+- **Procedure and condition explainers** - walk through what to expect, in calm, non-technical language, to cut anxiety and no-shows.
+- **Patient stories** - a real patient, on camera with a signed release, telling their experience in their own words.
+- **Facility tours** - a quick look at the space so first-timers know exactly where they're going.
 
 Keep them short, keep them captioned, and keep the provider sounding like themselves. A little imperfection reads as honest. Over-polish reads as an ad.
 
@@ -91,15 +91,15 @@ Keep them short, keep them captioned, and keep the provider sounding like themse
 
 Here's the part that makes the budget math work. You don't produce these one at a time. You batch them.
 
-In a single half-day, we sit one provider down, run through a prepared list of the questions patients ask most, and capture a dozen or more answers in one session. From that one production day, you walk away with a quarter's worth of content — clips for your website, your social feeds, your Google Business Profile, and even the screens in your waiting room.
+In a single half-day, we sit one provider down, run through a prepared list of the questions patients ask most, and capture a dozen or more answers in one session. From that one production day, you walk away with a quarter's worth of content - clips for your website, your social feeds, your Google Business Profile, and even the screens in your waiting room.
 
-For roughly what a single glossy brand film would cost, you bank an entire library of trust-building answers. That's the efficiency that lets a five-provider practice publish consistently without a full-time video team. The same batched, interview-style approach we use for executive and testimonial work translates directly to the exam room — it's the production model behind our [interview and Q&A video work](https://www.mediabarproductions.com/video-production/interview), just pointed at patient education.
+For roughly what a single glossy brand film would cost, you bank an entire library of trust-building answers. That's the efficiency that lets a five-provider practice publish consistently without a full-time video team. The same batched, interview-style approach we use for executive and testimonial work translates directly to the exam room - it's the production model behind our [interview and Q&A video work](https://www.mediabarproductions.com/video-production/interview), just pointed at patient education.
 
-The library keeps paying off long after the shoot wraps. One answer becomes a vertical clip for Instagram and TikTok, a horizontal version embedded on the matching service page, a fresh post on your Google Business Profile, and a loop on the waiting-room screen. Instead of scrambling for something to post each week, you draw down from a bank of content you already own — every piece reinforcing the same message: this is a practice that knows its stuff and isn't hiding behind stock footage. That compounding visibility is how a single, careful production day turns into months of patient trust.
+The library keeps paying off long after the shoot wraps. One answer becomes a vertical clip for Instagram and TikTok, a horizontal version embedded on the matching service page, a fresh post on your Google Business Profile, and a loop on the waiting-room screen. Instead of scrambling for something to post each week, you draw down from a bank of content you already own - every piece reinforcing the same message: this is a practice that knows its stuff and isn't hiding behind stock footage. That compounding visibility is how a single, careful production day turns into months of patient trust.
 
 ## Compliance and credibility, handled on set
 
-Healthcare has guardrails that most marketing doesn't, and that's a feature, not a bug — handled right, it becomes part of why patients trust you.
+Healthcare has guardrails that most marketing doesn't, and that's a feature, not a bug - handled right, it becomes part of why patients trust you.
 
 Provider-led education videos are inherently safe: there's no patient information in a doctor explaining how a procedure works. When a real patient does appear, they sign a release before a single frame is shot, and we plan the day with your team so nothing protected ever lands on camera. We also caption everything, which keeps content accessible and keeps it watchable in a silent feed.
 
@@ -109,14 +109,14 @@ None of this is legal advice, and your compliance team stays the final word. Sin
 
 Patient trust is local. People want to see a practice that feels like it belongs to their community, shot in a space they recognize, with providers who sound like their neighbors.
 
-That's where being a [San Antonio video production team](https://www.mediabarproductions.com/locations/san-antonio) pays off. We show up in person, we make your providers feel at ease, and we understand the Texas market your patients live in — whether you're in San Antonio, Austin, Houston, or Dallas. We've spent more than a decade producing [medical and healthcare video](https://www.mediabarproductions.com/video-production/medical) for practices across the state, and we know how to turn a busy clinical day into a clean, efficient shoot that respects everyone's time.
+That's where being a [San Antonio video production team](https://www.mediabarproductions.com/locations/san-antonio) pays off. We show up in person, we make your providers feel at ease, and we understand the Texas market your patients live in - whether you're in San Antonio, Austin, Houston, or Dallas. We've spent more than a decade producing [medical and healthcare video](https://www.mediabarproductions.com/video-production/medical) for practices across the state, and we know how to turn a busy clinical day into a clean, efficient shoot that respects everyone's time.
 
 The practices growing their patient volume in 2026 aren't the ones with the biggest ad budgets. They're the ones whose providers show up online as real, credible, easy-to-trust people. Video is how you do that at scale.
 
 ## Frequently asked questions
 
 **What is a provider Q&A video?**
-It's a short clip — usually 30 to 60 seconds — where a physician, dentist, therapist, or nurse practitioner answers one common patient question on camera. It builds trust and gives prospective patients a real sense of the provider before they ever book.
+It's a short clip - usually 30 to 60 seconds - where a physician, dentist, therapist, or nurse practitioner answers one common patient question on camera. It builds trust and gives prospective patients a real sense of the provider before they ever book.
 
 **How long should a provider Q&A video be?**
 Aim for 30 to 60 seconds, one question per clip, shot vertical and subtitled for sound-off viewing. Short, single-topic answers are what patients actually watch and share, and they're easy to repurpose across your site, social, and waiting room.
@@ -125,7 +125,7 @@ Aim for 30 to 60 seconds, one question per clip, shot vertical and subtitled for
 Yes, when produced correctly. A provider answering a general patient question contains no protected health information. Any patient who appears on camera signs a release first, and we plan each shoot with your team so nothing protected ends up on screen.
 
 **How much does a provider Q&A video shoot cost?**
-It depends on scope and how many clips you need, but a batched Q&A library shoot — one provider, one half-day, many clips — is one of the most cost-effective formats in healthcare video, because a single production day stocks months of content.
+It depends on scope and how many clips you need, but a batched Q&A library shoot - one provider, one half-day, many clips - is one of the most cost-effective formats in healthcare video, because a single production day stocks months of content.
 
 ## Ready to put your providers on camera?
 

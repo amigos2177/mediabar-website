@@ -283,7 +283,7 @@ export default function Nav() {
           </Link>
         </div>
 
-        {/* Hamburger — mobile only */}
+        {/* Hamburger - mobile only */}
         <button
           ref={menuButtonRef}
           className="mbp-burger"
@@ -308,7 +308,7 @@ export default function Nav() {
           aria-modal="true"
           aria-labelledby="mobile-navigation-title"
         >
-          {/* Tap outside to close — sits behind content */}
+          {/* Tap outside to close - sits behind content */}
           <div
             style={{ position: 'fixed', inset: 0, zIndex: -1 }}
             onClick={close}

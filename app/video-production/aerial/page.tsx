@@ -23,9 +23,9 @@ const processSteps = [
 ]
 
 const whyCards = [
-  { icon: '✈️', title: 'FAA Part 107 Certified', desc: 'All our drone operators hold FAA Part 107 Remote Pilot Certificates. We handle all airspace authorizations and waivers — you don\'t have to worry about compliance.' },
+  { icon: '✈️', title: 'FAA Part 107 Certified', desc: 'All our drone operators hold FAA Part 107 Remote Pilot Certificates. We handle all airspace authorizations and waivers - you don\'t have to worry about compliance.' },
   { icon: '🎥', title: 'Cinema-Grade Aerial', desc: 'We fly Inspire and Mavic 3 Cine platforms with interchangeable lens systems, capturing aerial footage that matches your ground cameras in quality and color.' },
-  { icon: '🤝', title: 'Ground + Air Same Day', desc: 'We integrate aerial and ground production in a single shoot day. No need to coordinate two separate crews — one team handles everything.' },
+  { icon: '🤝', title: 'Ground + Air Same Day', desc: 'We integrate aerial and ground production in a single shoot day. No need to coordinate two separate crews - one team handles everything.' },
   { icon: '🗺️', title: 'All of Texas', desc: 'We fly throughout San Antonio, Austin, Dallas, Houston, and across Texas. Travel costs are bundled into your quote upfront.' },
   { icon: '⚡', title: 'Fast Turnaround', desc: 'Most aerial-only projects are delivered within 3-5 business days. Combined aerial + ground productions follow standard post timelines.' },
   { icon: '🏆', title: 'Emmy Award-Winning Team', desc: 'The same award-winning crew that handles ground production brings that same craft to the air. Aerial footage is only as good as the people operating it.' },
@@ -33,10 +33,10 @@ const whyCards = [
 
 const faqs = [
   { q: 'Are your drone operators FAA certified?', a: 'Yes. All of our drone pilots hold FAA Part 107 Remote Pilot Certificates, which is the required certification for commercial drone operations in the United States. We also maintain current liability insurance that covers drone operations and provide certificates of insurance on request.' },
-  { q: 'What happens if the weather doesn\'t cooperate?', a: 'We monitor weather conditions closely in the days leading up to your shoot. High winds, rain, and certain cloud conditions can ground drone operations. We build weather contingency into our scheduling and have a clear rescheduling policy — if conditions are unsafe, we reschedule at no additional cost.' },
+  { q: 'What happens if the weather doesn\'t cooperate?', a: 'We monitor weather conditions closely in the days leading up to your shoot. High winds, rain, and certain cloud conditions can ground drone operations. We build weather contingency into our scheduling and have a clear rescheduling policy - if conditions are unsafe, we reschedule at no additional cost.' },
   { q: 'How high can you fly?', a: 'Under standard FAA Part 107 rules, drone operations are limited to 400 feet above ground level. For certain projects in controlled airspace, we obtain LAANC authorization or FAA waivers that allow operation at different altitudes. We\'ll determine the right authorization for your location and project requirements during planning.' },
   { q: 'What drone and camera do you use?', a: 'Our primary platform is the DJI Inspire 3 with interchangeable lens systems, which captures true cinema-quality aerial footage. For projects where the drone needs to move more nimbly or operate in tighter spaces, we also fly the Mavic 3 Cine. Both platforms deliver footage that matches broadcast and cinema quality standards.' },
-  { q: 'Can you combine aerial with ground-level video production?', a: 'Yes — and that\'s where the real magic happens. A production that combines cinematic drone work with ground-level interviews, b-roll, and action sequences tells a much more complete story. We regularly run aerial and ground crews simultaneously, then integrate the footage in post for a seamless final cut.' },
+  { q: 'Can you combine aerial with ground-level video production?', a: 'Yes - and that\'s where the real magic happens. A production that combines cinematic drone work with ground-level interviews, b-roll, and action sequences tells a much more complete story. We regularly run aerial and ground crews simultaneously, then integrate the footage in post for a seamless final cut.' },
 ]
 
 export default function AerialPage() {
@@ -106,7 +106,7 @@ export default function AerialPage() {
         .process-desc{font-size:13px;line-height:1.7;color:#B0B0B0;margin-bottom:20px;position:relative}
         .process-list{list-style:none;position:relative}
         .process-list li{font-size:12px;color:#AAAAAA;padding:4px 0 4px 14px;position:relative;letter-spacing:.03em}
-        .process-list li::before{content:'—';position:absolute;left:0;color:var(--red);font-size:10px}
+        .process-list li::before{content:'•';position:absolute;left:0;color:var(--red);font-size:10px}
         .why-wrap{background:var(--black)}.why-inner{max-width:1200px;margin:0 auto;padding:96px 64px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
         .why-sticky{position:sticky;top:96px}
         .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
@@ -163,7 +163,7 @@ export default function AerialPage() {
             </nav>
             <p className="eyebrow">FAA Part 107 Certified Drone Production</p>
             <h1 className="page-h1"><em>Aerial &amp; Drone</em>Video in San Antonio</h1>
-            <p className="hero-sub">Cinematic aerial footage that elevates your production — from sweeping establishing shots to tight detail passes. FAA certified, fully insured, operating throughout Texas.</p>
+            <p className="hero-sub">Cinematic aerial footage that elevates your production - from sweeping establishing shots to tight detail passes. FAA certified, fully insured, operating throughout Texas.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>
               <Link href="#portfolio" className="btn-ghost">See Our Work</Link>
@@ -183,7 +183,7 @@ export default function AerialPage() {
             <div className="reveal">
               <p className="section-label">What We Do</p>
               <h2 className="section-h2">The View From <em>Above</em></h2>
-              <p className="body-text">Aerial footage changes the way audiences see a subject. A single sweeping drone shot can establish scale, reveal context, and create a cinematic quality that ground cameras simply can&apos;t match. Done right, it&apos;s invisible — it serves the story rather than showing off.</p>
+              <p className="body-text">Aerial footage changes the way audiences see a subject. A single sweeping drone shot can establish scale, reveal context, and create a cinematic quality that ground cameras simply can&apos;t match. Done right, it&apos;s invisible - it serves the story rather than showing off.</p>
               <p className="body-text">We integrate aerial seamlessly with ground-level production. Our FAA Part 107 certified pilots operate cinema-grade drone systems and work in coordination with your ground crew to ensure every aerial shot matches the look of your overall production.</p>
             </div>
             <div className="reveal">

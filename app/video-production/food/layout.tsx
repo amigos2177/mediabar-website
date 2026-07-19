@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <FAQPageJsonLd faqs={[
         {
           question: 'Do you provide a food stylist?',
-          answer: "Yes. We work with experienced food stylists and culinary professionals who specialize in preparing food for camera. A good food stylist is essential for high-end food video — they understand how to maintain a dish's visual appeal through extended shooting sessions and how to create the specific textures and finishes that look best on camera.",
+          answer: "Yes. We work with experienced food stylists and culinary professionals who specialize in preparing food for camera. A good food stylist is essential for high-end food video - they understand how to maintain a dish's visual appeal through extended shooting sessions and how to create the specific textures and finishes that look best on camera.",
         },
         {
           question: 'What kitchen or studio setup do you use?',
@@ -30,11 +30,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'Can you produce social media content at volume?',
-          answer: 'Yes. We have clients who commission 10-30 social food videos per quarter. For volume content, we develop an efficient workflow — batching shoot days, standardizing setups, and building a post-production pipeline that allows us to deliver consistent quality at scale. Volume pricing is available for ongoing content commitments.',
+          answer: 'Yes. We have clients who commission 10-30 social food videos per quarter. For volume content, we develop an efficient workflow - batching shoot days, standardizing setups, and building a post-production pipeline that allows us to deliver consistent quality at scale. Volume pricing is available for ongoing content commitments.',
         },
         {
           question: 'Do you produce beverage video as well as food?',
-          answer: 'Yes. Beverage production — especially pour shots, condensation, and splash photography — requires the same specialized techniques as food. We produce for beer, spirits, non-alcoholic beverages, coffee, and packaged drinks. Some of our most technically demanding work has been in the beverage category.',
+          answer: 'Yes. Beverage production - especially pour shots, condensation, and splash photography - requires the same specialized techniques as food. We produce for beer, spirits, non-alcoholic beverages, coffee, and packaged drinks. Some of our most technically demanding work has been in the beverage category.',
         },
       ]} />
       <BreadcrumbJsonLd items={[

@@ -163,7 +163,7 @@ function isRateLimited(ip: string) {
 function successfulBotResponse() {
   return NextResponse.json({
     success: true,
-    message: 'Thanks — we got your message and will respond within 1 business day.',
+    message: 'Thanks - we got your message and will respond within 1 business day.',
   })
 }
 

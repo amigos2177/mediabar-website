@@ -23,20 +23,20 @@ const processSteps = [
 ]
 
 const whyCards = [
-  { icon: '🏢', title: 'HEB & Unilever Experience', desc: 'We\'ve produced food video for HEB and Unilever — two of the largest food brands in the region. We understand the production standards and approval processes at that level.' },
+  { icon: '🏢', title: 'HEB & Unilever Experience', desc: 'We\'ve produced food video for HEB and Unilever - two of the largest food brands in the region. We understand the production standards and approval processes at that level.' },
   { icon: '🎨', title: 'Food Styling Expertise', desc: 'Great food video requires great food styling. We work with experienced culinary stylists who know how to make a dish look its absolute best on camera.' },
   { icon: '💡', title: 'Appetite-Driving Lighting', desc: 'Food looks completely different under different light. We use techniques specifically developed for culinary photography to make your dishes look warm, fresh, and craveable.' },
-  { icon: '📱', title: 'Social-First Content', desc: 'We produce for TikTok, Instagram Reels, and YouTube Shorts — the formats where food content drives the highest engagement and purchase intent.' },
+  { icon: '📱', title: 'Social-First Content', desc: 'We produce for TikTok, Instagram Reels, and YouTube Shorts - the formats where food content drives the highest engagement and purchase intent.' },
   { icon: '🏆', title: 'Award-Winning Production', desc: 'Three Emmy Awards. Our food work is held to the same creative standard as our broadcast productions. Nothing goes out the door that doesn\'t look extraordinary.' },
   { icon: '🔄', title: 'Volume Content Available', desc: 'Need 20 SKU videos for a product launch? We have the workflow and studio capacity to produce food content at volume without sacrificing quality.' },
 ]
 
 const faqs = [
-  { q: 'Do you provide a food stylist?', a: 'Yes. We work with experienced food stylists and culinary professionals who specialize in preparing food for camera. A good food stylist is essential for high-end food video — they understand how to maintain a dish\'s visual appeal through extended shooting sessions and how to create the specific textures and finishes that look best on camera.' },
+  { q: 'Do you provide a food stylist?', a: 'Yes. We work with experienced food stylists and culinary professionals who specialize in preparing food for camera. A good food stylist is essential for high-end food video - they understand how to maintain a dish\'s visual appeal through extended shooting sessions and how to create the specific textures and finishes that look best on camera.' },
   { q: 'What kitchen or studio setup do you use?', a: 'We have two production stages in San Antonio equipped for food video. Our food production setup includes professional lighting rigs, multiple camera positions, and the equipment needed for overhead, side, and beauty angles. For restaurant or brand-specific shoots that require the actual kitchen or branded environment, we frequently shoot on location.' },
   { q: 'How much does food video production cost?', a: 'Food video ranges from around $3,000 for simple social content to $25,000+ for broadcast commercials with full food styling, multiple setups, and extensive post. The biggest variables are food styling complexity, number of dishes/SKUs, and whether we\'re producing for broadcast or digital-only. We provide itemized quotes after a brief call.' },
-  { q: 'Can you produce social media content at volume?', a: 'Yes. We have clients who commission 10-30 social food videos per quarter. For volume content, we develop an efficient workflow — batching shoot days, standardizing setups, and building a post-production pipeline that allows us to deliver consistent quality at scale. Volume pricing is available for ongoing content commitments.' },
-  { q: 'Do you produce beverage video as well as food?', a: 'Yes. Beverage production — especially pour shots, condensation, and splash photography — requires the same specialized techniques as food. We produce for beer, spirits, non-alcoholic beverages, coffee, and packaged drinks. Some of our most technically demanding work has been in the beverage category.' },
+  { q: 'Can you produce social media content at volume?', a: 'Yes. We have clients who commission 10-30 social food videos per quarter. For volume content, we develop an efficient workflow - batching shoot days, standardizing setups, and building a post-production pipeline that allows us to deliver consistent quality at scale. Volume pricing is available for ongoing content commitments.' },
+  { q: 'Do you produce beverage video as well as food?', a: 'Yes. Beverage production - especially pour shots, condensation, and splash photography - requires the same specialized techniques as food. We produce for beer, spirits, non-alcoholic beverages, coffee, and packaged drinks. Some of our most technically demanding work has been in the beverage category.' },
 ]
 
 export default function FoodPage() {
@@ -106,7 +106,7 @@ export default function FoodPage() {
         .process-desc{font-size:13px;line-height:1.7;color:#B0B0B0;margin-bottom:20px;position:relative}
         .process-list{list-style:none;position:relative}
         .process-list li{font-size:12px;color:#AAAAAA;padding:4px 0 4px 14px;position:relative;letter-spacing:.03em}
-        .process-list li::before{content:'—';position:absolute;left:0;color:var(--red);font-size:10px}
+        .process-list li::before{content:'•';position:absolute;left:0;color:var(--red);font-size:10px}
         .why-wrap{background:var(--black)}.why-inner{max-width:1200px;margin:0 auto;padding:96px 64px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
         .why-sticky{position:sticky;top:96px}
         .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
@@ -163,7 +163,7 @@ export default function FoodPage() {
             </nav>
             <p className="eyebrow">Food &amp; Beverage Video Production</p>
             <h1 className="page-h1"><em>Food</em>Video Production in San Antonio</h1>
-            <p className="hero-sub">Appetite-driving food and beverage video for restaurants, CPG brands, and hospitality groups. Trusted by HEB and Unilever — we know how to make food look extraordinary on screen.</p>
+            <p className="hero-sub">Appetite-driving food and beverage video for restaurants, CPG brands, and hospitality groups. Trusted by HEB and Unilever - we know how to make food look extraordinary on screen.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>
               <Link href="#portfolio" className="btn-ghost">See Our Work</Link>
@@ -183,7 +183,7 @@ export default function FoodPage() {
             <div className="reveal">
               <p className="section-label">What We Do</p>
               <h2 className="section-h2">Making Food <em>Irresistible</em> On Screen</h2>
-              <p className="body-text">Food video is a highly specialized craft. The gap between food that photographs beautifully and food that looks appetizing in motion is enormous — and it requires a team that understands culinary styling, the right lighting for specific textures, and the camera movement that builds anticipation.</p>
+              <p className="body-text">Food video is a highly specialized craft. The gap between food that photographs beautifully and food that looks appetizing in motion is enormous - and it requires a team that understands culinary styling, the right lighting for specific textures, and the camera movement that builds anticipation.</p>
               <p className="body-text">We&apos;ve produced food and beverage video for HEB, Unilever, and dozens of restaurant groups across San Antonio and Texas. From 6-second social clips to 60-second broadcast spots, we create food content that makes people hungry.</p>
               <p className="body-text">Running a restaurant? See our guide to <Link href="/blog/restaurant-video-production-san-antonio" style={{ color: 'var(--gold)', textDecoration: 'underline' }}>restaurant video production in San Antonio</Link>.</p>
             </div>

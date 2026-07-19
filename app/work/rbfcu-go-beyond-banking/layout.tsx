@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 }
 
 // Real YouTube publish timestamps (ISO 8601 with timezone, from each video's watch page)
-// for VideoObject.uploadDate — full datetime clears Google's optional timezone warning.
+// for VideoObject.uploadDate - full datetime clears Google's optional timezone warning.
 const videos = [
   {
     name: 'We Go Beyond Banking',

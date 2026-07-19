@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: "What happens if the weather doesn't cooperate?",
-          answer: 'We monitor weather conditions closely in the days leading up to your shoot. High winds, rain, and certain cloud conditions can ground drone operations. We build weather contingency into our scheduling and have a clear rescheduling policy — if conditions are unsafe, we reschedule at no additional cost.',
+          answer: 'We monitor weather conditions closely in the days leading up to your shoot. High winds, rain, and certain cloud conditions can ground drone operations. We build weather contingency into our scheduling and have a clear rescheduling policy - if conditions are unsafe, we reschedule at no additional cost.',
         },
         {
           question: 'How high can you fly?',
@@ -34,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'Can you combine aerial with ground-level video production?',
-          answer: "Yes — and that's where the real magic happens. A production that combines cinematic drone work with ground-level interviews, b-roll, and action sequences tells a much more complete story. We regularly run aerial and ground crews simultaneously, then integrate the footage in post for a seamless final cut.",
+          answer: "Yes - and that's where the real magic happens. A production that combines cinematic drone work with ground-level interviews, b-roll, and action sequences tells a much more complete story. We regularly run aerial and ground crews simultaneously, then integrate the footage in post for a seamless final cut.",
         },
       ]} />
       <BreadcrumbJsonLd items={[

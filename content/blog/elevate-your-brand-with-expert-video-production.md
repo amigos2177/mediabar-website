@@ -13,7 +13,7 @@ featuredImage: /images/blog/elevate-your-brand-with-expert-video-production.png
 
 **Want to make your brand stand out, no matter where your business is located?**Video is the answer.
 
-It's not enough to just tell people about your services—you need to show them. That's where high-quality video comes in, helping businesses everywhere create powerful, lasting impressions. At **Media Bar Productions**, we specialize in **corporate video production** that transforms the way companies communicate with their audience, whether you're local or across the country.
+It's not enough to just tell people about your services - you need to show them. That's where high-quality video comes in, helping businesses everywhere create powerful, lasting impressions. At **Media Bar Productions**, we specialize in **corporate video production** that transforms the way companies communicate with their audience, whether you're local or across the country.
 
 **Why Corporate Video Is Essential for Businesses Everywhere**
 
@@ -22,7 +22,7 @@ No matter the size of your business or industry, corporate videos are one of the
 Here's why companies worldwide are investing in video:
 
 - **Building Trust:**Videos put a face to your brand, making it more relatable and trustworthy. They bridge the gap between you and your audience, no matter where they're located.
-- **Boosting Conversions:**Studies show that videos on landing pages can increase conversions by up to 80%. That's a huge return on investment that businesses can't afford to ignore.
+- **Supporting Conversions:** A focused landing-page video can explain the offer, address common questions, and give viewers a clearer reason to take the next step.
 - **Wider Reach:** With online platforms like YouTube, LinkedIn, and social media, your videos can be viewed by anyone, anywhere, expanding your reach far beyond your immediate market.
 
 **What We Offer: Professional Video Production for Businesses Everywhere**

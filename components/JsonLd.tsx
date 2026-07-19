@@ -22,7 +22,7 @@ function JsonLdScript({ data }: { data: Record<string, unknown> }) {
 const BUSINESS_ID = 'https://www.mediabarproductions.com/#business'
 
 // ============================================================
-// 1. LocalBusiness — Homepage, About, Contact
+// 1. LocalBusiness - Homepage, About, Contact
 // ============================================================
 export function LocalBusinessJsonLd() {
   const data = {
@@ -102,7 +102,7 @@ export function LocalBusinessJsonLd() {
 }
 
 // ============================================================
-// 2. FAQPage — /faq page and any service page with inline FAQs
+// 2. FAQPage - /faq page and any service page with inline FAQs
 //    Pass your Q&A pairs as props.
 // ============================================================
 type FAQItem = { question: string; answer: string }
@@ -124,7 +124,7 @@ export function FAQPageJsonLd({ faqs }: { faqs: FAQItem[] }) {
 }
 
 // ============================================================
-// 3. Service — Each of the 11 service pages
+// 3. Service - Each of the 11 service pages
 // ============================================================
 type ServiceProps = {
   name: string
@@ -153,7 +153,7 @@ export function ServiceJsonLd({ name, description, url, image }: ServiceProps) {
 }
 
 // ============================================================
-// 4. Article (BlogPosting) — Each blog post
+// 4. Article (BlogPosting) - Each blog post
 // ============================================================
 type ArticleProps = {
   title: string
@@ -197,7 +197,7 @@ export function ArticleJsonLd({
 }
 
 // ============================================================
-// 5. BreadcrumbList — All pages with breadcrumb navigation
+// 5. BreadcrumbList - All pages with breadcrumb navigation
 // ============================================================
 type BreadcrumbItem = { name: string; url: string }
 
@@ -216,7 +216,7 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
 }
 
 // ============================================================
-// 6. AboutPage and Person — /about
+// 6. AboutPage and Person - /about
 // ============================================================
 export function AboutPageJsonLd() {
   const data = {
@@ -257,7 +257,7 @@ export function PersonJsonLd({ name, jobTitle, image }: PersonProps) {
 }
 
 // ============================================================
-// 7. VideoObject — Pages with embedded Vimeo videos
+// 7. VideoObject - Pages with embedded Vimeo videos
 // ============================================================
 type VideoProps = {
   name: string

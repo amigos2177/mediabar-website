@@ -12,7 +12,7 @@ const eventPhotos = [
   { src: '/images/photography/SeaWorld-2015-0261.jpg', alt: 'SeaWorld San Antonio event photography with crowd and performers' },
   { src: '/images/photography/Sea-World-3-0164.jpg', alt: 'SeaWorld San Antonio outdoor event coverage' },
   { src: '/images/photography/Sea-World-3-0250.jpg', alt: 'SeaWorld San Antonio event detail and atmosphere photography' },
-  { src: '/images/photography/SAHCC_Gala-1123.jpg', alt: 'San Antonio Hispanic Chamber of Commerce Gala — guests and ceremony' },
+  { src: '/images/photography/SAHCC_Gala-1123.jpg', alt: 'San Antonio Hispanic Chamber of Commerce Gala - guests and ceremony' },
 ]
 
 const corporatePhotos = [
@@ -26,25 +26,25 @@ const medicalPhotos = [
 ]
 
 const industrialPhotos = [
-  { src: '/images/photography/7-Commodities_Port.png', alt: 'Port San Antonio commodities terminal — large-format industrial photography' },
-  { src: '/images/photography/11-West-Rail-Bridge-.png', alt: 'West Rail Bridge San Antonio — architectural infrastructure photography' },
+  { src: '/images/photography/7-Commodities_Port.png', alt: 'Port San Antonio commodities terminal - large-format industrial photography' },
+  { src: '/images/photography/11-West-Rail-Bridge-.png', alt: 'West Rail Bridge San Antonio - architectural infrastructure photography' },
 ]
 
 const cityPhotos = [
   { src: '/images/photography/Photography-San-Antonio-1.jpg', alt: 'On-location photography in San Antonio, Texas' },
   { src: '/images/photography/Photography-San-Antonio-2.jpg', alt: 'San Antonio community and culture photography' },
-  { src: '/images/photography/Photography-San-Antonio-5.jpg', alt: 'San Antonio photography — people and sense of place' },
+  { src: '/images/photography/Photography-San-Antonio-5.jpg', alt: 'San Antonio photography - people and sense of place' },
   { src: '/images/photography/Photography-San-Antonio-9.jpg', alt: 'San Antonio local on-location photography' },
   { src: '/images/photography/Photography-San-Antonio-10.jpg', alt: 'Visual storytelling photography across San Antonio' },
   { src: '/images/photography/Photography-San-Antonio-14.jpg', alt: 'San Antonio community event photography' },
   { src: '/images/photography/Photography-San-Antonio-20.jpg', alt: 'On-location lifestyle photography in San Antonio, Texas' },
-  { src: '/images/photography/2A8A5879.jpg', alt: 'Strawberry waffles with whipped cream — food and dining photography in San Antonio' },
+  { src: '/images/photography/2A8A5879.jpg', alt: 'Strawberry waffles with whipped cream - food and dining photography in San Antonio' },
 ]
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'Photography Services San Antonio — Media Bar Productions',
+  name: 'Photography Services San Antonio - Media Bar Productions',
   description: 'Professional event, corporate, healthcare, and architectural photography in San Antonio, TX from an Emmy Award-winning production team founded in 2011.',
   url: 'https://www.mediabarproductions.com/photography',
   image: 'https://www.mediabarproductions.com/images/photography/DSC_6557.JPG',
@@ -349,7 +349,7 @@ export default function PhotographyPage() {
           <p className="ph-section-eyebrow">Healthcare & Medical</p>
           <h2 className="ph-section-h2">Healthcare & Medical</h2>
           <p className="ph-section-desc">
-            Medical photography for healthcare brands — patient-friendly, clinically accurate, HIPAA-aware production practices.
+            Medical photography for healthcare brands - patient-friendly, clinically accurate, HIPAA-aware production practices.
           </p>
           <div className="ph-grid-2">
             {medicalPhotos.map((photo) => (
@@ -378,7 +378,7 @@ export default function PhotographyPage() {
           <p className="ph-section-eyebrow">Industrial & Architecture</p>
           <h2 className="ph-section-h2">Industrial & Architecture</h2>
           <p className="ph-section-desc">
-            Large-format industrial and architectural photography — ports, infrastructure, exteriors. Cinematic compositions that scale to print and billboard.
+            Large-format industrial and architectural photography - ports, infrastructure, exteriors. Cinematic compositions that scale to print and billboard.
           </p>
           <div className="ph-grid-2">
             {industrialPhotos.map((photo) => (
@@ -407,7 +407,7 @@ export default function PhotographyPage() {
           <p className="ph-section-eyebrow">San Antonio</p>
           <h2 className="ph-section-h2">Around San Antonio</h2>
           <p className="ph-section-desc">
-            On-location work across San Antonio — culture, community, and the visual character of the city we call home.
+            On-location work across San Antonio - culture, community, and the visual character of the city we call home.
           </p>
           <div className="ph-grid-4">
             {cityPhotos.map((photo) => (
@@ -430,7 +430,7 @@ export default function PhotographyPage() {
       <section className="ph-cta">
         <div className="ph-cta-glow" aria-hidden="true" />
         <h2 className="ph-cta-h2">Ready to Book a <em>Photo Shoot?</em></h2>
-        <p className="ph-cta-sub">Tell us about your project and we&apos;ll put together a custom quote — fast.</p>
+        <p className="ph-cta-sub">Tell us about your project and we&apos;ll put together a custom quote - fast.</p>
         <div className="ph-cta-actions">
           <Link href="/contact" className="btn-red">Get a Quote</Link>
           <a href="tel:2102799442" className="ph-cta-phone">210-279-9442</a>

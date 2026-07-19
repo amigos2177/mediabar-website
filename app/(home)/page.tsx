@@ -54,55 +54,55 @@ const svgProps = {
 }
 
 const serviceIcons = [
-  // Corporate Video — briefcase
+  // Corporate Video - briefcase
   <svg key="corporate" {...svgProps}>
     <rect x="2" y="7" width="20" height="14" rx="2"/>
     <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
   </svg>,
-  // Commercials — play circle
+  // Commercials - play circle
   <svg key="commercials" {...svgProps}>
     <circle cx="12" cy="12" r="10"/>
     <polygon points="10 8 16 12 10 16 10 8"/>
   </svg>,
-  // Event Coverage — calendar
+  // Event Coverage - calendar
   <svg key="events" {...svgProps}>
     <rect x="3" y="4" width="18" height="18" rx="2"/>
     <line x1="16" y1="2" x2="16" y2="6"/>
     <line x1="8" y1="2" x2="8" y2="6"/>
     <line x1="3" y1="10" x2="21" y2="10"/>
   </svg>,
-  // Interview & Discussion — mic
+  // Interview & Discussion - mic
   <svg key="interview" {...svgProps}>
     <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
     <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
     <line x1="12" y1="19" x2="12" y2="22"/>
     <line x1="8" y1="22" x2="16" y2="22"/>
   </svg>,
-  // Medical Video — plus square
+  // Medical Video - plus square
   <svg key="medical" {...svgProps}>
     <rect x="3" y="3" width="18" height="18" rx="2"/>
     <line x1="12" y1="8" x2="12" y2="16"/>
     <line x1="8" y1="12" x2="16" y2="12"/>
   </svg>,
-  // Aerial Video — arrow up
+  // Aerial Video - arrow up
   <svg key="aerial" {...svgProps}>
     <line x1="12" y1="19" x2="12" y2="5"/>
     <polyline points="5 12 12 5 19 12"/>
   </svg>,
-  // Motion Graphics — layers
+  // Motion Graphics - layers
   <svg key="motion" {...svgProps}>
     <polygon points="12 2 2 7 12 12 22 7 12 2"/>
     <polyline points="2 17 12 22 22 17"/>
     <polyline points="2 12 12 17 22 12"/>
   </svg>,
-  // Live Streaming — wifi
+  // Live Streaming - wifi
   <svg key="streaming" {...svgProps}>
     <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
     <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
     <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
     <line x1="12" y1="20" x2="12.01" y2="20"/>
   </svg>,
-  // Post Production — scissors
+  // Post Production - scissors
   <svg key="post" {...svgProps}>
     <circle cx="6" cy="6" r="3"/>
     <circle cx="6" cy="18" r="3"/>
@@ -110,7 +110,7 @@ const serviceIcons = [
     <line x1="14.47" y1="14.48" x2="20" y2="20"/>
     <line x1="8.12" y1="8.12" x2="12" y2="12"/>
   </svg>,
-  // Food Video — coffee
+  // Food Video - coffee
   <svg key="food" {...svgProps}>
     <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
     <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
@@ -118,7 +118,7 @@ const serviceIcons = [
     <line x1="10" y1="1" x2="10" y2="4"/>
     <line x1="14" y1="1" x2="14" y2="4"/>
   </svg>,
-  // Real Estate Video — home
+  // Real Estate Video - home
   <svg key="realestate" {...svgProps}>
     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
     <polyline points="9 22 9 12 15 12 15 22"/>
@@ -985,11 +985,11 @@ export default function HomePage() {
           <p className="hero-eyebrow">Award-winning video production · San Antonio, Texas</p>
           <h1 className="hero-headline">
             Stories Built to Move
-            <span className="hero-headline-geo">people—and business.</span>
+            <span className="hero-headline-geo">people and business.</span>
           </h1>
           <p className="hero-sub">
             Media Bar Productions turns complex ideas into cinematic brand stories, commercials,
-            and campaigns—planned, produced, and finished by one experienced team.
+            and campaigns, all planned, produced, and finished by one experienced team.
           </p>
           <div className="hero-pills">
             <span className="hero-pill">Strategy to Delivery</span>
@@ -1207,7 +1207,7 @@ export default function HomePage() {
         <p className="eyebrow">What It Costs</p>
         <h2 className="section-title" style={{ marginBottom: '24px' }}>What Goes Into the Cost of a <em>Video Production</em></h2>
         <p style={{ fontSize: '16px', lineHeight: '1.75', color: 'rgba(255,255,255,0.55)', maxWidth: '680px', margin: '0 auto 44px' }}>
-          Every project is scoped individually — a 30-second social spot and a multi-day brand film don&rsquo;t carry the same budget. We&rsquo;ll recommend the right scope for your goals, and you own all the footage we shoot.
+          Every project is scoped individually - a 30-second social spot and a multi-day brand film don&rsquo;t carry the same budget. We&rsquo;ll recommend the right scope for your goals, and you own all the footage we shoot.
         </p>
         <Link href="/pricing" className="btn-red">See What Drives Cost</Link>
       </section>

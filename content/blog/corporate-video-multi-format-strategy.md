@@ -58,15 +58,15 @@ Here is how the multi-format approach works, and how to make sure your next corp
 </style>
 
 <figure class="mb-audio">
-  <figcaption>Listen — One Shoot, Many Cuts · 2 min</figcaption>
+  <figcaption>Listen - One Shoot, Many Cuts · 2 min</figcaption>
   <audio controls preload="none" src="/audio/blog/corporate-video-multi-format-strategy.mp3"></audio>
   <details class="mb-transcript">
     <summary>Audio transcript</summary>
     <p>Your audience doesn't watch video in one place anymore. The same message has to land on a phone during a coffee break, on a homepage above the fold, inside a sales deck, and on a lobby monitor at an event. Shooting a separate video for each of those is slow and expensive. Shooting once and cutting smart is how the best brands keep up.</p>
     <p>At Media Bar Productions, we've helped Texas companies turn a single production day into a library of content since 2011. As a San Antonio team with three Emmy Awards and fifteen Telly Awards, we plan every corporate shoot around one question: how many places can this footage go?</p>
-    <p>Here's the mistake to avoid. A company shoots a beautiful two-minute hero video, then a week later asks an intern to crop it for TikTok. The pacing breaks, the graphics get cut off, and it reads as a recycled hand-me-down. You didn't just hurt the brand — you set fire to most of your production budget.</p>
-    <p>The fix is what we call backward mapping. Before the cameras roll, you define every deliverable — the hero video, the vertical social cuts, the recruiting reel, the square email teaser — and build one shot list that feeds all of them. The footage is the asset. The formats are just how you spend it.</p>
-    <p>On set, three things change. Shoot wider than feels natural, so editors have room to reframe for vertical and square. Capture far more B-roll than the hero edit needs — that's the fuel for months of short clips. And record pristine audio, because sound-off social cuts need accurate captions, and clean audio is what makes those captions possible.</p>
+    <p>Here's the mistake to avoid. A company shoots a beautiful two-minute hero video, then a week later asks an intern to crop it for TikTok. The pacing breaks, the graphics get cut off, and it reads as a recycled hand-me-down. You didn't just hurt the brand - you set fire to most of your production budget.</p>
+    <p>The fix is what we call backward mapping. Before the cameras roll, you define every deliverable - the hero video, the vertical social cuts, the recruiting reel, the square email teaser - and build one shot list that feeds all of them. The footage is the asset. The formats are just how you spend it.</p>
+    <p>On set, three things change. Shoot wider than feels natural, so editors have room to reframe for vertical and square. Capture far more B-roll than the hero edit needs - that's the fuel for months of short clips. And record pristine audio, because sound-off social cuts need accurate captions, and clean audio is what makes those captions possible.</p>
     <p>Done right, one day of filming becomes a hero piece for your website, vertical clips for social, an explainer your sales reps drop into proposals, a culture reel for recruiting, and an internal training video. The crew cost stays flat. The output multiplies.</p>
     <p>If you're a San Antonio or wider Texas brand weighing a corporate video, that planning conversation is exactly where we start. Reach out to Media Bar Productions, and let's build a shoot that works everywhere your audience does.</p>
   </details>
@@ -89,7 +89,7 @@ Trying to produce each of those as a standalone project multiplies your cost and
 
 The model is simple: design the production day so the raw footage can be recut for every channel you care about, without reshoots.
 
-That starts in pre-production. Before the cameras roll, we map the deliverables backward — what does the hero video need, what do the social cuts need, what does the recruiting reel need — and then build a shot list that feeds all of them.
+That starts in pre-production. Before the cameras roll, we map the deliverables backward - what does the hero video need, what do the social cuts need, what does the recruiting reel need - and then build a shot list that feeds all of them.
 
 On the day, that means capturing:
 
@@ -98,14 +98,14 @@ On the day, that means capturing:
 3. Vertical-friendly framing so social cuts do not look cropped or awkward
 4. Extra takes and unscripted moments that make short clips feel human, not corporate
 
-Then the work moves into [post-production](/video-production/post-production), where one shoot becomes the hero piece plus a stack of derivative cuts. This is where multi-format strategy is won or lost — strong editing and motion graphics let a single day of footage carry your brand across every platform with a consistent look.
+Then the work moves into [post-production](/video-production/post-production), where one shoot becomes the hero piece plus a stack of derivative cuts. This is where multi-format strategy is won or lost - strong editing and motion graphics let a single day of footage carry your brand across every platform with a consistent look.
 
 ## What to Capture So Your Footage Travels
 
 If you want footage that works everywhere, you plan for it on set. A few practical priorities:
 
 - **Shoot wider than you think.** Extra headroom and side space give editors room to reframe for vertical and square without losing the subject.
-- **Get clean audio.** Sound-off social cuts still need captions, and captions need an accurate transcript — which starts with good audio.
+- **Get clean audio.** Sound-off social cuts still need captions, and captions need an accurate transcript - which starts with good audio.
 - **Capture more B-roll than the hero edit needs.** B-roll is the fuel for every short clip you will make over the next quarter.
 - **Plan for graphics.** Lower thirds, animated stats, and branded transitions tie everything together and make recuts feel intentional rather than chopped.
 
@@ -121,7 +121,7 @@ Corporate video is not just for the homepage. The companies that get the most fr
 - **Events:** opener videos, stage graphics, and same-day highlight reels
 - **Always-on social:** short clips that keep your brand visible between campaigns
 
-One well-planned [corporate video production](/video-production/corporate) day can seed all of these. That is the efficiency argument that makes multi-format an easy yes for most marketing directors — the budget stays the same, but the output multiplies.
+One well-planned [corporate video production](/video-production/corporate) day can seed all of these. That is the efficiency argument that makes multi-format an easy yes for most marketing directors - the budget stays the same, but the output multiplies.
 
 ## Why Corporate Video Matters Beyond Marketing
 

@@ -9,16 +9,16 @@ faqs:
   - question: "How long should a recruiting video be?"
     answer: "Aim for 60-90 seconds for a careers-page hero and 15-30 seconds for social cuts. Long enough to feel human, short enough to hold attention."
   - question: "Should we use real employees or actors?"
-    answer: "Real employees, every time. Authenticity is the entire point — candidates can spot a hired smile instantly, and it undercuts the trust you're trying to build."
+    answer: "Real employees, every time. Authenticity is the entire point - candidates can spot a hired smile instantly, and it undercuts the trust you're trying to build."
   - question: "What does recruiting video production cost?"
     answer: "It depends on shoot days and how many deliverables you need. A single video sits at the lower end; a multi-asset employer-brand package from one shoot costs more but delivers a far lower cost per video. We'll quote a clear range for your scope."
   - question: "How many videos can we get from one shoot?"
-    answer: "With the right plan, several — a hero video, multiple vertical social cuts, role-specific spots, and an onboarding clip can all come from a single production day."
+    answer: "With the right plan, several - a hero video, multiple vertical social cuts, role-specific spots, and an onboarding clip can all come from a single production day."
 ---
 
 The best candidates do their homework long before they hit "apply." They scroll your LinkedIn, watch whatever video they can find, and decide in a few seconds whether your company feels like a place worth their next five years. If all they find is a stock photo and a bulleted job description, you've already lost the people you most wanted to reach.
 
-Recruiting video closes that gap. It shows talent who you actually are — the people, the work, and the reason your team shows up every morning — before the first interview is ever scheduled.
+Recruiting video closes that gap. It shows talent who you actually are - the people, the work, and the reason your team shows up every morning - before the first interview is ever scheduled.
 
 We've produced video for Texas brands since 2011, earned Emmy recognition along the way, and watched recruiting video quietly become one of the highest-leverage productions a company can commission. Here's how to do it right in 2026.
 
@@ -55,7 +55,7 @@ We've produced video for Texas brands since 2011, earned Emmy recognition along 
 </style>
 
 <figure class="mb-audio">
-  <figcaption>Listen — Recruiting Video · 3 min</figcaption>
+  <figcaption>Listen - Recruiting Video · 3 min</figcaption>
   <audio controls preload="none" src="/audio/blog/recruiting-video-production.mp3"></audio>
   <details class="mb-transcript">
     <summary>Audio transcript</summary>
@@ -73,27 +73,27 @@ We've produced video for Texas brands since 2011, earned Emmy recognition along 
 
 ## Why Recruiting Video Wins Talent in 2026
 
-Hiring is a two-way audition. While you're evaluating candidates, they're evaluating you — your culture, your leadership, and whether the day-to-day actually matches the pitch. Video is the only format that answers all three questions at once.
+Hiring is a two-way audition. While you're evaluating candidates, they're evaluating you - your culture, your leadership, and whether the day-to-day actually matches the pitch. Video is the only format that answers all three questions at once.
 
 It also reflects where marketing has moved. The brands winning attention in 2026 are leaning into proof over polish: credibility has become the real storytelling asset, and audiences trust what looks and sounds real far more than what looks manufactured. It's part of a broader [authentic-versus-polished shift](/blog/authentic-video-marketing-2026) reshaping brand video, and the same instinct applies to hiring. A scripted, stock-footage "culture" video reads as a commercial. A real employee talking about real work reads as the truth.
 
 A strong recruiting video does three things a job post simply can't:
 
-- **Shows culture instead of claiming it.** Candidates see your space, your team, and your tone — not adjectives.
+- **Shows culture instead of claiming it.** Candidates see your space, your team, and your tone - not adjectives.
 - **Builds trust before the interview.** Hearing from current employees lowers the risk a candidate feels in applying.
 - **Pre-qualifies applicants.** The right people lean in; the wrong fits self-select out, saving your team hours of screening.
 
-There's a cost angle, too. Every mismatched hire — someone who joins, realizes the culture isn't what they pictured, and leaves within a year — burns recruiting time, training, and team momentum. A recruiting video that shows the real environment up front reduces those surprises. Candidates who apply after watching tend to arrive with accurate expectations, and accurate expectations are exactly what turn a new hire into a long-term one.
+There's a cost angle, too. Every mismatched hire - someone who joins, realizes the culture isn't what they pictured, and leaves within a year - burns recruiting time, training, and team momentum. A recruiting video that shows the real environment up front reduces those surprises. Candidates who apply after watching tend to arrive with accurate expectations, and accurate expectations are exactly what turn a new hire into a long-term one.
 
 ## The Recruiting Videos Worth Making
 
 "Recruiting video" isn't one thing. The strongest employer-brand libraries mix a few formats, each doing a specific job in the hiring funnel:
 
-- **Culture / day-in-the-life** — A short, honest look at what working there feels like. The workhorse of any careers page.
-- **Employee testimonials** — Current team members, in their own words, on why they stay. The most persuasive asset you can own, because candidates trust peers over executives.
-- **Leadership vision** — A founder or department head laying out where the company is headed. This wins senior and mission-driven hires.
-- **Role- or team-specific spots** — Short pieces aimed at the engineers, nurses, or sales reps you're actively recruiting, speaking directly to that audience.
-- **Careers-page hero + onboarding welcome** — One polished anchor video for the site, plus a warm welcome piece that starts new hires off strong on day one.
+- **Culture / day-in-the-life** - A short, honest look at what working there feels like. The workhorse of any careers page.
+- **Employee testimonials** - Current team members, in their own words, on why they stay. The most persuasive asset you can own, because candidates trust peers over executives.
+- **Leadership vision** - A founder or department head laying out where the company is headed. This wins senior and mission-driven hires.
+- **Role- or team-specific spots** - Short pieces aimed at the engineers, nurses, or sales reps you're actively recruiting, speaking directly to that audience.
+- **Careers-page hero + onboarding welcome** - One polished anchor video for the site, plus a warm welcome piece that starts new hires off strong on day one.
 
 You don't need all of these at once. Most teams start with a culture piece and two or three testimonials, then expand as roles open up.
 
@@ -101,11 +101,11 @@ You don't need all of these at once. Most teams start with a culture piece and t
 
 Here's the part that makes recruiting video efficient instead of expensive: a single, well-planned production day can produce a deep library of assets.
 
-The smartest approach in 2026 treats one capture as raw material for the whole organization. A morning of interviews and b-roll can become a careers-page hero video, a handful of vertical cuts for LinkedIn and Instagram, role-specific recruiting spots, and an internal onboarding clip — all from the same footage. Marketing reuses the b-roll, HR reuses the interviews, and leadership gets a vision piece, without booking four separate shoots.
+The smartest approach in 2026 treats one capture as raw material for the whole organization. A morning of interviews and b-roll can become a careers-page hero video, a handful of vertical cuts for LinkedIn and Instagram, role-specific recruiting spots, and an internal onboarding clip - all from the same footage. Marketing reuses the b-roll, HR reuses the interviews, and leadership gets a vision piece, without booking four separate shoots.
 
 This is the same multi-format thinking that powers smart [corporate video production](/video-production/corporate): plan the production around outputs, not a single deliverable, and the cost per usable asset drops dramatically. A company that would never budget for "ten videos" can easily justify one shoot that quietly produces ten.
 
-The key is planning that toolkit before the cameras roll. We map the assets you need — and the platforms they'll live on — into the shot list, so nothing useful gets left on the cutting-room floor.
+The key is planning that toolkit before the cameras roll. We map the assets you need - and the platforms they'll live on - into the shot list, so nothing useful gets left on the cutting-room floor.
 
 ## What It Costs and How the Process Works
 
@@ -113,16 +113,16 @@ Most recruiting video is interview-driven, which means the real craft happens in
 
 A typical project runs in four phases:
 
-1. **Discovery** — We learn the roles you're hiring for, your culture, and the assets you need.
-2. **Prep & direction** — We build the shot list, prep your employee interviewees, and lock logistics.
-3. **Shoot day** — A focused production day, usually on your own location so the space feels authentic.
-4. **Post-production** — Editing, color, sound, captions, and exports sized for every platform.
+1. **Discovery** - We learn the roles you're hiring for, your culture, and the assets you need.
+2. **Prep & direction** - We build the shot list, prep your employee interviewees, and lock logistics.
+3. **Shoot day** - A focused production day, usually on your own location so the space feels authentic.
+4. **Post-production** - Editing, color, sound, captions, and exports sized for every platform.
 
-On cost: a single-format recruiting video lives in the lower range, while a full employer-brand package — multiple interviews, b-roll, and a stack of social cuts from one shoot — sits higher, scaling with shoot days and the number of deliverables. We scope every project to the assets you'll actually use, so you're not paying for footage that never ships. Ask for a range up front and we'll give you an honest one.
+On cost: a single-format recruiting video lives in the lower range, while a full employer-brand package - multiple interviews, b-roll, and a stack of social cuts from one shoot - sits higher, scaling with shoot days and the number of deliverables. We scope every project to the assets you'll actually use, so you're not paying for footage that never ships. Ask for a range up front and we'll give you an honest one.
 
-We're based in [San Antonio](/locations/san-antonio) and shoot on location across Texas — including [Austin](/locations/austin), [Houston](/locations/houston), and [Dallas](/locations/dallas) — so your video captures your real team in your real space, not a rented set that looks like everyone else's.
+We're based in [San Antonio](/locations/san-antonio) and shoot on location across Texas - including [Austin](/locations/austin), [Houston](/locations/houston), and [Dallas](/locations/dallas) - so your video captures your real team in your real space, not a rented set that looks like everyone else's.
 
-Once the footage is cut, distribution is where it earns its keep. The same hero video can anchor your careers page, run in LinkedIn job posts, ride along in recruiter outreach, live on your Glassdoor and Indeed profiles, and fuel your social channels — and it can run as a pre-roll ad targeting the exact candidates you want in your market. One shoot, working across every place a candidate might find you.
+Once the footage is cut, distribution is where it earns its keep. The same hero video can anchor your careers page, run in LinkedIn job posts, ride along in recruiter outreach, live on your Glassdoor and Indeed profiles, and fuel your social channels - and it can run as a pre-roll ad targeting the exact candidates you want in your market. One shoot, working across every place a candidate might find you.
 
 ## FAQ
 
@@ -130,13 +130,13 @@ Once the footage is cut, distribution is where it earns its keep. The same hero 
 Aim for 60-90 seconds for a careers-page hero and 15-30 seconds for social cuts. Long enough to feel human, short enough to hold attention.
 
 **Should we use real employees or actors?**
-Real employees, every time. Authenticity is the entire point — candidates can spot a hired smile instantly, and it undercuts the trust you're trying to build.
+Real employees, every time. Authenticity is the entire point - candidates can spot a hired smile instantly, and it undercuts the trust you're trying to build.
 
 **What does recruiting video production cost?**
 It depends on shoot days and how many deliverables you need. A single video sits at the lower end; a multi-asset employer-brand package from one shoot costs more but delivers a far lower cost per video. We'll quote a clear range for your scope.
 
 **How many videos can we get from one shoot?**
-With the right plan, several — a hero video, multiple vertical social cuts, role-specific spots, and an onboarding clip can all come from a single production day.
+With the right plan, several - a hero video, multiple vertical social cuts, role-specific spots, and an onboarding clip can all come from a single production day.
 
 ## Ready to Hire With Video?
 

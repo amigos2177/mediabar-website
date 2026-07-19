@@ -21,7 +21,7 @@ function formatDate(dateStr: string): string {
 }
 
 function cleanExcerpt(excerpt: string): string {
-  return excerpt.replace(/\s*[–—]\s*/g, ', ')
+  return excerpt
 }
 
 export default function BlogPage() {

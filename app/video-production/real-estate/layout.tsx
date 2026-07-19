@@ -22,15 +22,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         },
         {
           question: 'Do you combine ground and aerial in the same shoot?',
-          answer: "Yes — and that's our recommended approach for almost every property. Ground interior and exterior production combined with aerial coverage in a single coordinated shoot day is the most efficient and cost-effective way to get complete property coverage. Separate aerial-only shoots are available but typically less efficient.",
+          answer: "Yes - and that's our recommended approach for almost every property. Ground interior and exterior production combined with aerial coverage in a single coordinated shoot day is the most efficient and cost-effective way to get complete property coverage. Separate aerial-only shoots are available but typically less efficient.",
         },
         {
           question: "What's your process for getting aerial authorization?",
-          answer: "Our pilots handle all FAA airspace authorization as part of every aerial shoot. We file LAANC authorizations for controlled airspace, obtain waivers where required, and check NOTAMs before every flight. You don't need to do anything — just confirm the property address when you book.",
+          answer: "Our pilots handle all FAA airspace authorization as part of every aerial shoot. We file LAANC authorizations for controlled airspace, obtain waivers where required, and check NOTAMs before every flight. You don't need to do anything - just confirm the property address when you book.",
         },
         {
           question: 'Do you shoot twilight?',
-          answer: 'Yes. Twilight exterior shots are one of the most impactful visuals in luxury real estate marketing. We offer twilight as an add-on to any ground/aerial package, or as a standalone shoot. Twilight windows are typically 20-30 minutes long, so precise timing and pre-planning are essential — we handle all of that.',
+          answer: 'Yes. Twilight exterior shots are one of the most impactful visuals in luxury real estate marketing. We offer twilight as an add-on to any ground/aerial package, or as a standalone shoot. Twilight windows are typically 20-30 minutes long, so precise timing and pre-planning are essential - we handle all of that.',
         },
         {
           question: 'What formats do you deliver in for MLS?',

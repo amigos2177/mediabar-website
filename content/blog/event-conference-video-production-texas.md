@@ -9,7 +9,7 @@ featuredImage: /images/blog/event-conference-video-production-texas.png
 
 ## How to Plan Event Video Production in Texas
 
-This guide covers scope, budget, venue logistics, and crew selection. If you are ready to hire a production partner, explore our [event and conference video production services](/video-production/events). If your main goal is building a large post-event content library, read our [conference content strategy guide](/blog/conference-video-production-guide).
+This guide covers scope, budget, venue logistics, and crew selection. If you are ready to hire a production partner, explore our [event and conference video production services](/video-production/events). If your main goal is building a large post-event content library, read our [conference content strategy guide](/blog/conference-video-production-guide). For a campaign built around registration, engagement, follow-up, and sponsor value, use our [2026 event video ROI strategy](/blog/event-video-roi-strategy-2026).
 
 You have booked the venue, lined up the speakers, and sold the seats. Then someone asks a question that should have come earlier: who is capturing all of this on video? Event video works best when it is part of the planning process. A clear plan can turn one program into useful highlight reels, speaker clips, testimonials, and material for next year's promotion. This guide explains what to decide first, what affects cost, and how to evaluate a crew.
 

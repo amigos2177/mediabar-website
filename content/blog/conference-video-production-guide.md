@@ -18,7 +18,7 @@ faqs:
     answer: "We're based in San Antonio and shoot regularly across Austin, Houston, and the Dallas-Fort Worth metro, plus the rest of Texas."
 ---
 
-This guide focuses on building a post-event content system. If you are ready to hire a crew, explore our [event and conference video production services](/video-production/events). For scope, budget, venue, and vendor decisions, use our [Texas event video planning guide](/blog/event-conference-video-production-texas).
+This guide focuses on building a post-event content system. If you are ready to hire a crew, explore our [event and conference video production services](/video-production/events). For scope, budget, venue, and vendor decisions, use our [Texas event video planning guide](/blog/event-conference-video-production-texas). For a full-funnel plan tied to registration, engagement, sales follow-up, and sponsor value, read our [2026 event video ROI strategy](/blog/event-video-roi-strategy-2026).
 
 Most organizations treat conference video as an afterthought, with one recap reel that earns a single post and disappears. A better content strategy plans each useful asset before the event. The right crew can turn two days in a ballroom into a library your team can use for months.
 

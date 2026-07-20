@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { track } from '@vercel/analytics'
+import { analyticsEvents } from '@/lib/analytics-events'
 
 type ConversionIntent =
   | 'phone'
@@ -25,6 +26,13 @@ function getConversionIntent(anchor: HTMLAnchorElement): ConversionIntent | null
   return null
 }
 
+function getPlacement(anchor: HTMLAnchorElement) {
+  if (anchor.closest('nav')) return 'navigation'
+  if (anchor.closest('footer')) return 'footer'
+  if (anchor.closest('header')) return 'header'
+  return 'page'
+}
+
 export function AnalyticsInteractions() {
   useEffect(() => {
     function handleClick(event: MouseEvent) {
@@ -36,9 +44,9 @@ export function AnalyticsInteractions() {
       const intent = getConversionIntent(anchor)
       if (!intent) return
 
-      track('Conversion Intent Clicked', {
+      track(analyticsEvents.conversionIntentClicked, {
         intent,
-        sourcePath: window.location.pathname,
+        placement: getPlacement(anchor),
       })
     }
 

@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { track } from '@vercel/analytics'
+import { analyticsEvents } from '@/lib/analytics-events'
 import styles from './contact.module.css'
 
 const services = [
@@ -41,11 +42,16 @@ export default function ContactForm() {
   const [fields, setFields] = useState(initialFields)
   const [status, setStatus] = useState<SubmitStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const hasTrackedStart = useRef(false)
 
   function updateField(
     field: keyof typeof initialFields,
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) {
+    if (field !== 'website' && !hasTrackedStart.current) {
+      hasTrackedStart.current = true
+      track(analyticsEvents.contactFormStarted)
+    }
     setFields((current) => ({ ...current, [field]: event.target.value }))
   }
 
@@ -63,17 +69,25 @@ export default function ContactForm() {
       const data = await response.json()
 
       if (!response.ok) {
+        track(analyticsEvents.contactFormSubmissionFailed, {
+          reason: 'server',
+          service: fields.service || 'General inquiry',
+        })
         setStatus('error')
         setErrorMessage(data.error ?? 'Something went wrong. Please try again.')
         return
       }
 
-      track('Contact Form Submitted', {
+      track(analyticsEvents.contactFormSubmitted, {
         service: fields.service || 'General inquiry',
       })
       setFields(initialFields)
       setStatus('success')
     } catch {
+      track(analyticsEvents.contactFormSubmissionFailed, {
+        reason: 'network',
+        service: fields.service || 'General inquiry',
+      })
       setStatus('error')
       setErrorMessage('Network error. Please check your connection and try again.')
     }
@@ -99,6 +113,7 @@ export default function ContactForm() {
             onClick={() => {
               setStatus('idle')
               setErrorMessage('')
+              hasTrackedStart.current = false
             }}
           >
             Send another message

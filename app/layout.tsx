@@ -6,6 +6,9 @@ import './globals.css'
 import { AnalyticsInteractions } from '@/components/AnalyticsInteractions'
 import { LocalBusinessJsonLd, WebSiteJsonLd } from '@/components/JsonLd'
 
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+
 const bebasNeue = Bebas_Neue({
   weight: '400',
   subsets: ['latin'],
@@ -30,6 +33,12 @@ export const metadata: Metadata = {
   applicationName: 'Media Bar Productions',
   creator: 'Media Bar Productions',
   publisher: 'Media Bar Productions',
+  verification: {
+    ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
+    ...(bingSiteVerification
+      ? { other: { 'msvalidate.01': bingSiteVerification } }
+      : {}),
+  },
   robots: {
     index: true,
     follow: true,

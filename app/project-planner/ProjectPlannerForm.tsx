@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { track } from '@vercel/analytics'
 import Link from 'next/link'
+import { analyticsEvents } from '@/lib/analytics-events'
 import styles from './project-planner.module.css'
 
 const services = [
@@ -212,12 +213,18 @@ export default function ProjectPlannerForm() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const headingRef = useRef<HTMLHeadingElement>(null)
+  const hasTrackedStart = useRef(false)
+  const trackedSteps = useRef(new Set<number>())
 
   useEffect(() => {
     headingRef.current?.focus()
   }, [step])
 
   function update<K extends keyof PlannerFields>(key: K, value: PlannerFields[K]) {
+    if (key !== 'website' && !hasTrackedStart.current) {
+      hasTrackedStart.current = true
+      track(analyticsEvents.projectPlannerStarted)
+    }
     setFields((current) => ({ ...current, [key]: value }))
   }
 
@@ -254,6 +261,13 @@ export default function ProjectPlannerForm() {
       return
     }
     setError('')
+    if (!trackedSteps.current.has(step)) {
+      trackedSteps.current.add(step)
+      track(analyticsEvents.projectPlannerStepCompleted, {
+        stepNumber: step + 1,
+        stepName: stepLabels[step],
+      })
+    }
     setStep((current) => Math.min(current + 1, stepLabels.length - 1))
   }
 
@@ -304,18 +318,23 @@ export default function ProjectPlannerForm() {
       })
       const result = await response.json()
       if (!response.ok) {
+        track(analyticsEvents.projectBriefSubmissionFailed, {
+          reason: 'server',
+          service: fields.service,
+        })
         setError(result.error || 'We could not send the brief. Please try again.')
         return
       }
-      track('Project Brief Submitted', {
+      track(analyticsEvents.projectBriefSubmitted, {
         service: fields.service,
-        goal: fields.goal,
-        budget: fields.budget || 'Not specified',
         timeline: fields.timeline,
-        deliverableCount: fields.deliverables.length,
       })
       setSubmitted(true)
     } catch {
+      track(analyticsEvents.projectBriefSubmissionFailed, {
+        reason: 'network',
+        service: fields.service,
+      })
       setError('Network error. Please try again or call 210-279-9442.')
     } finally {
       setSubmitting(false)

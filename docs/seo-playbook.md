@@ -165,10 +165,14 @@ Your review link: **https://g.page/r/CU_xOVu2pdSuEBM/review**
 
 ## 4. Measurement (Friday, ~10 min)
 
+Use `docs/search-and-measurement-setup.md` for the complete verification,
+submission, conversion-event, baseline, and weekly scorecard process.
+
 | Metric | Source |
 |---|---|
 | Impressions / clicks / avg position (5 gap verticals) | GSC |
-| Organic sessions + GBP-tagged sessions (`utm_source=gbp`) | GA |
+| Visitors, lead events, and conversion intent | Vercel Web Analytics |
+| GBP-tagged landing-page traffic (`utm_source=gbp`) | Vercel Web Analytics |
 | GBP calls / directions / website clicks / searches | GBP Performance |
 | Total reviews / avg rating | GBP |
 | Posts indexed this month / links added | Client Tracker + manual |
@@ -183,5 +187,5 @@ Don't increase posting volume until all four `/locations/*` pages are genuinely 
 (local proof, embedded video, service links). That foundation is the ceiling on the
 whole multi-metro plan.
 
-*Note: confirm your canonical domain (mediabarproductions.com vs. mediabarsa.com) and
-use it consistently for all internal links and GBP CTAs.*
+*Canonical domain confirmed: use `https://www.mediabarproductions.com` for all
+internal links, sitemap entries, and GBP CTAs.*

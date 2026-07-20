@@ -9,7 +9,7 @@ export default function MedicalVideoPage() {
         title: 'Make Complex Care Clear.',
         emphasis: 'Protect What Matters.',
         copy:
-          'Patient stories, provider expertise, education, and clinical communication produced for San Antonio healthcare teams with careful planning and a human point of view.',
+          'Full-service medical video production for patient stories, provider expertise, education, training, and healthcare campaigns, produced with careful planning and a human point of view.',
         image: '/images/bts-10.jpg',
         alt: 'Multi-camera healthcare interview production at a San Antonio clinic',
         position: 'center',
@@ -104,17 +104,17 @@ export default function MedicalVideoPage() {
       ]}
       relatedLinks={{
         eyebrow: 'Healthcare Resources',
-        title: 'Build Trust Across Every Format.',
+        title: 'Plan the Right Healthcare Story.',
         copy:
-          'Explore practical guidance for provider-led content, complete healthcare productions, and interview planning.',
+          'Use these planning guides to shape the scope and format. When you are ready to produce, this service page is the place to start.',
         links: [
           {
-            label: 'Healthcare Video Guide',
+            label: 'Healthcare Video Planning Guide',
             href: '/blog/healthcare-video-production-san-antonio',
             description: 'Plan patient stories, service-line content, consent, access, and stakeholder review.',
           },
           {
-            label: 'Provider Q&A Video',
+            label: 'Provider Q&A Video Guide',
             href: '/blog/healthcare-provider-video',
             description: 'Turn provider expertise into a useful library of focused patient answers.',
           },

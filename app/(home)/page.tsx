@@ -982,14 +982,14 @@ export default function HomePage() {
         </div>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="hero-eyebrow">Award-winning video production · San Antonio, Texas</p>
+          <p className="hero-eyebrow">San Antonio video production company · Producing since 2011</p>
           <h1 className="hero-headline">
             Stories Built to Move
             <span className="hero-headline-geo">people and business.</span>
           </h1>
           <p className="hero-sub">
-            Media Bar Productions turns complex ideas into cinematic brand stories, commercials,
-            and campaigns, all planned, produced, and finished by one experienced team.
+            Media Bar Productions creates cinematic brand stories, commercials, and event content
+            for Texas organizations, all planned, produced, and finished by one experienced team.
           </p>
           <div className="hero-pills">
             <span className="hero-pill">Strategy to Delivery</span>

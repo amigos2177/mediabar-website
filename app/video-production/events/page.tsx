@@ -175,6 +175,16 @@ export default function EventsPage() {
         .evt-process-card h3{margin-top:96px;font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.04em;line-height:1;text-transform:uppercase}
         .evt-process-card p{margin-top:16px;color:#85858a;font-size:13px;line-height:1.7}
 
+        .evt-resources{background:#101010}
+        .evt-resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+        .evt-resource{min-height:270px;display:flex;flex-direction:column;padding:34px;background:#141414;transition:background .18s}
+        .evt-resource:hover{background:#191919}
+        .evt-resource-tag{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .evt-resource h3{margin-top:54px;font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
+        .evt-resource p{margin-top:16px;color:#85858a;font-size:13px;line-height:1.7}
+        .evt-resource-link{margin-top:auto;padding-top:28px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+        .evt-resource-link span{color:var(--red);margin-left:8px}
+
         .evt-faq-wrap{max-width:1000px}
         .evt-faq-head{text-align:center;margin-bottom:44px}
         .evt-faq-head h2{font-size:clamp(52px,6vw,80px);margin-top:13px}
@@ -227,6 +237,8 @@ export default function EventsPage() {
           .evt-process-grid{grid-template-columns:1fr}
           .evt-process-card{min-height:270px;padding:27px 24px}
           .evt-process-card h3{margin-top:64px}
+          .evt-resource-grid{grid-template-columns:1fr}
+          .evt-resource{min-height:250px;padding:27px 24px}
           .evt-faq summary{font-size:14px}
           .evt-cta{padding:84px 0}
           .evt-button{width:100%}
@@ -405,6 +417,41 @@ export default function EventsPage() {
                   <p>{item.copy}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="evt-section evt-resources">
+          <div className="evt-container">
+            <div className="evt-section-head">
+              <div>
+                <p className="evt-eyebrow">Event planning resources</p>
+                <h2 className="evt-display evt-section-title">Plan the Coverage. <em>Use Every Asset.</em></h2>
+              </div>
+              <p className="evt-section-intro">
+                These guides help event teams define scope, budget, venue needs, and the content
+                system before choosing a production approach.
+              </p>
+            </div>
+            <div className="evt-resource-grid">
+              <Link href="/blog/conference-video-production-guide" className="evt-resource">
+                <span className="evt-resource-tag">Content strategy guide</span>
+                <h3>Turn One Conference Into a Content Library</h3>
+                <p>
+                  Plan recaps, session recordings, speaker clips, testimonials, and sponsor content
+                  as one coordinated system.
+                </p>
+                <span className="evt-resource-link">Read the conference content guide <span>→</span></span>
+              </Link>
+              <Link href="/blog/event-conference-video-production-texas" className="evt-resource">
+                <span className="evt-resource-tag">Texas planning guide</span>
+                <h3>Define Scope, Budget, Venue, and Crew</h3>
+                <p>
+                  Compare recorded and live coverage, understand the variables that affect cost,
+                  and prepare the venue for production.
+                </p>
+                <span className="evt-resource-link">Read the Texas event planning guide <span>→</span></span>
+              </Link>
             </div>
           </div>
         </section>

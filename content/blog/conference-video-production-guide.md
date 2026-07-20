@@ -1,8 +1,9 @@
 ---
 title: "Conference Video: One Event, 60 Assets"
+seoTitle: "Conference Content Strategy: One Event, 60 Assets"
 slug: "conference-video-production-guide"
 date: "2026-06-27"
-excerpt: "Conference video production turns one event into 50+ marketing assets - highlight reels, session recordings, sponsor cuts. Here's the Texas playbook."
+excerpt: "A conference content strategy for turning one event into a useful library of recaps, session recordings, speaker clips, testimonials, and sponsor content."
 featuredImage: /images/blog/conference-video-production-guide.png
 faqs:
   - question: "How many videos do you get from one conference?"
@@ -17,9 +18,9 @@ faqs:
     answer: "We're based in San Antonio and shoot regularly across Austin, Houston, and the Dallas-Fort Worth metro, plus the rest of Texas."
 ---
 
-Most organizations treat conference video as an afterthought - one recap reel that lands three weeks late, earns a single LinkedIn post, and disappears. You spent months planning and a serious budget filling that room. Walking away with one video leaves the real value on the table.
+This guide focuses on building a post-event content system. If you are ready to hire a crew, explore our [event and conference video production services](/video-production/events). For scope, budget, venue, and vendor decisions, use our [Texas event video planning guide](/blog/event-conference-video-production-texas).
 
-Here's the reframe that changes how Texas event teams plan: a conference isn't a video shoot. It's a content production opportunity. The right crew turns two days in a ballroom into a library you'll pull from for the next six months - and the math behind it is hard to argue with.
+Most organizations treat conference video as an afterthought, with one recap reel that earns a single post and disappears. A better content strategy plans each useful asset before the event. The right crew can turn two days in a ballroom into a library your team can use for months.
 
 <style>
 .mb-audio{

@@ -1,10 +1,10 @@
 ---
-title: "Healthcare Video Production in San Antonio"
-seoTitle: "San Antonio Healthcare Video Production Guide"
+title: "Healthcare Video Planning Guide for San Antonio"
+seoTitle: "Healthcare Video Production Planning Guide"
 slug: "healthcare-video-production-san-antonio"
 date: "2026-06-14"
 updated: "2026-07-18"
-excerpt: "HIPAA-ready healthcare video production in San Antonio - the 2026 playbook for clinician-led, patient-first video that builds trust and brings in patients."
+excerpt: "A practical San Antonio healthcare video planning guide covering patient privacy, clinical review, formats, production logistics, and provider-led content."
 featuredImage: /images/blog/healthcare-video-production-san-antonio.png
 faqs:
   - question: "Is healthcare video private and patient-safe?"
@@ -23,9 +23,11 @@ faqs:
     answer: "It ranges with scope - a half-day batch of Q&A clips at the lighter end, a multi-location production with testimonials and a brand film higher. Contact us for a tailored quote."
 ---
 
-When a patient looks for a new doctor, specialist, or clinic, they aren't just comparing credentials - they're deciding who to trust with something deeply personal. Long before the first appointment, they're forming an impression from whatever they can find online. In 2026, more and more of that impression comes from video.
+This is a planning guide for healthcare communications and marketing teams. If you are ready to hire a production partner, explore our [medical and healthcare video production services](/video-production/medical). For a focused approach to short provider answers, use our [provider Q&A video guide](/blog/healthcare-provider-video).
 
-The healthcare organizations winning that trust aren't the ones with the slickest brand reel. They're the ones putting real clinicians on camera, answering the questions patients are actually asking, in a way that feels human. That's the heart of healthcare video that works - and this San Antonio playbook covers how to plan it, shoot it, and stay compliant doing it.
+When a patient looks for a new doctor, specialist, or clinic, they are not just comparing credentials. They are deciding who to trust with something deeply personal. Long before the first appointment, they are forming an impression from whatever they can find online. Video can help make that first impression more human and informative.
+
+The strongest healthcare videos put real clinicians on camera, answer the questions patients are actually asking, and feel clear rather than scripted. This San Antonio guide covers how to plan the format, coordinate access, protect privacy, and build an appropriate client review process.
 
 <style>
 .mb-audio{

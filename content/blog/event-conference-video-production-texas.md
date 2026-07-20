@@ -1,15 +1,17 @@
 ---
-title: "Event & Conference Video Production in Texas"
-seoTitle: 'Event & Conference Video Production in Texas'
+title: "Texas Event Video Planning Guide"
+seoTitle: 'Texas Event Video Planning Guide: Scope, Budget & Crew'
 slug: "event-conference-video-production-texas"
 date: "2026-05-30"
-excerpt: "Planning event or conference video production in Texas? How to set goals, budget, and hire the right crew for recordings, livestreams, and highlight reels."
+excerpt: "Plan Texas event video coverage with clearer goals, budgets, venue logistics, crew requirements, and decisions about recorded or live delivery."
 featuredImage: /images/blog/event-conference-video-production-texas.png
 ---
 
-## Event & Conference Video Production in Texas: 2026 Guide
+## How to Plan Event Video Production in Texas
 
-You've booked the venue, lined up the speakers, and sold the seats. Then someone asks the question that should have come months earlier: who's capturing all of this on video? Too often, event video production is the last item on the planning list - and that timing is exactly why so many companies walk away from a great conference with shaky phone footage and nothing worth reusing. A well-planned event video does the opposite. It turns one day into a year of content: highlight reels, speaker clips, testimonials, and proof for next year's promotion. This guide walks through how to plan event and conference video production in Texas the right way - what to decide first, what it costs, and how to hire a crew that delivers.
+This guide covers scope, budget, venue logistics, and crew selection. If you are ready to hire a production partner, explore our [event and conference video production services](/video-production/events). If your main goal is building a large post-event content library, read our [conference content strategy guide](/blog/conference-video-production-guide).
+
+You have booked the venue, lined up the speakers, and sold the seats. Then someone asks a question that should have come earlier: who is capturing all of this on video? Event video works best when it is part of the planning process. A clear plan can turn one program into useful highlight reels, speaker clips, testimonials, and material for next year's promotion. This guide explains what to decide first, what affects cost, and how to evaluate a crew.
 
 ## Start with what the video is actually for
 

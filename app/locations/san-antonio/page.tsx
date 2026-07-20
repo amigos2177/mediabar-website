@@ -200,14 +200,14 @@ export default function SanAntonioPage() {
           <div className="sa-hero-scrim" />
           <div className="sa-container sa-hero-inner">
             <div className="sa-hero-copy">
-              <p className="sa-eyebrow">San Antonio&apos;s homegrown production partner</p>
+              <p className="sa-eyebrow">A local video production company since 2011</p>
               <h1 className="sa-display">
-                Video Production
+                Video Production Company
                 <em>Built in San Antonio.</em>
               </h1>
               <p className="sa-hero-deck">
-                From first idea to final delivery, Media Bar gives San Antonio brands one
-                experienced team for corporate films, commercials, events, interviews, and campaigns.
+                From first idea to final delivery, Media Bar gives San Antonio organizations a local
+                crew, studio support, and one experienced team for filming and post-production.
               </p>
               <div className="sa-actions">
                 <Link className="sa-button sa-button-primary" href="/project-planner">Plan Your Project</Link>

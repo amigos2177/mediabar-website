@@ -6,9 +6,9 @@ import { buildMetadata } from '@/lib/seo'
 import { videoProductionFaqs } from './content'
 
 export const metadata = buildMetadata({
-  title: 'Video Production San Antonio & Texas | Media Bar',
+  title: 'Full-Service Video Production Services in Texas',
   description:
-    'San Antonio video production for corporate films, commercials, events, interviews, live streams, motion graphics, and post-production across Texas.',
+    'Explore full-service video production for corporate films, commercials, events, interviews, live streams, motion graphics, and post-production across Texas.',
   path: '/video-production',
   ogImage: '/images/bts-dsc-1.jpg',
 })
@@ -110,7 +110,7 @@ export default function VideoProductionPage() {
         ]}
       />
       <ServiceJsonLd
-        name="Video Production in San Antonio and Texas"
+        name="Full-Service Video Production Services in Texas"
         description="Full-service San Antonio video production for corporate films, commercials, events, interviews, medical video, live streaming, motion graphics, and post-production across Texas."
         url="/video-production"
         image="https://www.mediabarproductions.com/images/bts-dsc-1.jpg"
@@ -271,11 +271,11 @@ export default function VideoProductionPage() {
           <div className="vps-hero-inner">
             <div className="vps-container">
               <div className="vps-hero-copy">
-                <p className="vps-eyebrow">San Antonio video production across Texas</p>
+                <p className="vps-eyebrow">Full-service video production across Texas</p>
                 <h1 className="vps-display">One Production Team. <em>Every Version You Need.</em></h1>
                 <p className="vps-hero-deck">
-                  From our San Antonio home base, Media Bar brings creative, production, and
-                  post-production into one experienced workflow for brands, organizations, and agencies across Texas.
+                  Explore complete video production services from creative and filming through
+                  post-production, all coordinated by one San Antonio team for organizations across Texas.
                 </p>
                 <div className="vps-actions">
                   <Link className="vps-button vps-button-primary" href="/project-planner">Plan Your Project</Link>

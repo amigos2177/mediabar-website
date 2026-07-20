@@ -1,9 +1,10 @@
 ---
 title: "Healthcare Provider Q&A Video"
+seoTitle: "Healthcare Provider Q&A Video Guide"
 slug: "healthcare-provider-video"
 date: "2026-06-17"
 updated: "2026-07-18"
-excerpt: "Healthcare provider video that turns Q&A clips into patient trust. How Texas practices use short, on-camera answers to win new patients."
+excerpt: "A practical guide to planning short healthcare provider Q&A videos, batching useful patient answers, and building a focused content library."
 featuredImage: /images/blog/healthcare-provider-video.png
 faqs:
   - question: "What is a provider Q&A video?"
@@ -16,9 +17,9 @@ faqs:
     answer: "Cost depends on scope and how many clips you need, but a batched Q&A library shoot - one provider, one half-day, many clips - is one of the most cost-effective formats in healthcare video, because a single production day stocks months of content."
 ---
 
-The decision now happens before the phone ever rings. A prospective patient searches a symptom, watches a few clips, reads a couple of reviews, and decides who feels trustworthy - all before they reach your front desk. If your providers aren't part of that moment, you're invisible at exactly the point where patients choose.
+This guide focuses specifically on short provider Q&A content. For broader production planning, start with our [healthcare video planning guide](/blog/healthcare-video-production-san-antonio). If you are ready to scope a shoot, explore our [medical and healthcare video production services](/video-production/medical).
 
-This piece zooms in on the single highest-impact format for winning that moment: the provider Q&A. If you want the full compliance-and-planning picture first, start with our [healthcare video production guide](https://www.mediabarproductions.com/blog/healthcare-video-production-san-antonio) - then come back here for the format that does the heaviest lifting on patient trust, at the lowest cost to produce.
+The decision often begins before the phone rings. A prospective patient searches a symptom, watches a few clips, reads reviews, and forms an opinion before reaching the front desk. A provider Q&A gives clinicians a direct way to answer common questions in a useful, approachable format.
 
 <style>
 .mb-audio{

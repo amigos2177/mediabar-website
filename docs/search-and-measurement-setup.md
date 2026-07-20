@@ -146,6 +146,28 @@ names, messages, project overviews, or pasted links. Campaign parameters are
 trimmed to 100 characters and recorded once per tagged landing page per browser
 session.
 
+## Production analytics validation
+
+Vercel Web Analytics was enabled for the production project on `2026-07-20`.
+A controlled production journey was completed without submitting a form,
+sending an email, or placing a call.
+
+Confirmed in the live Vercel dashboard:
+
+- `/blog/event-video-roi-strategy-2026`
+- `/video-production/events`
+- `/contact`
+- `/project-planner`
+- `Blog Journey Clicked`
+- `Contact Form Started`
+- `Conversion Intent Clicked`
+- `Conversion Source Clicked`
+- `Project Planner Started`
+
+The tagged campaign article visit is present in the Web Analytics page report.
+`Campaign Landing Viewed` is not yet visible in the five-event dashboard
+summary and should be checked again after the next reporting interval.
+
 ## Baseline snapshot
 
 Record the first complete baseline after Google Search Console, Bing, and the new production analytics release have collected enough data. Use the previous 28 full days and compare them with the prior 28 days.

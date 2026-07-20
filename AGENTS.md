@@ -27,7 +27,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Small, focused commits on main
 - SEO-optimized descriptive slugs on any new routes
 
-## Current State (as of July 19, 2026)
+## Current State (as of July 20, 2026)
 Site is live and stable. SEO metadata pass DONE for all routes.
 - Root layout: title template + metadataBase set in app/layout.tsx.
 - Per-route metadata: every route has unique title + description + canonical. Client-component pages use a sibling layout.tsx; server-component pages have the export directly in page.tsx.
@@ -41,6 +41,16 @@ Site is live and stable. SEO metadata pass DONE for all routes.
   - [ ] Request recrawl of the 5 pages that now link to it: `/work`, `/video-production/commercials`, `/locations/austin`, `/locations/dallas`, `/locations/san-antonio`
   - [ ] Sitemaps → resubmit `sitemap.xml` (new URL already included at priority 0.8)
   - Note: Request Indexing is rate-limited (~10/day); do the new page first, then commercials + /work, then the 3 location pages. Footer link is site-wide but does not need per-page reindexing.
+
+## July 20, 2026 responsive and conversion QA
+- Full ESLint, TypeScript, structured-data verification, and the webpack production build pass. The build generates 67 pages.
+- Nineteen priority public routes pass at 1440px desktop, 820px tablet, and 390px mobile with meaningful content, one H1, no broken loaded images, no horizontal overflow, and no framework error overlays.
+- All 60 internal destinations discovered through the priority pages load successfully, including the downloadable RBFCU case study PDF.
+- Mobile navigation opens correctly and exposes the primary company, service, project-planner, and phone paths.
+- Contact and project-planner controls have accessible names. Test input was entered and cleared without submitting either form.
+- Accessibility spot checks on the homepage, services hub, work index, FAQ, contact, and project planner found no unnamed links, buttons, or controls, no missing image `alt` attributes, no duplicate IDs, and no heading-level skips.
+- Browser console scans remained free of errors. Conversion paths from the homepage, services hub, work index, pricing, and contact pages lead to the project planner, contact page, or phone as intended.
+- No application code changes were required by this QA pass.
 
 ## July 17, 2026 audit sprint — implemented locally
 - Added a four-step `/project-planner` that submits through the hardened contact API.

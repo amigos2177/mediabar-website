@@ -41,6 +41,12 @@ export type ServiceEditorialPageProps = {
     secondaryCta: string
   }
   proof: Array<{ value: string; label: string }>
+  answer?: {
+    eyebrow: string
+    question: string
+    response: string
+    points: string[]
+  }
   overview: {
     eyebrow: string
     title: string
@@ -108,6 +114,7 @@ export type ServiceEditorialPageProps = {
 export function ServiceEditorialPage({
   hero,
   proof,
+  answer,
   overview,
   capabilities,
   plan,
@@ -148,6 +155,13 @@ export function ServiceEditorialPage({
         .sep-proof-item:last-child{border-right:0}
         .sep-proof-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:30px;line-height:1;letter-spacing:.04em}
         .sep-proof-label{margin-top:6px;color:#888;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+
+        .sep-answer{padding:52px 0;border-bottom:1px solid var(--sep-line);background:#0f0f0f}
+        .sep-answer-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
+        .sep-answer h2{margin-top:12px;font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(34px,4vw,54px);font-weight:400;letter-spacing:.025em;line-height:1;text-transform:uppercase}
+        .sep-answer-response{color:#d3d3d5;font-size:16px;line-height:1.75}
+        .sep-answer-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+        .sep-answer-point{padding:10px 12px;border:1px solid var(--sep-line);color:#a5a5a9;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 
         .sep-section{padding:106px 0;border-bottom:1px solid var(--sep-line)}
         .sep-section-head{display:grid;grid-template-columns:1fr .82fr;gap:90px;align-items:end;margin-bottom:54px}
@@ -247,6 +261,7 @@ export function ServiceEditorialPage({
           .sep-hero-deck{font-size:15px}
           .sep-proof{grid-template-columns:repeat(2,1fr);margin-top:42px}
           .sep-proof-item:nth-child(2){border-right:0}.sep-proof-item:nth-child(-n+2){border-bottom:1px solid var(--sep-line)}
+          .sep-answer-grid{grid-template-columns:1fr;gap:24px}
           .sep-section{padding:76px 0}
           .sep-section-head{grid-template-columns:1fr;gap:24px}
           .sep-card-grid{grid-template-columns:1fr}
@@ -300,6 +315,25 @@ export function ServiceEditorialPage({
             </div>
           </div>
         </section>
+
+        {answer ? (
+          <section className="sep-answer" aria-labelledby="service-answer">
+            <div className="sep-container sep-answer-grid">
+              <div>
+                <p className="sep-eyebrow">{answer.eyebrow}</p>
+                <h2 id="service-answer">{answer.question}</h2>
+              </div>
+              <div>
+                <p className="sep-answer-response">{answer.response}</p>
+                <div className="sep-answer-points" aria-label="Service summary">
+                  {answer.points.map((point) => (
+                    <span className="sep-answer-point" key={point}>{point}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="sep-section">
           <div className="sep-container">

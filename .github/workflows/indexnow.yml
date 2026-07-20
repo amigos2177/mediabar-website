@@ -1,0 +1,31 @@
+name: Submit changed URLs to IndexNow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the deployed commit
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Wait for production and submit changed URLs
+        env:
+          BASE_COMMIT: ${{ github.event.before }}
+        run: node scripts/submit-indexnow.mjs --wait-for "$GITHUB_SHA" --changed-since "$BASE_COMMIT"

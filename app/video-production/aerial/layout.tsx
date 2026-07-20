@@ -2,8 +2,8 @@ import { buildMetadata } from '@/lib/seo'
 import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Aerial & Drone Video San Antonio | Media Bar Productions',
-  description: 'Licensed aerial and drone videography in San Antonio. Media Bar Productions captures cinematic aerial footage for brands and events across Texas.',
+  title: 'Drone Video Production San Antonio | Media Bar',
+  description: 'FAA Part 107 drone video production in San Antonio for brands, events, real estate, construction, and commercial projects across Texas.',
   path: '/video-production/aerial',
 })
 
@@ -11,8 +11,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ServiceJsonLd
-        name="Aerial & Drone Video Production"
-        description="Licensed aerial and drone videography in San Antonio. Media Bar Productions captures cinematic aerial footage for brands and events across Texas."
+        name="Drone Video Production in San Antonio"
+        description="FAA Part 107 drone video production in San Antonio for brands, events, real estate, construction, and commercial projects across Texas."
         url="/video-production/aerial"
       />
       <FAQPageJsonLd faqs={[

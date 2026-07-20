@@ -90,6 +90,24 @@ export default function BlogPage() {
           </div>
         </header>
 
+        <nav className={styles.topicNav} aria-label="Start with a production guide">
+          <div>
+            <p className={styles.eyebrow}>Start here</p>
+            <h2>Choose the question you are solving.</h2>
+          </div>
+          <div className={styles.topicLinks}>
+            <Link href="/blog/best-video-production-san-antonio">
+              Choosing a San Antonio production company <span aria-hidden="true">↗</span>
+            </Link>
+            <Link href="/blog/importance-of-video-production-services">
+              Why professional video production matters <span aria-hidden="true">↗</span>
+            </Link>
+            <Link href="/blog/ai-video-production-limits">
+              Where AI video helps and where it stops <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+        </nav>
+
         {featuredPost && (
           <section className={styles.featured} aria-labelledby="featured-story">
             <Link

@@ -113,6 +113,13 @@ export default function EventsPage() {
         .evt-proof-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:30px;line-height:1;letter-spacing:.04em}
         .evt-proof-label{margin-top:6px;color:#888;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
 
+        .evt-answer{padding:52px 0;border-bottom:1px solid var(--line);background:#0f0f0f}
+        .evt-answer-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
+        .evt-answer h2{margin-top:12px;font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(34px,4vw,54px);font-weight:400;letter-spacing:.025em;line-height:1;text-transform:uppercase}
+        .evt-answer-copy{color:#d3d3d5;font-size:16px;line-height:1.75}
+        .evt-answer-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+        .evt-answer-point{padding:10px 12px;border:1px solid var(--line);color:#a5a5a9;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
         .evt-clients{background:#101010;border-bottom:1px solid var(--line)}
         .evt-clients-inner{display:grid;grid-template-columns:250px 1fr;align-items:center;min-height:132px}
         .evt-clients-title{color:#676767;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
@@ -220,6 +227,7 @@ export default function EventsPage() {
           .evt-hero-deck{font-size:15px}
           .evt-proof{grid-template-columns:repeat(2,1fr);margin-top:42px}
           .evt-proof-item:nth-child(2){border-right:0}.evt-proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+          .evt-answer-grid{grid-template-columns:1fr;gap:24px}
           .evt-clients-inner{grid-template-columns:1fr;padding-top:24px}
           .evt-clients-title{text-align:center;padding-bottom:20px}
           .evt-client-grid{grid-template-columns:repeat(2,1fr);border-left:0;border-top:1px solid var(--line)}
@@ -275,6 +283,28 @@ export default function EventsPage() {
                 <div className="evt-proof-item"><div className="evt-proof-value">Multi</div><div className="evt-proof-label">Camera coverage</div></div>
                 <div className="evt-proof-item"><div className="evt-proof-value">Clean</div><div className="evt-proof-label">Speaker audio</div></div>
                 <div className="evt-proof-item"><div className="evt-proof-value">One</div><div className="evt-proof-label">Team through post</div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="evt-answer" aria-labelledby="event-video-answer">
+          <div className="evt-container evt-answer-grid">
+            <div>
+              <p className="evt-eyebrow">Quick answer</p>
+              <h2 id="event-video-answer">What does an event video production company do?</h2>
+            </div>
+            <div>
+              <p className="evt-answer-copy">
+                Media Bar plans camera coverage, speaker and room audio, venue coordination,
+                live production, and post-event editing for San Antonio conferences and events.
+                One coordinated team can deliver recaps, full sessions, speaker clips, sponsor
+                content, captions, and channel-ready versions.
+              </p>
+              <div className="evt-answer-points" aria-label="Event video production summary">
+                {['Multi-camera coverage', 'Speaker audio', 'Event recap edits', 'Session and social content'].map((point) => (
+                  <span className="evt-answer-point" key={point}>{point}</span>
+                ))}
               </div>
             </div>
           </div>

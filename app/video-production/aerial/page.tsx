@@ -114,6 +114,13 @@ export default function AerialPage() {
         .why-card-icon{font-size:28px;margin-bottom:14px}
         .why-card-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.05em;color:#fff;margin-bottom:10px}
         .why-card-desc{font-size:13px;line-height:1.7;color:#B0B0B0}
+        .related-wrap{background:var(--dark);border-bottom:1px solid #1a1a1a}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #2a2a2a;border-left:1px solid #2a2a2a}
+        .related-card{display:flex;min-height:210px;flex-direction:column;padding:30px;border-right:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;color:#fff}
+        .related-card:hover{background:#181818}
+        .related-card h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+        .related-card p{margin-top:15px;color:#AAAAAA;font-size:13px;line-height:1.7}
+        .related-card span{margin-top:auto;padding-top:28px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
         .faq-wrap{background:var(--dark)}.faq-inner{max-width:800px;margin:0 auto;padding:96px 64px}
         .faq-header{text-align:center;margin-bottom:56px}
         .faq-list{display:flex;flex-direction:column;gap:2px}
@@ -137,7 +144,7 @@ export default function AerialPage() {
           .stat-item{flex:1;border-bottom:none;border-right:1px solid #222}.stat-item:last-child{border-right:none}
           .intro-grid{grid-template-columns:1fr;gap:48px}.portfolio-grid-wide{grid-template-columns:1fr}
           .process-grid{grid-template-columns:1fr 1fr}.why-inner{grid-template-columns:1fr}.why-sticky{position:static}
-          .why-grid{grid-template-columns:1fr}.section{padding:64px 24px}
+          .why-grid,.related-grid{grid-template-columns:1fr}.section{padding:64px 24px}
           .process-inner,.why-inner,.faq-inner{padding:64px 24px}.cta-wrap{padding:72px 24px}.page-hero{padding:120px 24px 72px}
         }
         @media(max-width:600px){.process-grid{grid-template-columns:1fr}}
@@ -259,6 +266,30 @@ export default function AerialPage() {
                 <p className="why-card-desc">{c.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="related-wrap">
+        <div className="section">
+          <p className="section-label">Plan the complete production</p>
+          <h2 className="section-h2">Connect Aerial With <em>the Story</em></h2>
+          <div className="related-grid">
+            <Link className="related-card" href="/video-production/real-estate">
+              <h3>Real Estate Video</h3>
+              <p>Combine property interiors, exterior details, and location context in one coordinated production.</p>
+              <span>Explore real estate video →</span>
+            </Link>
+            <Link className="related-card" href="/video-production/events">
+              <h3>Event Video Production</h3>
+              <p>Use aerial coverage as one part of a larger conference, performance, or outdoor event plan.</p>
+              <span>Explore event video →</span>
+            </Link>
+            <Link className="related-card" href="/video-production">
+              <h3>All Video Services</h3>
+              <p>Connect drone footage with interviews, commercial production, motion graphics, and post-production.</p>
+              <span>Explore all services →</span>
+            </Link>
           </div>
         </div>
       </div>

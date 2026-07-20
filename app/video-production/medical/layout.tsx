@@ -9,10 +9,10 @@ import { medicalFaqs, medicalVideo } from './content'
 
 const path = '/video-production/medical'
 const description =
-  'Medical and healthcare video production in San Antonio for patient education, provider profiles, testimonials, training, and campaigns across Texas.'
+  'San Antonio medical video production for patient education, provider profiles, testimonials, clinical training, healthcare campaigns, and review-ready delivery.'
 
 export const metadata = buildMetadata({
-  title: 'Medical Video Production in San Antonio',
+  title: 'Medical Video Production San Antonio | Media Bar',
   description,
   path,
   ogImage: '/images/bts-10.jpg',
@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ServiceJsonLd
-        name="Medical and Healthcare Video Production"
+        name="Medical Video Production in San Antonio"
         description={description}
         url={path}
         image="https://www.mediabarproductions.com/images/bts-10.jpg"

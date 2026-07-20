@@ -21,6 +21,13 @@ export default function LiveStreamingPage() {
         { value: 'Live', label: 'Graphics & Audio' },
         { value: 'Record', label: 'For On-Demand' },
       ]}
+      answer={{
+        eyebrow: 'Quick answer',
+        question: 'What does a live streaming production company handle?',
+        response:
+          'Media Bar plans the complete live program in San Antonio, including venue connectivity, cameras, audio, graphics, playback, remote speakers, platform delivery, recording, and rehearsal. The result is one coordinated experience for viewers in the room, online, and on demand.',
+        points: ['Multi-camera direction', 'Event audio', 'Graphics and playback', 'Platform delivery'],
+      }}
       overview={{
         eyebrow: 'Live Formats',
         title: 'Built Around',

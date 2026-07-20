@@ -22,6 +22,13 @@ export default function MedicalVideoPage() {
         { value: 'Review', label: 'Built Into Workflow' },
         { value: 'Secure', label: 'Scope Planning' },
       ]}
+      answer={{
+        eyebrow: 'Quick answer',
+        question: 'What is medical video production?',
+        response:
+          'Medical video production turns clinical expertise, patient experiences, services, training, and healthcare campaigns into clear, carefully reviewed video. Media Bar coordinates the production plan with the client team so access, consent, comfort, terminology, and stakeholder approvals are addressed before delivery.',
+        points: ['Patient education', 'Provider profiles', 'Clinical training', 'Healthcare campaigns'],
+      }}
       overview={{
         eyebrow: 'Healthcare Formats',
         title: 'Clear Information.',

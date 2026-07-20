@@ -63,6 +63,33 @@ Request indexing only for important new or materially updated URLs. The sitemap 
 4. Confirm that Bing processed the sitemap without errors.
 5. Review Site Explorer, Search Performance, Backlinks, and SEO Reports after data begins to populate.
 
+## IndexNow automation
+
+IndexNow is configured to submit only changed, public URLs after the matching
+commit is live on the production domain.
+
+- Verification key:
+  `https://www.mediabarproductions.com/87c34f30eb5268423b5a521989b425ca.txt`
+- Deployment check:
+  `https://www.mediabarproductions.com/api/deployment`
+- Submission script: `scripts/submit-indexnow.mjs`
+- GitHub workflow: `.github/workflows/indexnow.yml`
+
+The workflow runs on pushes to `main`, waits until the production deployment
+reports the same Git commit, reads the live sitemap, maps changed source files
+to canonical public URLs, and sends those URLs to the IndexNow bulk endpoint.
+It skips documentation-only changes and does not submit preview domains.
+
+Validation commands:
+
+- `npm run indexnow:dry-run` previews the full payload without submitting it.
+- `npm run indexnow -- --dry-run --changed-since <commit>` previews only URLs
+  affected since a specific commit.
+
+IndexNow notifies participating search engines that a URL changed. It does not
+guarantee crawling or indexing. Continue using Google Search Console and Bing
+Webmaster Tools for coverage and performance review.
+
 ## Conversion event taxonomy
 
 Vercel Web Analytics is the primary on-site measurement layer. Event properties are intentionally limited to two flat, non-personal values for broad plan compatibility.
@@ -127,7 +154,12 @@ Google Search Console reporting window: `2026-06-20` through `2026-07-17`
 - Sitemap was submitted on `2026-06-30`.
 - Sitemap status was `Success` and was last read on `2026-07-16`.
 - Google reported 44 indexed sitemap URLs and 4 discovered URLs not yet indexed.
-- Outstanding URLs were `/blog`, two older blog posts, and `/video-production/aerial`.
+- Three indexable URLs needed stronger signals: `/blog`,
+  `/blog/importance-of-video-production-services`, and
+  `/video-production/aerial`.
+- `/blog/boost-seo-with-video-production-ai-era` is intentionally retired and
+  redirects directly to `/blog/ai-video-production-limits`; the retired URL
+  should not be submitted for indexing.
 - HTTPS report showed 0 non-HTTPS URLs and no critical issues.
 - Manual Actions reported no issues.
 - Security Issues reported no issues.

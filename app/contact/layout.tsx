@@ -2,8 +2,8 @@ import { buildMetadata } from '@/lib/seo'
 import { BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Contact Media Bar Productions | San Antonio Video Production',
-  description: 'Contact Media Bar Productions in San Antonio, ask a quick question, find the studio, or build a guided brief for your next video production.',
+  title: 'Contact a San Antonio Video Production Company',
+  description: 'Contact Media Bar Productions in San Antonio to discuss a video project, check availability, build a guided brief, or find our production studio.',
   path: '/contact',
 })
 

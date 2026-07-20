@@ -6,10 +6,10 @@ export default function MedicalVideoPage() {
     <ServiceEditorialPage
       hero={{
         eyebrow: 'Medical Video Production in San Antonio',
-        title: 'Make Complex Care Clear.',
-        emphasis: 'Protect What Matters.',
+        title: 'Medical Video',
+        emphasis: 'Production Made Clear. Kept Human.',
         copy:
-          'Full-service medical video production for patient stories, provider expertise, education, training, and healthcare campaigns, produced with careful planning and a human point of view.',
+          'San Antonio medical video production for patient stories, provider expertise, education, training, and healthcare campaigns, with access, consent, review, and delivery carefully planned.',
         image: '/images/bts-10.jpg',
         alt: 'Multi-camera healthcare interview production at a San Antonio clinic',
         position: 'center',

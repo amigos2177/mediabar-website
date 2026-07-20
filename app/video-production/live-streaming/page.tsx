@@ -6,10 +6,10 @@ export default function LiveStreamingPage() {
     <ServiceEditorialPage
       hero={{
         eyebrow: 'Live Streaming Production in San Antonio',
-        title: 'Plan the Signal.',
-        emphasis: 'Protect the Moment.',
+        title: 'Live Streaming',
+        emphasis: 'Production Built for the Moment.',
         copy:
-          'San Antonio multi-camera production, event audio, graphics, remote contributors, and platform delivery planned as one reliable live system.',
+          'San Antonio live streaming production for conferences, town halls, launches, and hybrid events, with cameras, audio, graphics, rehearsal, platform delivery, and recording planned as one reliable system.',
         image: '/images/studio-9.jpg',
         alt: 'Video production control room with monitors and switching equipment',
         primaryCta: 'Plan a Live Stream',
@@ -106,6 +106,29 @@ export default function LiveStreamingPage() {
         { number: '03', title: 'Build & Rehearse', copy: 'Test the complete program with presenters, media, and remote elements.' },
         { number: '04', title: 'Go Live & Archive', copy: 'Direct the show, monitor delivery, and prepare the scoped recordings.' },
       ]}
+      relatedLinks={{
+        eyebrow: 'Live Production Resources',
+        title: 'Plan the Stream Before the Show.',
+        copy:
+          'Use these service and planning pages to align the venue, program, audience, and post-event content before technical design begins.',
+        links: [
+          {
+            label: 'Event Video Production',
+            href: '/video-production/events',
+            description: 'Plan recorded event coverage and live delivery as one coordinated production.',
+          },
+          {
+            label: 'Conference Video Guide',
+            href: '/blog/conference-video-production-guide',
+            description: 'Build a practical content plan for keynotes, sessions, recaps, and follow-up assets.',
+          },
+          {
+            label: 'Post Production',
+            href: '/video-production/post-production',
+            description: 'Turn the live recording into edited sessions, highlights, captions, and on-demand content.',
+          },
+        ],
+      }}
       faqEyebrow="Questions"
       faqTitle="Planning a"
       faqEmphasis="Live Production."

@@ -9,10 +9,10 @@ import { medicalFaqs, medicalVideo } from './content'
 
 const path = '/video-production/medical'
 const description =
-  'San Antonio medical video production for patient education, provider profiles, testimonials, clinical training, healthcare campaigns, and review-ready delivery.'
+  'San Antonio medical video production for patient stories, provider profiles, education, training, healthcare campaigns, and careful review-ready delivery.'
 
 export const metadata = buildMetadata({
-  title: 'Medical Video Production San Antonio | Media Bar',
+  title: 'Medical Video Production in San Antonio | Media Bar',
   description,
   path,
   ogImage: '/images/bts-10.jpg',

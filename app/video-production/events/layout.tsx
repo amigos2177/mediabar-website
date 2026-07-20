@@ -7,11 +7,14 @@ import {
 } from '@/components/JsonLd'
 import { eventVideoFaqs } from './content'
 
+const path = '/video-production/events'
+const description =
+  'San Antonio event video production for conferences, keynotes, galas, and launches with multi-camera crews, clean audio, recaps, sessions, and social edits.'
+
 export const metadata = buildMetadata({
-  title: 'Event Video Production San Antonio | Media Bar',
-  description:
-    'San Antonio event video production for conferences, keynotes, galas, launches, multi-camera coverage, speaker recordings, recaps, and social edits.',
-  path: '/video-production/events',
+  title: 'Event Video Production in San Antonio | Media Bar',
+  description,
+  path,
   ogImage: '/images/bts-8.jpg',
 })
 
@@ -20,8 +23,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <ServiceJsonLd
         name="Event Video Production in San Antonio"
-        description="San Antonio event video production for conferences, keynotes, galas, launches, multi-camera coverage, speaker recordings, recaps, and social edits."
-        url="/video-production/events"
+        description={description}
+        url={path}
         image="https://www.mediabarproductions.com/images/bts-8.jpg"
       />
       <VideoObjectJsonLd
@@ -38,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         items={[
           { name: 'Home', url: '/' },
           { name: 'Video Production Services', url: '/video-production' },
-          { name: 'Event Video Production', url: '/video-production/events' },
+          { name: 'Event Video Production', url: path },
         ]}
       />
       {children}

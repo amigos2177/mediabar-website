@@ -268,10 +268,11 @@ export default function EventsPage() {
             <div className="evt-container">
               <div className="evt-hero-copy">
                 <p className="evt-eyebrow">Event video production in San Antonio and across Texas</p>
-                <h1 className="evt-display">Capture the Room. <em>Extend the Moment.</em></h1>
+                <h1 className="evt-display">Event Video <em>Production That Extends the Moment.</em></h1>
                 <p className="evt-hero-deck">
-                  Media Bar plans and produces San Antonio event coverage that preserves what happened
-                  live and turns it into useful content for audiences who could not be in the room.
+                  San Antonio event video production for conferences, keynotes, galas, launches,
+                  and corporate meetings, with one team planning cameras, audio, coverage, and
+                  post-event delivery.
                 </p>
                 <div className="evt-actions">
                   <Link href="/project-planner" className="evt-button evt-button-primary">Plan Event Coverage</Link>

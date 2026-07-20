@@ -2,11 +2,18 @@ import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/api/',
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: '/api/',
+      },
+      {
+        userAgent: ['OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot'],
+        allow: '/',
+        disallow: '/api/',
+      },
+    ],
     sitemap: 'https://www.mediabarproductions.com/sitemap.xml',
     host: 'https://www.mediabarproductions.com',
   }

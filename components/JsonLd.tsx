@@ -20,6 +20,39 @@ function JsonLdScript({ data }: { data: Record<string, unknown> }) {
 }
 
 const BUSINESS_ID = 'https://www.mediabarproductions.com/#business'
+const WEBSITE_ID = 'https://www.mediabarproductions.com/#website'
+const BASE_URL = 'https://www.mediabarproductions.com'
+
+const serviceCatalog = [
+  ['Corporate Video Production', '/video-production/corporate'],
+  ['Commercial Video Production', '/video-production/commercials'],
+  ['Event and Conference Video Production', '/video-production/events'],
+  ['Interview Video Production', '/video-production/interview'],
+  ['Medical and Healthcare Video Production', '/video-production/medical'],
+  ['Aerial and Drone Video Production', '/video-production/aerial'],
+  ['Motion Graphics and Animation', '/video-production/motion-graphics'],
+  ['Live Streaming and Webcasting', '/video-production/live-streaming'],
+  ['Post-Production and Video Editing', '/video-production/post-production'],
+  ['Food and Beverage Video Production', '/video-production/food'],
+  ['Real Estate Video Production', '/video-production/real-estate'],
+] as const
+
+export function WebSiteJsonLd() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': WEBSITE_ID,
+    url: `${BASE_URL}/`,
+    name: 'Media Bar Productions',
+    description:
+      'Official website of Media Bar Productions, a San Antonio video production company serving organizations across Texas.',
+    inLanguage: 'en-US',
+    publisher: {
+      '@id': BUSINESS_ID,
+    },
+  }
+  return <JsonLdScript data={data} />
+}
 
 // ============================================================
 // 1. LocalBusiness - Homepage, About, Contact
@@ -38,6 +71,14 @@ export function LocalBusinessJsonLd() {
       'Award-winning video production company founded in San Antonio in 2011. The team has earned 3 Emmy Awards and 15 Telly Awards while producing corporate, commercial, and event video across Texas.',
     telephone: '+1-210-279-9442',
     email: 'contact@mediabarproductions.com',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      telephone: '+1-210-279-9442',
+      email: 'contact@mediabarproductions.com',
+      areaServed: 'US',
+      availableLanguage: ['English'],
+    },
     address: {
       '@type': 'PostalAddress',
       streetAddress: '8610 N New Braunfels Ave, Suite 704',
@@ -97,6 +138,19 @@ export function LocalBusinessJsonLd() {
       '@type': 'Organization',
       name: 'The Creative Agenda, LLC',
     },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Video Production Services',
+      itemListElement: serviceCatalog.map(([name, path]) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': `${BASE_URL}${path}#service`,
+          name,
+          url: `${BASE_URL}${path}`,
+        },
+      })),
+    },
   }
   return <JsonLdScript data={data} />
 }
@@ -134,20 +188,28 @@ type ServiceProps = {
 }
 
 export function ServiceJsonLd({ name, description, url, image }: ServiceProps) {
+  const canonical = `${BASE_URL}${url}`
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${canonical}#service`,
     name,
+    serviceType: name,
     description,
-    url: `https://www.mediabarproductions.com${url}`,
+    url: canonical,
     ...(image && { image }),
     provider: {
       '@id': BUSINESS_ID,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${canonical}#webpage`,
     },
     areaServed: {
       '@type': 'State',
       name: 'Texas',
     },
+    inLanguage: 'en-US',
   }
   return <JsonLdScript data={data} />
 }
@@ -172,14 +234,25 @@ export function ArticleJsonLd({
   dateModified,
   image,
 }: ArticleProps) {
+  const canonical = `${BASE_URL}${url}`
   const data = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${canonical}#article`,
     headline: title,
     description,
-    url: `https://www.mediabarproductions.com${url}`,
+    url: canonical,
     datePublished,
     dateModified: dateModified || datePublished,
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${canonical}#webpage`,
+    },
+    isPartOf: {
+      '@id': `${BASE_URL}/blog#blog`,
+    },
     ...(image && {
       image: {
         '@type': 'ImageObject',
@@ -202,9 +275,11 @@ export function ArticleJsonLd({
 type BreadcrumbItem = { name: string; url: string }
 
 export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
+  const currentUrl = items[items.length - 1]?.url ?? '/'
   const data = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    '@id': `${BASE_URL}${currentUrl}#breadcrumb`,
     itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -281,6 +356,7 @@ export function VideoObjectJsonLd({
   const data = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
+    '@id': `${contentUrl ?? embedUrl}#video`,
     name,
     description,
     thumbnailUrl,
@@ -288,6 +364,8 @@ export function VideoObjectJsonLd({
     ...(contentUrl && { contentUrl }),
     embedUrl,
     ...(duration && { duration }),
+    inLanguage: 'en-US',
+    isFamilyFriendly: true,
     publisher: {
       '@id': BUSINESS_ID,
     },

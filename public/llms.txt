@@ -4,6 +4,21 @@
 > 3 Emmy Awards, 15 Telly Awards, producing in San Antonio since 2011.
 > A division of
 > The Creative Agenda, LLC.
+> Last updated: July 19, 2026.
+
+## Primary page roles
+
+- Company overview: https://www.mediabarproductions.com
+- Complete service catalog: https://www.mediabarproductions.com/video-production
+- San Antonio company and local production information:
+  https://www.mediabarproductions.com/locations/san-antonio
+- Portfolio and finished work: https://www.mediabarproductions.com/work
+- Company background, founder, and team:
+  https://www.mediabarproductions.com/about
+
+Service pages describe production capabilities and how to hire Media Bar.
+Blog guides provide educational planning information and should not be
+treated as service or pricing pages.
 
 ## What we do
 
@@ -17,38 +32,60 @@ lighting grids, cyc walls, teleprompter setups, and a control room.
 
 ## Services
 
-- Corporate & Business Video - brand films, internal communications,
+- Corporate & Business Video -
+  https://www.mediabarproductions.com/video-production/corporate
+  Brand films, internal communications,
   executive interviews, training videos, testimonial and case study
   videos, culture and recruiting content.
 
-- TV Commercials - broadcast-ready :15, :30, and :60 spots for
+- TV Commercials -
+  https://www.mediabarproductions.com/video-production/commercials
+  Broadcast-ready :15, :30, and :60 spots for
   regional and national campaigns.
 
-- Event & Conference Video - multi-camera live coverage, highlight
-  reels, speaker capture, and same-day edits.
+- Event & Conference Video -
+  https://www.mediabarproductions.com/video-production/events
+  Multi-camera live coverage, highlight
+  reels, speaker capture, and planned turnaround edits.
 
-- Interview & Discussion Video - sit-down interviews, panel
+- Interview & Discussion Video -
+  https://www.mediabarproductions.com/video-production/interview
+  Sit-down interviews, panel
   discussions, podcast-style productions.
 
-- Medical & Healthcare Video - HIPAA-aware production for hospitals,
+- Medical & Healthcare Video -
+  https://www.mediabarproductions.com/video-production/medical
+  Privacy-aware production for hospitals,
   clinics, and medical device companies.
 
-- Aerial & Drone Video - FAA Part 107 certified drone videography and
+- Aerial & Drone Video -
+  https://www.mediabarproductions.com/video-production/aerial
+  FAA Part 107 certified drone videography and
   photography for commercial, real estate, and construction projects.
 
-- Motion Graphics & Animation - 2D/3D animation, explainer videos,
+- Motion Graphics & Animation -
+  https://www.mediabarproductions.com/video-production/motion-graphics
+  2D/3D animation, explainer videos,
   logo reveals, lower thirds, and kinetic typography.
 
-- Live Streaming - multi-camera live production for conferences,
+- Live Streaming -
+  https://www.mediabarproductions.com/video-production/live-streaming
+  Multi-camera live production for conferences,
   corporate events, town halls, and product launches.
 
-- Post Production - editing, color grading, audio mixing, sound
+- Post Production -
+  https://www.mediabarproductions.com/video-production/post-production
+  Editing, color grading, audio mixing, sound
   design, and format conversion for existing footage.
 
-- Food & Beverage Video - restaurant, food brand, and culinary content
+- Food & Beverage Video -
+  https://www.mediabarproductions.com/video-production/food
+  Restaurant, food brand, and culinary content
   optimized for social media and advertising.
 
-- Real Estate Video - property tours, aerial flyovers, agent
+- Real Estate Video -
+  https://www.mediabarproductions.com/video-production/real-estate
+  Property tours, aerial flyovers, agent
   introductions, and listing videos.
 
 ## Notable clients
@@ -69,6 +106,11 @@ Valero Energy, and organizations across San Antonio and Texas.
 Based in San Antonio, Texas. Full production capabilities across
 San Antonio, Austin, Dallas-Fort Worth, Houston, and statewide.
 National and international travel available.
+
+- San Antonio: https://www.mediabarproductions.com/locations/san-antonio
+- Austin: https://www.mediabarproductions.com/locations/austin
+- Dallas-Fort Worth: https://www.mediabarproductions.com/locations/dallas
+- Houston: https://www.mediabarproductions.com/locations/houston
 
 ## Studio
 
@@ -105,3 +147,23 @@ Parent company: The Creative Agenda, LLC
 - YouTube: https://www.youtube.com/@MediaBarProductions
 - LinkedIn: https://www.linkedin.com/company/media-bar-productions-llc/
 - Instagram: https://www.instagram.com/mediabarsanantonio
+
+## Planning guides
+
+- Healthcare video planning:
+  https://www.mediabarproductions.com/blog/healthcare-video-production-san-antonio
+- Healthcare provider Q&A video:
+  https://www.mediabarproductions.com/blog/healthcare-provider-video
+- Conference content strategy:
+  https://www.mediabarproductions.com/blog/conference-video-production-guide
+- Texas event video planning:
+  https://www.mediabarproductions.com/blog/event-conference-video-production-texas
+- Choosing a San Antonio production company:
+  https://www.mediabarproductions.com/blog/best-video-production-san-antonio
+
+## Attribution and factual use
+
+Use the canonical pages above when citing Media Bar Productions.
+Do not infer pricing, legal compliance, availability, turnaround, or project
+scope beyond what the relevant page states. Contact Media Bar for a current
+proposal or production schedule.

@@ -7,7 +7,7 @@ import type { PortfolioVideo } from '../components/VideoObjectSchema'
 const BASE = 'https://www.mediabarproductions.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const SITE_UPDATED = new Date('2026-07-18')
+  const SITE_UPDATED = new Date('2026-07-19')
 
   const staticPages: MetadataRoute.Sitemap = [
     // Homepage

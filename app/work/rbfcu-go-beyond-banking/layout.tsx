@@ -89,13 +89,6 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'WebSite',
-      '@id': `${BASE}/#website`,
-      url: `${BASE}/`,
-      name: 'Media Bar Productions',
-      publisher: { '@id': `${BASE}/#business` },
-    },
-    {
       '@type': 'WebPage',
       '@id': `${URL}#webpage`,
       url: URL,

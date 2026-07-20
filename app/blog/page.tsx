@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import { getAllPosts } from '../../lib/blog'
+import { getBlogAuthor } from '../../lib/authors'
 import { buildMetadata } from '@/lib/seo'
 import styles from './blog.module.css'
 
@@ -31,19 +32,32 @@ export default function BlogPage() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
+    '@id': 'https://www.mediabarproductions.com/blog#blog',
     name: 'Media Bar Productions Blog',
     description:
       'Insights and stories from San Antonio\'s Emmy and Telly award-winning video production team.',
     url: 'https://www.mediabarproductions.com/blog',
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@id': 'https://www.mediabarproductions.com/#website',
+    },
     publisher: {
       '@id': 'https://www.mediabarproductions.com/#business',
     },
     blogPost: posts.map((post) => ({
       '@type': 'BlogPosting',
+      '@id': `https://www.mediabarproductions.com/blog/${post.slug}#article`,
       headline: post.title,
       datePublished: post.date,
+      dateModified: post.updated ?? post.date,
       description: post.excerpt,
       url: `https://www.mediabarproductions.com/blog/${post.slug}`,
+      author: {
+        '@id': getBlogAuthor(post.author).schemaId,
+      },
+      publisher: {
+        '@id': 'https://www.mediabarproductions.com/#business',
+      },
     })),
   }
 

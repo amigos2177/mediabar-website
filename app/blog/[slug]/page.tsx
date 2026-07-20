@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) return {}
+  const author = getBlogAuthor(post.author)
   const canonical = `https://www.mediabarproductions.com/blog/${slug}`
   const ogImage = post.featuredImage
     ? `https://www.mediabarproductions.com${post.featuredImage}`
@@ -30,6 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: pageTitle,
     description: post.excerpt,
+    authors: [{
+      name: author.name,
+      url: `https://www.mediabarproductions.com${author.url}`,
+    }],
+    creator: author.name,
+    publisher: 'Media Bar Productions',
+    category: 'Video Production',
     openGraph: {
       title: pageTitle,
       description: post.excerpt,
@@ -70,17 +78,25 @@ export default async function BlogPostPage({ params }: Props) {
 
   const canonical = `https://www.mediabarproductions.com/blog/${slug}`
   const mins = readingTime(post.content)
+  const wordCount = post.content.replace(/<[^>]+>/g, '').split(/\s+/).filter(Boolean).length
   const author = getBlogAuthor(post.author)
   const relatedPosts = getRelatedPosts(post, getAllPosts())
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${canonical}#article`,
     headline: post.title,
     description: post.excerpt,
+    url: canonical,
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    wordCount,
+    timeRequired: `PT${mins}M`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${canonical}#webpage` },
+    isPartOf: { '@id': 'https://www.mediabarproductions.com/blog#blog' },
     ...(post.featuredImage && {
       image: {
         '@type': 'ImageObject',
@@ -94,6 +110,7 @@ export default async function BlogPostPage({ params }: Props) {
       jobTitle: author.jobTitle,
       url: `https://www.mediabarproductions.com${author.url}`,
       image: `https://www.mediabarproductions.com${author.image}`,
+      description: author.bio,
       worksFor: {
         '@id': 'https://www.mediabarproductions.com/#business',
       },

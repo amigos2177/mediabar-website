@@ -93,6 +93,7 @@ export default function Footer() {
             <Link href="/work/rbfcu-go-beyond-banking" className="mbp-footer-link" style={footerLink}>RBFCU Case Study</Link>
             <Link href="/faq" className="mbp-footer-link" style={footerLink}>FAQ</Link>
             <Link href="/blog" className="mbp-footer-link" style={footerLink}>Blog</Link>
+            <Link href="/about/editorial-policy" className="mbp-footer-link" style={footerLink}>Editorial Standards</Link>
           </div>
 
           {/* We Serve column */}

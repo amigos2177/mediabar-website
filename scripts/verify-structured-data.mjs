@@ -53,6 +53,24 @@ const business = homeNodes.find((node) => node['@type'] === 'LocalBusiness')
 if (!business?.hasOfferCatalog) {
   failures.push('index.html: LocalBusiness is missing hasOfferCatalog')
 }
+if (business?.publishingPrinciples !== 'https://www.mediabarproductions.com/about/editorial-policy') {
+  failures.push('index.html: LocalBusiness is missing publishingPrinciples')
+}
+
+const aboutNodes = schemas('about.html')
+const founder = aboutNodes.find((node) => node['@type'] === 'Person')
+if (founder?.['@id'] !== 'https://www.mediabarproductions.com/about#founder') {
+  failures.push('about.html: founder Person identity is incomplete')
+}
+if (!read('about.html').includes('id="founder"')) {
+  failures.push('about.html: visible founder anchor is missing')
+}
+
+const policyNodes = expectType('about/editorial-policy.html', 'WebPage')
+const policy = policyNodes.find((node) => node['@type'] === 'WebPage')
+if (policy?.publisher?.['@id'] !== 'https://www.mediabarproductions.com/#business') {
+  failures.push('about/editorial-policy.html: publisher is not connected to #business')
+}
 
 const servicePages = [
   'video-production.html',
@@ -89,7 +107,13 @@ for (const entry of fs.readdirSync(blogDir, { withFileTypes: true })) {
   if (!String(article?.['@id'] ?? '').endsWith('#article')) {
     failures.push(`${page}: BlogPosting is missing a stable @id`)
   }
-  if (!article?.author || !article?.publisher || !article?.mainEntityOfPage) {
+  if (
+    !article?.author
+    || !article?.publisher
+    || !article?.mainEntityOfPage
+    || !article?.reviewedBy
+    || !article?.publishingPrinciples
+  ) {
     failures.push(`${page}: BlogPosting entity relationships are incomplete`)
   }
 }
@@ -115,6 +139,14 @@ for (const bot of ['OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot']) {
 const llms = fs.readFileSync(path.join(root, 'public/llms.txt'), 'utf8')
 for (const section of ['## Primary page roles', '## Services', '## Planning guides']) {
   if (!llms.includes(section)) failures.push(`llms.txt: missing ${section}`)
+}
+if (!llms.includes('https://www.mediabarproductions.com/about/editorial-policy')) {
+  failures.push('llms.txt: missing editorial standards URL')
+}
+
+const sitemap = read('sitemap.xml.body')
+if (!sitemap.includes('<loc>https://www.mediabarproductions.com/about/editorial-policy</loc>')) {
+  failures.push('sitemap.xml: missing editorial standards URL')
 }
 
 if (failures.length) {

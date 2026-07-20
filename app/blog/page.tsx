@@ -41,6 +41,8 @@ export default function BlogPage() {
     isPartOf: {
       '@id': 'https://www.mediabarproductions.com/#website',
     },
+    publishingPrinciples:
+      'https://www.mediabarproductions.com/about/editorial-policy',
     publisher: {
       '@id': 'https://www.mediabarproductions.com/#business',
     },
@@ -58,6 +60,8 @@ export default function BlogPage() {
       publisher: {
         '@id': 'https://www.mediabarproductions.com/#business',
       },
+      publishingPrinciples:
+        'https://www.mediabarproductions.com/about/editorial-policy',
     })),
   }
 

@@ -78,6 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const canonical = `https://www.mediabarproductions.com/blog/${slug}`
   const mins = readingTime(post.content)
+  const wasUpdated = Boolean(post.updated && post.updated !== post.date)
   const wordCount = post.content.replace(/<[^>]+>/g, '').split(/\s+/).filter(Boolean).length
   const author = getBlogAuthor(post.author)
   const relatedPosts = getRelatedPosts(post, getAllPosts())
@@ -97,6 +98,8 @@ export default async function BlogPostPage({ params }: Props) {
     timeRequired: `PT${mins}M`,
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${canonical}#webpage` },
     isPartOf: { '@id': 'https://www.mediabarproductions.com/blog#blog' },
+    publishingPrinciples:
+      'https://www.mediabarproductions.com/about/editorial-policy',
     ...(post.featuredImage && {
       image: {
         '@type': 'ImageObject',
@@ -116,6 +119,9 @@ export default async function BlogPostPage({ params }: Props) {
       },
     },
     publisher: {
+      '@id': 'https://www.mediabarproductions.com/#business',
+    },
+    reviewedBy: {
       '@id': 'https://www.mediabarproductions.com/#business',
     },
   }
@@ -162,6 +168,7 @@ export default async function BlogPostPage({ params }: Props) {
         .bp-author-name:hover{color:var(--gold)}
         .bp-author-role{color:#aaa;font-size:12px;margin-top:3px}
         .bp-author-bio{color:#888;font-size:13px;line-height:1.55;margin-top:8px}
+        .bp-author-policy{display:inline-block;color:#aaa;font-size:11px;margin-top:10px;text-underline-offset:3px}.bp-author-policy:hover{color:var(--gold)}
         .bp-related{margin-bottom:40px}
         .bp-related-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
         .bp-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -215,7 +222,13 @@ export default async function BlogPostPage({ params }: Props) {
         </p>
         <h1 className="bp-h1">{post.title}</h1>
         <div className="bp-meta">
-          <span className="bp-meta-date">{formatDate(post.date)}</span>
+          <span className="bp-meta-date">Published {formatDate(post.date)}</span>
+          {wasUpdated && (
+            <>
+              <span className="bp-meta-sep">·</span>
+              <span className="bp-meta-read">Updated {formatDate(post.updated!)}</span>
+            </>
+          )}
           <span className="bp-meta-sep">·</span>
           <span className="bp-meta-read">{mins} min read</span>
         </div>
@@ -242,6 +255,9 @@ export default async function BlogPostPage({ params }: Props) {
                 <Link className="bp-author-name" href={author.url} rel="author">{author.name}</Link>
                 <p className="bp-author-role">{author.jobTitle}</p>
                 <p className="bp-author-bio">{author.bio}</p>
+                <Link className="bp-author-policy" href="/about/editorial-policy">
+                  How we create and review content
+                </Link>
               </div>
             </div>
 

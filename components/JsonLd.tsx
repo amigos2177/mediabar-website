@@ -50,6 +50,7 @@ export function WebSiteJsonLd() {
     publisher: {
       '@id': BUSINESS_ID,
     },
+    publishingPrinciples: `${BASE_URL}/about/editorial-policy`,
   }
   return <JsonLdScript data={data} />
 }
@@ -138,6 +139,21 @@ export function LocalBusinessJsonLd() {
       '@type': 'Organization',
       name: 'The Creative Agenda, LLC',
     },
+    publishingPrinciples: `${BASE_URL}/about/editorial-policy`,
+    subjectOf: [
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/about/awards#webpage`,
+        url: `${BASE_URL}/about/awards`,
+        name: 'Media Bar Productions Awards',
+      },
+      {
+        '@type': 'Article',
+        '@id': `${BASE_URL}/work/rbfcu-go-beyond-banking#article`,
+        url: `${BASE_URL}/work/rbfcu-go-beyond-banking`,
+        name: 'RBFCU Go Beyond Banking Campaign Case Study',
+      },
+    ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Video Production Services',
@@ -253,6 +269,7 @@ export function ArticleJsonLd({
     isPartOf: {
       '@id': `${BASE_URL}/blog#blog`,
     },
+    publishingPrinciples: `${BASE_URL}/about/editorial-policy`,
     ...(image && {
       image: {
         '@type': 'ImageObject',
@@ -260,6 +277,9 @@ export function ArticleJsonLd({
       },
     }),
     author: {
+      '@id': BUSINESS_ID,
+    },
+    reviewedBy: {
       '@id': BUSINESS_ID,
     },
     publisher: {
@@ -302,6 +322,9 @@ export function AboutPageJsonLd() {
     url: 'https://www.mediabarproductions.com/about',
     description:
       'The story, team, awards, and production values behind Media Bar Productions in San Antonio, Texas.',
+    isPartOf: {
+      '@id': WEBSITE_ID,
+    },
     mainEntity: {
       '@id': BUSINESS_ID,
     },
@@ -323,8 +346,20 @@ export function PersonJsonLd({ name, jobTitle, image }: PersonProps) {
     name,
     jobTitle,
     image: `https://www.mediabarproductions.com${image}`,
+    description:
+      'Founder and Executive Producer of Media Bar Productions, a San Antonio video production company serving organizations across Texas.',
     worksFor: {
       '@id': BUSINESS_ID,
+    },
+    knowsAbout: [
+      'Video production strategy',
+      'Commercial production',
+      'Corporate video production',
+      'Post-production',
+      'San Antonio creative production',
+    ],
+    mainEntityOfPage: {
+      '@id': 'https://www.mediabarproductions.com/about#about',
     },
     url: 'https://www.mediabarproductions.com/about#founder',
   }
@@ -332,7 +367,38 @@ export function PersonJsonLd({ name, jobTitle, image }: PersonProps) {
 }
 
 // ============================================================
-// 7. VideoObject - Pages with embedded Vimeo videos
+// 7. Editorial policy - /about/editorial-policy
+// ============================================================
+export function EditorialPolicyJsonLd() {
+  const url = `${BASE_URL}/about/editorial-policy`
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: 'Editorial Standards and Content Policy',
+    description:
+      'How Media Bar Productions creates, reviews, updates, and corrects its production guides and company content.',
+    inLanguage: 'en-US',
+    dateModified: '2026-07-19',
+    isPartOf: {
+      '@id': WEBSITE_ID,
+    },
+    about: {
+      '@id': BUSINESS_ID,
+    },
+    publisher: {
+      '@id': BUSINESS_ID,
+    },
+    reviewedBy: {
+      '@id': BUSINESS_ID,
+    },
+  }
+  return <JsonLdScript data={data} />
+}
+
+// ============================================================
+// 8. VideoObject - Pages with embedded Vimeo videos
 // ============================================================
 type VideoProps = {
   name: string

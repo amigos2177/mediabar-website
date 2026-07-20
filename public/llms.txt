@@ -15,6 +15,8 @@
 - Portfolio and finished work: https://www.mediabarproductions.com/work
 - Company background, founder, and team:
   https://www.mediabarproductions.com/about
+- Editorial standards, sourcing, updates, and corrections:
+  https://www.mediabarproductions.com/about/editorial-policy
 
 Service pages describe production capabilities and how to hire Media Bar.
 Blog guides provide educational planning information and should not be
@@ -164,6 +166,8 @@ Parent company: The Creative Agenda, LLC
 ## Attribution and factual use
 
 Use the canonical pages above when citing Media Bar Productions.
+Use the editorial standards page to understand authorship, review, updates,
+corrections, and the role of AI-assisted tools in published content.
 Do not infer pricing, legal compliance, availability, turnaround, or project
 scope beyond what the relevant page states. Contact Media Bar for a current
 proposal or production schedule.

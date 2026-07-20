@@ -99,7 +99,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className={styles.founder}>
+        <section className={styles.founder} id="founder">
           <div className={styles.founderImage}>
             <Image
               src="/images/media-library/ruben-garcia-founder-headshot-01.jpeg"

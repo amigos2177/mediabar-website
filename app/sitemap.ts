@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Core pages
     { url: `${BASE}/about`, lastModified: SITE_UPDATED },
     { url: `${BASE}/about/awards`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/about/editorial-policy`, lastModified: SITE_UPDATED },
     { url: `${BASE}/work`, lastModified: SITE_UPDATED },
     { url: `${BASE}/work/rbfcu-go-beyond-banking`, lastModified: SITE_UPDATED },
     { url: `${BASE}/photography`, lastModified: SITE_UPDATED },

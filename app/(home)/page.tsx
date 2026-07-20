@@ -435,6 +435,83 @@ export default function HomePage() {
         }
         .client-cell:hover .client-text { color: rgba(255,255,255,0.55); }
 
+        /* ─── DIRECT ANSWERS ─── */
+        .answer-section {
+          padding: 96px 48px;
+          background: #0d0d0d;
+          border-bottom: 1px solid #1d1d1d;
+        }
+        .answer-inner {
+          display: grid;
+          grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+          gap: 72px;
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+        .answer-intro {
+          align-self: start;
+          position: sticky;
+          top: 112px;
+        }
+        .answer-title {
+          margin-top: 14px;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: clamp(46px, 5vw, 68px);
+          font-weight: 400;
+          letter-spacing: .03em;
+          line-height: .98;
+          color: #fff;
+          text-transform: uppercase;
+        }
+        .answer-title em {
+          display: block;
+          margin-top: 6px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: .7em;
+          font-style: italic;
+          font-weight: 600;
+          letter-spacing: 0;
+          color: var(--gold);
+          text-transform: none;
+        }
+        .answer-intro > p:not(.eyebrow) {
+          margin: 24px 0 28px;
+          color: rgba(255,255,255,.6);
+          font-size: 15px;
+          line-height: 1.75;
+        }
+        .answer-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          border-top: 1px solid rgba(255,255,255,.13);
+          border-left: 1px solid rgba(255,255,255,.13);
+        }
+        .answer-card {
+          min-height: 250px;
+          padding: 32px;
+          border-right: 1px solid rgba(255,255,255,.13);
+          border-bottom: 1px solid rgba(255,255,255,.13);
+          background: #121212;
+        }
+        .answer-card h3 {
+          color: #fff;
+          font-size: 16px;
+          line-height: 1.35;
+        }
+        .answer-card p {
+          margin: 14px 0 22px;
+          color: #929292;
+          font-size: 13px;
+          line-height: 1.7;
+        }
+        .answer-link {
+          color: #ff4d4d;
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: .14em;
+          text-transform: uppercase;
+        }
+
         /* ─── FEATURED WORK ─── */
         .featured-work {
           background: var(--black);
@@ -928,6 +1005,8 @@ export default function HomePage() {
           .process-layout { grid-template-columns: 1fr; gap: 48px; }
           .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
           .specialty-card { grid-column: span 3; }
+          .answer-inner { grid-template-columns: 1fr; gap: 48px; }
+          .answer-intro { position: static; }
         }
         @media (max-width: 768px) {
           .reel-section-inner { padding: 0 24px; }
@@ -956,6 +1035,9 @@ export default function HomePage() {
             padding: 32px 24px;
           }
           .specialty-links { grid-template-columns: 1fr; }
+          .answer-section { padding: 72px 20px; }
+          .answer-grid { grid-template-columns: 1fr; }
+          .answer-card { min-height: 0; padding: 28px 24px; }
         }
       `}</style>
 
@@ -984,12 +1066,13 @@ export default function HomePage() {
         <div className="hero-content">
           <p className="hero-eyebrow">San Antonio video production company · Producing since 2011</p>
           <h1 className="hero-headline">
-            Stories Built to Move
-            <span className="hero-headline-geo">people and business.</span>
+            Video Production
+            <span className="hero-headline-geo">Built in San Antonio.</span>
           </h1>
           <p className="hero-sub">
-            Media Bar Productions creates cinematic brand stories, commercials, and event content
-            for Texas organizations, all planned, produced, and finished by one experienced team.
+            Media Bar Productions creates cinematic stories that move people and business,
+            with commercials, corporate films, and event content planned, produced, and finished
+            by one experienced Texas team.
           </p>
           <div className="hero-pills">
             <span className="hero-pill">Strategy to Delivery</span>
@@ -1026,7 +1109,70 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ─── 3. FEATURED CASE STUDY ─── */}
+      {/* ─── 3. DIRECT ANSWERS ─── */}
+      <section className="answer-section" data-reveal aria-labelledby="homepage-answers-title">
+        <div className="answer-inner">
+          <div className="answer-intro">
+            <p className="eyebrow">San Antonio Video Production</p>
+            <h2 className="answer-title" id="homepage-answers-title">
+              One Partner
+              <em>from first idea to final delivery.</em>
+            </h2>
+            <p>
+              Media Bar Productions is a full-service video production company based in
+              San Antonio, Texas. Since 2011, our team has helped organizations plan, film,
+              edit, and deliver video for audiences across Texas and beyond.
+            </p>
+            <Link href="/locations/san-antonio" className="text-link">
+              Meet our San Antonio production team <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+          <div className="answer-grid">
+            <article className="answer-card">
+              <h3>What does Media Bar produce?</h3>
+              <p>
+                Corporate films, TV and digital commercials, event coverage, interviews,
+                medical video, live streams, motion graphics, food content, and post-production.
+              </p>
+              <Link href="/video-production" className="answer-link">
+                Explore video production services →
+              </Link>
+            </article>
+            <article className="answer-card">
+              <h3>What does full-service production include?</h3>
+              <p>
+                Strategy, creative development, scripting, pre-production, experienced crews,
+                filming, editing, color, audio, captions, and delivery for every channel.
+              </p>
+              <Link href="/how-we-work" className="answer-link">
+                See our production process →
+              </Link>
+            </article>
+            <article className="answer-card">
+              <h3>Who owns the footage?</h3>
+              <p>
+                You do. Final deliverables and the footage we capture for your project belong
+                to your organization, with files prepared for the platforms you need.
+              </p>
+              <Link href="/faq" className="answer-link">
+                Read production FAQs →
+              </Link>
+            </article>
+            <article className="answer-card">
+              <h3>How is a project priced?</h3>
+              <p>
+                Scope depends on the creative, crew, locations, talent, shoot days, and
+                post-production. We recommend the right production plan before work begins.
+              </p>
+              <Link href="/pricing" className="answer-link">
+                See what drives video cost →
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 4. FEATURED CASE STUDY ─── */}
       <section className="featured-work" data-reveal>
         <div className="featured-inner">
           <p className="eyebrow">Featured Work</p>
@@ -1063,7 +1209,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 4. SERVICES GRID ─── */}
+      {/* ─── 5. SERVICES GRID ─── */}
       <section className="section section-dark" data-reveal>
         <p className="eyebrow">Our Services</p>
         <h2 className="section-title">One Team, <em>Every Frame</em></h2>
@@ -1106,7 +1252,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 5. DEMO REEL ─── */}
+      {/* ─── 6. DEMO REEL ─── */}
       <section className="section section-dark2" data-reveal>
         <p className="eyebrow">Demo Reel</p>
         <h2 className="section-title" style={{ marginBottom: '40px' }}>See <em>The Work</em></h2>

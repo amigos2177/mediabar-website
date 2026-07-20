@@ -70,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         title: project.title,
         thumbnail_loc: thumbnail,
         description: video.description || `${project.title}, produced by Media Bar Productions in San Antonio.`,
+        player_loc: video.embedUrl,
       }],
     }]
   })

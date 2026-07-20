@@ -9,6 +9,7 @@ type VimeoPlayerProps = {
   title: string
   thumbnailUrl?: string
   eager?: boolean
+  embedImmediately?: boolean
 }
 
 export default function VimeoPlayer({
@@ -16,17 +17,21 @@ export default function VimeoPlayer({
   title,
   thumbnailUrl,
   eager = false,
+  embedImmediately = false,
 }: VimeoPlayerProps) {
   const [playing, setPlaying] = useState(false)
   const poster = thumbnailUrl || '/images/hero-aerial.jpg'
+  const showPlayer = embedImmediately || playing
+  const autoplay = playing && !embedImmediately
 
   return (
     <div className="mbp-vimeo-player">
-      {playing ? (
+      {showPlayer ? (
         <iframe
-          src={`https://player.vimeo.com/video/${videoId}?autoplay=1&title=0&byline=0&portrait=0&color=CC0000&badge=0`}
+          src={`https://player.vimeo.com/video/${videoId}?autoplay=${autoplay ? 1 : 0}&title=0&byline=0&portrait=0&color=CC0000&badge=0`}
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
+          loading={embedImmediately ? 'eager' : 'lazy'}
           title={title}
         />
       ) : (

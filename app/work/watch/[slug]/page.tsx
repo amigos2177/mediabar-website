@@ -105,6 +105,7 @@ export default async function WatchPage({ params }: Props) {
               title={`${project.title} by Media Bar Productions`}
               thumbnailUrl={Array.isArray(video.thumbnailUrl) ? video.thumbnailUrl[0] : video.thumbnailUrl}
               eager
+              embedImmediately
             />
           </div>
 

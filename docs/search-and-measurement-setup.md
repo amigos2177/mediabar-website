@@ -97,6 +97,9 @@ Vercel Web Analytics is the primary on-site measurement layer. Event properties 
 | Event | Meaning | Properties |
 |---|---|---|
 | `Conversion Intent Clicked` | A visitor clicked phone, email, contact, planner, or portal access | `intent`, `placement` |
+| `Conversion Source Clicked` | A conversion-intent click grouped by the type of page that generated it | `intent`, `source` |
+| `Blog Journey Clicked` | A blog reader moved to a service, work, contact, planner, phone, email, or portal destination | `destination`, `placement` |
+| `Campaign Landing Viewed` | A tagged campaign visit reached the site, including Google Business Profile links | `source`, `campaign` |
 | `Contact Form Started` | A person changed the first real contact field | none |
 | `Contact Form Submitted` | The contact API accepted a valid message | `service` |
 | `Contact Form Submission Failed` | A server or network error blocked the contact submission | `reason`, `service` |
@@ -123,8 +126,25 @@ Supporting conversions:
 - Completed planner steps
 - Portfolio video plays
 - Visits to `/contact` and `/project-planner`
+- Blog journeys into service and inquiry pages
+- Tagged campaign landings, including Google Business Profile traffic
 
 Do not count client portal clicks as marketing leads.
+
+## Conversion reporting views
+
+Use these saved views in Vercel Web Analytics:
+
+1. Primary leads: `Contact Form Submitted` plus `Project Brief Submitted`.
+2. Direct inquiries: `Conversion Intent Clicked`, filtered to `phone` or `email`.
+3. CTA source quality: `Conversion Source Clicked`, grouped by `source` and filtered by `intent`.
+4. Blog contribution: `Blog Journey Clicked`, grouped by `destination`.
+5. Google Business Profile traffic: `Campaign Landing Viewed`, filtered to `source = gbp`.
+
+The tracking layer does not send names, email addresses, phone numbers, company
+names, messages, project overviews, or pasted links. Campaign parameters are
+trimmed to 100 characters and recorded once per tagged landing page per browser
+session.
 
 ## Baseline snapshot
 

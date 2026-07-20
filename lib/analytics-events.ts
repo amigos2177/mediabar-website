@@ -1,5 +1,8 @@
 export const analyticsEvents = {
   conversionIntentClicked: 'Conversion Intent Clicked',
+  conversionSourceClicked: 'Conversion Source Clicked',
+  blogJourneyClicked: 'Blog Journey Clicked',
+  campaignLandingViewed: 'Campaign Landing Viewed',
   contactFormStarted: 'Contact Form Started',
   contactFormSubmitted: 'Contact Form Submitted',
   contactFormSubmissionFailed: 'Contact Form Submission Failed',

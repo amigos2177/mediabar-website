@@ -67,6 +67,12 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Full ESLint, TypeScript, structured-data verification, `git diff --check`, the webpack production build, and the Vercel preview build pass. The build generates 68 pages.
 - Released to production as `dpl_4poZ1UdJiCugeDM5wnxoq9RdUwoY`. The tracked project-planner route returns HTTP 200, the canonical domains point to the Ready deployment, and the production error-log scan is clean. Application changes are committed and pushed as `1966001`, with this release note following.
 
+## July 20, 2026 three-Emmy logo - live
+- Replaced the shared Media Bar logo with the supplied transparent three-Emmy artwork across the desktop header, mobile menu, footer, and organization metadata.
+- Corrected the Next.js image dimensions to the source artwork ratio while preserving the established display sizes and responsive layout.
+- Full ESLint, TypeScript, `git diff --check`, the webpack production build, and the Vercel preview and production builds pass. The build generates 68 pages.
+- Released to production as `dpl_3hwvFGkd9vN6zggj69dMorNsCGfS`. The canonical domains point to the Ready deployment, the live logo checksum matches the approved source asset, and the production error-log scan is clean. Application changes are committed and pushed as `f40d839`, with this release note following.
+
 ## July 17, 2026 audit sprint — implemented locally
 - Added a four-step `/project-planner` that submits through the hardened contact API.
 - Added filterable portfolio categories, visible project descriptions, and click-to-play Vimeo embeds.

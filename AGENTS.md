@@ -60,6 +60,13 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Verification: full ESLint, TypeScript, structured-data verification, `git diff --check`, and the webpack production build pass. The Vercel preview build also passes and generates 68 pages.
 - Released to production as `dpl_2i1VXxvRAdVSaw9dekF7Hgt7oeuy`. The canonical FAQ route returns the restored hero image and the public advisor link. Application changes are committed and pushed as `522944b`, with this release note following.
 
+## July 20, 2026 GPT inquiry attribution - preview ready
+- Added session-scoped first-party capture for `utm_source`, `utm_medium`, `utm_campaign`, and `utm_content`, plus the landing path. No cookies or personal profile data are stored.
+- Project planner submissions now include campaign attribution in the Media Bar inquiry email and in the successful Vercel Analytics submission event.
+- Verified the tracked ChatGPT project-planner URL in Chrome and confirmed the API accepts the complete attribution payload through a local honeypot-marked request that does not send email.
+- Full ESLint, TypeScript, structured-data verification, `git diff --check`, the webpack production build, and the Vercel preview build pass. The build generates 68 pages.
+- Preview: `dpl_46R2X4qPL8vd6tcvpg9HSvkkxJQy` at `https://mediabar-website-et3th4u7j-amigos2177s-projects.vercel.app`. Not committed, pushed, or promoted to production.
+
 ## July 17, 2026 audit sprint — implemented locally
 - Added a four-step `/project-planner` that submits through the hardened contact API.
 - Added filterable portfolio categories, visible project descriptions, and click-to-play Vimeo embeds.

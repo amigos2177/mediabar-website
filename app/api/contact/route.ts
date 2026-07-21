@@ -33,6 +33,11 @@ type ContactFields = {
   timeline?: string
   message: string
   source?: string
+  utmSource?: string
+  utmMedium?: string
+  utmCampaign?: string
+  utmContent?: string
+  landingPage?: string
 }
 
 type RateLimitEntry = {
@@ -114,8 +119,16 @@ function buildHtml(fields: ContactFields) {
     ...(safe.timeline ? [row('Timeline', safe.timeline)] : []),
   ]
 
-  const sourceSection = safe.source
-    ? section('Inquiry Source', row('Source', safe.source === 'video-production-faq' ? 'Video Production FAQ' : safe.source))
+  const attributionRows = [
+    ...(safe.source ? [row('Form source', safe.source === 'video-production-faq' ? 'Video Production FAQ' : safe.source)] : []),
+    ...(safe.utmSource ? [row('Campaign source', safe.utmSource)] : []),
+    ...(safe.utmMedium ? [row('Campaign medium', safe.utmMedium)] : []),
+    ...(safe.utmCampaign ? [row('Campaign name', safe.utmCampaign)] : []),
+    ...(safe.utmContent ? [row('Campaign content', safe.utmContent)] : []),
+    ...(safe.landingPage ? [row('Landing page', safe.landingPage)] : []),
+  ]
+  const sourceSection = attributionRows.length
+    ? section('Inquiry Source', attributionRows.join(''))
     : ''
   const inquiryTitle = safe.source === 'video-production-faq'
     ? 'New Video Production Question'
@@ -221,8 +234,16 @@ export async function POST(req: NextRequest) {
     const timeline = readString(body, 'timeline', 80)
     const message = readString(body, 'message', 4_000)
     const source = readString(body, 'source', 80)
+    const utmSource = readString(body, 'utmSource', 100)
+    const utmMedium = readString(body, 'utmMedium', 100)
+    const utmCampaign = readString(body, 'utmCampaign', 100)
+    const utmContent = readString(body, 'utmContent', 100)
+    const landingPage = readString(body, 'landingPage', 240)
 
-    if ([firstName, lastName, email, phone, company, service, budget, timeline, message, source].includes(null)) {
+    if ([
+      firstName, lastName, email, phone, company, service, budget, timeline,
+      message, source, utmSource, utmMedium, utmCampaign, utmContent, landingPage,
+    ].includes(null)) {
       return NextResponse.json({ error: 'One or more fields are invalid or too long.' }, { status: 400 })
     }
     if (!firstName) {
@@ -264,6 +285,11 @@ export async function POST(req: NextRequest) {
       timeline: timeline || undefined,
       message,
       source: source || undefined,
+      utmSource: utmSource || undefined,
+      utmMedium: utmMedium || undefined,
+      utmCampaign: utmCampaign || undefined,
+      utmContent: utmContent || undefined,
+      landingPage: landingPage || undefined,
     }
 
     const { error } = await getResend().emails.send({

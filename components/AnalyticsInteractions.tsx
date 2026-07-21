@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { track } from '@vercel/analytics'
 import { analyticsEvents } from '@/lib/analytics-events'
+import { captureCampaignAttribution } from '@/lib/campaign-attribution'
 
 type ConversionIntent =
   | 'phone'
@@ -105,6 +106,8 @@ export function AnalyticsInteractions() {
     const params = new URLSearchParams(window.location.search)
     const source = params.get('utm_source')?.trim().slice(0, 100)
     const campaign = params.get('utm_campaign')?.trim().slice(0, 100)
+
+    captureCampaignAttribution()
 
     if (source || campaign) {
       const sessionKey = `${campaignSessionPrefix}${window.location.pathname}:${source || 'unknown'}:${campaign || 'unspecified'}`

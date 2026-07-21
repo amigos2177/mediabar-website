@@ -4,6 +4,11 @@ import { useEffect, useRef, useState } from 'react'
 import { track } from '@vercel/analytics'
 import Link from 'next/link'
 import { analyticsEvents } from '@/lib/analytics-events'
+import {
+  captureCampaignAttribution,
+  readCampaignAttribution,
+  type CampaignAttribution,
+} from '@/lib/campaign-attribution'
 import styles from './project-planner.module.css'
 
 const services = [
@@ -215,10 +220,15 @@ export default function ProjectPlannerForm() {
   const headingRef = useRef<HTMLHeadingElement>(null)
   const hasTrackedStart = useRef(false)
   const trackedSteps = useRef(new Set<number>())
+  const attribution = useRef<CampaignAttribution | null>(null)
 
   useEffect(() => {
     headingRef.current?.focus()
   }, [step])
+
+  useEffect(() => {
+    attribution.current = captureCampaignAttribution() || readCampaignAttribution()
+  }, [])
 
   function update<K extends keyof PlannerFields>(key: K, value: PlannerFields[K]) {
     if (key !== 'website' && !hasTrackedStart.current) {
@@ -314,6 +324,11 @@ export default function ProjectPlannerForm() {
           timeline: fields.timeline,
           message: projectSummary,
           website: fields.website,
+          utmSource: attribution.current?.utmSource,
+          utmMedium: attribution.current?.utmMedium,
+          utmCampaign: attribution.current?.utmCampaign,
+          utmContent: attribution.current?.utmContent,
+          landingPage: attribution.current?.landingPage,
         }),
       })
       const result = await response.json()
@@ -328,6 +343,8 @@ export default function ProjectPlannerForm() {
       track(analyticsEvents.projectBriefSubmitted, {
         service: fields.service,
         timeline: fields.timeline,
+        source: attribution.current?.utmSource || 'direct',
+        campaign: attribution.current?.utmCampaign || 'none',
       })
       setSubmitted(true)
     } catch {

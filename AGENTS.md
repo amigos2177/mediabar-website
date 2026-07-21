@@ -52,13 +52,13 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Browser console scans remained free of errors. Conversion paths from the homepage, services hub, work index, pricing, and contact pages lead to the project planner, contact page, or phone as intended.
 - No application code changes were required by this QA pass.
 
-## July 20, 2026 Texas Video Production Advisor integration - preview ready
+## July 20, 2026 Texas Video Production Advisor integration - live
 - Added a prominent Texas Video Production Advisor section to the indexed video-production FAQ resource, with clear educational boundaries, a privacy warning, and separate paths to ChatGPT and the Media Bar project planner.
 - Added the public advisor to the mobile navigation and footer without increasing the already-crowded desktop navigation.
 - Added non-PII Vercel Analytics tracking for advisor clicks, including placement and source-page group.
 - Restored the original `media-bar-bts-33.jpg` source photo after the repository copy was found to be an all-black JPEG; the FAQ hero now renders the production image correctly.
 - Verification: full ESLint, TypeScript, structured-data verification, `git diff --check`, and the webpack production build pass. The Vercel preview build also passes and generates 68 pages.
-- Preview: `dpl_CQ9Yq572qFqLT6CCLr5KyG1dzbmo` at `https://mediabar-website-c0shpa7ny-amigos2177s-projects.vercel.app`. Not committed, pushed, or promoted to production.
+- Released to production as `dpl_2i1VXxvRAdVSaw9dekF7Hgt7oeuy`. The canonical FAQ route returns the restored hero image and the public advisor link. Application changes are committed and pushed as `522944b`, with this release note following.
 
 ## July 17, 2026 audit sprint — implemented locally
 - Added a four-step `/project-planner` that submits through the hardened contact API.

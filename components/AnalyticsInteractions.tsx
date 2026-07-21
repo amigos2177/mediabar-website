@@ -10,6 +10,7 @@ type ConversionIntent =
   | 'project-planner'
   | 'contact'
   | 'client-portal'
+  | 'gpt-advisor'
 
 type PageGroup =
   | 'home'
@@ -38,6 +39,12 @@ function getConversionIntent(anchor: HTMLAnchorElement): ConversionIntent | null
 
   const destination = new URL(anchor.href, window.location.href)
   if (destination.hostname === 'portal.creativeagenda.io') return 'client-portal'
+  if (
+    destination.hostname === 'chatgpt.com'
+    && destination.pathname.startsWith('/g/g-6a5eca9bc22081919d134d3a2d686ba3')
+  ) {
+    return 'gpt-advisor'
+  }
   if (destination.origin !== window.location.origin) return null
   if (destination.pathname === '/project-planner') return 'project-planner'
   if (destination.pathname === '/contact') return 'contact'
@@ -142,6 +149,13 @@ export function AnalyticsInteractions() {
           intent,
           source: sourceGroup,
         })
+
+        if (intent === 'gpt-advisor') {
+          track(analyticsEvents.gptAdvisorOpened, {
+            placement,
+            source: sourceGroup,
+          })
+        }
       }
 
       if (sourceGroup === 'blog') {

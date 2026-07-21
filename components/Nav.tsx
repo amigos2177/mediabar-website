@@ -28,6 +28,11 @@ const TOP_LINKS = [
   { href: '/clients', label: 'Clients' },
   { href: '/contact', label: 'Contact' },
   { href: '/faq', label: 'FAQ' },
+  {
+    href: 'https://chatgpt.com/g/g-6a5eca9bc22081919d134d3a2d686ba3-texas-video-production-advisor',
+    label: 'Texas Video Advisor',
+    external: true,
+  },
 ]
 
 export default function Nav() {
@@ -330,7 +335,18 @@ export default function Nav() {
           <div className="mbp-overlay-body">
             {/* Top-level pages */}
             <p id="mobile-navigation-title" className="mbp-overlay-section-label">Menu</p>
-            {TOP_LINKS.map((l) => (
+            {TOP_LINKS.map((l) => l.external ? (
+              <a
+                key={l.href}
+                href={l.href}
+                className="mbp-overlay-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={close}
+              >
+                {l.label} <span aria-hidden="true" style={{ color: '#C9A84C', marginLeft: '8px' }}>↗</span>
+              </a>
+            ) : (
               <Link key={l.href} href={l.href} className="mbp-overlay-link" onClick={close}>
                 {l.label}
               </Link>

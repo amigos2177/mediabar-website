@@ -14,4 +14,5 @@ export const analyticsEvents = {
   faqQuestionFormStarted: 'FAQ Question Form Started',
   faqQuestionSubmitted: 'FAQ Question Submitted',
   faqQuestionSubmissionFailed: 'FAQ Question Submission Failed',
+  gptAdvisorOpened: 'GPT Advisor Opened',
 } as const

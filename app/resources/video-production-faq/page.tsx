@@ -8,6 +8,8 @@ import {
 import AskQuestionForm from './AskQuestionForm'
 import styles from './video-production-faq.module.css'
 
+const VIDEO_ADVISOR_URL = 'https://chatgpt.com/g/g-6a5eca9bc22081919d134d3a2d686ba3-texas-video-production-advisor'
+
 const featuredQuestions = [
   'how-is-a-video-production-budget-determined',
   'how-far-in-advance-should-video-production-start',
@@ -84,6 +86,50 @@ export default function VideoProductionFaqPage() {
           <div><strong>6</strong><span>Planning topics</span></div>
           <div><strong>2011</strong><span>Producing in San Antonio since</span></div>
           <div><strong>Texas</strong><span>Statewide production context</span></div>
+        </section>
+
+        <section className={styles.advisor} aria-labelledby="advisor-heading">
+          <div className={styles.advisorIdentity} aria-hidden="true">
+            <span className={styles.advisorSeal}>TX</span>
+            <div>
+              <small>Media Bar presents</small>
+              <strong>Texas Video<br />Production Advisor</strong>
+              <span>Available in ChatGPT</span>
+            </div>
+          </div>
+          <div className={styles.advisorCopy}>
+            <p className={styles.eyebrow}>Interactive planning resource</p>
+            <h2 id="advisor-heading">Ask the Texas Video Production Advisor.</h2>
+            <p>
+              Talk through a corporate video, commercial, interview, event, live
+              stream, or post-production plan. The advisor uses this reviewed FAQ
+              and Media Bar&apos;s production knowledge to give practical guidance
+              before a real scope is defined.
+            </p>
+            <ul>
+              <li>Useful for early planning and better production conversations</li>
+              <li>Careful about estimates, assumptions, privacy, and technical risk</li>
+              <li>Routes active Texas projects to the Media Bar project planner</li>
+            </ul>
+            <div className={styles.advisorActions}>
+              <a
+                href={VIDEO_ADVISOR_URL}
+                className={styles.primaryButton}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open the advisor in ChatGPT <span aria-hidden="true">↗</span>
+              </a>
+              <Link href="/project-planner" className={styles.secondaryButton}>
+                Plan a real project
+              </Link>
+            </div>
+            <p className={styles.advisorPrivacy}>
+              <strong>Privacy note:</strong> ChatGPT is a third-party service. Do
+              not enter patient information, confidential business details,
+              unreleased campaign material, or other sensitive information.
+            </p>
+          </div>
         </section>
 
         <section className={styles.startHere} aria-labelledby="start-heading">

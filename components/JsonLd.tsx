@@ -398,7 +398,76 @@ export function EditorialPolicyJsonLd() {
 }
 
 // ============================================================
-// 8. VideoObject - Pages with embedded Vimeo videos
+// 8. Educational guide - Long-form, expert-reviewed resources
+// ============================================================
+type EducationalGuideProps = {
+  title: string
+  description: string
+  url: string
+  datePublished: string
+  dateModified: string
+  image: string
+}
+
+export function EducationalGuideJsonLd({
+  title,
+  description,
+  url,
+  datePublished,
+  dateModified,
+  image,
+}: EducationalGuideProps) {
+  const canonical = `${BASE_URL}${url}`
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${canonical}#article`,
+    headline: title,
+    description,
+    url: canonical,
+    datePublished,
+    dateModified,
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${canonical}#webpage`,
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: `${BASE_URL}${image}`,
+    },
+    author: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}/about#founder`,
+      name: 'Ruben Garcia',
+      jobTitle: 'Founder and Executive Producer',
+      url: `${BASE_URL}/about#founder`,
+      worksFor: {
+        '@id': BUSINESS_ID,
+      },
+    },
+    reviewedBy: {
+      '@type': 'Person',
+      '@id': `${BASE_URL}/about#founder`,
+      name: 'Ruben Garcia',
+      url: `${BASE_URL}/about#founder`,
+    },
+    publisher: {
+      '@id': BUSINESS_ID,
+    },
+    publishingPrinciples: `${BASE_URL}/about/editorial-policy`,
+    about: [
+      'Video production planning',
+      'Video production in Texas',
+      'Video production in San Antonio',
+    ],
+  }
+  return <JsonLdScript data={data} />
+}
+
+// ============================================================
+// 9. VideoObject - Pages with embedded Vimeo videos
 // ============================================================
 type VideoProps = {
   name: string

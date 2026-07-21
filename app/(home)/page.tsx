@@ -1154,8 +1154,8 @@ export default function HomePage() {
                 You do. Final deliverables and the footage we capture for your project belong
                 to your organization, with files prepared for the platforms you need.
               </p>
-              <Link href="/faq" className="answer-link">
-                Read production FAQs →
+              <Link href="/resources/video-production-faq" className="answer-link">
+                Read the video production guide →
               </Link>
             </article>
             <article className="answer-card">

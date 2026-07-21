@@ -1,0 +1,1014 @@
+.page {
+  --red: #d20b0b;
+  --gold: #c9a84c;
+  --ink: #080808;
+  --panel: #111;
+  --line: rgba(255, 255, 255, 0.13);
+  --muted: #a3a3a3;
+  overflow: clip;
+  background: var(--ink);
+  color: #fff;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--red);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.hero {
+  display: grid;
+  min-height: 48rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  border-bottom: 1px solid var(--line);
+  background: #0b0b0b;
+}
+
+.heroImage {
+  position: relative;
+  min-height: 48rem;
+  overflow: hidden;
+}
+
+.heroImage img {
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.5));
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 9rem clamp(2rem, 5vw, 6rem) 5rem;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(210, 11, 11, 0.14), transparent 28%),
+    #0b0b0b;
+}
+
+.hero h1 {
+  max-width: 9ch;
+  margin: 1.1rem 0 1.8rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(4.5rem, 7.2vw, 8.2rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.hero h1 em {
+  display: block;
+  margin-top: 0.2em;
+  color: var(--gold);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.48em;
+  font-weight: 400;
+  line-height: 1.02;
+  text-transform: none;
+}
+
+.heroIntro {
+  max-width: 38rem;
+  margin: 0;
+  color: #b4b4b4;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.primaryButton {
+  background: var(--red);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: transparent;
+}
+
+.primaryButton:hover,
+.primaryButton:focus-visible {
+  background: #f01414;
+}
+
+.secondaryButton:hover,
+.secondaryButton:focus-visible {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.reviewLine {
+  margin: 2rem 0 0;
+  color: #747474;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.trustBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.trustBar div {
+  min-height: 9rem;
+  padding: 2.2rem clamp(1.3rem, 3vw, 3rem);
+  border-right: 1px solid var(--line);
+}
+
+.trustBar div:last-child {
+  border-right: 0;
+}
+
+.trustBar strong {
+  display: block;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.trustBar span {
+  display: block;
+  margin-top: 0.55rem;
+  color: #858585;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.startHere {
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 6vw, 6rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionHeading {
+  display: grid;
+  max-width: 90rem;
+  grid-template-columns: minmax(10rem, 0.35fr) minmax(0, 1fr);
+  gap: 3rem;
+  margin: 0 auto 3.5rem;
+}
+
+.sectionHeading h2,
+.topicIntro h2,
+.guideAside h2,
+.companyFaq h2,
+.cta h2 {
+  margin: 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2 {
+  max-width: 18ch;
+  font-size: clamp(3.2rem, 5.4vw, 6rem);
+}
+
+.featuredGrid {
+  display: grid;
+  max-width: 90rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.featuredGrid > a {
+  min-height: 24rem;
+  padding: clamp(1.8rem, 4vw, 3.2rem);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: #fff;
+  text-decoration: none;
+  transition: background 180ms ease;
+}
+
+.featuredGrid > a:hover,
+.featuredGrid > a:focus-visible {
+  background: #131313;
+}
+
+.featuredGrid > a > span {
+  color: var(--red);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.4rem;
+}
+
+.featuredGrid h3 {
+  max-width: 18ch;
+  margin: 3.8rem 0 1.1rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(2.2rem, 3.7vw, 4rem);
+  font-weight: 400;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.featuredGrid p {
+  max-width: 38rem;
+  margin: 0 0 2rem;
+  color: #979797;
+  line-height: 1.7;
+}
+
+.featuredGrid > a > strong {
+  color: var(--gold);
+  font-size: 0.63rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fieldNotes {
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 6vw, 6rem);
+  border-bottom: 1px solid var(--line);
+  background: #0d0d0d;
+}
+
+.fieldNotesHeading {
+  display: grid;
+  max-width: 90rem;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.55fr);
+  gap: clamp(2rem, 8vw, 8rem);
+  align-items: end;
+  margin: 0 auto 3.5rem;
+}
+
+.fieldNotesHeading h2,
+.askQuestionIntro h2 {
+  max-width: 13ch;
+  margin: 1rem 0 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3.4rem, 5.8vw, 6.4rem);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.fieldNotesHeading > p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.fieldNotesGrid {
+  display: grid;
+  max-width: 90rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.fieldNotesGrid article {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #111;
+}
+
+.fieldNoteImage {
+  position: relative;
+  min-height: 20rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.fieldNoteImage img {
+  object-fit: cover;
+  transition: transform 280ms ease;
+}
+
+.fieldNotesGrid article:hover .fieldNoteImage img {
+  transform: scale(1.025);
+}
+
+.fieldNoteCopy {
+  padding: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+.fieldNoteCopy > p {
+  margin: 0 0 2.7rem;
+  color: var(--red);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.fieldNoteCopy h3 {
+  margin: 0 0 1.2rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(2.1rem, 3vw, 3.2rem);
+  font-weight: 400;
+  line-height: 0.97;
+  text-transform: uppercase;
+}
+
+.fieldNoteCopy > span {
+  display: block;
+  margin-bottom: 1.8rem;
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.72;
+}
+
+.fieldNoteCopy a {
+  color: var(--gold);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.topicSection {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.6fr) minmax(0, 1.4fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 6vw, 6rem);
+  border-bottom: 1px solid var(--line);
+  background: #101010;
+  scroll-margin-top: 6rem;
+}
+
+.topicIntro h2 {
+  max-width: 10ch;
+  margin-top: 1rem;
+  font-size: clamp(3.4rem, 5.4vw, 6rem);
+}
+
+.topicIntro > p:last-child {
+  max-width: 32rem;
+  margin: 1.8rem 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.topicNav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.topicNav a {
+  display: grid;
+  min-height: 13rem;
+  align-content: start;
+  padding: 1.8rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: #fff;
+  text-decoration: none;
+}
+
+.topicNav a:hover,
+.topicNav a:focus-visible {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.topicNav span {
+  color: var(--red);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.25rem;
+}
+
+.topicNav strong {
+  margin-top: 1.1rem;
+  font-size: 1rem;
+}
+
+.topicNav small {
+  max-width: 29rem;
+  margin-top: 0.65rem;
+  color: #8f8f8f;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.guideLayout {
+  display: grid;
+  width: min(100%, 96rem);
+  grid-template-columns: minmax(17rem, 0.48fr) minmax(0, 1.52fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  margin: 0 auto;
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 5vw, 5rem);
+}
+
+.guideAside {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+}
+
+.guideAside h2 {
+  max-width: 10ch;
+  margin-top: 1rem;
+  font-size: clamp(3rem, 4.5vw, 5rem);
+}
+
+.guideAside > p:not(.eyebrow) {
+  max-width: 27rem;
+  margin: 1.5rem 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.guideAside a,
+.answerLinks a,
+.authorLinks a,
+.companyFaq a {
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.guideAside a span,
+.answerLinks a span {
+  color: var(--red);
+}
+
+.answerGroup {
+  margin-bottom: 5.5rem;
+  scroll-margin-top: 7rem;
+}
+
+.answerGroupHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gold);
+}
+
+.answerGroupHeading p {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.answerGroupHeading span {
+  color: #676767;
+  font-size: 0.65rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.answerList details {
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 7rem;
+}
+
+.answerList summary {
+  display: flex;
+  min-height: 6.8rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: #e6e6e6;
+  cursor: pointer;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  font-weight: 650;
+  line-height: 1.45;
+  list-style: none;
+}
+
+.answerList summary::-webkit-details-marker {
+  display: none;
+}
+
+.answerList summary i {
+  color: var(--red);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  transition: transform 160ms ease;
+}
+
+.answerList details[open] summary i {
+  transform: rotate(45deg);
+}
+
+.answerBody {
+  max-width: 52rem;
+  padding: 0 3.4rem 2.4rem 0;
+}
+
+.answerBody p {
+  margin: 0 0 1rem;
+  color: #a5a5a5;
+  font-size: 0.95rem;
+  line-height: 1.78;
+}
+
+.answerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.7rem;
+  margin-top: 1.5rem;
+}
+
+.author {
+  display: grid;
+  grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 9vw, 10rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #111;
+}
+
+.authorImage {
+  position: relative;
+  aspect-ratio: 0.85;
+  overflow: hidden;
+}
+
+.authorImage img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.authorCopy h2 {
+  margin: 0.8rem 0 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(3.8rem, 6vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.authorRole {
+  margin: 0.65rem 0 1.6rem;
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.authorCopy > p:not(.eyebrow, .authorRole) {
+  max-width: 48rem;
+  color: #a8a8a8;
+  line-height: 1.75;
+}
+
+.authorLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.7rem;
+}
+
+.companyFaq {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.75fr);
+  gap: clamp(3rem, 9vw, 9rem);
+  padding: clamp(5rem, 9vw, 8rem) clamp(1.5rem, 8vw, 9rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.companyFaq h2 {
+  max-width: 12ch;
+  margin-top: 0.9rem;
+  font-size: clamp(3.2rem, 5.5vw, 6rem);
+}
+
+.companyFaq > div:last-child {
+  align-self: end;
+}
+
+.companyFaq > div:last-child p {
+  margin: 0 0 1.7rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.askQuestion {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.68fr) minmax(0, 1.32fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 8vw, 9rem);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 5% 10%, rgba(201, 168, 76, 0.1), transparent 34%),
+    #0d0d0d;
+}
+
+.askQuestionIntro > p:not(.eyebrow) {
+  max-width: 34rem;
+  margin: 1.6rem 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.askQuestionBoundary {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 32rem;
+  margin-top: 2.2rem;
+  padding: 1.5rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.askQuestionBoundary strong {
+  color: #fff;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.askQuestionBoundary span {
+  color: #919191;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.askQuestionBoundary a {
+  width: fit-content;
+  color: var(--gold);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.questionForm {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.6rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  background: #121212;
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.questionFormRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.questionField {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.questionField label {
+  color: #ddd;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.questionField label span {
+  color: #6e6e6e;
+  font-size: 0.58rem;
+}
+
+.questionField input,
+.questionField textarea {
+  width: 100%;
+  border: 1px solid #303030;
+  border-radius: 0;
+  outline: 0;
+  background: #0b0b0b;
+  color: #fff;
+  font: inherit;
+}
+
+.questionField input {
+  min-height: 3.4rem;
+  padding: 0 1rem;
+}
+
+.questionField textarea {
+  min-height: 10rem;
+  padding: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.questionField input:focus,
+.questionField textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.questionField textarea::placeholder {
+  color: #626262;
+}
+
+.questionPrivacy {
+  margin: 0;
+  color: #757575;
+  font-size: 0.74rem;
+  line-height: 1.6;
+}
+
+.questionError {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-left: 2px solid var(--red);
+  background: rgba(210, 11, 11, 0.1);
+  color: #f1aaaa;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.questionSubmit {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 3.6rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  border: 0;
+  background: var(--red);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.questionSubmit:hover,
+.questionSubmit:focus-visible {
+  background: #f01414;
+}
+
+.questionSubmit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.questionSuccess {
+  align-self: start;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid var(--line);
+  background: #121212;
+}
+
+.questionSuccess > span {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  margin-bottom: 2rem;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 1.35rem;
+}
+
+.questionSuccess h3 {
+  max-width: 12ch;
+  margin: 1rem 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.questionSuccess > p:not(.eyebrow) {
+  max-width: 38rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.questionSuccess > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.7rem;
+}
+
+.questionSuccess button,
+.questionSuccess a {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.questionSuccess a {
+  color: var(--gold);
+}
+
+.cta {
+  padding: clamp(6rem, 11vw, 11rem) clamp(1.5rem, 9vw, 10rem);
+  background:
+    radial-gradient(circle at 12% 25%, rgba(210, 11, 11, 0.22), transparent 35%),
+    #101010;
+}
+
+.cta h2 {
+  max-width: 12ch;
+  margin-top: 1rem;
+  font-size: clamp(4rem, 8vw, 8.5rem);
+}
+
+.cta > p:not(.eyebrow) {
+  max-width: 43rem;
+  margin: 1.8rem 0 2rem;
+  color: #a9a9a9;
+  line-height: 1.75;
+}
+
+.cta > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .topicSection,
+  .guideLayout,
+  .companyFaq,
+  .fieldNotesHeading,
+  .askQuestion {
+    grid-template-columns: 1fr;
+  }
+
+  .heroImage {
+    min-height: 30rem;
+  }
+
+  .heroContent {
+    padding-top: 5rem;
+  }
+
+  .guideAside {
+    position: static;
+  }
+
+  .guideAside h2 {
+    max-width: 14ch;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .heroImage {
+    min-height: 27rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 19vw, 6.4rem);
+  }
+
+  .trustBar,
+  .featuredGrid,
+  .topicNav,
+  .sectionHeading,
+  .author,
+  .fieldNotesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .trustBar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trustBar div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .trustBar div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sectionHeading {
+    gap: 1.2rem;
+  }
+
+  .featuredGrid > a {
+    min-height: 21rem;
+  }
+
+  .authorImage {
+    width: min(15rem, 70vw);
+  }
+
+  .answerBody {
+    padding-right: 0;
+  }
+
+  .fieldNoteImage {
+    min-height: 18rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroImage {
+    min-height: 23rem;
+  }
+
+  .heroContent {
+    padding-inline: 1.35rem;
+  }
+
+  .heroActions,
+  .cta > div {
+    display: grid;
+  }
+
+  .trustBar strong {
+    font-size: 2.8rem;
+  }
+
+  .featuredGrid h3 {
+    margin-top: 2.8rem;
+  }
+
+  .answerList summary {
+    min-height: 6.2rem;
+    gap: 1.2rem;
+  }
+
+  .answerGroupHeading {
+    display: grid;
+  }
+
+  .questionFormRow {
+    grid-template-columns: 1fr;
+  }
+
+  .questionSubmit {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featuredGrid > a,
+  .answerList summary i,
+  .fieldNoteImage img {
+    transition: none;
+  }
+}

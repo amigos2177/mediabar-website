@@ -11,4 +11,7 @@ export const analyticsEvents = {
   projectBriefSubmitted: 'Project Brief Submitted',
   projectBriefSubmissionFailed: 'Project Brief Submission Failed',
   portfolioVideoPlayed: 'Portfolio Video Played',
+  faqQuestionFormStarted: 'FAQ Question Form Started',
+  faqQuestionSubmitted: 'FAQ Question Submitted',
+  faqQuestionSubmissionFailed: 'FAQ Question Submission Failed',
 } as const

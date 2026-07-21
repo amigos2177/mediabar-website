@@ -20,6 +20,7 @@ const BUDGETS = new Set([
   'Under $5,000', '$5,000 - $15,000', '$15,000 - $50,000',
   '$50,000+', 'Not sure yet',
 ])
+const SOURCES = new Set(['video-production-faq'])
 
 type ContactFields = {
   firstName: string
@@ -31,6 +32,7 @@ type ContactFields = {
   budget?: string
   timeline?: string
   message: string
+  source?: string
 }
 
 type RateLimitEntry = {
@@ -112,6 +114,13 @@ function buildHtml(fields: ContactFields) {
     ...(safe.timeline ? [row('Timeline', safe.timeline)] : []),
   ]
 
+  const sourceSection = safe.source
+    ? section('Inquiry Source', row('Source', safe.source === 'video-production-faq' ? 'Video Production FAQ' : safe.source))
+    : ''
+  const inquiryTitle = safe.source === 'video-production-faq'
+    ? 'New Video Production Question'
+    : 'New Project Inquiry'
+
   const projectSection = projectFields.length
     ? section('Project Details', projectFields.join(''))
     : ''
@@ -124,12 +133,13 @@ function buildHtml(fields: ContactFields) {
     <tr>
       <td colspan="2" style="padding:32px 16px 16px;border-bottom:2px solid #CC0000">
         <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#CC0000">Media Bar Productions</span>
-        <h1 style="margin:8px 0 0;font-size:22px;color:#ffffff;font-weight:700">New Project Inquiry</h1>
+        <h1 style="margin:8px 0 0;font-size:22px;color:#ffffff;font-weight:700">${inquiryTitle}</h1>
         <p style="margin:6px 0 0;font-size:13px;color:#888888">From ${safe.firstName} ${safe.lastName} &lt;${safe.email}&gt;</p>
       </td>
     </tr>
     ${section('Contact Info', contactRows)}
     ${projectSection}
+    ${sourceSection}
     ${section('Message', row('', safe.message.replace(/\n/g, '<br>')))}
     <tr>
       <td colspan="2" style="padding:24px 16px;border-top:1px solid #1a1a1a">
@@ -210,8 +220,9 @@ export async function POST(req: NextRequest) {
     const budget = readString(body, 'budget', 80)
     const timeline = readString(body, 'timeline', 80)
     const message = readString(body, 'message', 4_000)
+    const source = readString(body, 'source', 80)
 
-    if ([firstName, lastName, email, phone, company, service, budget, timeline, message].includes(null)) {
+    if ([firstName, lastName, email, phone, company, service, budget, timeline, message, source].includes(null)) {
       return NextResponse.json({ error: 'One or more fields are invalid or too long.' }, { status: 400 })
     }
     if (!firstName) {
@@ -238,6 +249,9 @@ export async function POST(req: NextRequest) {
     if (budget && !BUDGETS.has(budget)) {
       return NextResponse.json({ error: 'Please select a valid budget.' }, { status: 400 })
     }
+    if (source && !SOURCES.has(source)) {
+      return NextResponse.json({ error: 'Please select a valid inquiry source.' }, { status: 400 })
+    }
 
     const fields: ContactFields = {
       firstName,
@@ -249,13 +263,16 @@ export async function POST(req: NextRequest) {
       budget: budget || undefined,
       timeline: timeline || undefined,
       message,
+      source: source || undefined,
     }
 
     const { error } = await getResend().emails.send({
       from: 'Media Bar Website <forms@mediabarproductions.com>',
       to: 'contact@mediabarproductions.com',
       replyTo: email,
-      subject: `New Project Inquiry from ${firstName.replace(/[\r\n]/g, ' ')} ${lastName.replace(/[\r\n]/g, ' ')}`,
+      subject: source === 'video-production-faq'
+        ? `New Video Production Question from ${firstName.replace(/[\r\n]/g, ' ')} ${lastName.replace(/[\r\n]/g, ' ')}`
+        : `New Project Inquiry from ${firstName.replace(/[\r\n]/g, ' ')} ${lastName.replace(/[\r\n]/g, ' ')}`,
       html: buildHtml(fields),
     })
 

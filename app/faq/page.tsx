@@ -208,10 +208,11 @@ export default function FAQPage() {
 
         <section className={styles.cta}>
           <div>
-            <p className={styles.eyebrow}>Still need an answer?</p>
-            <h2>Bring us the real question behind the project.</h2>
+            <p className={styles.eyebrow}>Planning before you hire?</p>
+            <h2>Use the Texas video production guide.</h2>
           </div>
           <div className={styles.ctaActions}>
+            <Link href="/resources/video-production-faq" className={styles.primaryButton}>Explore the resource</Link>
             <Link href="/project-planner" className={styles.primaryButton}>Plan your project</Link>
             <a href="tel:2102799442" className={styles.phoneLink}>210-279-9442</a>
           </div>

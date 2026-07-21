@@ -265,7 +265,7 @@ export default function Nav() {
         padding: '0 48px',
         }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-          <Image src="/images/mediabar-logo.png" alt="Media Bar Productions" width={165} height={48} priority style={{ width: 'auto', height: '48px', maxWidth: '180px', display: 'block' }} />
+          <Image src="/images/mediabar-logo.png" alt="Media Bar Productions" width={1113} height={325} priority style={{ width: 'auto', height: '48px', maxWidth: '180px', display: 'block' }} />
         </Link>
 
         {/* Desktop center links */}
@@ -322,7 +322,7 @@ export default function Nav() {
 
           <div className="mbp-overlay-header">
             <Link href="/" onClick={close} style={{ display: 'flex', alignItems: 'center' }}>
-              <Image src="/images/mediabar-logo.png" alt="Media Bar Productions" width={137} height={40} style={{ width: 'auto', height: '40px', display: 'block' }} />
+              <Image src="/images/mediabar-logo.png" alt="Media Bar Productions" width={1113} height={325} style={{ width: 'auto', height: '40px', display: 'block' }} />
             </Link>
             <button className="mbp-overlay-close" aria-label="Close menu" onClick={close}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

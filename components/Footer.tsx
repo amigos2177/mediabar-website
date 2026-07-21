@@ -46,8 +46,8 @@ export default function Footer() {
               <Image
                 src="/images/mediabar-logo.png"
                 alt="Media Bar Productions"
-                width={250}
-                height={42}
+                width={1113}
+                height={325}
                 style={{ width: 'auto', height: '36px', maxWidth: '100%', display: 'block' }}
               />
             </Link>

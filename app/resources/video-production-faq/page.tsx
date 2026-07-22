@@ -77,7 +77,7 @@ export default function VideoProductionFaqPage() {
               <a href="#topics" className={styles.primaryButton}>Explore the answers</a>
               <Link href="/project-planner" className={styles.secondaryButton}>Plan a real project</Link>
             </div>
-            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed July 21, 2026</p>
+            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed July 22, 2026</p>
           </div>
         </section>
 
@@ -240,7 +240,7 @@ export default function VideoProductionFaqPage() {
                             <div className={styles.answerVideo}>
                               <div className={styles.answerVideoFrame}>
                                 <iframe
-                                  src={`https://www.youtube-nocookie.com/embed/${faq.video.youtubeId}`}
+                                  src={`https://www.youtube-nocookie.com/embed/${faq.video.youtubeId}?cc_load_policy=0`}
                                   title={faq.video.title}
                                   loading="lazy"
                                   referrerPolicy="strict-origin-when-cross-origin"

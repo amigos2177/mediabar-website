@@ -23,6 +23,15 @@ export type VideoProductionFaq = {
 }
 
 export const mediaBarAnswersVideos = {
+  corporateVideoCost: {
+    youtubeId: 'YiGociNuVpo',
+    title: 'How Much Does a Corporate Video Cost in San Antonio?',
+    description:
+      'Ruben Garcia explains the general planning range for a professionally produced corporate video and the scope decisions that most affect cost in San Antonio.',
+    uploadDate: '2026-07-21T22:15:44-07:00',
+    duration: 'PT1M11S',
+    thumbnailUrl: 'https://i.ytimg.com/vi/YiGociNuVpo/hqdefault.jpg',
+  },
   postProductionDelays: {
     youtubeId: '4EZelLWoHnY',
     title: 'The #1 Reason Corporate Videos Get Delayed (It’s Not Editing)',
@@ -128,6 +137,7 @@ export const videoProductionFaqs: VideoProductionFaq[] = [
       'A video budget is built from the work required to plan, capture, finish, and deliver the project. The creative concept, crew, equipment, locations, talent, number of shoot days, travel, editing, graphics, music, review process, and deliverable count can all affect the estimate.',
       'Two videos of the same length can require very different productions. A sixty-second interview edit and a sixty-second commercial with casting, multiple locations, art direction, and visual effects should not be priced as the same product. A useful estimate connects each cost to the approved scope.',
     ],
+    video: mediaBarAnswersVideos.corporateVideoCost,
     links: [{ label: 'See what drives video cost', href: '/pricing' }],
   },
   {

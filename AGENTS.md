@@ -79,6 +79,13 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Targeted ESLint, structured-data verification, `git diff --check`, and the webpack production build pass. Desktop and 390px mobile browser checks found no horizontal overflow, framework overlays, or console errors.
 - Released to production as `dpl_G18i1Wcgu67fq8oqCqLBdkUoZgc4`. The canonical FAQ returns the new embed and schema, all production aliases point to the Ready deployment, and the one-hour runtime error scan is clean. Application changes are committed and pushed as `d6c303b`, with this release note following.
 
+## July 22, 2026 Media Bar Answers episode 02 - live
+- Added `How Much Does a Corporate Video Cost in San Antonio?` (`YiGociNuVpo`) to the matching budget FAQ answer with the verified public title, 71-second duration, YouTube thumbnail, and full upload timestamp.
+- Updated the FAQ layout to emit one `VideoObject` for every embedded Media Bar Answers episode instead of only the original featured video. Both schema embed URLs now use YouTube's privacy-enhanced domain.
+- Prepared the episode 02 thumbnail, transcript, YouTube publishing package, tags, tracked links, and website handoff under `design/media-bar-answers/episode-02-video-cost/`.
+- Targeted ESLint, TypeScript, `git diff --check`, structured-data verification, and the webpack production build pass. Generated HTML contains both public video IDs and exactly two `VideoObject` records.
+- Released to production as `dpl_GvsSLH9G6rXbwAaP181ZCatVnKV9`. The canonical FAQ returns HTTP 200 with both privacy-enhanced embeds and exactly two complete `VideoObject` records. All production aliases point to the Ready deployment, and the one-hour error scan is clean. Application changes are committed and pushed as `6c76c30`, with this release note following.
+
 ## July 17, 2026 audit sprint — implemented locally
 - Added a four-step `/project-planner` that submits through the hardened contact API.
 - Added filterable portfolio categories, visible project descriptions, and click-to-play Vimeo embeds.

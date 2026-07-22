@@ -73,6 +73,12 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Full ESLint, TypeScript, `git diff --check`, the webpack production build, and the Vercel preview and production builds pass. The build generates 68 pages.
 - Released to production as `dpl_3hwvFGkd9vN6zggj69dMorNsCGfS`. The canonical domains point to the Ready deployment, the live logo checksum matches the approved source asset, and the production error-log scan is clean. Application changes are committed and pushed as `f40d839`, with this release note following.
 
+## July 21, 2026 Media Bar Answers video embed - live
+- Embedded the first Media Bar Answers YouTube video in the relevant post-production answer on the indexed video-production FAQ resource.
+- Added a visible digital-avatar disclosure, a direct YouTube path, reusable video data, a privacy-enhanced player, and matching `VideoObject` structured data.
+- Targeted ESLint, structured-data verification, `git diff --check`, and the webpack production build pass. Desktop and 390px mobile browser checks found no horizontal overflow, framework overlays, or console errors.
+- Released to production as `dpl_G18i1Wcgu67fq8oqCqLBdkUoZgc4`. The canonical FAQ returns the new embed and schema, all production aliases point to the Ready deployment, and the one-hour runtime error scan is clean. Application changes are committed and pushed as `d6c303b`, with this release note following.
+
 ## July 17, 2026 audit sprint — implemented locally
 - Added a four-step `/project-planner` that submits through the hardened contact API.
 - Added filterable portfolio categories, visible project descriptions, and click-to-play Vimeo embeds.

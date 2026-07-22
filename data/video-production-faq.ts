@@ -4,13 +4,35 @@ export type ResourceLink = {
   external?: boolean
 }
 
+export type ResourceVideo = {
+  youtubeId: string
+  title: string
+  description: string
+  uploadDate: string
+  duration: string
+  thumbnailUrl: string
+}
+
 export type VideoProductionFaq = {
   category: string
   slug: string
   question: string
   answer: string[]
   links?: ResourceLink[]
+  video?: ResourceVideo
 }
+
+export const mediaBarAnswersVideos = {
+  postProductionDelays: {
+    youtubeId: '4EZelLWoHnY',
+    title: 'The #1 Reason Corporate Videos Get Delayed (It’s Not Editing)',
+    description:
+      'Ruben Garcia explains what happens after filming and how a clear, consolidated approval process helps prevent corporate video post-production delays.',
+    uploadDate: '2026-07-21',
+    duration: 'PT1M7S',
+    thumbnailUrl: 'https://i.ytimg.com/vi/4EZelLWoHnY/hqdefault.jpg',
+  },
+} satisfies Record<string, ResourceVideo>
 
 export const videoFaqCategories = [
   {
@@ -244,6 +266,7 @@ export const videoProductionFaqs: VideoProductionFaq[] = [
       'The team secures and organizes the media, reviews the footage, synchronizes sound, builds the story, refines picture and pacing, mixes audio, corrects color, adds graphics and captions, and prepares review and delivery files.',
       'The sequence varies by project. A documentary interview may begin with transcripts and a story edit. A commercial may follow approved boards. An event recap may depend on music and key moments. Good post-production is a decision-making process, not simply assembling clips in chronological order.',
     ],
+    video: mediaBarAnswersVideos.postProductionDelays,
     links: [{ label: 'Explore post-production services', href: '/video-production/post-production' }],
   },
   {

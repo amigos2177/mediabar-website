@@ -689,6 +689,75 @@
   line-height: 1.78;
 }
 
+.answerVideo {
+  margin: 2rem 0 2.2rem;
+  border: 1px solid var(--line);
+  background: #111;
+}
+
+.answerVideoFrame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #000;
+}
+
+.answerVideoFrame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.answerVideoCopy {
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.answerVideoCopy > span {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--red);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.answerVideoCopy h4 {
+  max-width: 22ch;
+  margin: 0 0 0.85rem;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.answerVideoCopy > small {
+  display: block;
+  margin-top: 1.15rem;
+  color: #747474;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.answerVideoCopy > a {
+  display: inline-flex;
+  gap: 0.45rem;
+  margin-top: 1.4rem;
+  color: var(--gold);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.answerVideoCopy > a span {
+  color: var(--red);
+}
+
 .answerLinks {
   display: flex;
   flex-wrap: wrap;

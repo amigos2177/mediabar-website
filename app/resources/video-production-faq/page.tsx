@@ -77,7 +77,7 @@ export default function VideoProductionFaqPage() {
               <a href="#topics" className={styles.primaryButton}>Explore the answers</a>
               <Link href="/project-planner" className={styles.secondaryButton}>Plan a real project</Link>
             </div>
-            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed July 20, 2026</p>
+            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed July 21, 2026</p>
           </div>
         </section>
 
@@ -236,6 +236,36 @@ export default function VideoProductionFaqPage() {
                         </summary>
                         <div className={styles.answerBody}>
                           {faq.answer.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                          {faq.video && (
+                            <div className={styles.answerVideo}>
+                              <div className={styles.answerVideoFrame}>
+                                <iframe
+                                  src={`https://www.youtube-nocookie.com/embed/${faq.video.youtubeId}`}
+                                  title={faq.video.title}
+                                  loading="lazy"
+                                  referrerPolicy="strict-origin-when-cross-origin"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                  allowFullScreen
+                                />
+                              </div>
+                              <div className={styles.answerVideoCopy}>
+                                <span>Media Bar Answers · 1 minute</span>
+                                <h4>{faq.video.title}</h4>
+                                <p>{faq.video.description}</p>
+                                <small>
+                                  This video features Ruben Garcia&apos;s digital avatar.
+                                  The guidance and script come directly from Media Bar Productions.
+                                </small>
+                                <a
+                                  href={`https://www.youtube.com/watch?v=${faq.video.youtubeId}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  Watch on YouTube <span aria-hidden="true">↗</span>
+                                </a>
+                              </div>
+                            </div>
+                          )}
                           {faq.links && (
                             <div className={styles.answerLinks}>
                               {faq.links.map((link) => link.external ? (

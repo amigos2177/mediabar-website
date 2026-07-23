@@ -27,7 +27,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Small, focused commits on main
 - SEO-optimized descriptive slugs on any new routes
 
-## Current State (as of July 20, 2026)
+## Current State (as of July 23, 2026)
 Site is live and stable. SEO metadata pass DONE for all routes.
 - Root layout: title template + metadataBase set in app/layout.tsx.
 - Per-route metadata: every route has unique title + description + canonical. Client-component pages use a sibling layout.tsx; server-component pages have the export directly in page.tsx.
@@ -85,6 +85,14 @@ Site is live and stable. SEO metadata pass DONE for all routes.
 - Prepared the episode 02 thumbnail, transcript, YouTube publishing package, tags, tracked links, and website handoff under `design/media-bar-answers/episode-02-video-cost/`.
 - Targeted ESLint, TypeScript, `git diff --check`, structured-data verification, and the webpack production build pass. Generated HTML contains both public video IDs and exactly two `VideoObject` records.
 - Released to production as `dpl_GvsSLH9G6rXbwAaP181ZCatVnKV9`. The canonical FAQ returns HTTP 200 with both privacy-enhanced embeds and exactly two complete `VideoObject` records. All production aliases point to the Ready deployment, and the one-hour error scan is clean. Application changes are committed and pushed as `6c76c30`, with this release note following.
+
+## July 23, 2026 Media Bar Answers episodes 03 and 04 - live
+- Added `What Does a Video Production Company Need for an Estimate?` (`1UcrG1fepnQ`) and `Can You Film Three Executive Interviews in One Day?` (`WJb_tAKw0zY`) with verified public titles, upload timestamps, durations, transcripts, takeaways, and approved high-resolution thumbnails.
+- Added both videos to the four-episode Media Bar Answers library, dedicated transcript pages, matching FAQ answers, homepage discovery, pricing guidance, the interview service page, and the video sitemap.
+- The FAQ now returns four privacy-enhanced YouTube embeds and exactly four complete `VideoObject` records. Each new dedicated page includes one embed, one `VideoObject`, breadcrumb data, avatar disclosure, related guidance, and the exact transcript.
+- Targeted ESLint, TypeScript, `git diff --check`, structured-data verification, the webpack production build, generated HTML checks, and desktop and 390px browser verification pass with no overflow, broken images, console errors, or framework overlays.
+- Released to production as `dpl_7n4ztK1Na1H6gHqph7uD6ZRdKKCr`. The canonical pages, sitemap, and thumbnail assets return HTTP 200; the live thumbnail checksums match the approved source files; and the one-hour runtime error scan is clean. Application changes are committed and pushed as `55fd376`.
+- YouTube follow-up: episode 03 currently has only the auto-generated English caption track. Episode 04 has both auto-generated English and a separate English (United States) track.
 
 ## July 17, 2026 audit sprint — implemented locally
 - Added a four-step `/project-planner` that submits through the hardened contact API.

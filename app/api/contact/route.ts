@@ -38,6 +38,9 @@ type ContactFields = {
   utmCampaign?: string
   utmContent?: string
   landingPage?: string
+  sourcePage?: string
+  sourceAction?: string
+  sourcePlacement?: string
 }
 
 type RateLimitEntry = {
@@ -126,6 +129,9 @@ function buildHtml(fields: ContactFields) {
     ...(safe.utmCampaign ? [row('Campaign name', safe.utmCampaign)] : []),
     ...(safe.utmContent ? [row('Campaign content', safe.utmContent)] : []),
     ...(safe.landingPage ? [row('Landing page', safe.landingPage)] : []),
+    ...(safe.sourcePage ? [row('Conversion source page', safe.sourcePage)] : []),
+    ...(safe.sourceAction ? [row('Conversion action', safe.sourceAction)] : []),
+    ...(safe.sourcePlacement ? [row('Conversion placement', safe.sourcePlacement)] : []),
   ]
   const sourceSection = attributionRows.length
     ? section('Inquiry Source', attributionRows.join(''))
@@ -239,10 +245,14 @@ export async function POST(req: NextRequest) {
     const utmCampaign = readString(body, 'utmCampaign', 100)
     const utmContent = readString(body, 'utmContent', 100)
     const landingPage = readString(body, 'landingPage', 240)
+    const sourcePage = readString(body, 'sourcePage', 240)
+    const sourceAction = readString(body, 'sourceAction', 80)
+    const sourcePlacement = readString(body, 'sourcePlacement', 80)
 
     if ([
       firstName, lastName, email, phone, company, service, budget, timeline,
       message, source, utmSource, utmMedium, utmCampaign, utmContent, landingPage,
+      sourcePage, sourceAction, sourcePlacement,
     ].includes(null)) {
       return NextResponse.json({ error: 'One or more fields are invalid or too long.' }, { status: 400 })
     }
@@ -290,6 +300,9 @@ export async function POST(req: NextRequest) {
       utmCampaign: utmCampaign || undefined,
       utmContent: utmContent || undefined,
       landingPage: landingPage || undefined,
+      sourcePage: sourcePage || undefined,
+      sourceAction: sourceAction || undefined,
+      sourcePlacement: sourcePlacement || undefined,
     }
 
     const { error } = await getResend().emails.send({

@@ -34,3 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Analytics
+
+Vercel Web Analytics is enabled by default. To send the same conversion events to
+Google Analytics 4, add the GA4 web stream measurement ID to Vercel:
+
+```bash
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+Successful contact, project planner, and FAQ question submissions use GA4's
+`generate_lead` event. Lead-intent clicks retain the source page, action, and
+placement so conversion paths can be compared without collecting personal data.

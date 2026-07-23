@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { track } from '@vercel/analytics'
 import Link from 'next/link'
 import { analyticsEvents } from '@/lib/analytics-events'
 import {
@@ -9,6 +8,12 @@ import {
   readCampaignAttribution,
   type CampaignAttribution,
 } from '@/lib/campaign-attribution'
+import { trackAnalyticsEvent } from '@/lib/client-analytics'
+import {
+  clearConversionAttribution,
+  readConversionAttribution,
+  type ConversionAttribution,
+} from '@/lib/conversion-attribution'
 import styles from './project-planner.module.css'
 
 const services = [
@@ -221,6 +226,7 @@ export default function ProjectPlannerForm() {
   const hasTrackedStart = useRef(false)
   const trackedSteps = useRef(new Set<number>())
   const attribution = useRef<CampaignAttribution | null>(null)
+  const conversionAttribution = useRef<ConversionAttribution | null>(null)
 
   useEffect(() => {
     headingRef.current?.focus()
@@ -228,12 +234,23 @@ export default function ProjectPlannerForm() {
 
   useEffect(() => {
     attribution.current = captureCampaignAttribution() || readCampaignAttribution()
+    conversionAttribution.current = readConversionAttribution('project-planner')
   }, [])
+
+  function conversionProperties() {
+    return {
+      source: conversionAttribution.current?.sourceGroup || 'direct',
+      sourcePath: conversionAttribution.current?.sourcePath || '/project-planner',
+      sourceAction: conversionAttribution.current?.action || 'start_project',
+      sourcePlacement: conversionAttribution.current?.placement || 'direct',
+      campaign: attribution.current?.utmCampaign || 'none',
+    }
+  }
 
   function update<K extends keyof PlannerFields>(key: K, value: PlannerFields[K]) {
     if (key !== 'website' && !hasTrackedStart.current) {
       hasTrackedStart.current = true
-      track(analyticsEvents.projectPlannerStarted)
+      trackAnalyticsEvent(analyticsEvents.projectPlannerStarted, conversionProperties())
     }
     setFields((current) => ({ ...current, [key]: value }))
   }
@@ -273,9 +290,10 @@ export default function ProjectPlannerForm() {
     setError('')
     if (!trackedSteps.current.has(step)) {
       trackedSteps.current.add(step)
-      track(analyticsEvents.projectPlannerStepCompleted, {
+      trackAnalyticsEvent(analyticsEvents.projectPlannerStepCompleted, {
         stepNumber: step + 1,
         stepName: stepLabels[step],
+        ...conversionProperties(),
       })
     }
     setStep((current) => Math.min(current + 1, stepLabels.length - 1))
@@ -329,28 +347,35 @@ export default function ProjectPlannerForm() {
           utmCampaign: attribution.current?.utmCampaign,
           utmContent: attribution.current?.utmContent,
           landingPage: attribution.current?.landingPage,
+          sourcePage: conversionAttribution.current?.sourcePath || '/project-planner',
+          sourceAction: conversionAttribution.current?.action || 'start_project',
+          sourcePlacement: conversionAttribution.current?.placement || 'direct',
         }),
       })
       const result = await response.json()
       if (!response.ok) {
-        track(analyticsEvents.projectBriefSubmissionFailed, {
+        trackAnalyticsEvent(analyticsEvents.projectBriefSubmissionFailed, {
           reason: 'server',
           service: fields.service,
+          ...conversionProperties(),
         })
         setError(result.error || 'We could not send the brief. Please try again.')
         return
       }
-      track(analyticsEvents.projectBriefSubmitted, {
+      trackAnalyticsEvent(analyticsEvents.projectBriefSubmitted, {
         service: fields.service,
         timeline: fields.timeline,
-        source: attribution.current?.utmSource || 'direct',
-        campaign: attribution.current?.utmCampaign || 'none',
-      })
+        leadType: 'project_brief',
+        campaignSource: attribution.current?.utmSource || 'direct',
+        ...conversionProperties(),
+      }, 'generate_lead')
+      clearConversionAttribution('project-planner')
       setSubmitted(true)
     } catch {
-      track(analyticsEvents.projectBriefSubmissionFailed, {
+      trackAnalyticsEvent(analyticsEvents.projectBriefSubmissionFailed, {
         reason: 'network',
         service: fields.service,
+        ...conversionProperties(),
       })
       setError('Network error. Please try again or call 210-279-9442.')
     } finally {

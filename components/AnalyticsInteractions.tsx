@@ -1,18 +1,14 @@
 'use client'
 
 import { useEffect } from 'react'
-import { track } from '@vercel/analytics'
 import { usePathname } from 'next/navigation'
 import { analyticsEvents } from '@/lib/analytics-events'
 import { captureCampaignAttribution } from '@/lib/campaign-attribution'
-
-type ConversionIntent =
-  | 'phone'
-  | 'email'
-  | 'project-planner'
-  | 'contact'
-  | 'client-portal'
-  | 'gpt-advisor'
+import { trackAnalyticsEvent } from '@/lib/client-analytics'
+import {
+  captureConversionAttribution,
+  type ConversionIntent,
+} from '@/lib/conversion-attribution'
 
 type PageGroup =
   | 'home'
@@ -109,6 +105,22 @@ function getPlacement(anchor: HTMLAnchorElement) {
   return 'page'
 }
 
+function getConversionAction(anchor: HTMLAnchorElement, intent: ConversionIntent) {
+  const explicitAction = anchor.dataset.conversionAction?.trim().slice(0, 80)
+  if (explicitAction) return explicitAction
+
+  const label = anchor.textContent?.trim().toLowerCase() || ''
+
+  if (intent === 'phone') return 'phone_call'
+  if (intent === 'email') return 'email'
+  if (intent === 'project-planner') return 'start_project'
+  if (intent === 'client-portal') return 'open_client_portal'
+  if (intent === 'gpt-advisor') return 'open_video_advisor'
+  if (label.includes('talk')) return 'talk_with_team'
+  if (label.includes('ask') || label.includes('question')) return 'ask_question'
+  return 'contact'
+}
+
 export function AnalyticsInteractions() {
   const pathname = usePathname()
 
@@ -130,7 +142,7 @@ export function AnalyticsInteractions() {
       }
 
       if (!hasTrackedCampaign) {
-        track(analyticsEvents.campaignLandingViewed, {
+        trackAnalyticsEvent(analyticsEvents.campaignLandingViewed, {
           source: source || 'unknown',
           campaign: campaign || 'unspecified',
         })
@@ -145,7 +157,7 @@ export function AnalyticsInteractions() {
 
     const episodeMatch = pathname.match(/^\/resources\/media-bar-answers\/([^/]+)$/)
     if (episodeMatch) {
-      track(analyticsEvents.mediaBarAnswerViewed, {
+      trackAnalyticsEvent(analyticsEvents.mediaBarAnswerViewed, {
         episode: episodeMatch[1],
       })
     }
@@ -164,7 +176,7 @@ export function AnalyticsInteractions() {
       const answerPlacement = anchor.dataset.mediaBarAnswerPlacement
 
       if (answerEpisode && answerAction) {
-        track(analyticsEvents.mediaBarAnswerClicked, {
+        trackAnalyticsEvent(analyticsEvents.mediaBarAnswerClicked, {
           episode: answerEpisode.slice(0, 100),
           action: answerAction.slice(0, 100),
           placement: (answerPlacement || placement).slice(0, 100),
@@ -172,19 +184,35 @@ export function AnalyticsInteractions() {
       }
 
       if (intent) {
-        track(analyticsEvents.conversionIntentClicked, {
+        const action = getConversionAction(anchor, intent)
+
+        captureConversionAttribution({
           intent,
+          action,
           placement,
+          sourceGroup,
+          sourcePath: pathname,
         })
-        track(analyticsEvents.conversionSourceClicked, {
+
+        trackAnalyticsEvent(analyticsEvents.conversionIntentClicked, {
           intent,
+          action,
+          placement,
           source: sourceGroup,
+          sourcePath: pathname,
+        })
+        trackAnalyticsEvent(analyticsEvents.conversionSourceClicked, {
+          intent,
+          action,
+          source: sourceGroup,
+          sourcePath: pathname,
         })
 
         if (intent === 'gpt-advisor') {
-          track(analyticsEvents.gptAdvisorOpened, {
+          trackAnalyticsEvent(analyticsEvents.gptAdvisorOpened, {
             placement,
             source: sourceGroup,
+            sourcePath: pathname,
           })
         }
       }
@@ -193,7 +221,7 @@ export function AnalyticsInteractions() {
         const destination = getJourneyDestination(anchor)
         if (!destination) return
 
-        track(analyticsEvents.blogJourneyClicked, {
+        trackAnalyticsEvent(analyticsEvents.blogJourneyClicked, {
           destination,
           placement,
         })

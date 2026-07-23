@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { track } from '@vercel/analytics'
 import { analyticsEvents } from '@/lib/analytics-events'
+import { trackAnalyticsEvent } from '@/lib/client-analytics'
 
 type VimeoPlayerProps = {
   videoId: string
@@ -39,7 +39,7 @@ export default function VimeoPlayer({
           type="button"
           className="mbp-vimeo-poster"
           onClick={() => {
-            track(analyticsEvents.portfolioVideoPlayed, { videoId, title })
+            trackAnalyticsEvent(analyticsEvents.portfolioVideoPlayed, { videoId, title })
             setPlaying(true)
           }}
           aria-label={`Play film: ${title}`}

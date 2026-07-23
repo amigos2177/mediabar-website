@@ -1,9 +1,19 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { track } from '@vercel/analytics'
 import { analyticsEvents } from '@/lib/analytics-events'
+import {
+  captureCampaignAttribution,
+  readCampaignAttribution,
+  type CampaignAttribution,
+} from '@/lib/campaign-attribution'
+import { trackAnalyticsEvent } from '@/lib/client-analytics'
+import {
+  clearConversionAttribution,
+  readConversionAttribution,
+  type ConversionAttribution,
+} from '@/lib/conversion-attribution'
 import styles from './contact.module.css'
 
 const services = [
@@ -43,6 +53,23 @@ export default function ContactForm() {
   const [status, setStatus] = useState<SubmitStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const hasTrackedStart = useRef(false)
+  const campaignAttribution = useRef<CampaignAttribution | null>(null)
+  const conversionAttribution = useRef<ConversionAttribution | null>(null)
+
+  useEffect(() => {
+    campaignAttribution.current = captureCampaignAttribution() || readCampaignAttribution()
+    conversionAttribution.current = readConversionAttribution('contact')
+  }, [])
+
+  function conversionProperties() {
+    return {
+      source: conversionAttribution.current?.sourceGroup || 'direct',
+      sourcePath: conversionAttribution.current?.sourcePath || '/contact',
+      sourceAction: conversionAttribution.current?.action || 'contact',
+      sourcePlacement: conversionAttribution.current?.placement || 'direct',
+      campaign: campaignAttribution.current?.utmCampaign || 'none',
+    }
+  }
 
   function updateField(
     field: keyof typeof initialFields,
@@ -50,7 +77,7 @@ export default function ContactForm() {
   ) {
     if (field !== 'website' && !hasTrackedStart.current) {
       hasTrackedStart.current = true
-      track(analyticsEvents.contactFormStarted)
+      trackAnalyticsEvent(analyticsEvents.contactFormStarted, conversionProperties())
     }
     setFields((current) => ({ ...current, [field]: event.target.value }))
   }
@@ -64,29 +91,44 @@ export default function ContactForm() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(fields),
+        body: JSON.stringify({
+          ...fields,
+          utmSource: campaignAttribution.current?.utmSource,
+          utmMedium: campaignAttribution.current?.utmMedium,
+          utmCampaign: campaignAttribution.current?.utmCampaign,
+          utmContent: campaignAttribution.current?.utmContent,
+          landingPage: campaignAttribution.current?.landingPage,
+          sourcePage: conversionAttribution.current?.sourcePath || '/contact',
+          sourceAction: conversionAttribution.current?.action || 'contact',
+          sourcePlacement: conversionAttribution.current?.placement || 'direct',
+        }),
       })
       const data = await response.json()
 
       if (!response.ok) {
-        track(analyticsEvents.contactFormSubmissionFailed, {
+        trackAnalyticsEvent(analyticsEvents.contactFormSubmissionFailed, {
           reason: 'server',
           service: fields.service || 'General inquiry',
+          ...conversionProperties(),
         })
         setStatus('error')
         setErrorMessage(data.error ?? 'Something went wrong. Please try again.')
         return
       }
 
-      track(analyticsEvents.contactFormSubmitted, {
+      trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, {
         service: fields.service || 'General inquiry',
-      })
+        leadType: 'quick_question',
+        ...conversionProperties(),
+      }, 'generate_lead')
+      clearConversionAttribution('contact')
       setFields(initialFields)
       setStatus('success')
     } catch {
-      track(analyticsEvents.contactFormSubmissionFailed, {
+      trackAnalyticsEvent(analyticsEvents.contactFormSubmissionFailed, {
         reason: 'network',
         service: fields.service || 'General inquiry',
+        ...conversionProperties(),
       })
       setStatus('error')
       setErrorMessage('Network error. Please check your connection and try again.')

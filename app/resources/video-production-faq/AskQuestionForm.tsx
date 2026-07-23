@@ -2,8 +2,8 @@
 
 import { useRef, useState } from 'react'
 import Link from 'next/link'
-import { track } from '@vercel/analytics'
 import { analyticsEvents } from '@/lib/analytics-events'
+import { trackAnalyticsEvent } from '@/lib/client-analytics'
 import styles from './video-production-faq.module.css'
 
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
@@ -30,7 +30,10 @@ export default function AskQuestionForm() {
   ) {
     if (field !== 'website' && !hasTrackedStart.current) {
       hasTrackedStart.current = true
-      track(analyticsEvents.faqQuestionFormStarted)
+      trackAnalyticsEvent(analyticsEvents.faqQuestionFormStarted, {
+        source: 'video_production_faq',
+        sourcePath: '/resources/video-production-faq',
+      })
     }
     setFields((current) => ({ ...current, [field]: event.target.value }))
   }
@@ -49,17 +52,27 @@ export default function AskQuestionForm() {
       const data = await response.json()
 
       if (!response.ok) {
-        track(analyticsEvents.faqQuestionSubmissionFailed, { reason: 'server' })
+        trackAnalyticsEvent(analyticsEvents.faqQuestionSubmissionFailed, {
+          reason: 'server',
+          source: 'video_production_faq',
+        })
         setStatus('error')
         setErrorMessage(data.error ?? 'Something went wrong. Please try again.')
         return
       }
 
-      track(analyticsEvents.faqQuestionSubmitted)
+      trackAnalyticsEvent(analyticsEvents.faqQuestionSubmitted, {
+        leadType: 'faq_question',
+        source: 'video_production_faq',
+        sourcePath: '/resources/video-production-faq',
+      }, 'generate_lead')
       setFields(initialFields)
       setStatus('success')
     } catch {
-      track(analyticsEvents.faqQuestionSubmissionFailed, { reason: 'network' })
+      trackAnalyticsEvent(analyticsEvents.faqQuestionSubmissionFailed, {
+        reason: 'network',
+        source: 'video_production_faq',
+      })
       setStatus('error')
       setErrorMessage('Network error. Please check your connection and try again.')
     }

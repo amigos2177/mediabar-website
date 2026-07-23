@@ -234,19 +234,28 @@
   align-items: center;
 }
 
-.primaryButton {
+.primaryButton,
+.secondaryButton {
   display: inline-flex;
   min-height: 3.5rem;
   align-items: center;
   justify-content: center;
   padding: 0 1.7rem;
-  background: var(--faq-red);
   color: #fff;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.primaryButton {
+  background: var(--faq-red);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
 }
 
 .phoneLink {

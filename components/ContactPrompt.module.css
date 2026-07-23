@@ -1,0 +1,140 @@
+.section {
+  padding: 72px clamp(24px, 5vw, 72px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(circle at 12% 50%, rgba(204, 0, 0, 0.14), transparent 28%),
+    #111;
+  color: #fff;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  gap: clamp(48px, 8vw, 120px);
+  align-items: center;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #d20b0b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 760px;
+  margin: 0;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(42px, 5.4vw, 78px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.93;
+  text-transform: uppercase;
+}
+
+.title em {
+  color: #c9a84c;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 0.82em;
+  font-style: italic;
+  text-transform: none;
+}
+
+.actionPanel {
+  padding-left: clamp(0px, 4vw, 54px);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.copy {
+  max-width: 460px;
+  margin: 0 0 26px;
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.primary {
+  background: #d20b0b;
+  color: #fff;
+}
+
+.primary:hover,
+.primary:focus-visible {
+  background: #a90000;
+}
+
+.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+
+.secondary:hover,
+.secondary:focus-visible {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.response {
+  margin: 18px 0 0;
+  color: #717171;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 820px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .actionPanel {
+    padding: 30px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .section {
+    padding: 58px 20px;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+}

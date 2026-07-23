@@ -158,8 +158,8 @@ export default function FAQPage() {
               Pricing, process, ownership, logistics, studio access, and what it
               actually feels like to work with Media Bar.
             </p>
-            <Link href="/contact" className={styles.textLink}>
-              Ask something else <span aria-hidden="true">→</span>
+            <Link href="/contact#contact-form" className={styles.textLink}>
+              Ask a question <span aria-hidden="true">→</span>
             </Link>
           </div>
         </section>
@@ -178,10 +178,11 @@ export default function FAQPage() {
             <h2>The useful details, organized.</h2>
             <p>
               Open only what you need. If your assignment has a detail we have
-              not covered, send it through the project planner.
+              not covered, send a quick question. Use the project planner when
+              you are ready to share a fuller brief.
             </p>
-            <Link href="/project-planner" className={styles.textLink}>
-              Plan your project <span aria-hidden="true">↗</span>
+            <Link href="/contact#contact-form" className={styles.textLink}>
+              Ask our team <span aria-hidden="true">↗</span>
             </Link>
           </aside>
 
@@ -214,6 +215,7 @@ export default function FAQPage() {
           <div className={styles.ctaActions}>
             <Link href="/resources/video-production-faq" className={styles.primaryButton}>Explore the resource</Link>
             <Link href="/project-planner" className={styles.primaryButton}>Plan your project</Link>
+            <Link href="/contact#contact-form" className={styles.secondaryButton}>Ask a question</Link>
             <a href="tel:2102799442" className={styles.phoneLink}>210-279-9442</a>
           </div>
         </section>

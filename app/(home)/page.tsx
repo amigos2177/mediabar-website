@@ -1169,7 +1169,7 @@ export default function HomePage() {
           </div>
           <div className="hero-ctas">
             <Link href="/project-planner" className="btn-red">Start a Project</Link>
-            <Link href="/work" className="btn-outline">Watch Our Work</Link>
+            <Link href="/contact#contact-form" className="btn-outline">Ask a Question</Link>
           </div>
         </div>
       </section>
@@ -1488,10 +1488,11 @@ export default function HomePage() {
 
       {/* ─── 12. FINAL CTA ─── */}
       <section className="cta-section" data-reveal>
-        <h2 className="cta-headline">Let&rsquo;s Make <em>Something Great</em></h2>
-        <p className="cta-sub">Ready to tell your story? Let&rsquo;s build something memorable together.</p>
+        <h2 className="cta-headline">Start With <em>Whatever You Know</em></h2>
+        <p className="cta-sub">Plan a production or ask a quick question. Either way, a real person will help.</p>
         <div className="cta-actions">
-          <Link href="/contact" className="btn-red">Get a Quote</Link>
+          <Link href="/project-planner" className="btn-red">Start a Project</Link>
+          <Link href="/contact#contact-form" className="btn-outline">Ask a Question</Link>
           <a href="tel:2102799442" className="cta-phone">210-279-9442</a>
         </div>
       </section>

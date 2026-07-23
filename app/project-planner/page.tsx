@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout'
+import Link from 'next/link'
 import ProjectPlannerForm from './ProjectPlannerForm'
 import styles from './project-planner.module.css'
 
@@ -41,10 +42,16 @@ export default function ProjectPlannerPage() {
                 Four focused steps give us enough context for a useful first conversation.
                 No fixed package and no full creative brief required.
               </p>
-              <a className={styles.heroLink} href="#project-brief">
-                Start your brief
-                <span aria-hidden="true">↓</span>
-              </a>
+              <div className={styles.heroLinks}>
+                <a className={styles.heroLink} href="#project-brief">
+                  Start your brief
+                  <span aria-hidden="true">↓</span>
+                </a>
+                <Link className={styles.heroLinkMuted} href="/contact#contact-form">
+                  Just have a question?
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </div>
 
             <ol className={styles.heroSteps} aria-label="Project brief stages">

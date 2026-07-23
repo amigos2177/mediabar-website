@@ -131,6 +131,28 @@
   background: #a90000;
 }
 
+.secondaryAction {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  padding: 0 31px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.secondaryAction:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, .05);
+}
+
 .phoneAction {
   color: #fff;
   font-family: 'Bebas Neue', Impact, sans-serif;

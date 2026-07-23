@@ -47,7 +47,7 @@ const hours = [
 
 export default function ContactPage() {
   return (
-    <Layout>
+    <Layout hideContactPrompt>
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroGrid}>

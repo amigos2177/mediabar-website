@@ -309,6 +309,9 @@ export default function PricingPage() {
             <Link href="/project-planner" className={styles.primaryAction}>
               Plan your project
             </Link>
+            <Link href="/contact#contact-form" className={styles.secondaryAction}>
+              Ask a question
+            </Link>
             <Link href="/work" className={styles.textAction}>
               See our work <span>↗</span>
             </Link>

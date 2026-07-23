@@ -1110,7 +1110,75 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ─── 3. DIRECT ANSWERS ─── */}
+      {/* ─── 3. DEMO REELS ─── */}
+      <section className="section section-dark2" data-reveal>
+        <p className="eyebrow">Demo Reel</p>
+        <h2 className="section-title" style={{ marginBottom: '40px' }}>See <em>The Work</em></h2>
+        <div className="reel-section-inner">
+          <div className="reel-duo">
+            <div>
+              <p className="reel-label">Studio Showreel</p>
+              <div className="reel-wrap">
+                <VimeoPlayer
+                  videoId="1077104073"
+                  title="Media Bar Productions Demo Reel"
+                  thumbnailUrl="https://i.vimeocdn.com/video/2007121987-d46882b6b21b356f6dfc32d487245d5802d9508db9e6d9c699a70c7156f7da6c-d_1280?region=us"
+                  eager
+                />
+              </div>
+            </div>
+            <div>
+              <p className="reel-label">Commercials Reel</p>
+              <div className="reel-wrap">
+                <VimeoPlayer
+                  videoId="1203197473"
+                  title="Media Bar Productions Commercials Reel"
+                  thumbnailUrl="/images/commercials-reel-spurs-coyote.jpg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 4. FEATURED CASE STUDY ─── */}
+      <section className="featured-work" data-reveal>
+        <div className="featured-inner">
+          <p className="eyebrow">Featured Work</p>
+          <h2 className="section-title">A Campaign Built to <em>Go Beyond</em></h2>
+          <article className="featured-card">
+            <div className="featured-visual">
+              <Image
+                src="/images/rbfcu-bts-riverside.jpg"
+                alt="Media Bar Productions filming the RBFCU Go Beyond Banking commercial campaign beside a Texas river"
+                fill
+                sizes="(max-width: 1024px) 100vw, 62vw"
+              />
+            </div>
+            <div className="featured-copy">
+              <p className="featured-kicker">RBFCU · Broadcast Campaign</p>
+              <h3 className="featured-title">
+                Five Stories
+                <span>One human promise.</span>
+              </h3>
+              <p className="featured-description">
+                Media Bar co-wrote, produced, and finished a five-commercial campaign designed
+                to make one of Texas&rsquo;s largest credit unions feel personal in every market.
+              </p>
+              <div className="featured-stats" aria-label="Campaign highlights">
+                <div className="featured-stat"><strong>5</strong><span>Broadcast spots</span></div>
+                <div className="featured-stat"><strong>4</strong><span>Texas markets</span></div>
+                <div className="featured-stat"><strong>5M+</strong><span>Online views</span></div>
+              </div>
+              <Link href="/work/rbfcu-go-beyond-banking" className="text-link">
+                Explore the case study <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* ─── 5. DIRECT ANSWERS ─── */}
       <section className="answer-section" data-reveal aria-labelledby="homepage-answers-title">
         <div className="answer-inner">
           <div className="answer-intro">
@@ -1173,55 +1241,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <MediaBarAnswersFeature
-        title="Production questions"
-        emphasis="answered clearly."
-        description="Short, practical guidance from Ruben Garcia and the Media Bar team, with full transcripts and deeper planning resources for every answer."
-        slugs={[
-          'why-corporate-videos-get-delayed',
-          'corporate-video-cost-san-antonio',
-        ]}
-        placement="home"
-      />
-
-      {/* ─── 4. FEATURED CASE STUDY ─── */}
-      <section className="featured-work" data-reveal>
-        <div className="featured-inner">
-          <p className="eyebrow">Featured Work</p>
-          <h2 className="section-title">A Campaign Built to <em>Go Beyond</em></h2>
-          <article className="featured-card">
-            <div className="featured-visual">
-              <Image
-                src="/images/rbfcu-bts-riverside.jpg"
-                alt="Media Bar Productions filming the RBFCU Go Beyond Banking commercial campaign beside a Texas river"
-                fill
-                sizes="(max-width: 1024px) 100vw, 62vw"
-              />
-            </div>
-            <div className="featured-copy">
-              <p className="featured-kicker">RBFCU · Broadcast Campaign</p>
-              <h3 className="featured-title">
-                Five Stories
-                <span>One human promise.</span>
-              </h3>
-              <p className="featured-description">
-                Media Bar co-wrote, produced, and finished a five-commercial campaign designed
-                to make one of Texas&rsquo;s largest credit unions feel personal in every market.
-              </p>
-              <div className="featured-stats" aria-label="Campaign highlights">
-                <div className="featured-stat"><strong>5</strong><span>Broadcast spots</span></div>
-                <div className="featured-stat"><strong>4</strong><span>Texas markets</span></div>
-                <div className="featured-stat"><strong>5M+</strong><span>Online views</span></div>
-              </div>
-              <Link href="/work/rbfcu-go-beyond-banking" className="text-link">
-                Explore the case study <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      {/* ─── 5. SERVICES GRID ─── */}
+      {/* ─── 6. SERVICES GRID ─── */}
       <section className="section section-dark" data-reveal>
         <p className="eyebrow">Our Services</p>
         <h2 className="section-title">One Team, <em>Every Frame</em></h2>
@@ -1264,38 +1284,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 6. DEMO REEL ─── */}
-      <section className="section section-dark2" data-reveal>
-        <p className="eyebrow">Demo Reel</p>
-        <h2 className="section-title" style={{ marginBottom: '40px' }}>See <em>The Work</em></h2>
-        <div className="reel-section-inner">
-          <div className="reel-duo">
-            <div>
-              <p className="reel-label">Studio Showreel</p>
-              <div className="reel-wrap">
-                <VimeoPlayer
-                  videoId="1077104073"
-                  title="Media Bar Productions Demo Reel"
-                  thumbnailUrl="https://i.vimeocdn.com/video/2007121987-d46882b6b21b356f6dfc32d487245d5802d9508db9e6d9c699a70c7156f7da6c-d_1280?region=us"
-                  eager
-                />
-              </div>
-            </div>
-            <div>
-              <p className="reel-label">Commercials Reel</p>
-              <div className="reel-wrap">
-                <VimeoPlayer
-                  videoId="1203197473"
-                  title="Media Bar Productions Commercials Reel"
-                  thumbnailUrl="/images/commercials-reel-spurs-coyote.jpg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── HOW WE WORK ─── */}
+      {/* ─── 7. HOW WE WORK ─── */}
       <section className="section" style={{ background: 'var(--black)' }} data-reveal>
         <div className="process-layout">
           <div className="process-intro">
@@ -1325,7 +1314,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 5. AWARDS ─── */}
+      {/* ─── 8. MEDIA BAR ANSWERS ─── */}
+      <MediaBarAnswersFeature
+        title="Production questions"
+        emphasis="answered clearly."
+        description="Short, practical guidance from Ruben Garcia and the Media Bar team, with full transcripts and deeper planning resources for every answer."
+        slugs={[
+          'why-corporate-videos-get-delayed',
+          'corporate-video-cost-san-antonio',
+        ]}
+        placement="home"
+      />
+
+      {/* ─── 9. AWARDS ─── */}
       <section className="section section-dark" style={{ textAlign: 'center' }} data-reveal>
         <p className="eyebrow">Recognition</p>
         <h2 className="section-title" style={{ marginBottom: 0 }}>Award-Winning <em>Production</em></h2>
@@ -1360,7 +1361,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 6. COST TEASER ─── */}
+      {/* ─── 10. COST TEASER ─── */}
       <section className="section section-dark2" style={{ textAlign: 'center' }} data-reveal>
         <p className="eyebrow">What It Costs</p>
         <h2 className="section-title" style={{ marginBottom: '24px' }}>What Goes Into the Cost of a <em>Video Production</em></h2>
@@ -1370,10 +1371,10 @@ export default function HomePage() {
         <Link href="/pricing" className="btn-red">See What Drives Cost</Link>
       </section>
 
-      {/* ─── 7. GOOGLE REVIEWS ─── */}
+      {/* ─── 11. GOOGLE REVIEWS ─── */}
       <GoogleReviews />
 
-      {/* ─── 7. FINAL CTA ─── */}
+      {/* ─── 12. FINAL CTA ─── */}
       <section className="cta-section" data-reveal>
         <h2 className="cta-headline">Let&rsquo;s Make <em>Something Great</em></h2>
         <p className="cta-sub">Ready to tell your story? Let&rsquo;s build something memorable together.</p>

@@ -94,6 +94,22 @@ export default function Nav() {
         }
         .mbp-nav-link:hover { color: #CC0000; }
         .mbp-quote-btn:hover { background: #aa0000 !important; }
+        .mbp-contact-btn {
+          border: 1px solid rgba(255, 255, 255, 0.45);
+          color: #fff;
+          text-decoration: none;
+          padding: 10px 18px;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          white-space: nowrap;
+          transition: border-color 0.15s, background 0.15s;
+        }
+        .mbp-contact-btn:hover {
+          border-color: #fff;
+          background: rgba(255, 255, 255, 0.08);
+        }
 
         /* Hamburger button */
         .mbp-burger {
@@ -220,6 +236,14 @@ export default function Nav() {
           align-items: center;
           justify-content: center;
         }
+        .mbp-overlay-contact-btn {
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.45);
+        }
+        .mbp-overlay-contact-btn:hover {
+          border-color: #fff;
+          background: rgba(255, 255, 255, 0.08);
+        }
         .mbp-overlay-phone {
           display: block;
           text-align: center;
@@ -239,6 +263,8 @@ export default function Nav() {
           .mbp-desktop-links { gap: 22px !important; }
           .mbp-nav-link { font-size: 12px; }
           .mbp-desktop-right { gap: 14px !important; }
+          .mbp-header-phone { display: none; }
+          .mbp-contact-btn { padding: 10px 14px; }
           .mbp-quote-btn { padding: 10px 16px !important; }
         }
         @media (max-width: 960px) {
@@ -278,11 +304,14 @@ export default function Nav() {
           <Link href="/blog" className="mbp-nav-link">Blog</Link>
         </div>
 
-        {/* Desktop right: phone + CTA */}
+        {/* Desktop right: phone + contact paths */}
         <div className="mbp-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: '24px', flexShrink: 0 }}>
-          <a href="tel:2102799442" style={{ color: '#fff', textDecoration: 'none', fontFamily: "'Bebas Neue', cursive", fontSize: '22px', letterSpacing: '0.06em' }}>
+          <a className="mbp-header-phone" href="tel:2102799442" style={{ color: '#fff', textDecoration: 'none', fontFamily: "'Bebas Neue', cursive", fontSize: '22px', letterSpacing: '0.06em' }}>
             210-279-9442
           </a>
+          <Link href="/contact#contact-form" className="mbp-contact-btn">
+            Talk With Our Team
+          </Link>
           <Link href="/project-planner" className="mbp-quote-btn" style={{ background: '#CC0000', color: '#fff', textDecoration: 'none', padding: '10px 22px', fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
             Start a Project
           </Link>
@@ -362,6 +391,13 @@ export default function Nav() {
 
             {/* CTA */}
             <div className="mbp-overlay-cta">
+              <Link
+                href="/contact#contact-form"
+                className="mbp-overlay-cta-btn mbp-overlay-contact-btn"
+                onClick={close}
+              >
+                Talk With Our Team
+              </Link>
               <Link href="/project-planner" className="mbp-overlay-cta-btn" onClick={close}>
                 Start a Project
               </Link>

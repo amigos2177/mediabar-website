@@ -105,6 +105,15 @@ export default function BlogPage() {
             <Link href="/blog/ai-video-production-limits">
               Where AI video helps and where it stops <span aria-hidden="true">↗</span>
             </Link>
+            <Link href="/video-production/events">
+              Planning event and conference video <span aria-hidden="true">↗</span>
+            </Link>
+            <Link href="/video-production/medical">
+              Planning medical and healthcare video <span aria-hidden="true">↗</span>
+            </Link>
+            <Link href="/video-production/aerial">
+              Adding FAA-certified aerial production <span aria-hidden="true">↗</span>
+            </Link>
           </div>
         </nav>
 

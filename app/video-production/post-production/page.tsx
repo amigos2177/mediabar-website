@@ -21,6 +21,13 @@ export default function PostProductionPage() {
         { value: 'Sound', label: 'Clear & Intentional' },
         { value: 'Deliver', label: 'Every Channel' },
       ]}
+      answer={{
+        eyebrow: 'Quick answer',
+        question: 'What does video post-production include?',
+        response:
+          'Video post-production turns recorded footage into finished content through story editing, color, dialogue cleanup, sound mixing, motion graphics, captions, review, versioning, and final delivery. The right workflow depends on the footage, audience, deadline, approval process, and channels where the video will appear.',
+        points: ['Story editing', 'Color and sound', 'Graphics and captions', 'Cutdowns and delivery'],
+      }}
       overview={{
         eyebrow: 'Post Services',
         title: 'From Raw Footage',

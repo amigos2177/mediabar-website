@@ -8,10 +8,11 @@ const BASE = 'https://www.mediabarproductions.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const SITE_UPDATED = new Date('2026-07-19')
+  const SEARCH_SPRINT_UPDATED = new Date('2026-07-22')
 
   const staticPages: MetadataRoute.Sitemap = [
     // Homepage
-    { url: `${BASE}/`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/`, lastModified: SEARCH_SPRINT_UPDATED },
 
     // Core pages
     { url: `${BASE}/about`, lastModified: SITE_UPDATED },
@@ -27,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/faq`, lastModified: SITE_UPDATED },
     { url: `${BASE}/resources/video-production-faq`, lastModified: SITE_UPDATED },
     { url: `${BASE}/clients`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/blog`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/blog`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/pricing`, lastModified: SITE_UPDATED },
     { url: `${BASE}/how-we-work`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production`, lastModified: SITE_UPDATED },
@@ -35,13 +36,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Service pages
     { url: `${BASE}/video-production/corporate`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production/commercials`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/events`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/video-production/events`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/video-production/interview`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production/medical`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production/aerial`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/motion-graphics`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/video-production/motion-graphics`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/video-production/live-streaming`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/post-production`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/video-production/post-production`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/video-production/food`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production/real-estate`, lastModified: SITE_UPDATED },
 

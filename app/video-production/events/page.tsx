@@ -183,7 +183,7 @@ export default function EventsPage() {
         .evt-process-card p{margin-top:16px;color:#85858a;font-size:13px;line-height:1.7}
 
         .evt-resources{background:#101010}
-        .evt-resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+        .evt-resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
         .evt-resource{min-height:270px;display:flex;flex-direction:column;padding:34px;background:#141414;transition:background .18s}
         .evt-resource:hover{background:#191919}
         .evt-resource-tag{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
@@ -482,6 +482,15 @@ export default function EventsPage() {
                   and prepare the venue for production.
                 </p>
                 <span className="evt-resource-link">Read the Texas event planning guide <span>→</span></span>
+              </Link>
+              <Link href="/blog/event-video-roi-strategy-2026" className="evt-resource">
+                <span className="evt-resource-tag">Business value guide</span>
+                <h3>Connect Event Video to a Measurable Goal</h3>
+                <p>
+                  Plan coverage around registration, engagement, sponsor value, internal use,
+                  and sales follow-up instead of treating video as documentation alone.
+                </p>
+                <span className="evt-resource-link">Read the event video ROI guide <span>→</span></span>
               </Link>
             </div>
           </div>

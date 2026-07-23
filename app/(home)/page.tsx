@@ -24,7 +24,7 @@ const services = [
   {
     label: 'Event Coverage',
     href: '/video-production/events',
-    description: 'Conferences, galas, keynotes, and recaps captured without missing the moment.',
+    description: 'Event video production for conferences, galas, keynotes, recaps, and session content.',
     iconIndex: 2,
   },
   {
@@ -36,13 +36,13 @@ const services = [
   {
     label: 'Post Production',
     href: '/video-production/post-production',
-    description: 'Editorial, color, audio, graphics, captions, and delivery for every channel.',
+    description: 'Video post-production with editorial, color, audio, graphics, captions, and delivery.',
     iconIndex: 8,
   },
   {
     label: 'Motion Graphics',
     href: '/video-production/motion-graphics',
-    description: 'Animation and visual systems that make complex ideas clear and compelling.',
+    description: 'Motion graphics, animation, and visual systems that make complex ideas clear.',
     iconIndex: 6,
   },
 ]

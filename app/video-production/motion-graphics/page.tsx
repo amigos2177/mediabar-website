@@ -22,6 +22,13 @@ export default function MotionGraphicsPage() {
         { value: 'Motion', label: 'Built to Explain' },
         { value: 'Version', label: 'For Each Channel' },
       ]}
+      answer={{
+        eyebrow: 'Quick answer',
+        question: 'What are motion graphics used for?',
+        response:
+          'Motion graphics use animated typography, illustration, data, product visuals, titles, and branded design to make an idea easier to understand. They can stand alone as an explainer or work inside live-action video as callouts, transitions, lower thirds, and visual evidence.',
+        points: ['Explainers', 'Animated data', 'Titles and openers', 'Live-action integration'],
+      }}
       overview={{
         eyebrow: 'Motion Capabilities',
         title: 'Design That',
@@ -100,6 +107,29 @@ export default function MotionGraphicsPage() {
         { number: '03', title: 'Animation', copy: 'Build movement, transitions, compositing, and visual refinement.' },
         { number: '04', title: 'Sound & Delivery', copy: 'Complete voice, music, mix, captions, versions, and final exports.' },
       ]}
+      relatedLinks={{
+        eyebrow: 'Build the complete piece',
+        title: 'Connect Motion to the Story.',
+        copy:
+          'Motion graphics work best when the script, live-action footage, edit, and final channels are planned as one communication system.',
+        links: [
+          {
+            label: 'Post-Production',
+            href: '/video-production/post-production',
+            description: 'Combine editorial, color, sound, graphics, captions, and final versions in one finish workflow.',
+          },
+          {
+            label: 'Corporate Video',
+            href: '/video-production/corporate',
+            description: 'Use animation to support executive stories, explain services, and extend a corporate content library.',
+          },
+          {
+            label: 'AI Video Production Limits',
+            href: '/blog/ai-video-production-limits',
+            description: 'See where AI tools can support production and where human creative direction still matters.',
+          },
+        ],
+      }}
       faqEyebrow="Questions"
       faqTitle="Planning a"
       faqEmphasis="Motion Project."

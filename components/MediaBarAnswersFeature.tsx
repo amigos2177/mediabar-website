@@ -8,7 +8,7 @@ type MediaBarAnswersFeatureProps = {
   emphasis: string
   description: string
   slugs: string[]
-  placement: 'home' | 'pricing' | 'post-production'
+  placement: 'home' | 'pricing' | 'post-production' | 'interview'
 }
 
 export function MediaBarAnswersFeature({

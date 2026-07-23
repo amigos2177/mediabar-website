@@ -1432,8 +1432,8 @@ export default function HomePage() {
         emphasis="answered clearly."
         description="Short, practical guidance from Ruben Garcia and the Media Bar team, with full transcripts and deeper planning resources for every answer."
         slugs={[
-          'why-corporate-videos-get-delayed',
-          'corporate-video-cost-san-antonio',
+          'what-a-production-company-needs-for-an-estimate',
+          'three-executive-interviews-in-one-day',
         ]}
         placement="home"
       />

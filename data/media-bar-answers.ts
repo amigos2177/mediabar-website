@@ -30,6 +30,28 @@ export type MediaBarAnswersEpisode = {
 }
 
 export const mediaBarAnswersVideos = {
+  productionEstimate: {
+    youtubeId: '1UcrG1fepnQ',
+    title: 'What Does a Video Production Company Need for an Estimate?',
+    description:
+      'An accurate video production estimate starts with the business goal, audience, filming plan, schedule, deliverables, and approval process - not the finished runtime alone.',
+    uploadDate: '2026-07-23T16:06:22-07:00',
+    duration: 'PT56S',
+    thumbnailPath: '/images/media-bar-answers/what-a-production-company-needs-for-an-estimate.png',
+    thumbnailUrl:
+      'https://www.mediabarproductions.com/images/media-bar-answers/what-a-production-company-needs-for-an-estimate.png',
+  },
+  executiveInterviewsOneDay: {
+    youtubeId: 'WJb_tAKw0zY',
+    title: 'Can You Film Three Executive Interviews in One Day?',
+    description:
+      'Three executive interviews can usually fit into one filming day when the location, setup, schedule, and supporting footage are planned carefully.',
+    uploadDate: '2026-07-23T16:10:55-07:00',
+    duration: 'PT1M5S',
+    thumbnailPath: '/images/media-bar-answers/three-executive-interviews-in-one-day.png',
+    thumbnailUrl:
+      'https://www.mediabarproductions.com/images/media-bar-answers/three-executive-interviews-in-one-day.png',
+  },
   corporateVideoCost: {
     youtubeId: 'YiGociNuVpo',
     title: 'How Much Does a Corporate Video Cost in San Antonio?',
@@ -137,6 +159,88 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
       },
     ],
     video: mediaBarAnswersVideos.corporateVideoCost,
+  },
+  {
+    episode: '03',
+    slug: 'what-a-production-company-needs-for-an-estimate',
+    category: 'Pre-Production',
+    shortTitle: 'What a production company needs for an estimate',
+    directAnswer:
+      'An accurate estimate starts with the business goal, audience, filming plan, schedule, deliverables, approval process, and budget context. Finished runtime alone is not enough to define the work.',
+    takeaways: [
+      'Start with the business goal, audience, and where the finished video will be used.',
+      'Share the location, preferred production date, people or activities to capture, deadline, and complete deliverable list.',
+      'Useful estimates explain their assumptions and connect the investment to the work required.',
+    ],
+    transcript: [
+      "I'm Ruben Garcia, founder of Media Bar Productions. This is my digital avatar, but this advice comes directly from years of building real production estimates.",
+      'What does a production company need before it can provide an accurate estimate?',
+      'Start with the business goal, the audience, and where the finished video will be used.',
+      'Then provide the filming location, preferred production date, number of interviews, scenes or activities you want captured, final deadline, and every deliverable you expect.',
+      'A two-minute video alone is not enough information.',
+      'Two videos with the same runtime can require completely different crews, schedules, equipment, and editing.',
+      'It also helps to share examples you like, photos of the location, your approval process, and a preliminary budget range.',
+      'A useful estimate should explain its assumptions and connect the investment to the work required.',
+      'Visit the Media Bar Project Planner to organize your scope.',
+    ],
+    faqQuestion: 'What should a video creative brief include?',
+    faqHref: '/resources/video-production-faq#what-should-a-video-creative-brief-include',
+    serviceLink: {
+      label: 'Understand what drives video cost',
+      href: '/pricing',
+    },
+    relatedLinks: [
+      {
+        label: 'See how Media Bar projects move from planning to delivery',
+        href: '/how-we-work',
+      },
+      {
+        label: 'Organize an active project',
+        href: '/project-planner',
+      },
+    ],
+    video: mediaBarAnswersVideos.productionEstimate,
+  },
+  {
+    episode: '04',
+    slug: 'three-executive-interviews-in-one-day',
+    category: 'Production Day',
+    shortTitle: 'Three executive interviews in one day',
+    directAnswer:
+      'Usually yes, when everyone films at one location and the schedule protects setup, executive preparation, transitions, and supporting footage. Multiple locations or major setup changes may justify a second day.',
+    takeaways: [
+      'Three executive interviews can usually fit in one day when the location and setup stay consistent.',
+      'Reserve time for loading in, lighting and audio checks, executive preparation, transitions, and supporting footage.',
+      'Multiple locations, teleprompters, extensive scripting, or major lighting changes may make a second filming day the better decision.',
+    ],
+    transcript: [
+      "I'm Ruben Garcia, founder of Media Bar Productions. This is my digital avatar, but the guidance comes directly from my production experience.",
+      'Can you film three executive interviews in one day?',
+      'Usually yes, if the production is carefully planned and everyone is filming at the same location.',
+      'We typically need time to load in, test lighting and audio, prepare each executive, and capture supporting footage.',
+      'The biggest risks are late schedules, noisy offices, room changes, and trying to create a completely different setup for every interview.',
+      'A practical schedule gives each executive a reserved interview window, includes transition time, and protects part of the day for workplace footage and establishing shots.',
+      'If the interviews require multiple locations, teleprompters, extensive scripting, or major lighting changes, a second filming day may be the better decision.',
+      "Good preparation protects both the executive's time and the quality of the final story.",
+      'Visit MediaBarProductions.com for our interview planning guide.',
+    ],
+    faqQuestion: 'How long does a video production day take?',
+    faqHref: '/resources/video-production-faq#how-long-is-a-video-production-day',
+    serviceLink: {
+      label: 'Explore interview video production',
+      href: '/video-production/interview',
+    },
+    relatedLinks: [
+      {
+        label: 'Prepare employees, executives, or customers for an interview',
+        href: '/resources/video-production-faq#how-to-prepare-people-for-a-video-interview',
+      },
+      {
+        label: 'Plan an interview project',
+        href: '/project-planner',
+      },
+    ],
+    video: mediaBarAnswersVideos.executiveInterviewsOneDay,
   },
 ]
 

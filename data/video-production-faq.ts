@@ -106,6 +106,7 @@ export const videoProductionFaqs: VideoProductionFaq[] = [
       'A useful brief identifies the audience, business goal, core message, desired action, distribution channels, required deliverables, stakeholders, deadline, budget context, and any brand or legal constraints.',
       'It does not need to prescribe every shot. The brief should give the production team enough context to recommend the best creative and technical plan. Examples of work you like can help, especially when you explain what is useful about each example rather than asking for a copy.',
     ],
+    video: mediaBarAnswersVideos.productionEstimate,
     links: [{ label: 'Start the Media Bar project planner', href: '/project-planner' }],
   },
   {
@@ -228,6 +229,7 @@ export const videoProductionFaqs: VideoProductionFaq[] = [
       'The schedule is built around setup, lighting, sound, rehearsals, filming, company moves, breaks, and strike. The length depends on the number of scenes, people, locations, and setups, not only the duration of the final video.',
       'A realistic call sheet protects performance and safety. Trying to place too many setups into one day can create overtime or force creative compromises. A producer should identify the must-have material, group efficient setups, and explain what can move to another day if conditions change.',
     ],
+    video: mediaBarAnswersVideos.executiveInterviewsOneDay,
   },
   {
     category: 'Production Day',

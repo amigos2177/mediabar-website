@@ -1,4 +1,5 @@
 import { ServiceEditorialPage } from '@/components/ServiceEditorialPage'
+import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import { interviewFaqs, interviewVideo } from './content'
 
 export default function InterviewPage() {
@@ -21,6 +22,22 @@ export default function InterviewPage() {
         { value: 'Clean', label: 'Dialogue Audio' },
         { value: 'Useful', label: 'Long & Short Cuts' },
       ]}
+      answer={{
+        eyebrow: 'Quick answer',
+        question: 'Can three executive interviews fit in one filming day?',
+        response:
+          'Usually yes, when the interviews share one location and a consistent setup. The schedule still needs to protect loading, lighting and audio checks, executive preparation, transitions, and supporting footage. Multiple locations or major setup changes may justify a second day.',
+        points: ['One location', 'Reserved interview windows', 'Transition time', 'Supporting footage'],
+      }}
+      answerResource={(
+        <MediaBarAnswersFeature
+          title="Three executives."
+          emphasis="One filming day?"
+          description="Ruben explains the schedule, location, and setup decisions that determine whether three executive interviews can fit comfortably into one production day."
+          slugs={['three-executive-interviews-in-one-day']}
+          placement="interview"
+        />
+      )}
       overview={{
         eyebrow: 'Formats We Produce',
         title: 'The Right Interview',

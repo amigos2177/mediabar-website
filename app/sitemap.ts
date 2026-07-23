@@ -9,7 +9,7 @@ const BASE = 'https://www.mediabarproductions.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const SITE_UPDATED = new Date('2026-07-19')
-  const SEARCH_SPRINT_UPDATED = new Date('2026-07-22')
+  const SEARCH_SPRINT_UPDATED = new Date('2026-07-23')
 
   const staticPages: MetadataRoute.Sitemap = [
     // Homepage
@@ -81,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const answerEntries: MetadataRoute.Sitemap = mediaBarAnswersEpisodes.map((episode) => ({
     url: `${BASE}/resources/media-bar-answers/${episode.slug}`,
-    lastModified: SEARCH_SPRINT_UPDATED,
+    lastModified: new Date(episode.video.uploadDate),
     videos: [{
       title: episode.video.title,
       thumbnail_loc: episode.video.thumbnailUrl,

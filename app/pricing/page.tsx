@@ -189,10 +189,13 @@ export default function PricingPage() {
         </section>
 
         <MediaBarAnswersFeature
-          title="What really drives"
-          emphasis="the cost?"
-          description="A practical 71-second answer about the production decisions behind a corporate video estimate in San Antonio."
-          slugs={['corporate-video-cost-san-antonio']}
+          title="What shapes"
+          emphasis="the estimate?"
+          description="Two practical answers about the production decisions that shape cost and the information a producer needs before building a useful estimate."
+          slugs={[
+            'corporate-video-cost-san-antonio',
+            'what-a-production-company-needs-for-an-estimate',
+          ]}
           placement="pricing"
         />
 

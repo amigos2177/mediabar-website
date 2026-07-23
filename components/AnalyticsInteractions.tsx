@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { track } from '@vercel/analytics'
+import { usePathname } from 'next/navigation'
 import { analyticsEvents } from '@/lib/analytics-events'
 import { captureCampaignAttribution } from '@/lib/campaign-attribution'
 
@@ -23,6 +24,7 @@ type PageGroup =
   | 'project-planner'
   | 'about'
   | 'pricing'
+  | 'media-bar-answers'
   | 'other'
 
 type JourneyDestination =
@@ -55,6 +57,12 @@ function getConversionIntent(anchor: HTMLAnchorElement): ConversionIntent | null
 
 function getPageGroup(pathname: string): PageGroup {
   if (pathname === '/') return 'home'
+  if (
+    pathname === '/resources/media-bar-answers'
+    || pathname.startsWith('/resources/media-bar-answers/')
+  ) {
+    return 'media-bar-answers'
+  }
   if (pathname === '/blog' || pathname.startsWith('/blog/')) return 'blog'
   if (
     pathname === '/video-production'
@@ -102,6 +110,8 @@ function getPlacement(anchor: HTMLAnchorElement) {
 }
 
 export function AnalyticsInteractions() {
+  const pathname = usePathname()
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     const source = params.get('utm_source')?.trim().slice(0, 100)
@@ -110,7 +120,7 @@ export function AnalyticsInteractions() {
     captureCampaignAttribution()
 
     if (source || campaign) {
-      const sessionKey = `${campaignSessionPrefix}${window.location.pathname}:${source || 'unknown'}:${campaign || 'unspecified'}`
+      const sessionKey = `${campaignSessionPrefix}${pathname}:${source || 'unknown'}:${campaign || 'unspecified'}`
       let hasTrackedCampaign = false
 
       try {
@@ -133,6 +143,13 @@ export function AnalyticsInteractions() {
       }
     }
 
+    const episodeMatch = pathname.match(/^\/resources\/media-bar-answers\/([^/]+)$/)
+    if (episodeMatch) {
+      track(analyticsEvents.mediaBarAnswerViewed, {
+        episode: episodeMatch[1],
+      })
+    }
+
     function handleClick(event: MouseEvent) {
       if (!(event.target instanceof Element)) return
 
@@ -141,7 +158,18 @@ export function AnalyticsInteractions() {
 
       const intent = getConversionIntent(anchor)
       const placement = getPlacement(anchor)
-      const sourceGroup = getPageGroup(window.location.pathname)
+      const sourceGroup = getPageGroup(pathname)
+      const answerEpisode = anchor.dataset.mediaBarAnswer
+      const answerAction = anchor.dataset.mediaBarAnswerAction
+      const answerPlacement = anchor.dataset.mediaBarAnswerPlacement
+
+      if (answerEpisode && answerAction) {
+        track(analyticsEvents.mediaBarAnswerClicked, {
+          episode: answerEpisode.slice(0, 100),
+          action: answerAction.slice(0, 100),
+          placement: (answerPlacement || placement).slice(0, 100),
+        })
+      }
 
       if (intent) {
         track(analyticsEvents.conversionIntentClicked, {
@@ -174,7 +202,7 @@ export function AnalyticsInteractions() {
 
     document.addEventListener('click', handleClick)
     return () => document.removeEventListener('click', handleClick)
-  }, [])
+  }, [pathname])
 
   return null
 }

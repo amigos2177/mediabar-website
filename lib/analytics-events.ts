@@ -15,4 +15,6 @@ export const analyticsEvents = {
   faqQuestionSubmitted: 'FAQ Question Submitted',
   faqQuestionSubmissionFailed: 'FAQ Question Submission Failed',
   gptAdvisorOpened: 'GPT Advisor Opened',
+  mediaBarAnswerViewed: 'Media Bar Answer Viewed',
+  mediaBarAnswerClicked: 'Media Bar Answer Clicked',
 } as const

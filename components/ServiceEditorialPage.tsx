@@ -47,6 +47,7 @@ export type ServiceEditorialPageProps = {
     response: string
     points: string[]
   }
+  answerResource?: ReactNode
   overview: {
     eyebrow: string
     title: string
@@ -115,6 +116,7 @@ export function ServiceEditorialPage({
   hero,
   proof,
   answer,
+  answerResource,
   overview,
   capabilities,
   plan,
@@ -334,6 +336,8 @@ export function ServiceEditorialPage({
             </div>
           </section>
         ) : null}
+
+        {answerResource}
 
         <section className="sep-section">
           <div className="sep-container">

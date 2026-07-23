@@ -111,6 +111,9 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
               href={`https://www.youtube.com/watch?v=${episode.video.youtubeId}`}
               target="_blank"
               rel="noopener noreferrer"
+              data-media-bar-answer={episode.slug}
+              data-media-bar-answer-action="youtube"
+              data-media-bar-answer-placement="episode"
             >
               Watch on YouTube <span aria-hidden="true">↗</span>
             </a>
@@ -168,7 +171,13 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
                 <strong>{episode.serviceLink.label}</strong>
               </Link>
               {episode.relatedLinks.map((link) => (
-                <Link href={link.href} key={link.href}>
+                <Link
+                  href={link.href}
+                  key={link.href}
+                  data-media-bar-answer={episode.slug}
+                  data-media-bar-answer-action={link.href === '/project-planner' ? 'project-planner' : 'related-resource'}
+                  data-media-bar-answer-placement="episode"
+                >
                   <span>Explore next</span>
                   <strong>{link.label}</strong>
                 </Link>
@@ -182,7 +191,13 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
               <h2>Continue through the video library.</h2>
               <div>
                 {relatedEpisodes.map((item) => (
-                  <Link href={`${libraryPath}/${item.slug}`} key={item.slug}>
+                  <Link
+                    href={`${libraryPath}/${item.slug}`}
+                    key={item.slug}
+                    data-media-bar-answer={item.slug}
+                    data-media-bar-answer-action="episode"
+                    data-media-bar-answer-placement="related-episode"
+                  >
                     <span>Episode {item.episode} / {item.category}</span>
                     <strong>{item.shortTitle}</strong>
                   </Link>

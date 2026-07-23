@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import GoogleReviews from '../../components/GoogleReviews'
+import { MediaBarAnswersFeature } from '../../components/MediaBarAnswersFeature'
 import VimeoPlayer from '../../components/VimeoPlayer'
 import { VideoObjectJsonLd } from '../../components/JsonLd'
 
@@ -1171,6 +1172,17 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <MediaBarAnswersFeature
+        title="Production questions"
+        emphasis="answered clearly."
+        description="Short, practical guidance from Ruben Garcia and the Media Bar team, with full transcripts and deeper planning resources for every answer."
+        slugs={[
+          'why-corporate-videos-get-delayed',
+          'corporate-video-cost-san-antonio',
+        ]}
+        placement="home"
+      />
 
       {/* ─── 4. FEATURED CASE STUDY ─── */}
       <section className="featured-work" data-reveal>

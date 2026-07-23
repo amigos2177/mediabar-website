@@ -89,6 +89,9 @@ export default function MediaBarAnswersPage() {
                   className={styles.cardImage}
                   href={`${path}/${episode.slug}`}
                   aria-label={`Watch and read ${episode.video.title}`}
+                  data-media-bar-answer={episode.slug}
+                  data-media-bar-answer-action="episode"
+                  data-media-bar-answer-placement="library"
                 >
                   <Image
                     src={episode.video.thumbnailPath}
@@ -105,10 +108,23 @@ export default function MediaBarAnswersPage() {
                     <span>{episode.category}</span>
                   </p>
                   <h3>
-                    <Link href={`${path}/${episode.slug}`}>{episode.shortTitle}</Link>
+                    <Link
+                      href={`${path}/${episode.slug}`}
+                      data-media-bar-answer={episode.slug}
+                      data-media-bar-answer-action="episode"
+                      data-media-bar-answer-placement="library"
+                    >
+                      {episode.shortTitle}
+                    </Link>
                   </h3>
                   <span>{episode.directAnswer}</span>
-                  <Link className={styles.cardLink} href={`${path}/${episode.slug}`}>
+                  <Link
+                    className={styles.cardLink}
+                    href={`${path}/${episode.slug}`}
+                    data-media-bar-answer={episode.slug}
+                    data-media-bar-answer-action="episode"
+                    data-media-bar-answer-placement="library"
+                  >
                     Watch, read, and explore <span aria-hidden="true">→</span>
                   </Link>
                 </div>
@@ -132,7 +148,13 @@ export default function MediaBarAnswersPage() {
               <Link href="/resources/video-production-faq" className={styles.secondaryButton}>
                 Read the complete FAQ
               </Link>
-              <Link href="/project-planner" className={styles.primaryButton}>
+              <Link
+                href="/project-planner"
+                className={styles.primaryButton}
+                data-media-bar-answer="library"
+                data-media-bar-answer-action="project-planner"
+                data-media-bar-answer-placement="library-cta"
+              >
                 Plan a real project
               </Link>
             </div>

@@ -1,4 +1,5 @@
 import { ServiceEditorialPage } from '@/components/ServiceEditorialPage'
+import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import { postProductionFaqs, postProductionVideo } from './content'
 
 export default function PostProductionPage() {
@@ -28,6 +29,15 @@ export default function PostProductionPage() {
           'Video post-production turns recorded footage into finished content through story editing, color, dialogue cleanup, sound mixing, motion graphics, captions, review, versioning, and final delivery. The right workflow depends on the footage, audience, deadline, approval process, and channels where the video will appear.',
         points: ['Story editing', 'Color and sound', 'Graphics and captions', 'Cutdowns and delivery'],
       }}
+      answerResource={(
+        <MediaBarAnswersFeature
+          title="Why projects"
+          emphasis="get delayed."
+          description="Ruben explains the post-production approval issue that slows corporate video projects and the three decisions that keep a finish moving."
+          slugs={['why-corporate-videos-get-delayed']}
+          placement="post-production"
+        />
+      )}
       overview={{
         eyebrow: 'Post Services',
         title: 'From Raw Footage',

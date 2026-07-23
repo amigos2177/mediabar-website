@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import { MediaBarAnswersFeature } from '../../components/MediaBarAnswersFeature'
 import { pricingFaqs } from './pricing-data'
 import styles from './pricing.module.css'
 
@@ -186,6 +187,14 @@ export default function PricingPage() {
             ))}
           </div>
         </section>
+
+        <MediaBarAnswersFeature
+          title="What really drives"
+          emphasis="the cost?"
+          description="A practical 71-second answer about the production decisions behind a corporate video estimate in San Antonio."
+          slugs={['corporate-video-cost-san-antonio']}
+          placement="pricing"
+        />
 
         <section className={styles.process}>
           <header className={styles.sectionHeader}>

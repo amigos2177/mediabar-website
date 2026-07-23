@@ -859,18 +859,86 @@ export default function HomePage() {
         }
         .process-arrow { color: #555; }
 
-        /* ─── DEMO REEL ─── */
+        /* ─── DEMO REELS ─── */
+        .reel-section {
+          padding: 104px 48px 112px;
+          background:
+            radial-gradient(circle at 88% 12%, rgba(204,0,0,.1), transparent 28%),
+            var(--dark2);
+          border-top: 1px solid rgba(255,255,255,.08);
+          border-bottom: 1px solid rgba(255,255,255,.08);
+        }
         .reel-section-inner {
-          padding: 0 48px;
+          width: min(1320px, 100%);
+          margin: 0 auto;
+        }
+        .reel-header {
+          display: grid;
+          grid-template-columns: 1.15fr .85fr;
+          gap: 72px;
+          align-items: end;
+          padding-bottom: 34px;
+          margin-bottom: 34px;
+          border-bottom: 1px solid rgba(255,255,255,.14);
+        }
+        .reel-header .section-title {
+          margin-bottom: 0;
+          font-size: clamp(58px, 8vw, 108px);
+          line-height: .88;
+        }
+        .reel-header-copy {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 28px;
+          align-items: end;
+        }
+        .reel-description {
+          max-width: 440px;
+          color: rgba(255,255,255,.58);
+          font-size: 15px;
+          line-height: 1.7;
+        }
+        .reel-all-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid rgba(255,255,255,.5);
+          color: #fff;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .16em;
+          text-decoration: none;
+          text-transform: uppercase;
+          white-space: nowrap;
+          transition: color .2s ease, border-color .2s ease;
+        }
+        .reel-all-link span { color: var(--red); }
+        .reel-all-link:hover {
+          color: #ff5a5a;
+          border-color: var(--red);
+        }
+        .reel-duo {
+          display: grid;
+          grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+          gap: 20px;
+        }
+        .reel-card {
+          min-width: 0;
+          padding: 12px;
+          border: 1px solid rgba(255,255,255,.14);
+          background: rgba(7,7,7,.72);
+          transition: border-color .25s ease, transform .25s ease;
+        }
+        .reel-card:hover {
+          border-color: rgba(255,255,255,.32);
+          transform: translateY(-3px);
         }
         .reel-wrap {
           position: relative;
-          padding-bottom: 56.25%;
-          height: 0;
+          aspect-ratio: 16 / 9;
           overflow: hidden;
-          max-width: 1100px;
-          margin: 0 auto;
-          border-radius: 4px;
+          background: #050505;
         }
         .reel-wrap iframe {
           position: absolute;
@@ -880,25 +948,35 @@ export default function HomePage() {
           height: 100%;
           border: none;
         }
-        .reel-duo {
+        .reel-meta {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 24px;
-          max-width: 1100px;
-          margin: 0 auto;
+          grid-template-columns: auto 1fr;
+          gap: 14px;
+          align-items: start;
+          padding: 18px 8px 8px;
         }
-        .reel-duo .reel-wrap { max-width: none; margin: 0; }
-        .reel-label {
-          font-size: 11px;
+        .reel-index {
+          color: var(--red);
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          font-size: 10px;
           font-weight: 700;
           letter-spacing: 0.16em;
-          text-transform: uppercase;
-          color: rgba(255,255,255,0.55);
-          margin-bottom: 12px;
-          text-align: center;
         }
-        @media (max-width: 768px) {
-          .reel-duo { grid-template-columns: 1fr; gap: 32px; }
+        .reel-name {
+          margin: -2px 0 6px;
+          color: #fff;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: clamp(26px, 2.2vw, 36px);
+          letter-spacing: .035em;
+          line-height: 1;
+          text-transform: uppercase;
+        }
+        .reel-detail {
+          color: rgba(255,255,255,.44);
+          font-size: 11px;
+          letter-spacing: .08em;
+          line-height: 1.5;
+          text-transform: uppercase;
         }
 
         /* ─── AWARDS ─── */
@@ -1008,9 +1086,13 @@ export default function HomePage() {
           .specialty-card { grid-column: span 3; }
           .answer-inner { grid-template-columns: 1fr; gap: 48px; }
           .answer-intro { position: static; }
+          .reel-header { grid-template-columns: 1fr; gap: 28px; }
+          .reel-header-copy { grid-template-columns: 1fr auto; }
         }
         @media (max-width: 768px) {
-          .reel-section-inner { padding: 0 24px; }
+          .reel-section { padding: 76px 24px 84px; }
+          .reel-duo { grid-template-columns: 1fr; gap: 18px; }
+          .reel-card:hover { transform: none; }
         }
         @media (max-width: 600px) {
           .section { padding: 64px 20px; }
@@ -1039,6 +1121,11 @@ export default function HomePage() {
           .answer-section { padding: 72px 20px; }
           .answer-grid { grid-template-columns: 1fr; }
           .answer-card { min-height: 0; padding: 28px 24px; }
+          .reel-section { padding: 72px 20px 80px; }
+          .reel-header-copy { grid-template-columns: 1fr; gap: 20px; }
+          .reel-header .section-title { font-size: clamp(54px, 18vw, 72px); }
+          .reel-card { padding: 8px; }
+          .reel-meta { padding: 17px 6px 8px; }
         }
       `}</style>
 
@@ -1111,13 +1198,25 @@ export default function HomePage() {
       </div>
 
       {/* ─── 3. DEMO REELS ─── */}
-      <section className="section section-dark2" data-reveal>
-        <p className="eyebrow">Demo Reel</p>
-        <h2 className="section-title" style={{ marginBottom: '40px' }}>See <em>The Work</em></h2>
+      <section className="reel-section" data-reveal>
         <div className="reel-section-inner">
-          <div className="reel-duo">
+          <div className="reel-header">
             <div>
-              <p className="reel-label">Studio Showreel</p>
+              <p className="eyebrow">Selected Reels</p>
+              <h2 className="section-title">See <em>The Work</em></h2>
+            </div>
+            <div className="reel-header-copy">
+              <p className="reel-description">
+                A quick look at the stories, campaigns, and production craft we bring to
+                screens across Texas and beyond.
+              </p>
+              <Link href="/work" className="reel-all-link">
+                View all work <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+          <div className="reel-duo">
+            <article className="reel-card">
               <div className="reel-wrap">
                 <VimeoPlayer
                   videoId="1077104073"
@@ -1126,9 +1225,15 @@ export default function HomePage() {
                   eager
                 />
               </div>
-            </div>
-            <div>
-              <p className="reel-label">Commercials Reel</p>
+              <div className="reel-meta">
+                <span className="reel-index">01</span>
+                <div>
+                  <h3 className="reel-name">Demo Reel</h3>
+                  <p className="reel-detail">Corporate · Events · Healthcare · Branded stories</p>
+                </div>
+              </div>
+            </article>
+            <article className="reel-card">
               <div className="reel-wrap">
                 <VimeoPlayer
                   videoId="1203197473"
@@ -1136,7 +1241,14 @@ export default function HomePage() {
                   thumbnailUrl="/images/commercials-reel-spurs-coyote.jpg"
                 />
               </div>
-            </div>
+              <div className="reel-meta">
+                <span className="reel-index">02</span>
+                <div>
+                  <h3 className="reel-name">Commercials Reel</h3>
+                  <p className="reel-detail">Broadcast · Digital · Campaign production</p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>

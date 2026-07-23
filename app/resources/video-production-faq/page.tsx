@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
+import { mediaBarAnswersEpisodes } from '@/data/media-bar-answers'
 import {
   videoFaqCategories,
   videoProductionFaqs,
@@ -9,6 +10,12 @@ import AskQuestionForm from './AskQuestionForm'
 import styles from './video-production-faq.module.css'
 
 const VIDEO_ADVISOR_URL = 'https://chatgpt.com/g/g-6a5eca9bc22081919d134d3a2d686ba3-texas-video-production-advisor'
+const mediaBarAnswerPathsByVideoId = new Map(
+  mediaBarAnswersEpisodes.map((episode) => [
+    episode.video.youtubeId,
+    `/resources/media-bar-answers/${episode.slug}`,
+  ]),
+)
 
 const featuredQuestions = [
   'how-is-a-video-production-budget-determined',
@@ -75,7 +82,7 @@ export default function VideoProductionFaqPage() {
             </p>
             <div className={styles.heroActions}>
               <a href="#topics" className={styles.primaryButton}>Explore the answers</a>
-              <Link href="/project-planner" className={styles.secondaryButton}>Plan a real project</Link>
+              <Link href="/resources/media-bar-answers" className={styles.secondaryButton}>Watch Media Bar Answers</Link>
             </div>
             <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed July 22, 2026</p>
           </div>
@@ -263,6 +270,13 @@ export default function VideoProductionFaqPage() {
                                 >
                                   Watch on YouTube <span aria-hidden="true">↗</span>
                                 </a>
+                                {mediaBarAnswerPathsByVideoId.get(faq.video.youtubeId) && (
+                                  <Link
+                                    href={mediaBarAnswerPathsByVideoId.get(faq.video.youtubeId)!}
+                                  >
+                                    Read the transcript and takeaways <span aria-hidden="true">→</span>
+                                  </Link>
+                                )}
                               </div>
                             </div>
                           )}

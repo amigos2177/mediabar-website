@@ -93,6 +93,7 @@ export default function Footer() {
             <Link href="/work/rbfcu-go-beyond-banking" className="mbp-footer-link" style={footerLink}>RBFCU Case Study</Link>
             <Link href="/faq" className="mbp-footer-link" style={footerLink}>FAQ</Link>
             <Link href="/resources/video-production-faq" className="mbp-footer-link" style={footerLink}>Video Production Guide</Link>
+            <Link href="/resources/media-bar-answers" className="mbp-footer-link" style={footerLink}>Media Bar Answers</Link>
             <a
               href="https://chatgpt.com/g/g-6a5eca9bc22081919d134d3a2d686ba3-texas-video-production-advisor"
               className="mbp-footer-link"

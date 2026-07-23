@@ -1,17 +1,15 @@
+import {
+  mediaBarAnswersVideos,
+  type MediaBarAnswersVideo,
+} from './media-bar-answers'
+
 export type ResourceLink = {
   label: string
   href: string
   external?: boolean
 }
 
-export type ResourceVideo = {
-  youtubeId: string
-  title: string
-  description: string
-  uploadDate: string
-  duration: string
-  thumbnailUrl: string
-}
+export type ResourceVideo = MediaBarAnswersVideo
 
 export type VideoProductionFaq = {
   category: string
@@ -22,26 +20,7 @@ export type VideoProductionFaq = {
   video?: ResourceVideo
 }
 
-export const mediaBarAnswersVideos = {
-  corporateVideoCost: {
-    youtubeId: 'YiGociNuVpo',
-    title: 'How Much Does a Corporate Video Cost in San Antonio?',
-    description:
-      'Ruben Garcia explains the general planning range for a professionally produced corporate video and the scope decisions that most affect cost in San Antonio.',
-    uploadDate: '2026-07-21T22:15:44-07:00',
-    duration: 'PT1M11S',
-    thumbnailUrl: 'https://i.ytimg.com/vi/YiGociNuVpo/hqdefault.jpg',
-  },
-  postProductionDelays: {
-    youtubeId: '4EZelLWoHnY',
-    title: 'The #1 Reason Corporate Videos Get Delayed (It’s Not Editing)',
-    description:
-      'Ruben Garcia explains what happens after filming and how a clear, consolidated approval process helps prevent corporate video post-production delays.',
-    uploadDate: '2026-07-21',
-    duration: 'PT1M7S',
-    thumbnailUrl: 'https://i.ytimg.com/vi/4EZelLWoHnY/hqdefault.jpg',
-  },
-} satisfies Record<string, ResourceVideo>
+export { mediaBarAnswersVideos }
 
 export const videoFaqCategories = [
   {

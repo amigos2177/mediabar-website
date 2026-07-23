@@ -3,6 +3,7 @@ import { getAllPosts } from '../lib/blog'
 import workVideos from '../data/work-videos.json'
 import { workProjects } from '../data/work-projects'
 import type { PortfolioVideo } from '../components/VideoObjectSchema'
+import { mediaBarAnswersEpisodes } from '../data/media-bar-answers'
 
 const BASE = 'https://www.mediabarproductions.com'
 
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/project-planner`, lastModified: SITE_UPDATED },
     { url: `${BASE}/faq`, lastModified: SITE_UPDATED },
     { url: `${BASE}/resources/video-production-faq`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/resources/media-bar-answers`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/clients`, lastModified: SITE_UPDATED },
     { url: `${BASE}/blog`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/pricing`, lastModified: SITE_UPDATED },
@@ -77,5 +79,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }]
   })
 
-  return [...staticPages, ...watchEntries, ...blogEntries]
+  const answerEntries: MetadataRoute.Sitemap = mediaBarAnswersEpisodes.map((episode) => ({
+    url: `${BASE}/resources/media-bar-answers/${episode.slug}`,
+    lastModified: SEARCH_SPRINT_UPDATED,
+    videos: [{
+      title: episode.video.title,
+      thumbnail_loc: episode.video.thumbnailUrl,
+      description: episode.video.description,
+      player_loc: `https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`,
+    }],
+  }))
+
+  return [...staticPages, ...answerEntries, ...watchEntries, ...blogEntries]
 }

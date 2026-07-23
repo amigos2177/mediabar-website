@@ -418,6 +418,7 @@ export function EducationalGuideJsonLd({
   image,
 }: EducationalGuideProps) {
   const canonical = `${BASE_URL}${url}`
+  const imageUrl = image.startsWith('http') ? image : `${BASE_URL}${image}`
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -435,7 +436,7 @@ export function EducationalGuideJsonLd({
     },
     image: {
       '@type': 'ImageObject',
-      url: `${BASE_URL}${image}`,
+      url: imageUrl,
     },
     author: {
       '@type': 'Person',
@@ -462,6 +463,61 @@ export function EducationalGuideJsonLd({
       'Video production in Texas',
       'Video production in San Antonio',
     ],
+  }
+  return <JsonLdScript data={data} />
+}
+
+type CollectionPageItem = {
+  name: string
+  url: string
+  description: string
+  thumbnailUrl: string
+}
+
+export function CollectionPageJsonLd({
+  name,
+  description,
+  url,
+  items,
+}: {
+  name: string
+  description: string
+  url: string
+  items: CollectionPageItem[]
+}) {
+  const canonical = `${BASE_URL}${url}`
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${canonical}#collection`,
+    name,
+    description,
+    url: canonical,
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@id': WEBSITE_ID,
+    },
+    about: {
+      '@id': BUSINESS_ID,
+    },
+    publisher: {
+      '@id': BUSINESS_ID,
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: items.length,
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'VideoObject',
+          name: item.name,
+          description: item.description,
+          url: `${BASE_URL}${item.url}`,
+          thumbnailUrl: item.thumbnailUrl,
+        },
+      })),
+    },
   }
   return <JsonLdScript data={data} />
 }

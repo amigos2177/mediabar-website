@@ -4,6 +4,7 @@ export type MediaBarAnswersVideo = {
   description: string
   uploadDate: string
   duration: string
+  thumbnailPath: string
   thumbnailUrl: string
 }
 
@@ -36,7 +37,9 @@ export const mediaBarAnswersVideos = {
       'Ruben Garcia explains the general planning range for a professionally produced corporate video and the scope decisions that most affect cost in San Antonio.',
     uploadDate: '2026-07-21T22:15:44-07:00',
     duration: 'PT1M11S',
-    thumbnailUrl: 'https://i.ytimg.com/vi/YiGociNuVpo/hqdefault.jpg',
+    thumbnailPath: '/images/media-bar-answers/corporate-video-cost-san-antonio.png',
+    thumbnailUrl:
+      'https://www.mediabarproductions.com/images/media-bar-answers/corporate-video-cost-san-antonio.png',
   },
   postProductionDelays: {
     youtubeId: '4EZelLWoHnY',
@@ -45,7 +48,9 @@ export const mediaBarAnswersVideos = {
       'Ruben Garcia explains what happens after filming and how a clear, consolidated approval process helps prevent corporate video post-production delays.',
     uploadDate: '2026-07-21',
     duration: 'PT1M7S',
-    thumbnailUrl: 'https://i.ytimg.com/vi/4EZelLWoHnY/hqdefault.jpg',
+    thumbnailPath: '/images/media-bar-answers/why-corporate-videos-get-delayed.png',
+    thumbnailUrl:
+      'https://www.mediabarproductions.com/images/media-bar-answers/why-corporate-videos-get-delayed.png',
   },
 } satisfies Record<string, MediaBarAnswersVideo>
 

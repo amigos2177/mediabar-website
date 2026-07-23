@@ -91,7 +91,7 @@ export default function MediaBarAnswersPage() {
                   aria-label={`Watch and read ${episode.video.title}`}
                 >
                   <Image
-                    src={episode.video.thumbnailUrl}
+                    src={episode.video.thumbnailPath}
                     alt=""
                     fill
                     loading={index === 0 ? 'eager' : 'lazy'}

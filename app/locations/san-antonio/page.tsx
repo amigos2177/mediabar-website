@@ -41,6 +41,12 @@ const services = [
     description: 'A controlled San Antonio production space for interviews, discussions, product work, and branded content.',
     href: '/studio',
   },
+  {
+    number: '06',
+    title: 'Post-Production',
+    description: 'San Antonio editing, color, sound, graphics, captions, versioning, and final delivery.',
+    href: '/video-production/post-production',
+  },
 ]
 
 const industries = [
@@ -95,7 +101,7 @@ export default function SanAntonioPage() {
         .sa-section-head{display:grid;grid-template-columns:.55fr 1fr;gap:70px;align-items:end;margin-bottom:54px}
         .sa-section-title{font-size:clamp(48px,6vw,78px);margin-top:13px}
         .sa-section-intro{max-width:650px;color:var(--muted);font-size:16px;line-height:1.75}
-        .sa-services{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+        .sa-services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
         .sa-service{min-height:310px;display:flex;flex-direction:column;justify-content:space-between;padding:31px 27px;background:#141414;transition:background .18s}
         .sa-service:hover{background:#1b1b1b}
         .sa-service-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:18px;letter-spacing:.08em}

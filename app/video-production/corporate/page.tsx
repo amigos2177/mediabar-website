@@ -172,6 +172,14 @@ export default function CorporatePage() {
         .corp-stakeholder h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
         .corp-stakeholder p{max-width:480px;margin-top:13px;color:#85858a;font-size:13px;line-height:1.7}
 
+        .corp-pathways{background:#101010}
+        .corp-pathway-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+        .corp-pathway{display:flex;min-height:220px;flex-direction:column;padding:30px;background:#141414;color:#fff;transition:background .18s}
+        .corp-pathway:hover{background:#181818}
+        .corp-pathway h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+        .corp-pathway p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
+        .corp-pathway span{margin-top:auto;padding-top:28px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
         .corp-faq-wrap{max-width:1000px}
         .corp-faq-head{text-align:center;margin-bottom:44px}
         .corp-faq-head h2{font-size:clamp(52px,6vw,80px);margin-top:13px}
@@ -212,7 +220,7 @@ export default function CorporatePage() {
           .corp-client:nth-child(2){border-right:0}.corp-client:nth-child(-n+2){border-bottom:1px solid var(--line)}
           .corp-section{padding:76px 0}
           .corp-section-head{grid-template-columns:1fr;gap:24px}
-          .corp-use-grid,.corp-stakeholders{grid-template-columns:1fr}
+          .corp-use-grid,.corp-stakeholders,.corp-pathway-grid{grid-template-columns:1fr}
           .corp-use{min-height:250px;padding:26px 23px}
           .corp-reel-media{min-height:360px}
           .corp-reel-copy,.corp-process-copy{padding:39px 25px}
@@ -413,6 +421,38 @@ export default function CorporatePage() {
                   <p>{copy}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="corp-section corp-pathways">
+          <div className="corp-container">
+            <div className="corp-section-head">
+              <div>
+                <p className="corp-eyebrow">Build the complete production path</p>
+                <h2 className="corp-display corp-section-title">Plan Locally. <em>Finish With Purpose.</em></h2>
+              </div>
+              <p className="corp-section-intro">
+                Explore the local production resources, finishing services, and campaign proof that
+                help San Antonio organizations move from a business brief to finished corporate content.
+              </p>
+            </div>
+            <div className="corp-pathway-grid">
+              <Link className="corp-pathway" href="/locations/san-antonio">
+                <h3>San Antonio Video Production</h3>
+                <p>See the local crew, studio, services, and production experience available across the city.</p>
+                <span>Explore local production →</span>
+              </Link>
+              <Link className="corp-pathway" href="/video-production/post-production">
+                <h3>Post-Production</h3>
+                <p>Plan editorial, color, sound, graphics, captions, and delivery around the final business use.</p>
+                <span>Explore post-production →</span>
+              </Link>
+              <Link className="corp-pathway" href="/work/rbfcu-go-beyond-banking">
+                <h3>RBFCU Campaign Case Study</h3>
+                <p>See how one San Antonio production became five broadcast commercials delivered across Texas.</p>
+                <span>See the work →</span>
+              </Link>
             </div>
           </div>
         </section>

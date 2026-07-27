@@ -120,14 +120,14 @@ export default function PostProductionPage() {
           'Strong post-production starts with a clear production plan and ends with formats built for the places your audience will watch.',
         links: [
           {
+            label: 'San Antonio Video Production',
+            href: '/locations/san-antonio',
+            description: 'Connect local planning, crew, studio support, filming, and final delivery through one San Antonio team.',
+          },
+          {
             label: 'Corporate Video',
             href: '/video-production/corporate',
             description: 'Plan interviews, brand stories, and campaign footage with the final edit in mind.',
-          },
-          {
-            label: 'Motion Graphics',
-            href: '/video-production/motion-graphics',
-            description: 'Add titles, explainers, data, and branded animation to the finished story.',
           },
           {
             label: 'One Shoot, Many Cuts',

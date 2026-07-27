@@ -30,6 +30,17 @@ export type MediaBarAnswersEpisode = {
 }
 
 export const mediaBarAnswersVideos = {
+  healthcareVideoPlanning: {
+    youtubeId: 'ixXpNKURzGk',
+    title: 'What Should You Plan Before Filming a Healthcare Video?',
+    description:
+      'Healthcare video production requires early planning for privacy, access, clinical operations, approvals, and the information that could appear on camera.',
+    uploadDate: '2026-07-27T08:33:56-07:00',
+    duration: 'PT1M4S',
+    thumbnailPath: '/images/media-bar-answers/healthcare-video-planning.png',
+    thumbnailUrl:
+      'https://www.mediabarproductions.com/images/media-bar-answers/healthcare-video-planning.png',
+  },
   productionEstimate: {
     youtubeId: '1UcrG1fepnQ',
     title: 'What Does a Video Production Company Need for an Estimate?',
@@ -241,6 +252,46 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
       },
     ],
     video: mediaBarAnswersVideos.executiveInterviewsOneDay,
+  },
+  {
+    episode: '05',
+    slug: 'healthcare-video-planning',
+    category: 'Healthcare',
+    shortTitle: 'Healthcare video planning',
+    directAnswer:
+      "Healthcare filming should begin with the organization's privacy, compliance, operational, access, and review requirements. The production team can identify visible risks and plan around approved boundaries, but the organization remains responsible for compliance decisions.",
+    takeaways: [
+      'Identify visible patient information and confidential material before the crew arrives.',
+      'Confirm access, releases, infection control, logistics, power, and operational constraints.',
+      'Use an approved shot list and one internal contact to resolve questions quickly.',
+    ],
+    transcript: [
+      "I'm Ruben Garcia, founder of Media Bar Productions. This is my digital avatar, but the guidance comes from our experience filming in healthcare environments.",
+      'Healthcare video production requires more preparation than a typical office shoot.',
+      'Before filming, identify where patient information, medical records, computer screens, badges, whiteboards, or confidential conversations could appear.',
+      'Your legal, privacy, or compliance team should decide what is permissible. The production team can help identify visible risks, but it should not make compliance decisions for the organization.',
+      'Confirm approved filming areas, appearance releases, infection control requirements, parking, loading access, power, and whether normal clinical operations will continue during production.',
+      'Interview statements about treatments, outcomes, technology, or medical benefits should also be reviewed before filming whenever possible.',
+      'The best approach is to create a controlled environment, use an approved shot list, and assign one internal contact who can resolve questions quickly.',
+      'Visit MediaBarProductions.com for more healthcare video planning guidance.',
+    ],
+    faqQuestion: 'How should we plan filming in a medical, industrial, or controlled-access location?',
+    faqHref: '/resources/video-production-faq#how-to-plan-video-in-medical-industrial-or-controlled-locations',
+    serviceLink: {
+      label: 'Explore medical video production',
+      href: '/video-production/medical',
+    },
+    relatedLinks: [
+      {
+        label: 'Read the healthcare video planning guide',
+        href: '/blog/healthcare-video-production-san-antonio',
+      },
+      {
+        label: 'Plan a healthcare video project',
+        href: '/project-planner',
+      },
+    ],
+    video: mediaBarAnswersVideos.healthcareVideoPlanning,
   },
 ]
 

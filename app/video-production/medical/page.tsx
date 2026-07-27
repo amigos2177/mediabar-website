@@ -1,4 +1,5 @@
 import { ServiceEditorialPage } from '@/components/ServiceEditorialPage'
+import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import { medicalFaqs, medicalVideo } from './content'
 
 export default function MedicalVideoPage() {
@@ -29,6 +30,15 @@ export default function MedicalVideoPage() {
           'Medical video production turns clinical expertise, patient experiences, services, training, and healthcare campaigns into clear, carefully reviewed video. Media Bar coordinates the production plan with the client team so access, consent, comfort, terminology, and stakeholder approvals are addressed before delivery.',
         points: ['Patient education', 'Provider profiles', 'Clinical training', 'Healthcare campaigns'],
       }}
+      answerResource={(
+        <MediaBarAnswersFeature
+          title="Healthcare filming."
+          emphasis="Plan the boundaries first."
+          description="Ruben explains the privacy, access, clinical operations, and approval decisions healthcare teams should resolve before a production crew arrives."
+          slugs={['healthcare-video-planning']}
+          placement="medical"
+        />
+      )}
       overview={{
         eyebrow: 'Healthcare Formats',
         title: 'Clear Information.',

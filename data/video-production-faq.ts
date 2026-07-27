@@ -349,6 +349,7 @@ export const videoProductionFaqs: VideoProductionFaq[] = [
       'Begin with the organization’s safety, privacy, operations, and compliance requirements. Identify restricted areas, confidential information, required credentials, personal protective equipment, infection-control rules, escorts, power limits, and times when filming will least affect operations.',
       'Use a technical walkthrough when possible and document what the crew may capture. The production team can design a smaller footprint, longer lenses, remote monitoring, or staged demonstrations when normal access is not practical. Qualified client representatives remain responsible for site-specific regulatory and safety decisions.',
     ],
+    video: mediaBarAnswersVideos.healthcareVideoPlanning,
     links: [{ label: 'Explore medical video production', href: '/video-production/medical' }],
   },
   {

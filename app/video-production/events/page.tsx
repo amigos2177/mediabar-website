@@ -44,13 +44,37 @@ const eventTypes = [
   },
 ]
 
+const coverageOptions = [
+  {
+    number: '01',
+    title: 'Highlights & Recap',
+    bestFor: 'Galas, launches, community events, and internal celebrations',
+    copy: 'Capture the atmosphere, priority moments, interviews, sponsor visibility, and details needed for a polished event recap and short social edits.',
+    outputs: ['Event recap', 'Social cutdowns', 'Interview moments'],
+  },
+  {
+    number: '02',
+    title: 'Stage & Session Capture',
+    bestFor: 'Keynotes, panels, conferences, training, and executive meetings',
+    copy: 'Record complete presentations with coordinated camera positions, clean speaker audio, presentation content, and audience context.',
+    outputs: ['Full sessions', 'Speaker clips', 'Captioned edits'],
+  },
+  {
+    number: '03',
+    title: 'Event Content System',
+    bestFor: 'Multi-day conferences, associations, and year-round campaigns',
+    copy: 'Plan stage coverage, interviews, recaps, sponsor content, social assets, and an on-demand library as one coordinated production.',
+    outputs: ['Recap + sessions', 'Content library', 'Campaign versions'],
+  },
+]
+
 const planItems = [
-  'Run of show and priority moments',
-  'Stage, speaker, and camera positions',
-  'Venue audio and backup recording',
-  'Screens, lighting, and presentation content',
-  'Audience, sponsor, and room coverage',
-  'Final edits, formats, and deadlines',
+  'Event date, venue, and load-in access',
+  'Run of show and speaker list',
+  'Priority moments and stakeholders',
+  'Venue AV contact and audio plan',
+  'Final deliverables and platforms',
+  'Review team and delivery deadlines',
 ]
 
 const deliverables = [
@@ -82,6 +106,53 @@ const process = [
     number: '04',
     title: 'Post & Delivery',
     copy: 'Edit, review, caption, version, and prepare the event content for every audience and destination.',
+  },
+]
+
+const recentEventWork = [
+  {
+    number: '01',
+    title: 'NAFA Conference Recap',
+    description: 'A fast-moving conference recap built from speakers, attendee moments, venue details, and the energy across the program.',
+    videoId: '946447253',
+    thumbnailUrl: 'https://i.vimeocdn.com/video/2092713706-9d1a0e7015828edf8e0a8d84c008d3e2ca70f844461c954092850ae214a9e460-d_1280?region=us',
+    href: '/work/watch/nafa-conference-recap',
+  },
+  {
+    number: '02',
+    title: 'Texas Recycles Day',
+    description: 'Community event coverage shaped into a clear story about participation, purpose, and the people behind the program.',
+    videoId: '1056208254',
+    thumbnailUrl: 'https://i.vimeocdn.com/video/2092713602-5bdcc2bf09ed9179aededd89f362c7aa2ef6831a5f69a79e33b078916ee6b2f2-d_1280?region=us',
+    href: '/work/watch/texas-recycles-day',
+  },
+]
+
+const relatedServices = [
+  {
+    title: 'Live Streaming',
+    href: '/video-production/live-streaming',
+    copy: 'Add live delivery, remote speakers, graphics, recording, and platform planning.',
+  },
+  {
+    title: 'Post Production',
+    href: '/video-production/post-production',
+    copy: 'Turn event footage into recaps, sessions, social clips, captions, and content libraries.',
+  },
+  {
+    title: 'Interviews',
+    href: '/video-production/interview',
+    copy: 'Capture speakers, attendees, sponsors, and leadership while everyone is together.',
+  },
+  {
+    title: 'Aerial Video',
+    href: '/video-production/aerial',
+    copy: 'Establish the venue and scale of an outdoor event with properly planned drone coverage.',
+  },
+  {
+    title: 'Event Photography',
+    href: '/photography',
+    copy: 'Coordinate still photography and video through one production team and shared schedule.',
   },
 ]
 
@@ -141,6 +212,18 @@ export default function EventsPage() {
         .evt-type h3{margin-top:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:31px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .evt-type p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
 
+        .evt-options{background:#101010}
+        .evt-option-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .evt-option{display:flex;min-height:440px;flex-direction:column;padding:34px;border:1px solid var(--line);background:#151515}
+        .evt-option-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:21px;letter-spacing:.08em}
+        .evt-option h3{margin-top:58px;font-family:'Bebas Neue',Impact,sans-serif;font-size:39px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
+        .evt-option-best{margin-top:15px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.1em;line-height:1.55;text-transform:uppercase}
+        .evt-option-copy{margin-top:18px;color:#929297;font-size:13px;line-height:1.7}
+        .evt-option-outputs{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:28px}
+        .evt-option-output{padding:8px 10px;border:1px solid var(--line);color:#c6c6c9;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+        .evt-options-note{margin-top:22px;color:#76767b;font-size:12px;line-height:1.65}
+        .evt-options-note a{color:#fff;border-bottom:1px solid var(--red)}
+
         .evt-plan{background:#101010}
         .evt-plan-grid{display:grid;grid-template-columns:1.08fr .92fr;min-height:730px;border:1px solid var(--line);background:#151515}
         .evt-plan-image{position:relative;min-height:620px;overflow:hidden}
@@ -162,6 +245,14 @@ export default function EventsPage() {
         .evt-inline-link{display:inline-flex;margin-top:29px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
         .evt-inline-link span{color:var(--red);margin-left:8px}
 
+        .evt-work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+        .evt-work-card{border:1px solid var(--line);background:#141414}
+        .evt-work-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#050505}
+        .evt-work-copy{padding:28px 29px 31px}
+        .evt-work-number{color:var(--red);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .evt-work-copy h3{margin-top:14px;font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
+        .evt-work-copy p{margin-top:14px;color:#85858a;font-size:13px;line-height:1.7}
+
         .evt-content{background:#101010}
         .evt-content-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:76px;align-items:stretch}
         .evt-content-image{position:relative;min-height:690px;border:1px solid var(--line);overflow:hidden}
@@ -181,6 +272,15 @@ export default function EventsPage() {
         .evt-process-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.08em}
         .evt-process-card h3{margin-top:96px;font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.04em;line-height:1;text-transform:uppercase}
         .evt-process-card p{margin-top:16px;color:#85858a;font-size:13px;line-height:1.7}
+
+        .evt-related{background:#0d0d0d}
+        .evt-related-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}
+        .evt-related-card{display:flex;min-height:260px;flex-direction:column;padding:28px 24px;background:#141414;transition:background .18s}
+        .evt-related-card:hover{background:#191919}
+        .evt-related-card h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
+        .evt-related-card p{margin-top:15px;color:#85858a;font-size:12px;line-height:1.7}
+        .evt-related-card span{margin-top:auto;padding-top:26px;color:#fff;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+        .evt-related-card span i{margin-left:6px;color:var(--red);font-style:normal}
 
         .evt-resources{background:#101010}
         .evt-resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -213,7 +313,9 @@ export default function EventsPage() {
         @media(max-width:1050px){
           .evt-plan-grid,.evt-film-grid,.evt-content-grid{grid-template-columns:1fr}
           .evt-content-grid{gap:42px}
+          .evt-option-grid{grid-template-columns:1fr}
           .evt-process-grid{grid-template-columns:repeat(2,1fr)}
+          .evt-related-grid{grid-template-columns:repeat(2,1fr)}
           .evt-content-image{min-height:570px}
         }
         @media(max-width:760px){
@@ -240,11 +342,14 @@ export default function EventsPage() {
           .evt-plan-copy,.evt-film-copy{padding:39px 25px}
           .evt-plan-list{grid-template-columns:1fr}
           .evt-film-media{min-height:360px}
+          .evt-work-grid{grid-template-columns:1fr}
           .evt-content-image{min-height:500px}
           .evt-deliverables{grid-template-columns:1fr}
           .evt-process-grid{grid-template-columns:1fr}
           .evt-process-card{min-height:270px;padding:27px 24px}
           .evt-process-card h3{margin-top:64px}
+          .evt-related-grid{grid-template-columns:1fr}
+          .evt-related-card{min-height:220px}
           .evt-resource-grid{grid-template-columns:1fr}
           .evt-resource{min-height:250px;padding:27px 24px}
           .evt-faq summary{font-size:14px}
@@ -324,6 +429,41 @@ export default function EventsPage() {
           </div>
         </section>
 
+        <section className="evt-section evt-options" id="coverage-options">
+          <div className="evt-container">
+            <div className="evt-section-head">
+              <div>
+                <p className="evt-eyebrow">Event coverage options</p>
+                <h2 className="evt-display evt-section-title">Choose the Outcome. <em>Then Build the Coverage.</em></h2>
+              </div>
+              <p className="evt-section-intro">
+                These are planning approaches, not fixed packages. We combine the right cameras,
+                audio, crew, and post-production around the business goal, program, venue, and
+                content your team needs after the event.
+              </p>
+            </div>
+            <div className="evt-option-grid">
+              {coverageOptions.map((option) => (
+                <article className="evt-option" key={option.title}>
+                  <span className="evt-option-number">{option.number}</span>
+                  <h3>{option.title}</h3>
+                  <p className="evt-option-best">Best for: {option.bestFor}</p>
+                  <p className="evt-option-copy">{option.copy}</p>
+                  <div className="evt-option-outputs" aria-label={`${option.title} potential deliverables`}>
+                    {option.outputs.map((output) => (
+                      <span className="evt-option-output" key={output}>{output}</span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p className="evt-options-note">
+              Need both recorded coverage and a live audience? Combine an event coverage plan with our{' '}
+              <Link href="/video-production/live-streaming">live streaming production</Link>.
+            </p>
+          </div>
+        </section>
+
         <section className="evt-section">
           <div className="evt-container">
             <div className="evt-section-head">
@@ -363,9 +503,10 @@ export default function EventsPage() {
                 <p className="evt-eyebrow">Coverage starts before doors open</p>
                 <h2 className="evt-display">Know the Moment. <em>Know Where to Be.</em></h2>
                 <p>
-                  A useful coverage plan connects the run of show to camera positions, audio sources,
-                  crew movement, presentation screens, and the final edits. That preparation helps
-                  the production stay present without becoming a distraction.
+                  Send the information below as early as possible. We use it to connect the run of
+                  show to camera positions, audio sources, crew movement, presentation screens,
+                  and the final edits. That preparation helps the production stay present without
+                  becoming a distraction.
                 </p>
                 <div className="evt-plan-list">
                   {planItems.map((item) => <div className="evt-plan-item" key={item}>{item}</div>)}
@@ -377,24 +518,36 @@ export default function EventsPage() {
 
         <section className="evt-section" id="event-film">
           <div className="evt-container">
-            <div className="evt-film-grid">
-              <div className="evt-film-media">
-                <VimeoPlayer
-                  videoId="946447253"
-                  title="NAFA conference day two recap"
-                  thumbnailUrl="https://i.vimeocdn.com/video/2092713706-9d1a0e7015828edf8e0a8d84c008d3e2ca70f844461c954092850ae214a9e460-d_1280?region=us"
-                />
+            <div className="evt-section-head">
+              <div>
+                <p className="evt-eyebrow">Recent event work</p>
+                <h2 className="evt-display evt-section-title">The Day Moves Fast. <em>The Story Still Lands.</em></h2>
               </div>
-              <div className="evt-film-copy">
-                <p className="evt-eyebrow">Watch an event recap</p>
-                <h2 className="evt-display">The Day Moves Fast. <em>The Story Should Still Land.</em></h2>
-                <p>
-                  A recap film condenses the speakers, atmosphere, audience, details, and momentum
-                  of a live program into a piece that can extend the experience after the venue clears.
-                </p>
-                <Link href="/work" className="evt-inline-link">Explore more event work <span>→</span></Link>
-              </div>
+              <p className="evt-section-intro">
+                See how conference and community coverage can preserve the important moments while
+                creating useful content for people who attended and audiences who did not.
+              </p>
             </div>
+            <div className="evt-work-grid">
+              {recentEventWork.map((project) => (
+                <article className="evt-work-card" key={project.videoId}>
+                  <div className="evt-work-media">
+                    <VimeoPlayer
+                      videoId={project.videoId}
+                      title={`${project.title} by Media Bar Productions`}
+                      thumbnailUrl={project.thumbnailUrl}
+                    />
+                  </div>
+                  <div className="evt-work-copy">
+                    <span className="evt-work-number">Event film {project.number}</span>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <Link href={project.href} className="evt-inline-link">Watch and learn more <span>→</span></Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <Link href="/work" className="evt-inline-link">Explore the full portfolio <span>→</span></Link>
           </div>
         </section>
 
@@ -447,6 +600,30 @@ export default function EventsPage() {
                   <h3>{item.title}</h3>
                   <p>{item.copy}</p>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="evt-section evt-related">
+          <div className="evt-container">
+            <div className="evt-section-head">
+              <div>
+                <p className="evt-eyebrow">Build the complete event team</p>
+                <h2 className="evt-display evt-section-title">Related Services. <em>One Coordinated Plan.</em></h2>
+              </div>
+              <p className="evt-section-intro">
+                Event coverage often works best when live delivery, interviews, still photography,
+                aerial coverage, and post-production are planned together instead of added after the schedule is set.
+              </p>
+            </div>
+            <div className="evt-related-grid">
+              {relatedServices.map((service) => (
+                <Link href={service.href} className="evt-related-card" key={service.href}>
+                  <h3>{service.title}</h3>
+                  <p>{service.copy}</p>
+                  <span>Explore service <i>→</i></span>
+                </Link>
               ))}
             </div>
           </div>

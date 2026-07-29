@@ -29,4 +29,19 @@ export const commercialVideoFaqs = [
     answer:
       'Media Bar focuses on creative production and final delivery rather than media buying. We prepare spots to the required technical specifications and can coordinate delivery requirements with the client’s media agency, broadcaster, or platform team.',
   },
+  {
+    question: 'Does Media Bar offer commercial production packages?',
+    answer:
+      'We do not use fixed commercial packages or publish price ranges. Every project is scoped around its business goal, creative concept, shoot requirements, talent and usage rights, post-production, deliverables, schedule, and placement plan. Our project planner gives us the information needed to prepare a tailored estimate.',
+  },
+  {
+    question: 'What information is needed to quote a commercial?',
+    answer:
+      'The most useful starting details are the business goal, target audience, core message, intended channels, desired launch date, creative references, locations, talent needs, required spot lengths, platform versions, and approval team. If some details are still open, we can identify the decisions that need to be made during discovery.',
+  },
+  {
+    question: 'Can Media Bar work with our advertising or media agency?',
+    answer:
+      'Yes. We can work directly with an internal marketing team or coordinate with an advertising, creative, or media agency. We align the production plan with the approved concept, campaign schedule, placement specifications, review process, and delivery requirements.',
+  },
 ]

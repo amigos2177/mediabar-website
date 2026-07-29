@@ -8,9 +8,9 @@ import {
 import { commercialVideoFaqs } from './content'
 
 export const metadata = buildMetadata({
-  title: 'Commercial Video Production in San Antonio | Media Bar',
+  title: 'Commercial Video Production San Antonio | Media Bar',
   description:
-    'Commercial production for broadcast, connected TV, digital, paid social, product launches, and multi-format campaigns across Texas.',
+    'San Antonio commercial video production for broadcast, connected TV, paid social, digital campaigns, product launches, and channel-ready versions.',
   path: '/video-production/commercials',
   ogImage: '/images/rbfcu-bts-porch.jpg',
 })

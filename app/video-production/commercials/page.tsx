@@ -54,6 +54,60 @@ const deliverables = [
   'Digital channel versions',
 ]
 
+const approaches = [
+  {
+    number: '01',
+    title: 'One Focused Spot',
+    copy: 'A single commercial built around one audience, one business objective, and one clear call to action.',
+    bestFor: 'A defined offer, announcement, initiative, or flagship brand message.',
+  },
+  {
+    number: '02',
+    title: 'Campaign Family',
+    copy: 'A shared creative idea developed into multiple spots for different products, messages, or audiences.',
+    bestFor: 'Organizations that need consistency across a larger campaign without repeating the same story.',
+  },
+  {
+    number: '03',
+    title: 'Multi-Channel Launch',
+    copy: 'A master concept planned from the beginning for television, connected TV, paid social, pre-roll, and web.',
+    bestFor: 'Campaigns that need coordinated versions, aspect ratios, captions, and cut lengths.',
+  },
+]
+
+const quoteDrivers = [
+  'Creative concept and scripting',
+  'Shoot complexity and production days',
+  'Locations, permits, and logistics',
+  'Talent, licensing, and usage rights',
+  'Editing, sound, color, and graphics',
+  'Deliverables and platform versions',
+  'Where and how the commercial will run',
+]
+
+const relatedServices = [
+  {
+    title: 'Corporate Video',
+    copy: 'Build the broader brand story behind the campaign.',
+    href: '/video-production/corporate',
+  },
+  {
+    title: 'Motion Graphics',
+    copy: 'Add animation, product explanation, and branded visual systems.',
+    href: '/video-production/motion-graphics',
+  },
+  {
+    title: 'Post-Production',
+    copy: 'Edit, finish, caption, version, and prepare campaign deliverables.',
+    href: '/video-production/post-production',
+  },
+  {
+    title: 'Our Work',
+    copy: 'See commercial, corporate, and campaign work produced by Media Bar.',
+    href: '/work',
+  },
+]
+
 const process = [
   {
     number: '01',
@@ -126,6 +180,18 @@ export default function CommercialsPage() {
         .com-format h3{margin-top:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:31px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .com-format p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
 
+        .com-approach-note{display:flex;align-items:flex-start;justify-content:space-between;gap:42px;margin-bottom:34px;padding:24px 27px;border:1px solid var(--line);background:#111}
+        .com-approach-note strong{font-family:'Bebas Neue',Impact,sans-serif;font-size:23px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+        .com-approach-note p{max-width:690px;color:#8d8d92;font-size:13px;line-height:1.7}
+        .com-approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+        .com-approach{display:flex;min-height:360px;flex-direction:column;padding:34px;background:var(--panel)}
+        .com-approach-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.08em}
+        .com-approach h3{margin-top:64px;font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
+        .com-approach>p{margin-top:17px;color:#8b8b90;font-size:13px;line-height:1.7}
+        .com-approach-best{margin-top:auto;padding-top:25px;border-top:1px solid var(--line)}
+        .com-approach-best span{display:block;margin-bottom:8px;color:var(--gold);font-size:8px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+        .com-approach-best p{color:#aaa;font-size:11px;line-height:1.6}
+
         .com-case{background:#101010}
         .com-case-grid{display:grid;grid-template-columns:1.06fr .94fr;min-height:710px;border:1px solid var(--line);background:#151515}
         .com-case-image{position:relative;min-height:600px;overflow:hidden}
@@ -174,6 +240,19 @@ export default function CommercialsPage() {
         .com-process-item h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:21px;font-weight:400;letter-spacing:.04em}
         .com-process-item p{color:#7f7f84;font-size:11px;line-height:1.6}
 
+        .com-scope{background:#101010}
+        .com-scope-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:1px;border:1px solid var(--line);background:var(--line)}
+        .com-scope-copy,.com-scope-drivers{background:#141414;padding:58px}
+        .com-scope-copy h2{font-size:clamp(52px,5.5vw,78px);margin:16px 0 24px}
+        .com-scope-copy h2 em{display:block;color:var(--gold);font-size:.65em;margin-top:8px}
+        .com-scope-copy>p{color:var(--muted);font-size:14px;line-height:1.75}
+        .com-scope-note{margin-top:31px;padding:22px;border-left:3px solid var(--red);background:#101010;color:#aaa;font-size:12px;line-height:1.7}
+        .com-scope-note strong{display:block;margin-bottom:7px;color:#fff;font-size:9px;letter-spacing:.15em;text-transform:uppercase}
+        .com-scope-drivers h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:32px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+        .com-driver-list{margin-top:25px;border-top:1px solid var(--line)}
+        .com-driver{display:flex;align-items:center;min-height:58px;border-bottom:1px solid var(--line);color:#b7b7ba;font-size:12px;font-weight:600;letter-spacing:.04em}
+        .com-driver:before{content:'';width:7px;height:7px;margin-right:15px;background:var(--red)}
+
         .com-faq-wrap{max-width:1000px}
         .com-faq-head{text-align:center;margin-bottom:44px}
         .com-faq-head h2{font-size:clamp(52px,6vw,80px);margin-top:13px}
@@ -186,6 +265,13 @@ export default function CommercialsPage() {
         .com-faq details[open] summary:after{content:'-'}
         .com-faq details p{max-width:800px;padding:0 0 26px;color:#8f8f94;font-size:14px;line-height:1.75}
 
+        .com-related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}
+        .com-related-card{min-height:230px;display:flex;flex-direction:column;padding:28px;background:#141414;transition:background .18s}
+        .com-related-card:hover{background:#1a1a1a}
+        .com-related-card h3{margin-top:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.035em;text-transform:uppercase}
+        .com-related-card p{margin-top:12px;color:#85858a;font-size:12px;line-height:1.65}
+        .com-related-card span{margin-top:22px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
         .com-cta{padding:118px 0;text-align:center;background:radial-gradient(circle at 50% 110%,rgba(204,0,0,.18),transparent 45%),#0c0c0c}
         .com-cta h2{font-size:clamp(56px,7vw,96px);margin-top:17px}
         .com-cta h2 em{color:var(--gold)}
@@ -196,6 +282,8 @@ export default function CommercialsPage() {
           .com-case-grid,.com-spot-grid,.com-assets-grid,.com-process-grid{grid-template-columns:1fr}
           .com-assets-grid{gap:42px}
           .com-assets-image{min-height:570px}
+          .com-scope-grid{grid-template-columns:1fr}
+          .com-related-grid{grid-template-columns:repeat(2,1fr)}
         }
         @media(max-width:760px){
           .com-container{width:min(100% - 40px,1240px)}
@@ -216,6 +304,10 @@ export default function CommercialsPage() {
           .com-section-head{grid-template-columns:1fr;gap:24px}
           .com-format-grid{grid-template-columns:1fr}
           .com-format{min-height:250px;padding:26px 23px}
+          .com-approach-note{flex-direction:column;gap:12px}
+          .com-approach-grid{grid-template-columns:1fr}
+          .com-approach{min-height:310px;padding:27px 23px}
+          .com-approach h3{margin-top:42px}
           .com-case-image{min-height:410px}
           .com-case-copy,.com-spot-copy,.com-process-copy{padding:39px 25px}
           .com-case-facts{grid-template-columns:1fr}
@@ -224,7 +316,10 @@ export default function CommercialsPage() {
           .com-deliverables{grid-template-columns:1fr}
           .com-process-image{min-height:410px}
           .com-process-item{grid-template-columns:33px 108px 1fr;gap:10px}
+          .com-scope-copy,.com-scope-drivers{padding:39px 25px}
           .com-faq summary{font-size:14px}
+          .com-related-grid{grid-template-columns:1fr}
+          .com-related-card{min-height:210px}
           .com-cta{padding:84px 0}
           .com-button{width:100%}
         }
@@ -322,6 +417,41 @@ export default function CommercialsPage() {
           placement="commercials"
         />
 
+        <section className="com-section">
+          <div className="com-container">
+            <div className="com-section-head">
+              <div>
+                <p className="com-eyebrow">Choose the right production approach</p>
+                <h2 className="com-display com-section-title">Start With the Goal. <em>Then Build the Scope.</em></h2>
+              </div>
+              <p className="com-section-intro">
+                The right approach depends on what the commercial must accomplish, how many
+                audiences it must reach, and where the finished creative will run.
+              </p>
+            </div>
+            <div className="com-approach-note">
+              <strong>Planning approaches, not fixed packages</strong>
+              <p>
+                Every Media Bar commercial is quoted around its specific creative and production
+                needs. These approaches help organize the conversation before we build a tailored scope.
+              </p>
+            </div>
+            <div className="com-approach-grid">
+              {approaches.map((item) => (
+                <article className="com-approach" key={item.title}>
+                  <span className="com-approach-number">{item.number}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                  <div className="com-approach-best">
+                    <span>Best fit</span>
+                    <p>{item.bestFor}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="com-section com-case">
           <div className="com-container">
             <div className="com-case-grid">
@@ -401,6 +531,37 @@ export default function CommercialsPage() {
           </div>
         </section>
 
+        <section className="com-section com-scope">
+          <div className="com-container">
+            <div className="com-scope-grid">
+              <div className="com-scope-copy">
+                <p className="com-eyebrow">Custom commercial estimates</p>
+                <h2 className="com-display">What Shapes <em>Your Production Scope.</em></h2>
+                <p>
+                  There is no one-size-fits-all commercial quote because every production is built
+                  around a different business goal, creative idea, audience, schedule, and delivery plan.
+                  We define those decisions first, then prepare a tailored estimate.
+                </p>
+                <div className="com-scope-note">
+                  <strong>Production and media placement are different</strong>
+                  Media Bar scopes the creative production and prepares the finished spots for their
+                  required outlets. Media buying, airtime, and platform ad spend are separate and are
+                  typically managed by the client or its media partner.
+                </div>
+              </div>
+              <div className="com-scope-drivers">
+                <h3>Main quote drivers</h3>
+                <div className="com-driver-list">
+                  {quoteDrivers.map((driver) => <div className="com-driver" key={driver}>{driver}</div>)}
+                </div>
+                <div className="com-actions">
+                  <Link href="/project-planner" className="com-button com-button-primary">Build a Tailored Estimate</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="com-section">
           <div className="com-container">
             <div className="com-process-grid">
@@ -429,6 +590,30 @@ export default function CommercialsPage() {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="com-section">
+          <div className="com-container">
+            <div className="com-section-head">
+              <div>
+                <p className="com-eyebrow">Keep planning</p>
+                <h2 className="com-display com-section-title">Build the Rest of <em>Your Campaign.</em></h2>
+              </div>
+              <p className="com-section-intro">
+                Explore the services and proof that help turn a commercial concept into a complete,
+                channel-ready campaign.
+              </p>
+            </div>
+            <div className="com-related-grid">
+              {relatedServices.map((service) => (
+                <Link href={service.href} className="com-related-card" key={service.title}>
+                  <h3>{service.title}</h3>
+                  <p>{service.copy}</p>
+                  <span>Explore service →</span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

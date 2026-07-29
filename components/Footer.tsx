@@ -66,7 +66,7 @@ export default function Footer() {
           {/* Services column */}
           <div>
             <p style={colHeading}>Services</p>
-            <Link href="/video-production/corporate" className="mbp-footer-link" style={footerLink}>Corporate</Link>
+            <Link href="/video-production/corporate" className="mbp-footer-link" style={footerLink}>Corporate Video Production</Link>
             <Link href="/video-production/commercials" className="mbp-footer-link" style={footerLink}>Commercials</Link>
             <Link href="/video-production/events" className="mbp-footer-link" style={footerLink}>Events</Link>
             <Link href="/video-production/interview" className="mbp-footer-link" style={footerLink}>Interview</Link>

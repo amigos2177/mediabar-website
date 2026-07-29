@@ -1,9 +1,9 @@
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'San Antonio Video Production Company | Media Bar',
+  title: 'Video Production San Antonio | Media Bar Productions',
   description:
-    'Award-winning San Antonio video production company creating corporate films, commercials, event coverage, and branded content from strategy through delivery.',
+    'Media Bar Productions is an award-winning video production company in San Antonio creating commercials, branded films, events, interviews, and healthcare content.',
   path: '/',
 })
 

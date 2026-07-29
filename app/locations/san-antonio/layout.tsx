@@ -3,9 +3,9 @@ import { BreadcrumbJsonLd, FAQPageJsonLd, ServiceJsonLd } from '@/components/Jso
 import { sanAntonioFaqs } from './content'
 
 export const metadata = buildMetadata({
-  title: 'Video Production Company in San Antonio, TX',
+  title: 'San Antonio Video Crew & Studio | Media Bar',
   description:
-    'Work with a San Antonio video production company offering local crew, studio support, filming, and post-production for organizations across South Texas.',
+    'Explore Media Bar’s San Antonio video crew, production studio, location support, and local filming resources for projects across South Texas.',
   path: '/locations/san-antonio',
   ogImage: '/images/clients-bts-4.jpg',
 })
@@ -18,8 +18,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         { name: 'San Antonio', url: '/locations/san-antonio' },
       ]} />
       <ServiceJsonLd
-        name="Video Production Company in San Antonio, Texas"
-        description="Full-service corporate, commercial, event, healthcare, studio, and post-production video services from a San Antonio production company."
+        name="San Antonio Video Crew and Studio Support"
+        description="Local video crew, production studio, location support, filming, and post-production resources for projects in San Antonio and across South Texas."
         url="/locations/san-antonio"
         image="https://www.mediabarproductions.com/images/clients-bts-4.jpg"
       />

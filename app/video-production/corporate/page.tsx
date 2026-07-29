@@ -249,10 +249,11 @@ export default function CorporatePage() {
             <div className="corp-container">
               <div className="corp-hero-copy">
                 <p className="corp-eyebrow">Corporate video production in San Antonio</p>
-                <h1 className="corp-display">Turn Business Goals <em>Into Stories People Remember.</em></h1>
+                <h1 className="corp-display">Corporate Video Production <em>Built for San Antonio Business.</em></h1>
                 <p className="corp-hero-deck">
-                  Media Bar helps San Antonio companies turn leadership, expertise, customer experience,
-                  and complex ideas into clear corporate films built for the people who need to act.
+                  Media Bar is a San Antonio corporate video production company helping organizations
+                  turn leadership, expertise, customer experience, and complex ideas into clear films
+                  built for the people who need to act.
                 </p>
                 <div className="corp-actions">
                   <Link href="/project-planner" className="corp-button corp-button-primary">Plan a Corporate Project</Link>

@@ -13,7 +13,7 @@ const clients = [
 const services = [
   {
     number: '01',
-    title: 'Corporate Video',
+    title: 'Corporate Video Production',
     description: 'Brand films, executive interviews, recruiting, training, and internal communications for San Antonio organizations.',
     href: '/video-production/corporate',
   },
@@ -206,10 +206,10 @@ export default function SanAntonioPage() {
           <div className="sa-hero-scrim" />
           <div className="sa-container sa-hero-inner">
             <div className="sa-hero-copy">
-              <p className="sa-eyebrow">A local video production company since 2011</p>
+              <p className="sa-eyebrow">San Antonio production resources since 2011</p>
               <h1 className="sa-display">
-                Video Production Company
-                <em>Built in San Antonio.</em>
+                Local Crew &amp; Studio Support
+                <em>For San Antonio Productions.</em>
               </h1>
               <p className="sa-hero-deck">
                 From first idea to final delivery, Media Bar gives San Antonio organizations a local

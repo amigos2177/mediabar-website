@@ -3,12 +3,12 @@ title: "Healthcare Video Planning Guide for San Antonio"
 seoTitle: "Healthcare Video Production Planning Guide"
 slug: "healthcare-video-production-san-antonio"
 date: "2026-06-14"
-updated: "2026-07-18"
+updated: "2026-07-29"
 excerpt: "A practical San Antonio healthcare video planning guide covering patient privacy, clinical review, formats, production logistics, and provider-led content."
 featuredImage: /images/blog/healthcare-video-production-san-antonio.png
 faqs:
-  - question: "Is healthcare video private and patient-safe?"
-    answer: "Yes. We plan every shoot around patient privacy - securing spaces, getting clear consent from anyone on camera, and never capturing identifiable patients without permission."
+  - question: "How should privacy be planned for a healthcare video?"
+    answer: "The healthcare organization should define its privacy, consent, legal, clinical, and regulatory requirements. The production team can then plan approved spaces, participants, visuals, and review stages around those requirements."
   - question: "Can we film in active patient-care areas?"
     answer: "Yes, with proper planning. We coordinate with your clinical team to schedule shoots during lower-traffic periods and ensure every person on camera has provided written consent. We never compromise patient care for a shot."
   - question: "Will our doctors need to be good on camera?"
@@ -20,7 +20,7 @@ faqs:
   - question: "How long do healthcare videos need to be?"
     answer: "It depends on the format. Physician introductions work best at 60 to 90 seconds. Patient testimonials land between two and four minutes. Training videos can run longer, but we build them in modules so viewers can skip to what they need."
   - question: "How much does medical video production cost?"
-    answer: "It ranges with scope - a half-day batch of Q&A clips at the lighter end, a multi-location production with testimonials and a brand film higher. Contact us for a tailored quote."
+    answer: "Every healthcare video is quoted around its specific audience, format, access requirements, participants, filming schedule, review process, and deliverables. Use the project planner for a tailored production estimate."
 ---
 
 This is a planning guide for healthcare communications and marketing teams. If you are ready to hire a production partner, explore our [medical and healthcare video production services](/video-production/medical). For a focused approach to short provider answers, use our [provider Q&A video guide](/blog/healthcare-provider-video).
@@ -179,8 +179,8 @@ Emmy and Telly recognition, experience on Texas sets since 2011, and a calm hand
 
 ## Frequently Asked Questions
 
-**Is healthcare video private and patient-safe?**
-Yes. We plan every shoot around patient privacy - securing spaces, getting clear consent from anyone on camera, and never capturing identifiable patients without permission.
+**How should privacy be planned for a healthcare video?**
+The healthcare organization should define its privacy, consent, legal, clinical, and regulatory requirements. The production team can then plan approved spaces, participants, visuals, and review stages around those requirements.
 
 **Can we film in active patient-care areas?**
 Yes, with proper planning. We coordinate with your clinical team to schedule shoots during lower-traffic periods and ensure every person on camera has provided written consent. We never compromise patient care for a shot.
@@ -198,8 +198,16 @@ You don't need to hire an outside advisor, but we strongly recommend having a cl
 It depends on the format. Physician introductions work best at 60 to 90 seconds. Patient testimonials land between two and four minutes. Training videos can run longer, but we build them in modules so viewers can skip to what they need.
 
 **How much does medical video production cost?**
-It ranges with scope - a half-day batch of Q&A clips at the lighter end, a multi-location production with testimonials and a brand film higher. Contact us for a tailored quote.
+Every healthcare video is quoted around its specific audience, format, access requirements, participants, filming schedule, review process, and deliverables. Use the [project planner](/project-planner) for a tailored production estimate.
+
+## Continue Planning
+
+- [Watch the healthcare filming answer](/resources/media-bar-answers/healthcare-video-planning)
+- [Review the controlled-location production FAQ](/resources/video-production-faq#how-to-plan-video-in-medical-industrial-or-controlled-locations)
+- [Watch a finished healthcare patient story](/work/watch/wound-local-patient-story)
+- [Explore medical and healthcare video production](/video-production/medical)
+- [Build a tailored project scope](/project-planner)
 
 ## Let's Build Trust Before the First Visit
 
-Your future patients are searching right now, deciding who feels safe. Give them a face, a voice, and a real answer. [Reach out to Media Bar Productions](/contact) and we'll plan healthcare video that builds trust, answers the questions that matter, and brings more patients through your doors - produced in San Antonio, for practices across Texas.
+Your future patients are searching right now, deciding who feels credible and approachable. Give them a face, a voice, and a useful answer. [Reach out to Media Bar Productions](/contact) and we will help plan healthcare video that supports clear communication and patient trust, produced in San Antonio for practices across Texas.

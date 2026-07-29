@@ -3,7 +3,7 @@ title: "Healthcare Provider Q&A Video"
 seoTitle: "Healthcare Provider Q&A Video Guide"
 slug: "healthcare-provider-video"
 date: "2026-06-17"
-updated: "2026-07-18"
+updated: "2026-07-29"
 excerpt: "A practical guide to planning short healthcare provider Q&A videos, batching useful patient answers, and building a focused content library."
 featuredImage: /images/blog/healthcare-provider-video.png
 faqs:
@@ -11,10 +11,10 @@ faqs:
     answer: "A provider Q&A video is a short clip - usually 30 to 60 seconds - where a physician, dentist, therapist, or nurse practitioner answers one common patient question on camera. It builds trust and gives prospective patients a real sense of the provider before they ever book."
   - question: "How long should a provider Q&A video be?"
     answer: "Aim for 30 to 60 seconds, one question per clip, shot vertical and subtitled for sound-off viewing. Short, single-topic answers are what patients actually watch and share, and they are easy to repurpose across your site, social feeds, and waiting room."
-  - question: "Are provider Q&A videos HIPAA-compliant?"
-    answer: "Yes, when produced correctly. A provider answering a general patient question contains no protected health information. Any patient who appears on camera signs a release first, and we plan each shoot with your team so nothing protected ends up on screen."
+  - question: "How should provider Q&A videos handle patient privacy?"
+    answer: "The healthcare organization should define its privacy, legal, clinical, consent, and regulatory requirements. A provider can answer general educational questions without discussing an identifiable patient, while the production plan controls approved people, spaces, screens, documents, and review stages."
   - question: "How much does a provider Q&A video shoot cost?"
-    answer: "Cost depends on scope and how many clips you need, but a batched Q&A library shoot - one provider, one half-day, many clips - is one of the most cost-effective formats in healthcare video, because a single production day stocks months of content."
+    answer: "Each provider Q&A project is quoted around the number of providers and topics, filming location, production schedule, review process, captions, and final versions. Use the project planner for a tailored production estimate."
 ---
 
 This guide focuses specifically on short provider Q&A content. For broader production planning, start with our [healthcare video planning guide](/blog/healthcare-video-production-san-antonio). If you are ready to scope a shoot, explore our [medical and healthcare video production services](/video-production/medical).
@@ -122,11 +122,20 @@ It's a short clip - usually 30 to 60 seconds - where a physician, dentist, thera
 **How long should a provider Q&A video be?**
 Aim for 30 to 60 seconds, one question per clip, shot vertical and subtitled for sound-off viewing. Short, single-topic answers are what patients actually watch and share, and they're easy to repurpose across your site, social, and waiting room.
 
-**Are provider Q&A videos HIPAA-compliant?**
-Yes, when produced correctly. A provider answering a general patient question contains no protected health information. Any patient who appears on camera signs a release first, and we plan each shoot with your team so nothing protected ends up on screen.
+**How should provider Q&A videos handle patient privacy?**
+The healthcare organization should define its privacy, legal, clinical, consent, and regulatory requirements. A provider can answer general educational questions without discussing an identifiable patient, while the production plan controls approved people, spaces, screens, documents, and review stages.
 
 **How much does a provider Q&A video shoot cost?**
-It depends on scope and how many clips you need, but a batched Q&A library shoot - one provider, one half-day, many clips - is one of the most cost-effective formats in healthcare video, because a single production day stocks months of content.
+Each provider Q&A project is quoted around the number of providers and topics, filming location, production schedule, review process, captions, and final versions. Use the [project planner](/project-planner) for a tailored production estimate.
+
+## Continue Planning
+
+- [Watch the healthcare filming answer](/resources/media-bar-answers/healthcare-video-planning)
+- [Read the healthcare video planning guide](/blog/healthcare-video-production-san-antonio)
+- [Review the controlled-location production FAQ](/resources/video-production-faq#how-to-plan-video-in-medical-industrial-or-controlled-locations)
+- [Watch a finished healthcare patient story](/work/watch/wound-local-patient-story)
+- [Explore medical and healthcare video production](/video-production/medical)
+- [Build a tailored project scope](/project-planner)
 
 ## Ready to put your providers on camera?
 

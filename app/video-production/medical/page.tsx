@@ -83,8 +83,8 @@ export default function MedicalVideoPage() {
           title: medicalVideo.title,
           thumbnailUrl: medicalVideo.thumbnail,
         },
-        linkLabel: 'Explore More Work',
-        linkHref: '/work',
+        linkLabel: 'Watch the Full Patient Story',
+        linkHref: '/work/watch/wound-local-patient-story',
       }}
       deliverables={{
         eyebrow: 'Communication System',
@@ -139,6 +139,21 @@ export default function MedicalVideoPage() {
             label: 'Interview Production',
             href: '/video-production/interview',
             description: 'Create a comfortable interview environment for credible, natural stories.',
+          },
+          {
+            label: 'Healthcare Filming Answer',
+            href: '/resources/media-bar-answers/healthcare-video-planning',
+            description: 'Watch and read the practical answer about privacy, access, operations, and approvals.',
+          },
+          {
+            label: 'Controlled-Location FAQ',
+            href: '/resources/video-production-faq#how-to-plan-video-in-medical-industrial-or-controlled-locations',
+            description: 'Review the production questions to resolve before filming in a clinical environment.',
+          },
+          {
+            label: 'Wound Local Patient Story',
+            href: '/work/watch/wound-local-patient-story',
+            description: 'See a finished healthcare patient story produced by Media Bar.',
           },
         ],
       }}

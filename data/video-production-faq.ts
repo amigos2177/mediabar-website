@@ -122,6 +122,20 @@ export const videoProductionFaqs: VideoProductionFaq[] = [
   },
   {
     category: 'Budget and Scope',
+    slug: 'how-much-should-local-tv-commercial-cost-in-texas',
+    question: 'How much should a local TV commercial cost in Texas?',
+    answer: [
+      'There is no one-size-fits-all price because a useful commercial estimate starts with the business goal and the approved creative concept. A straightforward spot filmed at one location is a different production from a scripted campaign with multiple scenes, actors, locations, and shoot days.',
+      'The scope can include crew, equipment, location access, talent and usage rights, editing, music, sound mixing, color, graphics, captions, approvals, revision rounds, and versions for broadcast, connected TV, streaming, and social media. Production creates the commercial, while media buying purchases and schedules the advertising placement. Those are separate scopes even when they are planned together.',
+    ],
+    video: mediaBarAnswersVideos.localCommercialCost,
+    links: [
+      { label: 'Explore commercial video production', href: '/video-production/commercials' },
+      { label: 'Plan a commercial project', href: '/project-planner' },
+    ],
+  },
+  {
+    category: 'Budget and Scope',
     slug: 'what-increases-video-production-cost',
     question: 'What usually increases video production cost?',
     answer: [

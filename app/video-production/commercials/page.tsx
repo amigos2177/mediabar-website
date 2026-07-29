@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import VimeoPlayer from '@/components/VimeoPlayer'
 import { commercialVideoFaqs } from './content'
 
@@ -312,6 +313,14 @@ export default function CommercialsPage() {
             </div>
           </div>
         </section>
+
+        <MediaBarAnswersFeature
+          title="Local TV commercials."
+          emphasis="What shapes the cost?"
+          description="Ruben explains how the concept, production plan, talent rights, post-production, deliverables, and media placement shape a responsible commercial estimate."
+          slugs={['local-tv-commercial-cost-texas']}
+          placement="commercials"
+        />
 
         <section className="com-section com-case">
           <div className="com-container">

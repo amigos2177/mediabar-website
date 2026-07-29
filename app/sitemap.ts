@@ -10,6 +10,7 @@ const BASE = 'https://www.mediabarproductions.com'
 export default function sitemap(): MetadataRoute.Sitemap {
   const SITE_UPDATED = new Date('2026-07-19')
   const SEARCH_SPRINT_UPDATED = new Date('2026-07-23')
+  const MEDIA_BAR_ANSWERS_UPDATED = new Date('2026-07-28')
 
   const staticPages: MetadataRoute.Sitemap = [
     // Homepage
@@ -27,8 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/careers`, lastModified: SITE_UPDATED },
     { url: `${BASE}/project-planner`, lastModified: SITE_UPDATED },
     { url: `${BASE}/faq`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/resources/video-production-faq`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/resources/media-bar-answers`, lastModified: SEARCH_SPRINT_UPDATED },
+    { url: `${BASE}/resources/video-production-faq`, lastModified: MEDIA_BAR_ANSWERS_UPDATED },
+    { url: `${BASE}/resources/media-bar-answers`, lastModified: MEDIA_BAR_ANSWERS_UPDATED },
     { url: `${BASE}/clients`, lastModified: SITE_UPDATED },
     { url: `${BASE}/blog`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/pricing`, lastModified: SITE_UPDATED },
@@ -37,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Service pages
     { url: `${BASE}/video-production/corporate`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/commercials`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/video-production/commercials`, lastModified: MEDIA_BAR_ANSWERS_UPDATED },
     { url: `${BASE}/video-production/events`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/video-production/interview`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production/medical`, lastModified: SITE_UPDATED },

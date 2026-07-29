@@ -31,7 +31,7 @@ export default function VideoProductionFaqLayout({ children }: { children: React
         description={description}
         url={path}
         datePublished="2026-07-20"
-        dateModified="2026-07-23"
+        dateModified="2026-07-28"
         image="/images/media-library/media-bar-bts-33.jpg"
       />
       {featuredVideos.map((video) => (

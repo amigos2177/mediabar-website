@@ -30,6 +30,17 @@ export type MediaBarAnswersEpisode = {
 }
 
 export const mediaBarAnswersVideos = {
+  localCommercialCost: {
+    youtubeId: '2NlcT2I0kFc',
+    title: 'How Much Should a Local TV Commercial Cost in Texas?',
+    description:
+      'A local television commercial should be priced around its business goal, creative concept, production scope, usage rights, post-production, deliverables, and placement plan.',
+    uploadDate: '2026-07-28T22:58:24-07:00',
+    duration: 'PT1M16S',
+    thumbnailPath: '/images/media-bar-answers/local-tv-commercial-cost-texas.png',
+    thumbnailUrl:
+      'https://www.mediabarproductions.com/images/media-bar-answers/local-tv-commercial-cost-texas.png',
+  },
   healthcareVideoPlanning: {
     youtubeId: 'ixXpNKURzGk',
     title: 'What Should You Plan Before Filming a Healthcare Video?',
@@ -292,6 +303,46 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
       },
     ],
     video: mediaBarAnswersVideos.healthcareVideoPlanning,
+  },
+  {
+    episode: '06',
+    slug: 'local-tv-commercial-cost-texas',
+    category: 'Commercials',
+    shortTitle: 'Local TV commercial cost in Texas',
+    directAnswer:
+      'There is no one-size-fits-all local television commercial price. A useful estimate connects the business goal to the concept, production complexity, talent and usage rights, post-production, required platform versions, and advertising plan.',
+    takeaways: [
+      'A simple one-location concept and a scripted multi-scene campaign require different production scopes.',
+      'Talent usage rights, post-production, approvals, and platform versions affect the estimate.',
+      'Commercial production and media buying are separate scopes even when they are planned together.',
+    ],
+    transcript: [
+      "Hi, I am Ruben Garcia's digital avatar. The guidance in this video comes directly from Media Bar Productions.",
+      'How much should a local television commercial cost in Texas?',
+      'There is no one-size-fits-all price because every commercial should be scoped around the business goal. A straightforward concept with one location is a different production from a scripted campaign with multiple scenes, actors, and shoot days.',
+      'The quote is shaped by the creative concept, shoot complexity, crew and equipment, location access, talent, and the usage rights required for where and how long the commercial will run.',
+      'Post-production matters too. That can include editing, music, sound mixing, color, graphics, captions, approvals, and revision rounds.',
+      'We also plan for every deliverable you need, including broadcast masters, connected TV, streaming, social media, and other platform versions.',
+      'One important distinction: production creates the commercial. Media buying purchases and schedules the advertising placement. They are separate scopes even when they are planned together.',
+      'If you are planning a commercial, share your goals, locations, talent needs, deliverables, and placement plan in the Media Bar project planner. We will use that scope to prepare a tailored estimate for your project.',
+    ],
+    faqQuestion: 'How much should a local TV commercial cost in Texas?',
+    faqHref: '/resources/video-production-faq#how-much-should-local-tv-commercial-cost-in-texas',
+    serviceLink: {
+      label: 'Explore commercial video production',
+      href: '/video-production/commercials',
+    },
+    relatedLinks: [
+      {
+        label: 'Review the RBFCU commercial campaign case study',
+        href: '/work/rbfcu-go-beyond-banking',
+      },
+      {
+        label: 'Plan a commercial project',
+        href: '/project-planner',
+      },
+    ],
+    video: mediaBarAnswersVideos.localCommercialCost,
   },
 ]
 

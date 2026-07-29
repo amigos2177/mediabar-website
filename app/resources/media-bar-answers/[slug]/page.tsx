@@ -59,7 +59,7 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
         description={episode.video.description}
         url={path}
         datePublished={episode.video.uploadDate}
-        dateModified="2026-07-27"
+        dateModified="2026-07-28"
         image={episode.video.thumbnailUrl}
       />
       <VideoObjectJsonLd

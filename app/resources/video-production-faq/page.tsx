@@ -84,12 +84,12 @@ export default function VideoProductionFaqPage() {
               <a href="#topics" className={styles.primaryButton}>Explore the answers</a>
               <Link href="/resources/media-bar-answers" className={styles.secondaryButton}>Watch Media Bar Answers</Link>
             </div>
-            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed July 22, 2026</p>
+            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed July 28, 2026</p>
           </div>
         </section>
 
         <section className={styles.trustBar} aria-label="Resource credentials">
-          <div><strong>31</strong><span>Practical answers</span></div>
+          <div><strong>32</strong><span>Practical answers</span></div>
           <div><strong>6</strong><span>Planning topics</span></div>
           <div><strong>2011</strong><span>Producing in San Antonio since</span></div>
           <div><strong>Texas</strong><span>Statewide production context</span></div>

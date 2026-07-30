@@ -132,6 +132,55 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className={styles.texasNetwork} aria-labelledby="texas-network-title">
+          <div className={styles.texasNetworkIntro}>
+            <div>
+              <p className={styles.eyebrow}>Keep Creative in Texas</p>
+              <h2 id="texas-network-title">
+                Built here.
+                <em>Connected statewide.</em>
+              </h2>
+            </div>
+            <div className={styles.texasNetworkCopy}>
+              <p>
+                Ruben also created CreativesInTexas.com, a statewide platform
+                that helps companies discover Texas production companies, crew
+                members, and creative talent.
+              </p>
+              <p>
+                Media Bar and Ruben maintain portfolio-reviewed founding
+                profiles there, making it easy to explore our work and connect
+                directly with the people behind it.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.texasProfiles}>
+            <a
+              href="https://creativesintexas.com/creatives/media-bar-productions-llc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.texasProfile}
+            >
+              <span className={styles.profileType}>Verified company profile</span>
+              <strong>Media Bar Productions</strong>
+              <p>View our capabilities, selected work, and client recommendation.</p>
+              <span className={styles.profileLink}>Explore the profile ↗</span>
+            </a>
+            <a
+              href="https://creativesintexas.com/creatives/ruben-garcia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.texasProfile}
+            >
+              <span className={styles.profileType}>Founder profile</span>
+              <strong>Ruben Garcia</strong>
+              <p>Explore Ruben&apos;s production roles, services, and selected work.</p>
+              <span className={styles.profileLink}>Explore the profile ↗</span>
+            </a>
+          </div>
+        </section>
+
         <section className={styles.crew}>
           <div className={styles.sectionHeading}>
             <div>

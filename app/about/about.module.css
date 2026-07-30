@@ -234,6 +234,115 @@
   color: var(--red);
 }
 
+.texasNetwork {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 0 0 160px;
+}
+
+.texasNetworkIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.texasNetworkIntro h2 {
+  margin: 0;
+  color: #fff;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(58px, 7.5vw, 104px);
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: .82;
+  text-transform: uppercase;
+}
+
+.texasNetworkIntro h2 em {
+  display: block;
+  color: var(--gold);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: .56em;
+  font-style: italic;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+.texasNetworkCopy p {
+  margin: 0;
+  color: #969693;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.texasNetworkCopy p + p {
+  margin-top: 14px;
+}
+
+.texasProfiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid rgba(255, 255, 255, .14);
+}
+
+.texasProfile {
+  display: flex;
+  min-height: 270px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(30px, 4vw, 52px);
+  background:
+    radial-gradient(circle at 100% 0, rgba(200, 163, 74, .08), transparent 42%),
+    #111;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 220ms ease;
+}
+
+.texasProfile + .texasProfile {
+  border-left: 1px solid rgba(255, 255, 255, .14);
+}
+
+.texasProfile:hover {
+  background-color: #171717;
+}
+
+.profileType {
+  margin-bottom: 30px;
+  color: var(--red);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.texasProfile strong {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 400;
+  letter-spacing: .02em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.texasProfile p {
+  max-width: 450px;
+  margin: 16px 0 26px;
+  color: #92928f;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.profileLink {
+  margin-top: auto;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
 .crew,
 .principles {
   max-width: 1290px;
@@ -529,6 +638,7 @@
 @media (max-width: 1360px) {
   .intro,
   .stats,
+  .texasNetwork,
   .crew,
   .principles {
     margin-right: 48px;
@@ -658,6 +768,29 @@
     margin-bottom: 42px;
   }
 
+  .texasNetwork {
+    padding-bottom: 110px;
+  }
+
+  .texasNetworkIntro {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 42px;
+  }
+
+  .texasProfiles {
+    grid-template-columns: 1fr;
+  }
+
+  .texasProfile {
+    min-height: 235px;
+  }
+
+  .texasProfile + .texasProfile {
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    border-left: 0;
+  }
+
   .crew,
   .principles {
     padding-bottom: 110px;
@@ -745,6 +878,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .crewGrid img,
+  .texasProfile,
   .primaryAction {
     transition: none;
   }

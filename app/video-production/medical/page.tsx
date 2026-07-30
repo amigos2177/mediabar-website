@@ -6,11 +6,11 @@ export default function MedicalVideoPage() {
   return (
     <ServiceEditorialPage
       hero={{
-        eyebrow: 'Medical Video Production in San Antonio',
+        eyebrow: 'San Antonio Medical Video Production',
         title: 'Medical Video',
         emphasis: 'Production Made Clear. Kept Human.',
         copy:
-          'San Antonio medical video production for patient stories, provider expertise, education, training, and healthcare campaigns, with access, consent, review, and delivery carefully planned.',
+          'Medical video production in San Antonio for healthcare organizations that need clear patient stories, provider expertise, education, training, medical device content, and campaigns. We plan access, consent, filming, stakeholder review, and delivery around the realities of the care environment.',
         image: '/images/bts-10.jpg',
         alt: 'Multi-camera healthcare interview production at a San Antonio clinic',
         position: 'center',
@@ -25,10 +25,10 @@ export default function MedicalVideoPage() {
       ]}
       answer={{
         eyebrow: 'Quick answer',
-        question: 'What is medical video production?',
+        question: 'What does a medical video production company handle?',
         response:
-          'Medical video production turns clinical expertise, patient experiences, services, training, and healthcare campaigns into clear, carefully reviewed video. Media Bar coordinates the production plan with the client team so access, consent, comfort, terminology, and stakeholder approvals are addressed before delivery.',
-        points: ['Patient education', 'Provider profiles', 'Clinical training', 'Healthcare campaigns'],
+          'A medical video production company helps healthcare teams turn clinical expertise, patient experiences, services, training, and campaigns into clear, carefully reviewed content. Media Bar coordinates creative planning, interviews, filming, sound, lighting, editing, captions, and delivery while the healthcare organization keeps authority over privacy, clinical accuracy, consent, and approvals.',
+        points: ['Creative planning', 'Clinical filming', 'Post-production', 'Review-ready delivery'],
       }}
       answerResource={(
         <MediaBarAnswersFeature
@@ -44,7 +44,7 @@ export default function MedicalVideoPage() {
         title: 'Clear Information.',
         emphasis: 'Human Stories.',
         copy:
-          'San Antonio healthcare organizations need content that is understandable, credible, useful, and practical to review with clinical and communications stakeholders.',
+          'Our San Antonio medical video production team creates content that is understandable, credible, useful, and practical to review with clinical, communications, legal, and compliance stakeholders.',
       }}
       capabilities={[
         { number: '01', title: 'Patient Education', copy: 'Clear explanations that help people understand care, preparation, and next steps.' },
@@ -52,7 +52,7 @@ export default function MedicalVideoPage() {
         { number: '03', title: 'Service-Line Stories', copy: 'Focused campaigns that connect services with real audience needs.' },
         { number: '04', title: 'Patient Testimonials', copy: 'First-person experiences produced with care and appropriate context.' },
         { number: '05', title: 'Clinical Training', copy: 'Structured content for teams, education, and internal communication.' },
-        { number: '06', title: 'Medical Device', copy: 'Product, workflow, and application stories built for the intended viewer.' },
+        { number: '06', title: 'Medical Device Videos', copy: 'Product, workflow, and application stories built for the intended viewer.' },
       ]}
       plan={{
         eyebrow: 'Production Planning',
@@ -111,7 +111,7 @@ export default function MedicalVideoPage() {
         title: 'Careful Planning.',
         emphasis: 'Clear Approvals.',
         copy:
-          'The creative, clinical, and review teams stay aligned from the first brief through final delivery.',
+          'Media Bar keeps the creative, clinical, and review teams aligned from the first brief through filming in San Antonio or across Texas and into final delivery.',
       }}
       process={[
         { number: '01', title: 'Clinical Brief', copy: 'Define the audience, communication objective, stakeholders, and constraints.' },

@@ -29,6 +29,21 @@ export const medicalFaqs = [
     answer:
       'Timing depends on access, participants, locations, approvals, clinical review, and deliverables. We create the schedule after discovery with the production and stakeholder teams.',
   },
+  {
+    question: 'How much does medical video production cost?',
+    answer:
+      'Media Bar does not use a public price list for medical video production. Each project is quoted around its audience, format, access requirements, participants, filming schedule, locations, review process, post-production, and final deliverables. The project planner is the best starting point for a tailored estimate.',
+  },
+  {
+    question: 'What information is needed for a medical video production estimate?',
+    answer:
+      'Start with the business or communication goal, intended audience, filming location, participants, preferred timing, review team, privacy or access requirements, and the versions you expect to deliver. Media Bar uses those details to recommend a practical scope and custom quote.',
+  },
+  {
+    question: 'How should we choose a medical video production company?',
+    answer:
+      'Look for a team that can explain how it plans access, interviews, audio, lighting, patient and provider comfort, stakeholder reviews, captions, and delivery. The production company should understand its role, respect the healthcare organization as the authority on privacy and clinical requirements, and provide a scope tied to the communication goal.',
+  },
 ]
 
 export const medicalVideo = {

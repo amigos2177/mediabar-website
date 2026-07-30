@@ -5,11 +5,11 @@ export default function MotionGraphicsPage() {
   return (
     <ServiceEditorialPage
       hero={{
-        eyebrow: 'Motion Graphics Production in San Antonio',
+        eyebrow: 'San Antonio Motion Graphics Production Company',
         title: 'Make the Idea Clear.',
         emphasis: 'Give It Motion.',
         copy:
-          'San Antonio motion graphics for explainers, titles, product visuals, animated data, and branded systems that make information easier to understand.',
+          'Media Bar provides motion graphics production services for San Antonio and Texas organizations, including explainers, animated data, product visuals, branded title systems, and graphics integrated with live-action video.',
         image: '/images/media-library/motion-graphics-spider-verse.jpg',
         alt: 'Animated Spider-Man title frame with layered comic-book textures',
         position: 'center',
@@ -24,17 +24,17 @@ export default function MotionGraphicsPage() {
       ]}
       answer={{
         eyebrow: 'Quick answer',
-        question: 'What are motion graphics used for?',
+        question: 'What does a motion graphics production company create?',
         response:
-          'Motion graphics use animated typography, illustration, data, product visuals, titles, and branded design to make an idea easier to understand. They can stand alone as an explainer or work inside live-action video as callouts, transitions, lower thirds, and visual evidence.',
+          'A motion graphics production company turns scripts, data, products, and brand systems into designed animation that makes an idea easier to understand. The work can stand alone as an explainer or support live-action video through titles, callouts, transitions, lower thirds, and visual evidence.',
         points: ['Explainers', 'Animated data', 'Titles and openers', 'Live-action integration'],
       }}
       overview={{
-        eyebrow: 'Motion Capabilities',
+        eyebrow: 'Motion Graphics Services',
         title: 'Design That',
         emphasis: 'Moves With Purpose.',
         copy:
-          'The visual style is only one decision. The format, pacing, information hierarchy, and final destination shape the complete motion system.',
+          'Our motion graphics services are built around the audience, message, format, pacing, information hierarchy, and final destination. The visual style supports those decisions instead of becoming the whole strategy.',
       }}
       capabilities={[
         { number: '01', title: 'Explainers', copy: 'Structured visual stories that make products, services, and processes easier to follow.' },
@@ -49,7 +49,7 @@ export default function MotionGraphicsPage() {
         title: 'Motion Begins',
         emphasis: 'Before Animation.',
         copy:
-          'The message, script, storyboard, style frames, sound, and delivery plan are approved in stages before the full piece is built.',
+          'For B2B explainers, campaign graphics, product stories, and internal communications, the message, script, storyboard, style frames, sound, and delivery plan are approved in stages before the full piece is built.',
         image: '/images/media-library/motion-graphics-marvel-ages.jpg',
         alt: 'Animated Marvel trading card package with comic-book graphics',
         position: 'center',
@@ -81,7 +81,7 @@ export default function MotionGraphicsPage() {
         title: 'Design Once.',
         emphasis: 'Publish With Intention.',
         copy:
-          'The final package is organized around the places the motion will appear, from a master film to shorter campaign and presentation assets.',
+          'The final package is organized around where the motion will appear, from a master film to shorter campaign, presentation, broadcast, and social assets for Texas audiences and beyond.',
         image: '/images/media-library/motion-graphics-superman.jpg',
         alt: 'Animated Superman trading card arranged with branded typography',
         position: 'center',
@@ -127,6 +127,21 @@ export default function MotionGraphicsPage() {
             label: 'AI Video Production Limits',
             href: '/blog/ai-video-production-limits',
             description: 'See where AI tools can support production and where human creative direction still matters.',
+          },
+          {
+            label: 'Commercial Video Production',
+            href: '/video-production/commercials',
+            description: 'Connect motion design with commercial concepts, live-action production, and channel-ready campaign versions.',
+          },
+          {
+            label: 'San Antonio Video Production',
+            href: '/locations/san-antonio',
+            description: 'Explore local production, studio, crew, and post-production support from one San Antonio team.',
+          },
+          {
+            label: 'Motion Project Planner',
+            href: '/project-planner',
+            description: 'Share the audience, message, brand assets, deadline, and deliverables for a tailored project recommendation.',
           },
         ],
       }}

@@ -5,6 +5,16 @@ export const motionGraphicsFaqs = [
       'Projects can range from clean typography and data visualization to illustrated explainers, title systems, product animation, and graphics integrated with live action. The style is developed around the message and brand.',
   },
   {
+    question: 'Do you provide motion graphics services across Texas?',
+    answer:
+      'Yes. Media Bar is based in San Antonio and provides motion graphics production services for organizations across Texas. Planning, scripting, storyboards, style reviews, animation reviews, and delivery can be coordinated remotely when an on-site production day is not required.',
+  },
+  {
+    question: 'Do you create B2B motion graphics and explainer videos?',
+    answer:
+      'Yes. Motion graphics can help a B2B audience understand a service, process, product, data point, or change initiative. We shape the script, information hierarchy, visual system, pacing, and final versions around the business decision the piece needs to support.',
+  },
+  {
     question: 'Can motion graphics be added to existing footage?',
     answer:
       'Yes. Titles, callouts, tracked graphics, interface elements, transitions, and other visual layers can be designed for existing footage when the source media supports the concept.',
@@ -28,6 +38,11 @@ export const motionGraphicsFaqs = [
     question: 'How long does motion graphics production take?',
     answer:
       'The schedule depends on length, visual complexity, illustration, three-dimensional work, voiceover, number of versions, and review timing. We provide a schedule after the concept and deliverables are defined.',
+  },
+  {
+    question: 'How is a motion graphics project quoted?',
+    answer:
+      'Every project is quoted around its specific needs. The main scope drivers include script development, runtime, design and illustration complexity, two-dimensional or three-dimensional animation, voiceover, sound, review stages, and the number of final versions. Use the project planner for a tailored estimate.',
   },
 ]
 

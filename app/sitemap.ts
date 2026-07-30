@@ -43,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/video-production/interview`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production/medical`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production/aerial`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/motion-graphics`, lastModified: SEARCH_SPRINT_UPDATED },
+    { url: `${BASE}/video-production/motion-graphics`, lastModified: new Date('2026-07-29') },
     { url: `${BASE}/video-production/live-streaming`, lastModified: SITE_UPDATED },
     { url: `${BASE}/video-production/post-production`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/video-production/food`, lastModified: SITE_UPDATED },

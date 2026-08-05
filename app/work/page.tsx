@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import { BreadcrumbJsonLd } from '../../components/JsonLd'
 import { VideoObjectSchema, type PortfolioVideo } from '../../components/VideoObjectSchema'
 import VimeoPlayer from '../../components/VimeoPlayer'
@@ -72,6 +73,8 @@ export default function WorkPage() {
             </div>
           </div>
         </section>
+
+        <QuickContactBar />
 
         <section className={styles.proof} aria-label="Media Bar Productions experience">
           <div>

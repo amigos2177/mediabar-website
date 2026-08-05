@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import styles from './how-we-work.module.css'
 
 const phases = [
@@ -127,6 +128,8 @@ export default function HowWeWorkPage() {
             </figcaption>
           </figure>
         </section>
+
+        <QuickContactBar />
 
         <section className={styles.process} id="process">
           <div className={styles.sectionIntro}>

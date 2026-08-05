@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import { BreadcrumbJsonLd, FAQPageJsonLd, ServiceJsonLd } from '@/components/JsonLd'
 import { buildMetadata } from '@/lib/seo'
 import { videoProductionFaqs } from './content'
@@ -291,6 +292,8 @@ export default function VideoProductionPage() {
             </div>
           </div>
         </section>
+
+        <QuickContactBar />
 
         <section className="vps-clients" aria-label="Selected clients">
           <div className="vps-container vps-clients-inner">

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import { MediaBarAnswersFeature } from '../../components/MediaBarAnswersFeature'
 import { pricingFaqs } from './pricing-data'
 import styles from './pricing.module.css'
@@ -141,6 +142,8 @@ export default function PricingPage() {
             </p>
           </aside>
         </section>
+
+        <QuickContactBar />
 
         <section className={styles.promiseStrip} aria-label="Estimate commitments">
           <div>

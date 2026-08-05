@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import { sanAntonioFaqs } from './content'
 
 const clients = [
@@ -235,6 +236,8 @@ export default function SanAntonioPage() {
             </div>
           </div>
         </section>
+
+        <QuickContactBar />
 
         <section className="sa-clients" aria-label="Selected San Antonio clients">
           <div className="sa-container sa-clients-inner">

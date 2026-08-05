@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import VimeoPlayer from '@/components/VimeoPlayer'
 import { eventVideoFaqs } from './content'
 
@@ -393,6 +394,8 @@ export default function EventsPage() {
             </div>
           </div>
         </section>
+
+        <QuickContactBar />
 
         <section className="evt-answer" aria-labelledby="event-video-answer">
           <div className="evt-container evt-answer-grid">

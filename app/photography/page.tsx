@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 
 const eventPhotos = [
   { src: '/images/photography/SeaWorld-2015-0187.jpg', alt: 'SeaWorld San Antonio event coverage with performers and guests' },
@@ -280,6 +281,8 @@ export default function PhotographyPage() {
           </div>
         </div>
       </section>
+
+      <QuickContactBar />
 
       {/* ── EVENT PHOTOGRAPHY ── */}
       <section className="ph-cat-section" style={{ background: '#0A0A0A' }}>

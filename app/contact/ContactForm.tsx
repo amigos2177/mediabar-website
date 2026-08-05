@@ -16,36 +16,22 @@ import {
 } from '@/lib/conversion-attribution'
 import styles from './contact.module.css'
 
-const services = [
-  'Corporate Video',
-  'Commercials',
-  'Event Coverage',
-  'Interview & Discussion',
-  'Medical Video',
-  'Aerial Video',
-  'Motion Graphics',
-  'Live Streaming',
-  'Post Production',
-  'Food Video',
-  'Real Estate Video',
-  'Studio Rental',
-  'Photography',
-  'Other',
-]
-
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error'
 
 const initialFields = {
-  firstName: '',
-  lastName: '',
+  name: '',
   email: '',
-  phone: '',
-  company: '',
-  service: '',
-  budget: '',
-  timeline: '',
   message: '',
   website: '',
+}
+
+function splitName(name: string) {
+  const [firstName = '', ...remainingNames] = name.trim().split(/\s+/)
+
+  return {
+    firstName,
+    lastName: remainingNames.join(' '),
+  }
 }
 
 export default function ContactForm() {
@@ -88,11 +74,17 @@ export default function ContactForm() {
     setErrorMessage('')
 
     try {
+      const { firstName, lastName } = splitName(fields.name)
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...fields,
+          firstName,
+          lastName,
+          email: fields.email,
+          message: fields.message,
+          website: fields.website,
+          source: 'contact-quick-question',
           utmSource: campaignAttribution.current?.utmSource,
           utmMedium: campaignAttribution.current?.utmMedium,
           utmCampaign: campaignAttribution.current?.utmCampaign,
@@ -108,7 +100,7 @@ export default function ContactForm() {
       if (!response.ok) {
         trackAnalyticsEvent(analyticsEvents.contactFormSubmissionFailed, {
           reason: 'server',
-          service: fields.service || 'General inquiry',
+          service: 'General inquiry',
           ...conversionProperties(),
         })
         setStatus('error')
@@ -117,7 +109,7 @@ export default function ContactForm() {
       }
 
       trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, {
-        service: fields.service || 'General inquiry',
+        service: 'General inquiry',
         leadType: 'quick_question',
         ...conversionProperties(),
       }, 'generate_lead')
@@ -127,7 +119,7 @@ export default function ContactForm() {
     } catch {
       trackAnalyticsEvent(analyticsEvents.contactFormSubmissionFailed, {
         reason: 'network',
-        service: fields.service || 'General inquiry',
+        service: 'General inquiry',
         ...conversionProperties(),
       })
       setStatus('error')
@@ -187,36 +179,19 @@ export default function ContactForm() {
 
       <div className={styles.formRow}>
         <div className={styles.field}>
-          <label htmlFor="contact-first-name">First name</label>
+          <label htmlFor="contact-name">Name</label>
           <input
-            id="contact-first-name"
-            name="firstName"
+            id="contact-name"
+            name="name"
             type="text"
-            autoComplete="given-name"
-            placeholder="Jane"
-            maxLength={80}
+            autoComplete="name"
+            placeholder="Your name"
+            maxLength={160}
             required
-            value={fields.firstName}
-            onChange={(event) => updateField('firstName', event)}
+            value={fields.name}
+            onChange={(event) => updateField('name', event)}
           />
         </div>
-        <div className={styles.field}>
-          <label htmlFor="contact-last-name">Last name</label>
-          <input
-            id="contact-last-name"
-            name="lastName"
-            type="text"
-            autoComplete="family-name"
-            placeholder="Smith"
-            maxLength={80}
-            required
-            value={fields.lastName}
-            onChange={(event) => updateField('lastName', event)}
-          />
-        </div>
-      </div>
-
-      <div className={styles.formRow}>
         <div className={styles.field}>
           <label htmlFor="contact-email">Email</label>
           <input
@@ -231,65 +206,14 @@ export default function ContactForm() {
             onChange={(event) => updateField('email', event)}
           />
         </div>
-        <div className={styles.field}>
-          <label htmlFor="contact-phone">
-            Phone <span>Optional</span>
-          </label>
-          <input
-            id="contact-phone"
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-            placeholder="210-555-0100"
-            maxLength={40}
-            value={fields.phone}
-            onChange={(event) => updateField('phone', event)}
-          />
-        </div>
-      </div>
-
-      <div className={styles.formRow}>
-        <div className={styles.field}>
-          <label htmlFor="contact-company">
-            Company <span>Optional</span>
-          </label>
-          <input
-            id="contact-company"
-            name="company"
-            type="text"
-            autoComplete="organization"
-            placeholder="Your company"
-            maxLength={120}
-            value={fields.company}
-            onChange={(event) => updateField('company', event)}
-          />
-        </div>
-        <div className={styles.field}>
-          <label htmlFor="contact-service">
-            Area of interest <span>Optional</span>
-          </label>
-          <select
-            id="contact-service"
-            name="service"
-            value={fields.service}
-            onChange={(event) => updateField('service', event)}
-          >
-            <option value="">Choose one</option>
-            {services.map((service) => (
-              <option key={service} value={service}>
-                {service}
-              </option>
-            ))}
-          </select>
-        </div>
       </div>
 
       <div className={styles.field}>
-        <label htmlFor="contact-message">Your message</label>
+        <label htmlFor="contact-message">Your question</label>
         <textarea
           id="contact-message"
           name="message"
-          placeholder="What would you like to know?"
+          placeholder="How can we help?"
           maxLength={4000}
           required
           value={fields.message}

@@ -6,6 +6,17 @@ import styles from './contact.module.css'
 const routes = [
   {
     number: '01',
+    badge: 'Fastest simple option',
+    signal: 'Only 3 fields',
+    label: 'Quick question',
+    title: 'Just ask us',
+    copy: 'Send your name, email, and question. No project brief or production details are required.',
+    href: '#contact-form',
+    action: 'Ask a question',
+    toneClass: styles.routeMessage,
+  },
+  {
+    number: '02',
     badge: 'Best for new productions',
     signal: '4 step guided brief',
     label: 'Planning a production',
@@ -14,17 +25,6 @@ const routes = [
     href: '/project-planner',
     action: 'Open project planner',
     toneClass: styles.routePlanner,
-  },
-  {
-    number: '02',
-    badge: 'Fastest simple option',
-    signal: 'Reply within 1 business day',
-    label: 'Quick question',
-    title: 'Send a short message',
-    copy: 'Ask about availability, capabilities, a current opportunity, or anything that does not need a full brief.',
-    href: '#contact-form',
-    action: 'Write to our team',
-    toneClass: styles.routeMessage,
   },
   {
     number: '03',
@@ -172,10 +172,10 @@ export default function ContactPage() {
             <div className={styles.formPanel}>
               <div className={styles.formIntro}>
                 <p className={styles.eyebrow}>Quick inquiry</p>
-                <h2>What can we help with?</h2>
+                <h2>Ask us anything.</h2>
                 <p>
-                  Keep it brief or add as much context as you have. A member of our
-                  team will follow up personally.
+                  Name, email, and your question. That is all we need to start.
+                  A member of our team will follow up personally.
                 </p>
               </div>
               <ContactForm />

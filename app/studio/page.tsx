@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import { studioFaqs } from './studio-data'
 import styles from './studio.module.css'
 
@@ -111,6 +112,8 @@ export default function StudioPage() {
             <span>San Antonio, Texas</span>
           </div>
         </section>
+
+        <QuickContactBar />
 
         <section className={styles.proofStrip} aria-label="Studio highlights">
           <div>

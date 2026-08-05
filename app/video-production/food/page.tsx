@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 
 
 const useCases = [
@@ -176,6 +177,8 @@ export default function FoodPage() {
           </div>
         </div>
       </section>
+
+      <QuickContactBar />
 
       <div style={{ background: 'var(--dark)', borderBottom: '1px solid #1a1a1a' }}>
         <div className="section">

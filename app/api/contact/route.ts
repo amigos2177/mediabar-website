@@ -20,7 +20,7 @@ const BUDGETS = new Set([
   'Under $5,000', '$5,000 - $15,000', '$15,000 - $50,000',
   '$50,000+', 'Not sure yet',
 ])
-const SOURCES = new Set(['video-production-faq'])
+const SOURCES = new Set(['video-production-faq', 'contact-quick-question'])
 
 type ContactFields = {
   firstName: string
@@ -109,8 +109,9 @@ function buildHtml(fields: ContactFields) {
     Object.entries(fields).map(([key, value]) => [key, value ? escapeHtml(value) : value]),
   ) as ContactFields
 
+  const fullName = [safe.firstName, safe.lastName].filter(Boolean).join(' ')
   const contactRows = [
-    row('Name', `${safe.firstName} ${safe.lastName}`),
+    row('Name', fullName),
     row('Email', safe.email),
     ...(safe.phone ? [row('Phone', safe.phone)] : []),
     ...(safe.company ? [row('Company', safe.company)] : []),
@@ -123,7 +124,11 @@ function buildHtml(fields: ContactFields) {
   ]
 
   const attributionRows = [
-    ...(safe.source ? [row('Form source', safe.source === 'video-production-faq' ? 'Video Production FAQ' : safe.source)] : []),
+    ...(safe.source ? [row('Form source', safe.source === 'video-production-faq'
+      ? 'Video Production FAQ'
+      : safe.source === 'contact-quick-question'
+        ? 'Contact quick question'
+        : safe.source)] : []),
     ...(safe.utmSource ? [row('Campaign source', safe.utmSource)] : []),
     ...(safe.utmMedium ? [row('Campaign medium', safe.utmMedium)] : []),
     ...(safe.utmCampaign ? [row('Campaign name', safe.utmCampaign)] : []),
@@ -138,7 +143,9 @@ function buildHtml(fields: ContactFields) {
     : ''
   const inquiryTitle = safe.source === 'video-production-faq'
     ? 'New Video Production Question'
-    : 'New Project Inquiry'
+    : safe.source === 'contact-quick-question'
+      ? 'New Contact Question'
+      : 'New Project Inquiry'
 
   const projectSection = projectFields.length
     ? section('Project Details', projectFields.join(''))
@@ -153,7 +160,7 @@ function buildHtml(fields: ContactFields) {
       <td colspan="2" style="padding:32px 16px 16px;border-bottom:2px solid #CC0000">
         <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#CC0000">Media Bar Productions</span>
         <h1 style="margin:8px 0 0;font-size:22px;color:#ffffff;font-weight:700">${inquiryTitle}</h1>
-        <p style="margin:6px 0 0;font-size:13px;color:#888888">From ${safe.firstName} ${safe.lastName} &lt;${safe.email}&gt;</p>
+        <p style="margin:6px 0 0;font-size:13px;color:#888888">From ${fullName} &lt;${safe.email}&gt;</p>
       </td>
     </tr>
     ${section('Contact Info', contactRows)}
@@ -259,9 +266,6 @@ export async function POST(req: NextRequest) {
     if (!firstName) {
       return NextResponse.json({ error: 'First name is required.' }, { status: 400 })
     }
-    if (!lastName) {
-      return NextResponse.json({ error: 'Last name is required.' }, { status: 400 })
-    }
     if (!email) {
       return NextResponse.json({ error: 'Email address is required.' }, { status: 400 })
     }
@@ -286,7 +290,7 @@ export async function POST(req: NextRequest) {
 
     const fields: ContactFields = {
       firstName,
-      lastName,
+      lastName: lastName || '',
       email,
       phone: phone || undefined,
       company: company || undefined,
@@ -310,8 +314,10 @@ export async function POST(req: NextRequest) {
       to: 'contact@mediabarproductions.com',
       replyTo: email,
       subject: source === 'video-production-faq'
-        ? `New Video Production Question from ${firstName.replace(/[\r\n]/g, ' ')} ${lastName.replace(/[\r\n]/g, ' ')}`
-        : `New Project Inquiry from ${firstName.replace(/[\r\n]/g, ' ')} ${lastName.replace(/[\r\n]/g, ' ')}`,
+        ? `New Video Production Question from ${[firstName, lastName].filter(Boolean).join(' ').replace(/[\r\n]/g, ' ')}`
+        : source === 'contact-quick-question'
+          ? `New Contact Question from ${[firstName, lastName].filter(Boolean).join(' ').replace(/[\r\n]/g, ' ')}`
+          : `New Project Inquiry from ${[firstName, lastName].filter(Boolean).join(' ').replace(/[\r\n]/g, ' ')}`,
       html: buildHtml(fields),
     })
 

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import VimeoPlayer from '@/components/VimeoPlayer'
 import { commercialVideoFaqs } from './content'
@@ -371,6 +372,8 @@ export default function CommercialsPage() {
             </div>
           </div>
         </section>
+
+        <QuickContactBar />
 
         <section className="com-clients" aria-label="Selected clients">
           <div className="com-container com-clients-inner">

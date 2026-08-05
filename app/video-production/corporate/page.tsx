@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import QuickContactBar from '@/components/QuickContactBar'
 import VimeoPlayer from '@/components/VimeoPlayer'
 import { corporateVideoFaqs } from './content'
 
@@ -281,6 +282,8 @@ export default function CorporatePage() {
             </div>
           </div>
         </section>
+
+        <QuickContactBar />
 
         <section className="corp-clients" aria-label="Selected clients">
           <div className="corp-container corp-clients-inner">

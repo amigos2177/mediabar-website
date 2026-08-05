@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import Layout from './Layout'
+import QuickContactBar from './QuickContactBar'
 import VimeoPlayer from './VimeoPlayer'
 
 type Card = {
@@ -317,6 +318,8 @@ export function ServiceEditorialPage({
             </div>
           </div>
         </section>
+
+        <QuickContactBar />
 
         {answer ? (
           <section className="sep-answer" aria-labelledby="service-answer">

@@ -80,6 +80,40 @@ export default function Nav() {
     }
   }, [close, open])
 
+  useEffect(() => {
+    const button = document.querySelector<HTMLAnchorElement>('.mbp-contact-btn')
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (!button || prefersReducedMotion.matches) return
+    const contactButton = button
+
+    let animationFrame = 0
+
+    function updateContactGlow(event: PointerEvent) {
+      if (event.pointerType === 'touch') return
+
+      cancelAnimationFrame(animationFrame)
+      animationFrame = requestAnimationFrame(() => {
+        const rect = contactButton.getBoundingClientRect()
+        const x = event.clientX - rect.left
+        const y = event.clientY - rect.top
+        const nearestX = Math.max(0, Math.min(x, rect.width))
+        const nearestY = Math.max(0, Math.min(y, rect.height))
+        const distance = Math.hypot(x - nearestX, y - nearestY)
+        const proximity = Math.max(0, 1 - distance / 160)
+
+        contactButton.style.setProperty('--contact-glow-x', `${x}px`)
+        contactButton.style.setProperty('--contact-glow-y', `${y}px`)
+        contactButton.style.setProperty('--contact-glow-opacity', proximity.toFixed(3))
+      })
+    }
+
+    window.addEventListener('pointermove', updateContactGlow, { passive: true })
+    return () => {
+      cancelAnimationFrame(animationFrame)
+      window.removeEventListener('pointermove', updateContactGlow)
+    }
+  }, [])
+
   return (
     <>
       <style>{`
@@ -95,6 +129,11 @@ export default function Nav() {
         .mbp-nav-link:hover { color: #CC0000; }
         .mbp-quote-btn:hover { background: #aa0000 !important; }
         .mbp-contact-btn {
+          --contact-glow-x: 50%;
+          --contact-glow-y: 50%;
+          --contact-glow-opacity: 0;
+          position: relative;
+          isolation: isolate;
           border: 1px solid rgba(255, 255, 255, 0.45);
           color: #fff;
           text-decoration: none;
@@ -104,11 +143,41 @@ export default function Nav() {
           letter-spacing: 0.1em;
           text-transform: uppercase;
           white-space: nowrap;
-          transition: border-color 0.15s, background 0.15s;
+          transition: border-color 0.2s, background 0.2s;
+        }
+        .mbp-contact-btn::before {
+          content: '';
+          position: absolute;
+          inset: -1px;
+          z-index: 1;
+          padding: 1px;
+          pointer-events: none;
+          background: radial-gradient(
+            80px circle at var(--contact-glow-x) var(--contact-glow-y),
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.72) 34%,
+            rgba(255, 255, 255, 0) 72%
+          );
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          opacity: var(--contact-glow-opacity);
+          transition: opacity 0.18s ease-out;
         }
         .mbp-contact-btn:hover {
-          border-color: #fff;
-          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.28);
+          background: rgba(255, 255, 255, 0.05);
+        }
+        .mbp-contact-btn:focus-visible {
+          outline: 2px solid #fff;
+          outline-offset: 4px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .mbp-contact-btn::before { display: none; }
+          .mbp-contact-btn:hover,
+          .mbp-contact-btn:focus-visible { border-color: #fff; }
         }
 
         /* Hamburger button */

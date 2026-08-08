@@ -254,6 +254,18 @@
   line-height: 1.78;
 }
 
+.intro > div > p a {
+  color: #fff;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.intro > div > p a:hover,
+.intro > div > p a:focus-visible {
+  color: var(--red);
+}
+
 .inputs {
   max-width: 1440px;
   margin: 0 auto 150px;

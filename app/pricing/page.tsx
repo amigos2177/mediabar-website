@@ -174,7 +174,11 @@ export default function PricingPage() {
             <p>
               The clearest way to price video is to understand what the finished
               work needs to accomplish, then build only the production required
-              to get there. These four inputs shape nearly every estimate.
+              to get there. These four inputs shape nearly every estimate. Planning
+              broadcast or connected TV?{' '}
+              <Link href="/resources/media-bar-answers/local-tv-commercial-cost-texas">
+                See how commercial production and airtime costs are scoped separately.
+              </Link>
             </p>
           </div>
         </section>

@@ -16,6 +16,22 @@ export type MediaBarAnswersEpisode = {
   shortTitle: string
   directAnswer: string
   takeaways: string[]
+  budgetComparison?: {
+    eyebrow: string
+    heading: string
+    introduction: string
+    columns: {
+      title: string
+      description: string
+      items: string[]
+    }[]
+    coordination: string
+  }
+  pageFaqs?: {
+    question: string
+    answer: string
+  }[]
+  dateModified?: string
   transcript: string[]
   faqQuestion: string
   faqHref: string
@@ -318,6 +334,51 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
       'Talent usage rights, post-production, approvals, and platform versions affect the estimate.',
       'Commercial production and media buying are separate scopes even when they are planned together.',
     ],
+    budgetComparison: {
+      eyebrow: 'Production cost vs. airtime',
+      heading: 'Two budgets that work together.',
+      introduction:
+        'When people ask what a TV commercial costs, they may mean the cost to create the commercial or the cost to place it in front of an audience. Separating those budgets makes each estimate clearer and more accurate.',
+      columns: [
+        {
+          title: 'Commercial production',
+          description:
+            'Production is the work required to plan, film, and finish the commercial assets.',
+          items: [
+            'Creative development and pre-production',
+            'Crew, equipment, locations, and shoot days',
+            'Talent, music, and usage rights',
+            'Editing, finishing, and deliverable versions',
+          ],
+        },
+        {
+          title: 'Airtime and media placement',
+          description:
+            'Media placement is the advertising inventory purchased from a broadcaster, streaming platform, or other media provider.',
+          items: [
+            'Target market and audience',
+            'Channels, programs, or platforms',
+            'Schedule, frequency, and campaign length',
+            'Inventory purchased through the client or media partner',
+          ],
+        },
+      ],
+      coordination:
+        'Plan both budgets together. The placement plan affects spot lengths, technical specifications, versioning, usage rights, and delivery deadlines even when production and media are purchased separately.',
+    },
+    pageFaqs: [
+      {
+        question: 'Does a TV commercial production estimate include airtime?',
+        answer:
+          'Not by default. Production creates and finishes the commercial, while an airtime or media buy pays to distribute it. Media Bar uses the placement plan to scope deliverables and usage rights; the client or media partner typically handles placement unless the project agreement says otherwise.',
+      },
+      {
+        question: 'What information is needed to estimate a local TV commercial?',
+        answer:
+          'A useful estimate starts with the business goal, target audience, creative needs, locations, talent, usage territory and duration, shoot schedule, required deliverables, deadlines, and planned media placement.',
+      },
+    ],
+    dateModified: '2026-08-08',
     transcript: [
       "Hi, I am Ruben Garcia's digital avatar. The guidance in this video comes directly from Media Bar Productions.",
       'How much should a local television commercial cost in Texas?',

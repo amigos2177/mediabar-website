@@ -1,5 +1,6 @@
 ---
 title: "Corporate Video: One Shoot, Many Cuts"
+seoTitle: "Corporate Video Multi-Format Strategy"
 slug: "corporate-video-multi-format-strategy"
 date: "2026-06-06"
 updated: "2026-07-18"

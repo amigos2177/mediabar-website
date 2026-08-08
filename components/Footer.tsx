@@ -48,6 +48,7 @@ export default function Footer() {
                 alt="Media Bar Productions"
                 width={1113}
                 height={325}
+                sizes="124px"
                 style={{ width: 'auto', height: '36px', maxWidth: '100%', display: 'block' }}
               />
             </Link>

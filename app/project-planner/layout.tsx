@@ -3,7 +3,7 @@ import { BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
   title: 'Plan Your Video Project | Media Bar Productions',
-  description: 'Plan a video project with Media Bar Productions in four guided steps. Share the goal, deliverables, timeline, location, and working budget with our San Antonio team.',
+  description: 'Plan your video project in four guided steps. Share goals, deliverables, timeline, location, and working budget with our San Antonio production team.',
   path: '/project-planner',
 })
 

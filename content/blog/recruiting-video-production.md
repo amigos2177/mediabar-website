@@ -1,5 +1,6 @@
 ---
 title: "Recruiting Video Production: 2026 Guide"
+seoTitle: "Recruiting Video Production Guide"
 slug: "recruiting-video-production"
 date: "2026-06-08"
 updated: "2026-07-18"

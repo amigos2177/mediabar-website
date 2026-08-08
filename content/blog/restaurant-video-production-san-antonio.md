@@ -1,5 +1,6 @@
 ---
 title: "Restaurant Video: Recent Beats Polished"
+seoTitle: "Restaurant Video Production San Antonio"
 slug: "restaurant-video-production-san-antonio"
 date: "2026-06-14"
 excerpt: "Restaurant video production in San Antonio: why a fresh, recent feed fills tables better than one polished clip - and how to keep yours current."

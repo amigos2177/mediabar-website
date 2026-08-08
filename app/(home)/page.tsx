@@ -289,7 +289,7 @@ export default function HomePage() {
           text-transform: uppercase;
         }
         .hero-headline {
-          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-family: var(--font-bebas-neue), Impact, sans-serif;
           font-size: clamp(54px, 10vw, 116px);
           line-height: 0.88;
           letter-spacing: 0.025em;
@@ -298,7 +298,7 @@ export default function HomePage() {
         }
         .hero-headline-geo {
           display: block;
-          font-family: 'Playfair Display', Georgia, serif;
+          font-family: var(--font-playfair-display), Georgia, serif;
           font-size: 0.48em;
           font-style: italic;
           font-weight: 600;
@@ -1137,7 +1137,8 @@ export default function HomePage() {
             src="/images/hero-aerial.jpg"
             alt=""
             fill
-            priority
+            loading="eager"
+            fetchPriority="high"
             sizes="100vw"
           />
           {heroVideoEnabled && !reduceMotion && (

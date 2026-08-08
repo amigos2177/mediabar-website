@@ -5,6 +5,7 @@ import Layout from '@/components/Layout'
 import {
   BreadcrumbJsonLd,
   EducationalGuideJsonLd,
+  FAQPageJsonLd,
   VideoObjectJsonLd,
 } from '@/components/JsonLd'
 import {
@@ -59,7 +60,7 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
         description={episode.video.description}
         url={path}
         datePublished={episode.video.uploadDate}
-        dateModified="2026-07-28"
+        dateModified={episode.dateModified ?? '2026-07-28'}
         image={episode.video.thumbnailUrl}
       />
       <VideoObjectJsonLd
@@ -71,6 +72,7 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
         contentUrl={`https://www.youtube.com/watch?v=${episode.video.youtubeId}`}
         embedUrl={`https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`}
       />
+      {episode.pageFaqs?.length ? <FAQPageJsonLd faqs={episode.pageFaqs} /> : null}
 
       <main className={`${styles.page} ${styles.episodePage}`}>
         <nav className={styles.breadcrumb} aria-label="Breadcrumb">
@@ -139,6 +141,47 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
               ))}
             </ol>
           </section>
+
+          {episode.budgetComparison && (
+            <section className={styles.comparisonSection} aria-labelledby="budget-comparison-heading">
+              <div className={styles.comparisonIntro}>
+                <div>
+                  <p className={styles.eyebrow}>{episode.budgetComparison.eyebrow}</p>
+                  <h2 id="budget-comparison-heading">{episode.budgetComparison.heading}</h2>
+                </div>
+                <p>{episode.budgetComparison.introduction}</p>
+              </div>
+              <div className={styles.comparisonGrid}>
+                {episode.budgetComparison.columns.map((column) => (
+                  <article className={styles.comparisonCard} key={column.title}>
+                    <h3>{column.title}</h3>
+                    <p>{column.description}</p>
+                    <ul>
+                      {column.items.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+              <p className={styles.comparisonNote}>{episode.budgetComparison.coordination}</p>
+            </section>
+          )}
+
+          {episode.pageFaqs?.length ? (
+            <section className={styles.episodeFaq} aria-labelledby="episode-faq-heading">
+              <div>
+                <p className={styles.eyebrow}>Commercial cost FAQ</p>
+                <h2 id="episode-faq-heading">Questions to answer before requesting an estimate.</h2>
+              </div>
+              <div className={styles.episodeFaqList}>
+                {episode.pageFaqs.map((faq) => (
+                  <details key={faq.question}>
+                    <summary>{faq.question}</summary>
+                    <p>{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
           <section className={styles.transcriptSection} aria-labelledby="transcript-heading">
             <div className={styles.transcriptIntro}>

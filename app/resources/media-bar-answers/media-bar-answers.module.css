@@ -442,6 +442,112 @@
   line-height: 1.7;
 }
 
+.comparisonSection {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.comparisonIntro {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.65fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  margin-bottom: 3.5rem;
+}
+
+.comparisonIntro > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.comparisonCard {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: #0f0f0f;
+}
+
+.comparisonCard h3 {
+  margin: 0;
+  font-family: var(--font-bebas-neue), Impact, sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.comparisonCard > p {
+  min-height: 4.7rem;
+  margin: 1rem 0 1.5rem;
+  color: #aaa;
+  line-height: 1.65;
+}
+
+.comparisonCard ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.comparisonCard li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+  color: #d2d2d2;
+  line-height: 1.5;
+}
+
+.comparisonCard li::before {
+  margin-right: 0.7rem;
+  color: var(--red);
+  content: '—';
+}
+
+.comparisonNote {
+  max-width: 52rem;
+  margin: 2rem 0 0 auto;
+  color: #d2d2d2;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.episodeFaq {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.55fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.episodeFaqList {
+  border-top: 1px solid var(--line);
+}
+
+.episodeFaq details {
+  border-bottom: 1px solid var(--line);
+}
+
+.episodeFaq summary {
+  padding: 1.5rem 2.5rem 1.5rem 0;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.episodeFaq details > p {
+  margin: -0.3rem 0 1.5rem;
+  color: #aaa;
+  line-height: 1.75;
+}
+
 .transcriptSection {
   padding: 6rem 0;
   border-bottom: 1px solid var(--line);
@@ -556,6 +662,8 @@
   .episodeHeader,
   .answerSection,
   .takeawaySection,
+  .comparisonIntro,
+  .episodeFaq,
   .transcriptIntro,
   .relatedSection {
     grid-template-columns: 1fr;
@@ -591,6 +699,7 @@
   }
 
   .episodeGrid,
+  .comparisonGrid,
   .relatedLinks,
   .nextEpisode > div {
     grid-template-columns: 1fr;
@@ -611,6 +720,8 @@
 
   .answerSection,
   .takeawaySection,
+  .comparisonSection,
+  .episodeFaq,
   .transcriptSection,
   .relatedSection {
     padding-block: 4rem;

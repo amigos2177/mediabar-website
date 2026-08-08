@@ -27,8 +27,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Small, focused commits on main
 - SEO-optimized descriptive slugs on any new routes
 
-## Current State (as of July 23, 2026)
+## Current State (as of August 8, 2026)
 Site is live and stable. SEO metadata pass DONE for all routes.
+- **August 8 SEO audit recommendations batch (live; source pushed and pending merge):** optimized the homepage local Vimeo poster and site logos with responsive `next/image` sizing, prioritized the homepage poster without deprecated props, and replaced stylesheet font imports with existing local font variables. A local mobile Lighthouse production-build check improved from the live audit baseline of 68 performance / 7.5 s LCP to 96 / 2.8 s LCP; the local environment omits production analytics, so use the score directionally. Expanded all 12 film watch pages with category-specific production context, a service link, and three related-project links; generated pages now contain 362–385 words. Shortened the audit's overlong titles and descriptions while preserving visible headings. Full ESLint, structured-data checks (12 service pages, 15 blog posts, 12 watch pages), `git diff --check`, the webpack production build, Vercel's Turbopack build, authenticated preview checks, and canonical-domain smoke tests pass. Clean PR preview `dpl_FPAYo9a2YNEDPQR6xY7HEW1UaZaA` at commit `c0d7db6` was promoted to production as `dpl_9N9ynmnrjUF7TqquiQaKzrijbcCQ`; both canonical domains point to the Ready production deployment, the optimized 640px poster response is about 30 KB, and the one-hour production error query returned no errors. Application source is committed as `24ada3f` and `dca7721` on `agent/seo-attribution-release`; draft PR #2 targets `main`.
 - Root layout: title template + metadataBase set in app/layout.tsx.
 - Per-route metadata: every route has unique title + description + canonical. Client-component pages use a sibling layout.tsx; server-component pages have the export directly in page.tsx.
 - sitemap.ts: lastModified fixed to LAUNCH = 2026-05-22 (was `new Date()` on every deploy).

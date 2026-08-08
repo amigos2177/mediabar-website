@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { analyticsEvents } from '@/lib/analytics-events'
 import { trackAnalyticsEvent } from '@/lib/client-analytics'
 
@@ -23,6 +24,7 @@ export default function VimeoPlayer({
   const poster = thumbnailUrl || '/images/hero-aerial.jpg'
   const showPlayer = embedImmediately || playing
   const autoplay = playing && !embedImmediately
+  const isLocalPoster = poster.startsWith('/')
 
   return (
     <div className="mbp-vimeo-player">
@@ -44,14 +46,26 @@ export default function VimeoPlayer({
           }}
           aria-label={`Play film: ${title}`}
         >
-          {/* Vimeo CDN URLs are dynamic; the browser lazy-loads these lightweight poster images. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={poster}
-            alt=""
-            loading={eager ? 'eager' : 'lazy'}
-            decoding="async"
-          />
+          {isLocalPoster ? (
+            <Image
+              src={poster}
+              alt=""
+              fill
+              sizes="(max-width: 768px) calc(100vw - 56px), (max-width: 1200px) 50vw, 580px"
+              loading={eager ? 'eager' : 'lazy'}
+            />
+          ) : (
+            <>
+              {/* Vimeo CDN URLs are dynamic; keep them browser-loaded until the paused CDN follow-up resumes. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={poster}
+                alt=""
+                loading={eager ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </>
+          )}
           <span className="mbp-vimeo-scrim" aria-hidden="true" />
           <span className="mbp-vimeo-play" aria-hidden="true">
             <svg width="22" height="24" viewBox="0 0 22 24" fill="none">

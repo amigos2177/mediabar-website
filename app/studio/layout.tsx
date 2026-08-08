@@ -4,7 +4,7 @@ import { studioFaqs } from './studio-data'
 
 export const metadata = buildMetadata({
   title: 'Production Studio San Antonio | Media Bar Productions',
-  description: "Book a professional production studio in San Antonio with a DMX lighting grid, treated sound, a control room, and support for video, photography, and live content.",
+  description: 'Book a San Antonio production studio with a DMX lighting grid, treated sound, control room, and support for video, photography, interviews, and live content.',
   path: '/studio',
   ogImage: '/images/studio-7.jpg',
 })

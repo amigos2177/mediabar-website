@@ -1,6 +1,7 @@
 export type MediaBarAnswersVideo = {
   youtubeId: string
   title: string
+  metaTitle?: string
   description: string
   uploadDate: string
   duration: string
@@ -34,7 +35,7 @@ export const mediaBarAnswersVideos = {
     youtubeId: '2NlcT2I0kFc',
     title: 'How Much Should a Local TV Commercial Cost in Texas?',
     description:
-      'A local television commercial should be priced around its business goal, creative concept, production scope, usage rights, post-production, deliverables, and placement plan.',
+      'Plan a Texas TV commercial budget around business goals, creative, production scope, usage rights, post-production, deliverables, and media placement.',
     uploadDate: '2026-07-28T22:58:24-07:00',
     duration: 'PT1M16S',
     thumbnailPath: '/images/media-bar-answers/local-tv-commercial-cost-texas.png',
@@ -56,7 +57,7 @@ export const mediaBarAnswersVideos = {
     youtubeId: '1UcrG1fepnQ',
     title: 'What Does a Video Production Company Need for an Estimate?',
     description:
-      'An accurate video production estimate starts with the business goal, audience, filming plan, schedule, deliverables, and approval process - not the finished runtime alone.',
+      'Plan an accurate video production estimate around goals, audience, filming, schedule, deliverables, approvals, and budget, not finished runtime alone.',
     uploadDate: '2026-07-23T16:06:22-07:00',
     duration: 'PT56S',
     thumbnailPath: '/images/media-bar-answers/what-a-production-company-needs-for-an-estimate.png',
@@ -88,6 +89,7 @@ export const mediaBarAnswersVideos = {
   postProductionDelays: {
     youtubeId: '4EZelLWoHnY',
     title: 'The #1 Reason Corporate Videos Get Delayed (It’s Not Editing)',
+    metaTitle: 'Why Corporate Videos Get Delayed',
     description:
       'Ruben Garcia explains what happens after filming and how a clear, consolidated approval process helps prevent corporate video post-production delays.',
     uploadDate: '2026-07-21',

@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!episode) return {}
 
   return buildMetadata({
-    title: episode.video.title,
+    title: episode.video.metaTitle ?? episode.video.title,
     description: episode.video.description,
     path: `${libraryPath}/${episode.slug}`,
     ogImage: episode.video.thumbnailUrl,

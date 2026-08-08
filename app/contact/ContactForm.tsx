@@ -9,6 +9,7 @@ import {
   type CampaignAttribution,
 } from '@/lib/campaign-attribution'
 import { trackAnalyticsEvent } from '@/lib/client-analytics'
+import { discoverySources } from '@/lib/discovery-sources'
 import {
   clearConversionAttribution,
   readConversionAttribution,
@@ -22,6 +23,7 @@ const initialFields = {
   name: '',
   email: '',
   message: '',
+  discoverySource: '',
   website: '',
 }
 
@@ -54,6 +56,8 @@ export default function ContactForm() {
       sourceAction: conversionAttribution.current?.action || 'contact',
       sourcePlacement: conversionAttribution.current?.placement || 'direct',
       campaign: campaignAttribution.current?.utmCampaign || 'none',
+      firstTouchSource: campaignAttribution.current?.firstTouchSource || 'direct',
+      landingPage: campaignAttribution.current?.landingPage || '/contact',
     }
   }
 
@@ -83,6 +87,7 @@ export default function ContactForm() {
           lastName,
           email: fields.email,
           message: fields.message,
+          discoverySource: fields.discoverySource,
           website: fields.website,
           source: 'contact-quick-question',
           utmSource: campaignAttribution.current?.utmSource,
@@ -90,6 +95,8 @@ export default function ContactForm() {
           utmCampaign: campaignAttribution.current?.utmCampaign,
           utmContent: campaignAttribution.current?.utmContent,
           landingPage: campaignAttribution.current?.landingPage,
+          firstTouchSource: campaignAttribution.current?.firstTouchSource,
+          referrer: campaignAttribution.current?.referrer,
           sourcePage: conversionAttribution.current?.sourcePath || '/contact',
           sourceAction: conversionAttribution.current?.action || 'contact',
           sourcePlacement: conversionAttribution.current?.placement || 'direct',
@@ -111,6 +118,7 @@ export default function ContactForm() {
       trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, {
         service: 'General inquiry',
         leadType: 'quick_question',
+        discoverySource: fields.discoverySource || 'not_provided',
         ...conversionProperties(),
       }, 'generate_lead')
       clearConversionAttribution('contact')
@@ -219,6 +227,23 @@ export default function ContactForm() {
           value={fields.message}
           onChange={(event) => updateField('message', event)}
         />
+      </div>
+
+      <div className={styles.field}>
+        <label htmlFor="contact-discovery-source">
+          How did you hear about Media Bar? <span>Optional</span>
+        </label>
+        <select
+          id="contact-discovery-source"
+          name="discoverySource"
+          value={fields.discoverySource}
+          onChange={(event) => updateField('discoverySource', event)}
+        >
+          <option value="">Choose one</option>
+          {discoverySources.map((source) => (
+            <option key={source} value={source}>{source}</option>
+          ))}
+        </select>
       </div>
 
       <p className={styles.privacyNote}>

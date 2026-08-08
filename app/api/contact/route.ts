@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { discoverySources } from '@/lib/discovery-sources'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const MAX_BODY_BYTES = 20_000
@@ -21,6 +22,7 @@ const BUDGETS = new Set([
   '$50,000+', 'Not sure yet',
 ])
 const SOURCES = new Set(['video-production-faq', 'contact-quick-question'])
+const DISCOVERY_SOURCES = new Set<string>(discoverySources)
 
 type ContactFields = {
   firstName: string
@@ -41,6 +43,9 @@ type ContactFields = {
   sourcePage?: string
   sourceAction?: string
   sourcePlacement?: string
+  discoverySource?: string
+  firstTouchSource?: string
+  referrer?: string
 }
 
 type RateLimitEntry = {
@@ -137,6 +142,9 @@ function buildHtml(fields: ContactFields) {
     ...(safe.sourcePage ? [row('Conversion source page', safe.sourcePage)] : []),
     ...(safe.sourceAction ? [row('Conversion action', safe.sourceAction)] : []),
     ...(safe.sourcePlacement ? [row('Conversion placement', safe.sourcePlacement)] : []),
+    ...(safe.discoverySource ? [row('How they heard about us', safe.discoverySource)] : []),
+    ...(safe.firstTouchSource ? [row('First-touch source', safe.firstTouchSource)] : []),
+    ...(safe.referrer ? [row('Original referrer', safe.referrer)] : []),
   ]
   const sourceSection = attributionRows.length
     ? section('Inquiry Source', attributionRows.join(''))
@@ -255,11 +263,15 @@ export async function POST(req: NextRequest) {
     const sourcePage = readString(body, 'sourcePage', 240)
     const sourceAction = readString(body, 'sourceAction', 80)
     const sourcePlacement = readString(body, 'sourcePlacement', 80)
+    const discoverySource = readString(body, 'discoverySource', 80)
+    const firstTouchSource = readString(body, 'firstTouchSource', 100)
+    const referrer = readString(body, 'referrer', 240)
 
     if ([
       firstName, lastName, email, phone, company, service, budget, timeline,
       message, source, utmSource, utmMedium, utmCampaign, utmContent, landingPage,
       sourcePage, sourceAction, sourcePlacement,
+      discoverySource, firstTouchSource, referrer,
     ].includes(null)) {
       return NextResponse.json({ error: 'One or more fields are invalid or too long.' }, { status: 400 })
     }
@@ -287,6 +299,9 @@ export async function POST(req: NextRequest) {
     if (source && !SOURCES.has(source)) {
       return NextResponse.json({ error: 'Please select a valid inquiry source.' }, { status: 400 })
     }
+    if (discoverySource && !DISCOVERY_SOURCES.has(discoverySource)) {
+      return NextResponse.json({ error: 'Please select a valid referral source.' }, { status: 400 })
+    }
 
     const fields: ContactFields = {
       firstName,
@@ -307,6 +322,9 @@ export async function POST(req: NextRequest) {
       sourcePage: sourcePage || undefined,
       sourceAction: sourceAction || undefined,
       sourcePlacement: sourcePlacement || undefined,
+      discoverySource: discoverySource || undefined,
+      firstTouchSource: firstTouchSource || undefined,
+      referrer: referrer || undefined,
     }
 
     const { error } = await getResend().emails.send({

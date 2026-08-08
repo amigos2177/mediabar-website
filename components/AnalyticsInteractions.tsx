@@ -3,7 +3,10 @@
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { analyticsEvents } from '@/lib/analytics-events'
-import { captureCampaignAttribution } from '@/lib/campaign-attribution'
+import {
+  captureCampaignAttribution,
+  readCampaignAttribution,
+} from '@/lib/campaign-attribution'
 import { trackAnalyticsEvent } from '@/lib/client-analytics'
 import {
   captureConversionAttribution,
@@ -185,6 +188,12 @@ export function AnalyticsInteractions() {
 
       if (intent) {
         const action = getConversionAction(anchor, intent)
+        const firstTouch = readCampaignAttribution()
+        const attributionProperties = {
+          firstTouchSource: firstTouch?.firstTouchSource || 'direct',
+          landingPage: firstTouch?.landingPage || pathname,
+          referrer: firstTouch?.referrer || 'direct',
+        }
 
         captureConversionAttribution({
           intent,
@@ -200,12 +209,14 @@ export function AnalyticsInteractions() {
           placement,
           source: sourceGroup,
           sourcePath: pathname,
+          ...attributionProperties,
         })
         trackAnalyticsEvent(analyticsEvents.conversionSourceClicked, {
           intent,
           action,
           source: sourceGroup,
           sourcePath: pathname,
+          ...attributionProperties,
         })
 
         if (intent === 'gpt-advisor') {

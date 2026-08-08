@@ -9,6 +9,7 @@ import {
   type CampaignAttribution,
 } from '@/lib/campaign-attribution'
 import { trackAnalyticsEvent } from '@/lib/client-analytics'
+import { discoverySources } from '@/lib/discovery-sources'
 import {
   clearConversionAttribution,
   readConversionAttribution,
@@ -121,6 +122,7 @@ type PlannerFields = {
   email: string
   phone: string
   company: string
+  discoverySource: string
   website: string
 }
 
@@ -140,6 +142,7 @@ const initialFields: PlannerFields = {
   email: '',
   phone: '',
   company: '',
+  discoverySource: '',
   website: '',
 }
 
@@ -244,6 +247,8 @@ export default function ProjectPlannerForm() {
       sourceAction: conversionAttribution.current?.action || 'start_project',
       sourcePlacement: conversionAttribution.current?.placement || 'direct',
       campaign: attribution.current?.utmCampaign || 'none',
+      firstTouchSource: attribution.current?.firstTouchSource || 'direct',
+      landingPage: attribution.current?.landingPage || '/project-planner',
     }
   }
 
@@ -337,6 +342,7 @@ export default function ProjectPlannerForm() {
           email: fields.email,
           phone: fields.phone,
           company: fields.company,
+          discoverySource: fields.discoverySource,
           service: fields.service,
           budget: fields.budget,
           timeline: fields.timeline,
@@ -347,6 +353,8 @@ export default function ProjectPlannerForm() {
           utmCampaign: attribution.current?.utmCampaign,
           utmContent: attribution.current?.utmContent,
           landingPage: attribution.current?.landingPage,
+          firstTouchSource: attribution.current?.firstTouchSource,
+          referrer: attribution.current?.referrer,
           sourcePage: conversionAttribution.current?.sourcePath || '/project-planner',
           sourceAction: conversionAttribution.current?.action || 'start_project',
           sourcePlacement: conversionAttribution.current?.placement || 'direct',
@@ -367,6 +375,7 @@ export default function ProjectPlannerForm() {
         timeline: fields.timeline,
         leadType: 'project_brief',
         campaignSource: attribution.current?.utmSource || 'direct',
+        discoverySource: fields.discoverySource || 'not_provided',
         ...conversionProperties(),
       }, 'generate_lead')
       clearConversionAttribution('project-planner')
@@ -603,6 +612,22 @@ export default function ProjectPlannerForm() {
               <div className={styles.field}>
                 <label className={styles.fieldLabel} htmlFor="planner-company">Company <span>Optional</span></label>
                 <input id="planner-company" className={styles.control} autoComplete="organization" maxLength={120} value={fields.company} onChange={(event) => update('company', event.target.value)} />
+              </div>
+              <div className={styles.field}>
+                <label className={styles.fieldLabel} htmlFor="planner-discovery-source">
+                  How did you hear about Media Bar? <span>Optional</span>
+                </label>
+                <select
+                  id="planner-discovery-source"
+                  className={styles.control}
+                  value={fields.discoverySource}
+                  onChange={(event) => update('discoverySource', event.target.value)}
+                >
+                  <option value="">Choose one</option>
+                  {discoverySources.map((source) => (
+                    <option key={source} value={source}>{source}</option>
+                  ))}
+                </select>
               </div>
               <p className={styles.privacyNote}>
                 We use these details only to respond to your project inquiry. Please do not

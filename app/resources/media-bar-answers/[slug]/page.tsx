@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Layout from '@/components/Layout'
+import LiteYouTubeEmbed from '@/components/LiteYouTubeEmbed'
 import {
   BreadcrumbJsonLd,
   EducationalGuideJsonLd,
@@ -94,16 +95,13 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
             <p>{episode.video.description}</p>
           </header>
 
-          <div className={styles.videoFrame}>
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}?cc_load_policy=0`}
-              title={episode.video.title}
-              loading="eager"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+          <LiteYouTubeEmbed
+            youtubeId={episode.video.youtubeId}
+            title={episode.video.title}
+            thumbnailPath={episode.video.thumbnailPath}
+            className={styles.videoFrame}
+            priority
+          />
 
           <p className={styles.disclosure}>
             This video features Ruben Garcia&apos;s digital avatar. The guidance

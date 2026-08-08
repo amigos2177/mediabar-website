@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
+import LiteYouTubeEmbed from '@/components/LiteYouTubeEmbed'
 import { mediaBarAnswersEpisodes } from '@/data/media-bar-answers'
 import {
   videoFaqCategories,
@@ -245,16 +246,12 @@ export default function VideoProductionFaqPage() {
                           {faq.answer.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                           {faq.video && (
                             <div className={styles.answerVideo}>
-                              <div className={styles.answerVideoFrame}>
-                                <iframe
-                                  src={`https://www.youtube-nocookie.com/embed/${faq.video.youtubeId}?cc_load_policy=0`}
-                                  title={faq.video.title}
-                                  loading="lazy"
-                                  referrerPolicy="strict-origin-when-cross-origin"
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                  allowFullScreen
-                                />
-                              </div>
+                              <LiteYouTubeEmbed
+                                youtubeId={faq.video.youtubeId}
+                                title={faq.video.title}
+                                thumbnailPath={faq.video.thumbnailPath}
+                                className={styles.answerVideoFrame}
+                              />
                               <div className={styles.answerVideoCopy}>
                                 <span>Media Bar Answers · 1 minute</span>
                                 <h4>{faq.video.title}</h4>

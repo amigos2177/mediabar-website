@@ -10,7 +10,7 @@ const BASE = 'https://www.mediabarproductions.com'
 export default function sitemap(): MetadataRoute.Sitemap {
   const SITE_UPDATED = new Date('2026-07-19')
   const SEARCH_SPRINT_UPDATED = new Date('2026-07-23')
-  const MEDIA_BAR_ANSWERS_UPDATED = new Date('2026-07-28')
+  const MEDIA_BAR_ANSWERS_UPDATED = new Date('2026-08-10')
 
   const staticPages: MetadataRoute.Sitemap = [
     // Homepage
@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog`, lastModified: SEARCH_SPRINT_UPDATED },
     { url: `${BASE}/pricing`, lastModified: SITE_UPDATED },
     { url: `${BASE}/how-we-work`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production`, lastModified: SITE_UPDATED },
+    { url: `${BASE}/video-production`, lastModified: MEDIA_BAR_ANSWERS_UPDATED },
 
     // Service pages
     { url: `${BASE}/video-production/corporate`, lastModified: SITE_UPDATED },

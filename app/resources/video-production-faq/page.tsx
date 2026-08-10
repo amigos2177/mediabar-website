@@ -85,7 +85,7 @@ export default function VideoProductionFaqPage() {
               <a href="#topics" className={styles.primaryButton}>Explore the answers</a>
               <Link href="/resources/media-bar-answers" className={styles.secondaryButton}>Watch Media Bar Answers</Link>
             </div>
-            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed July 28, 2026</p>
+            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed August 10, 2026</p>
           </div>
         </section>
 

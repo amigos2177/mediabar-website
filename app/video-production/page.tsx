@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import QuickContactBar from '@/components/QuickContactBar'
+import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import { BreadcrumbJsonLd, FAQPageJsonLd, ServiceJsonLd } from '@/components/JsonLd'
 import { buildMetadata } from '@/lib/seo'
 import { videoProductionFaqs } from './content'
@@ -341,6 +342,14 @@ export default function VideoProductionPage() {
             </div>
           </div>
         </section>
+
+        <MediaBarAnswersFeature
+          title="Which video"
+          emphasis="should come first?"
+          description="Start with the audience question that matters most, then shape the format, channel plan, and useful cutdowns around that communication goal."
+          slugs={['what-video-should-a-business-make-first']}
+          placement="services"
+        />
 
         <section className="vps-section vps-feature">
           <div className="vps-container">

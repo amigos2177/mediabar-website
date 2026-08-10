@@ -83,6 +83,7 @@ export const videoProductionFaqs: VideoProductionFaq[] = [
       'Start with the question your most important audience needs answered. For many organizations, that means a clear brand or service overview, a customer story, an executive message, a recruiting film, or a short library of expert answers.',
       'The first project should solve a real communication problem and have a clear distribution plan. A useful brief identifies who needs to see the video, what they should understand, where they will watch, and what should happen next. Format follows those decisions.',
     ],
+    video: mediaBarAnswersVideos.firstBusinessVideo,
     links: [{ label: 'Explore video production services', href: '/video-production' }],
   },
   {

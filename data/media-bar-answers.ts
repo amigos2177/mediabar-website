@@ -47,6 +47,17 @@ export type MediaBarAnswersEpisode = {
 }
 
 export const mediaBarAnswersVideos = {
+  firstBusinessVideo: {
+    youtubeId: 'qTMOFcXFBaA',
+    title: 'What Type of Video Should a Business Make First?',
+    description:
+      "A business should start with the video that answers its audience's most important question, then choose the format, channels, and versions around that goal.",
+    uploadDate: '2026-08-10T11:58:09-07:00',
+    duration: 'PT54S',
+    thumbnailPath: '/images/media-bar-answers/what-video-should-a-business-make-first.png',
+    thumbnailUrl:
+      'https://www.mediabarproductions.com/images/media-bar-answers/what-video-should-a-business-make-first.png',
+  },
   localCommercialCost: {
     youtubeId: '2NlcT2I0kFc',
     title: 'How Much Should a Local TV Commercial Cost in Texas?',
@@ -406,6 +417,45 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
       },
     ],
     video: mediaBarAnswersVideos.localCommercialCost,
+  },
+  {
+    episode: '07',
+    slug: 'what-video-should-a-business-make-first',
+    category: 'Choosing a Direction',
+    shortTitle: 'What video a business should make first',
+    directAnswer:
+      'Start with the most important question your audience needs answered. The right first video depends on who needs to see it, what they should understand, where they will watch, and what they should do next.',
+    takeaways: [
+      'Choose the communication problem before choosing the video format.',
+      'Match the first video to the audience, message, viewing location, and desired next action.',
+      'Plan shorter channel-specific versions before filming when they will make the production more useful.',
+    ],
+    transcript: [
+      'Hi, I am Ruben Garcia, the owner of Media Bar Productions, and this is my digital avatar.',
+      'What type of video should a business make first?',
+      'Start with the most important question your audience needs answered. Do not begin with a format just because it is popular.',
+      'For some organizations, the right first project is a clear company or service overview. For others, it may be a customer story, an executive message, a recruiting video, or a short library of expert answers.',
+      'The best choice depends on who needs to see the video, what they should understand, where they will watch it, and what you want them to do next.',
+      'Also consider how long the content needs to remain useful and whether the same production can create shorter versions for other channels.',
+      'If you are unsure where to start, bring one communication problem to the Media Bar Project Planner. We can help shape the video around that goal.',
+    ],
+    faqQuestion: 'What type of video should a business make first?',
+    faqHref: '/resources/video-production-faq#what-video-should-a-business-make-first',
+    serviceLink: {
+      label: 'Explore video production services',
+      href: '/video-production',
+    },
+    relatedLinks: [
+      {
+        label: 'See how Media Bar projects move from planning to delivery',
+        href: '/how-we-work',
+      },
+      {
+        label: 'Bring one communication problem to the project planner',
+        href: '/project-planner',
+      },
+    ],
+    video: mediaBarAnswersVideos.firstBusinessVideo,
   },
 ]
 

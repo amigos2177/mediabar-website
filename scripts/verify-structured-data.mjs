@@ -45,8 +45,23 @@ function expectType(relativePath, type) {
 }
 
 const homeNodes = schemas('index.html')
-for (const type of ['WebSite', 'LocalBusiness', 'VideoObject']) {
+for (const type of ['WebSite', 'LocalBusiness', 'VideoObject', 'FAQPage']) {
   if (!hasType(homeNodes, type)) failures.push(`index.html: missing ${type}`)
+}
+
+const homeFaq = homeNodes.find((node) => node['@type'] === 'FAQPage')
+const homeQuestions = Array.isArray(homeFaq?.mainEntity)
+  ? homeFaq.mainEntity.map((item) => item?.name)
+  : []
+for (const question of [
+  'What does Media Bar produce?',
+  'What does full-service production include?',
+  'Who owns the footage?',
+  'How is a project priced?',
+]) {
+  if (!homeQuestions.includes(question)) {
+    failures.push(`index.html: FAQPage is missing "${question}"`)
+  }
 }
 
 const business = homeNodes.find((node) => node['@type'] === 'LocalBusiness')
@@ -147,6 +162,13 @@ if (!llms.includes('https://www.mediabarproductions.com/about/editorial-policy')
 const sitemap = read('sitemap.xml.body')
 if (!sitemap.includes('<loc>https://www.mediabarproductions.com/about/editorial-policy</loc>')) {
   failures.push('sitemap.xml: missing editorial standards URL')
+}
+const sitemapLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1])
+const sitemapLastmods = [...sitemap.matchAll(/<lastmod>/g)].length
+if (sitemapLocs.length === 0) {
+  failures.push('sitemap.xml: no URL entries were generated')
+} else if (sitemapLastmods < sitemapLocs.length) {
+  failures.push(`sitemap.xml: ${sitemapLastmods}/${sitemapLocs.length} URLs have lastmod`)
 }
 
 if (failures.length) {

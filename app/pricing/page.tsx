@@ -115,7 +115,7 @@ export default function PricingPage() {
             </nav>
             <p className={styles.eyebrow}>Video production estimates</p>
             <h1>
-              Every project
+              Every project{' '}
               <em>gets its own number.</em>
             </h1>
             <p className={styles.heroSummary}>

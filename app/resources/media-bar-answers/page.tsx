@@ -46,7 +46,7 @@ export default function MediaBarAnswersPage() {
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>Media Bar Answers</p>
             <h1>
-              Video production answers
+              Video production answers{' '}
               <em>from the people who do the work.</em>
             </h1>
             <p className={styles.intro}>

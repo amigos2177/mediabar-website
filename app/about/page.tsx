@@ -51,7 +51,7 @@ export default function AboutPage() {
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>About Media Bar</p>
             <h1>
-              Built by people
+              Built by people{' '}
               <em>who love the work.</em>
             </h1>
             <p>

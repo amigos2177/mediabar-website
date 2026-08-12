@@ -77,7 +77,7 @@ export default function BlogPage() {
           <div>
             <p className={styles.eyebrow}>Media Bar field notes</p>
             <h1>
-              Ideas from
+              Ideas from{' '}
               <em>inside the work.</em>
             </h1>
           </div>
@@ -124,10 +124,10 @@ export default function BlogPage() {
               className={styles.featuredImage}
               aria-label={`Read ${featuredPost.title}`}
             >
-              {featuredPost.featuredImage ? (
+                  {featuredPost.featuredImage ? (
                 <Image
                   src={featuredPost.featuredImage}
-                  alt=""
+                  alt={featuredPost.title}
                   fill
                   priority
                   sizes="(max-width: 900px) 100vw, 58vw"
@@ -169,7 +169,7 @@ export default function BlogPage() {
                   {post.featuredImage ? (
                     <Image
                       src={post.featuredImage}
-                      alt=""
+                      alt={post.title}
                       fill
                       sizes="(max-width: 680px) 100vw, (max-width: 1040px) 50vw, 33vw"
                     />

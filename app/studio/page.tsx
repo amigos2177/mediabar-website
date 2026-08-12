@@ -91,7 +91,7 @@ export default function StudioPage() {
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>Production studio in San Antonio</p>
             <h1>
-              Your shoot.
+              Your shoot.{' '}
               <em>Our studio.</em>
             </h1>
             <p className={styles.heroSummary}>

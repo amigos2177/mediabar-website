@@ -73,7 +73,7 @@ export default function VideoProductionFaqPage() {
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>Texas video production resource</p>
             <h1>
-              Frequently asked questions
+              Frequently asked questions{' '}
               <em>about video production.</em>
             </h1>
             <p className={styles.heroIntro}>

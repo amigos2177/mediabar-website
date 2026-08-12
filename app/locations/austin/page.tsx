@@ -200,7 +200,7 @@ export default function AustinPage() {
             <div className="atx-hero-copy">
               <p className="atx-eyebrow">Full-service Austin video production</p>
               <h1 className="atx-display">
-                Austin Video Production
+                Austin Video Production{' '}
                 <em>Without the Hand-Offs.</em>
               </h1>
               <p className="atx-hero-deck">

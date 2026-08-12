@@ -49,7 +49,7 @@ export default function VimeoPlayer({
           {isLocalPoster ? (
             <Image
               src={poster}
-              alt=""
+              alt={title}
               fill
               sizes="(max-width: 768px) calc(100vw - 56px), (max-width: 1200px) 50vw, 580px"
               loading={eager ? 'eager' : 'lazy'}
@@ -60,7 +60,7 @@ export default function VimeoPlayer({
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={poster}
-                alt=""
+                alt={title}
                 loading={eager ? 'eager' : 'lazy'}
                 decoding="async"
               />

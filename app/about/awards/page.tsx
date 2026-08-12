@@ -56,7 +56,7 @@ export default function AwardsPage() {
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>Recognition earned through the work</p>
             <h1>
-              The standard
+              The standard{' '}
               <span>shows up.</span>
             </h1>
             <p>

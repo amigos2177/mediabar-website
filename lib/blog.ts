@@ -48,6 +48,55 @@ export function getAllPosts(): Post[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
+export type PostIndexEntry = {
+  slug: string
+  date: string
+  updated?: string
+}
+
+function toIndexDate(value: unknown): string | undefined {
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10)
+  }
+  if (typeof value === 'string' && value.trim()) {
+    const parsed = new Date(value)
+    if (!Number.isNaN(parsed.getTime())) return value.trim()
+  }
+  return undefined
+}
+
+/** Front-matter only. Safe for sitemap generation: never parses markdown, never throws. */
+export function getPostIndex(): PostIndexEntry[] {
+  try {
+    if (!fs.existsSync(CONTENT_DIR)) return []
+    return fs
+      .readdirSync(CONTENT_DIR)
+      .filter((file) => file.endsWith('.md'))
+      .flatMap((file) => {
+        try {
+          const raw = fs.readFileSync(path.join(CONTENT_DIR, file), 'utf8')
+          const { data } = matter(raw)
+          const slug =
+            typeof data.slug === 'string' && data.slug.trim()
+              ? data.slug.trim()
+              : file.replace(/\.md$/, '')
+          const date = toIndexDate(data.date)
+          if (!slug || !date) return []
+          return [{
+            slug,
+            date,
+            updated: toIndexDate(data.updated),
+          }]
+        } catch {
+          return []
+        }
+      })
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+  } catch {
+    return []
+  }
+}
+
 export function getPostBySlug(slug: string): Post | null {
   const file = path.join(CONTENT_DIR, `${slug}.md`)
   if (!fs.existsSync(file)) return null

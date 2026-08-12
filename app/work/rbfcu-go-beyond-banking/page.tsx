@@ -156,7 +156,7 @@ export default function RbfcuCaseStudyPage() {
             <div className="rb-wrap rb-inner">
               <span className="rb-eyebrow">Case Study · Broadcast Commercial Production</span>
               <h1 className="rb-disp">
-                <span className="rb-l1">RBFCU</span>
+                <span className="rb-l1">RBFCU </span>
                 <span className="rb-l2">Go Beyond Banking</span>
               </h1>
               <p className="rb-deck">

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { getAllPosts } from '../lib/blog'
+import { getPostIndex } from '../lib/blog'
 import workVideos from '../data/work-videos.json'
 import { workProjects } from '../data/work-projects'
 import type { PortfolioVideo } from '../components/VideoObjectSchema'
@@ -7,89 +7,169 @@ import { mediaBarAnswersEpisodes } from '../data/media-bar-answers'
 
 const BASE = 'https://www.mediabarproductions.com'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const SITE_UPDATED = new Date('2026-07-19')
-  const SEARCH_SPRINT_UPDATED = new Date('2026-07-23')
-  const MEDIA_BAR_ANSWERS_UPDATED = new Date('2026-08-10')
+export const dynamic = 'force-static'
 
-  const staticPages: MetadataRoute.Sitemap = [
-    // Homepage
-    { url: `${BASE}/`, lastModified: SEARCH_SPRINT_UPDATED },
+const SITE_UPDATED = '2026-07-19'
+const SEARCH_SPRINT_UPDATED = '2026-07-23'
+const MEDIA_BAR_ANSWERS_UPDATED = '2026-08-10'
 
-    // Core pages
-    { url: `${BASE}/about`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/about/awards`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/about/editorial-policy`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/work`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/work/rbfcu-go-beyond-banking`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/photography`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/studio`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/contact`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/careers`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/project-planner`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/faq`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/resources/video-production-faq`, lastModified: MEDIA_BAR_ANSWERS_UPDATED },
-    { url: `${BASE}/resources/media-bar-answers`, lastModified: MEDIA_BAR_ANSWERS_UPDATED },
-    { url: `${BASE}/clients`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/blog`, lastModified: SEARCH_SPRINT_UPDATED },
-    { url: `${BASE}/pricing`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/how-we-work`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production`, lastModified: MEDIA_BAR_ANSWERS_UPDATED },
+function sitemapDate(value: unknown): string | undefined {
+  if (value instanceof Date) {
+    if (Number.isNaN(value.getTime())) return undefined
+    return value.toISOString()
+  }
+  if (typeof value === 'string' && value.trim()) {
+    const parsed = new Date(value)
+    if (Number.isNaN(parsed.getTime())) return undefined
+    return value.trim()
+  }
+  return undefined
+}
 
-    // Service pages
-    { url: `${BASE}/video-production/corporate`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/commercials`, lastModified: MEDIA_BAR_ANSWERS_UPDATED },
-    { url: `${BASE}/video-production/events`, lastModified: SEARCH_SPRINT_UPDATED },
-    { url: `${BASE}/video-production/interview`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/medical`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/aerial`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/motion-graphics`, lastModified: new Date('2026-07-29') },
-    { url: `${BASE}/video-production/live-streaming`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/post-production`, lastModified: SEARCH_SPRINT_UPDATED },
-    { url: `${BASE}/video-production/food`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/video-production/real-estate`, lastModified: SITE_UPDATED },
+function withLastmod(
+  url: string,
+  lastModified: unknown,
+  extra?: Omit<MetadataRoute.Sitemap[number], 'url' | 'lastModified'>,
+): MetadataRoute.Sitemap[number] {
+  const date = sitemapDate(lastModified)
+  return date ? { url, lastModified: date, ...extra } : { url, ...extra }
+}
 
-    // Location pages
-    { url: `${BASE}/locations/san-antonio`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/locations/austin`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/locations/dallas`, lastModified: SITE_UPDATED },
-    { url: `${BASE}/locations/houston`, lastModified: SITE_UPDATED },
+function collect(label: string, build: () => MetadataRoute.Sitemap): MetadataRoute.Sitemap {
+  try {
+    return build()
+  } catch (error) {
+    console.error(`sitemap: ${label} failed; omitting those URLs`, error)
+    return []
+  }
+}
+
+function staticPages(): MetadataRoute.Sitemap {
+  return [
+    withLastmod(`${BASE}/`, SEARCH_SPRINT_UPDATED),
+
+    withLastmod(`${BASE}/about`, SITE_UPDATED),
+    withLastmod(`${BASE}/about/awards`, SITE_UPDATED),
+    withLastmod(`${BASE}/about/editorial-policy`, SITE_UPDATED),
+    withLastmod(`${BASE}/work`, SITE_UPDATED),
+    withLastmod(`${BASE}/work/rbfcu-go-beyond-banking`, SITE_UPDATED),
+    withLastmod(`${BASE}/photography`, SITE_UPDATED),
+    withLastmod(`${BASE}/studio`, SITE_UPDATED),
+    withLastmod(`${BASE}/contact`, SITE_UPDATED),
+    withLastmod(`${BASE}/careers`, SITE_UPDATED),
+    withLastmod(`${BASE}/project-planner`, SITE_UPDATED),
+    withLastmod(`${BASE}/faq`, SITE_UPDATED),
+    withLastmod(`${BASE}/resources/video-production-faq`, MEDIA_BAR_ANSWERS_UPDATED),
+    withLastmod(`${BASE}/resources/media-bar-answers`, MEDIA_BAR_ANSWERS_UPDATED),
+    withLastmod(`${BASE}/clients`, SITE_UPDATED),
+    withLastmod(`${BASE}/blog`, SEARCH_SPRINT_UPDATED),
+    withLastmod(`${BASE}/pricing`, SITE_UPDATED),
+    withLastmod(`${BASE}/how-we-work`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production`, MEDIA_BAR_ANSWERS_UPDATED),
+
+    withLastmod(`${BASE}/video-production/corporate`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production/commercials`, MEDIA_BAR_ANSWERS_UPDATED),
+    withLastmod(`${BASE}/video-production/events`, SEARCH_SPRINT_UPDATED),
+    withLastmod(`${BASE}/video-production/interview`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production/medical`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production/aerial`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production/motion-graphics`, '2026-07-29'),
+    withLastmod(`${BASE}/video-production/live-streaming`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production/post-production`, SEARCH_SPRINT_UPDATED),
+    withLastmod(`${BASE}/video-production/food`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production/real-estate`, SITE_UPDATED),
+
+    withLastmod(`${BASE}/locations/san-antonio`, SITE_UPDATED),
+    withLastmod(`${BASE}/locations/austin`, SITE_UPDATED),
+    withLastmod(`${BASE}/locations/dallas`, SITE_UPDATED),
+    withLastmod(`${BASE}/locations/houston`, SITE_UPDATED),
   ]
+}
 
-  const posts = getAllPosts()
-  const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${BASE}/blog/${post.slug}`,
-    lastModified: new Date(post.updated ?? post.date),
-  }))
+function blogEntries(): MetadataRoute.Sitemap {
+  return getPostIndex().map((post) =>
+    withLastmod(`${BASE}/blog/${post.slug}`, post.updated ?? post.date),
+  )
+}
 
+function watchEntries(): MetadataRoute.Sitemap {
   const videos = workVideos as PortfolioVideo[]
-  const watchEntries: MetadataRoute.Sitemap = workProjects.flatMap((project) => {
+  return workProjects.flatMap((project) => {
     const video = videos.find((item) => item.embedUrl?.endsWith(`/${project.id}`))
     if (!video) return []
+
     const thumbnail = Array.isArray(video.thumbnailUrl) ? video.thumbnailUrl[0] : video.thumbnailUrl
+    const lastModified = sitemapDate(video.uploadDate)
+    const description =
+      video.description || `${project.title}, produced by Media Bar Productions in San Antonio.`
+    const canAttachVideo =
+      Boolean(project.title)
+      && typeof thumbnail === 'string'
+      && thumbnail.length > 0
+      && Boolean(description)
+      && Boolean(video.embedUrl)
 
-    return [{
-      url: `${BASE}/work/watch/${project.slug}`,
-      lastModified: new Date(video.uploadDate),
-      videos: [{
-        title: project.title,
-        thumbnail_loc: thumbnail,
-        description: video.description || `${project.title}, produced by Media Bar Productions in San Antonio.`,
-        player_loc: video.embedUrl,
-      }],
-    }]
+    return [withLastmod(
+      `${BASE}/work/watch/${project.slug}`,
+      lastModified,
+      canAttachVideo
+        ? {
+            videos: [{
+              title: project.title,
+              thumbnail_loc: thumbnail,
+              description,
+              player_loc: video.embedUrl,
+              publication_date: lastModified,
+            }],
+          }
+        : undefined,
+    )]
   })
+}
 
-  const answerEntries: MetadataRoute.Sitemap = mediaBarAnswersEpisodes.map((episode) => ({
-    url: `${BASE}/resources/media-bar-answers/${episode.slug}`,
-    lastModified: new Date(episode.video.uploadDate),
-    videos: [{
-      title: episode.video.title,
-      thumbnail_loc: episode.video.thumbnailUrl,
-      description: episode.video.description,
-      player_loc: `https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`,
-    }],
-  }))
+function answerEntries(): MetadataRoute.Sitemap {
+  return mediaBarAnswersEpisodes.flatMap((episode) => {
+    const lastModified = sitemapDate(episode.video.uploadDate)
+    const thumbnail = episode.video.thumbnailUrl
+    const canAttachVideo =
+      Boolean(episode.video.title)
+      && typeof thumbnail === 'string'
+      && thumbnail.length > 0
+      && Boolean(episode.video.description)
+      && Boolean(episode.video.youtubeId)
 
-  return [...staticPages, ...answerEntries, ...watchEntries, ...blogEntries]
+    return [withLastmod(
+      `${BASE}/resources/media-bar-answers/${episode.slug}`,
+      lastModified ?? MEDIA_BAR_ANSWERS_UPDATED,
+      canAttachVideo
+        ? {
+            videos: [{
+              title: episode.video.title,
+              thumbnail_loc: thumbnail,
+              description: episode.video.description,
+              player_loc: `https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`,
+              publication_date: lastModified,
+            }],
+          }
+        : undefined,
+    )]
+  })
+}
+
+function buildSitemap(): MetadataRoute.Sitemap {
+  return [
+    ...staticPages(),
+    ...collect('media-bar-answers', answerEntries),
+    ...collect('watch-pages', watchEntries),
+    ...collect('blog-posts', blogEntries),
+  ]
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  try {
+    return buildSitemap()
+  } catch (error) {
+    console.error('sitemap: generation failed; returning static URL fallback', error)
+    return staticPages()
+  }
 }

@@ -149,7 +149,7 @@ export default function FAQPage() {
           <div>
             <p className={styles.eyebrow}>Frequently asked questions</p>
             <h1>
-              Straight answers
+              Straight answers{' '}
               <span>before the first call.</span>
             </h1>
           </div>

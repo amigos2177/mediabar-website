@@ -54,7 +54,7 @@ export default function ContactPage() {
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>Contact Media Bar</p>
               <h1>
-                Let&apos;s make the
+                Let&apos;s make the{' '}
                 <span>next move clear.</span>
               </h1>
             </div>

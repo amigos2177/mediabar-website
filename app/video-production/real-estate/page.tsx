@@ -171,7 +171,7 @@ export default function RealEstatePage() {
               <span style={{ color: '#AAAAAA' }}>Real Estate Video</span>
             </nav>
             <p className="eyebrow">Real Estate &amp; Property Video</p>
-            <h1 className="page-h1"><em>Real Estate</em>Video Production in San Antonio</h1>
+            <h1 className="page-h1"><em>Real Estate</em> Video Production in San Antonio</h1>
             <p className="hero-sub">Cinematic property walkthroughs and aerial coverage for San Antonio agents, developers, builders, and property teams. Ground and air can be coordinated in one practical shoot plan.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>

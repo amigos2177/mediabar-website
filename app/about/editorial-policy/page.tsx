@@ -37,7 +37,7 @@ export default function EditorialPolicyPage() {
           <div className={styles.heroInner}>
             <p className={styles.eyebrow}>Authority needs accountability</p>
             <h1>
-              Editorial standards
+              Editorial standards{' '}
               <span>you can verify.</span>
             </h1>
             <p className={styles.intro}>

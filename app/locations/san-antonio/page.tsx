@@ -209,7 +209,7 @@ export default function SanAntonioPage() {
             <div className="sa-hero-copy">
               <p className="sa-eyebrow">San Antonio production resources since 2011</p>
               <h1 className="sa-display">
-                Local Crew &amp; Studio Support
+                Local Crew &amp; Studio Support{' '}
                 <em>For San Antonio Productions.</em>
               </h1>
               <p className="sa-hero-deck">

@@ -44,7 +44,7 @@ export default function WorkPage() {
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>Selected Work</p>
             <h1 className={styles.heroTitle}>
-              Stories built
+              Stories built{' '}
               <span>to be seen.</span>
             </h1>
             <p className={styles.heroIntro}>

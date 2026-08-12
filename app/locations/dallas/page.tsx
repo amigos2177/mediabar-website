@@ -200,7 +200,7 @@ export default function DallasPage() {
             <div className="dfw-hero-copy">
               <p className="dfw-eyebrow">Full-service Dallas-Fort Worth video production</p>
               <h1 className="dfw-display">
-                DFW Video Production
+                DFW Video Production{' '}
                 <em>Built for Complex Briefs.</em>
               </h1>
               <p className="dfw-hero-deck">

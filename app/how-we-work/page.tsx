@@ -101,7 +101,7 @@ export default function HowWeWorkPage() {
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>How we work</p>
             <h1>
-              Clear process.
+              Clear process.{' '}
               <span>Better work.</span>
             </h1>
             <p>

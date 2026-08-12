@@ -163,7 +163,7 @@ export default function FoodPage() {
               <span style={{ color: '#AAAAAA' }}>Food Video</span>
             </nav>
             <p className="eyebrow">Food &amp; Beverage Video Production</p>
-            <h1 className="page-h1"><em>Food</em>Video Production in San Antonio</h1>
+            <h1 className="page-h1"><em>Food</em> Video Production in San Antonio</h1>
             <p className="hero-sub">Appetite-driving food and beverage video for restaurants, CPG brands, and hospitality groups. Trusted by HEB and Unilever - we know how to make food look extraordinary on screen.</p>
             <div className="hero-btns">
               <Link href="/contact" className="btn-red">Get a Free Quote</Link>

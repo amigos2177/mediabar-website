@@ -8,6 +8,7 @@ import GoogleReviews from '../../components/GoogleReviews'
 import { MediaBarAnswersFeature } from '../../components/MediaBarAnswersFeature'
 import VimeoPlayer from '../../components/VimeoPlayer'
 import { VideoObjectJsonLd } from '../../components/JsonLd'
+import { homepageFaqs } from '../../data/homepage-faqs'
 
 const services = [
   {
@@ -1155,7 +1156,7 @@ export default function HomePage() {
         <div className="hero-content">
           <p className="hero-eyebrow">Media Bar Productions · Local crew since 2011</p>
           <h1 className="hero-headline">
-            Video Production in San Antonio
+            Video Production in San Antonio{' '}
             <span className="hero-headline-geo">Built to move people and business.</span>
           </h1>
           <p className="hero-sub">
@@ -1310,46 +1311,15 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="answer-grid">
-            <article className="answer-card">
-              <h3>What does Media Bar produce?</h3>
-              <p>
-                Corporate films, TV and digital commercials, event coverage, interviews,
-                medical video, live streams, motion graphics, food content, and post-production.
-              </p>
-              <Link href="/video-production" className="answer-link">
-                Explore video production services →
-              </Link>
-            </article>
-            <article className="answer-card">
-              <h3>What does full-service production include?</h3>
-              <p>
-                Strategy, creative development, scripting, pre-production, experienced crews,
-                filming, editing, color, audio, captions, and delivery for every channel.
-              </p>
-              <Link href="/how-we-work" className="answer-link">
-                See our production process →
-              </Link>
-            </article>
-            <article className="answer-card">
-              <h3>Who owns the footage?</h3>
-              <p>
-                You do. Final deliverables and the footage we capture for your project belong
-                to your organization, with files prepared for the platforms you need.
-              </p>
-              <Link href="/resources/video-production-faq" className="answer-link">
-                Read the video production guide →
-              </Link>
-            </article>
-            <article className="answer-card">
-              <h3>How is a project priced?</h3>
-              <p>
-                Scope depends on the creative, crew, locations, talent, shoot days, and
-                post-production. We recommend the right production plan before work begins.
-              </p>
-              <Link href="/pricing" className="answer-link">
-                See what drives video cost →
-              </Link>
-            </article>
+            {homepageFaqs.map((faq) => (
+              <article className="answer-card" key={faq.question}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+                <Link href={faq.href} className="answer-link">
+                  {faq.linkLabel}
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>

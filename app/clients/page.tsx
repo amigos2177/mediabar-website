@@ -78,7 +78,7 @@ export default function ClientsPage() {
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>Client relationships</p>
               <h1>
-                Trusted to carry
+                Trusted to carry{' '}
                 <span>the story.</span>
               </h1>
             </div>

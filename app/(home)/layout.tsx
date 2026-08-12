@@ -1,3 +1,5 @@
+import { FAQPageJsonLd } from '@/components/JsonLd'
+import { homepageFaqs } from '@/data/homepage-faqs'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
@@ -8,5 +10,12 @@ export const metadata = buildMetadata({
 })
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <FAQPageJsonLd
+        faqs={homepageFaqs.map(({ question, answer }) => ({ question, answer }))}
+      />
+      {children}
+    </>
+  )
 }

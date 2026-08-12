@@ -35,7 +35,7 @@ export default function ProjectPlannerPage() {
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>Guided project brief</p>
               <h1 className={styles.heroTitle}>
-                Start with the goal.
+                Start with the goal.{' '}
                 <span>We&apos;ll build the plan.</span>
               </h1>
               <p className={styles.heroSummary}>

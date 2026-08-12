@@ -3,9 +3,8 @@ import {
   BreadcrumbJsonLd,
   FAQPageJsonLd,
   ServiceJsonLd,
-  VideoObjectJsonLd,
 } from '@/components/JsonLd'
-import { medicalFaqs, medicalVideo } from './content'
+import { medicalFaqs } from './content'
 
 const path = '/video-production/medical'
 const description =
@@ -26,14 +25,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         description={description}
         url={path}
         image="https://www.mediabarproductions.com/images/bts-10.jpg"
-      />
-      <VideoObjectJsonLd
-        name={medicalVideo.title}
-        description={medicalVideo.copy}
-        thumbnailUrl={medicalVideo.thumbnail}
-        uploadDate={medicalVideo.uploadDate}
-        duration={medicalVideo.duration}
-        embedUrl={`https://player.vimeo.com/video/${medicalVideo.id}`}
       />
       <FAQPageJsonLd faqs={medicalFaqs} />
       <BreadcrumbJsonLd

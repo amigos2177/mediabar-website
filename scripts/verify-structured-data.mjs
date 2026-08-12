@@ -38,6 +38,61 @@ function hasType(nodes, type) {
   })
 }
 
+function walkNodes(node, visit) {
+  if (!node || typeof node !== 'object') return
+  if (Array.isArray(node)) {
+    node.forEach((item) => walkNodes(item, visit))
+    return
+  }
+  visit(node)
+  for (const value of Object.values(node)) walkNodes(value, visit)
+}
+
+function isType(node, type) {
+  const value = node?.['@type']
+  return value === type || (Array.isArray(value) && value.includes(type))
+}
+
+function videoObjects(relativePath) {
+  const found = []
+  for (const data of schemas(relativePath)) {
+    walkNodes(data, (node) => {
+      if (isType(node, 'VideoObject')) found.push(node)
+    })
+  }
+  return found
+}
+
+function expectNoVideoObject(relativePath) {
+  const videos = videoObjects(relativePath)
+  if (videos.length) {
+    failures.push(`${relativePath}: expected 0 VideoObject nodes, found ${videos.length}`)
+  }
+}
+
+function expectWatchPageVideo(relativePath, canonicalUrl) {
+  const videos = videoObjects(relativePath)
+  if (videos.length !== 1) {
+    failures.push(`${relativePath}: expected 1 VideoObject, found ${videos.length}`)
+    return
+  }
+  const video = videos[0]
+  if (video?.publisher?.['@id'] !== 'https://www.mediabarproductions.com/#business') {
+    failures.push(`${relativePath}: VideoObject publisher is not connected to #business`)
+  }
+  if (video?.url !== canonicalUrl) {
+    failures.push(`${relativePath}: VideoObject url must be ${canonicalUrl}`)
+  }
+  const mainEntity = video?.mainEntityOfPage
+  const mainEntityUrl = typeof mainEntity === 'string' ? mainEntity : mainEntity?.url || mainEntity?.['@id']
+  if (!String(mainEntityUrl ?? '').startsWith(canonicalUrl)) {
+    failures.push(`${relativePath}: VideoObject mainEntityOfPage must point at ${canonicalUrl}`)
+  }
+  for (const field of ['name', 'description', 'thumbnailUrl', 'uploadDate', 'embedUrl', 'duration']) {
+    if (!video?.[field]) failures.push(`${relativePath}: VideoObject is missing ${field}`)
+  }
+}
+
 function expectType(relativePath, type) {
   const nodes = schemas(relativePath)
   if (!hasType(nodes, type)) failures.push(`${relativePath}: missing ${type}`)
@@ -45,9 +100,10 @@ function expectType(relativePath, type) {
 }
 
 const homeNodes = schemas('index.html')
-for (const type of ['WebSite', 'LocalBusiness', 'VideoObject', 'FAQPage']) {
+for (const type of ['WebSite', 'LocalBusiness', 'FAQPage']) {
   if (!hasType(homeNodes, type)) failures.push(`index.html: missing ${type}`)
 }
+expectNoVideoObject('index.html')
 
 const homeFaq = homeNodes.find((node) => node['@type'] === 'FAQPage')
 const homeQuestions = Array.isArray(homeFaq?.mainEntity)
@@ -111,6 +167,7 @@ for (const page of servicePages) {
   if (service?.provider?.['@id'] !== 'https://www.mediabarproductions.com/#business') {
     failures.push(`${page}: Service provider is not connected to #business`)
   }
+  expectNoVideoObject(page)
 }
 
 const blogDir = path.join(appOutput, 'blog')
@@ -136,12 +193,34 @@ for (const entry of fs.readdirSync(blogDir, { withFileTypes: true })) {
 const watchDir = path.join(appOutput, 'work/watch')
 for (const entry of fs.readdirSync(watchDir, { withFileTypes: true })) {
   if (!entry.isFile() || !entry.name.endsWith('.html')) continue
+  const slug = entry.name.replace(/\.html$/, '')
   const page = `work/watch/${entry.name}`
-  const nodes = expectType(page, 'VideoObject')
-  const video = nodes.find((node) => node['@type'] === 'VideoObject')
-  if (video?.publisher?.['@id'] !== 'https://www.mediabarproductions.com/#business') {
-    failures.push(`${page}: VideoObject publisher is not connected to #business`)
-  }
+  expectWatchPageVideo(page, `https://www.mediabarproductions.com/work/watch/${slug}`)
+}
+
+const answersDir = path.join(appOutput, 'resources/media-bar-answers')
+for (const entry of fs.readdirSync(answersDir, { withFileTypes: true })) {
+  if (!entry.isFile() || !entry.name.endsWith('.html')) continue
+  const slug = entry.name.replace(/\.html$/, '')
+  const page = `resources/media-bar-answers/${entry.name}`
+  expectWatchPageVideo(
+    page,
+    `https://www.mediabarproductions.com/resources/media-bar-answers/${slug}`,
+  )
+}
+
+expectNoVideoObject('work.html')
+expectNoVideoObject('work/rbfcu-go-beyond-banking.html')
+expectNoVideoObject('resources/video-production-faq.html')
+expectNoVideoObject('resources/media-bar-answers.html')
+
+// GSC 8/9/26 "Video not processed": these films were marked up on service pages.
+// They already have dedicated watch pages; keep complete VideoObject there.
+for (const slug of ['rbfcu-coyote-commercial', 'fleer-brilliants-superman']) {
+  expectWatchPageVideo(
+    `work/watch/${slug}.html`,
+    `https://www.mediabarproductions.com/work/watch/${slug}`,
+  )
 }
 
 const robots = read('robots.txt.body')
@@ -169,6 +248,20 @@ if (sitemapLocs.length === 0) {
   failures.push('sitemap.xml: no URL entries were generated')
 } else if (sitemapLastmods < sitemapLocs.length) {
   failures.push(`sitemap.xml: ${sitemapLastmods}/${sitemapLocs.length} URLs have lastmod`)
+}
+
+const sitemapUrlBlocks = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1])
+const videoWatchPrefixes = [
+  'https://www.mediabarproductions.com/work/watch/',
+  'https://www.mediabarproductions.com/resources/media-bar-answers/',
+]
+for (const block of sitemapUrlBlocks) {
+  if (!block.includes('<video:video>') && !block.includes('<video:')) continue
+  const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1]
+  const isWatchUrl = videoWatchPrefixes.some((prefix) => loc?.startsWith(prefix) && loc.length > prefix.length)
+  if (!isWatchUrl) {
+    failures.push(`sitemap.xml: video sitemap extra is not on a watch page (${loc || 'missing loc'})`)
+  }
 }
 
 if (failures.length) {

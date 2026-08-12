@@ -3,9 +3,8 @@ import {
   BreadcrumbJsonLd,
   FAQPageJsonLd,
   ServiceJsonLd,
-  VideoObjectJsonLd,
 } from '@/components/JsonLd'
-import { motionGraphicsFaqs, motionGraphicsVideo } from './content'
+import { motionGraphicsFaqs } from './content'
 
 const path = '/video-production/motion-graphics'
 const description =
@@ -26,14 +25,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         description={description}
         url={path}
         image="https://www.mediabarproductions.com/images/media-library/motion-graphics-spider-verse.jpg"
-      />
-      <VideoObjectJsonLd
-        name={motionGraphicsVideo.title}
-        description={motionGraphicsVideo.copy}
-        thumbnailUrl={motionGraphicsVideo.thumbnail}
-        uploadDate={motionGraphicsVideo.uploadDate}
-        duration={motionGraphicsVideo.duration}
-        embedUrl={`https://player.vimeo.com/video/${motionGraphicsVideo.id}`}
       />
       <FAQPageJsonLd faqs={motionGraphicsFaqs} />
       <BreadcrumbJsonLd

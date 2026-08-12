@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Layout from '../../components/Layout'
 import QuickContactBar from '@/components/QuickContactBar'
 import { BreadcrumbJsonLd } from '../../components/JsonLd'
-import { VideoObjectSchema, type PortfolioVideo } from '../../components/VideoObjectSchema'
+import type { PortfolioVideo } from '../../components/VideoObjectSchema'
 import VimeoPlayer from '../../components/VimeoPlayer'
 import WorkGallery from '../../components/WorkGallery'
 import workVideos from '../../data/work-videos.json'
@@ -37,7 +37,6 @@ export default function WorkPage() {
         { name: 'Home', url: '/' },
         { name: 'Our Work', url: '/work' },
       ]} />
-      <VideoObjectSchema videos={workVideos as PortfolioVideo[]} />
 
       <main className={styles.page}>
         <section className={styles.hero}>

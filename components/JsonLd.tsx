@@ -510,11 +510,11 @@ export function CollectionPageJsonLd({
         '@type': 'ListItem',
         position: index + 1,
         item: {
-          '@type': 'VideoObject',
+          '@type': 'WebPage',
           name: item.name,
           description: item.description,
           url: `${BASE_URL}${item.url}`,
-          thumbnailUrl: item.thumbnailUrl,
+          image: item.thumbnailUrl,
         },
       })),
     },
@@ -523,7 +523,7 @@ export function CollectionPageJsonLd({
 }
 
 // ============================================================
-// 9. VideoObject - Pages with embedded Vimeo videos
+// 9. VideoObject - Dedicated single-video watch pages only
 // ============================================================
 type VideoProps = {
   name: string
@@ -533,6 +533,7 @@ type VideoProps = {
   contentUrl?: string
   embedUrl: string
   duration?: string // ISO 8601 format, e.g. "PT2M30S"
+  url: string
 }
 
 export function VideoObjectJsonLd({
@@ -543,11 +544,12 @@ export function VideoObjectJsonLd({
   contentUrl,
   embedUrl,
   duration,
+  url,
 }: VideoProps) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    '@id': `${contentUrl ?? embedUrl}#video`,
+    '@id': `${url}#video`,
     name,
     description,
     thumbnailUrl,
@@ -555,6 +557,12 @@ export function VideoObjectJsonLd({
     ...(contentUrl && { contentUrl }),
     embedUrl,
     ...(duration && { duration }),
+    url,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${url}#webpage`,
+      url,
+    },
     inLanguage: 'en-US',
     isFamilyFriendly: true,
     publisher: {

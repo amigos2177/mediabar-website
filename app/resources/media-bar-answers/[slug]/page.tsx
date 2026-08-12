@@ -72,6 +72,7 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
         duration={episode.video.duration}
         contentUrl={`https://www.youtube.com/watch?v=${episode.video.youtubeId}`}
         embedUrl={`https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`}
+        url={`https://www.mediabarproductions.com${path}`}
       />
       {episode.pageFaqs?.length ? <FAQPageJsonLd faqs={episode.pageFaqs} /> : null}
 

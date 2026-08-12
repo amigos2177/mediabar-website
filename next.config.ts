@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
       { source: '/events', destination: '/video-production/events', permanent: true },
       { source: '/interview-discussion-video-production', destination: '/video-production/interview', permanent: true },
       { source: '/medical-video-production-san-antonio', destination: '/video-production/medical', permanent: true },
+      // Legacy GSC video URL on apex; www is canonical and this path 301/308s to the aerial service page.
       { source: '/aerial-video-photography', destination: '/video-production/aerial', permanent: true },
       { source: '/motiongraphics', destination: '/video-production/motion-graphics', permanent: true },
       { source: '/live-streaming-webcasting-san-antonio', destination: '/video-production/live-streaming', permanent: true },
@@ -72,6 +73,7 @@ const nextConfig: NextConfig = {
       // Retire to relevant pages
       { source: '/News/Get/35/:rest*', destination: '/work', statusCode: 301 },
       { source: '/News/Get/33/:rest*', destination: '/work', statusCode: 301 },
+      // Legacy GSC video URL from the old CMS; do not rebuild the ASP.NET page.
       { source: '/News/Get/31/:rest*', destination: '/video-production/medical', statusCode: 301 },
       { source: '/News/Get/30/:rest*', destination: '/video-production/commercials', statusCode: 301 },
       { source: '/News/Get/29/:rest*', destination: '/video-production/motion-graphics', statusCode: 301 },

@@ -214,6 +214,15 @@ expectNoVideoObject('work/rbfcu-go-beyond-banking.html')
 expectNoVideoObject('resources/video-production-faq.html')
 expectNoVideoObject('resources/media-bar-answers.html')
 
+// GSC 8/9/26 "Video not processed": these films were marked up on service pages.
+// They already have dedicated watch pages; keep complete VideoObject there.
+for (const slug of ['rbfcu-coyote-commercial', 'fleer-brilliants-superman']) {
+  expectWatchPageVideo(
+    `work/watch/${slug}.html`,
+    `https://www.mediabarproductions.com/work/watch/${slug}`,
+  )
+}
+
 const robots = read('robots.txt.body')
 for (const bot of ['OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot']) {
   if (!robots.includes(`User-Agent: ${bot}`)) {

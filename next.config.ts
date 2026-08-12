@@ -19,16 +19,72 @@ const nextConfig: NextConfig = {
     return [
       // ── SERVICE PAGES ──
       { source: '/business', destination: '/video-production/corporate', permanent: true },
-      { source: '/commericals', destination: '/video-production/commercials', permanent: true },
-      { source: '/commercials', destination: '/video-production/commercials', permanent: true },
-      { source: '/events', destination: '/video-production/events', permanent: true },
+      // Legacy/typo URLs still earning GSC impressions. Use 301 (not 308) and
+      // include trailing-slash variants so they do not chain through the
+      // trailingSlash:false hop. Apex host rules skip the www path-preserving hop.
+      {
+        source: '/events',
+        has: [{ type: 'host', value: 'mediabarproductions.com' }],
+        destination: 'https://www.mediabarproductions.com/video-production/events',
+        statusCode: 301,
+      },
+      {
+        source: '/events/',
+        has: [{ type: 'host', value: 'mediabarproductions.com' }],
+        destination: 'https://www.mediabarproductions.com/video-production/events',
+        statusCode: 301,
+      },
+      {
+        source: '/commericals',
+        has: [{ type: 'host', value: 'mediabarproductions.com' }],
+        destination: 'https://www.mediabarproductions.com/video-production/commercials',
+        statusCode: 301,
+      },
+      {
+        source: '/commericals/',
+        has: [{ type: 'host', value: 'mediabarproductions.com' }],
+        destination: 'https://www.mediabarproductions.com/video-production/commercials',
+        statusCode: 301,
+      },
+      {
+        source: '/live-streaming-webcasting-san-antonio',
+        has: [{ type: 'host', value: 'mediabarproductions.com' }],
+        destination: 'https://www.mediabarproductions.com/video-production/live-streaming',
+        statusCode: 301,
+      },
+      {
+        source: '/live-streaming-webcasting-san-antonio/',
+        has: [{ type: 'host', value: 'mediabarproductions.com' }],
+        destination: 'https://www.mediabarproductions.com/video-production/live-streaming',
+        statusCode: 301,
+      },
+      {
+        source: '/video-post-production',
+        has: [{ type: 'host', value: 'mediabarproductions.com' }],
+        destination: 'https://www.mediabarproductions.com/video-production/post-production',
+        statusCode: 301,
+      },
+      {
+        source: '/video-post-production/',
+        has: [{ type: 'host', value: 'mediabarproductions.com' }],
+        destination: 'https://www.mediabarproductions.com/video-production/post-production',
+        statusCode: 301,
+      },
+      { source: '/commericals', destination: '/video-production/commercials', statusCode: 301 },
+      { source: '/commericals/', destination: '/video-production/commercials', statusCode: 301 },
+      { source: '/commercials', destination: '/video-production/commercials', statusCode: 301 },
+      { source: '/commercials/', destination: '/video-production/commercials', statusCode: 301 },
+      { source: '/events', destination: '/video-production/events', statusCode: 301 },
+      { source: '/events/', destination: '/video-production/events', statusCode: 301 },
       { source: '/interview-discussion-video-production', destination: '/video-production/interview', permanent: true },
       { source: '/medical-video-production-san-antonio', destination: '/video-production/medical', permanent: true },
       // Legacy GSC video URL on apex; www is canonical and this path 301/308s to the aerial service page.
       { source: '/aerial-video-photography', destination: '/video-production/aerial', permanent: true },
       { source: '/motiongraphics', destination: '/video-production/motion-graphics', permanent: true },
-      { source: '/live-streaming-webcasting-san-antonio', destination: '/video-production/live-streaming', permanent: true },
-      { source: '/video-post-production', destination: '/video-production/post-production', permanent: true },
+      { source: '/live-streaming-webcasting-san-antonio', destination: '/video-production/live-streaming', statusCode: 301 },
+      { source: '/live-streaming-webcasting-san-antonio/', destination: '/video-production/live-streaming', statusCode: 301 },
+      { source: '/video-post-production', destination: '/video-production/post-production', statusCode: 301 },
+      { source: '/video-post-production/', destination: '/video-production/post-production', statusCode: 301 },
       { source: '/food-video-production', destination: '/video-production/food', permanent: true },
       { source: '/property', destination: '/video-production/real-estate', permanent: true },
       { source: '/shows', destination: '/video-production', permanent: true },

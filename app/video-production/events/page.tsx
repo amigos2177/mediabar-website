@@ -376,11 +376,11 @@ export default function EventsPage() {
                 <p className="evt-eyebrow">Event video production in San Antonio and across Texas</p>
                 <h1 className="evt-display">
                   Event Video Production in San Antonio{' '}
-                  <em>For Recaps, Sessions, and Social Cuts.</em>
+                  <em>For Conferences, Corporate Events, and Recaps.</em>
                 </h1>
                 <p className="evt-hero-deck">
-                  Event video production in San Antonio and across Texas for conferences, galas,
-                  launches, and corporate meetings. One crew plans multi-camera coverage, clean
+                  Event video production for conferences, corporate events, galas, and launches
+                  in San Antonio and across Texas. One crew plans multi-camera coverage, clean
                   audio, recaps, session edits, and social cuts.
                 </p>
                 <div className="evt-actions">
@@ -404,14 +404,14 @@ export default function EventsPage() {
           <div className="evt-container evt-answer-grid">
             <div>
               <p className="evt-eyebrow">Quick answer</p>
-              <h2 id="event-video-answer">What does an event video production company do?</h2>
+              <h2 id="event-video-answer">What does event and conference video production include?</h2>
             </div>
             <div>
               <p className="evt-answer-copy">
                 Media Bar plans camera coverage, speaker and room audio, venue coordination,
-                live production, and post-event editing for San Antonio conferences and events.
-                One coordinated team can deliver recaps, full sessions, speaker clips, sponsor
-                content, captions, and channel-ready versions.
+                live production, and post-event editing for San Antonio conferences, corporate
+                events, and galas. One coordinated team can deliver recaps, full sessions, speaker
+                clips, sponsor content, captions, and channel-ready versions.
               </p>
               <div className="evt-answer-points" aria-label="Event video production summary">
                 {['Multi-camera coverage', 'Speaker audio', 'Event recap edits', 'Session and social content'].map((point) => (
@@ -440,7 +440,7 @@ export default function EventsPage() {
             <div className="evt-section-head">
               <div>
                 <p className="evt-eyebrow">Event coverage options</p>
-                <h2 className="evt-display evt-section-title">Event Recaps, Sessions, <em>and Conference Coverage.</em></h2>
+                <h2 className="evt-display evt-section-title">Event and Conference Video <em>Production Services.</em></h2>
               </div>
               <p className="evt-section-intro">
                 These are planning approaches, not fixed packages. We combine the right cameras,

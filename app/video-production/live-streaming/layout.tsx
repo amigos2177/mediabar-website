@@ -4,10 +4,10 @@ import { liveStreamingFaqs } from './content'
 
 const path = '/video-production/live-streaming'
 const description =
-  'Live streaming production in San Antonio for conferences, town halls, and hybrid events. Multi-camera video, graphics, rehearsal, and recording from one crew.'
+  'San Antonio live streaming company for webcasts, conferences, and hybrid events. Multi-camera production, graphics, rehearsal, and recording from a local crew.'
 
 export const metadata = buildMetadata({
-  title: 'Live Streaming Production | San Antonio Crew | Media Bar',
+  title: 'San Antonio Live Streaming Company | Webcasts | Media Bar',
   description,
   path,
   ogImage: '/images/studio-9.jpg',
@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ServiceJsonLd
-        name="Live Streaming Production in San Antonio"
+        name="Live Streaming and Webcast Production in San Antonio"
         description={description}
         url={path}
         image="https://www.mediabarproductions.com/images/studio-9.jpg"
@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         items={[
           { name: 'Home', url: '/' },
           { name: 'Video Production', url: '/video-production' },
-          { name: 'Live Streaming', url: path },
+          { name: 'Live Streaming and Webcasts', url: path },
         ]}
       />
       {children}

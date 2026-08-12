@@ -8,10 +8,10 @@ import { eventVideoFaqs } from './content'
 
 const path = '/video-production/events'
 const description =
-  'Event video production in San Antonio for conferences, galas, and launches. Multi-camera coverage, recaps, session edits, and social cuts from one Texas crew.'
+  'Event video production for conferences, corporate events, and galas. Multi-camera coverage, recaps, session edits, and social cuts from a San Antonio crew.'
 
 export const metadata = buildMetadata({
-  title: 'Event Video Production San Antonio | Recaps | Media Bar',
+  title: 'Event Video Production | Conferences & Recaps | Media Bar',
   description,
   path,
   ogImage: '/images/bts-8.jpg',

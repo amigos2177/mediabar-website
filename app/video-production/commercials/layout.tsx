@@ -11,7 +11,7 @@ const description =
   'Commercial video production in San Antonio for broadcast, connected TV, and paid social. One campaign idea, every version, from a Texas production crew.'
 
 export const metadata = buildMetadata({
-  title: 'Commercial Video San Antonio | Broadcast & Social | Media Bar',
+  title: 'Commercial Video Production | Broadcast & Social | Media Bar',
   description,
   path,
   ogImage: '/images/rbfcu-bts-porch.jpg',

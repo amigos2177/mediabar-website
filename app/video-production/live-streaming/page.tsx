@@ -5,11 +5,11 @@ export default function LiveStreamingPage() {
   return (
     <ServiceEditorialPage
       hero={{
-        eyebrow: 'Live Streaming Production in San Antonio',
-        title: 'Live Streaming Production in San Antonio',
-        emphasis: 'With Multi-Camera Coverage and Recording.',
+        eyebrow: 'Live streaming and webcast production in San Antonio',
+        title: 'San Antonio Live Streaming Company',
+        emphasis: 'For Webcasts, Hybrid Events, and Conferences.',
         copy:
-          'Live streaming production in San Antonio for conferences, town halls, launches, and hybrid events. One crew plans cameras, audio, graphics, rehearsal, platform delivery, and recording.',
+          'A San Antonio live streaming company for webcasts, conferences, town halls, launches, and hybrid events. One crew plans cameras, audio, graphics, rehearsal, platform delivery, and recording.',
         image: '/images/studio-9.jpg',
         alt: 'Video production control room with monitors and switching equipment',
         primaryCta: 'Plan a Live Stream',
@@ -23,15 +23,15 @@ export default function LiveStreamingPage() {
       ]}
       answer={{
         eyebrow: 'Quick answer',
-        question: 'What does a live streaming production company handle?',
+        question: 'What does a San Antonio live streaming company handle?',
         response:
-          'Media Bar plans the complete live program in San Antonio, including venue connectivity, cameras, audio, graphics, playback, remote speakers, platform delivery, recording, and rehearsal. The result is one coordinated experience for viewers in the room, online, and on demand.',
-        points: ['Multi-camera direction', 'Event audio', 'Graphics and playback', 'Platform delivery'],
+          'Media Bar is a San Antonio live streaming and webcast production company. We plan venue connectivity, cameras, audio, graphics, playback, remote speakers, platform delivery, recording, and rehearsal for conferences, hybrid events, and private webcasts.',
+        points: ['Multi-camera direction', 'Webcast and event audio', 'Graphics and playback', 'Platform delivery'],
       }}
       overview={{
         eyebrow: 'Live Formats',
-        title: 'Conference, Town Hall,',
-        emphasis: 'and Hybrid Live Streams.',
+        title: 'Webcasts, Hybrid Events,',
+        emphasis: 'and Conference Streams.',
         copy:
           'The production plan changes with the room, the platform, the speakers, and the way viewers need to participate.',
       }}
@@ -41,7 +41,7 @@ export default function LiveStreamingPage() {
         { number: '03', title: 'Product Launches', copy: 'Live reveals with playback, graphics, demos, and audience focus.' },
         { number: '04', title: 'Hybrid Programs', copy: 'A coordinated experience for people in the venue and online.' },
         { number: '05', title: 'Training & Education', copy: 'Structured instruction with presentation media and useful recordings.' },
-        { number: '06', title: 'Private Webcasts', copy: 'Controlled-access programs planned around the chosen platform.' },
+        { number: '06', title: 'Webcasts', copy: 'Event webcasting and private webcast production planned around the chosen platform, audience access, and recording.' },
       ]}
       plan={{
         eyebrow: 'Technical Discovery',
@@ -129,9 +129,9 @@ export default function LiveStreamingPage() {
           },
         ],
       }}
-      faqEyebrow="Live streaming FAQ"
-      faqTitle="Live Streaming Production"
-      faqEmphasis="in San Antonio."
+      faqEyebrow="Live streaming and webcast FAQ"
+      faqTitle="Live Streaming and Webcast"
+      faqEmphasis="Production in San Antonio."
       faqs={liveStreamingFaqs}
       cta={{
         eyebrow: 'Before You Go Live',

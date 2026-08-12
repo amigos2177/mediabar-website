@@ -6,6 +6,14 @@ const PRODUCTION_HOSTS = new Set([
   'mediabarproductions.com',
 ])
 
+const LEGACY_SERVICE_PATHS: Record<string, string> = {
+  '/events': '/video-production/events',
+  '/commericals': '/video-production/commercials',
+  '/commercials': '/video-production/commercials',
+  '/live-streaming-webcasting-san-antonio': '/video-production/live-streaming',
+  '/video-post-production': '/video-production/post-production',
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
@@ -15,6 +23,14 @@ export function proxy(request: NextRequest) {
     const url = request.nextUrl.clone()
     url.pathname = '/contact'
     return NextResponse.redirect(url, 308)
+  }
+
+  const trimmed = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
+  const legacyDestination = LEGACY_SERVICE_PATHS[trimmed.toLowerCase()]
+  if (legacyDestination && trimmed !== trimmed.toLowerCase()) {
+    const url = request.nextUrl.clone()
+    url.pathname = legacyDestination
+    return NextResponse.redirect(url, 301)
   }
 
   // Block search engines from indexing non-production hosts (Vercel previews,

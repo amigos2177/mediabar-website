@@ -25,8 +25,8 @@ export const corporateVideoFaqs = [
       'The schedule depends on the scope, number of filming days, stakeholder approvals, and final deliverables. Once the brief is defined, we map pre-production, production, review rounds, and delivery into one practical timeline.',
   },
   {
-    question: 'Where does Media Bar provide corporate video production?',
+    question: 'Do you provide corporate video production in San Antonio?',
     answer:
-      'Media Bar is based in San Antonio and regularly produces corporate video across Austin, Dallas-Fort Worth, Houston, and the rest of Texas. We can also travel for multi-market and national productions when the project requires it.',
+      'Yes. Media Bar is based in San Antonio and produces corporate video for local organizations, with regular work across Austin, Dallas-Fort Worth, Houston, and the rest of Texas. We can also travel for multi-market and national productions when the project requires it.',
   },
 ]

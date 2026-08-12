@@ -1,5 +1,25 @@
 export const eventVideoFaqs = [
   {
+    question: 'What is event video production?',
+    answer:
+      'Event video production is the planning, filming, and editing of a live program so the day can be used again as recaps, session recordings, speaker clips, sponsor content, and social edits. Media Bar builds the camera, audio, and coverage plan around the venue, run of show, and the assets your team needs after the event.',
+  },
+  {
+    question: 'Do you produce conference video in San Antonio?',
+    answer:
+      'Yes. We cover San Antonio conferences and similar programs across Texas, including keynotes, sessions, panels, attendee moments, and post-event recaps. The coverage plan depends on the rooms, speakers, presentation format, and the session or recap edits you need.',
+  },
+  {
+    question: 'What is conference video production?',
+    answer:
+      'Conference video production covers keynotes, sessions, panels, attendee moments, and the edits needed after the program, such as recaps, full session recordings, and speaker clips. Media Bar plans camera positions, speaker audio, and post-event deliverables around the run of show.',
+  },
+  {
+    question: 'Do you produce corporate event video?',
+    answer:
+      'Yes. Corporate event video production can include meetings, launches, award programs, town halls, and conferences. We build the coverage around the business goal, whether that is a recap, a session library, a leadership message, or social cuts.',
+  },
+  {
     question: 'What kinds of events does Media Bar cover?',
     answer:
       'We produce video coverage for conferences, keynotes, galas, award programs, product launches, corporate meetings, nonprofit events, community programs, performances, and sports. The production plan is shaped around the venue, schedule, audience, and final deliverables.',

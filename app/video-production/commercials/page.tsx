@@ -103,9 +103,9 @@ const relatedServices = [
     href: '/video-production/post-production',
   },
   {
-    title: 'Our Work',
-    copy: 'See commercial, corporate, and campaign work produced by Media Bar.',
-    href: '/work',
+    title: 'San Antonio Production',
+    copy: 'See the local crew, studio, and campaign production support in San Antonio.',
+    href: '/locations/san-antonio',
   },
 ]
 
@@ -341,10 +341,14 @@ export default function CommercialsPage() {
             <div className="com-container">
               <div className="com-hero-copy">
                 <p className="com-eyebrow">Commercial video production in San Antonio</p>
-                <h1 className="com-display">Make the Spot. <em>Build the Campaign.</em></h1>
+                <h1 className="com-display">
+                  Commercial Video Production in San Antonio{' '}
+                  <em>For Broadcast, CTV, and Social Spots.</em>
+                </h1>
                 <p className="com-hero-deck">
-                  Media Bar develops and produces commercials that carry one strong idea across
-                  broadcast, connected TV, digital, social, and every version the campaign needs.
+                  Commercial video production in San Antonio for broadcast, connected TV, paid
+                  social, and digital campaigns. One idea, every version, from a Texas production
+                  crew.
                 </p>
                 <div className="com-actions">
                   <Link href="/project-planner" className="com-button com-button-primary">Plan a Commercial</Link>
@@ -393,7 +397,7 @@ export default function CommercialsPage() {
             <div className="com-section-head">
               <div>
                 <p className="com-eyebrow">Built for the channel and the audience</p>
-                <h2 className="com-display com-section-title">One Idea. <em>Every Place It Runs.</em></h2>
+                <h2 className="com-display com-section-title">Broadcast, CTV, <em>and Social Commercials.</em></h2>
               </div>
               <p className="com-section-intro">
                 A commercial is more than a thirty-second edit. The concept, performances, visual
@@ -503,7 +507,7 @@ export default function CommercialsPage() {
                   frame, and an edit that lands before the time runs out. Watch one of the spots
                   from the RBFCU campaign.
                 </p>
-                <Link href="/work" className="com-inline-link">Explore more commercial work <span>→</span></Link>
+                <Link href="/work/watch/rbfcu-coyote-commercial" className="com-inline-link">Watch the finished spot <span>→</span></Link>
               </div>
             </div>
           </div>
@@ -543,7 +547,8 @@ export default function CommercialsPage() {
                 <p>
                   There is no one-size-fits-all commercial quote because every production is built
                   around a different business goal, creative idea, audience, schedule, and delivery plan.
-                  We define those decisions first, then prepare a tailored estimate.
+                  We define those decisions first, then prepare a tailored estimate. See{' '}
+                  <Link href="/pricing">video production pricing</Link> for how custom scopes are built.
                 </p>
                 <div className="com-scope-note">
                   <strong>Production and media placement are different</strong>
@@ -625,7 +630,7 @@ export default function CommercialsPage() {
           <div className="com-container com-faq-wrap">
             <div className="com-faq-head">
               <p className="com-eyebrow">Commercial production FAQ</p>
-              <h2 className="com-display">What Campaign Teams <em>Ask First.</em></h2>
+              <h2 className="com-display">Commercial Video Production <em>in San Antonio.</em></h2>
             </div>
             <div className="com-faq">
               {commercialVideoFaqs.map((faq) => (

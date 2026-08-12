@@ -7,10 +7,10 @@ export default function PostProductionPage() {
     <ServiceEditorialPage
       hero={{
         eyebrow: 'Post-Production in San Antonio',
-        title: 'Find the Story.',
-        emphasis: 'Finish Every Detail.',
+        title: 'Video Post-Production in San Antonio',
+        emphasis: 'From First Cut to Final Delivery.',
         copy:
-          'San Antonio brands, agencies, and production teams can bring us a full project or existing footage for editorial, color, sound, graphics, captions, and final delivery.',
+          'Video post-production in San Antonio for editorial, color, sound, graphics, captions, and multi-channel delivery. Bring a full project or existing footage.',
         image: '/images/media-library/media-bar-bts-20.jpg',
         alt: 'Production monitor showing a composed commercial shot',
         primaryCta: 'Start an Edit',
@@ -40,8 +40,8 @@ export default function PostProductionPage() {
       )}
       overview={{
         eyebrow: 'Post Services',
-        title: 'From Raw Footage',
-        emphasis: 'to Final Master.',
+        title: 'Editorial, Color, Sound,',
+        emphasis: 'and Final Delivery.',
         copy:
           'Bring us a complete production or a drive full of footage. Our San Antonio post team builds the workflow around the story, review process, and finish it requires.',
       }}
@@ -81,8 +81,8 @@ export default function PostProductionPage() {
           title: postProductionVideo.title,
           thumbnailUrl: postProductionVideo.thumbnail,
         },
-        linkLabel: 'Explore More Work',
-        linkHref: '/work',
+        linkLabel: 'Watch the ST Engineering Brand Film',
+        linkHref: '/work/watch/st-engineering-brand-film',
       }}
       deliverables={{
         eyebrow: 'Final Delivery',
@@ -130,15 +130,15 @@ export default function PostProductionPage() {
             description: 'Plan interviews, brand stories, and campaign footage with the final edit in mind.',
           },
           {
-            label: 'One Shoot, Many Cuts',
-            href: '/blog/corporate-video-multi-format-strategy',
-            description: 'See how one production day can support a full library of channel-ready content.',
+            label: 'ST Engineering Brand Film',
+            href: '/work/watch/st-engineering-brand-film',
+            description: 'See a finished corporate brand film shaped in post-production.',
           },
         ],
       }}
-      faqEyebrow="Questions"
-      faqTitle="Planning"
-      faqEmphasis="Post-Production."
+      faqEyebrow="Post-production FAQ"
+      faqTitle="Video Post-Production"
+      faqEmphasis="in San Antonio."
       faqs={postProductionFaqs}
       cta={{
         eyebrow: 'Ready for the Timeline',

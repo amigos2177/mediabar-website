@@ -7,10 +7,9 @@ export const metadata = buildMetadata({
   ogImage: '/images/rbfcu-stills-grid.jpg',
 })
 
-// NOTE: the /work portfolio JSON-LD (BreadcrumbList + VideoObjectSchema) lives in
-// app/work/page.tsx rather than here, so it applies only to the /work index and does
-// not leak into nested routes such as /work/rbfcu-go-beyond-banking (which supplies its
-// own complete schema graph).
+// NOTE: Breadcrumb JSON-LD for the /work index lives in app/work/page.tsx so it does
+// not leak into nested routes such as /work/rbfcu-go-beyond-banking. VideoObject markup
+// belongs only on dedicated watch pages under /work/watch/[slug], not on this listing.
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }

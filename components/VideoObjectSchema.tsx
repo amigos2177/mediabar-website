@@ -8,15 +8,23 @@ export type PortfolioVideo = {
   embedUrl?: string;
 };
 
-export function VideoObjectSchema({ videos }: { videos: PortfolioVideo[] }) {
-  const nodes = videos.map((v) => {
-    const identity = v.contentUrl
-      ?? v.embedUrl
-      ?? `https://www.mediabarproductions.com/work#video-${encodeURIComponent(v.name)}`
+/**
+ * VideoObject JSON-LD for a dedicated single-video watch page.
+ * `pageUrl` must be the canonical watch URL (not a gallery, service, or listing page).
+ */
+export function VideoObjectSchema({
+  videos,
+  pageUrl,
+}: {
+  videos: PortfolioVideo[];
+  pageUrl: string;
+}) {
+  const nodes = videos.map((v, index) => {
+    const videoId = videos.length === 1 ? `${pageUrl}#video` : `${pageUrl}#video-${index + 1}`
 
     return {
       "@type": "VideoObject",
-      "@id": identity.includes("#") ? identity : `${identity}#video`,
+      "@id": videoId,
       name: v.name,
       ...(v.description ? { description: v.description } : {}),
       thumbnailUrl: v.thumbnailUrl,
@@ -24,6 +32,12 @@ export function VideoObjectSchema({ videos }: { videos: PortfolioVideo[] }) {
       ...(v.duration ? { duration: v.duration } : {}),
       ...(v.contentUrl ? { contentUrl: v.contentUrl } : {}),
       ...(v.embedUrl ? { embedUrl: v.embedUrl } : {}),
+      url: pageUrl,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+      },
       inLanguage: "en-US",
       isFamilyFriendly: true,
       publisher: {

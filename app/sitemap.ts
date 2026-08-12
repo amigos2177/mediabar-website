@@ -92,25 +92,40 @@ function blogEntries(): MetadataRoute.Sitemap {
   )
 }
 
+function isoDurationToSeconds(duration?: string): number | undefined {
+  if (!duration) return undefined
+  const match = duration.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/)
+  if (!match) return undefined
+  const hours = Number(match[1] || 0)
+  const minutes = Number(match[2] || 0)
+  const seconds = Number(match[3] || 0)
+  const total = hours * 3600 + minutes * 60 + seconds
+  return total > 0 ? total : undefined
+}
+
 function watchEntries(): MetadataRoute.Sitemap {
   const videos = workVideos as PortfolioVideo[]
   return workProjects.flatMap((project) => {
     const video = videos.find((item) => item.embedUrl?.endsWith(`/${project.id}`))
     if (!video) return []
 
+    const watchUrl = `${BASE}/work/watch/${project.slug}`
     const thumbnail = Array.isArray(video.thumbnailUrl) ? video.thumbnailUrl[0] : video.thumbnailUrl
     const lastModified = sitemapDate(video.uploadDate)
     const description =
       video.description || `${project.title}, produced by Media Bar Productions in San Antonio.`
+    const duration = isoDurationToSeconds(video.duration)
     const canAttachVideo =
       Boolean(project.title)
       && typeof thumbnail === 'string'
       && thumbnail.length > 0
       && Boolean(description)
       && Boolean(video.embedUrl)
+      && Boolean(lastModified)
+      && Boolean(duration)
 
     return [withLastmod(
-      `${BASE}/work/watch/${project.slug}`,
+      watchUrl,
       lastModified,
       canAttachVideo
         ? {
@@ -120,6 +135,7 @@ function watchEntries(): MetadataRoute.Sitemap {
               description,
               player_loc: video.embedUrl,
               publication_date: lastModified,
+              duration,
             }],
           }
         : undefined,
@@ -131,12 +147,15 @@ function answerEntries(): MetadataRoute.Sitemap {
   return mediaBarAnswersEpisodes.flatMap((episode) => {
     const lastModified = sitemapDate(episode.video.uploadDate)
     const thumbnail = episode.video.thumbnailUrl
+    const duration = isoDurationToSeconds(episode.video.duration)
     const canAttachVideo =
       Boolean(episode.video.title)
       && typeof thumbnail === 'string'
       && thumbnail.length > 0
       && Boolean(episode.video.description)
       && Boolean(episode.video.youtubeId)
+      && Boolean(lastModified)
+      && Boolean(duration)
 
     return [withLastmod(
       `${BASE}/resources/media-bar-answers/${episode.slug}`,
@@ -149,6 +168,7 @@ function answerEntries(): MetadataRoute.Sitemap {
               description: episode.video.description,
               player_loc: `https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`,
               publication_date: lastModified,
+              duration,
             }],
           }
         : undefined,

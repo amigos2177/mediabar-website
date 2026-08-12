@@ -127,7 +127,10 @@ export default async function WatchPage({ params }: Props) {
         { name: 'Our Work', url: '/work' },
         { name: project.title, url: `/work/watch/${project.slug}` },
       ]} />
-      <VideoObjectSchema videos={[video]} />
+      <VideoObjectSchema
+        videos={[video]}
+        pageUrl={`https://www.mediabarproductions.com/work/watch/${project.slug}`}
+      />
 
       <main className={styles.page}>
         <div className={styles.inner}>

@@ -250,11 +250,14 @@ export default function CorporatePage() {
             <div className="corp-container">
               <div className="corp-hero-copy">
                 <p className="corp-eyebrow">Corporate video production in San Antonio</p>
-                <h1 className="corp-display">Corporate Video Production <em>Built for San Antonio Business.</em></h1>
+                <h1 className="corp-display">
+                  Corporate Video Production in San Antonio{' '}
+                  <em>For Brand Films, Leadership, and Recruiting.</em>
+                </h1>
                 <p className="corp-hero-deck">
-                  Media Bar is a San Antonio corporate video production company helping organizations
-                  turn leadership, expertise, customer experience, and complex ideas into clear films
-                  built for the people who need to act.
+                  Corporate video production in San Antonio for brand films, leadership messages,
+                  customer stories, recruiting, and training. A local crew and studio, with one
+                  team from brief through delivery.
                 </p>
                 <div className="corp-actions">
                   <Link href="/project-planner" className="corp-button corp-button-primary">Plan a Corporate Project</Link>
@@ -303,7 +306,7 @@ export default function CorporatePage() {
             <div className="corp-section-head">
               <div>
                 <p className="corp-eyebrow">Built around the communication job</p>
-                <h2 className="corp-display corp-section-title">The Right Film <em>For the Moment.</em></h2>
+                <h2 className="corp-display corp-section-title">Corporate Videos <em>for San Antonio Teams.</em></h2>
               </div>
               <p className="corp-section-intro">
                 Corporate video is not one format. The creative, production plan, and final
@@ -340,7 +343,7 @@ export default function CorporatePage() {
                   and the organization behind them feel credible. See how Media Bar brings those
                   elements together on screen.
                 </p>
-                <Link href="/work" className="corp-inline-link">Explore more work <span>→</span></Link>
+                <Link href="/work/watch/san-antonio-production-stories" className="corp-inline-link">Watch a corporate film <span>→</span></Link>
               </div>
             </div>
           </div>
@@ -439,6 +442,8 @@ export default function CorporatePage() {
               <p className="corp-section-intro">
                 Explore the local production resources, finishing services, and campaign proof that
                 help San Antonio organizations move from a business brief to finished corporate content.
+                Custom estimates start with our{' '}
+                <Link href="/pricing">video production pricing</Link> guidance.
               </p>
             </div>
             <div className="corp-pathway-grid">
@@ -465,7 +470,7 @@ export default function CorporatePage() {
           <div className="corp-container corp-faq-wrap">
             <div className="corp-faq-head">
               <p className="corp-eyebrow">Corporate video production FAQ</p>
-              <h2 className="corp-display">What Teams <em>Ask First.</em></h2>
+              <h2 className="corp-display">Corporate Video Production <em>in San Antonio.</em></h2>
             </div>
             <div className="corp-faq">
               {corporateVideoFaqs.map((faq) => (

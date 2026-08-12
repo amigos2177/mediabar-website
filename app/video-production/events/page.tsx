@@ -146,9 +146,9 @@ const relatedServices = [
     copy: 'Capture speakers, attendees, sponsors, and leadership while everyone is together.',
   },
   {
-    title: 'Aerial Video',
-    href: '/video-production/aerial',
-    copy: 'Establish the venue and scale of an outdoor event with properly planned drone coverage.',
+    title: 'San Antonio Production',
+    href: '/locations/san-antonio',
+    copy: 'See the local crew, studio, and production support available for San Antonio events.',
   },
   {
     title: 'Event Photography',
@@ -374,11 +374,14 @@ export default function EventsPage() {
             <div className="evt-container">
               <div className="evt-hero-copy">
                 <p className="evt-eyebrow">Event video production in San Antonio and across Texas</p>
-                <h1 className="evt-display">Event Video <em>Production That Extends the Moment.</em></h1>
+                <h1 className="evt-display">
+                  Event Video Production in San Antonio{' '}
+                  <em>For Recaps, Sessions, and Social Cuts.</em>
+                </h1>
                 <p className="evt-hero-deck">
-                  San Antonio event video production for conferences, keynotes, galas, launches,
-                  and corporate meetings, with one team planning cameras, audio, coverage, and
-                  post-event delivery.
+                  Event video production in San Antonio and across Texas for conferences, galas,
+                  launches, and corporate meetings. One crew plans multi-camera coverage, clean
+                  audio, recaps, session edits, and social cuts.
                 </p>
                 <div className="evt-actions">
                   <Link href="/project-planner" className="evt-button evt-button-primary">Plan Event Coverage</Link>
@@ -437,7 +440,7 @@ export default function EventsPage() {
             <div className="evt-section-head">
               <div>
                 <p className="evt-eyebrow">Event coverage options</p>
-                <h2 className="evt-display evt-section-title">Choose the Outcome. <em>Then Build the Coverage.</em></h2>
+                <h2 className="evt-display evt-section-title">Event Recaps, Sessions, <em>and Conference Coverage.</em></h2>
               </div>
               <p className="evt-section-intro">
                 These are planning approaches, not fixed packages. We combine the right cameras,
@@ -463,6 +466,8 @@ export default function EventsPage() {
             <p className="evt-options-note">
               Need both recorded coverage and a live audience? Combine an event coverage plan with our{' '}
               <Link href="/video-production/live-streaming">live streaming production</Link>.
+              For how custom estimates are built, see{' '}
+              <Link href="/pricing">video production pricing</Link>.
             </p>
           </div>
         </section>
@@ -472,7 +477,7 @@ export default function EventsPage() {
             <div className="evt-section-head">
               <div>
                 <p className="evt-eyebrow">Coverage built around the program</p>
-                <h2 className="evt-display evt-section-title">Every Kind of Room. <em>One Clear Plan.</em></h2>
+                <h2 className="evt-display evt-section-title">Conferences, Galas, <em>and Corporate Events.</em></h2>
               </div>
               <p className="evt-section-intro">
                 Every event has a different rhythm. We build the crew, camera, audio, and post-production
@@ -680,7 +685,7 @@ export default function EventsPage() {
           <div className="evt-container evt-faq-wrap">
             <div className="evt-faq-head">
               <p className="evt-eyebrow">Event video production FAQ</p>
-              <h2 className="evt-display">What Event Teams <em>Ask First.</em></h2>
+              <h2 className="evt-display">Event Video Production <em>in San Antonio.</em></h2>
             </div>
             <div className="evt-faq">
               {eventVideoFaqs.map((faq) => (

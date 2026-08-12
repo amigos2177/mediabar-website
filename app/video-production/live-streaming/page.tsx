@@ -6,10 +6,10 @@ export default function LiveStreamingPage() {
     <ServiceEditorialPage
       hero={{
         eyebrow: 'Live Streaming Production in San Antonio',
-        title: 'Live Streaming',
-        emphasis: 'Production Built for the Moment.',
+        title: 'Live Streaming Production in San Antonio',
+        emphasis: 'With Multi-Camera Coverage and Recording.',
         copy:
-          'San Antonio live streaming production for conferences, town halls, launches, and hybrid events, with cameras, audio, graphics, rehearsal, platform delivery, and recording planned as one reliable system.',
+          'Live streaming production in San Antonio for conferences, town halls, launches, and hybrid events. One crew plans cameras, audio, graphics, rehearsal, platform delivery, and recording.',
         image: '/images/studio-9.jpg',
         alt: 'Video production control room with monitors and switching equipment',
         primaryCta: 'Plan a Live Stream',
@@ -30,8 +30,8 @@ export default function LiveStreamingPage() {
       }}
       overview={{
         eyebrow: 'Live Formats',
-        title: 'Built Around',
-        emphasis: 'the Audience.',
+        title: 'Conference, Town Hall,',
+        emphasis: 'and Hybrid Live Streams.',
         copy:
           'The production plan changes with the room, the platform, the speakers, and the way viewers need to participate.',
       }}
@@ -118,20 +118,20 @@ export default function LiveStreamingPage() {
             description: 'Plan recorded event coverage and live delivery as one coordinated production.',
           },
           {
-            label: 'Conference Video Guide',
-            href: '/blog/conference-video-production-guide',
-            description: 'Build a practical content plan for keynotes, sessions, recaps, and follow-up assets.',
+            label: 'San Antonio Video Production',
+            href: '/locations/san-antonio',
+            description: 'See the local crew, studio, and production support behind San Antonio live programs.',
           },
           {
-            label: 'Post Production',
-            href: '/video-production/post-production',
-            description: 'Turn the live recording into edited sessions, highlights, captions, and on-demand content.',
+            label: 'NAFA Conference Recap',
+            href: '/work/watch/nafa-conference-recap',
+            description: 'Watch a finished conference recap produced from a live multi-day program.',
           },
         ],
       }}
-      faqEyebrow="Questions"
-      faqTitle="Planning a"
-      faqEmphasis="Live Production."
+      faqEyebrow="Live streaming FAQ"
+      faqTitle="Live Streaming Production"
+      faqEmphasis="in San Antonio."
       faqs={liveStreamingFaqs}
       cta={{
         eyebrow: 'Before You Go Live',

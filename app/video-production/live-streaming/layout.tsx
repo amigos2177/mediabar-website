@@ -4,10 +4,10 @@ import { liveStreamingFaqs } from './content'
 
 const path = '/video-production/live-streaming'
 const description =
-  'San Antonio live streaming production for conferences, launches, and hybrid events with multi-camera video, audio, graphics, rehearsal, and recording.'
+  'Live streaming production in San Antonio for conferences, town halls, and hybrid events. Multi-camera video, graphics, rehearsal, and recording from one crew.'
 
 export const metadata = buildMetadata({
-  title: 'Live Streaming Production in San Antonio | Media Bar',
+  title: 'Live Streaming Production | San Antonio Crew | Media Bar',
   description,
   path,
   ogImage: '/images/studio-9.jpg',

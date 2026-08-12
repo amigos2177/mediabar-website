@@ -1,5 +1,10 @@
 export const postProductionFaqs = [
   {
+    question: 'What is video post-production?',
+    answer:
+      'Video post-production is the work that turns recorded footage into a finished piece: story editing, color, dialogue cleanup, sound mixing, motion graphics, captions, review, versioning, and final delivery. Media Bar can finish a full production or edit footage from another team.',
+  },
+  {
     question: 'Can you edit footage produced by another team?',
     answer:
       'Yes. We can work with footage from internal teams, agencies, production partners, or past shoots. We review the media, creative direction, and technical requirements before confirming the best workflow.',

@@ -1,5 +1,10 @@
 export const commercialVideoFaqs = [
   {
+    question: 'Do you produce commercials in San Antonio?',
+    answer:
+      'Yes. Media Bar produces commercial video in San Antonio for broadcast, connected TV, paid social, pre-roll, and digital campaigns. We can also coordinate multi-market Texas productions when the campaign needs them.',
+  },
+  {
     question: 'What is included in commercial video production?',
     answer:
       'A commercial production can include campaign discovery, concept development, scripting, storyboards, casting, locations, scheduling, crew, production, editing, color, audio, graphics, captions, versioning, and delivery. The exact scope is built around the campaign idea, channels, launch date, and final deliverables.',

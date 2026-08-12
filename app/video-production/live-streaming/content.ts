@@ -1,5 +1,15 @@
 export const liveStreamingFaqs = [
   {
+    question: 'Do you provide live streaming production in San Antonio?',
+    answer:
+      'Yes. Media Bar provides live streaming production in San Antonio and across Texas for conferences, town halls, launches, hybrid events, training, and private webcasts. We plan venue connectivity, cameras, audio, graphics, platform delivery, rehearsal, and recording as one system.',
+  },
+  {
+    question: 'What does live streaming production include?',
+    answer:
+      'Live streaming production typically includes the camera plan, event audio, graphics and playback, platform delivery, rehearsal, and a recording for on-demand use. The exact system depends on the venue, program, audience access, and whether remote speakers are part of the show.',
+  },
+  {
     question: 'What internet connection does a venue need?',
     answer:
       'The requirement depends on the program, platform, resolution, and backup plan. We review venue connectivity early and recommend testing before the event.',

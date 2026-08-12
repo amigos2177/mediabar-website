@@ -3,7 +3,7 @@ import { BreadcrumbJsonLd, FAQPageJsonLd, ServiceJsonLd } from '@/components/Jso
 import { sanAntonioFaqs } from './content'
 
 export const metadata = buildMetadata({
-  title: 'San Antonio Video Crew & Studio | Media Bar',
+  title: 'San Antonio Video Production Company | Crew & Studio | Media Bar',
   description:
     'Explore Media Bar’s San Antonio video crew, production studio, location support, and local filming resources for projects across South Texas.',
   path: '/locations/san-antonio',

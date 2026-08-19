@@ -11,6 +11,15 @@ export type WorkProject = {
 
 export const workProjects: WorkProject[] = [
   {
+    id: '1077104073',
+    slug: '2025-demo-reel',
+    title: '2025 Demo Reel',
+    category: 'Corporate',
+    year: '2025',
+    serviceHref: '/video-production/corporate',
+    feature: true,
+  },
+  {
     id: '1193317757',
     slug: 'san-antonio-production-stories',
     title: 'San Antonio Production Stories',

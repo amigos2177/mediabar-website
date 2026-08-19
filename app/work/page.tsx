@@ -68,7 +68,9 @@ export default function WorkPage() {
             </div>
             <div className={styles.showreelMeta}>
               <span>2025 Studio Showreel</span>
-              <span>Play film</span>
+              <Link href="/work/watch/2025-demo-reel" className={styles.showreelWatch}>
+                Watch film
+              </Link>
             </div>
           </div>
         </section>

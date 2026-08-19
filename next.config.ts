@@ -1,4 +1,13 @@
 import type { NextConfig } from 'next'
+import {
+  CAREERS_PATH,
+  GSC_JOB_SOURCES,
+  GSC_NEWS_GET_CATCHALL_SOURCES,
+  NEWS_GET_BY_ID,
+  NEWS_GET_FALLBACK,
+  gscLegacy301,
+  newsGetSourcesForId,
+} from './lib/gsc-legacy-redirects'
 
 const nextConfig: NextConfig = {
   // Pin the workspace root so Next/Turbopack stops inferring ~/ as the root.
@@ -108,40 +117,20 @@ const nextConfig: NextConfig = {
       { source: '/career', destination: '/careers', permanent: true },
       { source: '/join', destination: '/careers', permanent: true },
       { source: '/join-the-team', destination: '/careers', permanent: true },
-      { source: '/Jobs', destination: '/careers', permanent: true },
-      { source: '/jobs', destination: '/careers', permanent: true },
       { source: '/FAQs', destination: '/faq', permanent: true },
-      { source: '/Job/:rest*', destination: '/careers', permanent: true },
+      // GSC 5xx: http://mediabarproductions.com/Job/5/professional-video-editor-contract---san-anto
+      // Prefix covers truncated vs full slug, /Job/:id/:slug*, /Jobs, trailing slash.
+      // Explicit 301 (not 308) + apex host rules skip the www path-preserving hop.
+      ...gscLegacy301(GSC_JOB_SOURCES, CAREERS_PATH),
 
       // ── BLOG MIGRATION ──
-      // Specific ID redirects must come before catch-alls
-      // Migrate to new blog URLs
-      { source: '/News/Get/45/:rest*', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
-      { source: '/News/Get/44/:rest*', destination: '/blog/corporate-video-multi-format-strategy', statusCode: 301 },
-      { source: '/News/Get/43/:rest*', destination: '/blog/best-video-production-san-antonio', statusCode: 301 },
-      { source: '/News/Get/42/:rest*', destination: '/blog/elevate-your-brand-with-expert-video-production', statusCode: 301 },
-      { source: '/News/Get/41/:rest*', destination: '/blog/ai-video-production-limits', statusCode: 301 },
-      { source: '/News/Get/40/:rest*', destination: '/blog/san-antonio-conference-video-services', statusCode: 301 },
-      { source: '/News/Get/38/:rest*', destination: '/blog/importance-of-video-production-services', statusCode: 301 },
-      { source: '/News/Get/37/:rest*', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
-      { source: '/News/Get/36/:rest*', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
-      { source: '/News/Get/34/:rest*', destination: '/blog/corporate-video-multi-format-strategy', statusCode: 301 },
-      // Retire to relevant pages
-      { source: '/News/Get/35/:rest*', destination: '/work', statusCode: 301 },
-      { source: '/News/Get/33/:rest*', destination: '/work', statusCode: 301 },
-      // Legacy GSC video URL from the old CMS; do not rebuild the ASP.NET page.
-      { source: '/News/Get/31/:rest*', destination: '/video-production/medical', statusCode: 301 },
-      { source: '/News/Get/30/:rest*', destination: '/video-production/commercials', statusCode: 301 },
-      { source: '/News/Get/29/:rest*', destination: '/video-production/motion-graphics', statusCode: 301 },
-      { source: '/News/Get/28/:rest*', destination: '/video-production/medical', statusCode: 301 },
-      { source: '/News/Get/27/:rest*', destination: '/studio', statusCode: 301 },
-      { source: '/News/Get/26/:rest*', destination: '/video-production/commercials', statusCode: 301 },
-      { source: '/News/Get/25/:rest*', destination: '/video-production/commercials', statusCode: 301 },
-      { source: '/News/Get/24/:rest*', destination: '/work', statusCode: 301 },
-      { source: '/News/Get/23/:rest*', destination: '/video-production/corporate', statusCode: 301 },
-      { source: '/News/Get/22/:rest*', destination: '/video-production/commercials', statusCode: 301 },
-      { source: '/News/Get/21/:rest*', destination: '/video-production/commercials', statusCode: 301 },
-      // Catch-alls — after specific ID redirects
+      // Specific ID redirects must come before catch-alls. Do not rebuild ASP.NET pages.
+      ...Object.entries(NEWS_GET_BY_ID).flatMap(([id, dest]) =>
+        gscLegacy301(newsGetSourcesForId(id), dest),
+      ),
+      // Remaining /News/Get/:id/:slug* URLs (unknown IDs) go to /blog.
+      // Get/30 truncated GSC slug is covered by the specific ID rule above.
+      ...gscLegacy301(GSC_NEWS_GET_CATCHALL_SOURCES, NEWS_GET_FALLBACK),
       { source: '/News/:rest*', destination: '/blog', statusCode: 301 },
       { source: '/News', destination: '/blog', permanent: true },
       { source: '/news', destination: '/blog', permanent: true },

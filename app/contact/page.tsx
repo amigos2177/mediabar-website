@@ -7,16 +7,27 @@ const routes = [
   {
     number: '01',
     badge: 'Fastest simple option',
-    signal: 'Only 3 fields',
-    label: 'Quick question',
-    title: 'Just ask us',
-    copy: 'Send your name, email, and question. No project brief or production details are required.',
-    href: '#contact-form',
-    action: 'Ask a question',
+    signal: 'Opens your email',
+    label: 'Direct email',
+    title: 'Email our team',
+    copy: 'Write from your own inbox. Attach a brief, include your team, or simply ask one question.',
+    href: 'mailto:contact@mediabarproductions.com?subject=Media%20Bar%20website%20inquiry',
+    action: 'Start an email',
     toneClass: styles.routeMessage,
   },
   {
     number: '02',
+    badge: 'Short website form',
+    signal: 'Name, email, question',
+    label: 'Quick question',
+    title: 'Send a short message',
+    copy: 'Use the simple form below when you want a quick reply without opening your email app.',
+    href: '#contact-form',
+    action: 'Use the short form',
+    toneClass: styles.routeMessage,
+  },
+  {
+    number: '03',
     badge: 'Best for new productions',
     signal: '4 step guided brief',
     label: 'Planning a production',
@@ -25,17 +36,6 @@ const routes = [
     href: '/project-planner',
     action: 'Open project planner',
     toneClass: styles.routePlanner,
-  },
-  {
-    number: '03',
-    badge: 'For visits and rentals',
-    signal: 'San Antonio studio',
-    label: 'Studio visit or rental',
-    title: 'Find the San Antonio studio',
-    copy: 'Review the space, production amenities, location details, and the best way to request a date.',
-    href: '/studio',
-    action: 'Explore the studio',
-    toneClass: styles.routeStudio,
   },
 ]
 
@@ -60,9 +60,9 @@ export default function ContactPage() {
             </div>
             <div className={styles.heroIntro}>
               <p>
-                Planning a production, checking availability, or looking for the
-                studio? Choose the fastest route and you&apos;ll hear from a real
-                person within one business day.
+                Email us directly, send a short website message, or build a full
+                project brief. Choose the route that feels easiest and you&apos;ll hear
+                from a real person within one business day.
               </p>
               <a href="tel:+12102799442" className={styles.heroPhone}>
                 <span>Prefer to talk?</span>
@@ -129,7 +129,10 @@ export default function ContactPage() {
                 <div>
                   <dt>Email</dt>
                   <dd>
-                    <a href="mailto:contact@mediabarproductions.com">
+                    <a
+                      href="mailto:contact@mediabarproductions.com?subject=Media%20Bar%20website%20inquiry"
+                      data-conversion-action="email_our_team"
+                    >
                       contact@mediabarproductions.com
                     </a>
                   </dd>

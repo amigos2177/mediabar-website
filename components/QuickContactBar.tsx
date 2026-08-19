@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styles from './QuickContactBar.module.css'
 
 export default function QuickContactBar() {
@@ -9,20 +8,20 @@ export default function QuickContactBar() {
           <p className={styles.eyebrow}>A simple way to start</p>
           <h2 id="quick-contact-title">Have a quick question?</h2>
           <p>
-            You do not need a complete brief. Send your name, email, and question,
-            and a member of our team will reply personally.
+            Email us directly. You do not need a complete brief, and a member of
+            our team will reply personally.
           </p>
         </div>
 
         <div className={styles.actions}>
-          <Link
-            href="/contact#contact-form"
+          <a
+            href="mailto:contact@mediabarproductions.com?subject=Media%20Bar%20website%20question"
             className={styles.primary}
-            data-conversion-action="ask_question"
+            data-conversion-action="email_our_team"
           >
-            Ask the team
+            Email our team
             <span aria-hidden="true">→</span>
-          </Link>
+          </a>
           <a href="tel:+12102799442" className={styles.phone}>
             <span>Prefer to talk?</span>
             210-279-9442

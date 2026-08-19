@@ -110,6 +110,16 @@
   text-transform: uppercase;
 }
 
+.response a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.response a:hover,
+.response a:focus-visible {
+  color: #fff;
+}
+
 @media (max-width: 820px) {
   .inner {
     grid-template-columns: 1fr;

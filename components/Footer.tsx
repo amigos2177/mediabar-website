@@ -58,7 +58,11 @@ export default function Footer() {
             <p style={{ fontSize: '13px', lineHeight: '1.8', color: '#B0B0B0' }}>
               San Antonio, TX<br />
               <a href="tel:2102799442" style={{ color: '#B0B0B0', textDecoration: 'none' }}>210-279-9442</a><br />
-              <a href="mailto:contact@mediabarproductions.com" style={{ color: '#B0B0B0', textDecoration: 'none' }}>
+              <a
+                href="mailto:contact@mediabarproductions.com?subject=Media%20Bar%20website%20inquiry"
+                data-conversion-action="email_our_team"
+                style={{ color: '#B0B0B0', textDecoration: 'none' }}
+              >
                 contact@mediabarproductions.com
               </a>
             </p>

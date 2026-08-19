@@ -13,18 +13,25 @@ export default function ContactPrompt() {
         </div>
         <div className={styles.actionPanel}>
           <p className={styles.copy}>
-            Share as much or as little as you know. Ask about an idea, availability,
-            capabilities, or the best next step without completing the project planner.
+            Email your question directly. Ask about an idea, availability,
+            capabilities, or the best next step without completing a project brief.
           </p>
           <div className={styles.actions}>
-            <Link href="/contact#contact-form" className={styles.primary}>
-              Ask a question
-            </Link>
-            <a href="tel:+12102799442" className={styles.secondary}>
-              Call 210-279-9442
+            <a
+              href="mailto:contact@mediabarproductions.com?subject=Media%20Bar%20website%20question"
+              className={styles.primary}
+              data-conversion-action="email_our_team"
+            >
+              Email our team
             </a>
+            <Link href="/contact#contact-form" className={styles.secondary}>
+              Use the short form
+            </Link>
           </div>
-          <p className={styles.response}>A real person replies within one business day.</p>
+          <p className={styles.response}>
+            A real person replies within one business day. Prefer to talk?{' '}
+            <a href="tel:+12102799442">210-279-9442</a>
+          </p>
         </div>
       </div>
     </section>

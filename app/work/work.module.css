@@ -132,6 +132,16 @@
   text-transform: uppercase;
 }
 
+.showreelWatch {
+  color: #f7f7f5;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.showreelWatch:hover {
+  color: #fff;
+}
+
 .proof {
   display: grid;
   grid-template-columns: repeat(3, 150px) minmax(300px, 1fr);

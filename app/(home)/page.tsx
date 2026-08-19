@@ -970,6 +970,21 @@ export default function HomePage() {
           line-height: 1.5;
           text-transform: uppercase;
         }
+        .reel-watch-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-top: 12px;
+          color: #fff;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .14em;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: color .2s ease;
+        }
+        .reel-watch-link span { color: var(--red); }
+        .reel-watch-link:hover { color: #ff5a5a; }
 
         /* ─── AWARDS ─── */
         .awards-grid {
@@ -1223,6 +1238,9 @@ export default function HomePage() {
                 <div>
                   <h3 className="reel-name">Demo Reel</h3>
                   <p className="reel-detail">Commercials · Events · Healthcare · Branded stories</p>
+                  <Link href="/work/watch/2025-demo-reel" className="reel-watch-link">
+                    Watch the 2025 demo reel <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
               </div>
             </article>

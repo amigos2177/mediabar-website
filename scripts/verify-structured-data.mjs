@@ -216,7 +216,7 @@ expectNoVideoObject('resources/media-bar-answers.html')
 
 // GSC 8/9/26 "Video not processed": these films were marked up on service pages.
 // They already have dedicated watch pages; keep complete VideoObject there.
-for (const slug of ['rbfcu-coyote-commercial', 'fleer-brilliants-superman']) {
+for (const slug of ['rbfcu-coyote-commercial', 'fleer-brilliants-superman', '2025-demo-reel']) {
   expectWatchPageVideo(
     `work/watch/${slug}.html`,
     `https://www.mediabarproductions.com/work/watch/${slug}`,
@@ -251,6 +251,14 @@ if (sitemapLocs.length === 0) {
 }
 
 const sitemapUrlBlocks = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1])
+const demoReelWatch = sitemapUrlBlocks.find((block) =>
+  block.includes('<loc>https://www.mediabarproductions.com/work/watch/2025-demo-reel</loc>'),
+)
+if (!demoReelWatch) {
+  failures.push('sitemap.xml: missing 2025 demo reel watch URL')
+} else if (!demoReelWatch.includes('<video:video>')) {
+  failures.push('sitemap.xml: 2025 demo reel watch URL is missing video extras')
+}
 const videoWatchPrefixes = [
   'https://www.mediabarproductions.com/work/watch/',
   'https://www.mediabarproductions.com/resources/media-bar-answers/',

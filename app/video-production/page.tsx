@@ -6,6 +6,7 @@ import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import { BreadcrumbJsonLd, FAQPageJsonLd, ServiceJsonLd } from '@/components/JsonLd'
 import { buildMetadata } from '@/lib/seo'
 import { videoProductionFaqs } from './content'
+import RbfcuCommercialGallery from '@/components/RbfcuCommercialGallery'
 
 export const metadata = buildMetadata({
   title: 'Full-Service Video Production Services in Texas',
@@ -381,6 +382,8 @@ export default function VideoProductionPage() {
             </article>
           </div>
         </section>
+
+        <RbfcuCommercialGallery compact />
 
         <section className="vps-section">
           <div className="vps-container vps-process-grid">

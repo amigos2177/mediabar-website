@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Layout from '../../../components/Layout'
 import QuickContactBar from '@/components/QuickContactBar'
 import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
-import VimeoPlayer from '@/components/VimeoPlayer'
+import RbfcuCommercialGallery from '@/components/RbfcuCommercialGallery'
 import { commercialVideoFaqs } from './content'
 
 const clients = [
@@ -489,29 +489,7 @@ export default function CommercialsPage() {
           </div>
         </section>
 
-        <section className="com-section">
-          <div className="com-container">
-            <div className="com-spot-grid">
-              <div className="com-spot-media">
-                <VimeoPlayer
-                  videoId="1138375371"
-                  title="RBFCU Coyote commercial"
-                  thumbnailUrl="https://i.vimeocdn.com/video/2084915704-7da55912ad6af7c76d003d5a84c9b2667b1338afb9f36bd09b64d2d3d27d0bb4-d_1280?region=us"
-                />
-              </div>
-              <div className="com-spot-copy">
-                <p className="com-eyebrow">Watch a finished spot</p>
-                <h2 className="com-display">Thirty Seconds. <em>A Complete Brand Moment.</em></h2>
-                <p>
-                  A memorable commercial needs a clear idea, a confident performance, a purposeful
-                  frame, and an edit that lands before the time runs out. Watch one of the spots
-                  from the RBFCU campaign.
-                </p>
-                <Link href="/work/watch/rbfcu-coyote-commercial" className="com-inline-link">Watch the finished spot <span>→</span></Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <RbfcuCommercialGallery />
 
         <section className="com-section com-assets">
           <div className="com-container com-assets-grid">

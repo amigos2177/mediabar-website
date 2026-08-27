@@ -373,15 +373,15 @@ export default function EventsPage() {
           <div className="evt-hero-inner">
             <div className="evt-container">
               <div className="evt-hero-copy">
-                <p className="evt-eyebrow">Event video production in San Antonio and across Texas</p>
+                <p className="evt-eyebrow">Conferences, corporate events, and live programs</p>
                 <h1 className="evt-display">
-                  Event Video Production in San Antonio{' '}
-                  <em>For Conferences, Corporate Events, and Recaps.</em>
+                  Event Video Production{' '}
+                  <em>For Conferences and Corporate Events.</em>
                 </h1>
                 <p className="evt-hero-deck">
-                  Event video production for conferences, corporate events, galas, and launches
-                  in San Antonio and across Texas. One crew plans multi-camera coverage, clean
-                  audio, recaps, session edits, and social cuts.
+                  Plan multi-camera coverage, clean speaker audio, recap films, session edits,
+                  and social cutdowns with one San Antonio production team serving events across
+                  Texas.
                 </p>
                 <div className="evt-actions">
                   <Link href="/project-planner" className="evt-button evt-button-primary">Plan Event Coverage</Link>
@@ -389,7 +389,7 @@ export default function EventsPage() {
                 </div>
               </div>
               <div className="evt-proof" aria-label="Event production capabilities">
-                <div className="evt-proof-item"><div className="evt-proof-value">2011</div><div className="evt-proof-label">Producing since</div></div>
+                <div className="evt-proof-item"><div className="evt-proof-value">3x</div><div className="evt-proof-label">Emmy Award winners</div></div>
                 <div className="evt-proof-item"><div className="evt-proof-value">Multi</div><div className="evt-proof-label">Camera coverage</div></div>
                 <div className="evt-proof-item"><div className="evt-proof-value">Clean</div><div className="evt-proof-label">Speaker audio</div></div>
                 <div className="evt-proof-item"><div className="evt-proof-value">One</div><div className="evt-proof-label">Team through post</div></div>

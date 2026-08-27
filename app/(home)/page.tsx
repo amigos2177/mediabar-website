@@ -1,10 +1,9 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
 import GoogleReviews from '../../components/GoogleReviews'
+import HomeHeroMedia from '../../components/HomeHeroMedia'
+import HomeRevealObserver from '../../components/HomeRevealObserver'
 import { MediaBarAnswersFeature } from '../../components/MediaBarAnswersFeature'
 import VimeoPlayer from '../../components/VimeoPlayer'
 import { homepageFaqs } from '../../data/homepage-faqs'
@@ -138,55 +137,9 @@ const clients = [
 ]
 
 export default function HomePage() {
-  const [heroVideoReady, setHeroVideoReady] = useState(false)
-  const [heroVideoEnabled, setHeroVideoEnabled] = useState(false)
-  const [reduceMotion, setReduceMotion] = useState(false)
-
-  useEffect(() => {
-    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const updateMotionPreference = () => setReduceMotion(motionPreference.matches)
-    updateMotionPreference()
-    motionPreference.addEventListener('change', updateMotionPreference)
-
-    let videoDelay = 0
-    const connection = (navigator as Navigator & {
-      connection?: { saveData?: boolean }
-    }).connection
-    const shouldLoadBackgroundVideo = (
-      !motionPreference.matches
-      && !connection?.saveData
-      && !window.matchMedia('(max-width: 768px)').matches
-    )
-    if (shouldLoadBackgroundVideo) {
-      videoDelay = window.setTimeout(() => setHeroVideoEnabled(true), 1800)
-    }
-
-    const els = document.querySelectorAll<HTMLElement>('[data-reveal]')
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            ;(e.target as HTMLElement).classList.add('revealed')
-            obs.unobserve(e.target)
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-    els.forEach((el) => obs.observe(el))
-    const fallback = setTimeout(() => {
-      els.forEach((el) => el.classList.add('revealed'))
-    }, 1500)
-    return () => {
-      obs.disconnect()
-      clearTimeout(fallback)
-      window.clearTimeout(videoDelay)
-      motionPreference.removeEventListener('change', updateMotionPreference)
-    }
-  }, [])
-
   return (
     <Layout>
+      <HomeRevealObserver />
       <style>{`
         :root {
           --red: #CC0000;
@@ -1138,26 +1091,7 @@ export default function HomePage() {
 
       {/* ─── 1. HERO ─── */}
       <section className="hero">
-        <div className="hero-video-wrap">
-          <Image
-            className="hero-poster"
-            src="/images/hero-aerial.jpg"
-            alt=""
-            fill
-            loading="eager"
-            fetchPriority="high"
-            sizes="100vw"
-          />
-          {heroVideoEnabled && !reduceMotion && (
-            <iframe
-              className={heroVideoReady ? 'ready' : undefined}
-              src="https://player.vimeo.com/video/1077104073?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&controls=0"
-              allow="autoplay; fullscreen"
-              title="Media Bar Productions showreel background"
-              onLoad={() => setHeroVideoReady(true)}
-            />
-          )}
-        </div>
+        <HomeHeroMedia />
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="hero-eyebrow">Media Bar Productions · Local crew since 2011</p>

@@ -14,19 +14,19 @@ const bebasNeue = Bebas_Neue({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-bebas-neue',
-  display: 'swap',
+  display: 'optional',
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
-  display: 'swap',
+  display: 'optional',
 })
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair-display',
-  display: 'swap',
+  display: 'optional',
 })
 
 export const metadata: Metadata = {

@@ -161,9 +161,9 @@ export default function EventsPage() {
   return (
     <Layout>
       <style>{`
-        .evt-page{--line:rgba(255,255,255,.1);--panel:#141414;--muted:#96969b;background:#090909;color:#fff}
+        .evt-page{--line:rgba(255,255,255,.1);--panel:#141414;--muted:#96969b;--red-text:#ef3b3b;background:#090909;color:#fff}
         .evt-container{width:min(1240px,calc(100% - 96px));margin:0 auto}
-        .evt-eyebrow{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+        .evt-eyebrow{color:var(--red-text);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
         .evt-display{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.025em;line-height:.94;text-transform:uppercase}
         .evt-display em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;letter-spacing:0;text-transform:none}
         .evt-button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;padding:0 34px;border:1px solid transparent;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .18s,border-color .18s}
@@ -194,7 +194,7 @@ export default function EventsPage() {
 
         .evt-clients{background:#101010;border-bottom:1px solid var(--line)}
         .evt-clients-inner{display:grid;grid-template-columns:250px 1fr;align-items:center;min-height:132px}
-        .evt-clients-title{color:#676767;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .evt-clients-title{color:#828282;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
         .evt-client-grid{display:grid;grid-template-columns:repeat(4,1fr);height:100%;border-left:1px solid var(--line)}
         .evt-client{display:flex;min-height:132px;align-items:center;justify-content:center;border-right:1px solid var(--line)}
         .evt-client:last-child{border-right:0}
@@ -209,20 +209,20 @@ export default function EventsPage() {
         .evt-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
         .evt-type{min-height:290px;display:flex;flex-direction:column;padding:31px;background:var(--panel);transition:background .18s}
         .evt-type:hover{background:#181818}
-        .evt-type-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;letter-spacing:.08em}
+        .evt-type-number{color:var(--red-text);font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;letter-spacing:.08em}
         .evt-type h3{margin-top:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:31px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .evt-type p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
 
         .evt-options{background:#101010}
         .evt-option-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
         .evt-option{display:flex;min-height:440px;flex-direction:column;padding:34px;border:1px solid var(--line);background:#151515}
-        .evt-option-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:21px;letter-spacing:.08em}
+        .evt-option-number{color:var(--red-text);font-family:'Bebas Neue',Impact,sans-serif;font-size:21px;letter-spacing:.08em}
         .evt-option h3{margin-top:58px;font-family:'Bebas Neue',Impact,sans-serif;font-size:39px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .evt-option-best{margin-top:15px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.1em;line-height:1.55;text-transform:uppercase}
         .evt-option-copy{margin-top:18px;color:#929297;font-size:13px;line-height:1.7}
         .evt-option-outputs{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:28px}
         .evt-option-output{padding:8px 10px;border:1px solid var(--line);color:#c6c6c9;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-        .evt-options-note{margin-top:22px;color:#76767b;font-size:12px;line-height:1.65}
+        .evt-options-note{margin-top:22px;color:#85858a;font-size:12px;line-height:1.65}
         .evt-options-note a{color:#fff;border-bottom:1px solid var(--red)}
 
         .evt-plan{background:#101010}
@@ -250,7 +250,7 @@ export default function EventsPage() {
         .evt-work-card{border:1px solid var(--line);background:#141414}
         .evt-work-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#050505}
         .evt-work-copy{padding:28px 29px 31px}
-        .evt-work-number{color:var(--red);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .evt-work-number{color:var(--red-text);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
         .evt-work-copy h3{margin-top:14px;font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .evt-work-copy p{margin-top:14px;color:#85858a;font-size:13px;line-height:1.7}
 
@@ -270,13 +270,13 @@ export default function EventsPage() {
 
         .evt-process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
         .evt-process-card{min-height:330px;padding:34px 30px;background:#141414}
-        .evt-process-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.08em}
+        .evt-process-number{color:var(--red-text);font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.08em}
         .evt-process-card h3{margin-top:96px;font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.04em;line-height:1;text-transform:uppercase}
         .evt-process-card p{margin-top:16px;color:#85858a;font-size:13px;line-height:1.7}
 
         .evt-related{background:#0d0d0d}
         .evt-related-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}
-        .evt-related-card{display:flex;min-height:260px;flex-direction:column;padding:28px 24px;background:#141414;transition:background .18s}
+        .evt-related-card{display:flex;min-height:260px;flex-direction:column;padding:28px 24px;background:#141414;color:#fff;transition:background .18s}
         .evt-related-card:hover{background:#191919}
         .evt-related-card h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .evt-related-card p{margin-top:15px;color:#85858a;font-size:12px;line-height:1.7}
@@ -285,9 +285,9 @@ export default function EventsPage() {
 
         .evt-resources{background:#101010}
         .evt-resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-        .evt-resource{min-height:270px;display:flex;flex-direction:column;padding:34px;background:#141414;transition:background .18s}
+        .evt-resource{min-height:270px;display:flex;flex-direction:column;padding:34px;background:#141414;color:#fff;transition:background .18s}
         .evt-resource:hover{background:#191919}
-        .evt-resource-tag{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .evt-resource-tag{color:var(--red-text);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
         .evt-resource h3{margin-top:54px;font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .evt-resource p{margin-top:16px;color:#85858a;font-size:13px;line-height:1.7}
         .evt-resource-link{margin-top:auto;padding-top:28px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
@@ -368,6 +368,7 @@ export default function EventsPage() {
             fill
             priority
             sizes="100vw"
+            quality={60}
           />
           <div className="evt-hero-scrim" />
           <div className="evt-hero-inner">

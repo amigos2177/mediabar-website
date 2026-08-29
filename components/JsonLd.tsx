@@ -407,6 +407,10 @@ type EducationalGuideProps = {
   datePublished: string
   dateModified: string
   image: string
+  articleBody?: string
+  articleSection?: string
+  sameAs?: string
+  collectionUrl?: string
 }
 
 export function EducationalGuideJsonLd({
@@ -416,6 +420,10 @@ export function EducationalGuideJsonLd({
   datePublished,
   dateModified,
   image,
+  articleBody,
+  articleSection,
+  sameAs,
+  collectionUrl,
 }: EducationalGuideProps) {
   const canonical = `${BASE_URL}${url}`
   const imageUrl = image.startsWith('http') ? image : `${BASE_URL}${image}`
@@ -428,6 +436,9 @@ export function EducationalGuideJsonLd({
     url: canonical,
     datePublished,
     dateModified,
+    ...(articleBody && { articleBody }),
+    ...(articleSection && { articleSection }),
+    ...(sameAs && { sameAs }),
     inLanguage: 'en-US',
     isAccessibleForFree: true,
     mainEntityOfPage: {
@@ -457,6 +468,11 @@ export function EducationalGuideJsonLd({
     publisher: {
       '@id': BUSINESS_ID,
     },
+    ...(collectionUrl && {
+      isPartOf: {
+        '@id': `${BASE_URL}${collectionUrl}#collection`,
+      },
+    }),
     publishingPrinciples: `${BASE_URL}/about/editorial-policy`,
     about: [
       'Video production planning',

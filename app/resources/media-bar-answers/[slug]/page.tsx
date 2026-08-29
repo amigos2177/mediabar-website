@@ -47,6 +47,11 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
 
   const path = `${libraryPath}/${episode.slug}`
   const relatedEpisodes = mediaBarAnswersEpisodes.filter((item) => item.slug !== episode.slug)
+  const articleBody = [
+    episode.directAnswer,
+    ...episode.takeaways,
+    ...episode.transcript,
+  ].join('\n\n')
 
   return (
     <Layout>
@@ -62,6 +67,10 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
         datePublished={episode.video.uploadDate}
         dateModified={episode.dateModified ?? '2026-08-10'}
         image={episode.video.thumbnailUrl}
+        articleBody={articleBody}
+        articleSection={`Media Bar Answers: ${episode.category}`}
+        sameAs={`https://www.youtube.com/watch?v=${episode.video.youtubeId}`}
+        collectionUrl={libraryPath}
       />
       {episode.pageFaqs?.length ? <FAQPageJsonLd faqs={episode.pageFaqs} /> : null}
 

@@ -199,8 +199,10 @@ for (const entry of fs.readdirSync(watchDir, { withFileTypes: true })) {
 }
 
 const answersDir = path.join(appOutput, 'resources/media-bar-answers')
-for (const entry of fs.readdirSync(answersDir, { withFileTypes: true })) {
-  if (!entry.isFile() || !entry.name.endsWith('.html')) continue
+const answerPages = fs.readdirSync(answersDir, { withFileTypes: true }).filter(
+  (entry) => entry.isFile() && entry.name.endsWith('.html'),
+)
+for (const entry of answerPages) {
   const page = `resources/media-bar-answers/${entry.name}`
   expectType(page, 'Article')
   expectNoVideoObject(page)
@@ -275,5 +277,7 @@ if (failures.length) {
 console.log(
   `Structured-data verification passed: ${servicePages.length} service pages, `
   + `${fs.readdirSync(blogDir).filter((name) => name.endsWith('.html')).length} blog posts, `
-  + `${fs.readdirSync(watchDir).filter((name) => name.endsWith('.html')).length} watch pages.`,
+  + `${fs.readdirSync(watchDir).filter((name) => name.endsWith('.html')).length} watch pages, `
+  + `${answerPages.length} Media Bar Answers pages without VideoObject; `
+  + 'video sitemap markup is limited to watch pages.',
 )

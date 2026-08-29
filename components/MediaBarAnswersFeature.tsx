@@ -56,7 +56,6 @@ export function MediaBarAnswersFeature({
               <Link
                 href={`/resources/media-bar-answers/${episode.slug}`}
                 className={styles.cardLink}
-                aria-label={`Watch and read ${episode.video.title}`}
                 data-media-bar-answer={episode.slug}
                 data-media-bar-answer-action="episode"
                 data-media-bar-answer-placement={placement}

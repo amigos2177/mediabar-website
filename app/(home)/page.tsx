@@ -1129,7 +1129,8 @@ export default function HomePage() {
                     alt={client.name}
                     width={160}
                     height={56}
-                    sizes="(max-width: 600px) 42vw, (max-width: 1024px) 21vw, 11vw"
+                    sizes="(max-width: 600px) 56px, (max-width: 1024px) 80px, 96px"
+                    quality={60}
                   />
                 )
                 : <span className="client-text">{client.name}</span>
@@ -1164,7 +1165,6 @@ export default function HomePage() {
                   videoId="1077104073"
                   title="Media Bar Productions Demo Reel"
                   thumbnailUrl="https://i.vimeocdn.com/video/2007121987-d46882b6b21b356f6dfc32d487245d5802d9508db9e6d9c699a70c7156f7da6c-d_1280?region=us"
-                  eager
                 />
               </div>
               <div className="reel-meta">

@@ -204,7 +204,20 @@ const answerPages = fs.readdirSync(answersDir, { withFileTypes: true }).filter(
 )
 for (const entry of answerPages) {
   const page = `resources/media-bar-answers/${entry.name}`
-  expectType(page, 'Article')
+  const nodes = expectType(page, 'Article')
+  const article = nodes.find((node) => node['@type'] === 'Article')
+  if (!article?.articleBody || String(article.articleBody).length < 300) {
+    failures.push(`${page}: Article is missing a substantial articleBody`)
+  }
+  if (!String(article?.articleSection ?? '').startsWith('Media Bar Answers:')) {
+    failures.push(`${page}: Article is missing its Media Bar Answers section`)
+  }
+  if (!String(article?.sameAs ?? '').startsWith('https://www.youtube.com/watch?v=')) {
+    failures.push(`${page}: Article is missing its matching YouTube source`)
+  }
+  if (article?.isPartOf?.['@id'] !== 'https://www.mediabarproductions.com/resources/media-bar-answers#collection') {
+    failures.push(`${page}: Article is not connected to the Media Bar Answers collection`)
+  }
   expectNoVideoObject(page)
 }
 

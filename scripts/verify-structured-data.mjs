@@ -201,12 +201,9 @@ for (const entry of fs.readdirSync(watchDir, { withFileTypes: true })) {
 const answersDir = path.join(appOutput, 'resources/media-bar-answers')
 for (const entry of fs.readdirSync(answersDir, { withFileTypes: true })) {
   if (!entry.isFile() || !entry.name.endsWith('.html')) continue
-  const slug = entry.name.replace(/\.html$/, '')
   const page = `resources/media-bar-answers/${entry.name}`
-  expectWatchPageVideo(
-    page,
-    `https://www.mediabarproductions.com/resources/media-bar-answers/${slug}`,
-  )
+  expectType(page, 'Article')
+  expectNoVideoObject(page)
 }
 
 expectNoVideoObject('work.html')
@@ -259,14 +256,11 @@ if (!demoReelWatch) {
 } else if (!demoReelWatch.includes('<video:video>')) {
   failures.push('sitemap.xml: 2025 demo reel watch URL is missing video extras')
 }
-const videoWatchPrefixes = [
-  'https://www.mediabarproductions.com/work/watch/',
-  'https://www.mediabarproductions.com/resources/media-bar-answers/',
-]
+const watchPrefix = 'https://www.mediabarproductions.com/work/watch/'
 for (const block of sitemapUrlBlocks) {
   if (!block.includes('<video:video>') && !block.includes('<video:')) continue
   const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1]
-  const isWatchUrl = videoWatchPrefixes.some((prefix) => loc?.startsWith(prefix) && loc.length > prefix.length)
+  const isWatchUrl = Boolean(loc?.startsWith(watchPrefix) && loc.length > watchPrefix.length)
   if (!isWatchUrl) {
     failures.push(`sitemap.xml: video sitemap extra is not on a watch page (${loc || 'missing loc'})`)
   }

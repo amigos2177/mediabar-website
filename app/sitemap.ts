@@ -144,36 +144,14 @@ function watchEntries(): MetadataRoute.Sitemap {
 }
 
 function answerEntries(): MetadataRoute.Sitemap {
-  return mediaBarAnswersEpisodes.flatMap((episode) => {
-    const lastModified = sitemapDate(episode.video.uploadDate)
-    const thumbnail = episode.video.thumbnailUrl
-    const duration = isoDurationToSeconds(episode.video.duration)
-    const canAttachVideo =
-      Boolean(episode.video.title)
-      && typeof thumbnail === 'string'
-      && thumbnail.length > 0
-      && Boolean(episode.video.description)
-      && Boolean(episode.video.youtubeId)
-      && Boolean(lastModified)
-      && Boolean(duration)
-
-    return [withLastmod(
+  // Article/Q&A pages with an embedded video — keep the URLs in the sitemap,
+  // but do not emit <video:video>. GSC treats those as non-watch pages.
+  return mediaBarAnswersEpisodes.map((episode) =>
+    withLastmod(
       `${BASE}/resources/media-bar-answers/${episode.slug}`,
-      lastModified ?? MEDIA_BAR_ANSWERS_UPDATED,
-      canAttachVideo
-        ? {
-            videos: [{
-              title: episode.video.title,
-              thumbnail_loc: thumbnail,
-              description: episode.video.description,
-              player_loc: `https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`,
-              publication_date: lastModified,
-              duration,
-            }],
-          }
-        : undefined,
-    )]
-  })
+      sitemapDate(episode.video.uploadDate) ?? MEDIA_BAR_ANSWERS_UPDATED,
+    ),
+  )
 }
 
 function buildSitemap(): MetadataRoute.Sitemap {

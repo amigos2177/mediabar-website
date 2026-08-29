@@ -7,7 +7,6 @@ import {
   BreadcrumbJsonLd,
   EducationalGuideJsonLd,
   FAQPageJsonLd,
-  VideoObjectJsonLd,
 } from '@/components/JsonLd'
 import {
   getMediaBarAnswer,
@@ -63,16 +62,6 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
         datePublished={episode.video.uploadDate}
         dateModified={episode.dateModified ?? '2026-08-10'}
         image={episode.video.thumbnailUrl}
-      />
-      <VideoObjectJsonLd
-        name={episode.video.title}
-        description={episode.video.description}
-        thumbnailUrl={episode.video.thumbnailUrl}
-        uploadDate={episode.video.uploadDate}
-        duration={episode.video.duration}
-        contentUrl={`https://www.youtube.com/watch?v=${episode.video.youtubeId}`}
-        embedUrl={`https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`}
-        url={`https://www.mediabarproductions.com${path}`}
       />
       {episode.pageFaqs?.length ? <FAQPageJsonLd faqs={episode.pageFaqs} /> : null}
 

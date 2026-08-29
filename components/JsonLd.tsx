@@ -523,7 +523,9 @@ export function CollectionPageJsonLd({
 }
 
 // ============================================================
-// 9. VideoObject - Dedicated single-video watch pages only
+// 9. VideoObject - Dedicated single-video watch pages only.
+// Do not use on article/Q&A pages (including Media Bar Answers).
+// Portfolio watch pages use VideoObjectSchema instead.
 // ============================================================
 type VideoProps = {
   name: string

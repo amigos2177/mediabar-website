@@ -377,7 +377,7 @@ export default function EventsPage() {
                 <p className="evt-eyebrow">Conferences, corporate events, and live programs</p>
                 <h1 className="evt-display">
                   Event Video Production{' '}
-                  <em>For Conferences and Corporate Events.</em>
+                  <em>For Conferences, Recaps, and Sessions.</em>
                 </h1>
                 <p className="evt-hero-deck">
                   Plan multi-camera coverage, clean speaker audio, recap films, session edits,

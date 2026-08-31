@@ -7,11 +7,13 @@ import {
 import { eventVideoFaqs } from './content'
 
 const path = '/video-production/events'
-const description =
+const schemaDescription =
   'Event video production for conferences and corporate events in San Antonio and across Texas, with multi-camera coverage, clean audio, recaps, and social edits.'
+const description =
+  'A San Antonio crew for conference and corporate event video across Texas. We cover keynotes and sessions, then edit recaps, speaker clips, and social cuts.'
 
 export const metadata = buildMetadata({
-  title: 'Event Video Production for Conferences | Media Bar',
+  title: 'San Antonio Event Video | Recaps & Sessions | Media Bar',
   description,
   path,
   ogImage: '/images/bts-8.jpg',
@@ -22,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <ServiceJsonLd
         name="Event Video Production in San Antonio"
-        description={description}
+        description={schemaDescription}
         url={path}
         image="https://www.mediabarproductions.com/images/bts-8.jpg"
       />

@@ -1050,6 +1050,12 @@ export default function HomePage() {
           .reel-header-copy { grid-template-columns: 1fr auto; }
         }
         @media (max-width: 768px) {
+          .hero-headline {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          }
+          .hero-headline-geo {
+            font-family: Georgia, 'Times New Roman', serif;
+          }
           .reel-section { padding: 76px 24px 84px; }
           .reel-duo { grid-template-columns: 1fr; gap: 18px; }
           .reel-card:hover { transform: none; }

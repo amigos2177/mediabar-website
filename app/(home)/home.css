@@ -1,0 +1,947 @@
+/* Homepage-only styles are scoped to avoid leaking across App Router navigations. */
+.mbp-home {
+          --red: #CC0000;
+          --gold: #C9A84C;
+          --black: #0A0A0A;
+          --dark: #111111;
+          --dark2: #181818;
+        }
+
+        .mbp-home, .mbp-home * { box-sizing: border-box; margin: 0; padding: 0; }
+        .mbp-home { background: var(--black); color: #fff; font-family: 'DM Sans', system-ui, sans-serif; }
+
+        .mbp-home [data-reveal] {
+          opacity: 0;
+          transform: translateY(28px);
+          transition: opacity 0.65s ease, transform 0.65s ease;
+          animation: reveal-fallback 0.001s 3s forwards;
+        }
+        .mbp-home [data-reveal].revealed {
+          opacity: 1;
+          transform: translateY(0);
+          animation: none;
+        }
+        @keyframes reveal-fallback {
+          to { opacity: 1; transform: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .mbp-home [data-reveal] {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+            animation: none !important;
+          }
+        }
+
+        /* ─── HERO ─── */
+        .mbp-home .hero {
+          position: relative;
+          height: 100vh;
+          min-height: 600px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+        .mbp-home .hero-video-wrap {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          overflow: hidden;
+          background: #080808;
+        }
+        .mbp-home .hero-poster {
+          position: absolute;
+          inset: 0;
+          object-fit: cover;
+        }
+        .mbp-home .hero-video-wrap iframe {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100vw;
+          height: 56.25vw;
+          min-height: 100vh;
+          min-width: 177.78vh;
+          border: none;
+          opacity: 0;
+          transition: opacity .45s ease;
+        }
+        .mbp-home .hero-video-wrap iframe.ready { opacity: 1; }
+        .mbp-home .hero-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.78) 100%);
+        }
+        .mbp-home .hero-content {
+          position: relative;
+          z-index: 2;
+          padding: 0 24px;
+          max-width: 1040px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .mbp-home .hero-eyebrow {
+          font-size: 11px;
+          font-weight: 700;
+          color: var(--gold);
+          letter-spacing: 0.2em;
+          margin-bottom: 18px;
+          text-transform: uppercase;
+        }
+        .mbp-home .hero-headline {
+          font-family: var(--font-bebas-neue), Impact, sans-serif;
+          font-size: clamp(54px, 10vw, 116px);
+          line-height: 0.88;
+          letter-spacing: 0.025em;
+          color: #fff;
+          text-transform: uppercase;
+        }
+        .mbp-home .hero-headline-geo {
+          display: block;
+          font-family: var(--font-playfair-display), Georgia, serif;
+          font-size: 0.48em;
+          font-style: italic;
+          font-weight: 600;
+          color: rgba(255,255,255,0.76);
+          letter-spacing: 0.01em;
+          text-transform: none;
+          margin-top: 12px;
+        }
+        .mbp-home .hero-sub {
+          max-width: 690px;
+          margin: 28px auto 0;
+          color: rgba(255,255,255,.72);
+          font-size: clamp(15px, 1.8vw, 18px);
+          line-height: 1.65;
+        }
+        .mbp-home .hero-pills {
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+          margin-top: 28px;
+          flex-wrap: wrap;
+        }
+        .mbp-home .hero-pill {
+          background: rgba(255,255,255,0.08);
+          backdrop-filter: blur(8px);
+          border: 0.5px solid rgba(255,255,255,0.15);
+          border-radius: 2px;
+          padding: 10px 24px;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.82);
+        }
+        .mbp-home .hero-pill::before {
+          content: '';
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          background: var(--red);
+          border-radius: 50%;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+        .mbp-home .hero-ctas {
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+          margin-top: 36px;
+          flex-wrap: wrap;
+        }
+        .mbp-home .btn-outline {
+          border: 1px solid rgba(255,255,255,0.35);
+          background: transparent;
+          color: #fff;
+          text-decoration: none;
+          padding: 16px 44px;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          display: inline-block;
+          border-radius: 2px;
+          transition: border-color 0.15s, background 0.15s;
+        }
+        .mbp-home .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
+        .mbp-home .btn-red {
+          background: var(--red);
+          color: #fff;
+          text-decoration: none;
+          padding: 16px 44px;
+          font-family: 'DM Sans', system-ui, sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          display: inline-block;
+          border-radius: 2px;
+          border: none;
+          transition: background 0.15s, box-shadow 0.15s;
+        }
+        .mbp-home .btn-red:hover { background: #aa0000; box-shadow: 0 4px 24px rgba(204,0,0,0.4); }
+
+        /* ─── CLIENTS STRIP ─── */
+        .mbp-home .clients-strip {
+          background: var(--dark);
+          border-top: 1px solid #1d1d1d;
+          border-bottom: 1px solid #1d1d1d;
+          padding: 32px 40px;
+        }
+        .mbp-home .clients-label {
+          text-align: center;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #7f7f7f;
+          margin-bottom: 22px;
+        }
+        .mbp-home .clients-grid {
+          display: grid;
+          grid-template-columns: repeat(8, 1fr);
+          align-items: center;
+        }
+        .mbp-home .client-cell {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 60px;
+          padding: 6px 12px;
+          border-right: 1px solid #1e1e1e;
+        }
+        .mbp-home .client-cell:last-child { border-right: none; }
+        .mbp-home .client-cell img {
+          max-height: 40px;
+          max-width: 100%;
+          width: auto;
+          object-fit: contain;
+          filter: grayscale(100%) brightness(0.6);
+          transition: filter 0.2s;
+        }
+        .mbp-home .client-cell img:hover { filter: grayscale(0%) brightness(1); }
+        .mbp-home .client-text {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 14px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.26);
+          text-align: center;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          transition: color 0.15s;
+        }
+        .mbp-home .client-cell:hover .client-text { color: rgba(255,255,255,0.55); }
+
+        /* ─── DIRECT ANSWERS ─── */
+        .mbp-home .answer-section {
+          padding: 96px 48px;
+          background: #0d0d0d;
+          border-bottom: 1px solid #1d1d1d;
+        }
+        .mbp-home .answer-inner {
+          display: grid;
+          grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+          gap: 72px;
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+        .mbp-home .answer-intro {
+          align-self: start;
+          position: sticky;
+          top: 112px;
+        }
+        .mbp-home .answer-title {
+          margin-top: 14px;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: clamp(46px, 5vw, 68px);
+          font-weight: 400;
+          letter-spacing: .03em;
+          line-height: .98;
+          color: #fff;
+          text-transform: uppercase;
+        }
+        .mbp-home .answer-title em {
+          display: block;
+          margin-top: 6px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: .7em;
+          font-style: italic;
+          font-weight: 600;
+          letter-spacing: 0;
+          color: var(--gold);
+          text-transform: none;
+        }
+        .mbp-home .answer-intro > p:not(.eyebrow) {
+          margin: 24px 0 28px;
+          color: rgba(255,255,255,.6);
+          font-size: 15px;
+          line-height: 1.75;
+        }
+        .mbp-home .answer-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          border-top: 1px solid rgba(255,255,255,.13);
+          border-left: 1px solid rgba(255,255,255,.13);
+        }
+        .mbp-home .answer-card {
+          min-height: 250px;
+          padding: 32px;
+          border-right: 1px solid rgba(255,255,255,.13);
+          border-bottom: 1px solid rgba(255,255,255,.13);
+          background: #121212;
+        }
+        .mbp-home .answer-card h3 {
+          color: #fff;
+          font-size: 16px;
+          line-height: 1.35;
+        }
+        .mbp-home .answer-card p {
+          margin: 14px 0 22px;
+          color: #929292;
+          font-size: 13px;
+          line-height: 1.7;
+        }
+        .mbp-home .answer-link {
+          color: #ff4d4d;
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: .14em;
+          text-transform: uppercase;
+        }
+
+        /* ─── FEATURED WORK ─── */
+        .mbp-home .featured-work {
+          background: var(--black);
+          padding: 112px 48px;
+        }
+        .mbp-home .featured-inner {
+          max-width: 1240px;
+          margin: 0 auto;
+        }
+        .mbp-home .featured-card {
+          display: grid;
+          grid-template-columns: minmax(0, 1.3fr) minmax(360px, .7fr);
+          min-height: 610px;
+          background: var(--dark2);
+          border: 1px solid rgba(255,255,255,.1);
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        .mbp-home .featured-visual {
+          position: relative;
+          min-height: 520px;
+          overflow: hidden;
+        }
+        .mbp-home .featured-visual::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, transparent 55%, rgba(10,10,10,.2));
+        }
+        .mbp-home .featured-visual img {
+          object-fit: cover;
+          transition: transform .7s ease;
+        }
+        .mbp-home .featured-card:hover .featured-visual img { transform: scale(1.025); }
+        .mbp-home .featured-copy {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 56px;
+        }
+        .mbp-home .featured-kicker {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .2em;
+          text-transform: uppercase;
+          color: #ff4d4d;
+          margin-bottom: 18px;
+        }
+        .mbp-home .featured-title {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: clamp(44px, 5vw, 68px);
+          line-height: .95;
+          letter-spacing: .03em;
+          color: #fff;
+        }
+        .mbp-home .featured-title span {
+          display: block;
+          margin-top: 8px;
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: .54em;
+          font-style: italic;
+          letter-spacing: 0;
+          color: var(--gold);
+          text-transform: none;
+        }
+        .mbp-home .featured-description {
+          color: rgba(255,255,255,.6);
+          font-size: 15px;
+          line-height: 1.75;
+          margin: 24px 0 30px;
+        }
+        .mbp-home .featured-stats {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1px;
+          background: rgba(255,255,255,.1);
+          border: 1px solid rgba(255,255,255,.1);
+          margin-bottom: 34px;
+        }
+        .mbp-home .featured-stat {
+          background: #141414;
+          padding: 15px 12px;
+          text-align: center;
+        }
+        .mbp-home .featured-stat strong {
+          display: block;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          color: #fff;
+          font-size: 25px;
+          line-height: 1;
+          letter-spacing: .04em;
+        }
+        .mbp-home .featured-stat span {
+          display: block;
+          margin-top: 6px;
+          color: #999;
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: .13em;
+          text-transform: uppercase;
+        }
+        .mbp-home .text-link {
+          color: #fff;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: .17em;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+        .mbp-home .text-link span { color: var(--red); margin-left: 8px; }
+
+        /* ─── SHARED SECTION ─── */
+        .mbp-home .section { padding: 96px 48px; }
+        .mbp-home .section-dark  { background: var(--dark); }
+        .mbp-home .section-dark2 { background: var(--dark2); }
+
+        .mbp-home .eyebrow {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: #ff4d4d;
+          margin-bottom: 14px;
+        }
+        .mbp-home .section-title {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: clamp(46px, 6vw, 78px);
+          letter-spacing: 0.03em;
+          color: #fff;
+          line-height: 1;
+          margin-bottom: 56px;
+        }
+        .mbp-home .section-title em {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-style: italic;
+          font-size: 0.85em;
+          letter-spacing: 0.01em;
+        }
+
+        /* ─── SERVICES GRID ─── */
+        .mbp-home .services-grid {
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          gap: 1px;
+          background: #242424;
+          border: 1px solid #242424;
+        }
+        .mbp-home .service-card {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: 210px;
+          background: var(--dark2);
+          padding: 32px 28px;
+          text-decoration: none;
+          transition: background 0.2s ease;
+        }
+        .mbp-home .service-card::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background: var(--red);
+          transform: scaleY(0);
+          transform-origin: top;
+          transition: transform 0.25s ease;
+        }
+        .mbp-home .service-card:hover {
+          background: #1c1c1c;
+        }
+        .mbp-home .service-card:hover::before {
+          transform: scaleY(1);
+        }
+        .mbp-home .service-card-top { display: flex; flex-direction: column; }
+        .mbp-home .service-icon {
+          display: block;
+          margin-bottom: 18px;
+          width: 28px;
+          height: 28px;
+        }
+        .mbp-home .service-num {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          color: #8a8a8a;
+          margin-bottom: 10px;
+        }
+        .mbp-home .service-title {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 22px;
+          letter-spacing: 0.05em;
+          color: #fff;
+        }
+        .mbp-home .service-description {
+          color: #888;
+          font-size: 13px;
+          line-height: 1.6;
+          margin-top: 12px;
+          max-width: 260px;
+        }
+        .mbp-home .service-card-cta {
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: #8a8a8a;
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          transition: color 0.2s ease, gap 0.2s ease;
+        }
+        .mbp-home .service-card:hover .service-card-cta { color: var(--red); gap: 10px; }
+        .mbp-home .specialty-card {
+          grid-column: span 4;
+          position: relative;
+          display: grid;
+          grid-template-columns: minmax(260px, .7fr) minmax(420px, 1.3fr);
+          gap: 44px;
+          align-items: center;
+          min-height: 210px;
+          padding: 34px 40px;
+          overflow: hidden;
+          background:
+            radial-gradient(circle at 92% 10%, rgba(201,168,76,.13), transparent 30%),
+            linear-gradient(120deg, #151515, #101010);
+        }
+        .mbp-home .specialty-card::after {
+          content: '11';
+          position: absolute;
+          right: 26px;
+          bottom: -46px;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 210px;
+          line-height: 1;
+          letter-spacing: -.03em;
+          color: rgba(255,255,255,.025);
+          pointer-events: none;
+        }
+        .mbp-home .specialty-kicker {
+          color: var(--gold);
+          font-size: 9px;
+          font-weight: 700;
+          letter-spacing: .19em;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+        .mbp-home .specialty-title {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          color: #fff;
+          font-size: clamp(30px, 3vw, 44px);
+          font-weight: 400;
+          line-height: 1;
+          letter-spacing: .04em;
+        }
+        .mbp-home .specialty-copy {
+          max-width: 420px;
+          margin-top: 12px;
+          color: #888;
+          font-size: 13px;
+          line-height: 1.6;
+        }
+        .mbp-home .specialty-links {
+          position: relative;
+          z-index: 1;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 9px;
+        }
+        .mbp-home .specialty-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+          min-height: 46px;
+          padding: 11px 15px;
+          border: 1px solid rgba(255,255,255,.1);
+          color: rgba(255,255,255,.72);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+          transition: border-color .18s ease, color .18s ease, background .18s ease;
+        }
+        .mbp-home .specialty-link:hover {
+          border-color: rgba(204,0,0,.65);
+          background: rgba(204,0,0,.08);
+          color: #fff;
+        }
+        .mbp-home .specialty-link:last-child {
+          border-color: rgba(201,168,76,.35);
+          color: var(--gold);
+        }
+
+        /* ─── PROCESS ─── */
+        .mbp-home .process-layout {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: .85fr 1.15fr;
+          gap: 72px;
+          align-items: center;
+        }
+        .mbp-home .process-intro .section-title { margin-bottom: 24px; }
+        .mbp-home .process-intro > p {
+          color: rgba(255,255,255,.58);
+          font-size: 16px;
+          line-height: 1.75;
+          margin-bottom: 34px;
+        }
+        .mbp-home .process-steps {
+          border-top: 1px solid rgba(255,255,255,.12);
+        }
+        .mbp-home .process-step {
+          display: grid;
+          grid-template-columns: 48px 1fr auto;
+          gap: 20px;
+          align-items: center;
+          padding: 25px 0;
+          border-bottom: 1px solid rgba(255,255,255,.12);
+        }
+        .mbp-home .process-num {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          color: #ff4d4d;
+          font-size: 19px;
+          letter-spacing: .08em;
+        }
+        .mbp-home .process-step h3 {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          color: #fff;
+          font-size: 26px;
+          letter-spacing: .05em;
+          font-weight: 400;
+        }
+        .mbp-home .process-step p {
+          grid-column: 2 / 4;
+          color: #999;
+          font-size: 13px;
+          line-height: 1.55;
+          margin-top: -12px;
+        }
+        .mbp-home .process-arrow { color: #555; }
+
+        /* ─── DEMO REELS ─── */
+        .mbp-home .reel-section {
+          padding: 104px 48px 112px;
+          background:
+            radial-gradient(circle at 88% 12%, rgba(204,0,0,.1), transparent 28%),
+            var(--dark2);
+          border-top: 1px solid rgba(255,255,255,.08);
+          border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .mbp-home .reel-section-inner {
+          width: min(1320px, 100%);
+          margin: 0 auto;
+        }
+        .mbp-home .reel-header {
+          display: grid;
+          grid-template-columns: 1.15fr .85fr;
+          gap: 72px;
+          align-items: end;
+          padding-bottom: 34px;
+          margin-bottom: 34px;
+          border-bottom: 1px solid rgba(255,255,255,.14);
+        }
+        .mbp-home .reel-header .section-title {
+          margin-bottom: 0;
+          font-size: clamp(58px, 8vw, 108px);
+          line-height: .88;
+        }
+        .mbp-home .reel-header-copy {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 28px;
+          align-items: end;
+        }
+        .mbp-home .reel-description {
+          max-width: 440px;
+          color: rgba(255,255,255,.58);
+          font-size: 15px;
+          line-height: 1.7;
+        }
+        .mbp-home .reel-all-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid rgba(255,255,255,.5);
+          color: #fff;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .16em;
+          text-decoration: none;
+          text-transform: uppercase;
+          white-space: nowrap;
+          transition: color .2s ease, border-color .2s ease;
+        }
+        .mbp-home .reel-all-link span { color: var(--red); }
+        .mbp-home .reel-all-link:hover {
+          color: #ff5a5a;
+          border-color: var(--red);
+        }
+        .mbp-home .reel-duo {
+          display: grid;
+          grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+          gap: 20px;
+        }
+        .mbp-home .reel-card {
+          min-width: 0;
+          padding: 12px;
+          border: 1px solid rgba(255,255,255,.14);
+          background: rgba(7,7,7,.72);
+          transition: border-color .25s ease, transform .25s ease;
+        }
+        .mbp-home .reel-card:hover {
+          border-color: rgba(255,255,255,.32);
+          transform: translateY(-3px);
+        }
+        .mbp-home .reel-wrap {
+          position: relative;
+          aspect-ratio: 16 / 9;
+          overflow: hidden;
+          background: #050505;
+        }
+        .mbp-home .reel-wrap iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+        .mbp-home .reel-meta {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 14px;
+          align-items: start;
+          padding: 18px 8px 8px;
+        }
+        .mbp-home .reel-index {
+          color: var(--red);
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+        }
+        .mbp-home .reel-name {
+          margin: -2px 0 6px;
+          color: #fff;
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: clamp(26px, 2.2vw, 36px);
+          letter-spacing: .035em;
+          line-height: 1;
+          text-transform: uppercase;
+        }
+        .mbp-home .reel-detail {
+          color: rgba(255,255,255,.44);
+          font-size: 11px;
+          letter-spacing: .08em;
+          line-height: 1.5;
+          text-transform: uppercase;
+        }
+        .mbp-home .reel-watch-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-top: 12px;
+          color: #fff;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: .14em;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: color .2s ease;
+        }
+        .mbp-home .reel-watch-link span { color: var(--red); }
+        .mbp-home .reel-watch-link:hover { color: #ff5a5a; }
+
+        /* ─── AWARDS ─── */
+        .mbp-home .awards-grid {
+          display: flex;
+          gap: 40px;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-top: 56px;
+        }
+        .mbp-home .award-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 48px 56px;
+          border: 1px solid #222;
+          background: var(--dark2);
+          min-width: 210px;
+        }
+        .mbp-home .award-count {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: 96px;
+          line-height: 1;
+          color: var(--gold);
+          letter-spacing: 0.02em;
+        }
+        .mbp-home .award-count sup {
+          font-size: 0.44em;
+          vertical-align: super;
+          line-height: 0;
+        }
+        .mbp-home .award-name {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: #888;
+          margin-top: 10px;
+        }
+
+        /* ─── FINAL CTA ─── */
+        .mbp-home .cta-section {
+          background: var(--dark);
+          padding: 112px 48px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        .mbp-home .cta-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse 65% 85% at 50% 50%, rgba(204,0,0,0.16) 0%, transparent 68%);
+          pointer-events: none;
+        }
+        .mbp-home .cta-headline {
+          font-family: 'Bebas Neue', Impact, sans-serif;
+          font-size: clamp(38px, 10vw, 108px);
+          letter-spacing: 0.03em;
+          color: #fff;
+          line-height: 1;
+          margin-bottom: 20px;
+          position: relative;
+        }
+        .mbp-home .cta-headline em {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-style: italic;
+          font-size: 0.85em;
+          letter-spacing: 0.01em;
+        }
+        .mbp-home .cta-sub {
+          font-size: 15px;
+          color: rgba(255,255,255,0.45);
+          letter-spacing: 0.03em;
+          margin-bottom: 44px;
+          position: relative;
+        }
+        .mbp-home .cta-actions {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 36px;
+          flex-wrap: wrap;
+          position: relative;
+        }
+        .mbp-home .cta-phone {
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.45);
+          text-decoration: none;
+          transition: color 0.15s;
+        }
+        .mbp-home .cta-phone:hover { color: #fff; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1024px) {
+          .mbp-home .clients-grid { grid-template-columns: repeat(4, 1fr); }
+          .mbp-home .client-cell:nth-child(4n) { border-right: none; }
+          .mbp-home .featured-card { grid-template-columns: 1fr; }
+          .mbp-home .featured-copy { padding: 48px; }
+          .mbp-home .process-layout { grid-template-columns: 1fr; gap: 48px; }
+          .mbp-home .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .mbp-home .specialty-card { grid-column: span 3; }
+          .mbp-home .answer-inner { grid-template-columns: 1fr; gap: 48px; }
+          .mbp-home .answer-intro { position: static; }
+          .mbp-home .reel-header { grid-template-columns: 1fr; gap: 28px; }
+          .mbp-home .reel-header-copy { grid-template-columns: 1fr auto; }
+        }
+        @media (max-width: 768px) {
+          .mbp-home .reel-section { padding: 76px 24px 84px; }
+          .mbp-home .reel-duo { grid-template-columns: 1fr; gap: 18px; }
+          .mbp-home .reel-card:hover { transform: none; }
+        }
+        @media (max-width: 600px) {
+          .mbp-home .section { padding: 64px 20px; }
+          .mbp-home .clients-strip { padding: 28px 16px; }
+          .mbp-home .clients-grid { grid-template-columns: repeat(2, 1fr); }
+          .mbp-home .client-cell:nth-child(2n) { border-right: none; }
+          .mbp-home .client-cell img { max-height: 28px; }
+          .mbp-home .client-text { font-size: 12px; }
+          .mbp-home .award-card { padding: 36px 28px; min-width: 160px; }
+          .mbp-home .award-count { font-size: 72px; }
+          .mbp-home .hero { min-height: 720px; }
+          .mbp-home .hero-content { padding-top: 64px; }
+          .mbp-home .featured-work { padding: 72px 20px; }
+          .mbp-home .featured-card { min-height: 0; }
+          .mbp-home .featured-visual { min-height: 300px; }
+          .mbp-home .featured-copy { padding: 34px 24px 38px; }
+          .mbp-home .featured-stats { grid-template-columns: 1fr; }
+          .mbp-home .services-grid { grid-template-columns: 1fr; }
+          .mbp-home .specialty-card {
+            grid-column: span 1;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 32px 24px;
+          }
+          .mbp-home .specialty-links { grid-template-columns: 1fr; }
+          .mbp-home .answer-section { padding: 72px 20px; }
+          .mbp-home .answer-grid { grid-template-columns: 1fr; }
+          .mbp-home .answer-card { min-height: 0; padding: 28px 24px; }
+          .mbp-home .reel-section { padding: 72px 20px 80px; }
+          .mbp-home .reel-header-copy { grid-template-columns: 1fr; gap: 20px; }
+          .mbp-home .reel-header .section-title { font-size: clamp(54px, 18vw, 72px); }
+          .mbp-home .reel-card { padding: 8px; }
+          .mbp-home .reel-meta { padding: 17px 6px 8px; }
+        }

@@ -63,8 +63,9 @@ export const mediaBarAnswersVideos = {
   localCommercialCost: {
     youtubeId: '2NlcT2I0kFc',
     title: 'How Much Should a Local TV Commercial Cost in Texas?',
+    metaTitle: 'Texas TV Commercial Cost: Production vs. Airtime',
     description:
-      'Plan a Texas TV commercial budget around business goals, creative, production scope, usage rights, post-production, deliverables, and media placement.',
+      'Understand the separate production and airtime budgets behind a Texas TV commercial, plus the scope details needed for an accurate estimate.',
     uploadDate: '2026-07-28T22:58:24-07:00',
     duration: 'PT1M16S',
     thumbnailPath: '/images/media-bar-answers/local-tv-commercial-cost-texas.png',
@@ -390,8 +391,13 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
         answer:
           'A useful estimate starts with the business goal, target audience, creative needs, locations, talent, usage territory and duration, shoot schedule, required deliverables, deadlines, and planned media placement.',
       },
+      {
+        question: 'Which commercial costs belong in the production budget?',
+        answer:
+          'The production budget covers the agreed creative development, planning, crew, equipment, locations, talent and usage rights, filming, editing, finishing, and deliverable versions. Airtime, connected-TV inventory, paid social placement, and other advertising spend remain a separate media budget unless a project agreement explicitly includes them.',
+      },
     ],
-    dateModified: MEDIA_BAR_ANSWERS_UPDATED,
+    dateModified: '2026-09-02',
     transcript: [
       "Hi, I am Ruben Garcia's digital avatar. The guidance in this video comes directly from Media Bar Productions.",
       'How much should a local television commercial cost in Texas?',
@@ -409,6 +415,10 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
       href: '/video-production/commercials',
     },
     relatedLinks: [
+      {
+        label: 'Review how Media Bar scopes video production pricing',
+        href: '/pricing',
+      },
       {
         label: 'Review the RBFCU commercial campaign case study',
         href: '/work/rbfcu-go-beyond-banking',

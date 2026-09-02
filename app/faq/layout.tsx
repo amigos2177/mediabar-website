@@ -2,8 +2,8 @@ import { buildMetadata } from '@/lib/seo'
 import { FAQPageJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = buildMetadata({
-  title: 'Video Production FAQ | Media Bar Productions',
-  description: 'Common questions about video production in San Antonio, including pricing, timelines, process, and deliverables, answered by the Media Bar Productions team.',
+  title: 'Working With Media Bar | Pricing & Process FAQ',
+  description: 'Answers about hiring Media Bar Productions, including pricing, deposits, timelines, revisions, ownership, delivery, studio access, and project logistics.',
   path: '/faq',
 })
 

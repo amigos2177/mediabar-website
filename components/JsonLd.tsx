@@ -64,6 +64,7 @@ export function LocalBusinessJsonLd() {
     '@type': 'LocalBusiness',
     '@id': BUSINESS_ID,
     name: 'Media Bar Productions',
+    alternateName: 'Media Bar',
     legalName: 'Media Bar Productions, LLC',
     url: 'https://www.mediabarproductions.com',
     logo: 'https://www.mediabarproductions.com/images/mediabar-logo.png',

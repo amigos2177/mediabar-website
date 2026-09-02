@@ -6,9 +6,9 @@ import {
 } from '@/components/JsonLd'
 import { faqSchemaItems } from '@/data/video-production-faq'
 
-const title = 'Video Production FAQ for Texas Businesses'
+const title = 'Texas Video Production Planning FAQ | Media Bar'
 const description =
-  'Practical answers about video strategy, budgets, planning, filming, editing, delivery, and Texas production logistics from a San Antonio production team.'
+  'Educational guidance about video strategy, budget factors, planning, filming, editing, delivery, and Texas production logistics from Media Bar.'
 const path = '/resources/video-production-faq'
 
 export const metadata = buildMetadata({
@@ -26,7 +26,7 @@ export default function VideoProductionFaqLayout({ children }: { children: React
         description={description}
         url={path}
         datePublished="2026-07-20"
-        dateModified="2026-08-10"
+        dateModified="2026-09-02"
         image="/images/media-library/media-bar-bts-33.jpg"
       />
       <FAQPageJsonLd faqs={faqSchemaItems()} />

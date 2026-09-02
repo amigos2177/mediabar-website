@@ -71,21 +71,22 @@ export default function VideoProductionFaqPage() {
             <div className={styles.heroScrim} />
           </div>
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>Texas video production resource</p>
+            <p className={styles.eyebrow}>Educational planning guide for Texas organizations</p>
             <h1>
               Frequently asked questions{' '}
               <em>about video production.</em>
             </h1>
             <p className={styles.heroIntro}>
-              Practical answers from a San Antonio production company serving
-              organizations across Texas. Start with the decision you are trying
-              to make, then go as deep as your project needs.
+              Learn how strategy, budget factors, schedules, filming, approvals,
+              and delivery shape a production. For questions about Media Bar&apos;s
+              specific working process, visit our company FAQ.
             </p>
             <div className={styles.heroActions}>
               <a href="#topics" className={styles.primaryButton}>Explore the answers</a>
               <Link href="/resources/media-bar-answers" className={styles.secondaryButton}>Watch Media Bar Answers</Link>
+              <Link href="/faq" className={styles.secondaryButton}>Working with Media Bar</Link>
             </div>
-            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed August 10, 2026</p>
+            <p className={styles.reviewLine}>Published July 20, 2026 · Reviewed September 2, 2026</p>
           </div>
         </section>
 

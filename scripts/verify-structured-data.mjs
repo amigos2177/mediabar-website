@@ -124,6 +124,9 @@ const business = homeNodes.find((node) => node['@type'] === 'LocalBusiness')
 if (!business?.hasOfferCatalog) {
   failures.push('index.html: LocalBusiness is missing hasOfferCatalog')
 }
+if (business?.alternateName !== 'Media Bar') {
+  failures.push('index.html: LocalBusiness is missing the Media Bar alternateName')
+}
 if (business?.publishingPrinciples !== 'https://www.mediabarproductions.com/about/editorial-policy') {
   failures.push('index.html: LocalBusiness is missing publishingPrinciples')
 }

@@ -149,14 +149,15 @@ export default function FAQPage() {
           <div>
             <p className={styles.eyebrow}>Frequently asked questions</p>
             <h1>
-              Straight answers{' '}
-              <span>before the first call.</span>
+              Working with Media Bar.{' '}
+              <span>What to expect.</span>
             </h1>
           </div>
           <div className={styles.heroIntro}>
             <p>
-              Pricing, process, ownership, logistics, studio access, and what it
-              actually feels like to work with Media Bar.
+              Practical answers about hiring Media Bar: pricing, process,
+              ownership, logistics, studio access, and what happens from the
+              first conversation through final delivery.
             </p>
             <Link href="/contact#contact-form" className={styles.textLink}>
               Ask a question <span aria-hidden="true">→</span>
@@ -177,9 +178,9 @@ export default function FAQPage() {
             <p className={styles.eyebrow}>Quick context</p>
             <h2>The useful details, organized.</h2>
             <p>
-              Open only what you need. If your assignment has a detail we have
-              not covered, send a quick question. Use the project planner when
-              you are ready to share a fuller brief.
+              This page covers Media Bar&apos;s working process and policies. For
+              broader educational guidance about planning a production, use
+              the Texas video production guide below.
             </p>
             <Link href="/contact#contact-form" className={styles.textLink}>
               Ask our team <span aria-hidden="true">↗</span>

@@ -46,6 +46,8 @@ export type MediaBarAnswersEpisode = {
   video: MediaBarAnswersVideo
 }
 
+export const MEDIA_BAR_ANSWERS_UPDATED = '2026-08-29'
+
 export const mediaBarAnswersVideos = {
   firstBusinessVideo: {
     youtubeId: 'qTMOFcXFBaA',
@@ -389,7 +391,7 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
           'A useful estimate starts with the business goal, target audience, creative needs, locations, talent, usage territory and duration, shoot schedule, required deliverables, deadlines, and planned media placement.',
       },
     ],
-    dateModified: '2026-08-08',
+    dateModified: MEDIA_BAR_ANSWERS_UPDATED,
     transcript: [
       "Hi, I am Ruben Garcia's digital avatar. The guidance in this video comes directly from Media Bar Productions.",
       'How much should a local television commercial cost in Texas?',

@@ -10,6 +10,7 @@ import {
 } from '@/components/JsonLd'
 import {
   getMediaBarAnswer,
+  MEDIA_BAR_ANSWERS_UPDATED,
   mediaBarAnswersEpisodes,
 } from '@/data/media-bar-answers'
 import { buildMetadata } from '@/lib/seo'
@@ -65,7 +66,7 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
         description={episode.video.description}
         url={path}
         datePublished={episode.video.uploadDate}
-        dateModified={episode.dateModified ?? '2026-08-10'}
+        dateModified={episode.dateModified ?? MEDIA_BAR_ANSWERS_UPDATED}
         image={episode.video.thumbnailUrl}
         articleBody={articleBody}
         articleSection={`Media Bar Answers: ${episode.category}`}

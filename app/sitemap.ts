@@ -3,7 +3,10 @@ import { getPostIndex } from '../lib/blog'
 import workVideos from '../data/work-videos.json'
 import { workProjects } from '../data/work-projects'
 import type { PortfolioVideo } from '../components/VideoObjectSchema'
-import { mediaBarAnswersEpisodes } from '../data/media-bar-answers'
+import {
+  MEDIA_BAR_ANSWERS_UPDATED,
+  mediaBarAnswersEpisodes,
+} from '../data/media-bar-answers'
 
 const BASE = 'https://www.mediabarproductions.com'
 
@@ -11,7 +14,6 @@ export const dynamic = 'force-static'
 
 const SITE_UPDATED = '2026-07-19'
 const SEARCH_SPRINT_UPDATED = '2026-07-23'
-const MEDIA_BAR_ANSWERS_UPDATED = '2026-08-10'
 
 function sitemapDate(value: unknown): string | undefined {
   if (value instanceof Date) {
@@ -59,16 +61,16 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/careers`, SITE_UPDATED),
     withLastmod(`${BASE}/project-planner`, SITE_UPDATED),
     withLastmod(`${BASE}/faq`, SITE_UPDATED),
-    withLastmod(`${BASE}/resources/video-production-faq`, MEDIA_BAR_ANSWERS_UPDATED),
+    withLastmod(`${BASE}/resources/video-production-faq`, '2026-08-10'),
     withLastmod(`${BASE}/resources/media-bar-answers`, MEDIA_BAR_ANSWERS_UPDATED),
     withLastmod(`${BASE}/clients`, SITE_UPDATED),
     withLastmod(`${BASE}/blog`, SEARCH_SPRINT_UPDATED),
     withLastmod(`${BASE}/pricing`, SITE_UPDATED),
     withLastmod(`${BASE}/how-we-work`, SITE_UPDATED),
-    withLastmod(`${BASE}/video-production`, MEDIA_BAR_ANSWERS_UPDATED),
+    withLastmod(`${BASE}/video-production`, '2026-08-10'),
 
     withLastmod(`${BASE}/video-production/corporate`, SITE_UPDATED),
-    withLastmod(`${BASE}/video-production/commercials`, MEDIA_BAR_ANSWERS_UPDATED),
+    withLastmod(`${BASE}/video-production/commercials`, '2026-08-10'),
     withLastmod(`${BASE}/video-production/events`, SEARCH_SPRINT_UPDATED),
     withLastmod(`${BASE}/video-production/interview`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production/medical`, SITE_UPDATED),
@@ -149,7 +151,7 @@ function answerEntries(): MetadataRoute.Sitemap {
   return mediaBarAnswersEpisodes.map((episode) =>
     withLastmod(
       `${BASE}/resources/media-bar-answers/${episode.slug}`,
-      sitemapDate(episode.video.uploadDate) ?? MEDIA_BAR_ANSWERS_UPDATED,
+      episode.dateModified ?? MEDIA_BAR_ANSWERS_UPDATED,
     ),
   )
 }

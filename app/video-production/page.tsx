@@ -121,9 +121,9 @@ export default function VideoProductionPage() {
       <FAQPageJsonLd faqs={videoProductionFaqs} />
 
       <style>{`
-        .vps-page{--line:rgba(255,255,255,.1);--panel:#141414;--muted:#96969b;background:#090909;color:#fff}
+        .vps-page{--line:rgba(255,255,255,.1);--panel:#141414;--muted:#96969b;--red-text:#ef4444;background:#090909;color:#fff}
         .vps-container{width:min(1240px,calc(100% - 96px));margin:0 auto}
-        .vps-eyebrow{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+        .vps-eyebrow{color:var(--red-text);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
         .vps-display{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.025em;line-height:.94;text-transform:uppercase}
         .vps-display em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;letter-spacing:0;text-transform:none}
         .vps-button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;padding:0 34px;border:1px solid transparent;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .18s,border-color .18s}
@@ -148,7 +148,7 @@ export default function VideoProductionPage() {
 
         .vps-clients{background:#101010;border-bottom:1px solid var(--line)}
         .vps-clients-inner{display:grid;grid-template-columns:240px 1fr;align-items:center;min-height:132px}
-        .vps-clients-title{color:#676767;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .vps-clients-title{color:#808085;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
         .vps-client-grid{display:grid;grid-template-columns:repeat(4,1fr);height:100%;border-left:1px solid var(--line)}
         .vps-client{display:flex;min-height:132px;align-items:center;justify-content:center;border-right:1px solid var(--line)}
         .vps-client:last-child{border-right:0}
@@ -163,8 +163,8 @@ export default function VideoProductionPage() {
         .vps-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
         .vps-group{min-height:420px;display:flex;flex-direction:column;padding:36px;background:var(--panel)}
         .vps-group-top{display:flex;align-items:center;justify-content:space-between}
-        .vps-group-number{font-family:'Bebas Neue',Impact,sans-serif;color:var(--red);font-size:20px;letter-spacing:.08em}
-        .vps-group-eyebrow{color:#626267;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+        .vps-group-number{font-family:'Bebas Neue',Impact,sans-serif;color:var(--red-text);font-size:20px;letter-spacing:.08em}
+        .vps-group-eyebrow{color:#89898e;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
         .vps-group h3{max-width:470px;font-family:'Bebas Neue',Impact,sans-serif;font-size:48px;font-weight:400;line-height:.98;letter-spacing:.03em;text-transform:uppercase;margin:55px 0 17px}
         .vps-group>p{max-width:520px;color:#89898e;font-size:14px;line-height:1.7}
         .vps-service-links{margin-top:auto;padding-top:34px}
@@ -183,7 +183,7 @@ export default function VideoProductionPage() {
         .vps-feature-facts{display:grid;grid-template-columns:repeat(2,1fr);margin:35px 0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
         .vps-feature-fact{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
         .vps-feature-fact strong{display:block;font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;font-weight:400;letter-spacing:.04em}
-        .vps-feature-fact span{display:block;margin-top:5px;color:#737378;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+        .vps-feature-fact span{display:block;margin-top:5px;color:#808085;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
         .vps-inline-link{display:inline-flex;color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
         .vps-inline-link span{color:var(--red);margin-left:8px}
 
@@ -196,7 +196,7 @@ export default function VideoProductionPage() {
         .vps-process-intro{color:var(--muted);font-size:15px;line-height:1.75}
         .vps-process-list{margin-top:36px;border-top:1px solid var(--line)}
         .vps-process-item{display:grid;grid-template-columns:42px 130px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
-        .vps-process-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:18px}
+        .vps-process-number{color:var(--red-text);font-family:'Bebas Neue',Impact,sans-serif;font-size:18px}
         .vps-process-item h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;font-weight:400;letter-spacing:.04em}
         .vps-process-item p{color:#7f7f84;font-size:12px;line-height:1.65}
 
@@ -204,9 +204,9 @@ export default function VideoProductionPage() {
         .vps-location-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
         .vps-location{min-height:150px;display:flex;flex-direction:column;justify-content:space-between;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .18s}
         .vps-location:hover{background:#171717}
-        .vps-location small{color:#666;font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-        .vps-location strong{font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;font-weight:400;letter-spacing:.04em}
-        .vps-location span{color:var(--red)}
+        .vps-location small{color:#808085;font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+        .vps-location strong{color:#fff;font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;font-weight:400;letter-spacing:.04em}
+        .vps-location span{color:var(--red-text)}
 
         .vps-faq-wrap{max-width:1000px}
         .vps-faq-head{text-align:center;margin-bottom:44px}

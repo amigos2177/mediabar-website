@@ -8,10 +8,10 @@ import { interviewFaqs } from './content'
 
 const path = '/video-production/interview'
 const description =
-  'Professional interview video production in San Antonio for executive stories, testimonials, documentary profiles, panels, and thought leadership.'
+  'Interview and testimonial video production in San Antonio for executives, customer stories, documentary profiles, panels, and thought leadership.'
 
 export const metadata = buildMetadata({
-  title: 'Interview Video Production San Antonio',
+  title: 'Interview & Testimonial Video San Antonio | Media Bar',
   description,
   path,
   ogImage: '/images/media-library/media-bar-bts-11.jpg',
@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ServiceJsonLd
-        name="Interview Video Production"
+        name="Interview and Testimonial Video Production in San Antonio"
         description={description}
         url={path}
         image="https://www.mediabarproductions.com/images/media-library/media-bar-bts-11.jpg"

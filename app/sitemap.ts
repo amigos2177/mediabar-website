@@ -58,7 +58,7 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/photography`, SITE_UPDATED),
     withLastmod(`${BASE}/studio`, SITE_UPDATED),
     withLastmod(`${BASE}/contact`, SITE_UPDATED),
-    withLastmod(`${BASE}/careers`, SITE_UPDATED),
+    withLastmod(`${BASE}/careers`, '2026-09-04'),
     withLastmod(`${BASE}/project-planner`, SITE_UPDATED),
     withLastmod(`${BASE}/faq`, '2026-09-02'),
     withLastmod(`${BASE}/resources/video-production-faq`, '2026-09-02'),
@@ -81,7 +81,7 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/video-production/food`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production/real-estate`, SITE_UPDATED),
 
-    withLastmod(`${BASE}/locations/san-antonio`, SITE_UPDATED),
+    withLastmod(`${BASE}/locations/san-antonio`, '2026-09-04'),
     withLastmod(`${BASE}/locations/austin`, SITE_UPDATED),
     withLastmod(`${BASE}/locations/dallas`, SITE_UPDATED),
     withLastmod(`${BASE}/locations/houston`, SITE_UPDATED),

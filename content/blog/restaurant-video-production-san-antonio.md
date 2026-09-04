@@ -1,9 +1,10 @@
 ---
 title: "Restaurant Video: Recent Beats Polished"
-seoTitle: "Restaurant Video Production San Antonio"
+seoTitle: "Restaurant Video Strategy: Why Recent Content Wins"
 slug: "restaurant-video-production-san-antonio"
 date: "2026-06-14"
-excerpt: "Restaurant video production in San Antonio: why a fresh, recent feed fills tables better than one polished clip - and how to keep yours current."
+updated: "2026-09-04"
+excerpt: "A San Antonio restaurant video strategy for keeping social feeds and Google profiles fresh with a steady rhythm of useful, appetite-driving content."
 featuredImage: /images/blog/restaurant-video-production-san-antonio.png
 faqs:
   - question: "How often should a restaurant post video?"
@@ -37,7 +38,7 @@ Here's the part most owners get backward: the video that wins that moment isn't 
 .mb-transcript{margin-top:1rem; border-top:1px solid #2a2a2a; padding-top:.85rem;}
 .mb-transcript summary{
   cursor:pointer; list-style:none;
-  font-size:.9rem; font-weight:600; color:#cfcfcf;
+  font-size:.9rem;font-weight:600;color:#cfcfcf;
   display:flex; align-items:center; gap:.45rem;
 }
 .mb-transcript summary::-webkit-details-marker{display:none;}

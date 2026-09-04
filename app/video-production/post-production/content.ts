@@ -5,6 +5,11 @@ export const postProductionFaqs = [
       'Video post-production is the work that turns recorded footage into a finished piece: story editing, color, dialogue cleanup, sound mixing, motion graphics, captions, review, versioning, and final delivery. Media Bar can finish a full production or edit footage from another team.',
   },
   {
+    question: 'Do you provide video editing services in San Antonio?',
+    answer:
+      'Yes. Media Bar provides video editing and post-production services in San Antonio for companies, agencies, and production teams that need editorial, color, sound, graphics, captions, versioning, or final delivery support.',
+  },
+  {
     question: 'Can you edit footage produced by another team?',
     answer:
       'Yes. We can work with footage from internal teams, agencies, production partners, or past shoots. We review the media, creative direction, and technical requirements before confirming the best workflow.',

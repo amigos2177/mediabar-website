@@ -10,6 +10,11 @@ export const corporateVideoFaqs = [
       'Media Bar produces brand and company films, executive communications, customer testimonials, recruiting and culture videos, training and internal communications, and product or service stories. The format is shaped around the audience, business objective, and channels.',
   },
   {
+    question: 'Do you produce employee training videos?',
+    answer:
+      'Yes. We produce training and internal communication videos for organizations that need clear, repeatable information for employees, teams, or multiple locations. The scope can include scripting, subject-matter-expert interviews, demonstrations, graphics, captions, and modular versions for different audiences.',
+  },
+  {
     question: 'Can Media Bar manage the complete corporate video project?',
     answer:
       'Yes. Our team can manage discovery, creative development, scripting, scheduling, interviews, production, editing, color, audio, graphics, captions, versioning, and final delivery. Clients have one coordinated production partner from brief through completion.',

@@ -12,6 +12,10 @@ export const sanAntonioFaqs = [
     answer: 'Yes. We regularly work at client offices, healthcare facilities, event venues, restaurants, industrial locations, and outdoor settings across the San Antonio area. We can also film interviews and controlled productions in our local studio.',
   },
   {
+    question: 'Do you provide local video crews for agencies and production companies filming in San Antonio?',
+    answer: 'Yes. Media Bar can support agency, brand, network, and production-company shoots with local camera, lighting, grip, sound, production, studio, and location resources. Crew-only requests can also start through Film Crew San Antonio, our dedicated local crew resource.',
+  },
+  {
     question: 'How long does a typical video project take?',
     answer: 'Most projects take two to six weeks from kickoff through final delivery. The schedule depends on creative development, location and talent logistics, shoot days, editing complexity, and approval timing. Rush schedules are available when the scope allows.',
   },

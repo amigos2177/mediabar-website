@@ -5,6 +5,11 @@ export const interviewFaqs = [
       'Yes. We shape a question path around the audience, the story you need to tell, and the language that will feel natural for the person on camera. We can also help stakeholders prepare without scripting every answer.',
   },
   {
+    question: 'Do you produce customer testimonial and customer story videos?',
+    answer:
+      'Yes. We produce customer testimonials and customer stories for organizations that want real people to explain an experience, outcome, or relationship in their own words. We plan the interview, supporting b-roll, approvals, and final versions around where the story will be used.',
+  },
+  {
     question: 'Do you direct people who are not comfortable on camera?',
     answer:
       'Yes. We explain the process, keep the set calm, and guide the conversation so the subject can focus on speaking naturally. The approach is supportive and adjusted to each person.',

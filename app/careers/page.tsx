@@ -5,9 +5,9 @@ import { BreadcrumbJsonLd } from '@/components/JsonLd'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata = buildMetadata({
-  title: 'Video Production Crew & Careers San Antonio | Media Bar',
+  title: 'Video Production Careers & Freelance Crew | Media Bar',
   description:
-    'Meet the San Antonio production community behind Media Bar. Find the right path to hire our crew or introduce yourself as a freelance collaborator.',
+    'Connect with Media Bar Productions for freelance production opportunities, crew introductions, and future collaboration in San Antonio and across Texas.',
   path: '/careers',
   ogImage: '/images/media-library/media-bar-team-photo.jpg',
 })
@@ -26,10 +26,10 @@ export default function CareersPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     '@id': 'https://www.mediabarproductions.com/careers#page',
-    name: 'Video Production Crew and Careers in San Antonio',
+    name: 'Video Production Careers and Freelance Crew Opportunities',
     url: 'https://www.mediabarproductions.com/careers',
     description:
-      'Information for clients seeking a San Antonio video production crew and production professionals interested in collaborating with Media Bar Productions.',
+      'Information for production professionals interested in freelance collaboration and future opportunities with Media Bar Productions.',
     isPartOf: { '@id': 'https://www.mediabarproductions.com/#business' },
     about: { '@id': 'https://www.mediabarproductions.com/#business' },
   }
@@ -43,7 +43,7 @@ export default function CareersPage() {
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: '/' },
-          { name: 'Crew & Careers', url: '/careers' },
+          { name: 'Careers & Crew', url: '/careers' },
         ]}
       />
 
@@ -138,15 +138,15 @@ export default function CareersPage() {
           <div className="crew-hero-inner">
             <div className="crew-container">
               <div className="crew-hero-copy">
-                <p className="crew-eyebrow">Video production crew in San Antonio</p>
+                <p className="crew-eyebrow">Careers and freelance collaboration</p>
                 <h1 className="crew-display">Built by People. <em>Ready for the Work.</em></h1>
                 <p className="crew-deck">
-                  Media Bar brings experienced crew, clear roles, and one accountable production
-                  workflow to projects in San Antonio and across Texas.
+                  Media Bar builds relationships with experienced production professionals in San
+                  Antonio and across Texas for freelance and project-based collaboration.
                 </p>
                 <div className="crew-actions">
-                  <Link href="/project-planner" className="crew-button crew-button-primary">Hire Our Crew</Link>
-                  <a href="#collaborate" className="crew-button crew-button-secondary">Collaborate With Us</a>
+                  <a href="#collaborate" className="crew-button crew-button-primary">Collaborate With Us</a>
+                  <Link href="/about" className="crew-button crew-button-secondary">Meet Media Bar</Link>
                 </div>
               </div>
               <div className="crew-proof" aria-label="Media Bar crew credentials">
@@ -162,37 +162,36 @@ export default function CareersPage() {
           <div className="crew-container">
             <div className="crew-intro">
               <div>
-                <p className="crew-eyebrow">Two ways to connect</p>
-                <h2 className="crew-display">Find the <em>Right Path.</em></h2>
+                <p className="crew-eyebrow">Work with Media Bar</p>
+                <h2 className="crew-display">Bring Your <em>Best Work.</em></h2>
               </div>
               <p>
-                Clients and production professionals arrive here with different goals. Choose the
-                path that fits so the right information reaches the right person.
+                We work with experienced freelancers and production specialists when the scope calls
+                for the right mix of craft, availability, and location experience.
               </p>
             </div>
             <div className="crew-paths">
               <article className="crew-path">
                 <span className="crew-path-number">01</span>
-                <h3>Need a Production Crew?</h3>
+                <h3>Freelance With Us</h3>
                 <p>
-                  Tell us about the audience, scope, location, schedule, deliverables, and production
-                  support you need. We will help shape a practical crew and workflow.
+                  Send your role, city, portfolio or reel, and current contact information. We keep
+                  strong collaborators in mind for future productions and project-based needs.
                 </p>
                 <div className="crew-actions">
-                  <Link href="/project-planner" className="crew-button crew-button-primary">Plan Your Project</Link>
-                  <Link href="/video-production" className="crew-button crew-button-secondary">Explore Services</Link>
+                  <a href="mailto:contact@mediabarproductions.com?subject=Production%20Crew%20Introduction" className="crew-button crew-button-primary">Introduce Yourself</a>
                 </div>
               </article>
               <article className="crew-path">
                 <span className="crew-path-number">02</span>
-                <h3>Want to Work With Us?</h3>
+                <h3>Need a Production Company?</h3>
                 <p>
-                  We build relationships with experienced freelancers and production specialists.
-                  Send your role, city, portfolio or reel, and current contact information.
+                  If you are here to hire Media Bar for a San Antonio project, our local production
+                  page covers services, studio support, selected work, and how to start a project.
                 </p>
                 <div className="crew-actions">
-                  <a href="mailto:contact@mediabarproductions.com?subject=Production%20Crew%20Introduction" className="crew-button crew-button-primary">Introduce Yourself</a>
-                  <Link href="/about" className="crew-button crew-button-secondary">Meet Media Bar</Link>
+                  <Link href="/locations/san-antonio" className="crew-button crew-button-primary">San Antonio Production</Link>
+                  <a href="https://filmcrewsanantonio.com" className="crew-button crew-button-secondary" target="_blank" rel="noopener noreferrer">Local Crew Resource</a>
                 </div>
               </article>
             </div>
@@ -234,14 +233,14 @@ export default function CareersPage() {
         <section className="crew-cta">
           <div className="crew-container">
             <p className="crew-eyebrow">Start the conversation</p>
-            <h2 className="crew-display">Tell Us What <em>You Are Building.</em></h2>
+            <h2 className="crew-display">Share Your <em>Work.</em></h2>
             <p>
-              Whether you need a complete production team or want to introduce your craft, send the
-              details that will help us understand the fit.
+              Tell us what you do, where you are based, and show us the work that best represents
+              your craft.
             </p>
             <div className="crew-actions">
-              <Link href="/project-planner" className="crew-button crew-button-primary">Plan a Production</Link>
-              <a href="mailto:contact@mediabarproductions.com?subject=Production%20Crew%20Introduction" className="crew-button crew-button-secondary">Share Your Work</a>
+              <a href="mailto:contact@mediabarproductions.com?subject=Production%20Crew%20Introduction" className="crew-button crew-button-primary">Share Your Work</a>
+              <Link href="/about" className="crew-button crew-button-secondary">About Media Bar</Link>
             </div>
           </div>
         </section>

@@ -8,10 +8,10 @@ import { motionGraphicsFaqs } from './content'
 
 const path = '/video-production/motion-graphics'
 const description =
-  'San Antonio motion graphics production for explainers, animated data, titles, product visualization, and graphics integrated with live-action video.'
+  'Motion graphics and explainer video production in San Antonio for animated data, titles, product visualization, B2B explainers, and live-action integration.'
 
 export const metadata = buildMetadata({
-  title: 'Motion Graphics San Antonio | Media Bar',
+  title: 'Motion Graphics & Explainer Video San Antonio | Media Bar',
   description,
   path,
   ogImage: '/images/media-library/motion-graphics-spider-verse.jpg',
@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ServiceJsonLd
-        name="Motion Graphics Production Company"
+        name="Motion Graphics and Explainer Video Production in San Antonio"
         description={description}
         url={path}
         image="https://www.mediabarproductions.com/images/media-library/motion-graphics-spider-verse.jpg"

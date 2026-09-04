@@ -8,10 +8,10 @@ import { postProductionFaqs } from './content'
 
 const path = '/video-production/post-production'
 const description =
-  'Video post-production in San Antonio for editorial, color, sound, graphics, captions, and multi-channel delivery. Bring a full project or existing footage.'
+  'Video editing and post-production services in San Antonio for editorial, color, sound, graphics, captions, and multi-channel delivery, including existing footage.'
 
 export const metadata = buildMetadata({
-  title: 'Video Post-Production San Antonio | Edit & Color | Media Bar',
+  title: 'Video Editing & Post-Production San Antonio | Media Bar',
   description,
   path,
   ogImage: '/images/media-library/media-bar-bts-20.jpg',
@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ServiceJsonLd
-        name="Video Post-Production in San Antonio"
+        name="Video Editing and Post-Production Services in San Antonio"
         description={description}
         url={path}
         image="https://www.mediabarproductions.com/images/media-library/media-bar-bts-20.jpg"

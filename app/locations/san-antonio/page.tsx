@@ -207,14 +207,14 @@ export default function SanAntonioPage() {
           <div className="sa-hero-scrim" />
           <div className="sa-container sa-hero-inner">
             <div className="sa-hero-copy">
-              <p className="sa-eyebrow">San Antonio production resources since 2011</p>
+              <p className="sa-eyebrow">San Antonio video production company since 2011</p>
               <h1 className="sa-display">
-                Local Crew &amp; Studio Support{' '}
-                <em>For San Antonio Productions.</em>
+                Video Production Company{' '}
+                <em>Built for San Antonio.</em>
               </h1>
               <p className="sa-hero-deck">
-                From first idea to final delivery, Media Bar gives San Antonio organizations a local
-                crew, studio support, and one experienced team for filming and post-production.
+                Media Bar is a full-service San Antonio video production company for corporate films,
+                commercials, interviews, events, studio shoots, location production, and post-production.
               </p>
               <div className="sa-actions">
                 <Link className="sa-button sa-button-primary" href="/project-planner">Plan Your Project</Link>
@@ -226,7 +226,7 @@ export default function SanAntonioPage() {
                 ['2011', 'Producing in San Antonio since'],
                 ['3', 'Emmy Awards'],
                 ['15', 'Telly Awards'],
-                ['Local', 'Studio and Crew'],
+                ['Local', 'Studio and Production Team'],
               ].map(([value, label]) => (
                 <div className="sa-proof-item" key={label}>
                   <div className="sa-proof-value">{value}</div>
@@ -261,7 +261,7 @@ export default function SanAntonioPage() {
             <div className="sa-section-head">
               <div>
                 <p className="sa-eyebrow">Services for San Antonio</p>
-                <h2 className="sa-display sa-section-title">One Local Team. <em>Every Frame.</em></h2>
+                <h2 className="sa-display sa-section-title">One Production Company. <em>Every Frame.</em></h2>
               </div>
               <p className="sa-section-intro">
                 We handle creative development, production, editing, color, audio, motion graphics,
@@ -335,7 +335,7 @@ export default function SanAntonioPage() {
               </p>
               <div className="sa-advantages">
                 {[
-                  ['01', 'Local crew and production base', 'A San Antonio team that can scout, plan, and respond without flying in cold.'],
+                  ['01', 'Local production company', 'A San Antonio-based team that can scout, plan, produce, and respond without flying in cold.'],
                   ['02', 'Studio and location options', 'Controlled interviews in our studio or full production at your office, facility, venue, or outdoor location.'],
                   ['03', 'Texas-wide reach', 'The same team can extend a San Antonio campaign into Austin, Dallas, Houston, and markets across Texas.'],
                 ].map(([number, title, description]) => (
@@ -348,6 +348,11 @@ export default function SanAntonioPage() {
               <Link className="sa-inline-link" href="/how-we-work">
                 See how we work <span aria-hidden="true">→</span>
               </Link>
+              <div style={{ marginTop: '24px' }}>
+                <a className="sa-inline-link" href="https://filmcrewsanantonio.com" target="_blank" rel="noopener noreferrer">
+                  Need crew-only support? Visit Film Crew San Antonio <span aria-hidden="true">→</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>

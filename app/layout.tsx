@@ -34,6 +34,11 @@ export const metadata: Metadata = {
   applicationName: 'Media Bar Productions',
   creator: 'Media Bar Productions',
   publisher: 'Media Bar Productions',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
   verification: {
     ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
     ...(bingSiteVerification

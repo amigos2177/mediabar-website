@@ -1,6 +1,6 @@
 # Media Bar Keyword-to-URL Ownership Map
 
-Last reviewed: 2026-09-04
+Last reviewed: 2026-09-21
 
 This document assigns one primary Media Bar URL to each important organic-search intent. It is the guardrail for page creation, metadata, internal linking, blog topics, Media Bar Answers, and future SEO work.
 
@@ -34,6 +34,7 @@ The goal is not to force one page to be the only page that mentions a term. The 
 | live streaming San Antonio; live streaming company; webcast production; hybrid event streaming | `/video-production/live-streaming` | events page, Texas event planning guide | Live page owns real-time broadcast/webcast intent. |
 | interview video production San Antonio; executive interview video; testimonial video; customer story video | `/video-production/interview` | watch pages, corporate page, executive-interview answer | Interview page owns interview-led production, including testimonials. |
 | medical video production San Antonio; healthcare video production; patient story; provider video | `/video-production/medical` | healthcare planning guide, provider Q&A guide, healthcare answer | Medical page owns transactional healthcare production intent. |
+| animated patient education videos; pediatric animation production; dental patient education animation; custom doctor cartoon videos | `/video-production/animated-patient-education` | medical, motion-graphics, services hub | Owns commissioning child-focused patient education animation; broad healthcare filming and general motion design keep their existing owners. |
 | video post-production San Antonio; video editing services; editing and color; video finishing | `/video-production/post-production` | post-delay answer, FAQ | Post page owns external-footage and finishing-service intent. |
 | motion graphics San Antonio; animation production; explainer animation; animated data | `/video-production/motion-graphics` | corporate page, work examples | Motion page owns designed-animation/explainer intent. |
 | drone video San Antonio; aerial video production; aerial cinematography | `/video-production/aerial` | real-estate page, event page | Aerial page owns drone-first intent. |

@@ -34,6 +34,7 @@ const serviceGroups = [
       ['Corporate Video Production', '/video-production/corporate'],
       ['Interview & Discussion', '/video-production/interview'],
       ['Medical Video', '/video-production/medical'],
+      ['Animated Patient Education', '/video-production/animated-patient-education'],
     ],
   },
   {

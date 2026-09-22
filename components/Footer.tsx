@@ -76,6 +76,7 @@ export default function Footer() {
             <Link href="/video-production/events" className="mbp-footer-link" style={footerLink}>Events</Link>
             <Link href="/video-production/interview" className="mbp-footer-link" style={footerLink}>Interview</Link>
             <Link href="/video-production/medical" className="mbp-footer-link" style={footerLink}>Medical</Link>
+            <Link href="/video-production/animated-patient-education" className="mbp-footer-link" style={footerLink}>Animated Patient Education</Link>
             <Link href="/video-production/aerial" className="mbp-footer-link" style={footerLink}>Aerial</Link>
             <Link href="/video-production/motion-graphics" className="mbp-footer-link" style={footerLink}>Motion Graphics</Link>
             <Link href="/video-production/live-streaming" className="mbp-footer-link" style={footerLink}>Live Streaming</Link>

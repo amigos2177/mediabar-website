@@ -147,6 +147,7 @@ if (policy?.publisher?.['@id'] !== 'https://www.mediabarproductions.com/#busines
 }
 
 const servicePages = [
+  'video-production/animated-patient-education.html',
   'video-production.html',
   'video-production/corporate.html',
   'video-production/commercials.html',

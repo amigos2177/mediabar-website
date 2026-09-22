@@ -125,6 +125,7 @@ export default function MedicalVideoPage() {
         copy:
           'Use these planning guides to shape the scope and format. When you are ready to produce, this service page is the place to start.',
         links: [
+          { label: 'Animated Patient Education', href: '/video-production/animated-patient-education', description: 'Custom character stories that introduce children to dental cleanings, checkups, and eye exams.' },
           {
             label: 'Healthcare Video Planning Guide',
             href: '/blog/healthcare-video-production-san-antonio',

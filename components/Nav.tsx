@@ -9,6 +9,7 @@ const SERVICE_LINKS = [
   { href: '/video-production/events', label: 'Event Coverage' },
   { href: '/video-production/interview', label: 'Interview & Discussion' },
   { href: '/video-production/medical', label: 'Medical Video' },
+  { href: '/video-production/animated-patient-education', label: 'Animated Patient Education' },
   { href: '/video-production/aerial', label: 'Aerial Video' },
   { href: '/video-production/motion-graphics', label: 'Motion Graphics' },
   { href: '/video-production/live-streaming', label: 'Live Streaming' },

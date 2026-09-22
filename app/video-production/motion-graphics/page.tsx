@@ -113,6 +113,7 @@ export default function MotionGraphicsPage() {
         copy:
           'Motion graphics work best when the script, live-action footage, edit, and final channels are planned as one communication system.',
         links: [
+          { label: 'Animated Patient Education', href: '/video-production/animated-patient-education', description: 'Custom character stories that introduce children to dental cleanings, checkups, and eye exams.' },
           {
             label: 'Post-Production',
             href: '/video-production/post-production',

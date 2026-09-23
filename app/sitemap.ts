@@ -69,9 +69,9 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/how-we-work`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production`, '2026-08-10'),
 
-    withLastmod(`${BASE}/video-production/corporate`, '2026-09-04'),
+    withLastmod(`${BASE}/video-production/corporate`, '2026-09-23'),
     withLastmod(`${BASE}/video-production/commercials`, '2026-08-10'),
-    withLastmod(`${BASE}/video-production/events`, SEARCH_SPRINT_UPDATED),
+    withLastmod(`${BASE}/video-production/events`, '2026-09-23'),
     withLastmod(`${BASE}/video-production/interview`, '2026-09-04'),
     withLastmod(`${BASE}/video-production/medical`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production/animated-patient-education`, '2026-09-21'),
@@ -130,7 +130,7 @@ function watchEntries(): MetadataRoute.Sitemap {
 
     return [withLastmod(
       watchUrl,
-      lastModified,
+      '2026-09-23', // Watch-page names and project context reviewed; video publication dates stay unchanged.
       canAttachVideo
         ? {
             videos: [{

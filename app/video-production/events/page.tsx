@@ -114,7 +114,7 @@ const recentEventWork = [
   {
     number: '01',
     title: 'NAFA Conference Recap',
-    description: 'A fast-moving conference recap built from speakers, attendee moments, venue details, and the energy across the program.',
+    description: 'A 1-minute, 29-second recap of the second day of the 2024 NAFA conference, produced around event highlights and key moments.',
     videoId: '946447253',
     thumbnailUrl: 'https://i.vimeocdn.com/video/2092713706-9d1a0e7015828edf8e0a8d84c008d3e2ca70f844461c954092850ae214a9e460-d_1280?region=us',
     href: '/work/watch/nafa-conference-recap',
@@ -551,7 +551,7 @@ export default function EventsPage() {
                     <span className="evt-work-number">Event film {project.number}</span>
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
-                    <Link href={project.href} className="evt-inline-link">Watch and learn more <span>→</span></Link>
+                    <Link href={project.href} className="evt-inline-link">Watch {project.title} <span>→</span></Link>
                   </div>
                 </article>
               ))}

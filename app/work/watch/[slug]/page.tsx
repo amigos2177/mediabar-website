@@ -128,7 +128,7 @@ export default async function WatchPage({ params }: Props) {
         { name: project.title, url: `/work/watch/${project.slug}` },
       ]} />
       <VideoObjectSchema
-        videos={[video]}
+        videos={[{ ...video, name: project.title }]}
         pageUrl={`https://www.mediabarproductions.com/work/watch/${project.slug}`}
       />
 
@@ -162,8 +162,10 @@ export default async function WatchPage({ params }: Props) {
 
           <section className={styles.details}>
             <div>
-              <h2>About This Film</h2>
-              <p>{description}</p>
+              <h2>{project.projectNotes?.heading || 'About This Film'}</h2>
+              {project.projectNotes
+                ? project.projectNotes.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+                : <p>{description}</p>}
               <div className={styles.actions}>
                 <Link className={styles.primary} href="/project-planner">Plan a project</Link>
                 <Link className={styles.secondary} href={project.serviceHref}>Explore {project.category}</Link>

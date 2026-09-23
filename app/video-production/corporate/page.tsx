@@ -174,6 +174,9 @@ export default function CorporatePage() {
         .corp-stakeholder p{max-width:480px;margin-top:13px;color:#85858a;font-size:13px;line-height:1.7}
 
         .corp-pathways{background:#101010}
+        .corp-project-examples .corp-eyebrow,.corp-project-examples .corp-pathway span{color:var(--gold)}
+        .corp-project-examples .corp-pathway p{color:#b8b8bd}
+        #corporate-project-examples{scroll-margin-top:100px}
         .corp-pathway-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
         .corp-pathway{display:flex;min-height:220px;flex-direction:column;padding:30px;background:#141414;color:#fff;transition:background .18s}
         .corp-pathway:hover{background:#181818}
@@ -345,6 +348,35 @@ export default function CorporatePage() {
                 </p>
                 <Link href="/work/watch/san-antonio-production-stories" className="corp-inline-link">Watch a corporate film <span>→</span></Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="corp-section corp-pathways corp-project-examples" aria-labelledby="corporate-project-examples">
+          <div className="corp-container">
+            <div className="corp-section-head">
+              <div>
+                <p className="corp-eyebrow">Selected project examples</p>
+                <h2 id="corporate-project-examples" className="corp-display corp-section-title">Different Formats. <em>Real Production Work.</em></h2>
+              </div>
+              <p className="corp-section-intro">Compare a capabilities film, an executive interview, and a broadcast campaign. The examples give your team a concrete starting point for the format and scope of its own brief.</p>
+            </div>
+            <div className="corp-pathway-grid">
+              <Link className="corp-pathway" href="/work/watch/st-engineering-brand-film">
+                <h3>ST Engineering Brand Film</h3>
+                <p>A corporate film highlighting the company’s capabilities and operations. Watch the 4-minute, 55-second production.</p>
+                <span>Watch the brand film →</span>
+              </Link>
+              <Link className="corp-pathway" href="/work/watch/sanctuary-wealth-interview">
+                <h3>Sanctuary Wealth Interview</h3>
+                <p>A long-form executive conversation with a controlled setup, clean sound, polished lighting, and editorial support.</p>
+                <span>Watch the executive interview →</span>
+              </Link>
+              <Link className="corp-pathway" href="/work/rbfcu-go-beyond-banking">
+                <h3>RBFCU: Go Beyond Banking</h3>
+                <p>Explore the creative and production behind a five-commercial campaign delivered across four Texas markets.</p>
+                <span>Read the campaign case study →</span>
+              </Link>
             </div>
           </div>
         </section>

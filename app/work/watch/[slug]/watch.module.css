@@ -307,3 +307,9 @@
     min-height: 180px;
   }
 }
+
+.selectionGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 32px; }
+.selectionPlayer { position: relative; aspect-ratio: 16 / 9; background: #050505; }
+.selectionCard h3 { color: #fff; font-size: 22px; line-height: 1.25; margin: 18px 0 8px; }
+.selectionCard p { color: #b0b0b0; font-size: 14px; margin: 0; }
+@media (max-width: 800px) { .selectionGrid { grid-template-columns: 1fr; } }

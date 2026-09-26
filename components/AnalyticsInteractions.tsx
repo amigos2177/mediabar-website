@@ -102,6 +102,9 @@ function getJourneyDestination(anchor: HTMLAnchorElement): JourneyDestination | 
 }
 
 function getPlacement(anchor: HTMLAnchorElement) {
+  const explicitPlacement = anchor.dataset.conversionPlacement?.trim().slice(0, 80)
+  if (explicitPlacement) return explicitPlacement
+  if (anchor.closest('#mobile-navigation')) return 'mobile-navigation'
   if (anchor.closest('nav')) return 'navigation'
   if (anchor.closest('footer')) return 'footer'
   if (anchor.closest('header')) return 'header'

@@ -92,7 +92,7 @@ Webmaster Tools for coverage and performance review.
 
 ## Conversion event taxonomy
 
-Vercel Web Analytics is the primary on-site measurement layer. Event properties are intentionally limited to two flat, non-personal values for broad plan compatibility.
+Events are sent to Vercel Web Analytics and, when configured, GA4. The table below lists core properties; current events also include non-personal CTA and campaign attribution fields. Do not sum Conversion Intent Clicked and Conversion Source Clicked: both represent the same click.
 
 | Event | Meaning | Properties |
 |---|---|---|
@@ -272,3 +272,31 @@ Track:
 - Pages that need stronger internal links
 
 Favor relevant earned links and accurate citations. Do not buy bulk links or create low-quality directory profiles.
+
+
+## September 26 inquiry reporting configuration
+
+GA4 property 386294146 now has event-scoped custom dimensions for `stepNumber`
+(Planner step number), `stepName` (Planner step name), `leadType` (Inquiry type),
+`placement` (CTA placement), and `sourcePlacement` (Inquiry source placement).
+`generate_lead` was already a key event and remains unchanged.
+
+Saved exploration: https://analytics.google.com/analytics/web/#/analysis/a22250104p386294146/edit/MDTLVHRzQbWvPhQMNvNcKw
+
+Closed user funnel, indirectly followed steps, device-category breakdown:
+1. `project_planner_started`
+2. `project_planner_step_completed` with stepNumber exactly 1
+3. Same event with stepNumber exactly 2
+4. Same event with stepNumber exactly 3
+5. `generate_lead` with leadType exactly project_brief
+
+The report measures users progressing from the first brief edit; it is not a
+session-scoped funnel or a click-to-lead conversion rate. Quick questions are
+excluded from its final step. Date range initially Today; when reviewing later,
+select a range starting September 26 or later. New custom dimensions need
+processing time. Do not treat pre-registration missing values or initial empty
+results as proof of abandonment. QA traffic may be included.
+
+The accompanying local code change separates home-hero, home-final, and
+mobile-navigation placement. Publication was approved September 26. After release, validate
+new placement values in GA4 before drawing button-performance conclusions.

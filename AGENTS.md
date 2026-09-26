@@ -29,6 +29,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Current State (as of September 2, 2026)
 
+- **September 26 inquiry tracking:** Added local home-hero/home-final CTA labels and mobile-navigation classification. Build, targeted lint and DOM label checks pass. Five GA4 custom dimensions and the Project inquiry funnel were saved in property 386294146; report persisted after reload. New fields await processed data; no performance conclusions. User approved publishing the website tracking fix; release verification follows in the task. See docs/search-and-measurement-setup.md.
+
 - **September 26 mobile navigation/footer preview:** Moved the mobile Start a Project link directly below Menu; footer social row now wraps. Build (80 routes), targeted lint, diff check, 320/390px overflow checks, desktop single-row check, menu CTA navigation, Tab order and Escape focus restoration passed. User explicitly approved publication; live release verification follows in the task.
 
 - **September 26 RBFCU homepage preview:** Featured campaign now summarizes client need, Media Bar scope (co-writing two spots; production and post across five), and delivery using existing case-study facts. Existing statistics and image preserved. Production build, targeted lint, desktop and 390px mobile review pass; campaign link verified. User approved publication; production release verification follows in the task.

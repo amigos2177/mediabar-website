@@ -158,8 +158,8 @@ export default function HomePage() {
             by one experienced Texas team.
           </p>
           <div className="hero-ctas">
-            <Link href="/project-planner" className="btn-red">Start a Project</Link>
-            <Link href="/contact#contact-form" className="btn-outline">Ask a Question</Link>
+            <Link href="/project-planner" className="btn-red" data-conversion-placement="home-hero">Start a Project</Link>
+            <Link href="/contact#contact-form" className="btn-outline" data-conversion-placement="home-hero">Ask a Question</Link>
           </div>
           <p className="hero-next-step">
             Share your goal, timing, and the details you know in our guided project brief.
@@ -471,8 +471,8 @@ export default function HomePage() {
         <h2 className="cta-headline">Start With <em>Whatever You Know</em></h2>
         <p className="cta-sub">Plan a production or ask a quick question. Either way, a real person will help.</p>
         <div className="cta-actions">
-          <Link href="/project-planner" className="btn-red">Start a Project</Link>
-          <Link href="/contact#contact-form" className="btn-outline">Ask a Question</Link>
+          <Link href="/project-planner" className="btn-red" data-conversion-placement="home-final">Start a Project</Link>
+          <Link href="/contact#contact-form" className="btn-outline" data-conversion-placement="home-final">Ask a Question</Link>
           <a href="tel:2102799442" className="cta-phone">210-279-9442</a>
         </div>
       </section>

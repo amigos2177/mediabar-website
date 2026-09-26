@@ -180,6 +180,27 @@ export default async function WatchPage({ params }: Props) {
             </dl>
           </section>
 
+          {project.selectedVideos?.length ? (
+            <section className={styles.related} aria-labelledby="client-selection-title">
+              <p className={styles.sectionEyebrow}>Upper Deck / Selected Work</p>
+              <h2 id="client-selection-title">More From Our Work With Upper Deck</h2>
+              <div className={styles.selectionGrid}>
+                {project.selectedVideos.map((film) => (
+                  <article key={film.id} className={styles.selectionCard}>
+                    <div className={styles.selectionPlayer}>
+                      <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.thumbnail} />
+                    </div>
+                    <h3>{film.title}</h3>
+                    <p>Motion graphics · {film.runtime}</p>
+                    <a className={styles.textLink} href={`https://vimeo.com/${film.id}`} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${film.title} on Vimeo (opens in a new tab)`}>
+                      Watch on Vimeo <span aria-hidden="true">↗</span>
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
           {guidance ? (
             <section className={styles.context}>
               <p className={styles.sectionEyebrow}>Production Context</p>

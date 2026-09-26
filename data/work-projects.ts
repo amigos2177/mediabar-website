@@ -5,6 +5,7 @@ export type WorkProject = {
   category: string
   year: string
   serviceHref: string
+  selectedVideos?: { id: string; title: string; thumbnail: string; runtime: string }[]
   feature?: boolean
   transcript?: string[]
   projectNotes?: { heading: string; paragraphs: string[] }
@@ -80,6 +81,39 @@ export const workProjects: WorkProject[] = [
   {
     id: '1180540640',
     slug: 'fleer-brilliants-superman',
+    projectNotes: {
+      heading: 'An Ongoing Production Partnership With Upper Deck',
+      paragraphs: [
+        'Media Bar Productions has created more than 50 videos for Upper Deck. This selection brings together motion graphics work featuring sports, comics, and entertainment properties.',
+        'Watch the Superman film above, then explore four more examples below.',
+      ],
+    },
+    selectedVideos: [
+      {
+            "id": "849834914",
+            "title": "Michael Jordan 25th Anniversary",
+            "thumbnail": "https://i.vimeocdn.com/video/1704003539-6f76cbc7d627b6d7200b37bbb327b4d558dd677d2e2c677976a38e550bb0fe32-d_1280?region=us",
+            "runtime": "0:30"
+      },
+      {
+            "id": "946767150",
+            "title": "Wayne Gretzky 40th Anniversary",
+            "thumbnail": "https://i.vimeocdn.com/video/1853005885-843945746d1a3560513cbf9cbc335305ae40017e2eb81e1f7a4c89f3a52a4e09-d_1280?region=us",
+            "runtime": "0:30"
+      },
+      {
+            "id": "557693922",
+            "title": "Marvel Ages",
+            "thumbnail": "https://i.vimeocdn.com/video/1152658070-2b2de48550f5d18de447ff8890bb27beb601bd78a68fc3fe2ea7a40b8bf9c7a6-d_1280?region=us",
+            "runtime": "1:03"
+      },
+      {
+            "id": "803317661",
+            "title": "Legendary James Bond",
+            "thumbnail": "https://i.vimeocdn.com/video/1852507309-2a7f2a4cff07654961933542d24d8a872811dbbeb2e20293631df356f09085fb-d_1280?region=us",
+            "runtime": "1:36"
+      }
+],
     title: 'Fleer Brilliants Superman',
     category: 'Motion',
     year: '2026',

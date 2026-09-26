@@ -78,7 +78,7 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/video-production/animated-patient-education`, '2026-09-21'),
     withLastmod(`${BASE}/video-production/financial-services`, '2026-09-04'),
     withLastmod(`${BASE}/video-production/aerial`, SITE_UPDATED),
-    withLastmod(`${BASE}/video-production/motion-graphics`, '2026-09-04'),
+    withLastmod(`${BASE}/video-production/motion-graphics`, '2026-09-26'),
     withLastmod(`${BASE}/video-production/live-streaming`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production/post-production`, '2026-09-04'),
     withLastmod(`${BASE}/video-production/food`, SITE_UPDATED),

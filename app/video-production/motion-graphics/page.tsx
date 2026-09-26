@@ -1,3 +1,7 @@
+import Link from 'next/link'
+import VimeoPlayer from '@/components/VimeoPlayer'
+import { workProjects } from '@/data/work-projects'
+import styles from './examples.module.css'
 import { ServiceEditorialPage } from '@/components/ServiceEditorialPage'
 import { motionGraphicsFaqs, motionGraphicsVideo } from './content'
 
@@ -76,6 +80,25 @@ export default function MotionGraphicsPage() {
         linkLabel: 'Explore More Work',
         linkHref: '/work',
       }}
+      additionalExamples={
+        <section className={styles.section} aria-labelledby="motion-examples-title">
+          <p className={styles.eyebrow}>More motion graphics work</p>
+          <h2 id="motion-examples-title">Sports. Comics. Entertainment.</h2>
+          <p className={styles.intro}>Four more examples from our work with Upper Deck, featuring sports and entertainment properties.</p>
+          <div className={styles.grid}>
+            {workProjects.find((project) => project.slug === 'fleer-brilliants-superman')?.selectedVideos?.map((film) => (
+              <article key={film.id}>
+                <div className={styles.player}>
+                  <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.thumbnail} />
+                </div>
+                <div className={styles.meta}><h3>{film.title}</h3><span>{film.runtime}</span></div>
+                <a href={`https://vimeo.com/${film.id}`} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${film.title} on Vimeo (opens in a new tab)`}>Watch on Vimeo ↗</a>
+              </article>
+            ))}
+          </div>
+          <Link className={styles.caseLink} href="/work/upper-deck-video-production">Explore the Upper Deck case study →</Link>
+        </section>
+      }
       deliverables={{
         eyebrow: 'A Flexible System',
         title: 'Design Once.',

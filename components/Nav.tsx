@@ -306,6 +306,7 @@ export default function Nav() {
           align-items: center;
           justify-content: center;
         }
+        .mbp-overlay-primary { margin-bottom: 16px; }
         .mbp-overlay-contact-btn {
           background: transparent;
           border: 1px solid rgba(255, 255, 255, 0.45);
@@ -434,6 +435,9 @@ export default function Nav() {
           <div className="mbp-overlay-body">
             {/* Top-level pages */}
             <p id="mobile-navigation-title" className="mbp-overlay-section-label">Menu</p>
+            <Link href="/project-planner" className="mbp-overlay-cta-btn mbp-overlay-primary" onClick={close}>
+              Start a Project
+            </Link>
             {TOP_LINKS.map((l) => l.external ? (
               <a
                 key={l.href}
@@ -467,9 +471,6 @@ export default function Nav() {
                 onClick={close}
               >
                 Talk With Our Team
-              </Link>
-              <Link href="/project-planner" className="mbp-overlay-cta-btn" onClick={close}>
-                Start a Project
               </Link>
               <a href="tel:2102799442" className="mbp-overlay-phone">
                 210-279-9442

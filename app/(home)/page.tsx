@@ -271,20 +271,30 @@ export default function HomePage() {
             <div className="featured-copy">
               <p className="featured-kicker">RBFCU · Broadcast Campaign</p>
               <h3 className="featured-title">
-                Five Stories
-                <span>One human promise.</span>
+                Five Commercials
+                <span>One connected campaign.</span>
               </h3>
-              <p className="featured-description">
-                Media Bar co-wrote, produced, and finished a five-commercial campaign designed
-                to make one of Texas&rsquo;s largest credit unions feel personal in every market.
-              </p>
+              <dl className="featured-brief">
+                <div>
+                  <dt>The client needed</dt>
+                  <dd>Human stories that brought RBFCU&rsquo;s &ldquo;Go Beyond Banking&rdquo; message to Texas audiences.</dd>
+                </div>
+                <div>
+                  <dt>Media Bar handled</dt>
+                  <dd>Co-writing two spots, plus production and post-production across all five.</dd>
+                </div>
+                <div>
+                  <dt>What we delivered</dt>
+                  <dd>Five broadcast commercials, finished for a campaign spanning four Texas markets.</dd>
+                </div>
+              </dl>
               <div className="featured-stats" aria-label="Campaign highlights">
                 <div className="featured-stat"><strong>5</strong><span>Broadcast spots</span></div>
                 <div className="featured-stat"><strong>4</strong><span>Texas markets</span></div>
                 <div className="featured-stat"><strong>5M+</strong><span>Online views</span></div>
               </div>
               <Link href="/work/rbfcu-go-beyond-banking" className="text-link">
-                Explore the case study <span aria-hidden="true">→</span>
+                See the RBFCU campaign <span aria-hidden="true">→</span>
               </Link>
             </div>
           </article>

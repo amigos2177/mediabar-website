@@ -226,6 +226,8 @@ export default function ProjectPlannerForm() {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const headingRef = useRef<HTMLHeadingElement>(null)
+  const successCardRef = useRef<HTMLDivElement>(null)
+  const successHeadingRef = useRef<HTMLHeadingElement>(null)
   const hasTrackedStart = useRef(false)
   const trackedSteps = useRef(new Set<number>())
   const attribution = useRef<CampaignAttribution | null>(null)
@@ -234,6 +236,12 @@ export default function ProjectPlannerForm() {
   useEffect(() => {
     headingRef.current?.focus()
   }, [step])
+
+  useEffect(() => {
+    if (!submitted) return
+    successHeadingRef.current?.focus({ preventScroll: true })
+    successCardRef.current?.scrollIntoView({ behavior: 'instant', block: 'start' })
+  }, [submitted])
 
   useEffect(() => {
     attribution.current = captureCampaignAttribution() || readCampaignAttribution()
@@ -394,10 +402,10 @@ export default function ProjectPlannerForm() {
 
   if (submitted) {
     return (
-      <div className={styles.successCard} aria-live="polite">
+      <div ref={successCardRef} className={styles.successCard} aria-live="polite">
         <div className={styles.successMark} aria-hidden="true">✓</div>
         <p className={styles.successEyebrow}>Brief received</p>
-        <h2>Thanks, {fields.firstName}.</h2>
+        <h2 ref={successHeadingRef} tabIndex={-1}>Thanks, {fields.firstName}.</h2>
         <p>
           A member of the Media Bar team will review the details and respond within one
           business day.

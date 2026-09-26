@@ -609,6 +609,7 @@
 }
 
 .successCard {
+  scroll-margin-top: 100px;
   max-width: 820px;
   margin: 0 auto;
   padding: clamp(44px, 7vw, 86px);

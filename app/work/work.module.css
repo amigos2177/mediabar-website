@@ -669,3 +669,11 @@
     transition: none;
   }
 }
+
+.partnership { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; max-width: 1290px; margin: 0 auto 72px; padding: 32px; background: #151515; }
+.partnership > div { flex: 1 1 450px; }
+.partnership .eyebrow { color: #d8b65e; }
+.partnership h2 { font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(36px, 4vw, 54px); font-weight: 400; line-height: 1.1; margin: 0; }
+.partnership p:not(.eyebrow) { color: #bdbdbd; line-height: 1.7; max-width: 730px; margin-bottom: 0; }
+@media (max-width: 1380px) { .partnership { margin-left: 48px; margin-right: 48px; } }
+@media (max-width: 780px) { .partnership { margin-left: 20px; margin-right: 20px; padding: 28px 22px; } }

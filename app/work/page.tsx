@@ -121,6 +121,15 @@ export default function WorkPage() {
           </div>
         </section>
 
+        <section className={styles.partnership} aria-labelledby="upper-deck-title">
+          <div>
+            <p className={styles.eyebrow}>Upper Deck / Case Study</p>
+            <h2 id="upper-deck-title">10 years. More than 50 videos.</h2>
+            <p>Conferences, athlete autograph signings, and work on two national animated commercials featuring Michael Jordan, aired on ESPN.</p>
+          </div>
+          <Link href="/work/upper-deck-video-production" className={styles.primaryAction}>Explore the partnership</Link>
+        </section>
+
         <WorkGallery videos={workVideos as PortfolioVideo[]} />
 
         <section className={styles.services}>

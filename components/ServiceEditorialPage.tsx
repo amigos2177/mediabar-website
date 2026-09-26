@@ -75,6 +75,7 @@ export type ServiceEditorialPageProps = {
     linkLabel: string
     linkHref: string
   }
+  additionalExamples?: ReactNode
   deliverables: {
     eyebrow: string
     title: string
@@ -122,6 +123,7 @@ export function ServiceEditorialPage({
   capabilities,
   plan,
   feature,
+  additionalExamples,
   deliverables,
   processIntro,
   process,
@@ -415,6 +417,8 @@ export function ServiceEditorialPage({
             </div>
           </div>
         </section>
+
+        {additionalExamples}
 
         <section className="sep-section sep-deliverables">
           <div className="sep-container sep-deliverables-grid">

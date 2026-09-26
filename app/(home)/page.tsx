@@ -150,21 +150,24 @@ export default function HomePage() {
           <p className="hero-eyebrow">Media Bar Productions · Local crew since 2011</p>
           <h1 className="hero-headline">
             Video Production in San Antonio{' '}
-            <span className="hero-headline-geo">Built to move people and business.</span>
+            <span className="hero-headline-geo">A clear plan from the start.</span>
           </h1>
           <p className="hero-sub">
             Media Bar Productions creates cinematic stories that move people and business,
             with commercials, branded films, and event content planned, produced, and finished
             by one experienced Texas team.
           </p>
+          <div className="hero-ctas">
+            <Link href="/project-planner" className="btn-red">Start a Project</Link>
+            <Link href="/contact#contact-form" className="btn-outline">Ask a Question</Link>
+          </div>
+          <p className="hero-next-step">
+            Share your goal, timing, and the details you know in our guided project brief.
+          </p>
           <div className="hero-pills">
             <span className="hero-pill">Strategy to Delivery</span>
             <span className="hero-pill">3 Emmy Awards</span>
             <span className="hero-pill">Your Footage, Yours to Keep</span>
-          </div>
-          <div className="hero-ctas">
-            <Link href="/project-planner" className="btn-red">Start a Project</Link>
-            <Link href="/contact#contact-form" className="btn-outline">Ask a Question</Link>
           </div>
         </div>
       </section>

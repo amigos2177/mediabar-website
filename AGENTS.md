@@ -29,6 +29,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Current State (as of September 2, 2026)
 
+- **September 26 mobile navigation/footer preview:** Moved the mobile Start a Project link directly below Menu; footer social row now wraps. Build (80 routes), targeted lint, diff check, 320/390px overflow checks, desktop single-row check, menu CTA navigation, Tab order and Escape focus restoration passed. User explicitly approved publication; live release verification follows in the task.
+
 - **September 26 RBFCU homepage preview:** Featured campaign now summarizes client need, Media Bar scope (co-writing two spots; production and post across five), and delivery using existing case-study facts. Existing statistics and image preserved. Production build, targeted lint, desktop and 390px mobile review pass; campaign link verified. User approved publication; production release verification follows in the task.
 Site is live and stable. SEO metadata pass DONE for all routes.
 - **September 26 project planner confirmation fix:** After success, focus the thank-you heading and instantly scroll its card below the fixed header. Production build (80 routes), TypeScript, targeted lint, and local 390px simulated submission pass; card top 100px and heading focused. No additional email sent during this verification. User explicitly approved GitHub publication and release.

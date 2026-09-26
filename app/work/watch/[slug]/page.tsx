@@ -166,6 +166,7 @@ export default async function WatchPage({ params }: Props) {
               {project.projectNotes
                 ? project.projectNotes.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
                 : <p>{description}</p>}
+              {project.caseStudyHref ? <Link className={styles.textLink} href={project.caseStudyHref}>Read the Upper Deck case study →</Link> : null}
               <div className={styles.actions}>
                 <Link className={styles.primary} href="/project-planner">Plan a project</Link>
                 <Link className={styles.secondary} href={project.serviceHref}>Explore {project.category}</Link>

@@ -6,6 +6,7 @@ export type WorkProject = {
   year: string
   serviceHref: string
   selectedVideos?: { id: string; title: string; thumbnail: string; runtime: string }[]
+  caseStudyHref?: string
   feature?: boolean
   transcript?: string[]
   projectNotes?: { heading: string; paragraphs: string[] }
@@ -81,6 +82,7 @@ export const workProjects: WorkProject[] = [
   {
     id: '1180540640',
     slug: 'fleer-brilliants-superman',
+    caseStudyHref: '/work/upper-deck-video-production',
     projectNotes: {
       heading: 'An Ongoing Production Partnership With Upper Deck',
       paragraphs: [

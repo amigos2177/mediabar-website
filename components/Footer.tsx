@@ -91,6 +91,7 @@ export default function Footer() {
             <Link href="/about" className="mbp-footer-link" style={footerLink}>About</Link>
             <Link href="/about/awards" className="mbp-footer-link" style={footerLink}>Awards</Link>
             <Link href="/careers" className="mbp-footer-link" style={footerLink}>Crew & Careers</Link>
+            <Link href="/business-spotlight" className="mbp-footer-link" style={footerLink}>Texas Business Spotlight</Link>
             <Link href="/clients" className="mbp-footer-link" style={footerLink}>Clients</Link>
             <Link href="/studio" className="mbp-footer-link" style={footerLink}>Studio</Link>
             <Link href="/photography" className="mbp-footer-link" style={footerLink}>Photography</Link>

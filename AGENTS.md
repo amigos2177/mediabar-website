@@ -29,6 +29,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Current State (as of September 2, 2026)
 
+- **September 29 Business Spotlight pilot (local preview; not published):** Added `/business-spotlight` for three businesses in San Antonio, Boerne and New Braunfels, with a studio interview, up to two hours of location footage, one 90–120-second feature and two revision rounds. Includes selection/participation details, accessible application, dedicated validated email handler, footer/sitemap discovery and share image. Uses existing Resend sender/inbox. Eight isolated handler tests, targeted ESLint, TypeScript and the 83-route webpack build pass. No live email has been sent. Preview and intake-closure flags and handoff notes are in `docs/business-spotlight.md`. Do not treat local success simulations as inbox delivery verification.
+
 - **September 26 motion graphics examples (local preview):** Added four Upper Deck films below the existing Superman feature on the motion graphics service page, with click-to-load players, runtimes, Vimeo fallback links and case-study link. Added optional additionalExamples slot to shared service layout; other service pages unchanged. Build (81 routes), TypeScript, targeted lint and diff checks pass. Desktop and 390px stacked cards reviewed; no mobile horizontal overflow. Ruben approved publication; release verification follows in the task.
 
 - **September 26 Upper Deck case study (local preview):** Added /work/upper-deck-video-production using Ruben-confirmed 10 years, more than 50 videos, conferences, athlete signings, and work on two national animated Michael Jordan commercials aired on ESPN. Selected films are not identified as those broadcast spots. Linked from Work and Superman watch pages; added canonical metadata, breadcrumbs, and sitemap. Webpack production build (81 routes), TypeScript, targeted ESLint and diff checks pass. Desktop and 390px mobile layout, selected-work anchor and planner CTA checked. Ruben explicitly approved publication; live release verification follows in the task.
@@ -309,3 +311,11 @@ work against an existing published post.
   (`?utm_source=gbp&utm_medium=organic&utm_campaign=<name>`). "What's New" posts
   archive after 7 days; also add images to the Photos tab (those don't expire).
 <!-- END:mediabar-project-context -->
+
+- September 29, 2026: Local Texas Business Spotlight draft now uses supplied series logos, explicit publication acknowledgment recorded with terms version, private review plus two feature revision rounds, public YouTube release, then feature and approximately one minute selected B-roll delivery seven days later. No deployment or live email test.
+
+September 29 visual refinement: latest supplied brick-red/charcoal Texas Business Spotlight wide logo used in hero and share image; square version retained. Warm parchment surfaces and muted brick-red accents now match the logo. Location banner reads “Told here.” All other approved page copy retained. Local preview only.
+
+September 29 photo replacement: hero and social share image now use a built-in image-tool retouch of user-supplied DSC03725.JPG. Reflection cleanup, exposure adjustment, and optical-style blur on the seated subject and monitor depictions. Original source retained unchanged. Caption and alt text describe the studio interview. Local draft only.
+
+September 29: Ruben approved publishing Texas Business Spotlight with the final banner “Your story. Told here.” Release verification pending.

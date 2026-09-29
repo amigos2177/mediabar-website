@@ -61,6 +61,7 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/contact`, SITE_UPDATED),
     withLastmod(`${BASE}/careers`, '2026-09-04'),
     withLastmod(`${BASE}/project-planner`, SITE_UPDATED),
+    withLastmod(`${BASE}/business-spotlight`, '2026-09-29'),
     withLastmod(`${BASE}/faq`, '2026-09-02'),
     withLastmod(`${BASE}/resources/video-production-faq`, '2026-09-02'),
     withLastmod(`${BASE}/resources/media-bar-answers`, MEDIA_BAR_ANSWERS_UPDATED),

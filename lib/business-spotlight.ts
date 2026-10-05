@@ -1,5 +1,5 @@
 export const spotlightCities = ['San Antonio', 'Boerne', 'New Braunfels'] as const
-export const spotlightTermsVersion = '2026-09-29-pilot-3-youtube-broll'
+export const spotlightTermsVersion = '2026-10-05-pilot-3-on-location'
 export const spotlightPublicationPermission = 'If selected, I authorize Media Bar Productions to publish my business’s approved feature on its YouTube channel as part of Texas Business Spotlight, and to share that approved feature on its website, social channels, and portfolio. I understand the episode will be public. I agree that download access to the feature and approximately one minute of selected B-roll follows seven days after its public YouTube release. I may share the YouTube link immediately.'
 
 export type SpotlightApplication = {
@@ -57,7 +57,7 @@ export function spotlightEmail(application: SpotlightApplication) {
     `YouTube publication permission: confirmed. Exact statement: ${spotlightPublicationPermission}`,
     'Applicant agrees to Media Bar contacting them about this application. No marketing subscription.',
     `Terms version: ${spotlightTermsVersion}`,
-    '', 'Pilot scope: one 90–120-second feature, one studio interview, up to two hours at one business location, two rounds of revisions to the feature. Private review and approval before public YouTube release. Download access to the feature and approximately one minute of selected, lightly color-corrected B-roll clips without titles or added music follows seven days after public YouTube release. The business may share the YouTube link immediately. No unselected camera files, raw interviews, project files, reshoots or additional edited videos.',
+    '', 'Pilot scope: one 90–120-second feature, one on-location visit of up to two consecutive hours at one business location including setup, the interview, and business footage, two rounds of revisions to the feature. Private review and approval before public YouTube release. Download access to the feature and approximately one minute of selected, lightly color-corrected B-roll clips without titles or added music follows seven days after public YouTube release. The business may share the YouTube link immediately. No unselected camera files, raw interviews, project files, reshoots or additional edited videos.',
   ].join('\n')
   return { subject: `Texas Business Spotlight application: ${application.businessName}`, text, replyTo: application.email }
 }

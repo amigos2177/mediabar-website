@@ -136,8 +136,18 @@ const founder = aboutNodes.find((node) => node['@type'] === 'Person')
 if (founder?.['@id'] !== 'https://www.mediabarproductions.com/about#founder') {
   failures.push('about.html: founder Person identity is incomplete')
 }
-if (!read('about.html').includes('id="founder"')) {
+const alumniNames = (Array.isArray(founder?.alumniOf) ? founder.alumniOf : []).map((school) => school?.name)
+for (const school of ["St. Mary's University", 'Drake University']) {
+  if (!alumniNames.includes(school)) {
+    failures.push(`about.html: founder Person is missing alumniOf ${school}`)
+  }
+}
+const aboutHtml = read('about.html')
+if (!aboutHtml.includes('id="founder"')) {
   failures.push('about.html: visible founder anchor is missing')
+}
+if (!aboutHtml.includes('BBA in Marketing') || !aboutHtml.includes('LL.M. in Taxation')) {
+  failures.push('about.html: visible founder education is missing')
 }
 
 const policyNodes = expectType('about/editorial-policy.html', 'WebPage')

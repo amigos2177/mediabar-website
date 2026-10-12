@@ -126,6 +126,18 @@ export default function AboutPage() {
               creative leadership and production relationships firmly rooted in
               San Antonio.
             </p>
+            <div className={styles.education}>
+              <p className={styles.eyebrow}>Education</p>
+              <p>
+                Ruben earned his BBA in Marketing from St. Mary&apos;s University
+                in San Antonio in 2000.
+              </p>
+              <p>
+                He went on to Drake University, completing a J.D. and an MBA in
+                Marketing together in 2003, followed by an LL.M. in Taxation in
+                2004.
+              </p>
+            </div>
             <Link href="/contact" className={styles.textLink}>
               Talk with our team <span>↗</span>
             </Link>

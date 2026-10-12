@@ -20,6 +20,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         name="Ruben Garcia"
         jobTitle="Founder and Executive Producer"
         image="/images/media-library/ruben-garcia-founder-headshot-01.jpeg"
+        alumniOf={[
+          { name: "St. Mary's University", addressLocality: 'San Antonio' },
+          { name: 'Drake University' },
+        ]}
       />
       {children}
     </>

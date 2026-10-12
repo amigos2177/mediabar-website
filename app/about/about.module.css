@@ -215,6 +215,28 @@
   line-height: 1.75;
 }
 
+.education {
+  width: 100%;
+  margin: 4px 0 2px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, .13);
+}
+
+.education .eyebrow {
+  margin-bottom: 12px;
+}
+
+.education p:not(.eyebrow) {
+  margin: 0 0 14px;
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.education p:last-child {
+  margin-bottom: 0;
+}
+
 .textLink,
 .darkLink,
 .clientsHeader a,

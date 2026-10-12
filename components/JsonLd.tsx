@@ -333,13 +333,19 @@ export function AboutPageJsonLd() {
   return <JsonLdScript data={data} />
 }
 
+type PersonAlumni = {
+  name: string
+  addressLocality?: string
+}
+
 type PersonProps = {
   name: string
   jobTitle: string
   image: string
+  alumniOf?: PersonAlumni[]
 }
 
-export function PersonJsonLd({ name, jobTitle, image }: PersonProps) {
+export function PersonJsonLd({ name, jobTitle, image, alumniOf }: PersonProps) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -349,6 +355,22 @@ export function PersonJsonLd({ name, jobTitle, image }: PersonProps) {
     image: `https://www.mediabarproductions.com${image}`,
     description:
       'Founder and Executive Producer of Media Bar Productions, a San Antonio video production company serving organizations across Texas.',
+    ...(alumniOf && alumniOf.length > 0
+      ? {
+          alumniOf: alumniOf.map((school) => ({
+            '@type': 'CollegeOrUniversity',
+            name: school.name,
+            ...(school.addressLocality
+              ? {
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: school.addressLocality,
+                  },
+                }
+              : {}),
+          })),
+        }
+      : {}),
     worksFor: {
       '@id': BUSINESS_ID,
     },

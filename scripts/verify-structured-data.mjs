@@ -146,7 +146,7 @@ const aboutHtml = read('about.html')
 if (!aboutHtml.includes('id="founder"')) {
   failures.push('about.html: visible founder anchor is missing')
 }
-if (!aboutHtml.includes('BBA in Marketing') || !aboutHtml.includes('LL.M. in Taxation')) {
+if (!aboutHtml.includes('BBA in Marketing') || !aboutHtml.includes('LL.M. in Business')) {
   failures.push('about.html: visible founder education is missing')
 }
 

@@ -134,7 +134,7 @@ export default function AboutPage() {
               </p>
               <p>
                 He went on to Drake University, completing a J.D. and an MBA in
-                Marketing together in 2003, followed by an LL.M. in Taxation in
+                Marketing together in 2003, followed by an LL.M. in Business in
                 2004.
               </p>
             </div>

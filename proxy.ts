@@ -21,6 +21,15 @@ const LEGACY_SERVICE_PATHS: Record<string, string> = {
   '/video-post-production': '/video-production/post-production',
 }
 
+// Exact-case legacy paths. redirects() is case-insensitive, so these cannot
+// live there: /Photography would also match the live /photography page.
+const LEGACY_CAPITALIZED_PATHS: Record<string, string> = {
+  '/Home': '/',
+  '/Marketing': '/video-production',
+  '/Photography': '/photography',
+  '/Video': '/video-production',
+}
+
 function redirectToCanonicalPath(request: NextRequest, destPath: string) {
   const host = (request.headers.get('host') ?? '').split(':')[0]
   if (host === APEX_HOST) {
@@ -55,6 +64,11 @@ export function proxy(request: NextRequest) {
   }
 
   const trimmed = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
+  const capitalizedDestination = LEGACY_CAPITALIZED_PATHS[trimmed]
+  if (capitalizedDestination) {
+    return redirectToCanonicalPath(request, capitalizedDestination)
+  }
+
   const legacyDestination = LEGACY_SERVICE_PATHS[trimmed.toLowerCase()]
   if (legacyDestination && trimmed !== trimmed.toLowerCase()) {
     const url = request.nextUrl.clone()

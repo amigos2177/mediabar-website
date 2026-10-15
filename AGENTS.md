@@ -27,7 +27,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Small, focused commits on main
 - SEO-optimized descriptive slugs on any new routes
 
-## Current State (as of September 2, 2026)
+## Current State (as of October 15, 2026)
+
+- **October 15 legacy 404 redirects:** Added 301s for 73 legacy URLs that 404. Lowercase paths are in `redirects()` with `statusCode: 301`, trailing-slash variants, and apex host rules. `/Home`, `/Marketing`, `/Photography`, and `/Video` are exact-case 301s in `proxy.ts`. The 44 eight-digit project IDs use `/:id(\\d{8})` to `/work`. No page content changes. Full ESLint, TypeScript, and the 83-route production build pass. Local `next start` checks: all 73 sources return 301 to the mapped destination, every destination returns 200, and live routes such as `/photography` and `/work` stay 200. Low-confidence mappings (`/Marketing`, `/design`, `/ad`, `/testimonials`, `/documentaries`, `/training-videos`, and the numeric IDs) remain a review gate. Merge and production publication remain human gates.
 
 - **October 5 Business Spotlight on-location copy (draft; not published):** Replaced the studio interview and separate shoot language with one on-location visit of up to two consecutive hours, including setup, interview and business footage. Neutralized the existing interview photo caption/alt text without relabeling its setting. Updated the internal application email scope, terms version and regression tests. Other public offer terms, consent text, form behavior and layout remain unchanged. Nine isolated tests, full ESLint, TypeScript, the 83-route webpack build, structured-data verification and diff checks pass. Desktop/mobile browser QA could not run because this cloud workspace blocked Chromium socket creation, including an escalated retry. No live application was submitted; merge and production publication remain human gates.
 

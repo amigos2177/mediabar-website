@@ -147,6 +147,61 @@ const nextConfig: NextConfig = {
       { source: '/blog/san-antonio-corporate-video-production-competitive', destination: '/blog/corporate-video-multi-format-strategy', statusCode: 301 },
       { source: '/blog/keeping-creative-in-san-antonio', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
       { source: '/blog/san-antonio-video-production-talent-local-companies', destination: '/blog/hire-local-video-production-companies-san-antonio', statusCode: 301 },
+
+      // Legacy URLs that 404 after the May 2026 cutover. Explicit 301 (not 308),
+      // trailing-slash variants, and apex host rules so they do not chain through
+      // trailingSlash:false or the www path-preserving hop.
+      // /Home, /Marketing, /Photography, and /Video are case-sensitive and live in proxy.ts.
+      ...gscLegacy301(['/services', '/services/', '/documentaries', '/documentaries/'], '/video-production'),
+      ...gscLegacy301(['/portfolio', '/portfolio/', '/video-projects', '/video-projects/'], '/work'),
+      ...gscLegacy301(
+        [
+          '/corporate-video-production',
+          '/corporate-video-production/',
+          '/services/corporate-video',
+          '/services/corporate-video/',
+          '/training-videos',
+          '/training-videos/',
+        ],
+        '/video-production/corporate',
+      ),
+      ...gscLegacy301(['/design', '/design/', '/motion-graphics', '/motion-graphics/'], '/video-production/motion-graphics'),
+      ...gscLegacy301(
+        [
+          '/ad',
+          '/ad/',
+          '/commercial-production',
+          '/commercial-production/',
+          '/services/commercials',
+          '/services/commercials/',
+        ],
+        '/video-production/commercials',
+      ),
+      ...gscLegacy301(
+        [
+          '/drone-video',
+          '/drone-video/',
+          '/drone',
+          '/drone/',
+          '/services/drone',
+          '/services/drone/',
+        ],
+        '/video-production/aerial',
+      ),
+      ...gscLegacy301(
+        ['/real-estate-video', '/real-estate-video/', '/real-estate', '/real-estate/'],
+        '/video-production/real-estate',
+      ),
+      ...gscLegacy301(['/portfolio/rbfcu', '/portfolio/rbfcu/'], '/work/rbfcu-go-beyond-banking'),
+      ...gscLegacy301(['/studio-rental', '/studio-rental/'], '/studio'),
+      ...gscLegacy301(['/testimonials', '/testimonials/'], '/clients'),
+      ...gscLegacy301(['/event-video', '/event-video/'], '/video-production/events'),
+      ...gscLegacy301(['/live-streaming', '/live-streaming/'], '/video-production/live-streaming'),
+      ...gscLegacy301(['/medical-video', '/medical-video/'], '/video-production/medical'),
+      ...gscLegacy301(['/food-video', '/food-video/'], '/video-production/food'),
+      ...gscLegacy301(['/post-production', '/post-production/'], '/video-production/post-production'),
+      // Exactly eight digits at the root (/23564225). Does not match other lengths or nested paths.
+      ...gscLegacy301(['/:id(\\d{8})', '/:id(\\d{8})/'], '/work'),
     ]
   },
 }

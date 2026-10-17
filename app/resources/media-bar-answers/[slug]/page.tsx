@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Layout from '@/components/Layout'
-import LiteYouTubeEmbed from '@/components/LiteYouTubeEmbed'
 import {
   BreadcrumbJsonLd,
   EducationalGuideJsonLd,
   FAQPageJsonLd,
+  VideoObjectJsonLd,
 } from '@/components/JsonLd'
 import {
   getMediaBarAnswer,
@@ -72,6 +72,18 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
         articleSection={`Media Bar Answers: ${episode.category}`}
         sameAs={`https://www.youtube.com/watch?v=${episode.video.youtubeId}`}
         collectionUrl={libraryPath}
+        videoId={`https://www.mediabarproductions.com${path}#video`}
+      />
+      <VideoObjectJsonLd
+        name={episode.video.title}
+        description={episode.video.description}
+        thumbnailUrl={episode.video.thumbnailUrl}
+        uploadDate={episode.video.uploadDate}
+        duration={episode.video.duration}
+        embedUrl={`https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`}
+        url={`https://www.mediabarproductions.com${path}`}
+        transcript={episode.transcript.join(' ')}
+        authorId="https://www.mediabarproductions.com/about#founder"
       />
       {episode.pageFaqs?.length ? <FAQPageJsonLd faqs={episode.pageFaqs} /> : null}
 
@@ -95,13 +107,16 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
             <p>{episode.video.description}</p>
           </header>
 
-          <LiteYouTubeEmbed
-            youtubeId={episode.video.youtubeId}
-            title={episode.video.title}
-            thumbnailPath={episode.video.thumbnailPath}
-            className={styles.videoFrame}
-            priority
-          />
+          <div className={styles.videoFrame}>
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`}
+              title={episode.video.title}
+              loading="eager"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
 
           <p className={styles.disclosure}>
             This video features Ruben Garcia&apos;s digital avatar. The guidance
@@ -121,7 +136,7 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
 
           <section className={styles.answerSection} aria-labelledby="short-answer-heading">
             <p className={styles.eyebrow}>The short answer</p>
-            <h2 id="short-answer-heading">{episode.faqQuestion}</h2>
+            <h2 id="short-answer-heading">{episode.answerQuestion}</h2>
             <p className={styles.directAnswer}>{episode.directAnswer}</p>
           </section>
 
@@ -139,6 +154,13 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
               ))}
             </ol>
           </section>
+
+          {episode.supportingAnswers?.map((answer, index) => (
+            <section className={styles.answerSection} aria-labelledby={`supporting-answer-${index}`} key={answer.question}>
+              <h2 id={`supporting-answer-${index}`}>{answer.question}</h2>
+              <p className={styles.directAnswer}>{answer.answer}</p>
+            </section>
+          ))}
 
           {episode.budgetComparison && (
             <section className={styles.comparisonSection} aria-labelledby="budget-comparison-heading">

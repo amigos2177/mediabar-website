@@ -14,6 +14,8 @@ export type MediaBarAnswersEpisode = {
   slug: string
   category: string
   shortTitle: string
+  answerQuestion: string
+  supportingAnswers?: { question: string; answer: string }[]
   directAnswer: string
   takeaways: string[]
   budgetComparison?: {
@@ -46,7 +48,7 @@ export type MediaBarAnswersEpisode = {
   video: MediaBarAnswersVideo
 }
 
-export const MEDIA_BAR_ANSWERS_UPDATED = '2026-08-29'
+export const MEDIA_BAR_ANSWERS_UPDATED = '2026-10-17'
 
 export const mediaBarAnswersVideos = {
   firstBusinessVideo: {
@@ -63,7 +65,7 @@ export const mediaBarAnswersVideos = {
   localCommercialCost: {
     youtubeId: '2NlcT2I0kFc',
     title: 'How Much Should a Local TV Commercial Cost in Texas?',
-    metaTitle: 'Texas TV Commercial Cost: Production vs. Airtime',
+    metaTitle: 'How Much Does a Local TV Commercial Cost in Texas?',
     description:
       'Understand the separate production and airtime budgets behind a Texas TV commercial, plus the scope details needed for an accurate estimate.',
     uploadDate: '2026-07-28T22:58:24-07:00',
@@ -74,7 +76,7 @@ export const mediaBarAnswersVideos = {
   },
   healthcareVideoPlanning: {
     youtubeId: 'ixXpNKURzGk',
-    title: 'What Should You Plan Before Filming a Healthcare Video?',
+    title: 'What Should Healthcare Teams Confirm Before Filming?',
     description:
       'Healthcare video production requires early planning for privacy, access, clinical operations, approvals, and the information that could appear on camera.',
     uploadDate: '2026-07-27T08:33:56-07:00',
@@ -118,12 +120,12 @@ export const mediaBarAnswersVideos = {
   },
   postProductionDelays: {
     youtubeId: '4EZelLWoHnY',
-    title: 'The #1 Reason Corporate Videos Get Delayed (It’s Not Editing)',
-    metaTitle: 'Why Corporate Videos Get Delayed',
+    title: 'Why Do Corporate Videos Get Delayed?',
+    metaTitle: 'Why Do Corporate Videos Get Delayed?',
     description:
       'Ruben Garcia explains what happens after filming and how a clear, consolidated approval process helps prevent corporate video post-production delays.',
-    uploadDate: '2026-07-21',
-    duration: 'PT1M7S',
+    uploadDate: '2026-07-21T19:35:41-07:00',
+    duration: 'PT1M8S',
     thumbnailPath: '/images/media-bar-answers/why-corporate-videos-get-delayed.png',
     thumbnailUrl:
       'https://www.mediabarproductions.com/images/media-bar-answers/why-corporate-videos-get-delayed.png',
@@ -136,8 +138,9 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     slug: 'why-corporate-videos-get-delayed',
     category: 'Post-Production',
     shortTitle: 'Why corporate videos get delayed',
+    answerQuestion: "Why do corporate videos get delayed?",
     directAnswer:
-      'Corporate video delays often come from unclear or conflicting feedback, not the editing itself. A defined decision-maker, consolidated comments, and an agreed review process keep post-production moving.',
+      "Corporate videos often get delayed by unclear or conflicting feedback. Choose one decision-maker, consolidate comments into a single response, and agree on revision rounds before editing begins. Identify legal, compliance, and executive reviewers early, and plan the delivery formats in advance so new requirements do not arrive at the end of post-production.",
     takeaways: [
       'Choose one decision-maker who can resolve conflicting feedback.',
       'Consolidate each review round into one clear response.',
@@ -178,8 +181,9 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     slug: 'corporate-video-cost-san-antonio',
     category: 'Budget and Scope',
     shortTitle: 'Corporate video cost in San Antonio',
+    answerQuestion: "How much does a corporate video cost in San Antonio?",
     directAnswer:
-      'As a general planning range, many professionally produced corporate videos fall between $3,500 and $15,000 or more. The useful number depends on the creative plan, production requirements, and deliverables, not the finished runtime alone.',
+      "As a general planning range, many professionally produced corporate videos fall between $3,500 and $15,000 or more. Final length is not what sets the price. Creative planning, interviews, locations, crew size, filming days, equipment, editing, motion graphics, captions, and additional versions all shape the estimate.",
     takeaways: [
       'Creative planning, filming days, locations, crew, and post-production shape the estimate.',
       'Two videos with the same runtime can require completely different productions.',
@@ -219,8 +223,9 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     slug: 'what-a-production-company-needs-for-an-estimate',
     category: 'Pre-Production',
     shortTitle: 'What a production company needs for an estimate',
+    answerQuestion: "What does a production company need for an accurate estimate?",
     directAnswer:
-      'An accurate estimate starts with the business goal, audience, filming plan, schedule, deliverables, approval process, and budget context. Finished runtime alone is not enough to define the work.',
+      "Start with the business goal, audience, and where the finished video will be used. Share the filming location, preferred production date, number of interviews, scenes to capture, final deadline, and required deliverables. Include examples you like, your approval process, and a preliminary budget range. Runtime alone does not define the work.",
     takeaways: [
       'Start with the business goal, audience, and where the finished video will be used.',
       'Share the location, preferred production date, people or activities to capture, deadline, and complete deliverable list.',
@@ -260,8 +265,9 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     slug: 'three-executive-interviews-in-one-day',
     category: 'Production Day',
     shortTitle: 'Three executive interviews in one day',
+    answerQuestion: "Can you film three executive interviews in one day?",
     directAnswer:
-      'Usually yes, when everyone films at one location and the schedule protects setup, executive preparation, transitions, and supporting footage. Multiple locations or major setup changes may justify a second day.',
+      "Usually yes, when all three executives film at the same location and the schedule allows for setup, preparation, transitions, and supporting footage. Reserve an interview window for each person. Multiple locations, extensive scripting, teleprompters, or major lighting changes can add enough work to make a second filming day the better choice.",
     takeaways: [
       'Three executive interviews can usually fit in one day when the location and setup stay consistent.',
       'Reserve time for loading in, lighting and audio checks, executive preparation, transitions, and supporting footage.',
@@ -301,8 +307,9 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     slug: 'healthcare-video-planning',
     category: 'Healthcare',
     shortTitle: 'Healthcare video planning',
+    answerQuestion: "What should healthcare teams confirm before filming?",
     directAnswer:
-      "Healthcare filming should begin with the organization's privacy, compliance, operational, access, and review requirements. The production team can identify visible risks and plan around approved boundaries, but the organization remains responsible for compliance decisions.",
+      "Confirm your organization's privacy, access, operational, and review requirements before filming. Identify visible patient information and confidential material, and let your legal or compliance team decide what is permissible. Confirm approved areas, appearance releases, infection-control requirements, and whether clinical operations will continue. Use an approved shot list and one internal contact to resolve questions.",
     takeaways: [
       'Identify visible patient information and confidential material before the crew arrives.',
       'Confirm access, releases, infection control, logistics, power, and operational constraints.',
@@ -321,7 +328,7 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     faqQuestion: 'How should we plan filming in a medical, industrial, or controlled-access location?',
     faqHref: '/resources/video-production-faq#how-to-plan-video-in-medical-industrial-or-controlled-locations',
     serviceLink: {
-      label: 'Explore medical video production',
+      label: 'Healthcare and medical video production in Texas',
       href: '/video-production/medical',
     },
     relatedLinks: [
@@ -341,13 +348,28 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     slug: 'local-tv-commercial-cost-texas',
     category: 'Commercials',
     shortTitle: 'Local TV commercial cost in Texas',
+    answerQuestion: "How much does a local TV commercial cost?",
     directAnswer:
-      'There is no one-size-fits-all local television commercial price. A useful estimate connects the business goal to the concept, production complexity, talent and usage rights, post-production, required platform versions, and advertising plan.',
+      "A local TV commercial can range from $7,000 to $40,000 for production, depending on the kind of commercial you want. A simple spot without actors at one location has a different scope from a campaign with actors and multiple locations. We prepare a tailored estimate around the concept, filming, and deliverables. Airtime is a separate budget.",
     takeaways: [
       'A simple one-location concept and a scripted multi-scene campaign require different production scopes.',
       'Talent usage rights, post-production, approvals, and platform versions affect the estimate.',
       'Commercial production and media buying are separate scopes even when they are planned together.',
     ],
+    supportingAnswers: [
+      {
+            "question": "What changes the cost of producing a commercial?",
+            "answer": "A straightforward concept filmed at one location requires a different plan from a campaign with multiple scenes, actors, and shoot days. Define the creative concept, locations, talent, usage territory and duration, filming schedule, approvals, and delivery requirements before requesting an estimate."
+      },
+      {
+            "question": "How do 30-second and 60-second spots affect the scope?",
+            "answer": "Finished runtime alone does not define the production. The scenes, locations, talent, and filming plan determine what must be captured. Identify each required spot length before filming so the estimate accounts for the edits, approvals, and delivery versions."
+      },
+      {
+            "question": "What changes for broadcast, streaming, and social versions?",
+            "answer": "Share the placement plan before production. Broadcast, connected TV, streaming, and social deliverables can have different lengths and technical specifications. Plan the versions, captions, usage rights, and delivery deadlines together while keeping media placement separate from production."
+      }
+],
     budgetComparison: {
       eyebrow: 'Production cost vs. airtime',
       heading: 'Two budgets that work together.',
@@ -397,7 +419,7 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
           'The production budget covers the agreed creative development, planning, crew, equipment, locations, talent and usage rights, filming, editing, finishing, and deliverable versions. Airtime, connected-TV inventory, paid social placement, and other advertising spend remain a separate media budget unless a project agreement explicitly includes them.',
       },
     ],
-    dateModified: '2026-09-02',
+    dateModified: '2026-10-17',
     transcript: [
       "Hi, I am Ruben Garcia's digital avatar. The guidance in this video comes directly from Media Bar Productions.",
       'How much should a local television commercial cost in Texas?',
@@ -435,8 +457,9 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     slug: 'what-video-should-a-business-make-first',
     category: 'Choosing a Direction',
     shortTitle: 'What video a business should make first',
+    answerQuestion: "What type of video should a business make first?",
     directAnswer:
-      'Start with the most important question your audience needs answered. The right first video depends on who needs to see it, what they should understand, where they will watch, and what they should do next.',
+      "Start with the most important question your audience needs answered. That may call for a company overview, customer story, executive message, recruiting video, or a short library of expert answers. Choose based on who will watch, what they need to understand, where the video will appear, and what they should do next.",
     takeaways: [
       'Choose the communication problem before choosing the video format.',
       'Match the first video to the audience, message, viewing location, and desired next action.',

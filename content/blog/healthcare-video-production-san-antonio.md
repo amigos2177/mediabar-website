@@ -3,7 +3,7 @@ title: "Healthcare Video Planning Guide for San Antonio"
 seoTitle: "Healthcare Video Production Planning Guide"
 slug: "healthcare-video-production-san-antonio"
 date: "2026-06-14"
-updated: "2026-07-29"
+updated: "2026-10-17"
 excerpt: "A practical San Antonio healthcare video planning guide covering patient privacy, clinical review, formats, production logistics, and provider-led content."
 featuredImage: /images/blog/healthcare-video-production-san-antonio.png
 faqs:
@@ -24,6 +24,8 @@ faqs:
 ---
 
 This is a planning guide for healthcare communications and marketing teams. If you are ready to hire a production partner, explore our [medical and healthcare video production services](/video-production/medical). For a focused approach to short provider answers, use our [provider Q&A video guide](/blog/healthcare-provider-video).
+
+Before the crew arrives, [watch the one-minute healthcare filming checklist](/resources/media-bar-answers/healthcare-video-planning) for a focused answer on access, privacy, operations, and approvals.
 
 When a patient looks for a new doctor, specialist, or clinic, they are not just comparing credentials. They are deciding who to trust with something deeply personal. Long before the first appointment, they are forming an impression from whatever they can find online. Video can help make that first impression more human and informative.
 

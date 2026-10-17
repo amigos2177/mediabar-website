@@ -434,6 +434,7 @@ type EducationalGuideProps = {
   articleSection?: string
   sameAs?: string
   collectionUrl?: string
+  videoId?: string
 }
 
 export function EducationalGuideJsonLd({
@@ -447,6 +448,7 @@ export function EducationalGuideJsonLd({
   articleSection,
   sameAs,
   collectionUrl,
+  videoId,
 }: EducationalGuideProps) {
   const canonical = `${BASE_URL}${url}`
   const imageUrl = image.startsWith('http') ? image : `${BASE_URL}${image}`
@@ -462,6 +464,7 @@ export function EducationalGuideJsonLd({
     ...(articleBody && { articleBody }),
     ...(articleSection && { articleSection }),
     ...(sameAs && { sameAs }),
+    ...(videoId && { video: { "@id": videoId } }),
     inLanguage: 'en-US',
     isAccessibleForFree: true,
     mainEntityOfPage: {
@@ -563,7 +566,8 @@ export function CollectionPageJsonLd({
 
 // ============================================================
 // 9. VideoObject - Dedicated single-video watch pages only.
-// Do not use on article/Q&A pages (including Media Bar Answers).
+// Media Bar Answers episode pages qualify for this implementation when the
+// primary player is present without user interaction; indexing is not guaranteed.
 // Portfolio watch pages use VideoObjectSchema instead.
 // ============================================================
 type VideoProps = {
@@ -573,6 +577,8 @@ type VideoProps = {
   uploadDate: string
   contentUrl?: string
   embedUrl: string
+  transcript?: string
+  authorId?: string
   duration?: string // ISO 8601 format, e.g. "PT2M30S"
   url: string
 }
@@ -586,6 +592,8 @@ export function VideoObjectJsonLd({
   embedUrl,
   duration,
   url,
+  transcript,
+  authorId,
 }: VideoProps) {
   const data = {
     '@context': 'https://schema.org',
@@ -598,6 +606,8 @@ export function VideoObjectJsonLd({
     ...(contentUrl && { contentUrl }),
     embedUrl,
     ...(duration && { duration }),
+    ...(transcript && { transcript }),
+    ...(authorId && { author: { "@id": authorId } }),
     url,
     mainEntityOfPage: {
       '@type': 'WebPage',

@@ -232,7 +232,20 @@ for (const entry of answerPages) {
   if (article?.isPartOf?.['@id'] !== 'https://www.mediabarproductions.com/resources/media-bar-answers#collection') {
     failures.push(`${page}: Article is not connected to the Media Bar Answers collection`)
   }
-  expectNoVideoObject(page)
+  const videos = nodes.filter((node) => node['@type'] === 'VideoObject')
+  if (videos.length !== 1 || article?.video?.['@id'] !== videos[0]?.['@id']) {
+    failures.push(`${page}: expected one video linked to the Article`)
+  }
+  const video = videos[0]
+  for (const field of ['name', 'description', 'thumbnailUrl', 'uploadDate', 'duration', 'embedUrl']) {
+    if (!video?.[field]) failures.push(`${page}: VideoObject is missing ${field}`)
+  }
+  if (!read(page).includes(`<iframe src="${video?.embedUrl}"`)) {
+    failures.push(`${page}: primary iframe is missing from server HTML`)
+  }
+  if (video?.contentUrl || !video?.transcript || !video?.embedUrl) {
+    failures.push(`${page}: video needs transcript/embedUrl and must omit contentUrl`)
+  }
 }
 
 expectNoVideoObject('work.html')
@@ -290,7 +303,8 @@ for (const block of sitemapUrlBlocks) {
   if (!block.includes('<video:video>') && !block.includes('<video:')) continue
   const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1]
   const isWatchUrl = Boolean(loc?.startsWith(watchPrefix) && loc.length > watchPrefix.length)
-  if (!isWatchUrl) {
+  const isAnswerUrl = answerPages.some((entry) => loc === `https://www.mediabarproductions.com/resources/media-bar-answers/${entry.name.replace(/\.html$/, '')}`)
+  if (!isWatchUrl && !isAnswerUrl) {
     failures.push(`sitemap.xml: video sitemap extra is not on a watch page (${loc || 'missing loc'})`)
   }
 }
@@ -305,6 +319,6 @@ console.log(
   `Structured-data verification passed: ${servicePages.length} service pages, `
   + `${fs.readdirSync(blogDir).filter((name) => name.endsWith('.html')).length} blog posts, `
   + `${fs.readdirSync(watchDir).filter((name) => name.endsWith('.html')).length} watch pages, `
-  + `${answerPages.length} Media Bar Answers pages without VideoObject; `
-  + 'video sitemap markup is limited to watch pages.',
+  + `${answerPages.length} Media Bar Answers pages with linked VideoObject; `
+  + 'video sitemap markup is limited to portfolio watch and Answers episode pages.',
 )

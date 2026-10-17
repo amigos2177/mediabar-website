@@ -75,7 +75,7 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/video-production/commercials`, '2026-08-10'),
     withLastmod(`${BASE}/video-production/events`, '2026-09-23'),
     withLastmod(`${BASE}/video-production/interview`, '2026-09-04'),
-    withLastmod(`${BASE}/video-production/medical`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production/medical`, MEDIA_BAR_ANSWERS_UPDATED),
     withLastmod(`${BASE}/video-production/animated-patient-education`, '2026-09-21'),
     withLastmod(`${BASE}/video-production/financial-services`, '2026-09-04'),
     withLastmod(`${BASE}/video-production/aerial`, SITE_UPDATED),
@@ -150,12 +150,20 @@ function watchEntries(): MetadataRoute.Sitemap {
 }
 
 function answerEntries(): MetadataRoute.Sitemap {
-  // Article/Q&A pages with an embedded video — keep the URLs in the sitemap,
-  // but do not emit <video:video>. GSC treats those as non-watch pages.
   return mediaBarAnswersEpisodes.map((episode) =>
     withLastmod(
       `${BASE}/resources/media-bar-answers/${episode.slug}`,
       episode.dateModified ?? MEDIA_BAR_ANSWERS_UPDATED,
+      {
+        videos: [{
+          title: episode.video.title,
+          thumbnail_loc: episode.video.thumbnailUrl,
+          description: episode.video.description,
+          player_loc: `https://www.youtube-nocookie.com/embed/${episode.video.youtubeId}`,
+          duration: isoDurationToSeconds(episode.video.duration),
+          publication_date: episode.video.uploadDate,
+        }],
+      },
     ),
   )
 }

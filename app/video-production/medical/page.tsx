@@ -142,7 +142,7 @@ export default function MedicalVideoPage() {
             description: 'Create a comfortable interview environment for credible, natural stories.',
           },
           {
-            label: 'Healthcare Filming Answer',
+            label: 'What Should Healthcare Teams Confirm Before Filming?',
             href: '/resources/media-bar-answers/healthcare-video-planning',
             description: 'Watch and read the practical answer about privacy, access, operations, and approvals.',
           },

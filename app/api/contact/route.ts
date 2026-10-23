@@ -6,6 +6,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const MAX_BODY_BYTES = 20_000
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
 const RATE_LIMIT_MAX_REQUESTS = 5
+const MAX_RATE_LIMIT_ENTRIES = 5_000
 
 const SERVICES = new Set([
   'Corporate Video', 'Commercials', 'Event Coverage', 'Interview & Discussion',
@@ -55,6 +56,13 @@ type RateLimitEntry = {
 
 let resendClient: Resend | undefined
 const rateLimits = new Map<string, RateLimitEntry>()
+
+function jsonResponse(data: object, status = 200) {
+  return NextResponse.json(data, {
+    status,
+    headers: { 'Cache-Control': 'no-store' },
+  })
+}
 
 function getResend() {
   const apiKey = process.env.RESEND_API_KEY
@@ -193,6 +201,12 @@ function clientIp(req: NextRequest) {
 
 function isRateLimited(ip: string) {
   const now = Date.now()
+
+  for (const [key, entry] of rateLimits) {
+    if (entry.resetAt <= now) rateLimits.delete(key)
+  }
+  if (rateLimits.size >= MAX_RATE_LIMIT_ENTRIES && !rateLimits.has(ip)) return true
+
   const current = rateLimits.get(ip)
 
   if (!current || current.resetAt <= now) {
@@ -205,41 +219,81 @@ function isRateLimited(ip: string) {
 }
 
 function successfulBotResponse() {
-  return NextResponse.json({
+  return jsonResponse({
     success: true,
     message: 'Thanks - we got your message and will respond within 1 business day.',
   })
 }
 
+async function readJsonBody(req: NextRequest) {
+  const reader = req.body?.getReader()
+  if (!reader) throw new Error('Empty request body')
+
+  const chunks: Uint8Array[] = []
+  let size = 0
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    size += value.byteLength
+    if (size > MAX_BODY_BYTES) {
+      await reader.cancel()
+      return { tooLarge: true as const }
+    }
+    chunks.push(value)
+  }
+
+  const bytes = new Uint8Array(size)
+  let offset = 0
+  for (const chunk of chunks) {
+    bytes.set(chunk, offset)
+    offset += chunk.length
+  }
+
+  return { parsed: JSON.parse(new TextDecoder().decode(bytes)) as unknown }
+}
+
 export async function POST(req: NextRequest) {
   try {
+    if (!req.headers.get('content-type')?.includes('application/json')) {
+      return jsonResponse({ error: 'Invalid request format.' }, 415)
+    }
+
     const contentLength = Number(req.headers.get('content-length') || 0)
     if (contentLength > MAX_BODY_BYTES) {
-      return NextResponse.json({ error: 'Request is too large.' }, { status: 413 })
+      return jsonResponse({ error: 'Request is too large.' }, 413)
     }
 
     const origin = req.headers.get('origin')
     const host = req.headers.get('host')
-    if (origin && host && new URL(origin).host !== host) {
-      return NextResponse.json({ error: 'Invalid request origin.' }, { status: 403 })
+    try {
+      if (origin && host) {
+        const originUrl = new URL(origin)
+        if (!['http:', 'https:'].includes(originUrl.protocol) || originUrl.host !== host) {
+          return jsonResponse({ error: 'Invalid request origin.' }, 403)
+        }
+      }
+    } catch {
+      return jsonResponse({ error: 'Invalid request origin.' }, 403)
     }
 
     if (isRateLimited(clientIp(req))) {
-      return NextResponse.json(
+      return jsonResponse(
         { error: 'Too many requests. Please wait a few minutes or call us at 210-279-9442.' },
-        { status: 429 },
+        429,
       )
     }
 
     let body: Record<string, unknown>
     try {
-      const parsed: unknown = await req.json()
+      const result = await readJsonBody(req)
+      if ('tooLarge' in result) return jsonResponse({ error: 'Request is too large.' }, 413)
+      const parsed = result.parsed
       if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
-        return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 })
+        return jsonResponse({ error: 'Invalid request body.' }, 400)
       }
       body = parsed as Record<string, unknown>
     } catch {
-      return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 })
+      return jsonResponse({ error: 'Invalid request body.' }, 400)
     }
 
     const website = readString(body, 'website', 200)
@@ -273,34 +327,34 @@ export async function POST(req: NextRequest) {
       sourcePage, sourceAction, sourcePlacement,
       discoverySource, firstTouchSource, referrer,
     ].includes(null)) {
-      return NextResponse.json({ error: 'One or more fields are invalid or too long.' }, { status: 400 })
+      return jsonResponse({ error: 'One or more fields are invalid or too long.' }, 400)
     }
     if (!firstName) {
-      return NextResponse.json({ error: 'First name is required.' }, { status: 400 })
+      return jsonResponse({ error: 'First name is required.' }, 400)
     }
     if (!email) {
-      return NextResponse.json({ error: 'Email address is required.' }, { status: 400 })
+      return jsonResponse({ error: 'Email address is required.' }, 400)
     }
     if (!EMAIL_RE.test(email)) {
-      return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
+      return jsonResponse({ error: 'Please enter a valid email address.' }, 400)
     }
     if (!message) {
-      return NextResponse.json({ error: 'Please tell us about your project.' }, { status: 400 })
+      return jsonResponse({ error: 'Please tell us about your project.' }, 400)
     }
     if (service && !SERVICES.has(service)) {
-      return NextResponse.json({ error: 'Please select a valid service.' }, { status: 400 })
+      return jsonResponse({ error: 'Please select a valid service.' }, 400)
     }
     if (timeline && !TIMELINES.has(timeline)) {
-      return NextResponse.json({ error: 'Please select a valid timeline.' }, { status: 400 })
+      return jsonResponse({ error: 'Please select a valid timeline.' }, 400)
     }
     if (budget && !BUDGETS.has(budget)) {
-      return NextResponse.json({ error: 'Please select a valid budget.' }, { status: 400 })
+      return jsonResponse({ error: 'Please select a valid budget.' }, 400)
     }
     if (source && !SOURCES.has(source)) {
-      return NextResponse.json({ error: 'Please select a valid inquiry source.' }, { status: 400 })
+      return jsonResponse({ error: 'Please select a valid inquiry source.' }, 400)
     }
     if (discoverySource && !DISCOVERY_SOURCES.has(discoverySource)) {
-      return NextResponse.json({ error: 'Please select a valid referral source.' }, { status: 400 })
+      return jsonResponse({ error: 'Please select a valid referral source.' }, 400)
     }
 
     const fields: ContactFields = {
@@ -341,18 +395,18 @@ export async function POST(req: NextRequest) {
 
     if (error) {
       console.error('[contact] Resend error:', error)
-      return NextResponse.json(
+      return jsonResponse(
         { error: 'Failed to send message. Please try again or call us at 210-279-9442.' },
-        { status: 500 },
+        500,
       )
     }
 
     return successfulBotResponse()
   } catch (error) {
     console.error('[contact] Unhandled error:', error)
-    return NextResponse.json(
+    return jsonResponse(
       { error: 'Failed to send message. Please try again or call us at 210-279-9442.' },
-      { status: 500 },
+      500,
     )
   }
 }

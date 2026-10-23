@@ -9,6 +9,33 @@ import {
   newsGetSourcesForId,
 } from './lib/gsc-legacy-redirects'
 
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'none'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.trustindex.io https://va.vercel-scripts.com",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "media-src 'self' https:",
+  "frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com",
+  "connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://cdn.trustindex.io https://vitals.vercel-insights.com https://*.vercel-insights.com",
+  "upgrade-insecure-requests",
+].join('; ')
+
+const securityHeaders = [
+  { key: 'Content-Security-Policy', value: contentSecurityPolicy },
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'X-Frame-Options', value: 'DENY' },
+  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+  {
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
+  },
+]
+
 const nextConfig: NextConfig = {
   // Pin the workspace root so Next/Turbopack stops inferring ~/ as the root.
   turbopack: { root: import.meta.dirname },
@@ -24,6 +51,14 @@ const nextConfig: NextConfig = {
     ],
   },
   trailingSlash: false,
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+    ]
+  },
   async redirects() {
     return [
       // ── SERVICE PAGES ──

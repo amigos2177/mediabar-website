@@ -67,6 +67,7 @@ export default function AwardsPage() {
             <div className={styles.heroLinks}>
               <a href="#emmy-record">Emmy record <span aria-hidden="true">↓</span></a>
               <a href="#telly-record">Telly record <span aria-hidden="true">↓</span></a>
+              <a href="#effie-record">Effie finalist <span aria-hidden="true">↓</span></a>
             </div>
           </div>
         </section>
@@ -74,7 +75,7 @@ export default function AwardsPage() {
         <section className={styles.scoreboard} aria-label="Media Bar award totals">
           <div>
             <strong>3</strong>
-            <span>Emmy wins</span>
+            <span>Lone Star Emmy wins</span>
           </div>
           <div>
             <strong>4</strong>
@@ -152,6 +153,26 @@ export default function AwardsPage() {
                 <span className={styles.tellyLevel}>{win.level || 'Winner'}</span>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className={styles.recordSection} id="effie-record">
+          <div className={styles.recordIntro}>
+            <p className={styles.eyebrow}>Effie Awards</p>
+            <h2>A 2025 Effie Awards finalist campaign.</h2>
+            <p>
+              Media Bar Productions was a contributing production company on
+              H-E-B&apos;s &ldquo;Not Your Knorr-Dinary Drive-Thru&rdquo; campaign for
+              Knorr, named a finalist in the 2025 Effie Awards.
+            </p>
+          </div>
+
+          <div className={styles.winGrid}>
+            <article className={styles.winCard}>
+              <span>2025</span>
+              <h3>H-E-B &ldquo;Not Your Knorr-Dinary Drive-Thru&rdquo; for Knorr</h3>
+              <p>Effie Awards Finalist, contributing production company</p>
+            </article>
           </div>
         </section>
 

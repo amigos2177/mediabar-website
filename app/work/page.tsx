@@ -80,14 +80,14 @@ export default function WorkPage() {
         <section className={styles.proof} aria-label="Media Bar Productions experience">
           <div>
             <strong>3</strong>
-            <span>Emmy Awards</span>
+            <span>Lone Star Emmy Awards</span>
           </div>
           <div>
             <strong>15</strong>
             <span>Telly Awards</span>
           </div>
           <div>
-            <strong>2011</strong>
+            <strong>2010</strong>
             <span>Producing Since</span>
           </div>
           <p>One experienced production partner from first idea through final delivery.</p>

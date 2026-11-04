@@ -215,8 +215,8 @@ export default function DallasPage() {
             </div>
             <div className="dfw-proof">
               {[
-                ['2011', 'Producing in Texas since'],
-                ['3', 'Emmy Awards'],
+                ['2010', 'Producing in Texas since'],
+                ['3', 'Lone Star Emmy Awards'],
                 ['15', 'Telly Awards'],
                 ['One', 'Team from brief to delivery'],
               ].map(([value, label]) => (

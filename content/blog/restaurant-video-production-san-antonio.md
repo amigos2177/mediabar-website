@@ -64,7 +64,7 @@ Here's the part most owners get backward: the video that wins that moment isn't 
     <p>The good news is this doesn't take Hollywood lighting. It takes a few shots you can run on repeat. The hero dish, shot tight, the pour, the steam, the cheese pull. A peek behind the pass at your kitchen and your people. The owner or chef on camera, because faces build trust faster than plates. A full, warm dining room on a Friday night. And your specials, which double as an announcement. Film vertical, shoot in good light, keep it short, and let the food do the talking.</p>
     <p>A couple of posts a week beats one big push a quarter. And here's where a crew changes the math. In a single shoot day, we can capture multiple dishes, kitchen moments, the room, enough to cut into weeks of short-form posts. One day on location, a content calendar that doesn't run dry. The per-clip cost drops fast when one shoot feeds dozens of posts.</p>
     <p>Cost scales with the day. A focused half-day capture sits at the lighter end. A full multi-dish production day runs higher.</p>
-    <p>Producing in San Antonio since 2011, with Emmy and Telly recognition on the wall, I'll tell you what I've learned. The restaurants winning online aren't the ones with the single best video. They're the ones who never look stale. If you want to keep your feed hungry and your tables full, reach out to Media Bar Productions.</p>
+    <p>Producing in San Antonio since 2010, with Emmy and Telly recognition on the wall, I'll tell you what I've learned. The restaurants winning online aren't the ones with the single best video. They're the ones who never look stale. If you want to keep your feed hungry and your tables full, reach out to Media Bar Productions.</p>
   </details>
 </figure>
 
@@ -108,7 +108,7 @@ Here's where working with a production team changes the math. In a single shoot 
 
 That's the model we build for [San Antonio restaurants](/locations/san-antonio): come in, shoot a deep well of footage, and hand back a library of vertical clips ready to drip out over a month or more. You stay recent without living behind a camera. Cost scales with the day - a focused half-day capture sits at the lighter end, a full multi-dish production day at the higher end - but either way, the per-clip cost drops fast when one shoot feeds dozens of posts.
 
-Producing in San Antonio since 2011, with Emmy and Telly recognition on the wall, we've learned that the restaurants winning online aren't the ones with the single best video. They're the ones who never look stale.
+Producing in San Antonio since 2010, with Emmy and Telly recognition on the wall, we've learned that the restaurants winning online aren't the ones with the single best video. They're the ones who never look stale.
 
 ## Frequently Asked Questions
 

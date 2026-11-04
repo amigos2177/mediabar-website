@@ -73,7 +73,7 @@ export default function AboutPage() {
               turn important ideas into films people remember.
             </h2>
             <p>
-              Since 2011, we have produced commercials, corporate films, patient
+              Since 2010, we have produced commercials, corporate films, patient
               stories, event coverage, live broadcasts, and campaign content for
               organizations across Texas and beyond.
             </p>
@@ -82,19 +82,19 @@ export default function AboutPage() {
 
         <section className={styles.stats} aria-label="Media Bar Productions achievements">
           <div>
-            <strong>2011</strong>
+            <strong>2010</strong>
             <span>Founded in San Antonio</span>
           </div>
           <div>
             <strong>3</strong>
-            <span>Emmy Awards</span>
+            <span>Lone Star Emmy Awards</span>
           </div>
           <div>
             <strong>15</strong>
             <span>Telly Awards</span>
           </div>
           <div>
-            <strong>2011</strong>
+            <strong>2010</strong>
             <span>Producing since</span>
           </div>
         </section>
@@ -258,7 +258,7 @@ export default function AboutPage() {
             <p className={styles.sectionLabel}>Recognition</p>
             <div className={styles.awardNumber}>
               <strong>3</strong>
-              <span>Emmy Awards</span>
+              <span>Lone Star Emmy Awards</span>
             </div>
             <div className={styles.awardNumber}>
               <strong>15</strong>

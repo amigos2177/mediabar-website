@@ -854,6 +854,13 @@
           color: #888;
           margin-top: 10px;
         }
+        .mbp-home .award-note {
+          max-width: 220px;
+          margin-top: 8px;
+          font-size: 12px;
+          line-height: 1.45;
+          color: #888;
+        }
 
         /* ─── FINAL CTA ─── */
         .mbp-home .cta-section {

@@ -3,7 +3,7 @@ import { AboutPageJsonLd, BreadcrumbJsonLd, PersonJsonLd } from '@/components/Js
 
 export const metadata = buildMetadata({
   title: 'About Media Bar Productions | San Antonio Video Company',
-  description: "Meet Media Bar Productions, the San Antonio video company founded by Ruben Garcia. Explore our team, story, 3 Emmy Awards, and production values.",
+  description: "Meet Media Bar Productions, the San Antonio video company founded by Ruben Garcia. Explore our team, story, 3 Lone Star Emmy Awards, and production values.",
   path: '/about',
   ogImage: '/images/media-library/media-bar-team-photo.jpg',
 })

@@ -70,7 +70,7 @@ export function LocalBusinessJsonLd() {
     logo: 'https://www.mediabarproductions.com/images/mediabar-logo.png',
     image: 'https://www.mediabarproductions.com/images/media-library/media-bar-team-photo.jpg',
     description:
-      'Award-winning video production company founded in San Antonio in 2011. The team has earned 3 Emmy Awards and 15 Telly Awards while producing corporate, commercial, and event video across Texas.',
+      'Award-winning video production company founded in San Antonio in March 2010. The team has earned 3 Lone Star Emmy Awards and 15 Telly Awards, and contributed production to a 2025 Effie Awards finalist campaign, while producing corporate, commercial, and event video across Texas.',
     telephone: '+1-210-279-9442',
     email: 'contact@mediabarproductions.com',
     contactPoint: {
@@ -97,13 +97,13 @@ export function LocalBusinessJsonLd() {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         opens: '08:00',
         closes: '17:00',
       },
     ],
     priceRange: '$$$',
-    foundingDate: '2011',
+    foundingDate: '2010-03',
     founder: {
       '@id': 'https://www.mediabarproductions.com/about#founder',
     },
@@ -126,6 +126,7 @@ export function LocalBusinessJsonLd() {
     award: [
       '3 Lone Star Emmy Awards from NATAS',
       '15 Telly Awards',
+      '2025 Effie Awards Finalist (contributing production company): H-E-B "Not Your Knorr-Dinary Drive-Thru" for Knorr',
     ],
     knowsAbout: [
       'Corporate Video Production',

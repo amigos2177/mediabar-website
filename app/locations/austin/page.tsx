@@ -215,8 +215,8 @@ export default function AustinPage() {
             </div>
             <div className="atx-proof">
               {[
-                ['2011', 'Producing in Texas since'],
-                ['3', 'Emmy Awards'],
+                ['2010', 'Producing in Texas since'],
+                ['3', 'Lone Star Emmy Awards'],
                 ['15', 'Telly Awards'],
                 ['Full', 'Creative through delivery'],
               ].map(([value, label]) => (

@@ -121,12 +121,12 @@ const faqs = [
   {
     category: 'Why Media Bar',
     q: 'Why choose Media Bar over a freelancer?',
-    a: 'A freelancer gives you one person. We give you a full team that can include a director, DP, audio engineer, editor, colorist, and motion graphics artist, backed by a process we have refined since 2011. That means fewer surprises, higher production value, and someone to call if anything goes sideways.',
+    a: 'A freelancer gives you one person. We give you a full team that can include a director, DP, audio engineer, editor, colorist, and motion graphics artist, backed by a process we have refined since 2010. That means fewer surprises, higher production value, and someone to call if anything goes sideways.',
   },
   {
     category: 'Why Media Bar',
     q: 'What makes Media Bar different from other production companies?',
-    a: 'Three Emmys and fifteen Telly Awards reflect the standard we bring to the work. We own our facility, which keeps costs down and quality consistent. We have been rooted in San Antonio since 2011 and are invested in this city\'s businesses in a way that a fly-in crew never will be.',
+    a: 'Three Lone Star Emmy Awards and fifteen Telly Awards reflect the standard we bring to the work. We own our facility, which keeps costs down and quality consistent. We have been rooted in San Antonio since 2010 and are invested in this city\'s businesses in a way that a fly-in crew never will be.',
   },
   {
     category: 'Why Media Bar',

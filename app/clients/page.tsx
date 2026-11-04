@@ -96,12 +96,12 @@ export default function ClientsPage() {
 
           <div className={styles.proofBar} aria-label="Media Bar credentials">
             <div>
-              <strong>2011</strong>
+              <strong>2010</strong>
               <span>Producing since</span>
             </div>
             <div>
               <strong>3</strong>
-              <span>Emmy Awards</span>
+              <span>Lone Star Emmy Awards</span>
             </div>
             <div>
               <strong>15</strong>

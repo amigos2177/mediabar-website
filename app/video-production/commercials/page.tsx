@@ -370,7 +370,7 @@ export default function CommercialsPage() {
                 </div>
                 <div className="com-proof-item">
                   <div className="com-proof-value">3</div>
-                  <div className="com-proof-label">Emmy Awards</div>
+                  <div className="com-proof-label">Lone Star Emmy Awards</div>
                 </div>
               </div>
             </div>

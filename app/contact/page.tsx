@@ -41,8 +41,7 @@ const routes = [
 
 const hours = [
   ['Monday to Friday', '8:00 AM to 5:00 PM'],
-  ['Saturday', '8:00 AM to 5:00 PM'],
-  ['Sunday', 'Closed'],
+  ['Saturday and Sunday', 'Closed'],
 ]
 
 export default function ContactPage() {

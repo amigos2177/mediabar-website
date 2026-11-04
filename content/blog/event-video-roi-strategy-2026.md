@@ -10,7 +10,7 @@ The event itself may last one day, but the video should work before doors open, 
 
 Too many teams judge event coverage by the recap film alone. A beautiful recap matters, but it is only one part of the return. The stronger strategy connects every planned video asset to a business outcome: registrations, attendance, remote participation, sponsor visibility, sales follow-up, membership growth, or promotion for the next event.
 
-Media Bar Productions has produced event and conference video for Texas organizations since 2011. The lesson is consistent across conferences, galas, launches, town halls, and live programs: event video creates more value when the content plan is built before the production plan.
+Media Bar Productions has produced event and conference video for Texas organizations since 2010. The lesson is consistent across conferences, galas, launches, town halls, and live programs: event video creates more value when the content plan is built before the production plan.
 
 ## Start with the business outcome, not the camera count
 

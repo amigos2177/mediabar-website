@@ -12,7 +12,7 @@ featuredImage: /images/blog/hire-local-video-production-companies-san-antonio.pn
 
 San Antonio, with its rich history, vibrant culture, and booming economy, has always been a place of opportunity for entrepreneurs and business owners. In this age of digital transformation, video has become a critical component of effective marketing strategies, and who better captures the essence of San Antonio than a local video production company?
 
-Media Bar Productions has worked from San Antonio since 2011. Over that time, we have seen the local production community grow to include experienced directors, producers, cinematographers, editors, animators, designers, sound professionals, actors, and specialized crew. Hiring locally is not a compromise. It is a practical way to connect a project with people who already understand the city and know how to get the work done here.
+Media Bar Productions has worked from San Antonio since 2010. Over that time, we have seen the local production community grow to include experienced directors, producers, cinematographers, editors, animators, designers, sound professionals, actors, and specialized crew. Hiring locally is not a compromise. It is a practical way to connect a project with people who already understand the city and know how to get the work done here.
 
 Here is where a local production partner can make the biggest difference.
 

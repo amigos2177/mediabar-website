@@ -93,7 +93,7 @@ export default function VideoProductionFaqPage() {
         <section className={styles.trustBar} aria-label="Resource credentials">
           <div><strong>32</strong><span>Practical answers</span></div>
           <div><strong>6</strong><span>Planning topics</span></div>
-          <div><strong>2011</strong><span>Producing in San Antonio since</span></div>
+          <div><strong>2010</strong><span>Producing in San Antonio since</span></div>
           <div><strong>Texas</strong><span>Statewide production context</span></div>
         </section>
 
@@ -318,7 +318,7 @@ export default function VideoProductionFaqPage() {
               This guide is based on the planning, filming, editing, and delivery
               questions Media Bar has encountered while producing commercials,
               corporate films, interviews, events, live broadcasts, and campaign
-              content in San Antonio and across Texas since 2011.
+              content in San Antonio and across Texas since 2010.
             </p>
             <div className={styles.authorLinks}>
               <Link href="/about#founder">About Ruben and Media Bar →</Link>

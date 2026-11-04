@@ -28,7 +28,7 @@ const whyCards = [
   { icon: '🎨', title: 'Food Styling Expertise', desc: 'Great food video requires great food styling. We work with experienced culinary stylists who know how to make a dish look its absolute best on camera.' },
   { icon: '💡', title: 'Appetite-Driving Lighting', desc: 'Food looks completely different under different light. We use techniques specifically developed for culinary photography to make your dishes look warm, fresh, and craveable.' },
   { icon: '📱', title: 'Social-First Content', desc: 'We produce for TikTok, Instagram Reels, and YouTube Shorts - the formats where food content drives the highest engagement and purchase intent.' },
-  { icon: '🏆', title: 'Award-Winning Production', desc: 'Three Emmy Awards. Our food work is held to the same creative standard as our broadcast productions. Nothing goes out the door that doesn\'t look extraordinary.' },
+  { icon: '🏆', title: 'Award-Winning Production', desc: 'Three Lone Star Emmy Awards. Our food work is held to the same creative standard as our broadcast productions. Nothing goes out the door that doesn\'t look extraordinary.' },
   { icon: '🔄', title: 'Volume Content Available', desc: 'Need 20 SKU videos for a product launch? We have the workflow and studio capacity to produce food content at volume without sacrificing quality.' },
 ]
 

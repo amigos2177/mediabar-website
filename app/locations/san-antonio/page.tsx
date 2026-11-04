@@ -207,7 +207,7 @@ export default function SanAntonioPage() {
           <div className="sa-hero-scrim" />
           <div className="sa-container sa-hero-inner">
             <div className="sa-hero-copy">
-              <p className="sa-eyebrow">San Antonio video production company since 2011</p>
+              <p className="sa-eyebrow">San Antonio video production company since 2010</p>
               <h1 className="sa-display">
                 Video Production Company{' '}
                 <em>Built for San Antonio.</em>
@@ -223,8 +223,8 @@ export default function SanAntonioPage() {
             </div>
             <div className="sa-proof" aria-label="Media Bar Productions credentials">
               {[
-                ['2011', 'Producing in San Antonio since'],
-                ['3', 'Emmy Awards'],
+                ['2010', 'Producing in San Antonio since'],
+                ['3', 'Lone Star Emmy Awards'],
                 ['15', 'Telly Awards'],
                 ['Local', 'Studio and Production Team'],
               ].map(([value, label]) => (
@@ -349,9 +349,9 @@ export default function SanAntonioPage() {
                 See how we work <span aria-hidden="true">→</span>
               </Link>
               <div style={{ marginTop: '24px' }}>
-                <a className="sa-inline-link" href="https://filmcrewsanantonio.com" target="_blank" rel="noopener noreferrer">
-                  Need crew-only support? Visit Film Crew San Antonio <span aria-hidden="true">→</span>
-                </a>
+                <Link className="sa-inline-link" href="/contact">
+                  Need crew-only support? Contact our team <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
           </div>

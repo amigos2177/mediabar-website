@@ -269,12 +269,12 @@ export default function CorporatePage() {
               </div>
               <div className="corp-proof" aria-label="Media Bar Productions credentials">
                 <div className="corp-proof-item">
-                  <div className="corp-proof-value">2011</div>
+                  <div className="corp-proof-value">2010</div>
                   <div className="corp-proof-label">Producing in Texas since</div>
                 </div>
                 <div className="corp-proof-item">
                   <div className="corp-proof-value">3</div>
-                  <div className="corp-proof-label">Emmy Awards</div>
+                  <div className="corp-proof-label">Lone Star Emmy Awards</div>
                 </div>
                 <div className="corp-proof-item">
                   <div className="corp-proof-value">15</div>

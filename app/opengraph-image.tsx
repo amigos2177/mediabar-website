@@ -56,7 +56,7 @@ export default function Image() {
               letterSpacing: 1,
             }}
           >
-            3 Emmy Awards · 15 Telly Awards
+            3 Lone Star Emmy Awards · 15 Telly Awards
           </div>
         </div>
       </div>

@@ -150,8 +150,8 @@ export default function CareersPage() {
                 </div>
               </div>
               <div className="crew-proof" aria-label="Media Bar crew credentials">
-                <div className="crew-proof-item"><div className="crew-proof-value">2011</div><div className="crew-proof-label">Producing in San Antonio since</div></div>
-                <div className="crew-proof-item"><div className="crew-proof-value">3</div><div className="crew-proof-label">Emmy Awards</div></div>
+                <div className="crew-proof-item"><div className="crew-proof-value">2010</div><div className="crew-proof-label">Producing in San Antonio since</div></div>
+                <div className="crew-proof-item"><div className="crew-proof-value">3</div><div className="crew-proof-label">Lone Star Emmy Awards</div></div>
                 <div className="crew-proof-item"><div className="crew-proof-value">15</div><div className="crew-proof-label">Telly Awards</div></div>
               </div>
             </div>
@@ -191,7 +191,6 @@ export default function CareersPage() {
                 </p>
                 <div className="crew-actions">
                   <Link href="/locations/san-antonio" className="crew-button crew-button-primary">San Antonio Production</Link>
-                  <a href="https://filmcrewsanantonio.com" className="crew-button crew-button-secondary" target="_blank" rel="noopener noreferrer">Local Crew Resource</a>
                 </div>
               </article>
             </div>

@@ -390,7 +390,7 @@ export default function EventsPage() {
                 </div>
               </div>
               <div className="evt-proof" aria-label="Event production capabilities">
-                <div className="evt-proof-item"><div className="evt-proof-value">3x</div><div className="evt-proof-label">Emmy Award winners</div></div>
+                <div className="evt-proof-item"><div className="evt-proof-value">3</div><div className="evt-proof-label">Lone Star Emmy Awards</div></div>
                 <div className="evt-proof-item"><div className="evt-proof-value">Multi</div><div className="evt-proof-label">Camera coverage</div></div>
                 <div className="evt-proof-item"><div className="evt-proof-value">Clean</div><div className="evt-proof-label">Speaker audio</div></div>
                 <div className="evt-proof-item"><div className="evt-proof-value">One</div><div className="evt-proof-label">Team through post</div></div>

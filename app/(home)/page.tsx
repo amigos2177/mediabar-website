@@ -147,7 +147,7 @@ export default function HomePage() {
         <HomeHeroMedia />
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="hero-eyebrow">Media Bar Productions · Local crew since 2011</p>
+          <p className="hero-eyebrow">Media Bar Productions · Local crew since 2010</p>
           <h1 className="hero-headline">
             Video Production in San Antonio{' '}
             <span className="hero-headline-geo">A clear plan from the start.</span>
@@ -166,7 +166,7 @@ export default function HomePage() {
           </p>
           <div className="hero-pills">
             <span className="hero-pill">Strategy to Delivery</span>
-            <span className="hero-pill">3 Emmy Awards</span>
+            <span className="hero-pill">3 Lone Star Emmy Awards</span>
             <span className="hero-pill">Your Footage, Yours to Keep</span>
           </div>
         </div>
@@ -312,7 +312,7 @@ export default function HomePage() {
             </h2>
             <p>
               Media Bar Productions is a full-service video production company based in
-              San Antonio, Texas. Since 2011, our team has helped organizations plan, film,
+              San Antonio, Texas. Since 2010, our team has helped organizations plan, film,
               edit, and deliver video for audiences across Texas and beyond.
             </p>
             <Link href="/locations/san-antonio" className="text-link">
@@ -433,7 +433,7 @@ export default function HomePage() {
               <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
             </svg>
             <p className="award-count">3</p>
-            <p className="award-name">Emmy Awards</p>
+            <p className="award-name">Lone Star Emmy Awards</p>
           </div>
           <div className="award-card">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{margin: '0 auto 12px', display: 'block'}}>
@@ -444,10 +444,19 @@ export default function HomePage() {
           </div>
           <div className="award-card">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{margin: '0 auto 12px', display: 'block'}}>
+              <circle cx="12" cy="8" r="6" />
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+            </svg>
+            <p className="award-count">2025</p>
+            <p className="award-name">Effie Awards Finalist</p>
+            <p className="award-note">Contributing production company, H-E-B &ldquo;Not Your Knorr-Dinary Drive-Thru&rdquo; for Knorr</p>
+          </div>
+          <div className="award-card">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{margin: '0 auto 12px', display: 'block'}}>
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <p className="award-count">2011</p>
+            <p className="award-count">2010</p>
             <p className="award-name">Producing Since</p>
           </div>
         </div>

@@ -10,7 +10,7 @@ type Consent = 'granted' | 'denied' | null
 function googleTag(...args: unknown[]) {
   window.dataLayer = window.dataLayer || []
   // Google consumes array-like arguments, including queued events before loading.
-  window.dataLayer.push((function () { return arguments }).apply(null, args))
+  if (args.length) window.dataLayer.push(arguments)
 }
 
 export function GoogleAdsInquiryMeasurement() {

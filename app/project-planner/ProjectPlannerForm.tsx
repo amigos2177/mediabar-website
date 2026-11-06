@@ -229,6 +229,7 @@ export default function ProjectPlannerForm() {
   const successCardRef = useRef<HTMLDivElement>(null)
   const successHeadingRef = useRef<HTMLHeadingElement>(null)
   const hasTrackedStart = useRef(false)
+  const submissionInFlight = useRef(false)
   const trackedSteps = useRef(new Set<number>())
   const attribution = useRef<CampaignAttribution | null>(null)
   const conversionAttribution = useRef<ConversionAttribution | null>(null)
@@ -319,12 +320,14 @@ export default function ProjectPlannerForm() {
 
   async function submitBrief(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (submissionInFlight.current) return
     const validationError = validateStep()
     if (validationError) {
       setError(validationError)
       return
     }
 
+    submissionInFlight.current = true
     setSubmitting(true)
     setError('')
 
@@ -386,6 +389,16 @@ export default function ProjectPlannerForm() {
         discoverySource: fields.discoverySource || 'not_provided',
         ...conversionProperties(),
       }, 'generate_lead')
+      if (!fields.website &&
+        ['Corporate Video', 'Commercials'].includes(fields.service) &&
+        ['$5,000 - $15,000', '$15,000 - $50,000', '$50,000+'].includes(fields.budget)) {
+        trackAnalyticsEvent('qualified_project_inquiry', {
+          ...conversionProperties(),
+          service: fields.service,
+          budget_range: fields.budget,
+          leadType: 'project_brief',
+        })
+      }
       clearConversionAttribution('project-planner')
       setSubmitted(true)
     } catch {
@@ -396,6 +409,7 @@ export default function ProjectPlannerForm() {
       })
       setError('Network error. Please try again or call 210-279-9442.')
     } finally {
+      submissionInFlight.current = false
       setSubmitting(false)
     }
   }

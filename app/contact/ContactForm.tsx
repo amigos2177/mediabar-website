@@ -25,6 +25,8 @@ const initialFields = {
   message: '',
   discoverySource: '',
   website: '',
+  service: '',
+  budget: '',
 }
 
 function splitName(name: string) {
@@ -36,11 +38,13 @@ function splitName(name: string) {
   }
 }
 
-export default function ContactForm() {
+export default function ContactForm({ projectInquiry = false }: { projectInquiry?: boolean }) {
   const [fields, setFields] = useState(initialFields)
   const [status, setStatus] = useState<SubmitStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const hasTrackedStart = useRef(false)
+  const submissionInFlight = useRef(false)
+  const formPath = projectInquiry ? '/san-antonio-video-inquiry' : '/contact'
   const campaignAttribution = useRef<CampaignAttribution | null>(null)
   const conversionAttribution = useRef<ConversionAttribution | null>(null)
 
@@ -74,6 +78,8 @@ export default function ContactForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (submissionInFlight.current) return
+    submissionInFlight.current = true
     setStatus('submitting')
     setErrorMessage('')
 
@@ -89,7 +95,7 @@ export default function ContactForm() {
           message: fields.message,
           discoverySource: fields.discoverySource,
           website: fields.website,
-          source: 'contact-quick-question',
+          ...(projectInquiry ? { service: fields.service, budget: fields.budget } : { source: 'contact-quick-question' }),
           utmSource: campaignAttribution.current?.utmSource,
           utmMedium: campaignAttribution.current?.utmMedium,
           utmCampaign: campaignAttribution.current?.utmCampaign,
@@ -97,7 +103,7 @@ export default function ContactForm() {
           landingPage: campaignAttribution.current?.landingPage,
           firstTouchSource: campaignAttribution.current?.firstTouchSource,
           referrer: campaignAttribution.current?.referrer,
-          sourcePage: conversionAttribution.current?.sourcePath || '/contact',
+          sourcePage: projectInquiry ? formPath : conversionAttribution.current?.sourcePath || '/contact',
           sourceAction: conversionAttribution.current?.action || 'contact',
           sourcePlacement: conversionAttribution.current?.placement || 'direct',
         }),
@@ -116,11 +122,22 @@ export default function ContactForm() {
       }
 
       trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, {
-        service: 'General inquiry',
-        leadType: 'quick_question',
+        service: projectInquiry ? fields.service : 'General inquiry',
+        leadType: projectInquiry ? 'project_inquiry' : 'quick_question',
         discoverySource: fields.discoverySource || 'not_provided',
         ...conversionProperties(),
       }, 'generate_lead')
+      if (projectInquiry && !fields.website &&
+        ['Corporate Video', 'Commercials'].includes(fields.service) &&
+        ['$5,000 - $15,000', '$15,000 - $50,000', '$50,000+'].includes(fields.budget)) {
+        trackAnalyticsEvent('qualified_project_inquiry', {
+          ...conversionProperties(),
+          sourcePath: formPath,
+          service: fields.service,
+          budget_range: fields.budget,
+          leadType: 'project_inquiry',
+        })
+      }
       clearConversionAttribution('contact')
       setFields(initialFields)
       setStatus('success')
@@ -132,6 +149,8 @@ export default function ContactForm() {
       })
       setStatus('error')
       setErrorMessage('Network error. Please check your connection and try again.')
+    } finally {
+      submissionInFlight.current = false
     }
   }
 
@@ -216,12 +235,31 @@ export default function ContactForm() {
         </div>
       </div>
 
+      {projectInquiry && (
+        <div className={styles.formRow}>
+          <div className={styles.field}>
+            <label htmlFor="contact-service">Project type</label>
+            <select id="contact-service" required value={fields.service} onChange={(event) => updateField('service', event)}>
+              <option value="">Choose a service</option>
+              {['Corporate Video', 'Commercials', 'Other'].map((service) => <option key={service}>{service}</option>)}
+            </select>
+          </div>
+          <div className={styles.field}>
+            <label htmlFor="contact-budget">Working budget</label>
+            <select id="contact-budget" required value={fields.budget} onChange={(event) => updateField('budget', event)}>
+              <option value="">Choose a range</option>
+              {['Under $5,000', '$5,000 - $15,000', '$15,000 - $50,000', '$50,000+', 'Not sure yet'].map((budget) => <option key={budget}>{budget}</option>)}
+            </select>
+          </div>
+        </div>
+      )}
+
       <div className={styles.field}>
-        <label htmlFor="contact-message">Your question</label>
+        <label htmlFor="contact-message">{projectInquiry ? 'Tell us about the project' : 'Your question'}</label>
         <textarea
           id="contact-message"
           name="message"
-          placeholder="How can we help?"
+          placeholder={projectInquiry ? 'What are you producing, and when do you need it? A few sentences are enough.' : 'How can we help?'}
           maxLength={4000}
           required
           value={fields.message}
@@ -229,7 +267,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className={styles.field}>
+      {!projectInquiry && <div className={styles.field}>
         <label htmlFor="contact-discovery-source">
           How did you hear about Media Bar? <span>Optional</span>
         </label>
@@ -244,7 +282,7 @@ export default function ContactForm() {
             <option key={source} value={source}>{source}</option>
           ))}
         </select>
-      </div>
+      </div>}
 
       <p className={styles.privacyNote}>
         We use these details only to respond to your inquiry. Please do not include
@@ -263,7 +301,7 @@ export default function ContactForm() {
         disabled={status === 'submitting'}
         aria-describedby={status === 'error' ? 'contact-error' : undefined}
       >
-        {status === 'submitting' ? 'Sending...' : 'Send message'}
+        {status === 'submitting' ? 'Sending...' : projectInquiry ? 'Discuss my project' : 'Send message'}
         <span aria-hidden="true">→</span>
       </button>
     </form>

@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { AnalyticsInteractions } from '@/components/AnalyticsInteractions'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+import { OpenAIInquiryMeasurement } from '@/components/OpenAIInquiryMeasurement'
 import { LocalBusinessJsonLd, WebSiteJsonLd } from '@/components/JsonLd'
 
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
@@ -72,6 +73,7 @@ export default function RootLayout({
         <AnalyticsInteractions />
         {children}
         <GoogleAnalytics />
+        <OpenAIInquiryMeasurement />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -33,7 +33,7 @@ export function GoogleAdsInquiryMeasurement() {
   useEffect(() => {
     if (consent !== 'granted') return
     googleTag('consent', 'update', {
-      ad_storage: 'granted', ad_user_data: 'denied', ad_personalization: 'denied',
+      ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'denied',
     })
     if (!document.getElementById('mbp-google-ads-inquiry-tag')) {
       googleTag('js', new Date())

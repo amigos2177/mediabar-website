@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 import ContactForm from '@/app/contact/ContactForm'
 import contact from '@/app/contact/contact.module.css'
+import { GoogleAdsInquiryMeasurement } from '@/components/GoogleAdsInquiryMeasurement'
 import styles from './inquiry.module.css'
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export default function VideoInquiryPage() {
           </div>
           <p>One coordinated production plan: brief, pre-production, filming, review, and delivery. Already have a detailed scope? <Link href="/project-planner">Use the full Project Planner.</Link></p>
         </section>
+        <GoogleAdsInquiryMeasurement />
       </main>
     </Layout>
   )

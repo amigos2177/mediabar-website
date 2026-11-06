@@ -38,7 +38,7 @@ export default function VideoInquiryPage() {
           <h2 id="selected-work">See the approach before we talk.</h2>
           <div className={styles.cards}>
             <article><h3>Corporate films & leadership</h3><p>Brand films, executive interviews, customer stories, and recruiting content. Explore the corporate reel and examples including ST Engineering and Sanctuary Wealth.</p><Link href="/video-production/corporate">View corporate work →</Link></article>
-            <article><h3>RBFCU: Go Beyond Banking</h3><p>Production and post-production across five broadcast commercials, delivered for a campaign spanning four Texas markets.</p><Link href="/work/rbfcu-go-beyond-banking">Explore our work →</Link></article>
+            <article><h3>RBFCU: Go Beyond Banking</h3><p>Production and post-production across five broadcast commercials, delivered for a campaign spanning four Texas markets.</p><Link href="/work">Explore our work →</Link></article>
           </div>
           <p>One coordinated production plan: brief, pre-production, filming, review, and delivery. Already have a detailed scope? <Link href="/project-planner">Use the full Project Planner.</Link></p>
         </section>

@@ -35,6 +35,17 @@ export function trackAnalyticsEvent(
   // Only the already-qualified, successful form event is reported to OpenAI.
   // No budget is represented as revenue; no form values are sent here.
   if (eventName === 'qualified_project_inquiry') {
+    // Only the existing eligible-success event on this campaign's page reaches Google.
+    // Keep OpenAI's existing measurement independent and unchanged.
+    if (window.location.pathname === '/san-antonio-video-inquiry') {
+      try {
+        window.dispatchEvent(new CustomEvent('mbp:eligible-project-inquiry', {
+          detail: { id: crypto.randomUUID() },
+        }))
+      } catch {
+        // Advertising measurement must never interrupt inquiry delivery.
+      }
+    }
     try {
       window.oaiq?.('measure', 'lead_created', { type: 'customer_action' }, {
         event_id: crypto.randomUUID(),

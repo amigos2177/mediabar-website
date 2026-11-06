@@ -32,4 +32,15 @@ export function trackAnalyticsEvent(
 ) {
   track(eventName, properties)
   window.gtag?.('event', ga4EventName, properties)
+  // Only the already-qualified, successful form event is reported to OpenAI.
+  // No budget is represented as revenue; no form values are sent here.
+  if (eventName === 'qualified_project_inquiry') {
+    try {
+      window.oaiq?.('measure', 'lead_created', { type: 'customer_action' }, {
+        event_id: crypto.randomUUID(),
+      })
+    } catch {
+      // Optional ad measurement must never interrupt a successful inquiry.
+    }
+  }
 }

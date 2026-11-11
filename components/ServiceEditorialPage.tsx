@@ -60,7 +60,7 @@ export type ServiceEditorialPageProps = {
     eyebrow: string
     title: string
     emphasis: string
-    copy: string
+    copy: ReactNode
     image: string
     alt: string
     position?: string

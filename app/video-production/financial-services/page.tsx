@@ -50,8 +50,13 @@ export default function FinancialServicesVideoPage() {
         eyebrow: 'Review-Ready Production',
         title: 'Plan the Approvals',
         emphasis: 'Before the Cameras Roll.',
-        copy:
-          'Financial communications often involve brand, legal, compliance, executive, and business-line stakeholders. Defining those reviewers early protects the schedule and gives the creative team clear boundaries.',
+        copy: (
+          <>
+            Financial communications often involve brand, legal, compliance, executive, and business-line stakeholders. Defining those reviewers early protects the schedule and gives the creative team clear boundaries.{' '}
+            Planning stakeholder approvals? Read our{' '}
+            <Link href="/blog/financial-services-video-review-guide" style={{ textDecoration: 'underline', textUnderlineOffset: '4px' }}>financial-services video review guide</Link>.
+          </>
+        ),
         image: '/images/rbfcu-bts-porch.jpg',
         alt: 'Media Bar Productions crew filming a Texas credit union commercial',
         position: 'center 38%',

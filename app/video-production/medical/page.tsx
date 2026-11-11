@@ -87,7 +87,7 @@ export default function MedicalVideoPage() {
         linkLabel: 'Watch the Full Patient Story',
         linkHref: '/work/watch/wound-local-patient-story',
       }}
-      additionalExamples={<WorkLibraryLinks serviceHref="/video-production/medical" />}
+      additionalExamples={<WorkLibraryLinks serviceHref="/video-production/medical" slugs={['caroline-flowers-specialty-care', 'eli-ortiz-specialty-care']} />}
       deliverables={{
         eyebrow: 'Communication System',
         title: 'One Production.',

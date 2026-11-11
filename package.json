@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "verify:structured-data": "node scripts/verify-structured-data.mjs",
+    "verify:structured-data": "node scripts/verify-structured-data.mjs && node scripts/verify-sitemap.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
-    "indexnow:dry-run": "node scripts/submit-indexnow.mjs --dry-run --all"
+    "indexnow:dry-run": "node scripts/submit-indexnow.mjs --dry-run --all",
+    "verify:sitemap": "node scripts/verify-sitemap.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

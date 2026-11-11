@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { escapeSitemapXml } from '../lib/sitemap-xml'
 import { getPostIndex } from '../lib/blog'
 import workVideos from '../data/work-videos.json'
 import { workProjects } from '../data/work-projects'
@@ -181,9 +182,9 @@ function buildSitemap(): MetadataRoute.Sitemap {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   try {
-    return buildSitemap()
+    return escapeSitemapXml(buildSitemap())
   } catch (error) {
     console.error('sitemap: generation failed; returning static URL fallback', error)
-    return staticPages()
+    return escapeSitemapXml(staticPages())
   }
 }

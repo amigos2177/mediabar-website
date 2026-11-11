@@ -28,7 +28,7 @@ const whyCards = [
   { icon: '🎥', title: 'Cinema-Grade Aerial', desc: 'We fly Inspire and Mavic 3 Cine platforms with interchangeable lens systems, capturing aerial footage that matches your ground cameras in quality and color.' },
   { icon: '🤝', title: 'Ground + Air Same Day', desc: 'We integrate aerial and ground production in a single shoot day. No need to coordinate two separate crews - one team handles everything.' },
   { icon: '🗺️', title: 'All of Texas', desc: 'We fly throughout San Antonio, Austin, Dallas, Houston, and across Texas. Travel costs are bundled into your quote upfront.' },
-  { icon: '⚡', title: 'Fast Turnaround', desc: 'Most aerial-only projects are delivered within 3-5 business days. Combined aerial + ground productions follow standard post timelines.' },
+  { icon: '⚡', title: 'Project-Based Delivery', desc: 'Delivery timing is quoted based on each project’s scope and requirements.' },
   { icon: '🏆', title: 'Emmy Award-Winning Team', desc: 'The same award-winning crew that handles ground production brings that same craft to the air. Aerial footage is only as good as the people operating it.' },
 ]
 
@@ -222,14 +222,15 @@ export default function AerialPage() {
           </div>
           <div className="portfolio-grid-wide reveal">
             {[
-              { id: '1180537228', label: 'Aerial Production' },
-              { id: '1180540292', label: 'Aerial Production' },
+              { id: '1180537228', label: 'ATMA Energy — Brand Film', caption: 'Features aerial footage shot by Media Bar Productions.' },
+              { id: '1180540292', label: 'Boot Ranch — Golf Community Commercial', caption: 'Features aerial footage shot by Media Bar Productions.' },
             ].map((v) => (
               <div key={v.id}>
                 <div className="vimeo-wrap">
                   <iframe src={`https://player.vimeo.com/video/${v.id}?title=0&byline=0&portrait=0&color=CC0000`} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title={v.label} />
                 </div>
                 <p className="portfolio-label">{v.label}</p>
+                <p className="body-text" style={{ marginTop: 8 }}>{v.caption}</p>
               </div>
             ))}
           </div>

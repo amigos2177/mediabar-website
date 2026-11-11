@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <FAQPageJsonLd faqs={[
         {
           question: 'How quickly do you deliver real estate video?',
-          answer: "Our standard turnaround is 3-5 business days from the shoot date. For listings with time-sensitive launch dates, we offer rush delivery in 24-48 hours for an additional fee. Just let us know your go-live date when you book and we'll confirm the timeline.",
+          answer: 'Delivery timing is quoted based on each project’s scope and requirements. Share your target launch date when requesting an estimate so we can confirm the production and delivery schedule.',
         },
         {
           question: 'Do you combine ground and aerial in the same shoot?',

@@ -1,3 +1,4 @@
+import WorkLibraryLinks from '@/components/WorkLibraryLinks'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
@@ -481,6 +482,9 @@ export default function CommercialsPage() {
                   RBFCU helps members move forward. The campaign expanded across four Texas markets
                   while keeping one clear brand idea consistent.
                 </p>
+                <p className="com-section-intro">Producing for a bank or credit union?{' '}
+                  <Link href="/video-production/financial-services" style={{ textDecoration: 'underline', textUnderlineOffset: '4px' }}>Explore financial-services video production</Link>.
+                </p>
                 <div className="com-case-facts">
                   <div className="com-case-fact"><strong>5</strong><span>Broadcast spots</span></div>
                   <div className="com-case-fact"><strong>4</strong><span>Texas markets</span></div>
@@ -494,6 +498,11 @@ export default function CommercialsPage() {
 
         <RbfcuCommercialGallery />
         <RbfcuCampaigns />
+        <WorkLibraryLinks
+          serviceHref="/video-production/commercials"
+          slugs={['boot-ranch-golf-commercial', 'rbfcu-coyote-commercial']}
+          heading="More commercial examples."
+        />
         <section className="com-section"><div className="com-container">
           <p className="com-eyebrow">Automotive commercials</p>
           <h2 className="com-display com-section-title">World Car <em>San Antonio.</em></h2>

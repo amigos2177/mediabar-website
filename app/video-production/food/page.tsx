@@ -287,7 +287,7 @@ export default function FoodPage() {
         </div>
       </div>
 
-      <WorkLibraryLinks serviceHref="/video-production/food" />
+      <WorkLibraryLinks serviceHref="/video-production/food" slugs={['kiolbassa-commercial', 'tostadas-de-chicharron']} />
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />
         <h2 className="cta-h2">Ready To <em>Look Delicious?</em></h2>

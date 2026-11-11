@@ -1,3 +1,4 @@
+import WorkLibraryLinks from '@/components/WorkLibraryLinks'
 import { ServiceEditorialPage } from '@/components/ServiceEditorialPage'
 import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import { interviewFaqs, interviewVideo } from './content'
@@ -84,6 +85,7 @@ export default function InterviewPage() {
         linkLabel: 'Explore More Work',
         linkHref: '/work',
       }}
+      additionalExamples={<WorkLibraryLinks serviceHref="/video-production/interview" slugs={['sanctuary-wealth-interview']} heading="A long-form executive interview." />}
       deliverables={{
         eyebrow: 'Built for the Edit',
         title: 'One Conversation Becomes',

@@ -57,6 +57,9 @@ export default function UpperDeckCaseStudy() {
             <p className={styles.eyebrow}>Selected motion graphics</p>
             <h2 id="films-title">See the work for Upper Deck.</h2>
             <p className={styles.sectionIntro}>A selection from our work across sports and entertainment properties.</p>
+            <p className={styles.sectionIntro}>Planning an animated project? Explore our{' '}
+              <Link href="/video-production/motion-graphics" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>motion graphics and animation services</Link>.
+            </p>
             <WorkFilmCards films={films} />
             <Link className={styles.textLink} href="/work/watch/fleer-brilliants-superman">Also watch: Fleer Brilliants Superman →</Link>
           </section>

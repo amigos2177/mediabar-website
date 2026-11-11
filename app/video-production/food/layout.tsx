@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <FAQPageJsonLd faqs={[
         {
           question: 'Do you provide a food stylist?',
-          answer: "Yes. We work with experienced food stylists and culinary professionals who specialize in preparing food for camera. A good food stylist is essential for high-end food video - they understand how to maintain a dish's visual appeal through extended shooting sessions and how to create the specific textures and finishes that look best on camera.",
+          answer: 'Food styling is quoted based on each project’s scope and requirements. We work with experienced food stylists and culinary professionals when the production calls for them; styling is not included automatically.',
         },
         {
           question: 'What kitchen or studio setup do you use?',

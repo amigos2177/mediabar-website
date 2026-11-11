@@ -19,7 +19,7 @@ const useCases = [
 
 const processSteps = [
   { num: '01', title: 'Creative Direction', desc: 'We develop the visual language that will make your food irresistible on screen.', bullets: ['Brand & tone review', 'Visual references', 'Shot list development', 'Talent & prop planning'] },
-  { num: '02', title: 'Food Styling', desc: 'Every dish prepared and styled for maximum visual impact.', bullets: ['Food stylist coordination', 'Hero dish preparation', 'Prop & surface selection', 'Lighting test shots'] },
+  { num: '02', title: 'Food Styling', desc: 'Food preparation and styling are planned around the agreed project scope.', bullets: ['Food stylist coordination', 'Hero dish preparation', 'Prop & surface selection', 'Lighting test shots'] },
   { num: '03', title: 'Hero Shots', desc: 'Methodical capture of every angle, texture, and detail.', bullets: ['Overhead & beauty angles', 'Macro detail shots', 'Action & pour shots', 'Process & preparation'] },
   { num: '04', title: 'Edit & Delivery', desc: 'Finishing that preserves the appetite appeal through to final cut.', bullets: ['Color grade for warmth', 'Music bed', 'Sound design', 'Multi-format export'] },
 ]
@@ -34,7 +34,7 @@ const whyCards = [
 ]
 
 const faqs = [
-  { q: 'Do you provide a food stylist?', a: 'Yes. We work with experienced food stylists and culinary professionals who specialize in preparing food for camera. A good food stylist is essential for high-end food video - they understand how to maintain a dish\'s visual appeal through extended shooting sessions and how to create the specific textures and finishes that look best on camera.' },
+  { q: 'Do you provide a food stylist?', a: 'Food styling is quoted based on each project’s scope and requirements. We work with experienced food stylists and culinary professionals when the production calls for them; styling is not included automatically.' },
   { q: 'What kitchen or studio setup do you use?', a: 'We have two production stages in San Antonio equipped for food video. Our food production setup includes professional lighting rigs, multiple camera positions, and the equipment needed for overhead, side, and beauty angles. For restaurant or brand-specific shoots that require the actual kitchen or branded environment, we frequently shoot on location.' },
   { q: 'How much does food video production cost?', a: 'Food video ranges from around $3,000 for simple social content to $25,000+ for broadcast commercials with full food styling, multiple setups, and extensive post. The biggest variables are food styling complexity, number of dishes/SKUs, and whether we\'re producing for broadcast or digital-only. We provide itemized quotes after a brief call.' },
   { q: 'Can you produce social media content at volume?', a: 'Yes. We have clients who commission 10-30 social food videos per quarter. For volume content, we develop an efficient workflow - batching shoot days, standardizing setups, and building a post-production pipeline that allows us to deliver consistent quality at scale. Volume pricing is available for ongoing content commitments.' },
@@ -174,7 +174,7 @@ export default function FoodPage() {
           <div className="stat-card reveal">
             <div className="stat-item"><p className="stat-value">HEB</p><p className="stat-label">Trusted by HEB</p></div>
             <div className="stat-item"><p className="stat-value">CPG</p><p className="stat-label">CPG Brand Experience</p></div>
-            <div className="stat-item"><p className="stat-value">✓</p><p className="stat-label">Food Stylist Included</p></div>
+            <div className="stat-item"><p className="stat-value">✓</p><p className="stat-label">Food Styling by Scope</p></div>
           </div>
         </div>
       </section>

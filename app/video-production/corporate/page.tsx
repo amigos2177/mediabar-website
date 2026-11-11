@@ -91,7 +91,7 @@ export default function CorporatePage() {
       <style>{`
         .corp-page{--line:rgba(255,255,255,.1);--panel:#141414;--muted:#96969b;background:#090909;color:#fff}
         .corp-container{width:min(1240px,calc(100% - 96px));margin:0 auto}
-        .corp-eyebrow{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+        .corp-eyebrow{color:#ff6868;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
         .corp-display{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.025em;line-height:.94;text-transform:uppercase}
         .corp-display em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;letter-spacing:0;text-transform:none}
         .corp-button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;padding:0 34px;border:1px solid transparent;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .18s,border-color .18s}
@@ -183,7 +183,7 @@ export default function CorporatePage() {
         .corp-pathway:hover{background:#181818}
         .corp-pathway h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:27px;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
         .corp-pathway p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
-        .corp-pathway span{margin-top:auto;padding-top:28px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+        .corp-pathway span{margin-top:auto;padding-top:28px;color:#ff6868;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 
         .corp-faq-wrap{max-width:1000px}
         .corp-faq-head{text-align:center;margin-bottom:44px}

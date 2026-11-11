@@ -25,7 +25,7 @@
 
 .eyebrow {
   margin: 0 0 18px;
-  color: var(--red);
+  color: #ff6868;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: .2em;
@@ -103,7 +103,7 @@
 
 .textAction span,
 .projectMeta a span {
-  color: var(--red);
+  color: #ff6868;
 }
 
 .showreel {
@@ -263,7 +263,7 @@
 
 .caseMetrics dd {
   margin: 2px 0 0;
-  color: #777;
+  color: #a0a0a0;
   font-size: 8px;
   font-weight: 800;
   letter-spacing: .1em;
@@ -373,7 +373,7 @@
 
 .projectMeta p {
   margin: 6px 0 0;
-  color: #777;
+  color: #a0a0a0;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: .12em;
@@ -382,7 +382,7 @@
 
 .projectMeta p span {
   padding: 0 6px;
-  color: var(--red);
+  color: #ff6868;
 }
 
 .projectMeta a {
@@ -404,7 +404,7 @@
 }
 
 .projectLinks a:last-child {
-  color: #6f6f6d;
+  color: #a0a0a0;
   font-size: 8px;
 }
 
@@ -440,7 +440,7 @@
 }
 
 .serviceGrid span {
-  color: var(--red);
+  color: #ff6868;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: .12em;
@@ -455,7 +455,7 @@
 }
 
 .serviceGrid i {
-  color: #777;
+  color: #a0a0a0;
   font-style: normal;
 }
 

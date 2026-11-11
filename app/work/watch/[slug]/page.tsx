@@ -6,8 +6,9 @@ import { BreadcrumbJsonLd } from '../../../../components/JsonLd'
 import { VideoObjectSchema, type PortfolioVideo } from '../../../../components/VideoObjectSchema'
 import VimeoPlayer from '../../../../components/VimeoPlayer'
 import workVideos from '../../../../data/work-videos.json'
-import { getWorkProject, workProjects } from '../../../../data/work-projects'
+import { getWorkProject, getWorkCollectionTitle, workProjects } from '../../../../data/work-projects'
 import styles from './watch.module.css'
+import WorkFilmCards from '@/components/WorkFilmCards'
 
 export const dynamicParams = false
 
@@ -88,7 +89,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = `https://www.mediabarproductions.com/work/watch/${slug}`
 
   return {
-    title: `${project.title} | Media Bar Productions`,
+    title: project.seoTitle || `${project.title} | Media Bar Productions`,
     description,
     alternates: { canonical },
     openGraph: {
@@ -117,7 +118,10 @@ export default async function WatchPage({ params }: Props) {
   const guidance = categoryGuidance[project.category]
   const relatedProjects = workProjects
     .filter((candidate) => candidate.slug !== project.slug)
-    .sort((a, b) => Number(b.category === project.category) - Number(a.category === project.category))
+    .sort((a, b) => {
+      const score = (candidate: typeof project) => Number(Boolean(project.collection) && candidate.collection === project.collection) * 10 + Number(candidate.category === project.category)
+      return score(b) - score(a)
+    })
     .slice(0, 3)
 
   return (
@@ -144,13 +148,13 @@ export default async function WatchPage({ params }: Props) {
 
           <header className={styles.header}>
             <div>
-              <p className={styles.eyebrow}>{project.category} / {project.year}</p>
+              <p className={styles.eyebrow}>{project.category}{project.year ? ` / ${project.year}` : ''}</p>
               <h1 className={styles.title}>{project.title}</h1>
             </div>
             <p className={styles.summary}>{description}</p>
           </header>
 
-          <div className={styles.player}>
+          <div className={styles.player} style={{ position: 'relative', aspectRatio: project.aspectRatio || '16 / 9' }}>
             <VimeoPlayer
               videoId={project.id}
               title={`${project.title} by Media Bar Productions`}
@@ -160,13 +164,15 @@ export default async function WatchPage({ params }: Props) {
             />
           </div>
 
+          {project.aspectRatio === '1 / 1' ? <p className={styles.summary}>Square format · 1080 × 1080</p> : null}
+
           <section className={styles.details}>
             <div>
               <h2>{project.projectNotes?.heading || 'About This Film'}</h2>
               {project.projectNotes
                 ? project.projectNotes.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
                 : <p>{description}</p>}
-              {project.caseStudyHref ? <Link className={styles.textLink} href={project.caseStudyHref}>Read the Upper Deck case study →</Link> : null}
+              {project.caseStudyHref ? <Link className={styles.textLink} href={project.caseStudyHref}>Explore {getWorkCollectionTitle(project)} →</Link> : null}
               <div className={styles.actions}>
                 <Link className={styles.primary} href="/project-planner">Plan a project</Link>
                 <Link className={styles.secondary} href={project.serviceHref}>Explore {project.category}</Link>
@@ -175,7 +181,7 @@ export default async function WatchPage({ params }: Props) {
             </div>
             <dl className={styles.meta}>
               <div><dt>Category</dt><dd>{project.category}</dd></div>
-              <div><dt>Year</dt><dd>{project.year}</dd></div>
+              {project.year ? <div><dt>Year</dt><dd>{project.year}</dd></div> : null}
               <div><dt>Runtime</dt><dd>{formatDuration(video.duration)}</dd></div>
               <div><dt>Studio</dt><dd>Media Bar Productions</dd></div>
             </dl>
@@ -183,22 +189,9 @@ export default async function WatchPage({ params }: Props) {
 
           {project.selectedVideos?.length ? (
             <section className={styles.related} aria-labelledby="client-selection-title">
-              <p className={styles.sectionEyebrow}>Upper Deck / Selected Work</p>
-              <h2 id="client-selection-title">More From Our Work With Upper Deck</h2>
-              <div className={styles.selectionGrid}>
-                {project.selectedVideos.map((film) => (
-                  <article key={film.id} className={styles.selectionCard}>
-                    <div className={styles.selectionPlayer}>
-                      <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.thumbnail} />
-                    </div>
-                    <h3>{film.title}</h3>
-                    <p>Motion graphics · {film.runtime}</p>
-                    <a className={styles.textLink} href={`https://vimeo.com/${film.id}`} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${film.title} on Vimeo (opens in a new tab)`}>
-                      Watch on Vimeo <span aria-hidden="true">↗</span>
-                    </a>
-                  </article>
-                ))}
-              </div>
+              <p className={styles.sectionEyebrow}>Selected work / {getWorkCollectionTitle(project)}</p>
+              <h2 id="client-selection-title">More from {getWorkCollectionTitle(project)}</h2>
+              <WorkFilmCards films={project.selectedVideos} />
             </section>
           ) : null}
 
@@ -227,7 +220,7 @@ export default async function WatchPage({ params }: Props) {
             <div className={styles.relatedGrid}>
               {relatedProjects.map((related) => (
                 <Link className={styles.relatedCard} href={`/work/watch/${related.slug}`} key={related.slug}>
-                  <span>{related.category} / {related.year}</span>
+                  <span>{related.category}{related.year ? ` / ${related.year}` : ''}</span>
                   <h3>{related.title}</h3>
                   <p>Watch the film <span aria-hidden="true">→</span></p>
                 </Link>

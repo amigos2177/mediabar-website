@@ -1,5 +1,6 @@
 'use client'
 
+import WorkLibraryLinks from '@/components/WorkLibraryLinks'
 import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -286,6 +287,7 @@ export default function FoodPage() {
         </div>
       </div>
 
+      <WorkLibraryLinks serviceHref="/video-production/food" />
       <section className="cta-wrap">
         <div className="cta-glow" aria-hidden="true" />
         <h2 className="cta-h2">Ready To <em>Look Delicious?</em></h2>

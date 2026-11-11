@@ -1,3 +1,4 @@
+import WorkLibraryLinks from '@/components/WorkLibraryLinks'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
@@ -529,6 +530,7 @@ export default function CorporatePage() {
             </div>
           </div>
         </section>
+        <WorkLibraryLinks serviceHref="/video-production/corporate" />
       </main>
     </Layout>
   )

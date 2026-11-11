@@ -8,10 +8,10 @@
     "embedUrl": "https://player.vimeo.com/video/163617404"
   },
   {
-    "name": "2018_Kiolbassa_3.0",
-    "description": "Video production in San Antonio by Media Bar Productions. Learn more at https://www.mediabarproductions.com/",
+    "name": "Kiolbassa",
+    "description": "Kiolbassa, produced by Media Bar Productions in San Antonio.",
     "thumbnailUrl": "https://i.vimeocdn.com/video/735883601-cdbb99d63d9a6320c3149407e292227097969567e6d1da92b1a8cd8afa8765ae-d_1280?region=us",
-    "uploadDate": "2018-10-30T00:00:00-05:00",
+    "uploadDate": "2018-10-30T18:37:58-04:00",
     "duration": "PT0M30S",
     "embedUrl": "https://player.vimeo.com/video/298056449"
   },
@@ -72,7 +72,7 @@
     "description": "Corporate video produced by Media Bar Productions, an award-winning San Antonio video production company with 3 Emmy and 15 Telly Awards."
   },
   {
-    "name": "2021_Tostadas de Chicharrón 20",
+    "name": "2021_Tostadas de Chicharr\u00f3n 20",
     "thumbnailUrl": "https://i.vimeocdn.com/video/1417608325-bec9c52a5dc43bb68b45e2581accc92582c34ae13e7a03a1aff9c76412a2ed05-d_1280?region=us",
     "uploadDate": "2022-04-07T00:00:00-05:00",
     "duration": "PT1M9S",
@@ -80,7 +80,7 @@
     "description": "Short recipe video for tostadas de chicharron, produced by Media Bar Productions - food and culinary video production in San Antonio."
   },
   {
-    "name": "2021_Chicharrón Poblano 30",
+    "name": "2021_Chicharr\u00f3n Poblano 30",
     "thumbnailUrl": "https://i.vimeocdn.com/video/1410121064-6a2184cf8e24f62575f01d48ea5b7a6e7c2493f28922576ef1fd8cebf01dd886-d_1280?region=us",
     "uploadDate": "2022-04-07T00:00:00-05:00",
     "duration": "PT0M52S",
@@ -88,12 +88,12 @@
     "description": "Recipe video featuring chicharron poblano, produced by Media Bar Productions - food and culinary video production in San Antonio."
   },
   {
-    "name": "UD_Marvel_Spider-Verse_1080p_FINAL_v2.mp4",
+    "name": "Marvel Spider-Verse",
+    "description": "Marvel Spider-Verse, produced by Media Bar Productions in San Antonio.",
     "thumbnailUrl": "https://i.vimeocdn.com/video/1621573880-aa957c59195d0b005aa64e79b152230dc5bba458b6a70a1a5a1d70cb7909f316-d_1280?region=us",
-    "uploadDate": "2023-02-28T00:00:00-06:00",
+    "uploadDate": "2023-02-28T22:02:34-05:00",
     "duration": "PT1M32S",
-    "embedUrl": "https://player.vimeo.com/video/803316101",
-    "description": "Spider-Verse trading-card product video produced for Upper Deck by Media Bar Productions, featuring dynamic motion graphics."
+    "embedUrl": "https://player.vimeo.com/video/803316101"
   },
   {
     "name": "UD_MJ 25th_1080p_FINAL_v4_Approved",
@@ -120,12 +120,12 @@
     "description": "Event video produced by Media Bar Productions for Texas Recycles Day, highlighting community recycling efforts."
   },
   {
-    "name": "2024_MBP_TGC_About Us 4.0",
+    "name": "The Guild Collective",
+    "description": "The Guild Collective, produced by Media Bar Productions in San Antonio.",
     "thumbnailUrl": "https://i.vimeocdn.com/video/1995297868-fc47d80585172bbea5bbcf42c3acdea4901891d2483e5dccea2905c24eafd0ee-d_1280?region=us",
-    "uploadDate": "2025-02-12T00:00:00-06:00",
+    "uploadDate": "2025-02-12T20:06:13-05:00",
     "duration": "PT3M24S",
-    "embedUrl": "https://player.vimeo.com/video/1056209144",
-    "description": "Company 'About Us' brand video produced by Media Bar Productions, introducing the organization's story, team, and mission."
+    "embedUrl": "https://player.vimeo.com/video/1056209144"
   },
   {
     "name": "2025_MBP_CFF_Uncork for a Cure 3.0_BLACK",
@@ -184,20 +184,20 @@
     "description": "Mortgage-product commercial produced for RBFCU by Media Bar Productions, San Antonio."
   },
   {
-    "name": "Showroom Windows Spot Television Commercial",
-    "description": "Showroom Windows Spot Television Commercial",
+    "name": "Showroom Windows",
+    "description": "Showroom Windows, produced by Media Bar Productions in San Antonio.",
     "thumbnailUrl": "https://i.vimeocdn.com/video/2142654764-7e38019ab72f04cce78c5ee67aa6cbb5c0e8145e422faa44741b1c8e051e80f4-d_1280?region=us",
-    "uploadDate": "2026-04-06T00:00:00-05:00",
+    "uploadDate": "2026-04-06T12:26:23-04:00",
     "duration": "PT0M30S",
     "embedUrl": "https://player.vimeo.com/video/1180526566"
   },
   {
-    "name": "2025_MBP_ATMA_Testimonial_Brand_Marketing 2.0",
+    "name": "ATMA Energy | Brand Marketing",
+    "description": "ATMA Energy | Brand Marketing, produced by Media Bar Productions in San Antonio.",
     "thumbnailUrl": "https://i.vimeocdn.com/video/2142669056-a1d485c3059e4da94fdb30c1319e76505c475c83d1c709c6316e84b1b52d94c8-d_1280?region=us",
-    "uploadDate": "2026-04-06T00:00:00-05:00",
+    "uploadDate": "2026-04-06T13:04:40-04:00",
     "duration": "PT2M38S",
-    "embedUrl": "https://player.vimeo.com/video/1180537228",
-    "description": "Brand testimonial video produced by Media Bar Productions, capturing a client's experience and results."
+    "embedUrl": "https://player.vimeo.com/video/1180537228"
   },
   {
     "name": "2025_MBP_Sanctuary Wealth_Interview 1_3.0",
@@ -224,12 +224,12 @@
     "description": "30-second online video ad produced by Media Bar Productions for Boot Ranch, showcasing the golf community."
   },
   {
-    "name": "Caroline Flowers_Specialty 2.0",
+    "name": "Caroline Flowers Specialty Care",
+    "description": "Caroline Flowers Specialty Care, produced by Media Bar Productions in San Antonio.",
     "thumbnailUrl": "https://i.vimeocdn.com/video/2142673026-30326a83ec8fba34c8c929d4ce39a87efb2ccf65c0b60df2fa2e04b73751d2f4-d_1280?region=us",
-    "uploadDate": "2026-04-06T00:00:00-05:00",
+    "uploadDate": "2026-04-06T13:15:46-04:00",
     "duration": "PT2M10S",
-    "embedUrl": "https://player.vimeo.com/video/1180540381",
-    "description": "Specialty brand video produced by Media Bar Productions, an award-winning San Antonio video production company."
+    "embedUrl": "https://player.vimeo.com/video/1180540381"
   },
   {
     "name": "Eli Ortiz_Specialty_30_5.0",
@@ -270,5 +270,149 @@
     "duration": "PT2M27S",
     "embedUrl": "https://player.vimeo.com/video/1193318830",
     "description": "San Antonio video production sample by Media Bar Productions - corporate, commercial, and event work across Texas."
+  },
+  {
+    "name": "Keldon Johnson | Music",
+    "description": "A :30 RBFCU broadcast commercial, Keldon Johnson | Music, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2225225563-89d9c55909e025365eb90eeab2bd206ecee4173fc68b3880721481c32e055c6c-d_1280?region=us",
+    "uploadDate": "2026-11-11T14:14:04-05:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1245953306"
+  },
+  {
+    "name": "Keldon Johnson | PSA 01",
+    "description": "A :30 RBFCU broadcast commercial, Keldon Johnson | PSA 01, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2225225019-3297d43b6f6b83d37f17ae202e3da039478590de93a318a78820ffc9cf6cafcc-d_1280?region=us",
+    "uploadDate": "2026-11-11T14:14:00-05:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1245953284"
+  },
+  {
+    "name": "Keldon Johnson | PSA 02",
+    "description": "A :30 RBFCU broadcast commercial, Keldon Johnson | PSA 02, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2225225045-a7e2785a87d68cc3e4b8e5a23f3127dca7955ad949b4e01e23daf5c8dc144961-d_1280?region=us",
+    "uploadDate": "2026-11-11T14:14:04-05:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1245953309"
+  },
+  {
+    "name": "Resting Bank Face",
+    "description": "A :30 RBFCU broadcast commercial, Resting Bank Face, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2225224357-3d9b557b0bb184716cf347d8ad94589019d78409fb48f5fc5f0fa10867a2ed76-d_1280?region=us",
+    "uploadDate": "2026-11-11T14:12:34-05:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1245952619"
+  },
+  {
+    "name": "Doctor",
+    "description": "A :30 RBFCU broadcast commercial, Doctor, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2225224249-5c98ea5ed15f09716f84045aadc6a679a2068463d267d004d78f713ec5612c3b-d_1280?region=us",
+    "uploadDate": "2026-11-11T14:12:31-05:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1245952591"
+  },
+  {
+    "name": "Intervention",
+    "description": "A :30 RBFCU broadcast commercial, Intervention, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2225224344-500838aa9b7d7f78d5836f8395ced2b56f1c909d0ad299f37875382853650dd7-d_1280?region=us",
+    "uploadDate": "2026-11-11T14:12:31-05:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1245952590"
+  },
+  {
+    "name": "Interrogation",
+    "description": "A :30 RBFCU broadcast commercial, Interrogation, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2225224275-02f4161ae07753bd8a9ebf5d172d98560ed92dc96e1a567e194722a02cc415d3-d_1280?region=us",
+    "uploadDate": "2026-11-11T14:12:31-05:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1245952594"
+  },
+  {
+    "name": "World Car | Hyundai San Antonio",
+    "description": "World Car | Hyundai San Antonio, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2174941382-aa516d4a6ec3c02845973c1080be7c3b04a27dd9ab4d77c9cfaac039fbe1cf72-d_1280?region=us",
+    "uploadDate": "2026-07-01T10:24:35-04:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1206167230"
+  },
+  {
+    "name": "World Car | Kia San Antonio",
+    "description": "World Car | Kia San Antonio, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2174941342-0efa8bec48fd2c926955032ee5b4f45e2c9b4f6073d2c2e2c96aab4609f92ec5-d_1280?region=us",
+    "uploadDate": "2026-07-01T10:24:29-04:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1206167202"
+  },
+  {
+    "name": "Knorr: Not Your Knorr-Dinary Drive-Thru",
+    "description": "Knorr: Not Your Knorr-Dinary Drive-Thru, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/1852501696-24d97b7cd2dde64099b822d1517a816aa81efbc9362b946c524e2cf1032c3567-d_1280?region=us",
+    "uploadDate": "2024-05-13T13:30:56-04:00",
+    "duration": "PT1M36S",
+    "embedUrl": "https://player.vimeo.com/video/945888440"
+  },
+  {
+    "name": "Unilever & H-E-B Final Four Legacy Project",
+    "description": "Unilever & H-E-B Final Four Legacy Project, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/1852500125-d8e0226127a63b2a3fae9bfc6cf740b9cfa6bc0aac241f88bc9471bc1dec0179-d_1280?region=us",
+    "uploadDate": "2024-05-13T13:29:58-04:00",
+    "duration": "PT3M33S",
+    "embedUrl": "https://player.vimeo.com/video/945888116"
+  },
+  {
+    "name": "ATMA Energy | Gary & Genna Davis",
+    "description": "ATMA Energy | Gary & Genna Davis, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2142669207-fd9ae6f7d4b66d8b3dc005e7b04b2268b46530663faf6bef5c46dade6facd328-d_1280?region=us",
+    "uploadDate": "2026-04-06T13:05:26-04:00",
+    "duration": "PT2M15S",
+    "embedUrl": "https://player.vimeo.com/video/1180537417"
+  },
+  {
+    "name": "ATMA Energy | Curtis Prill",
+    "description": "ATMA Energy | Curtis Prill, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2142668980-e50f00b191602d401cb4abd5fdb6413a7a3f2e5ca827ad3e297f774f249ad185-d_1280?region=us",
+    "uploadDate": "2026-04-06T13:05:01-04:00",
+    "duration": "PT2M24S",
+    "embedUrl": "https://player.vimeo.com/video/1180537309"
+  },
+  {
+    "name": "ATMA Energy | Kenneth Graves",
+    "description": "ATMA Energy | Kenneth Graves, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2142669279-d0caaad4332878b86f307f0d2812c613d643d04f3f797d144db3d6f3fb2ed636-d_1280?region=us",
+    "uploadDate": "2026-04-06T13:05:41-04:00",
+    "duration": "PT2M4S",
+    "embedUrl": "https://player.vimeo.com/video/1180537502"
+  },
+  {
+    "name": "ATMA Energy | Dave Searcy",
+    "description": "ATMA Energy | Dave Searcy, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2142669161-55bb69dca80d9962fb00e55fe1ec271090c341e36e04d3d3f9bb48e6d99ae244-d_1280?region=us",
+    "uploadDate": "2026-04-06T13:05:15-04:00",
+    "duration": "PT1M56S",
+    "embedUrl": "https://player.vimeo.com/video/1180537358"
+  },
+  {
+    "name": "Upper Deck Space Jam 30th",
+    "description": "Upper Deck Space Jam 30th, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/2143089232-5d280d518e80dc90213cc3715c53b999e20e48858901cba0dad7fcdbc5463784-d_1280?region=us",
+    "uploadDate": "2026-04-06T13:16:40-04:00",
+    "duration": "PT0M30S",
+    "embedUrl": "https://player.vimeo.com/video/1180540628"
+  },
+  {
+    "name": "Continental Tire",
+    "description": "Continental Tire, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/850811403-d24f7bc4680f75dcd9182b2e3766c0b5bd15eeb998a2e537431c35b8a6760c50-d_1280?region=us",
+    "uploadDate": "2020-01-28T11:24:11-05:00",
+    "duration": "PT2M19S",
+    "embedUrl": "https://player.vimeo.com/video/387733666"
+  },
+  {
+    "name": "YPO CIM Summit",
+    "description": "YPO CIM Summit, produced by Media Bar Productions in San Antonio.",
+    "thumbnailUrl": "https://i.vimeocdn.com/video/1852491800-dcf51c45cf56a9709cafe6cff4be9812074d60495ab59a6f308a11252f99f79c-d_1280?region=us",
+    "uploadDate": "2024-05-13T13:51:54-04:00",
+    "duration": "PT3M4S",
+    "embedUrl": "https://player.vimeo.com/video/945894891"
   }
 ]

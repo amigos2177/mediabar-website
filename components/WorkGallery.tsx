@@ -4,10 +4,12 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import type { PortfolioVideo } from './VideoObjectSchema'
 import VimeoPlayer from './VimeoPlayer'
+import WorkFilmCards from './WorkFilmCards'
 import { workProjects } from '../data/work-projects'
 import styles from '../app/work/work.module.css'
 
-const filters = ['All', ...Array.from(new Set(workProjects.map((project) => project.category)))]
+const listedProjects = workProjects.filter((project) => project.listOnWork !== false)
+const filters = ['All', ...Array.from(new Set(listedProjects.map((project) => project.category)))]
 
 export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
   const [activeFilter, setActiveFilter] = useState('All')
@@ -21,8 +23,8 @@ export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
     [videos],
   )
   const visibleProjects = activeFilter === 'All'
-    ? workProjects
-    : workProjects.filter((project) => project.category === activeFilter)
+    ? listedProjects
+    : listedProjects.filter((project) => project.category === activeFilter)
 
   return (
     <section className={styles.gallery} id="selected-work">
@@ -68,18 +70,20 @@ export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
               </div>
               <div className={styles.projectMeta}>
                 <div>
-                  <h3>{project.title}</h3>
-                  <p>{project.category} <span>/</span> {project.year}</p>
+                  <h3>{project.cardTitle || project.title}</h3>
+                  <p>{project.category} {project.year ? <><span>/</span> {project.year}</> : null}</p>
                 </div>
                 <div className={styles.projectLinks}>
                   <Link href={`/work/watch/${project.slug}`} aria-label={`Watch ${project.title}`}>
                     Watch film <span>↗</span>
                   </Link>
+                  {project.caseStudyHref ? <Link href={project.caseStudyHref}>Explore {project.caseStudyTitle} →</Link> : null}
                   <Link href={project.serviceHref} aria-label={`Explore ${project.category} video production`}>
                     Explore service
                   </Link>
                 </div>
               </div>
+              {project.selectedVideos?.length ? <WorkFilmCards films={project.selectedVideos} compact /> : null}
             </article>
           )
         })}

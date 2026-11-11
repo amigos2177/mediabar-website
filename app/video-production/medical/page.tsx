@@ -1,3 +1,4 @@
+import WorkLibraryLinks from '@/components/WorkLibraryLinks'
 import { ServiceEditorialPage } from '@/components/ServiceEditorialPage'
 import { MediaBarAnswersFeature } from '@/components/MediaBarAnswersFeature'
 import { medicalFaqs, medicalVideo } from './content'
@@ -86,6 +87,7 @@ export default function MedicalVideoPage() {
         linkLabel: 'Watch the Full Patient Story',
         linkHref: '/work/watch/wound-local-patient-story',
       }}
+      additionalExamples={<WorkLibraryLinks serviceHref="/video-production/medical" />}
       deliverables={{
         eyebrow: 'Communication System',
         title: 'One Production.',

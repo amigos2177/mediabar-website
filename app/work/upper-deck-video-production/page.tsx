@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
 import { BreadcrumbJsonLd } from '../../../components/JsonLd'
-import VimeoPlayer from '../../../components/VimeoPlayer'
+import WorkFilmCards from '../../../components/WorkFilmCards'
 import { workProjects } from '../../../data/work-projects'
 import styles from './page.module.css'
 
@@ -57,15 +57,7 @@ export default function UpperDeckCaseStudy() {
             <p className={styles.eyebrow}>Selected motion graphics</p>
             <h2 id="films-title">See the work for Upper Deck.</h2>
             <p className={styles.sectionIntro}>A selection from our work across sports and entertainment properties.</p>
-            <div className={styles.films}>
-              {films.map((film) => (
-                <article key={film.id}>
-                  <div className={styles.player}><VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.thumbnail} /></div>
-                  <div className={styles.filmMeta}><h3>{film.title}</h3><span>{film.runtime}</span></div>
-                  <a className={styles.textLink} href={`https://vimeo.com/${film.id}`} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${film.title} on Vimeo (opens in a new tab)`}>Watch on Vimeo ↗</a>
-                </article>
-              ))}
-            </div>
+            <WorkFilmCards films={films} />
             <Link className={styles.textLink} href="/work/watch/fleer-brilliants-superman">Also watch: Fleer Brilliants Superman →</Link>
           </section>
 

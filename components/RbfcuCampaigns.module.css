@@ -1,0 +1,9 @@
+.section { background: #090909; color: #f7f7f5; padding: 64px 28px; }
+.wrap { max-width: 1200px; margin: 0 auto; }
+.eyebrow { color: #d8b65e; font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 24px; }
+.campaign + .campaign { margin-top: 64px; padding-top: 56px; border-top: 1px solid #333; }
+.campaign h2 { font-family: var(--font-bebas-neue), Impact, sans-serif; font-size: clamp(38px, 5vw, 66px); line-height: 1.05; font-weight: 400; margin-bottom: 20px; }
+.deck { max-width: 760px; color: #bdbdbd; font-size: 17px; line-height: 1.7; }
+.link { display: inline-flex; align-items: center; min-height: 44px; color: #fff; font-size: 14px; text-underline-offset: 5px; }
+.link:focus-visible { outline: 3px solid #d8b65e; outline-offset: 4px; }
+@media (max-width: 700px) { .section { padding: 44px 20px; } }

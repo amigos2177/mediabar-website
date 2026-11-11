@@ -53,9 +53,11 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/about`, SITE_UPDATED),
     withLastmod(`${BASE}/about/awards`, SITE_UPDATED),
     withLastmod(`${BASE}/about/editorial-policy`, SITE_UPDATED),
-    withLastmod(`${BASE}/work`, '2026-09-26'),
-    withLastmod(`${BASE}/work/upper-deck-video-production`, '2026-09-26'),
+    withLastmod(`${BASE}/work`, '2026-11-11'),
+    withLastmod(`${BASE}/work/upper-deck-video-production`, '2026-11-11'),
     withLastmod(`${BASE}/work/rbfcu-go-beyond-banking`, SITE_UPDATED),
+    withLastmod(`${BASE}/work/rbfcu-keldon-johnson`, '2026-11-11'),
+    withLastmod(`${BASE}/work/rbfcu-resting-bank-face`, '2026-11-11'),
     withLastmod(`${BASE}/photography`, SITE_UPDATED),
     withLastmod(`${BASE}/studio`, SITE_UPDATED),
     withLastmod(`${BASE}/contact`, SITE_UPDATED),
@@ -71,15 +73,15 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/how-we-work`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production`, '2026-08-10'),
 
-    withLastmod(`${BASE}/video-production/corporate`, '2026-09-23'),
-    withLastmod(`${BASE}/video-production/commercials`, '2026-08-10'),
-    withLastmod(`${BASE}/video-production/events`, '2026-09-23'),
+    withLastmod(`${BASE}/video-production/corporate`, '2026-11-11'),
+    withLastmod(`${BASE}/video-production/commercials`, '2026-11-11'),
+    withLastmod(`${BASE}/video-production/events`, '2026-11-11'),
     withLastmod(`${BASE}/video-production/interview`, '2026-09-04'),
-    withLastmod(`${BASE}/video-production/medical`, MEDIA_BAR_ANSWERS_UPDATED),
+    withLastmod(`${BASE}/video-production/medical`, '2026-11-11'),
     withLastmod(`${BASE}/video-production/animated-patient-education`, '2026-09-21'),
-    withLastmod(`${BASE}/video-production/financial-services`, '2026-09-04'),
+    withLastmod(`${BASE}/video-production/financial-services`, '2026-11-11'),
     withLastmod(`${BASE}/video-production/aerial`, SITE_UPDATED),
-    withLastmod(`${BASE}/video-production/motion-graphics`, '2026-09-26'),
+    withLastmod(`${BASE}/video-production/motion-graphics`, '2026-11-11'),
     withLastmod(`${BASE}/video-production/live-streaming`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production/post-production`, '2026-09-04'),
     withLastmod(`${BASE}/video-production/food`, SITE_UPDATED),
@@ -132,7 +134,7 @@ function watchEntries(): MetadataRoute.Sitemap {
 
     return [withLastmod(
       watchUrl,
-      '2026-09-23', // Watch-page names and project context reviewed; video publication dates stay unchanged.
+      project.updated || '2026-09-23', // Page review date is separate from Vimeo publication_date.
       canAttachVideo
         ? {
             videos: [{

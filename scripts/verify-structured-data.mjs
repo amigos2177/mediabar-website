@@ -250,6 +250,9 @@ for (const entry of answerPages) {
 
 expectNoVideoObject('work.html')
 expectNoVideoObject('work/rbfcu-go-beyond-banking.html')
+expectNoVideoObject('work/rbfcu-keldon-johnson.html')
+expectNoVideoObject('work/rbfcu-resting-bank-face.html')
+expectNoVideoObject('work/upper-deck-video-production.html')
 expectNoVideoObject('resources/video-production-faq.html')
 expectNoVideoObject('resources/media-bar-answers.html')
 

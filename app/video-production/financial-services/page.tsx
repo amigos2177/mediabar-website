@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RbfcuCampaigns from '@/components/RbfcuCampaigns'
 import { ServiceEditorialPage } from '@/components/ServiceEditorialPage'
 import { financialServicesFaqs } from './content'
 
@@ -77,6 +78,7 @@ export default function FinancialServicesVideoPage() {
         linkLabel: 'Read the RBFCU Case Study',
         linkHref: '/work/rbfcu-go-beyond-banking',
       }}
+      additionalExamples={<RbfcuCampaigns heroOnly />}
       deliverables={{
         eyebrow: 'One Production, More Value',
         title: 'Build the Master Story.',
@@ -122,6 +124,8 @@ export default function FinancialServicesVideoPage() {
         copy:
           'Financial-services work can take several forms. Use the format-specific pages below when the project needs a deeper production plan, or start here when the institution and review environment are the defining part of the job.',
         links: [
+          { label: 'RBFCU Keldon Johnson', href: '/work/rbfcu-keldon-johnson', description: 'Three :30 RBFCU broadcast commercials produced by Media Bar Productions.' },
+          { label: 'RBFCU Resting Bank Face', href: '/work/rbfcu-resting-bank-face', description: 'Four :30 RBFCU broadcast commercials produced by Media Bar Productions.' },
           {
             label: 'Corporate Video Production',
             href: '/video-production/corporate',

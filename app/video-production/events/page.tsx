@@ -1,3 +1,4 @@
+import WorkLibraryLinks from '@/components/WorkLibraryLinks'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
@@ -713,6 +714,7 @@ export default function EventsPage() {
             </div>
           </div>
         </section>
+        <WorkLibraryLinks serviceHref="/video-production/events" />
       </main>
     </Layout>
   )

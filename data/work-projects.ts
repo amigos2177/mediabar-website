@@ -436,6 +436,10 @@ export const workProjects: WorkProject[] = [
   {
     id: '1138375371',
     slug: 'rbfcu-coyote-commercial',
+    projectNotes: {
+      heading: 'About This Film',
+      paragraphs: ["Media Bar Productions handled this RBFCU campaign from pre-production through post-production, creating commercials featuring the Coyote to promote RBFCU’s partnership with the San Antonio Spurs. The campaign included 7-, 10-, 15-, and 30-second versions for television, digital, and social media."],
+    },
     title: 'RBFCU Coyote',
     category: 'Commercials',
     year: '2025',
@@ -475,6 +479,10 @@ export const workProjects: WorkProject[] = [
   {
     id: '1180540292',
     slug: 'boot-ranch-golf-commercial',
+    projectNotes: {
+      heading: 'About This Film',
+      paragraphs: ["Media Bar Productions handled the full production of this 30-second advertisement for Boot Ranch. Combining real estate marketing with commercial storytelling, the film showcases the golf community and its lifestyle, inviting potential buyers to learn more."],
+    },
     title: 'Boot Ranch Golf Commercial',
     category: 'Commercials',
     year: '2026',
@@ -567,6 +575,10 @@ export const workProjects: WorkProject[] = [
     }
 ],
     slug: 'texas-recycles-day',
+    projectNotes: {
+      heading: 'About This Film',
+      paragraphs: ["Produced for Unilever, this Texas Recycles Day film showcases the company’s involvement in the event and highlights the community’s recycling efforts. Media Bar Productions handled the project from pre-production through filming and post-production, combining event coverage with interviews to tell the story."],
+    },
     title: 'Texas Recycles Day',
     category: 'Events',
     year: '2024',
@@ -575,6 +587,10 @@ export const workProjects: WorkProject[] = [
   {
     id: '697231773',
     slug: 'tostadas-de-chicharron',
+    projectNotes: {
+      heading: 'About This Film',
+      paragraphs: ["Produced for La Costeña, this Tostadas de Chicharron recipe film shows how the brand’s ingredients can come together to create a complete meal. Media Bar Productions handled the project from pre-production through filming and post-production."],
+    },
     title: 'Tostadas de Chicharron',
     category: 'Food',
     year: '2021',

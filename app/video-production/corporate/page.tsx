@@ -365,7 +365,7 @@ export default function CorporatePage() {
             <div className="corp-pathway-grid">
               <Link className="corp-pathway" href="/work/watch/st-engineering-brand-film">
                 <h3>ST Engineering Brand Film</h3>
-                <p>A corporate film highlighting the company’s capabilities and operations. Watch the 4-minute, 55-second production.</p>
+                <p>Media Bar Productions handled the ST Engineering film from pre-production through filming and post-production. Created for employees and prospective hires, the film introduces the company’s work through a mix of people, facilities, and operations.</p>
                 <span>Watch the brand film →</span>
               </Link>
               <Link className="corp-pathway" href="/work/watch/sanctuary-wealth-interview">

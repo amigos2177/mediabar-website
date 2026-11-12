@@ -370,7 +370,7 @@ export default function CorporatePage() {
               </Link>
               <Link className="corp-pathway" href="/work/watch/sanctuary-wealth-interview">
                 <h3>Sanctuary Wealth Interview</h3>
-                <p>A long-form executive conversation with a controlled setup, clean sound, polished lighting, and editorial support.</p>
+                <p>Media Bar Productions handled the Sanctuary Wealth interview from pre-production through filming and post-production. The video helped teams across the company understand the work of other departments.</p>
                 <span>Watch the executive interview →</span>
               </Link>
               <Link className="corp-pathway" href="/work/rbfcu-go-beyond-banking">

@@ -21,6 +21,7 @@ export function GoogleAnalytics() {
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', '${validMeasurementId}');
+          window.dispatchEvent(new Event('mbp:ga4-ready'));
         `}
       </Script>
     </>

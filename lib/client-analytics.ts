@@ -1,6 +1,7 @@
 'use client'
 
 import { track } from '@vercel/analytics'
+import { createGa4Dispatcher } from './ga4-events'
 
 type AnalyticsValue = string | number | boolean
 type AnalyticsProperties = Record<string, AnalyticsValue>
@@ -15,6 +16,12 @@ declare global {
     ) => void
   }
 }
+
+const sendGa4Event = createGa4Dispatcher({
+  ready: () => typeof window.gtag === 'function',
+  send: (name, properties) => window.gtag?.('event', name, properties),
+  onReady: (flush) => window.addEventListener('mbp:ga4-ready', flush),
+})
 
 function toGa4EventName(eventName: string) {
   return eventName
@@ -31,7 +38,7 @@ export function trackAnalyticsEvent(
   ga4EventName = toGa4EventName(eventName),
 ) {
   track(eventName, properties)
-  window.gtag?.('event', ga4EventName, properties)
+  sendGa4Event(ga4EventName, properties)
   // Only the already-qualified, successful form event is reported to OpenAI.
   // No budget is represented as revenue; no form values are sent here.
   if (eventName === 'qualified_project_inquiry') {

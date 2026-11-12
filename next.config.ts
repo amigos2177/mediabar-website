@@ -61,6 +61,10 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...gscLegacy301(
+        ['/work/world-car-repeatable-content-system', '/work/world-car-repeatable-content-system/'],
+        '/work/watch/world-car-hyundai-san-antonio',
+      ),
       // ── SERVICE PAGES ──
       { source: '/business', destination: '/video-production/corporate', permanent: true },
       // Legacy/typo URLs still earning GSC impressions. Use 301 (not 308) and

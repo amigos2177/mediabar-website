@@ -500,6 +500,7 @@ export const workProjects: WorkProject[] = [
       heading: 'An Ongoing Production Partnership With Upper Deck',
       paragraphs: [
         'Media Bar Productions has created more than 50 videos for Upper Deck. This selection brings together motion graphics work featuring sports, comics, and entertainment properties.',
+        "Media Bar Productions has worked with Upper Deck for more than 10 years. For the Fleer Brilliants Superman product video, Upper Deck supplied the concept and script, and Media Bar brought it to life through animation, editing, sound, and voiceover.",
         'Watch the Superman film above, then explore more selected examples below.',
       ],
     },

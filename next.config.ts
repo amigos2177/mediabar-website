@@ -37,6 +37,10 @@ const securityHeaders = [
 ]
 
 const nextConfig: NextConfig = {
+  // Avoid shipping unrelated route styles in the shared CSS bundle.
+  experimental: {
+    cssChunking: { type: 'graph', requestCost: 20000 },
+  },
   // Pin the workspace root so Next/Turbopack stops inferring ~/ as the root.
   turbopack: { root: import.meta.dirname },
   images: {

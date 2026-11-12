@@ -16,7 +16,7 @@ export function campaignMetadata(campaign: Campaign): Metadata {
   }
 }
 
-export default function RbfcuCampaignPage({ campaign }: { campaign: Campaign }) {
+export default function RbfcuCampaignPage({ campaign, description }: { campaign: Campaign; description?: string }) {
   return (
     <Layout>
       <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Our Work', url: '/work' }, { name: campaign.title, url: campaign.href }]} />
@@ -27,6 +27,7 @@ export default function RbfcuCampaignPage({ campaign }: { campaign: Campaign }) 
             <p className={styles.eyebrow}>RBFCU / Commercials / 2026</p>
             <h1>{campaign.title}</h1>
             <p className={styles.intro}>{campaign.deck}</p>
+            {description ? <p className={styles.sectionIntro}>{description}</p> : null}
             <div className={styles.actions}><a className={styles.primary} href="#selected-work">Watch the commercials</a><Link className={styles.textLink} href="/project-planner">Start a project →</Link></div>
           </header>
           <section id="selected-work" className={styles.section} aria-labelledby="films-title">

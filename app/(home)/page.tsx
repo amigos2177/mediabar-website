@@ -153,9 +153,9 @@ export default function HomePage() {
             <span className="hero-headline-geo">A clear plan from the start.</span>
           </h1>
           <p className="hero-sub">
-            Media Bar Productions creates cinematic stories that move people and business,
-            with commercials, branded films, and event content planned, produced, and finished
-            by one experienced Texas team.
+            Media Bar Productions is a full-service video production company based in San Antonio.
+            We plan, film, and finish commercials, corporate films, interviews, and event content,
+            with one team handling pre-production through post-production.
           </p>
           <div className="hero-ctas">
             <Link href="/project-planner" className="btn-red" data-conversion-placement="home-hero">Start a Project</Link>
@@ -315,9 +315,17 @@ export default function HomePage() {
               San Antonio, Texas. Since 2010, our team has helped organizations plan, film,
               edit, and deliver video for audiences across Texas and beyond.
             </p>
-            <Link href="/locations/san-antonio" className="text-link">
-              Meet our San Antonio production team <span aria-hidden="true">→</span>
-            </Link>
+            <p>
+              For RBFCU&apos;s Keldon Johnson campaign, we handled pre-production through
+              post-production, filming three commercials and a photo shoot within a four-hour
+              schedule. For ST Engineering, we produced a company film for employees and
+              prospective hires, filming people, facilities, and operations.
+            </p>
+            <ul className="home-project-links" aria-label="Production examples and local planning">
+              <li><Link href="/work/rbfcu-keldon-johnson">Explore the RBFCU Keldon Johnson campaign <span aria-hidden="true">→</span></Link></li>
+              <li><Link href="/work/watch/st-engineering-brand-film">Watch the ST Engineering company film <span aria-hidden="true">→</span></Link></li>
+              <li><Link href="/locations/san-antonio">Plan filming at your San Antonio location <span aria-hidden="true">→</span></Link></li>
+            </ul>
           </div>
           <div className="answer-grid">
             {homepageFaqs.map((faq) => (

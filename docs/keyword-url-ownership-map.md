@@ -1,6 +1,6 @@
 # Media Bar Keyword-to-URL Ownership Map
 
-Last reviewed: 2026-09-21
+Last reviewed: 2026-11-13 (homepage/local planning draft; not published)
 
 This document assigns one primary Media Bar URL to each important organic-search intent. It is the guardrail for page creation, metadata, internal linking, blog topics, Media Bar Answers, and future SEO work.
 
@@ -11,7 +11,7 @@ The goal is not to force one page to be the only page that mentions a term. The 
 1. **One primary owner per search intent.** Supporting pages may mention the topic, but should link to the primary owner when useful.
 2. **Money pages own hire/quote/service queries.** Blog posts and answer pages own how/why/planning questions.
 3. **Do not create a new landing page for a synonym.** A new page needs a genuinely different buyer problem, audience, geography, or service.
-4. **Homepage and location pages have different jobs.** The homepage owns broad San Antonio video-production demand; the San Antonio location page owns production-company/local-partner demand.
+4. **Homepage and location pages have different jobs.** The homepage owns broad San Antonio video-production and production-company demand; the San Antonio location page supports practical local shoot planning. This November 13 draft tests clearer intent separation; it does not prove cannibalization or guarantee ranking recovery.
 5. **Service pages own service-specific transactional queries.** Supporting guides should not use metadata that duplicates the service page's core commercial term.
 6. **Pricing owns general cost/estimate intent.** Narrow answer pages may own a specific cost question such as corporate-video cost or TV-commercial cost.
 7. **Careers is for collaborators.** It should not target clients looking to hire a crew.
@@ -26,7 +26,8 @@ The goal is not to force one page to be the only page that mentions a term. The 
 | Search intent / keyword family | Primary owner | Supporting pages | Ownership note |
 | --- | --- | --- | --- |
 | video production San Antonio; San Antonio video production | `/` | `/locations/san-antonio`, `/video-production`, `/work` | Homepage is the broad local front door. |
-| San Antonio video production company; production company San Antonio; full-service production company San Antonio | `/locations/san-antonio` | `/`, `/about`, local buyer guides | Location page owns company-selection/local-partner intent. |
+| San Antonio video production company; production company San Antonio; full-service production company San Antonio | `/` | `/locations/san-antonio`, `/about`, local buyer guides | Homepage owns broad company selection; local page supports location, access, scheduling and shoot-planning questions. |
+| planning a video shoot in San Antonio; filming at a San Antonio office or facility | `/locations/san-antonio` | `/`, `/how-we-work`, service pages | Local shoot planning; existing URL retained. |
 | video production services Texas; full-service video production Texas; Texas video production services | `/video-production` | service pages, location pages | Service hub owns broad statewide capability discovery. |
 | corporate video production San Antonio; corporate video company; brand film; company video | `/video-production/corporate` | recruiting guide, corporate multi-format guide, interview page | Corporate page owns business-film purchase intent. |
 | commercial video production San Antonio; TV commercial production; CTV commercial; ad production | `/video-production/commercials` | RBFCU case study, TV-commercial cost answer | Commercials page owns paid/broadcast campaign production. |

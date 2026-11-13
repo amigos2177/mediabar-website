@@ -977,3 +977,9 @@
           .mbp-home .reel-card { padding: 8px; }
           .mbp-home .reel-meta { padding: 17px 6px 8px; }
         }
+
+/* Contextual project proof and local planning links. */
+.mbp-home .home-project-links{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.mbp-home .home-project-links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:#fff;font-size:14px;line-height:1.5;text-decoration:underline;text-underline-offset:4px}
+.mbp-home .home-project-links a:focus-visible{outline:3px solid #C9A84C;outline-offset:5px}
+.mbp-home .home-project-links span{color:#ff6868;flex-shrink:0}

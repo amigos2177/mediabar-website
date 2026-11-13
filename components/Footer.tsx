@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Footer navigation intentionally loads the destination document so shared layouts cannot retain the old scroll position. */
 import Image from 'next/image'
-import Link from 'next/link'
 import TrustBadge from './TrustBadge'
 
 const colHeading: React.CSSProperties = {
@@ -13,6 +13,8 @@ const colHeading: React.CSSProperties = {
 
 const footerLink: React.CSSProperties = {
   display: 'block',
+  width: 'fit-content',
+  maxWidth: '100%',
   color: '#B0B0B0',
   textDecoration: 'none',
   fontSize: '14px',
@@ -24,7 +26,8 @@ export default function Footer() {
   return (
     <>
       <style>{`
-        .mbp-footer-link:hover { color: #fff !important; }
+        .mbp-footer-link:hover, .mbp-footer-link:focus-visible { color: #fff !important; }
+        .mbp-footer-link:focus-visible { outline: 2px solid #C9A84C; outline-offset: 3px; }
         .mbp-social-link { color: rgba(255,255,255,0.4); border-color: rgba(255,255,255,0.1) !important; }
         .mbp-social-link:hover { color: #fff !important; border-color: rgba(255,255,255,0.4) !important; }
         .mbp-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
@@ -42,7 +45,7 @@ export default function Footer() {
 
           {/* Brand column */}
           <div>
-            <Link href="/" style={{ display: 'inline-block', marginBottom: '16px' }}>
+            <a href="/" style={{ display: 'inline-block', marginBottom: '16px' }}>
               <Image
                 src="/images/mediabar-logo.png"
                 alt="Media Bar Productions"
@@ -51,7 +54,7 @@ export default function Footer() {
                 sizes="124px"
                 style={{ width: 'auto', height: '36px', maxWidth: '100%', display: 'block' }}
               />
-            </Link>
+            </a>
             <p style={{ fontSize: '14px', color: '#AAAAAA', marginBottom: '24px', fontStyle: 'italic' }}>
               Your Vision Served Daily
             </p>
@@ -71,36 +74,36 @@ export default function Footer() {
           {/* Services column */}
           <div>
             <p style={colHeading}>Services</p>
-            <Link href="/video-production/corporate" className="mbp-footer-link" style={footerLink}>Corporate Video Production</Link>
-            <Link href="/video-production/commercials" className="mbp-footer-link" style={footerLink}>Commercials</Link>
-            <Link href="/video-production/events" className="mbp-footer-link" style={footerLink}>Events</Link>
-            <Link href="/video-production/interview" className="mbp-footer-link" style={footerLink}>Interview</Link>
-            <Link href="/video-production/medical" className="mbp-footer-link" style={footerLink}>Medical</Link>
-            <Link href="/video-production/animated-patient-education" className="mbp-footer-link" style={footerLink}>Animated Patient Education</Link>
-            <Link href="/video-production/aerial" className="mbp-footer-link" style={footerLink}>Aerial</Link>
-            <Link href="/video-production/motion-graphics" className="mbp-footer-link" style={footerLink}>Motion Graphics</Link>
-            <Link href="/video-production/live-streaming" className="mbp-footer-link" style={footerLink}>Live Streaming</Link>
-            <Link href="/video-production/post-production" className="mbp-footer-link" style={footerLink}>Post Production</Link>
-            <Link href="/video-production/food" className="mbp-footer-link" style={footerLink}>Food Video</Link>
-            <Link href="/video-production/real-estate" className="mbp-footer-link" style={footerLink}>Real Estate Video</Link>
+            <a href="/video-production/corporate" className="mbp-footer-link" style={footerLink}>Corporate Video Production</a>
+            <a href="/video-production/commercials" className="mbp-footer-link" style={footerLink}>Commercials</a>
+            <a href="/video-production/events" className="mbp-footer-link" style={footerLink}>Events</a>
+            <a href="/video-production/interview" className="mbp-footer-link" style={footerLink}>Interview</a>
+            <a href="/video-production/medical" className="mbp-footer-link" style={footerLink}>Medical</a>
+            <a href="/video-production/animated-patient-education" className="mbp-footer-link" style={footerLink}>Animated Patient Education</a>
+            <a href="/video-production/aerial" className="mbp-footer-link" style={footerLink}>Aerial</a>
+            <a href="/video-production/motion-graphics" className="mbp-footer-link" style={footerLink}>Motion Graphics</a>
+            <a href="/video-production/live-streaming" className="mbp-footer-link" style={footerLink}>Live Streaming</a>
+            <a href="/video-production/post-production" className="mbp-footer-link" style={footerLink}>Post Production</a>
+            <a href="/video-production/food" className="mbp-footer-link" style={footerLink}>Food Video</a>
+            <a href="/video-production/real-estate" className="mbp-footer-link" style={footerLink}>Real Estate Video</a>
           </div>
 
           {/* Company column */}
           <div>
             <p style={colHeading}>Company</p>
-            <Link href="/about" className="mbp-footer-link" style={footerLink}>About</Link>
-            <Link href="/about/awards" className="mbp-footer-link" style={footerLink}>Awards</Link>
-            <Link href="/careers" className="mbp-footer-link" style={footerLink}>Crew & Careers</Link>
-            <Link href="/business-spotlight" className="mbp-footer-link" style={footerLink}>Texas Business Spotlight</Link>
-            <Link href="/clients" className="mbp-footer-link" style={footerLink}>Clients</Link>
-            <Link href="/studio" className="mbp-footer-link" style={footerLink}>Studio</Link>
-            <Link href="/photography" className="mbp-footer-link" style={footerLink}>Photography</Link>
-            <Link href="/work" className="mbp-footer-link" style={footerLink}>Work</Link>
-            <Link href="/project-planner" className="mbp-footer-link" style={footerLink}>Project Planner</Link>
-            <Link href="/work/rbfcu-go-beyond-banking" className="mbp-footer-link" style={footerLink}>RBFCU Case Study</Link>
-            <Link href="/faq" className="mbp-footer-link" style={footerLink}>FAQ</Link>
-            <Link href="/resources/video-production-faq" className="mbp-footer-link" style={footerLink}>Video Production Guide</Link>
-            <Link href="/resources/media-bar-answers" className="mbp-footer-link" style={footerLink}>Media Bar Answers</Link>
+            <a href="/about" className="mbp-footer-link" style={footerLink}>About</a>
+            <a href="/about/awards" className="mbp-footer-link" style={footerLink}>Awards</a>
+            <a href="/careers" className="mbp-footer-link" style={footerLink}>Crew & Careers</a>
+            <a href="/business-spotlight" className="mbp-footer-link" style={footerLink}>Texas Business Spotlight</a>
+            <a href="/clients" className="mbp-footer-link" style={footerLink}>Clients</a>
+            <a href="/studio" className="mbp-footer-link" style={footerLink}>Studio</a>
+            <a href="/photography" className="mbp-footer-link" style={footerLink}>Photography</a>
+            <a href="/work" className="mbp-footer-link" style={footerLink}>Work</a>
+            <a href="/project-planner" className="mbp-footer-link" style={footerLink}>Project Planner</a>
+            <a href="/work/rbfcu-go-beyond-banking" className="mbp-footer-link" style={footerLink}>RBFCU Case Study</a>
+            <a href="/faq" className="mbp-footer-link" style={footerLink}>FAQ</a>
+            <a href="/resources/video-production-faq" className="mbp-footer-link" style={footerLink}>Video Production Guide</a>
+            <a href="/resources/media-bar-answers" className="mbp-footer-link" style={footerLink}>Media Bar Answers</a>
             <a
               href="https://chatgpt.com/g/g-6a5eca9bc22081919d134d3a2d686ba3-texas-video-production-advisor"
               className="mbp-footer-link"
@@ -110,17 +113,17 @@ export default function Footer() {
             >
               Texas Video Advisor ↗
             </a>
-            <Link href="/blog" className="mbp-footer-link" style={footerLink}>Blog</Link>
-            <Link href="/about/editorial-policy" className="mbp-footer-link" style={footerLink}>Editorial Standards</Link>
+            <a href="/blog" className="mbp-footer-link" style={footerLink}>Blog</a>
+            <a href="/about/editorial-policy" className="mbp-footer-link" style={footerLink}>Editorial Standards</a>
           </div>
 
           {/* We Serve column */}
           <div>
             <p style={colHeading}>We Serve</p>
-            <Link href="/locations/san-antonio" className="mbp-footer-link" style={footerLink}>San Antonio</Link>
-            <Link href="/locations/austin" className="mbp-footer-link" style={footerLink}>Austin</Link>
-            <Link href="/locations/dallas" className="mbp-footer-link" style={footerLink}>Dallas-Fort Worth</Link>
-            <Link href="/locations/houston" className="mbp-footer-link" style={footerLink}>Houston</Link>
+            <a href="/locations/san-antonio" className="mbp-footer-link" style={footerLink}>San Antonio</a>
+            <a href="/locations/austin" className="mbp-footer-link" style={footerLink}>Austin</a>
+            <a href="/locations/dallas" className="mbp-footer-link" style={footerLink}>Dallas-Fort Worth</a>
+            <a href="/locations/houston" className="mbp-footer-link" style={footerLink}>Houston</a>
           </div>
 
         </div>

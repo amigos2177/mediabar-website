@@ -1,5 +1,10 @@
 export const eventVideoFaqs = [
   {
+    question: 'What is the difference between an event recap and full session recordings?',
+    answer:
+      'A recap selects moments from the event to tell a shorter story. Full session recordings preserve the agreed presentations or panels as longer edits. They need different coverage, audio, presentation material, editing, and review plans. Confirm the sessions and finished versions you need before filming; a recap does not automatically include full session edits.',
+  },
+  {
     question: 'What is event video production?',
     answer:
       'Event video production is the planning, filming, and editing of a live program so the day can be used again as recaps, session recordings, speaker clips, sponsor content, and social edits. Media Bar builds the camera, audio, and coverage plan around the venue, run of show, and the assets your team needs after the event.',

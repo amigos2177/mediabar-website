@@ -3,7 +3,7 @@ title: "Recruiting Video Production: A Practical Planning Guide"
 seoTitle: "Recruiting Video Production Guide | Media Bar Productions"
 slug: "recruiting-video-production"
 date: "2026-06-08"
-updated: "2026-11-12"
+updated: "2026-11-13"
 excerpt: "Plan a recruiting video around your people, workplace, and hiring needs. See Media Bar’s ST Engineering example and how to scope filming and deliverables."
 featuredImage: /images/blog/recruiting-video-production.png
 faqs:
@@ -88,6 +88,16 @@ A company introduction and a film for a specific open role may need different in
 
 If the film will also be used with current employees, define that purpose during planning. ST Engineering’s film provides one example of a company introduction intended for both employees and prospective hires. It does not mean every recruiting project needs the same format.
 
+## Match the Format to the Candidate’s Question
+
+Choose a starting format before building the interview list:
+
+- **Company introduction:** What does the organization do, and who works there? Use people, facilities, and operations to give candidates context. The ST Engineering film above is an example of this approach, made for both employees and prospective hires.
+- **Role or department profile:** What would someone on this team actually do? Focus on responsibilities, collaboration, tools, and the work environment that can be shown accurately.
+- **Employee experience or day-in-the-life story:** What is a working day like? Follow relevant activities and use the employee’s own account, with access and filming windows agreed beforehand.
+
+These are possible approaches for a new project, not a list of formats delivered for ST Engineering. A company-wide introduction does not automatically answer the questions a candidate has about a particular role.
+
 ## Choose the Right Interviews and Workplace Footage
 
 Employee interviews can explain responsibilities and experience in the team’s own words. Footage of facilities and operations can give those accounts context. Plan both around work that can be filmed safely and shared publicly, with the client confirming access and participation permissions.
@@ -95,6 +105,18 @@ Employee interviews can explain responsibilities and experience in the team’s 
 Useful interview topics include what a team does, how people work together, and what a candidate should understand about the role. Give participants room to describe their actual experience rather than asking them to repeat broad claims about company culture.
 
 Our [interview video production service](/video-production/interview) is relevant when employee or leadership conversations are central to the film. The mix of interviews and supporting footage should follow the story and available access.
+
+## Interview Questions That Explain the Work
+
+Use open questions that invite specific examples rather than rehearsed praise:
+
+- What does your team do, and where does your role fit?
+- Can you describe a recent task or project that represents the work?
+- Who do you collaborate with, and how does that collaboration happen?
+- What should a new colleague understand about the working environment?
+- What did you need to learn when you joined the team?
+
+Ask follow-up questions about what the viewer can see on screen. Confirm with the workplace team which processes, tools, locations, or interactions can be filmed without exposing confidential information. Participants should describe their own experience; HR or the relevant client reviewer should confirm job, training, benefits, and policy statements before release.
 
 ## Plan the Main Film and Additional Versions Before Filming
 
@@ -119,7 +141,7 @@ Media Bar’s work on ST Engineering covered pre-production, filming, and post-p
 
 ## Cost, Timing, and Review
 
-Recruiting video pricing is quoted by project scope. Preparation, filming days, locations, interviews, editing, and the number of finished versions all affect the quote. Delivery timing is also quoted by scope, including the client’s review and approval needs.
+Recruiting video pricing is quoted by project scope; our [video production pricing guide](/pricing) explains the variables used to build a proposal. Preparation, filming days, locations, interviews, editing, and the number of finished versions all affect the quote. Delivery timing is also quoted by scope, including the client’s review and approval needs.
 
 Define who will review the film and confirm factual statements before editing begins. Once the video is in use, review views alongside recruiting measures such as applications and candidate feedback to understand how it supports your hiring process.
 

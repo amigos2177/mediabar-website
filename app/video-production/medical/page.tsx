@@ -75,8 +75,8 @@ export default function MedicalVideoPage() {
       }}
       feature={{
         eyebrow: medicalVideo.eyebrow,
-        title: 'Care Is Personal.',
-        emphasis: 'The Story Should Be Too.',
+        title: 'Wound Local.',
+        emphasis: 'Patient Story.',
         copy: medicalVideo.copy,
         media: {
           kind: 'video',
@@ -84,7 +84,7 @@ export default function MedicalVideoPage() {
           title: medicalVideo.title,
           thumbnailUrl: medicalVideo.thumbnail,
         },
-        linkLabel: 'Watch the Full Patient Story',
+        linkLabel: 'Explore the Wound Local Patient Story',
         linkHref: '/work/watch/wound-local-patient-story',
       }}
       additionalExamples={<WorkLibraryLinks serviceHref="/video-production/medical" slugs={['caroline-flowers-specialty-care', 'eli-ortiz-specialty-care']} />}

@@ -1,5 +1,9 @@
 export const sanAntonioFaqs = [
   {
+    question: 'What should we confirm before filming at a San Antonio location?',
+    answer: 'Confirm the audience, final use, approved filming areas, participant permissions, location access, operating schedule, site rules, and client reviewers. Identify one location contact and share delivery requirements so the crew and filming schedule can be scoped around the actual setting.',
+  },
+  {
     question: 'How much does video production cost in San Antonio?',
     answer: 'Cost depends on the number of shoot days, crew size, locations, talent, and post-production requirements. Media Bar scopes every project individually and provides an itemized proposal before production begins.',
   },
@@ -17,7 +21,7 @@ export const sanAntonioFaqs = [
   },
   {
     question: 'How long does a typical video project take?',
-    answer: 'Most projects take two to six weeks from kickoff through final delivery. The schedule depends on creative development, location and talent logistics, shoot days, editing complexity, and approval timing. Rush schedules are available when the scope allows.',
+    answer: 'Timing is quoted for each project based on creative development, location and participant availability, shoot days, editing requirements, final versions, and client reviews. Share your target deadline during planning so we can confirm a workable schedule before production begins.',
   },
   {
     question: 'Do we own the footage after the project is finished?',

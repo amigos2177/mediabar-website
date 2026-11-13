@@ -207,18 +207,19 @@ export default function SanAntonioPage() {
           <div className="sa-hero-scrim" />
           <div className="sa-container sa-hero-inner">
             <div className="sa-hero-copy">
-              <p className="sa-eyebrow">San Antonio video production company since 2010</p>
+              <p className="sa-eyebrow">Local shoot planning · San Antonio team since 2010</p>
               <h1 className="sa-display">
-                Video Production Company{' '}
-                <em>Built for San Antonio.</em>
+                Plan Your San Antonio Shoot.{' '}
+                <em>People. Locations. Delivery.</em>
               </h1>
               <p className="sa-hero-deck">
-                Media Bar is a full-service San Antonio video production company for corporate films,
-                commercials, interviews, events, studio shoots, location production, and post-production.
+                Plan video production at your San Antonio office, facility, event venue, or an agreed
+                studio location. Media Bar coordinates the brief, filming schedule, crew,
+                interviews, location needs, and post-production around your project scope.
               </p>
               <div className="sa-actions">
                 <Link className="sa-button sa-button-primary" href="/project-planner">Plan Your Project</Link>
-                <Link className="sa-button sa-button-secondary" href="/work">See San Antonio Work</Link>
+                <Link className="sa-button sa-button-secondary" href="/">Explore Our Video Production Company</Link>
               </div>
             </div>
             <div className="sa-proof" aria-label="Media Bar Productions credentials">
@@ -299,8 +300,9 @@ export default function SanAntonioPage() {
                 <p className="sa-eyebrow">Featured San Antonio work</p>
                 <h2 className="sa-display">RBFCU <em>Go Beyond Banking</em></h2>
                 <p>
-                  A five-commercial broadcast campaign created for one of Texas&apos;s largest credit
-                  unions, produced and finished by Media Bar and aired across four Texas markets.
+                  Media Bar co-wrote two spots and handled production and post-production across
+                  all five commercials in RBFCU&apos;s Go Beyond Banking campaign, finished for
+                  broadcast across four Texas markets.
                 </p>
                 <div className="sa-case-stats">
                   <div className="sa-case-stat"><strong>5</strong><span>Broadcast spots</span></div>
@@ -326,18 +328,18 @@ export default function SanAntonioPage() {
               />
             </div>
             <div className="sa-local-copy">
-              <p className="sa-eyebrow">The local production advantage</p>
-              <h2 className="sa-display">We Know the City. <em>And the Work.</em></h2>
+              <p className="sa-eyebrow">Before the shoot</p>
+              <h2 className="sa-display">Plan the Location. <em>Protect the Schedule.</em></h2>
               <p>
-                Local experience makes production simpler. We understand San Antonio locations,
-                venue logistics, weather, travel patterns, and the pace required to keep a real
-                organization moving while cameras are on site.
+                Start with the audience and final use, then confirm who will appear, where filming
+                can take place, and when each space is available. Your organization identifies site
+                rules and approval requirements; we build the production plan around them.
               </p>
               <div className="sa-advantages">
                 {[
-                  ['01', 'Local production company', 'A San Antonio-based team that can scout, plan, produce, and respond without flying in cold.'],
-                  ['02', 'Studio and location options', 'Controlled interviews in our studio or full production at your office, facility, venue, or outdoor location.'],
-                  ['03', 'Texas-wide reach', 'The same team can extend a San Antonio campaign into Austin, Dallas, Houston, and markets across Texas.'],
+                  ['01', 'Access and location needs', 'Confirm approved filming areas, participant permissions, sound conditions, power, parking, and loading access with your location contact.'],
+                  ['02', 'People and working schedules', 'Identify interview participants, activities to capture, operational restrictions, and a client contact who can resolve questions during the shoot.'],
+                  ['03', 'Reviews and final versions', 'Agree on reviewers, delivery formats, captions, and deadlines. Shoot time and delivery timing are quoted for the scope rather than assumed.'],
                 ].map(([number, title, description]) => (
                   <div className="sa-advantage" key={number}>
                     <span className="sa-advantage-number">{number}</span>
@@ -345,6 +347,16 @@ export default function SanAntonioPage() {
                   </div>
                 ))}
               </div>
+              <p>
+                On RBFCU&apos;s Keldon Johnson campaign, a tightly planned four-hour schedule
+                accommodated three commercials and a photo shoot. Media Bar handled
+                pre-production through post-production, including 10- and 15-second versions.
+                That project illustrates coordinated scheduling, not a standard shoot-time promise.
+              </p>
+              <Link className="sa-inline-link" href="/work/rbfcu-keldon-johnson">
+                Explore the Keldon Johnson campaign <span aria-hidden="true">→</span>
+              </Link>
+              <br />
               <Link className="sa-inline-link" href="/how-we-work">
                 See how we work <span aria-hidden="true">→</span>
               </Link>

@@ -381,14 +381,17 @@ export default function ProjectPlannerForm() {
         setError(result.error || 'We could not send the brief. Please try again.')
         return
       }
-      trackAnalyticsEvent(analyticsEvents.projectBriefSubmitted, {
-        service: fields.service,
-        timeline: fields.timeline,
-        leadType: 'project_brief',
-        campaignSource: attribution.current?.utmSource || 'direct',
-        discoverySource: fields.discoverySource || 'not_provided',
-        ...conversionProperties(),
-      }, 'generate_lead')
+      // The API deliberately returns success for discarded honeypot submissions.
+      if (!fields.website) {
+        trackAnalyticsEvent(analyticsEvents.projectBriefSubmitted, {
+          service: fields.service,
+          timeline: fields.timeline,
+          leadType: 'project_brief',
+          campaignSource: attribution.current?.utmSource || 'direct',
+          discoverySource: fields.discoverySource || 'not_provided',
+          ...conversionProperties(),
+        }, 'generate_lead')
+      }
       if (!fields.website &&
         ['Corporate Video', 'Commercials'].includes(fields.service) &&
         ['$5,000 - $15,000', '$15,000 - $50,000', '$50,000+'].includes(fields.budget)) {

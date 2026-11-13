@@ -215,6 +215,12 @@ export default function FoodPage() {
             </div>
             <Link href="/work" className="link-arrow">View All Work →</Link>
           </div>
+          <article aria-labelledby="la-costena-example" style={{ marginBottom: 40 }}>
+            <h3 id="la-costena-example" className="section-h2" style={{ fontSize: 'clamp(28px, 4vw, 40px)' }}>La Costeña: Tostadas de Chicharron</h3>
+            <p className="body-text">Produced for La Costeña, this recipe film shows how the brand’s ingredients can come together to create a complete meal. Media Bar Productions handled the project from pre-production through filming and post-production.</p>
+            <p className="body-text">Planning a recipe or menu film? Start with the dish, the ingredients or preparation you want to show, and where the finished video will be used. Food styling, filming, edits, and delivery timing are quoted around the agreed scope.</p>
+            <Link href="/work/watch/tostadas-de-chicharron" className="link-arrow">Watch the La Costeña recipe film →</Link>
+          </article>
           <div className="portfolio-grid reveal">
             {[
               { id: '298056449', label: 'Food Video Production' },

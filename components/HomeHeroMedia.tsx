@@ -57,10 +57,9 @@ export default function HomeHeroMedia() {
         src="/images/hero-aerial.jpg"
         alt=""
         fill
-        loading="eager"
-        fetchPriority="high"
+        preload
         sizes="100vw"
-        quality={68}
+        quality={60}
       />
       {videoEnabled ? (
         <iframe

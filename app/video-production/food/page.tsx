@@ -49,19 +49,12 @@ export default function FoodPage() {
       { threshold: 0.12 }
     )
     reveals.forEach((el) => obs.observe(el))
-    const faqs = document.querySelectorAll('.faq-item')
-    faqs.forEach((item) => {
-      item.querySelector('.faq-question')?.addEventListener('click', () => {
-        const open = item.classList.contains('open')
-        faqs.forEach((f) => f.classList.remove('open'))
-        if (!open) item.classList.add('open')
-      })
-    })
     return () => obs.disconnect()
   }, [])
 
   return (
     <Layout>
+      <div className="food-page">
       <style>{`
         :root{--red:#CC0000;--gold:#C9A84C;--black:#0A0A0A;--dark:#111111;--dark2:#181818}
         .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}.reveal.revealed{opacity:1;transform:none}
@@ -70,9 +63,9 @@ export default function FoodPage() {
         .page-hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(0,0,0,0.85),rgba(0,0,0,0.55))}
         .hero-bg-text{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(140px,22vw,320px);letter-spacing:.05em;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none;user-select:none;line-height:1}
         .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
-        .breadcrumb{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#444;margin-bottom:24px;display:flex;align-items:center;gap:8px}
-        .breadcrumb a{color:#B0B0B0;transition:color .15s}.breadcrumb a:hover{color:#fff}.breadcrumb span{color:#2a2a2a}
-        .eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+        .breadcrumb{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#B0B0B0;margin-bottom:24px;display:flex;align-items:center;gap:8px}
+        .breadcrumb a{color:#B0B0B0;transition:color .15s}.breadcrumb a:hover{color:#fff}.breadcrumb span{color:#B0B0B0}
+        .eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#ff6868;margin-bottom:16px}
         .page-h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(52px,7vw,88px);line-height:.95;letter-spacing:.02em;color:#fff;text-transform:uppercase;margin-bottom:8px}
         .page-h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:.65em;color:rgba(255,255,255,.65);display:block;text-transform:none;letter-spacing:.03em;margin-bottom:4px}
         .hero-sub{font-size:16px;line-height:1.75;color:#888;max-width:560px;margin:20px 0 36px}
@@ -84,7 +77,7 @@ export default function FoodPage() {
         .stat-value{font-family:'Bebas Neue',Impact,sans-serif;font-size:48px;line-height:1;color:var(--gold);letter-spacing:.03em}
         .stat-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#AAAAAA;margin-top:6px}
         .section{padding:96px 64px;max-width:1200px;margin:0 auto}
-        .section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+        .section-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#ff6868;margin-bottom:14px}
         .section-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(36px,5vw,60px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:24px}
         .section-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:rgba(255,255,255,.6)}
         .body-text{font-size:15px;line-height:1.8;color:#B0B0B0;margin-bottom:20px}
@@ -93,12 +86,12 @@ export default function FoodPage() {
         .use-case-card{display:flex;align-items:center;gap:16px;background:var(--dark2);border-left:3px solid var(--red);padding:16px 20px}
         .use-case-icon{font-size:22px;flex-shrink:0;width:32px;text-align:center}
         .use-case-title{font-size:13px;font-weight:600;letter-spacing:.04em;color:#ddd}
-        .portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+        .portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:40px}
         .portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
         .vimeo-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
         .vimeo-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
         .portfolio-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-top:10px;padding:0 4px}
-        .link-arrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--red);padding-bottom:3px;transition:color .15s}.link-arrow:hover{color:var(--red)}
+        .link-arrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--red);padding-bottom:3px;transition:color .15s}.link-arrow:hover{color:#ff6868}
         .process-wrap{background:var(--dark)}.process-inner{max-width:1200px;margin:0 auto;padding:96px 64px}
         .process-header{text-align:center;margin-bottom:64px}
         .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
@@ -108,7 +101,7 @@ export default function FoodPage() {
         .process-desc{font-size:13px;line-height:1.7;color:#B0B0B0;margin-bottom:20px;position:relative}
         .process-list{list-style:none;position:relative}
         .process-list li{font-size:12px;color:#AAAAAA;padding:4px 0 4px 14px;position:relative;letter-spacing:.03em}
-        .process-list li::before{content:'•';position:absolute;left:0;color:var(--red);font-size:10px}
+        .process-list li::before{content:'•';position:absolute;left:0;color:#ff6868;font-size:10px}
         .why-wrap{background:var(--black)}.why-inner{max-width:1200px;margin:0 auto;padding:96px 64px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
         .why-sticky{position:sticky;top:96px}
         .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
@@ -119,18 +112,17 @@ export default function FoodPage() {
         .faq-wrap{background:var(--dark)}.faq-inner{max-width:800px;margin:0 auto;padding:96px 64px}
         .faq-header{text-align:center;margin-bottom:56px}
         .faq-list{display:flex;flex-direction:column;gap:2px}
-        .faq-item{background:var(--dark2);border:1px solid #1e1e1e;overflow:hidden}
+        .faq-item{background:var(--dark2);border:1px solid #1e1e1e}
         .faq-question{width:100%;background:none;border:none;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;gap:16px}
         .faq-question-text{font-size:15px;font-weight:600;color:#ddd;letter-spacing:.01em}
-        .faq-icon{font-size:20px;color:var(--red);flex-shrink:0;transition:transform .25s;font-style:normal}
-        .faq-item.open .faq-icon{transform:rotate(45deg)}
-        .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s ease;padding:0 28px}
+        .faq-icon{font-size:20px;color:#ff6868;flex-shrink:0;transition:transform .25s;font-style:normal}
+        .faq-item[open] .faq-icon{transform:rotate(45deg)}
+        .faq-answer{padding:0 28px}
         .faq-answer p{font-size:14px;line-height:1.8;color:#C0C0C0;padding-bottom:24px}
-        .faq-item.open .faq-answer{max-height:300px;padding:0 28px}
         .cta-wrap{background:var(--dark2);position:relative;overflow:hidden;text-align:center;padding:100px 64px}
         .cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(204,0,0,.18) 0%,transparent 70%);pointer-events:none}
         .cta-h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(48px,7vw,88px);line-height:1;letter-spacing:.03em;color:#fff;text-transform:uppercase;margin-bottom:16px;position:relative}
-        .cta-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:var(--red)}
+        .cta-h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;text-transform:none;color:#ff6868}
         .cta-sub{font-size:16px;color:#B0B0B0;margin-bottom:48px;position:relative}
         .cta-actions{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;position:relative}
         .cta-phone{font-family:'Bebas Neue',Impact,sans-serif;font-size:36px;letter-spacing:.06em;color:#fff;transition:color .15s}.cta-phone:hover{color:var(--gold)}
@@ -143,6 +135,13 @@ export default function FoodPage() {
           .process-inner,.why-inner,.faq-inner{padding:64px 24px}.cta-wrap{padding:72px 24px}.page-hero{padding:120px 24px 72px}
         }
         @media(max-width:600px){.process-grid{grid-template-columns:1fr}}
+        .food-page :is(a,button,summary):focus-visible{outline:3px solid #C9A84C;outline-offset:5px}
+        .food-page :is(a,button,summary){scroll-margin-top:110px}
+        .food-page .faq-question{list-style:none;min-height:64px}
+        .food-page .faq-question::-webkit-details-marker{display:none}
+        .food-page :is(.btn-red,.btn-ghost,.link-arrow,.cta-phone){display:inline-flex;align-items:center;min-height:44px}
+        .food-page .reveal:focus-within{opacity:1;transform:none}
+        @media(prefers-reduced-motion:reduce){.food-page .reveal{opacity:1;transform:none;transition:none}.food-page .faq-icon{transition:none}}
       `}</style>
 
       <section className="page-hero">
@@ -284,10 +283,10 @@ export default function FoodPage() {
           </div>
           <div className="faq-list">
             {faqs.map((f) => (
-              <div key={f.q} className="faq-item">
-                <button className="faq-question"><span className="faq-question-text">{f.q}</span><em className="faq-icon">+</em></button>
+              <details key={f.q} className="faq-item" name="food-faq">
+                <summary className="faq-question"><span className="faq-question-text">{f.q}</span><span className="faq-icon" aria-hidden="true">+</span></summary>
                 <div className="faq-answer"><p>{f.a}</p></div>
-              </div>
+              </details>
             ))}
           </div>
         </div>
@@ -303,6 +302,7 @@ export default function FoodPage() {
           <a href="tel:2102799442" className="cta-phone">210-279-9442</a>
         </div>
       </section>
+      </div>
     </Layout>
   )
 }

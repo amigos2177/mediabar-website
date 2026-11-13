@@ -2,6 +2,7 @@
 
 import { track } from '@vercel/analytics'
 import { createGa4Dispatcher } from './ga4-events'
+import { isInternalInquiryTest, isInquiryMeasurementEvent } from './inquiry-measurement'
 
 type AnalyticsValue = string | number | boolean
 type AnalyticsProperties = Record<string, AnalyticsValue>
@@ -37,6 +38,8 @@ export function trackAnalyticsEvent(
   properties: AnalyticsProperties = {},
   ga4EventName = toGa4EventName(eventName),
 ) {
+  // Exclude explicit test-form activity before any analytics or ad transport runs.
+  if (isInternalInquiryTest() && isInquiryMeasurementEvent(eventName, ga4EventName)) return
   track(eventName, properties)
   sendGa4Event(ga4EventName, properties)
   // Only the already-qualified, successful form event is reported to OpenAI.

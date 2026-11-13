@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto'
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { discoverySources } from '@/lib/discovery-sources'
@@ -26,6 +27,8 @@ const SOURCES = new Set(['video-production-faq', 'contact-quick-question'])
 const DISCOVERY_SOURCES = new Set<string>(discoverySources)
 
 type ContactFields = {
+  inquiryReference: string
+  internalTest: boolean
   firstName: string
   lastName: string
   email: string
@@ -119,7 +122,7 @@ function section(title: string, rows: string) {
 
 function buildHtml(fields: ContactFields) {
   const safe = Object.fromEntries(
-    Object.entries(fields).map(([key, value]) => [key, value ? escapeHtml(value) : value]),
+    Object.entries(fields).map(([key, value]) => [key, typeof value === 'string' ? escapeHtml(value) : value]),
   ) as ContactFields
 
   const fullName = [safe.firstName, safe.lastName].filter(Boolean).join(' ')
@@ -179,6 +182,8 @@ function buildHtml(fields: ContactFields) {
         <p style="margin:6px 0 0;font-size:13px;color:#888888">From ${fullName} &lt;${safe.email}&gt;</p>
       </td>
     </tr>
+    ${section('Inquiry Receipt', row('Inquiry reference', safe.inquiryReference)
+      + row('Submission type', safe.internalTest ? 'INTERNAL TEST — not a customer lead' : 'Inquiry'))}
     ${section('Contact Info', contactRows)}
     ${projectSection}
     ${sourceSection}
@@ -299,6 +304,10 @@ export async function POST(req: NextRequest) {
     const website = readString(body, 'website', 200)
     if (website) return successfulBotResponse()
 
+    if (body.internalTest !== undefined && typeof body.internalTest !== 'boolean') {
+      return jsonResponse({ error: 'Invalid internal test flag.' }, 400)
+    }
+    const internalTest = body.internalTest === true
     const firstName = readString(body, 'firstName', 80)
     const lastName = readString(body, 'lastName', 80)
     const email = readString(body, 'email', 254)
@@ -357,7 +366,10 @@ export async function POST(req: NextRequest) {
       return jsonResponse({ error: 'Please select a valid referral source.' }, 400)
     }
 
+    const inquiryReference = `MBP-${randomUUID()}`
     const fields: ContactFields = {
+      inquiryReference,
+      internalTest,
       firstName,
       lastName: lastName || '',
       email,
@@ -381,15 +393,15 @@ export async function POST(req: NextRequest) {
       referrer: referrer || undefined,
     }
 
+    const subject = source === 'video-production-faq'
+      ? 'New Video Production Question'
+      : source === 'contact-quick-question' ? 'New Contact Question' : 'New Project Inquiry'
+    const fullName = [firstName, lastName].filter(Boolean).join(' ').replace(/[\r\n]/g, ' ')
     const { error } = await getResend().emails.send({
       from: 'Media Bar Website <forms@mediabarproductions.com>',
       to: 'contact@mediabarproductions.com',
       replyTo: email,
-      subject: source === 'video-production-faq'
-        ? `New Video Production Question from ${[firstName, lastName].filter(Boolean).join(' ').replace(/[\r\n]/g, ' ')}`
-        : source === 'contact-quick-question'
-          ? `New Contact Question from ${[firstName, lastName].filter(Boolean).join(' ').replace(/[\r\n]/g, ' ')}`
-          : `New Project Inquiry from ${[firstName, lastName].filter(Boolean).join(' ').replace(/[\r\n]/g, ' ')}`,
+      subject: `${internalTest ? '[INTERNAL TEST] ' : ''}${subject} from ${fullName} [${inquiryReference}]`,
       html: buildHtml(fields),
     })
 
@@ -401,7 +413,12 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    return successfulBotResponse()
+    return jsonResponse({
+      success: true,
+      message: 'Thanks - we got your message and will respond within 1 business day.',
+      inquiryReference,
+      internalTest,
+    })
   } catch (error) {
     console.error('[contact] Unhandled error:', error)
     return jsonResponse(

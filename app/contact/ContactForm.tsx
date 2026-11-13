@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { InquiryReference, InquiryTestNotice } from '@/components/InquiryMeasurementNotice'
+import { inquiryReceiptProperties, isInternalInquiryTest, shouldTrackInquiry } from '@/lib/inquiry-measurement'
 import { analyticsEvents } from '@/lib/analytics-events'
 import {
   captureCampaignAttribution,
@@ -40,6 +42,7 @@ function splitName(name: string) {
 
 export default function ContactForm({ projectInquiry = false }: { projectInquiry?: boolean }) {
   const [fields, setFields] = useState(initialFields)
+  const [inquiryReference, setInquiryReference] = useState('')
   const [status, setStatus] = useState<SubmitStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const hasTrackedStart = useRef(false)
@@ -83,12 +86,15 @@ export default function ContactForm({ projectInquiry = false }: { projectInquiry
     setStatus('submitting')
     setErrorMessage('')
 
+    const internalTest = isInternalInquiryTest()
+    setInquiryReference('')
     try {
       const { firstName, lastName } = splitName(fields.name)
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          internalTest,
           firstName,
           lastName,
           email: fields.email,
@@ -121,19 +127,23 @@ export default function ContactForm({ projectInquiry = false }: { projectInquiry
         return
       }
 
-      // The API deliberately returns success for discarded honeypot submissions.
-      if (!fields.website) {
+      const receiptProperties = inquiryReceiptProperties(data)
+      setInquiryReference(receiptProperties.inquiry_reference || '')
+      const trackSubmission = shouldTrackInquiry(data, fields.website, internalTest)
+      if (trackSubmission) {
         trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, {
+          ...receiptProperties,
           service: projectInquiry ? fields.service : 'General inquiry',
           leadType: projectInquiry ? 'project_inquiry' : 'quick_question',
           discoverySource: fields.discoverySource || 'not_provided',
           ...conversionProperties(),
         }, 'generate_lead')
       }
-      if (projectInquiry && !fields.website &&
+      if (projectInquiry && trackSubmission &&
         ['Corporate Video', 'Commercials'].includes(fields.service) &&
         ['$5,000 - $15,000', '$15,000 - $50,000', '$50,000+'].includes(fields.budget)) {
         trackAnalyticsEvent('qualified_project_inquiry', {
+          ...receiptProperties,
           ...conversionProperties(),
           sourcePath: formPath,
           service: fields.service,
@@ -165,7 +175,9 @@ export default function ContactForm({ projectInquiry = false }: { projectInquiry
             <path d="m5 12 4 4L19 6" />
           </svg>
         </span>
+        <InquiryTestNotice />
         <p className={styles.eyebrow}>Message received</p>
+        <InquiryReference reference={inquiryReference} />
         <h3>A real person has your note.</h3>
         <p>
           We&apos;ll respond within one business day. If the request becomes more
@@ -194,6 +206,7 @@ export default function ContactForm({ projectInquiry = false }: { projectInquiry
       onSubmit={handleSubmit}
       aria-busy={status === 'submitting'}
     >
+      <InquiryTestNotice />
       <div className={styles.honeypot} aria-hidden="true">
         <label htmlFor="contact-website">Website</label>
         <input

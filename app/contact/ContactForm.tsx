@@ -121,12 +121,15 @@ export default function ContactForm({ projectInquiry = false }: { projectInquiry
         return
       }
 
-      trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, {
-        service: projectInquiry ? fields.service : 'General inquiry',
-        leadType: projectInquiry ? 'project_inquiry' : 'quick_question',
-        discoverySource: fields.discoverySource || 'not_provided',
-        ...conversionProperties(),
-      }, 'generate_lead')
+      // The API deliberately returns success for discarded honeypot submissions.
+      if (!fields.website) {
+        trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, {
+          service: projectInquiry ? fields.service : 'General inquiry',
+          leadType: projectInquiry ? 'project_inquiry' : 'quick_question',
+          discoverySource: fields.discoverySource || 'not_provided',
+          ...conversionProperties(),
+        }, 'generate_lead')
+      }
       if (projectInquiry && !fields.website &&
         ['Corporate Video', 'Commercials'].includes(fields.service) &&
         ['$5,000 - $15,000', '$15,000 - $50,000', '$50,000+'].includes(fields.budget)) {

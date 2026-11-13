@@ -23,6 +23,7 @@ export default function AskQuestionForm() {
   const [status, setStatus] = useState<SubmitStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const hasTrackedStart = useRef(false)
+  const submissionInFlight = useRef(false)
 
   function updateField(
     field: keyof typeof initialFields,
@@ -40,6 +41,8 @@ export default function AskQuestionForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (submissionInFlight.current) return
+    submissionInFlight.current = true
     setStatus('submitting')
     setErrorMessage('')
 
@@ -61,11 +64,14 @@ export default function AskQuestionForm() {
         return
       }
 
-      trackAnalyticsEvent(analyticsEvents.faqQuestionSubmitted, {
-        leadType: 'faq_question',
-        source: 'video_production_faq',
-        sourcePath: '/resources/video-production-faq',
-      }, 'generate_lead')
+      // The API deliberately returns success for discarded honeypot submissions.
+      if (!fields.website) {
+        trackAnalyticsEvent(analyticsEvents.faqQuestionSubmitted, {
+          leadType: 'faq_question',
+          source: 'video_production_faq',
+          sourcePath: '/resources/video-production-faq',
+        }, 'generate_lead')
+      }
       setFields(initialFields)
       setStatus('success')
     } catch {
@@ -75,6 +81,8 @@ export default function AskQuestionForm() {
       })
       setStatus('error')
       setErrorMessage('Network error. Please check your connection and try again.')
+    } finally {
+      submissionInFlight.current = false
     }
   }
 

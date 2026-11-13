@@ -58,7 +58,7 @@ const coverageOptions = [
     number: '02',
     title: 'Stage & Session Capture',
     bestFor: 'Keynotes, panels, conferences, training, and executive meetings',
-    copy: 'Record complete presentations with coordinated camera positions, clean speaker audio, presentation content, and audience context.',
+    copy: 'Plan complete presentation recordings with coordinated camera positions, speaker audio, slides, and audience context. Confirm which sessions need full-length edits; a highlights recap is a different deliverable.',
     outputs: ['Full sessions', 'Speaker clips', 'Captioned edits'],
   },
   {
@@ -72,7 +72,7 @@ const coverageOptions = [
 
 const planItems = [
   'Event date, venue, and load-in access',
-  'Run of show and speaker list',
+  'Run of show, speakers, and concurrent sessions',
   'Priority moments and stakeholders',
   'Venue AV contact and audio plan',
   'Final deliverables and platforms',
@@ -123,7 +123,7 @@ const recentEventWork = [
   {
     number: '02',
     title: 'Texas Recycles Day',
-    description: 'Community event coverage shaped into a clear story about participation, purpose, and the people behind the program.',
+    description: 'Produced for Unilever to showcase its involvement in Texas Recycles Day and the community’s recycling efforts. Media Bar handled pre-production, filming, and post-production.',
     videoId: '1056208254',
     thumbnailUrl: 'https://i.vimeocdn.com/video/2092713602-5bdcc2bf09ed9179aededd89f362c7aa2ef6831a5f69a79e33b078916ee6b2f2-d_1280?region=us',
     href: '/work/watch/texas-recycles-day',
@@ -166,6 +166,8 @@ export default function EventsPage() {
         .evt-container{width:min(1240px,calc(100% - 96px));margin:0 auto}
         .evt-eyebrow{color:var(--red-text);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
         .evt-display{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.025em;line-height:.94;text-transform:uppercase}
+        .evt-section-head>*{min-width:0}
+        .evt-display{overflow-wrap:anywhere}
         .evt-display em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;letter-spacing:0;text-transform:none}
         .evt-button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;padding:0 34px;border:1px solid transparent;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .18s,border-color .18s}
         .evt-button-primary{background:var(--red);color:#fff}.evt-button-primary:hover{background:#aa0000}
@@ -442,7 +444,7 @@ export default function EventsPage() {
             <div className="evt-section-head">
               <div>
                 <p className="evt-eyebrow">Event coverage options</p>
-                <h2 className="evt-display evt-section-title">Event and Conference Video <em>Production Services.</em></h2>
+                <h2 className="evt-display evt-section-title">Corporate Event and Conference <em>Video Production.</em></h2>
               </div>
               <p className="evt-section-intro">
                 These are planning approaches, not fixed packages. We combine the right cameras,
@@ -516,7 +518,9 @@ export default function EventsPage() {
                   Send the information below as early as possible. We use it to connect the run of
                   show to camera positions, audio sources, crew movement, presentation screens,
                   and the final edits. That preparation helps the production stay present without
-                  becoming a distraction.
+                  becoming a distraction. If sessions, interviews, or activities overlap, identify
+                  those conflicts in the brief so coverage priorities and crew needs can be agreed
+                  before the event.
                 </p>
                 <div className="evt-plan-list">
                   {planItems.map((item) => <div className="evt-plan-item" key={item}>{item}</div>)}

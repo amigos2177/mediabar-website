@@ -13,7 +13,7 @@ const description =
   'A San Antonio crew for conference and corporate event video across Texas. We cover keynotes and sessions, then edit recaps, speaker clips, and social cuts.'
 
 export const metadata = buildMetadata({
-  title: 'San Antonio Event Video | Recaps & Sessions | Media Bar',
+  title: 'Corporate Event Video Production San Antonio | Media Bar',
   description,
   path,
   ogImage: '/images/bts-8.jpg',

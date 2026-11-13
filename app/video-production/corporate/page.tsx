@@ -380,6 +380,9 @@ export default function CorporatePage() {
                 <span>Read the campaign case study →</span>
               </Link>
             </div>
+            <Link className="corp-inline-link" href="/blog/recruiting-video-production">
+              Planning a film for prospective hires? Read our recruiting video guide <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </section>
 

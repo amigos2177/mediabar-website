@@ -51,7 +51,7 @@ export const motionGraphicsVideo = {
   title: 'Fleer Brilliants Superman Product Video',
   eyebrow: 'Featured Motion',
   copy:
-    'Motion works best when it does more than decorate. It should reveal information, guide attention, and make the central idea easier to understand.',
+    'For the Fleer Brilliants Superman product video, Upper Deck supplied the concept and script. Media Bar brought the idea to life through animation, editing, sound, and voiceover.',
   thumbnail:
     'https://i.vimeocdn.com/video/2143088826-56135f2076b3f77710a0be575e322fd68adb53699cd66c09a4131a92d53658c2-d_1280?region=us',
   uploadDate: '2026-04-06T00:00:00-05:00',

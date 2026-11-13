@@ -53,7 +53,7 @@ export default function MotionGraphicsPage() {
         title: 'Motion Begins',
         emphasis: 'Before Animation.',
         copy:
-          'For B2B explainers, campaign graphics, product stories, and internal communications, the message, script, storyboard, style frames, sound, and delivery plan are approved in stages before the full piece is built.',
+          'Bring an approved concept and script, as Upper Deck did for the Superman product video, or include creative development in the project scope. We agree on the message, visual direction, sound, delivery plan, and review stages before detailed animation begins.',
         image: '/images/media-library/motion-graphics-marvel-ages.jpg',
         alt: 'Animated Marvel trading card package with comic-book graphics',
         position: 'center',
@@ -68,8 +68,8 @@ export default function MotionGraphicsPage() {
       }}
       feature={{
         eyebrow: motionGraphicsVideo.eyebrow,
-        title: 'Show the Detail.',
-        emphasis: 'Guide the Eye.',
+        title: 'Upper Deck.',
+        emphasis: 'Fleer Brilliants Superman.',
         copy: motionGraphicsVideo.copy,
         media: {
           kind: 'video',
@@ -77,14 +77,14 @@ export default function MotionGraphicsPage() {
           title: motionGraphicsVideo.title,
           thumbnailUrl: motionGraphicsVideo.thumbnail,
         },
-        linkLabel: 'Explore More Work',
-        linkHref: '/work',
+        linkLabel: 'Explore the Superman Product Video',
+        linkHref: '/work/watch/fleer-brilliants-superman',
       }}
       additionalExamples={
         <section className={styles.section} aria-labelledby="motion-examples-title">
           <p className={styles.eyebrow}>More motion graphics work</p>
           <h2 id="motion-examples-title">Sports. Comics. Entertainment.</h2>
-          <p className={styles.intro}>More examples from our work with Upper Deck, featuring sports and entertainment properties.</p>
+          <p className={styles.intro}>Media Bar Productions has worked with Upper Deck for more than 10 years. These selected films show more of that work across sports and entertainment properties.</p>
           <WorkFilmCards films={workProjects.find((project) => project.slug === 'fleer-brilliants-superman')?.selectedVideos || []} />
           <Link className={styles.caseLink} href="/work/upper-deck-video-production">Explore the Upper Deck case study →</Link>
         </section>

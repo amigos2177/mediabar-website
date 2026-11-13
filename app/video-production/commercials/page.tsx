@@ -480,7 +480,8 @@ export default function CommercialsPage() {
                 <p>
                   Media Bar produced a five-spot broadcast campaign built around different ways
                   RBFCU helps members move forward. The campaign expanded across four Texas markets
-                  while keeping one clear brand idea consistent.
+                  while keeping one clear brand idea consistent. Media Bar developed the concepts and
+                  scripts for two spots and handled production and post-production across all five.
                 </p>
                 <p className="com-section-intro">Producing for a bank or credit union?{' '}
                   <Link href="/video-production/financial-services" style={{ textDecoration: 'underline', textUnderlineOffset: '4px' }}>Explore financial-services video production</Link>.
@@ -497,7 +498,10 @@ export default function CommercialsPage() {
         </section>
 
         <RbfcuCommercialGallery />
-        <RbfcuCampaigns />
+        <RbfcuCampaigns descriptions={{
+          'rbfcu-keldon-johnson': 'Media Bar handled pre-production through post-production for a campaign introducing Spurs player Keldon Johnson as an RBFCU spokesperson. A tightly planned four-hour schedule accommodated a photo shoot and three commercials, expanding the original two-commercial plan. Delivery also included 10- and 15-second versions.',
+          'rbfcu-resting-bank-face': 'Media Bar handled RBFCU’s Resting Bank Face campaign from pre-production through filming and post-production. The campaign includes four commercials featuring actors, with a full day of filming for each spot.',
+        }} />
         <WorkLibraryLinks
           serviceHref="/video-production/commercials"
           slugs={['boot-ranch-golf-commercial', 'rbfcu-coyote-commercial']}

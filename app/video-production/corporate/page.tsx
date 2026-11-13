@@ -115,7 +115,7 @@ export default function CorporatePage() {
 
         .corp-clients{background:#101010;border-bottom:1px solid var(--line)}
         .corp-clients-inner{display:grid;grid-template-columns:240px 1fr;align-items:center;min-height:132px}
-        .corp-clients-title{color:#676767;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .corp-clients-title{color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
         .corp-client-grid{display:grid;grid-template-columns:repeat(4,1fr);height:100%;border-left:1px solid var(--line)}
         .corp-client{display:flex;min-height:132px;align-items:center;justify-content:center;border-right:1px solid var(--line)}
         .corp-client:last-child{border-right:0}
@@ -126,11 +126,12 @@ export default function CorporatePage() {
         .corp-section-title{font-size:clamp(54px,6vw,84px);margin-top:16px}
         .corp-section-title em{color:var(--gold)}
         .corp-section-intro{max-width:630px;color:var(--muted);font-size:16px;line-height:1.75}
+        .corp-section-intro a{color:#ff6868;text-decoration:underline;text-underline-offset:3px}
 
         .corp-use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
         .corp-use{min-height:290px;display:flex;flex-direction:column;padding:31px;background:var(--panel);transition:background .18s}
         .corp-use:hover{background:#181818}
-        .corp-use-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;letter-spacing:.08em}
+        .corp-use-number{color:#ff6868;font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;letter-spacing:.08em}
         .corp-use h3{margin-top:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:31px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .corp-use p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
 
@@ -165,7 +166,7 @@ export default function CorporatePage() {
         .corp-process-copy>p{color:var(--muted);font-size:14px;line-height:1.75}
         .corp-process-list{margin-top:32px;border-top:1px solid var(--line)}
         .corp-process-item{display:grid;grid-template-columns:37px 130px 1fr;gap:14px;padding:19px 0;border-bottom:1px solid var(--line)}
-        .corp-process-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:17px}
+        .corp-process-number{color:#ff6868;font-family:'Bebas Neue',Impact,sans-serif;font-size:17px}
         .corp-process-item h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:21px;font-weight:400;letter-spacing:.04em}
         .corp-process-item p{color:#7f7f84;font-size:11px;line-height:1.6}
 

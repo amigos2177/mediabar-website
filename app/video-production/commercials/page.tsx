@@ -142,7 +142,7 @@ export default function CommercialsPage() {
       <style>{`
         .com-page{--line:rgba(255,255,255,.1);--panel:#141414;--muted:#96969b;background:#090909;color:#fff}
         .com-container{width:min(1240px,calc(100% - 96px));margin:0 auto}
-        .com-eyebrow{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+        .com-eyebrow{color:#ff6868;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
         .com-display{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;letter-spacing:.025em;line-height:.94;text-transform:uppercase}
         .com-display em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:600;letter-spacing:0;text-transform:none}
         .com-button{display:inline-flex;min-height:50px;align-items:center;justify-content:center;padding:0 34px;border:1px solid transparent;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:background .18s,border-color .18s}
@@ -166,13 +166,15 @@ export default function CommercialsPage() {
 
         .com-clients{background:#101010;border-bottom:1px solid var(--line)}
         .com-clients-inner{display:grid;grid-template-columns:240px 1fr;align-items:center;min-height:132px}
-        .com-clients-title{color:#676767;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+        .com-clients-title{color:#96969b;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
         .com-client-grid{display:grid;grid-template-columns:repeat(4,1fr);height:100%;border-left:1px solid var(--line)}
         .com-client{display:flex;min-height:132px;align-items:center;justify-content:center;border-right:1px solid var(--line)}
         .com-client:last-child{border-right:0}
         .com-client img{width:auto;height:40px;max-width:130px;object-fit:contain;filter:grayscale(1) brightness(1.5);opacity:.66}
 
         .com-section{padding:106px 0;border-bottom:1px solid var(--line)}
+        .com-section-head>*{min-width:0}
+        .com-section-title{overflow-wrap:anywhere}
         .com-section-head{display:grid;grid-template-columns:1fr .82fr;gap:90px;align-items:end;margin-bottom:54px}
         .com-section-title{font-size:clamp(54px,6vw,84px);margin-top:16px}
         .com-section-title em{color:var(--gold)}
@@ -181,7 +183,7 @@ export default function CommercialsPage() {
         .com-format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
         .com-format{min-height:290px;display:flex;flex-direction:column;padding:31px;background:var(--panel);transition:background .18s}
         .com-format:hover{background:#181818}
-        .com-format-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;letter-spacing:.08em}
+        .com-format-number{color:#ff6868;font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;letter-spacing:.08em}
         .com-format h3{margin-top:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:31px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .com-format p{margin-top:15px;color:#85858a;font-size:13px;line-height:1.7}
 
@@ -190,7 +192,7 @@ export default function CommercialsPage() {
         .com-approach-note p{max-width:690px;color:#8d8d92;font-size:13px;line-height:1.7}
         .com-approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
         .com-approach{display:flex;min-height:360px;flex-direction:column;padding:34px;background:var(--panel)}
-        .com-approach-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.08em}
+        .com-approach-number{color:#ff6868;font-family:'Bebas Neue',Impact,sans-serif;font-size:20px;letter-spacing:.08em}
         .com-approach h3{margin-top:64px;font-family:'Bebas Neue',Impact,sans-serif;font-size:34px;font-weight:400;letter-spacing:.035em;line-height:1;text-transform:uppercase}
         .com-approach>p{margin-top:17px;color:#8b8b90;font-size:13px;line-height:1.7}
         .com-approach-best{margin-top:auto;padding-top:25px;border-top:1px solid var(--line)}
@@ -208,9 +210,9 @@ export default function CommercialsPage() {
         .com-case-facts{display:grid;grid-template-columns:repeat(3,1fr);margin:35px 0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
         .com-case-fact{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
         .com-case-fact strong{display:block;font-family:'Bebas Neue',Impact,sans-serif;font-size:30px;font-weight:400;letter-spacing:.04em}
-        .com-case-fact span{display:block;margin-top:5px;color:#737378;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+        .com-case-fact span{display:block;margin-top:5px;color:#96969b;font-size:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
         .com-inline-link{display:inline-flex;color:#fff;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
-        .com-inline-link span{color:var(--red);margin-left:8px}
+        .com-inline-link span{color:#ff6868;margin-left:8px}
 
         .com-spot-grid{display:grid;grid-template-columns:1.12fr .88fr;min-height:640px;border:1px solid var(--line)}
         .com-spot-media{position:relative;min-height:540px;overflow:hidden}
@@ -241,7 +243,7 @@ export default function CommercialsPage() {
         .com-process-copy>p{color:var(--muted);font-size:14px;line-height:1.75}
         .com-process-list{margin-top:32px;border-top:1px solid var(--line)}
         .com-process-item{display:grid;grid-template-columns:37px 145px 1fr;gap:14px;padding:19px 0;border-bottom:1px solid var(--line)}
-        .com-process-number{color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:17px}
+        .com-process-number{color:#ff6868;font-family:'Bebas Neue',Impact,sans-serif;font-size:17px}
         .com-process-item h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:21px;font-weight:400;letter-spacing:.04em}
         .com-process-item p{color:#7f7f84;font-size:11px;line-height:1.6}
 
@@ -266,7 +268,7 @@ export default function CommercialsPage() {
         .com-faq details{border-bottom:1px solid var(--line);padding:0 4px}
         .com-faq summary{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px;cursor:pointer;list-style:none;color:#eee;font-size:16px;font-weight:600}
         .com-faq summary::-webkit-details-marker{display:none}
-        .com-faq summary:after{content:'+';color:var(--red);font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;font-weight:400}
+        .com-faq summary:after{content:'+';color:#ff6868;font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;font-weight:400}
         .com-faq details[open] summary:after{content:'-'}
         .com-faq details p{max-width:800px;padding:0 0 26px;color:#8f8f94;font-size:14px;line-height:1.75}
 
@@ -275,7 +277,7 @@ export default function CommercialsPage() {
         .com-related-card:hover{background:#1a1a1a}
         .com-related-card h3{margin-top:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:29px;font-weight:400;letter-spacing:.035em;text-transform:uppercase}
         .com-related-card p{margin-top:12px;color:#85858a;font-size:12px;line-height:1.65}
-        .com-related-card span{margin-top:22px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+        .com-related-card span{margin-top:22px;color:#ff6868;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 
         .com-cta{padding:118px 0;text-align:center;background:radial-gradient(circle at 50% 110%,rgba(204,0,0,.18),transparent 45%),#0c0c0c}
         .com-cta h2{font-size:clamp(56px,7vw,96px);margin-top:17px}
@@ -328,6 +330,9 @@ export default function CommercialsPage() {
           .com-cta{padding:84px 0}
           .com-button{width:100%}
         }
+        .com-page :is(a,button,summary):focus-visible{outline:3px solid #C9A84C;outline-offset:5px}
+        .com-page :is(a,button,summary){scroll-margin-top:110px}
+        .com-page .com-inline-link{min-height:44px;align-items:center}
       `}</style>
 
       <main className="com-page">

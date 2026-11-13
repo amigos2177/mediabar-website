@@ -7,6 +7,8 @@ function moduleUrl(source) {
   return `data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`
 }
 const helperUrl = moduleUrl(fs.readFileSync('lib/ga4-events.ts', 'utf8'))
+const eventsUrl = moduleUrl(fs.readFileSync('lib/analytics-events.ts', 'utf8'))
+const measurementUrl = moduleUrl(fs.readFileSync('lib/inquiry-measurement.ts', 'utf8').replace("'./analytics-events'", JSON.stringify(eventsUrl)))
 const { ga4Context, createGa4Dispatcher } = await import(helperUrl)
 const original = { source: 'home', campaign: 'launch', firstTouchSource: 'chatgpt', leadType: 'project_brief' }
 assert.deepEqual(ga4Context(original), { page_group: 'home', campaign_label: 'launch', firstTouchSource: 'chatgpt', leadType: 'project_brief' })
@@ -44,6 +46,7 @@ globalThis.window = fakeWindow
 let client = fs.readFileSync('lib/client-analytics.ts', 'utf8')
 client = client.replace("import { track } from '@vercel/analytics'", 'const track = (...args: unknown[]) => globalThis.__analyticsTestTrack(...args)')
 client = client.replace("'./ga4-events'", JSON.stringify(helperUrl))
+client = client.replace("'./inquiry-measurement'", JSON.stringify(measurementUrl))
 const { trackAnalyticsEvent } = await import(moduleUrl(client))
 trackAnalyticsEvent('contact_form_submitted', original, 'generate_lead')
 assert.equal(ga[0][1], 'generate_lead')
@@ -67,3 +70,29 @@ assert.equal(ga[2][2].page_group, 'service')
 assert.equal(vercel.length, 3)
 assert(fs.readFileSync('components/GoogleAnalytics.tsx', 'utf8').includes("window.dispatchEvent(new Event('mbp:ga4-ready'))"))
 console.log('Analytics checks pass: context mapping, original payload preservation, deferred/exactly-once flush, expiry, bounded queue, GA alias and separate qualified-ad path. No real analytics or inquiries sent.')
+
+// An explicit test form must not reach GA4, Vercel, OpenAI or the Google Ads event bridge.
+fakeWindow.location.search = '?inquiry_test=1'
+const before = [ga.length, vercel.length, ads.length]
+const { analyticsEvents } = await import(eventsUrl)
+for (const eventName of Object.values(analyticsEvents).filter(name => /Form|Planner|Brief|Question/.test(name))) {
+  trackAnalyticsEvent(eventName, { inquiry_reference: 'MBP-00000000-0000-4000-8000-000000000001' })
+}
+let googleBridgeEvents = 0
+fakeWindow.addEventListener('mbp:eligible-project-inquiry', () => googleBridgeEvents++)
+fakeWindow.location.pathname = '/san-antonio-video-inquiry'
+trackAnalyticsEvent('qualified_project_inquiry', { leadType: 'project_inquiry' })
+trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, {}, 'generate_lead')
+assert.deepEqual([ga.length, vercel.length, ads.length], before)
+assert.equal(googleBridgeEvents, 0)
+fakeWindow.location.search = ''
+trackAnalyticsEvent(analyticsEvents.contactFormSubmitted, { inquiry_reference: 'MBP-00000000-0000-4000-8000-000000000001' }, 'generate_lead')
+assert.equal(ga.length, before[0] + 1, 'Normal inquiries resume without sticky test state')
+assert.equal(vercel.length, before[1] + 1)
+assert.equal(ads.length, before[2])
+trackAnalyticsEvent('qualified_project_inquiry', { inquiry_reference: 'MBP-00000000-0000-4000-8000-000000000001', leadType: 'project_inquiry' })
+assert.equal(googleBridgeEvents, 1, 'Normal eligible inquiry still reaches the Google Ads bridge')
+assert.equal(ads.length, before[2] + 1, 'Normal eligible inquiry still reaches OpenAI measurement')
+assert.equal(ga.length, before[0] + 2)
+assert.equal(vercel.length, before[1] + 2)
+console.log('PASS: explicit test mode excludes inquiry starts, steps, failures, leads and qualified ad measurements; real inquiries resume without persistent state.')

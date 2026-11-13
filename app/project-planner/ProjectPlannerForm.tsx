@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { InquiryReference, InquiryTestNotice } from '@/components/InquiryMeasurementNotice'
+import { inquiryReceiptProperties, isInternalInquiryTest, shouldTrackInquiry } from '@/lib/inquiry-measurement'
 import { analyticsEvents } from '@/lib/analytics-events'
 import {
   captureCampaignAttribution,
@@ -222,6 +224,7 @@ function MultiChoiceGroup({
 export default function ProjectPlannerForm() {
   const [step, setStep] = useState(0)
   const [fields, setFields] = useState(initialFields)
+  const [inquiryReference, setInquiryReference] = useState('')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -343,11 +346,14 @@ export default function ProjectPlannerForm() {
       fields.overview.trim(),
     ].join('\n')
 
+    const internalTest = isInternalInquiryTest()
+    setInquiryReference('')
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          internalTest,
           firstName: fields.firstName,
           lastName: fields.lastName,
           email: fields.email,
@@ -381,9 +387,12 @@ export default function ProjectPlannerForm() {
         setError(result.error || 'We could not send the brief. Please try again.')
         return
       }
-      // The API deliberately returns success for discarded honeypot submissions.
-      if (!fields.website) {
+      const receiptProperties = inquiryReceiptProperties(result)
+      setInquiryReference(receiptProperties.inquiry_reference || '')
+      const trackSubmission = shouldTrackInquiry(result, fields.website, internalTest)
+      if (trackSubmission) {
         trackAnalyticsEvent(analyticsEvents.projectBriefSubmitted, {
+          ...receiptProperties,
           service: fields.service,
           timeline: fields.timeline,
           leadType: 'project_brief',
@@ -392,10 +401,11 @@ export default function ProjectPlannerForm() {
           ...conversionProperties(),
         }, 'generate_lead')
       }
-      if (!fields.website &&
+      if (trackSubmission &&
         ['Corporate Video', 'Commercials'].includes(fields.service) &&
         ['$5,000 - $15,000', '$15,000 - $50,000', '$50,000+'].includes(fields.budget)) {
         trackAnalyticsEvent('qualified_project_inquiry', {
+          ...receiptProperties,
           ...conversionProperties(),
           service: fields.service,
           budget_range: fields.budget,
@@ -421,7 +431,9 @@ export default function ProjectPlannerForm() {
     return (
       <div ref={successCardRef} className={styles.successCard} aria-live="polite">
         <div className={styles.successMark} aria-hidden="true">✓</div>
+        <InquiryTestNotice />
         <p className={styles.successEyebrow}>Brief received</p>
+        <InquiryReference reference={inquiryReference} />
         <h2 ref={successHeadingRef} tabIndex={-1}>Thanks, {fields.firstName}.</h2>
         <p>
           A member of the Media Bar team will review the details and respond within one
@@ -460,6 +472,7 @@ export default function ProjectPlannerForm() {
         onSubmit={submitBrief}
         aria-busy={submitting}
       >
+        <InquiryTestNotice />
         <div className={styles.honeypot} aria-hidden="true">
           <label htmlFor="planner-website">Website</label>
           <input

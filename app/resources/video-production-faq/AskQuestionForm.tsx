@@ -2,6 +2,8 @@
 
 import { useRef, useState } from 'react'
 import Link from 'next/link'
+import { InquiryReference, InquiryTestNotice } from '@/components/InquiryMeasurementNotice'
+import { inquiryReceiptProperties, isInternalInquiryTest, shouldTrackInquiry } from '@/lib/inquiry-measurement'
 import { analyticsEvents } from '@/lib/analytics-events'
 import { trackAnalyticsEvent } from '@/lib/client-analytics'
 import styles from './video-production-faq.module.css'
@@ -20,6 +22,7 @@ const initialFields = {
 
 export default function AskQuestionForm() {
   const [fields, setFields] = useState(initialFields)
+  const [inquiryReference, setInquiryReference] = useState('')
   const [status, setStatus] = useState<SubmitStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const hasTrackedStart = useRef(false)
@@ -46,11 +49,13 @@ export default function AskQuestionForm() {
     setStatus('submitting')
     setErrorMessage('')
 
+    const internalTest = isInternalInquiryTest()
+    setInquiryReference('')
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(fields),
+        body: JSON.stringify({ ...fields, internalTest }),
       })
       const data = await response.json()
 
@@ -64,9 +69,12 @@ export default function AskQuestionForm() {
         return
       }
 
-      // The API deliberately returns success for discarded honeypot submissions.
-      if (!fields.website) {
+      const receiptProperties = inquiryReceiptProperties(data)
+      setInquiryReference(receiptProperties.inquiry_reference || '')
+      const trackSubmission = shouldTrackInquiry(data, fields.website, internalTest)
+      if (trackSubmission) {
         trackAnalyticsEvent(analyticsEvents.faqQuestionSubmitted, {
+          ...receiptProperties,
           leadType: 'faq_question',
           source: 'video_production_faq',
           sourcePath: '/resources/video-production-faq',
@@ -90,7 +98,9 @@ export default function AskQuestionForm() {
     return (
       <div className={styles.questionSuccess} role="status">
         <span aria-hidden="true">✓</span>
+        <InquiryTestNotice />
         <p className={styles.eyebrow}>Question received</p>
+        <InquiryReference reference={inquiryReference} />
         <h3>Thank you for improving the resource.</h3>
         <p>
           The Media Bar team will review your question. If it can help other
@@ -115,6 +125,7 @@ export default function AskQuestionForm() {
 
   return (
     <form className={styles.questionForm} onSubmit={handleSubmit} aria-busy={status === 'submitting'}>
+      <InquiryTestNotice />
       <div className={styles.honeypot} aria-hidden="true">
         <label htmlFor="faq-website">Website</label>
         <input

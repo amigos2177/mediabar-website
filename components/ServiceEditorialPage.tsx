@@ -30,6 +30,7 @@ type FeaturedMedia =
     }
 
 export type ServiceEditorialPageProps = {
+  accessibilityEnhancements?: boolean
   hero: {
     eyebrow: string
     title: string
@@ -115,6 +116,7 @@ export type ServiceEditorialPageProps = {
 }
 
 export function ServiceEditorialPage({
+  accessibilityEnhancements = false,
   hero,
   proof,
   answer,
@@ -286,7 +288,28 @@ export function ServiceEditorialPage({
         }
       `}</style>
 
-      <main className="sep-page">
+      {accessibilityEnhancements ? <style>{`
+        .sep-accessible .sep-eyebrow,.sep-accessible .sep-card-number,.sep-accessible .sep-process-number,
+        .sep-accessible .sep-related-card span,.sep-accessible .sep-inline-link span{color:#ff6868}
+        .sep-accessible .sep-proof-label{color:#a0a0a5}
+        .sep-accessible :is(a,button,summary):focus-visible{outline:3px solid #C9A84C;outline-offset:5px}
+        .sep-accessible :is(a,button,summary),.sep-accessible #featured-work{scroll-margin-top:110px}
+        .sep-accessible .sep-inline-link{min-height:44px;align-items:center}
+        .sep-accessible .sep-faq summary{padding:16px 0}
+        .sep-accessible .sep-faq summary:after,.sep-accessible .sep-faq details[open] summary:after{content:none}
+        .sep-accessible .sep-faq-icon{color:#ff6868;font-family:'Bebas Neue',Impact,sans-serif;font-size:26px;flex-shrink:0}
+        .sep-accessible .sep-faq-icon:after{content:'+'}
+        .sep-accessible details[open] .sep-faq-icon:after{content:'−'}
+        .sep-accessible :is(.sep-display,.sep-related-card h3){overflow-wrap:anywhere}
+        .sep-accessible :is(.sep-section-head,.sep-plan-grid,.sep-feature-grid,.sep-deliverables-grid)>*{min-width:0}
+        .sep-accessible .sep-proof-item{min-width:0}
+        .sep-accessible [data-reveal]:focus-within{opacity:1;transform:none}
+        @media(prefers-reduced-motion:reduce){
+          .sep-accessible [data-reveal]{opacity:1;transform:none;transition:none}
+          .sep-accessible *{scroll-behavior:auto;transition:none}
+        }
+      `}</style> : null}
+      <main className={`sep-page${accessibilityEnhancements ? ' sep-accessible' : ''}`}>
         <section className="sep-hero">
           <Image
             className="sep-hero-image"
@@ -496,7 +519,7 @@ export function ServiceEditorialPage({
             <div className="sep-faq">
               {faqs.map((faq) => (
                 <details key={faq.question}>
-                  <summary>{faq.question}</summary>
+                  <summary>{faq.question}{accessibilityEnhancements ? <span className="sep-faq-icon" aria-hidden="true" /> : null}</summary>
                   <p>{faq.answer}</p>
                 </details>
               ))}

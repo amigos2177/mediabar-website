@@ -8,6 +8,7 @@ import { motionGraphicsFaqs, motionGraphicsVideo } from './content'
 export default function MotionGraphicsPage() {
   return (
     <ServiceEditorialPage
+      accessibilityEnhancements
       hero={{
         eyebrow: 'San Antonio Motion Graphics Production Company',
         title: 'Make the Idea Clear.',

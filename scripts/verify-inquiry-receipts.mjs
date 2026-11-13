@@ -17,6 +17,7 @@ function compile(file, dependencies, globals = {}) {
   })
   return fixture.exports
 }
+const discoverySources = compile('lib/discovery-sources.ts', {}).discoverySources
 const events = compile('lib/analytics-events.ts', {})
 const measurement = compile('lib/inquiry-measurement.ts', { './analytics-events': events })
 const pattern = /^MBP-[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/
@@ -39,7 +40,7 @@ function setup(outcome = 'success') {
   }
   const { POST } = compile('app/api/contact/route.ts', {
     'node:crypto': { randomUUID }, 'next/server': { NextResponse: { json: (body, init) => Response.json(body, init) } },
-    resend: { Resend: FakeResend }, '@/lib/discovery-sources': { discoverySources: ['Google Search', 'Other'] },
+    resend: { Resend: FakeResend }, '@/lib/discovery-sources': { discoverySources },
   }, { process: { env: { RESEND_API_KEY: 'isolated-stub-only' } } })
   function request(body = valid, headers = {}) {
     return new Request('http://localhost:3121/api/contact', { method: 'POST',
@@ -51,6 +52,14 @@ function setup(outcome = 'success') {
 }
 const results = []
 const real = setup()
+const aiSource = 'AI assistant (ChatGPT, Perplexity, Copilot, or similar)'
+assert(discoverySources.includes(aiSource))
+const aiInquiry = setup()
+const aiResponse = await aiInquiry.POST(aiInquiry.request({ ...valid, discoverySource: aiSource }))
+assert.equal(aiResponse.status, 200)
+assert(aiInquiry.emails[0].html.includes(aiSource))
+assert(aiInquiry.emails[0].html.includes('google'), 'Self-reported discovery must not overwrite captured attribution')
+results.push({ scenario: 'self-reported-ai-discovery', accepted: true, automaticAttributionPreserved: true })
 const references = new Set()
 for (const source of [undefined, 'contact-quick-question', 'video-production-faq']) {
   const response = await real.POST(real.request({ ...valid, source, inquiryReference: 'attacker-supplied-reference' }))
@@ -104,7 +113,7 @@ for (const body of [{ ...valid, website: 'bot' }, { ...valid, website: 'bot', in
   assert.equal(response.status, 200); assert.equal(t.emails.length, 0)
   assert.equal((await response.json()).inquiryReference, undefined)
 }
-for (const change of [{ email: 'invalid' }, { firstName: '' }, { message: '' }, { source: 'invalid' }]) {
+for (const change of [{ email: 'invalid' }, { firstName: '' }, { message: '' }, { source: 'invalid' }, { discoverySource: 'unsupported source' }]) {
   const t = setup(); const response = await t.POST(t.request({ ...valid, ...change, internalTest: true }))
   assert.equal(response.status, 400); assert.equal(t.emails.length, 0)
 }

@@ -1,6 +1,7 @@
 export const discoverySources = [
   'Google Search',
   'Google Maps / Business Profile',
+  'AI assistant (ChatGPT, Perplexity, Copilot, or similar)',
   'Referral from a person or company',
   'YouTube',
   'CreativesInTexas.com',

@@ -6,6 +6,7 @@ import { medicalFaqs, medicalVideo } from './content'
 export default function MedicalVideoPage() {
   return (
     <ServiceEditorialPage
+      accessibilityEnhancements
       hero={{
         eyebrow: 'San Antonio Medical Video Production',
         title: 'Medical Video',

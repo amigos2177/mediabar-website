@@ -350,13 +350,17 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     shortTitle: 'Local TV commercial cost in Texas',
     answerQuestion: "How much does a local TV commercial cost?",
     directAnswer:
-      "A local TV commercial can range from $7,000 to $40,000 for production, depending on the kind of commercial you want. A simple spot without actors at one location has a different scope from a campaign with actors and multiple locations. We prepare a tailored estimate around the concept, filming, and deliverables. Airtime is a separate budget.",
+      "Media Bar’s production guidance for a local TV commercial is $7,000–$40,000, with a tailored estimate based on the agreed scope. This is not a Texas market average or a fixed package price. A simple spot without actors at one location has a different scope from a campaign with actors and multiple locations. We prepare a tailored estimate around the concept, filming, and deliverables. Airtime and media placement are separate; confirm the included production work, usage rights, versions, and exclusions in the estimate.",
     takeaways: [
       'A simple one-location concept and a scripted multi-scene campaign require different production scopes.',
       'Talent usage rights, post-production, approvals, and platform versions affect the estimate.',
       'Commercial production and media buying are separate scopes even when they are planned together.',
     ],
     supportingAnswers: [
+      {
+        question: 'How does the filming schedule affect a campaign estimate?',
+        answer: 'For RBFCU’s Keldon Johnson campaign, Media Bar handled pre-production through post-production. A tightly planned four-hour schedule accommodated a photo shoot and three commercials, expanding the original two-commercial plan; delivery included 10- and 15-second versions. Resting Bank Face had a different scope: four commercials with actors, each requiring a full filming day. These examples explain why shoot days, talent, and versions matter; they are not price quotes or a promise that another campaign can follow the same schedule.',
+      },
       {
             "question": "What changes the cost of producing a commercial?",
             "answer": "A straightforward concept filmed at one location requires a different plan from a campaign with multiple scenes, actors, and shoot days. Define the creative concept, locations, talent, usage territory and duration, filming schedule, approvals, and delivery requirements before requesting an estimate."
@@ -404,6 +408,10 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     },
     pageFaqs: [
       {
+        question: 'Is $7,000–$40,000 a fixed package or a Texas market average?',
+        answer: 'Neither. It is Media Bar’s production guidance, with a tailored estimate based on the concept and agreed scope. Confirm creative work, shoot days, talent and usage rights, revisions, versions, deadlines, and exclusions in writing. Airtime and media placement are separate budgets.',
+      },
+      {
         question: 'Does a TV commercial production estimate include airtime?',
         answer:
           'Not by default. Production creates and finishes the commercial, while an airtime or media buy pays to distribute it. Media Bar uses the placement plan to scope deliverables and usage rights; the client or media partner typically handles placement unless the project agreement says otherwise.',
@@ -419,7 +427,7 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
           'The production budget covers the agreed creative development, planning, crew, equipment, locations, talent and usage rights, filming, editing, finishing, and deliverable versions. Airtime, connected-TV inventory, paid social placement, and other advertising spend remain a separate media budget unless a project agreement explicitly includes them.',
       },
     ],
-    dateModified: '2026-10-17',
+    dateModified: '2026-11-13',
     transcript: [
       "Hi, I am Ruben Garcia's digital avatar. The guidance in this video comes directly from Media Bar Productions.",
       'How much should a local television commercial cost in Texas?',
@@ -442,8 +450,12 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
         href: '/pricing',
       },
       {
-        label: 'Review the RBFCU commercial campaign case study',
-        href: '/work/rbfcu-go-beyond-banking',
+        label: 'See the RBFCU Keldon Johnson campaign and filming scope',
+        href: '/work/rbfcu-keldon-johnson',
+      },
+      {
+        label: 'See the four-spot RBFCU Resting Bank Face campaign',
+        href: '/work/rbfcu-resting-bank-face',
       },
       {
         label: 'Plan a commercial project',

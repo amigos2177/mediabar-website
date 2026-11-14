@@ -140,12 +140,35 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
     shortTitle: 'Why corporate videos get delayed',
     answerQuestion: "Why do corporate videos get delayed?",
     directAnswer:
-      "Corporate videos often get delayed by unclear or conflicting feedback. Choose one decision-maker, consolidate comments into a single response, and agree on revision rounds before editing begins. Identify legal, compliance, and executive reviewers early, and plan the delivery formats in advance so new requirements do not arrive at the end of post-production.",
+      "Corporate video schedules can slip when the brief changes, required assets arrive late, or feedback conflicts. Agree on the story, delivery versions, review responsibilities, and included revision rounds before editing. Delivery timing is quoted by project scope, including time for approvals and finishing. One review coordinator can consolidate comments while the required legal, compliance, and executive reviewers provide their approvals.",
     takeaways: [
-      'Choose one decision-maker who can resolve conflicting feedback.',
-      'Consolidate each review round into one clear response.',
-      'Identify legal, compliance, and executive reviewers before editing begins.',
+      'Agree on deliverables, review milestones, and included revision rounds before editing.',
+      'Use one review coordinator to consolidate feedback from all required approvers.',
+      'Confirm schedule and budget effects before adding scenes, claims, graphics, or delivery versions.',
     ],
+    supportingAnswers: [
+      {
+        question: 'How long should corporate video post-production take?',
+        answer: 'Timing is quoted around the project scope, not a standard number of days. The amount of footage, interview selection, graphics, captions, delivery versions, and review process shape the schedule. Agree on a first-cut milestone, feedback deadlines, finishing, and final delivery. If approvals or required materials move, confirm the revised schedule with the production team.',
+      },
+      {
+        question: 'What should be approved before editing starts?',
+        answer: 'Confirm the audience, message, script or interview-led story direction, required assets, delivery formats, and approval roles. Identify who supplies logos, names and titles, factual or compliance review, and usage permissions. One coordinator can return a single set of time-coded comments without replacing the authority of required reviewers.',
+      },
+      {
+        question: 'What happens when the brief changes after the first cut?',
+        answer: 'Compare the request with the agreed scope and revision rounds. A correction within the existing brief differs from a new message, additional filming, a new animation, or extra language and platform versions. Confirm the additional work, estimate, and delivery impact before proceeding; do not assume every change fits the original budget or deadline.',
+      },
+      {
+        question: 'What does a real corporate production scope look like?',
+        answer: 'Media Bar handled the ST Engineering brand film from pre-production through filming and post-production. The film introduced the company’s work to employees and prospective hires through people, facilities, and operations. For a similar brief, identify the people and locations to film, the intended audience, and the required reviewers before scheduling. This example illustrates the production scope; no project-specific turnaround or delay-reduction result is stated.',
+      },
+      {
+        question: 'Can an urgent deadline be accommodated?',
+        answer: 'Share the required release date before scheduling. The team can assess availability, a narrower initial deliverable, phased versions, and a review plan with available approvers. Rush delivery depends on the agreed scope and capacity; it is not automatically included or guaranteed.',
+      },
+    ],
+    dateModified: '2026-11-13',
     transcript: [
       "I'm Ruben Garcia, founder of Media Bar Productions. This is my digital avatar, but this guidance comes directly from our post-production process.",
       'What happens after the filming day?',
@@ -165,6 +188,18 @@ export const mediaBarAnswersEpisodes: MediaBarAnswersEpisode[] = [
       href: '/video-production/post-production',
     },
     relatedLinks: [
+      {
+        label: 'Explore corporate video production and project examples',
+        href: '/video-production/corporate',
+      },
+      {
+        label: 'Watch the ST Engineering brand film',
+        href: '/work/watch/st-engineering-brand-film',
+      },
+      {
+        label: 'Review how project scope shapes production pricing',
+        href: '/pricing',
+      },
       {
         label: 'See how Media Bar projects move from planning to delivery',
         href: '/how-we-work',

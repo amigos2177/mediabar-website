@@ -284,7 +284,14 @@ export const workProjects: WorkProject[] = [
     "category": "Corporate",
     "year": "2023",
     "serviceHref": "/video-production/corporate",
-    "updated": "2026-11-11"
+    "updated": "2026-11-15",
+    projectNotes: {
+      heading: 'About This Film',
+      paragraphs: [
+        'Media Bar handled pre-production, filming, and post-production for the 2023 Knorr campaign, commissioned by Arc Worldwide.',
+        'Video production: Media Bar Productions.',
+      ],
+    }
   },
   {
     "id": "945888116",

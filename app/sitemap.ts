@@ -15,6 +15,8 @@ export const dynamic = 'force-static'
 
 const SITE_UPDATED = '2026-07-19'
 const SEARCH_SPRINT_UPDATED = '2026-07-23'
+// Significant content/accessibility revisions published November 13; not build time.
+const CONTENT_REVIEW_UPDATED = '2026-11-13'
 
 function sitemapDate(value: unknown): string | undefined {
   if (value instanceof Date) {
@@ -49,7 +51,7 @@ function collect(label: string, build: () => MetadataRoute.Sitemap): MetadataRou
 
 function staticPages(): MetadataRoute.Sitemap {
   return [
-    withLastmod(`${BASE}/`, SEARCH_SPRINT_UPDATED),
+    withLastmod(`${BASE}/`, CONTENT_REVIEW_UPDATED),
 
     withLastmod(`${BASE}/about`, SITE_UPDATED),
     withLastmod(`${BASE}/about/awards`, SITE_UPDATED),
@@ -74,21 +76,21 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/how-we-work`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production`, '2026-08-10'),
 
-    withLastmod(`${BASE}/video-production/corporate`, '2026-11-11'),
-    withLastmod(`${BASE}/video-production/commercials`, '2026-11-11'),
-    withLastmod(`${BASE}/video-production/events`, '2026-11-11'),
+    withLastmod(`${BASE}/video-production/corporate`, CONTENT_REVIEW_UPDATED),
+    withLastmod(`${BASE}/video-production/commercials`, CONTENT_REVIEW_UPDATED),
+    withLastmod(`${BASE}/video-production/events`, CONTENT_REVIEW_UPDATED),
     withLastmod(`${BASE}/video-production/interview`, '2026-09-04'),
-    withLastmod(`${BASE}/video-production/medical`, '2026-11-11'),
+    withLastmod(`${BASE}/video-production/medical`, CONTENT_REVIEW_UPDATED),
     withLastmod(`${BASE}/video-production/animated-patient-education`, '2026-09-21'),
     withLastmod(`${BASE}/video-production/financial-services`, '2026-11-11'),
     withLastmod(`${BASE}/video-production/aerial`, SITE_UPDATED),
-    withLastmod(`${BASE}/video-production/motion-graphics`, '2026-11-11'),
+    withLastmod(`${BASE}/video-production/motion-graphics`, CONTENT_REVIEW_UPDATED),
     withLastmod(`${BASE}/video-production/live-streaming`, SITE_UPDATED),
     withLastmod(`${BASE}/video-production/post-production`, '2026-09-04'),
-    withLastmod(`${BASE}/video-production/food`, SITE_UPDATED),
+    withLastmod(`${BASE}/video-production/food`, CONTENT_REVIEW_UPDATED),
     withLastmod(`${BASE}/video-production/real-estate`, SITE_UPDATED),
 
-    withLastmod(`${BASE}/locations/san-antonio`, '2026-09-04'),
+    withLastmod(`${BASE}/locations/san-antonio`, CONTENT_REVIEW_UPDATED),
     withLastmod(`${BASE}/locations/austin`, SITE_UPDATED),
     withLastmod(`${BASE}/locations/dallas`, SITE_UPDATED),
     withLastmod(`${BASE}/locations/houston`, SITE_UPDATED),

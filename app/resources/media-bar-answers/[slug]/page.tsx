@@ -51,6 +51,7 @@ export default async function MediaBarAnswerEpisodePage({ params }: Props) {
   const articleBody = [
     episode.directAnswer,
     ...episode.takeaways,
+    ...(episode.supportingAnswers ?? []).flatMap(({ question, answer }) => [question, answer]),
     ...episode.transcript,
   ].join('\n\n')
 

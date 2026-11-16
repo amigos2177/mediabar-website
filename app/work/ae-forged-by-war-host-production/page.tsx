@@ -18,8 +18,7 @@ const gallery = [
   { file: 'teleprompter-assembly', alt: 'Crew assembling the teleprompter in front of the production camera', title: 'Preparing the prompter.', caption: 'The crew fits the teleprompter around the camera.', wide: false },
   { file: 'crew-on-set', alt: 'Production crew preparing cameras and equipment in the studio', title: 'Every part comes together.', caption: 'Crew and equipment preparation on the production floor.', wide: true },
   { heading: '02 / Filming the introduction', file: 'crew-preparation', alt: 'Crew member preparing cable beside the studio lighting scaffold', title: 'On set. Ready to roll.', caption: 'A wider view of the host, camera positions and working crew.', wide: true },
-  { file: 'host-and-teleprompter', alt: 'Host on the white studio set with a camera and teleprompter in the foreground', title: 'The introduction in view.', caption: 'The documentary title appears on the teleprompter as the host stands on set.', wide: false },
-  { file: 'boom-operation', alt: 'Crew member holding a boom pole above the host on the studio set', title: 'Just outside the frame.', caption: 'Boom operation during the host shoot.', wide: false },
+  { file: 'host-and-teleprompter', alt: 'Host on the white studio set with a camera and teleprompter in the foreground', title: 'The introduction in view.', caption: 'The documentary title appears on the teleprompter as the host stands on set.', wide: true },
   { heading: '03 / Behind the cameras', file: 'production-monitoring', alt: 'Production monitoring station with multi-view display, control panel and laptop', title: 'A view of the production.', caption: 'The monitoring station supporting the shoot.', wide: true },
   { file: 'camera-preparation', alt: 'Production camera in the foreground with crew and studio equipment beyond', title: 'The tools behind the picture.', caption: 'Camera equipment on the studio floor.', wide: true },
 ]

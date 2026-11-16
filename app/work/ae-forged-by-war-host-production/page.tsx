@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import Layout from '@/components/Layout'
 import { BreadcrumbJsonLd } from '@/components/JsonLd'
 import styles from './page.module.css'
@@ -31,7 +30,7 @@ export default function AeProjectPage() {
       <header className={styles.hero}>
         <div className={styles.heroImage}><Image src={`${imageRoot}/host-filming-wide.webp`} alt="Host on set with the Media Bar camera crew filming the A&E introduction" fill preload sizes="100vw" /></div>
         <div className={styles.heroCopy}>
-          <Link className={styles.back} href="/work">← Our work</Link>
+          <a className={styles.back} href="/work">← Our work</a>
           <p className={styles.kicker}>A&E / Behind the scenes</p>
           <h1>Forged by War:<br /><span>The Navy SEALs</span></h1>
           <p className={styles.subtitle}>Behind the host introduction.</p>

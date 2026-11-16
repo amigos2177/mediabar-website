@@ -157,7 +157,7 @@ export default function Footer() {
           gap: '12px',
         }}>
           <p style={{ fontSize: '12px', color: '#B0B0B0', margin: 0 }}>
-            © 2026 Media Bar Productions, LLC · The Creative Agenda LLC · All Rights Reserved
+            © 2026 Media Bar Productions, LLC · All Rights Reserved
           </p>
           <p style={{ fontSize: '12px', color: '#C9A84C', margin: 0 }}>
             ⭐ 3 Lone Star Emmy Awards · 15 Telly Awards

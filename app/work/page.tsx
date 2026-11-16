@@ -1,3 +1,4 @@
+import AeProjectFeature from '@/components/AeProjectFeature'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
@@ -129,6 +130,8 @@ export default function WorkPage() {
           </div>
           <Link href="/work/upper-deck-video-production" className={styles.primaryAction}>Explore the partnership</Link>
         </section>
+
+      <AeProjectFeature />
 
         <WorkGallery videos={workVideos as PortfolioVideo[]} />
 

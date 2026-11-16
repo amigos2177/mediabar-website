@@ -58,6 +58,7 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/about/editorial-policy`, SITE_UPDATED),
     withLastmod(`${BASE}/work`, '2026-11-11'),
     withLastmod(`${BASE}/work/upper-deck-video-production`, '2026-11-11'),
+    withLastmod(`${BASE}/work/ae-forged-by-war-host-production`, '2026-11-15'),
     withLastmod(`${BASE}/work/rbfcu-go-beyond-banking`, SITE_UPDATED),
     withLastmod(`${BASE}/work/rbfcu-keldon-johnson`, '2026-11-11'),
     withLastmod(`${BASE}/work/rbfcu-resting-bank-face`, '2026-11-11'),

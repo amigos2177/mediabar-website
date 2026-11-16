@@ -1,3 +1,4 @@
+import AeProjectFeature from '@/components/AeProjectFeature'
 import Image from 'next/image'
 import './home.css'
 import Link from 'next/link'
@@ -300,6 +301,8 @@ export default function HomePage() {
           </article>
         </div>
       </section>
+
+      <AeProjectFeature />
 
       {/* ─── 5. DIRECT ANSWERS ─── */}
       <section className="answer-section" data-reveal aria-labelledby="homepage-answers-title">

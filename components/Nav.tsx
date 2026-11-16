@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Home and Our Work intentionally load a fresh document to start at the top, matching footer navigation. */
 'use client'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
@@ -361,14 +362,14 @@ export default function Nav() {
         justifyContent: 'space-between',
         padding: '0 48px',
         }}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
           <Image src="/images/mediabar-logo.png" alt="Media Bar Productions" width={1113} height={325} sizes="180px" quality={60} loading="eager" style={{ width: 'auto', height: '48px', maxWidth: '180px', display: 'block' }} />
-        </Link>
+        </a>
 
         {/* Desktop center links */}
         <div className="mbp-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
           <Link href="/video-production" className="mbp-nav-link">Services</Link>
-          <Link href="/work" className="mbp-nav-link">Our Work</Link>
+          <a href="/work" className="mbp-nav-link">Our Work</a>
           <Link href="/photography" className="mbp-nav-link">Photography</Link>
           <Link href="/about" className="mbp-nav-link">About</Link>
           <Link href="/studio" className="mbp-nav-link">Studio</Link>
@@ -421,9 +422,9 @@ export default function Nav() {
           />
 
           <div className="mbp-overlay-header">
-            <Link href="/" onClick={close} style={{ display: 'flex', alignItems: 'center' }}>
+            <a href="/" onClick={close} style={{ display: 'flex', alignItems: 'center' }}>
               <Image src="/images/mediabar-logo.png" alt="Media Bar Productions" width={1113} height={325} sizes="138px" quality={60} style={{ width: 'auto', height: '40px', display: 'block' }} />
-            </Link>
+            </a>
             <button className="mbp-overlay-close" aria-label="Close menu" onClick={close}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -449,6 +450,8 @@ export default function Nav() {
               >
                 {l.label} <span aria-hidden="true" style={{ color: '#C9A84C', marginLeft: '8px' }}>↗</span>
               </a>
+            ) : l.href === '/' || l.href === '/work' ? (
+              <a key={l.href} href={l.href} className="mbp-overlay-link" onClick={close}>{l.label}</a>
             ) : (
               <Link key={l.href} href={l.href} className="mbp-overlay-link" onClick={close}>
                 {l.label}

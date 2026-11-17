@@ -93,7 +93,7 @@ const campaignFilms: HomepageFilm[] = [
     name: 'Knorr · Not Your Knorr-Dinary Drive-Thru',
     title: 'Knorr — Not Your Knorr-Dinary Drive-Thru',
     detail: 'Campaign film for Arc Worldwide · 1:36',
-    poster: 'https://i.vimeocdn.com/video/1852501696-24d97b7cd2dde64099b822d1517a816aa81efbc9362b946c524e2cf1032c3567-d_1280?region=us',
+    poster: '/images/knorr-drive-thru.jpg',
     href: '/work/watch/knorr-not-your-knorr-dinary-drive-thru',
     linkLabel: 'Explore the Knorr project',
   },
@@ -102,7 +102,7 @@ const campaignFilms: HomepageFilm[] = [
     name: 'Cystic Fibrosis Foundation · A Day in the Life',
     title: 'Cystic Fibrosis Foundation — A Day in the Life',
     detail: 'Edited from client-shot phone footage · 5:35',
-    poster: 'https://i.vimeocdn.com/video/2142672933-fd491695db8d8740c46219b60bd3f67d11c7b42deb093c4d63e9e4707335ca16-d_960',
+    poster: '/images/cff-day-in-the-life.jpg',
   },
 ]
 

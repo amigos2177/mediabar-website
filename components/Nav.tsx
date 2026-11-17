@@ -27,7 +27,7 @@ const TOP_LINKS = [
   { href: '/studio', label: 'Studio', loadAtTop: true },
   { href: '/about', label: 'About', loadAtTop: true },
   { href: '/about/awards', label: 'Awards' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/blog', label: 'Blog', loadAtTop: true },
   { href: '/clients', label: 'Clients' },
   { href: '/contact', label: 'Contact' },
   { href: '/faq', label: 'FAQ' },
@@ -374,7 +374,7 @@ export default function Nav() {
           <a href="/photography" className="mbp-nav-link">Photography</a>
           <a href="/about" className="mbp-nav-link">About</a>
           <a href="/studio" className="mbp-nav-link">Studio</a>
-          <Link href="/blog" className="mbp-nav-link">Blog</Link>
+          <a href="/blog" className="mbp-nav-link">Blog</a>
         </div>
 
         {/* Desktop right: phone + contact paths */}

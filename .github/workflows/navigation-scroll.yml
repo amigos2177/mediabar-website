@@ -1,0 +1,31 @@
+name: Navigation scroll
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  navigation-scroll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps --only-shell chromium
+      - run: npm run build
+      - run: npm run test:navigation
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: navigation-scroll-results
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7

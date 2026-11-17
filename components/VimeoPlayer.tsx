@@ -6,15 +6,34 @@ import { analyticsEvents } from '@/lib/analytics-events'
 import { trackAnalyticsEvent } from '@/lib/client-analytics'
 
 type VimeoPlayerProps = {
-  videoId: string
   title: string
   thumbnailUrl?: string
   eager?: boolean
   embedImmediately?: boolean
+} & ({ videoId: string; videoUrl?: never } | { videoUrl: string; videoId?: never })
+
+function readVimeoLink(link: string) {
+  let url: URL
+  try {
+    url = new URL(link)
+  } catch {
+    return null
+  }
+  if (url.protocol !== 'https:') return null
+
+  if (url.hostname === 'player.vimeo.com') {
+    const match = url.pathname.match(/^\/video\/(\d+)\/?$/)
+    return match && { id: match[1], hash: url.searchParams.get('h') }
+  }
+
+  if (url.hostname !== 'vimeo.com' && url.hostname !== 'www.vimeo.com') return null
+  const match = url.pathname.match(/^\/(\d+)(?:\/([a-zA-Z0-9]+))?\/?$/)
+  return match && { id: match[1], hash: match[2] || url.searchParams.get('h') }
 }
 
 export default function VimeoPlayer({
   videoId,
+  videoUrl,
   title,
   thumbnailUrl,
   eager = false,
@@ -24,13 +43,16 @@ export default function VimeoPlayer({
   const poster = thumbnailUrl || '/images/hero-aerial.jpg'
   const showPlayer = embedImmediately || playing
   const autoplay = playing && !embedImmediately
+  const source = videoUrl !== undefined ? readVimeoLink(videoUrl) : { id: videoId, hash: null }
+  if (!source) return <p>Film unavailable.</p>
+  const privacy = source.hash ? `h=${encodeURIComponent(source.hash)}&` : ''
   const isLocalPoster = poster.startsWith('/')
 
   return (
     <div className="mbp-vimeo-player">
       {showPlayer ? (
         <iframe
-          src={`https://player.vimeo.com/video/${videoId}?autoplay=${autoplay ? 1 : 0}&title=0&byline=0&portrait=0&color=CC0000&badge=0`}
+          src={`https://player.vimeo.com/video/${source.id}?${privacy}autoplay=${autoplay ? 1 : 0}&title=0&byline=0&portrait=0&color=CC0000&badge=0`}
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
           loading={embedImmediately ? 'eager' : 'lazy'}
@@ -41,7 +63,7 @@ export default function VimeoPlayer({
           type="button"
           className="mbp-vimeo-poster"
           onClick={() => {
-            trackAnalyticsEvent(analyticsEvents.portfolioVideoPlayed, { videoId, title })
+            trackAnalyticsEvent(analyticsEvents.portfolioVideoPlayed, { videoId: source.id, title })
             setPlaying(true)
           }}
           aria-label={`Play film: ${title}`}

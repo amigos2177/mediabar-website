@@ -3,7 +3,7 @@ title: "Recruiting Video Production: A Practical Planning Guide"
 seoTitle: "Recruiting Video Production Guide | Media Bar Productions"
 slug: "recruiting-video-production"
 date: "2026-06-08"
-updated: "2026-11-13"
+updated: "2026-11-17"
 excerpt: "Plan a recruiting video around your people, workplace, and hiring needs. See Media Bar’s ST Engineering example and how to scope filming and deliverables."
 featuredImage: /images/blog/recruiting-video-production.png
 faqs:
@@ -75,6 +75,8 @@ Media Bar Productions approaches recruiting content as part of [corporate video 
 For ST Engineering, Media Bar Productions handled everything from pre-production through filming and post-production. The film was created for employees and prospective hires to introduce what the company does, using a mix of people, facilities, and operations.
 
 That combination gives viewers company context alongside a look at the work itself. It is a useful example for teams planning a film that needs to serve both an internal audience and people considering joining the organization.
+
+For a dedicated hiring example, [watch the ATMA Energy recruiting film](/video-production/corporate#atma-recruiting).
 
 [Watch the ST Engineering brand film](/work/watch/st-engineering-brand-film), or explore the project alongside other examples on our [Corporate video production page](/video-production/corporate).
 

@@ -10,7 +10,8 @@
     "verify:structured-data": "node scripts/verify-structured-data.mjs && node scripts/verify-sitemap.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "indexnow:dry-run": "node scripts/submit-indexnow.mjs --dry-run --all",
-    "verify:sitemap": "node scripts/verify-sitemap.mjs"
+    "verify:sitemap": "node scripts/verify-sitemap.mjs",
+    "test:navigation": "playwright test --config=playwright.config.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -24,6 +25,7 @@
     "sharp": "0.35.5"
   },
   "devDependencies": {
+    "@playwright/test": "1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

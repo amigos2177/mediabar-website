@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Home and Our Work intentionally load a fresh document to start at the top, matching footer navigation. */
+/* eslint-disable @next/next/no-html-link-for-pages -- Home, Our Work and About intentionally load a fresh document to start at the top, matching footer navigation. */
 'use client'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
@@ -371,7 +371,7 @@ export default function Nav() {
           <Link href="/video-production" className="mbp-nav-link">Services</Link>
           <a href="/work" className="mbp-nav-link">Our Work</a>
           <Link href="/photography" className="mbp-nav-link">Photography</Link>
-          <Link href="/about" className="mbp-nav-link">About</Link>
+          <a href="/about" className="mbp-nav-link">About</a>
           <Link href="/studio" className="mbp-nav-link">Studio</Link>
           <Link href="/blog" className="mbp-nav-link">Blog</Link>
         </div>
@@ -450,7 +450,7 @@ export default function Nav() {
               >
                 {l.label} <span aria-hidden="true" style={{ color: '#C9A84C', marginLeft: '8px' }}>↗</span>
               </a>
-            ) : l.href === '/' || l.href === '/work' ? (
+            ) : l.href === '/' || l.href === '/work' || l.href === '/about' ? (
               <a key={l.href} href={l.href} className="mbp-overlay-link" onClick={close}>{l.label}</a>
             ) : (
               <Link key={l.href} href={l.href} className="mbp-overlay-link" onClick={close}>

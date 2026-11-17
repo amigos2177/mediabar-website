@@ -3,6 +3,9 @@ import { expect, test } from '@playwright/test'
 const destinations = [
   { label: 'Home', path: '/', heading: /video production in san antonio/i },
   { label: 'Our Work', path: '/work', heading: /stories built/i },
+  { label: 'Services', path: '/video-production', heading: /one production team/i },
+  { label: 'Photography', path: '/photography', heading: /^photography$/i },
+  { label: 'Studio', path: '/studio', heading: /your shoot/i },
   { label: 'About', path: '/about', heading: /built by people/i },
 ]
 

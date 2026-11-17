@@ -6,6 +6,7 @@ const destinations = [
   { label: 'Services', path: '/video-production', heading: /one production team/i },
   { label: 'Photography', path: '/photography', heading: /^photography$/i },
   { label: 'Studio', path: '/studio', heading: /your shoot/i },
+  { label: 'Blog', path: '/blog', heading: /ideas from/i },
   { label: 'About', path: '/about', heading: /built by people/i },
 ]
 

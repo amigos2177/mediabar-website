@@ -455,6 +455,7 @@ export const workProjects: WorkProject[] = [
   {
     id: '946447253',
     slug: 'nafa-conference-recap',
+    updated: '2026-11-17',
     projectNotes: {
       heading: 'A Day-Two Conference Recap',
       paragraphs: [
@@ -462,7 +463,7 @@ export const workProjects: WorkProject[] = [
         'The event portfolio also includes Texas Recycles Day, a community-focused film. Comparing the two examples is a useful starting point for deciding whether your own brief needs a conference recap, a community story, or a separate plan for full session recordings.',
       ],
     },
-    title: 'NAFA Conference Recap',
+    title: 'NAFA Corporate Conference Recap',
     category: 'Events',
     year: '2024',
     serviceHref: '/video-production/events',

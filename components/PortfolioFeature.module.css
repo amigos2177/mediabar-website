@@ -1,0 +1,11 @@
+.feature { width: min(100% - 40px, 1180px); margin: 0 auto; padding: clamp(36px, 6vw, 80px) 0; border-top: 1px solid #454547; color: #f5f4f2; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 76px); align-items: center; scroll-margin-top: 95px; }
+.media { position: relative; aspect-ratio: 16/9; background: #101012; }
+.feature h2 { margin: 12px 0; font: 600 clamp(32px, 4.5vw, 62px)/1.04 'Bebas Neue', Impact, sans-serif; }
+.feature p { margin: 0 0 16px; line-height: 1.55; color: #dad7d5; }
+.feature .label { color: #ff8d85; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.feature a { display: block; width: fit-content; margin-top: 10px; text-decoration: underline; text-underline-offset: 4px; color: inherit; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.choices button { font: inherit; background: #171719; color: #f4f3f2; border: 1px solid #888; padding: 9px 12px; cursor: pointer; }
+.choices button[aria-pressed=true] { background: #eee; color: #141416; }
+.feature :focus-visible { outline: 3px solid #ffa79a; outline-offset: 3px; }
+@media (max-width: 760px) { .feature { grid-template-columns: minmax(0, 1fr); } }

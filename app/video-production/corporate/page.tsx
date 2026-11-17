@@ -1,3 +1,4 @@
+import PortfolioFeature from '@/components/PortfolioFeature'
 import WorkLibraryLinks from '@/components/WorkLibraryLinks'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -353,6 +354,8 @@ export default function CorporatePage() {
             </div>
           </div>
         </section>
+
+        <PortfolioFeature project="atma-recruiting" />
 
         <section className="corp-section corp-pathways corp-project-examples" aria-labelledby="corporate-project-examples">
           <div className="corp-container">

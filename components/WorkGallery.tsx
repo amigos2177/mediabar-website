@@ -4,12 +4,13 @@ import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import type { PortfolioVideo } from './VideoObjectSchema'
 import VimeoPlayer from './VimeoPlayer'
+import PortfolioFeature from '@/components/PortfolioFeature'
 import WorkFilmCards from './WorkFilmCards'
 import { workProjects } from '../data/work-projects'
 import styles from '../app/work/work.module.css'
 
 const listedProjects = workProjects.filter((project) => project.listOnWork !== false)
-const filters = ['All', ...Array.from(new Set(listedProjects.map((project) => project.category)))]
+const filters = ['All', ...Array.from(new Set(listedProjects.map((project) => project.category))), 'Nonprofit']
 
 export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
   const [activeFilter, setActiveFilter] = useState('All')
@@ -50,6 +51,12 @@ export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
         ))}
       </div>
 
+      {(activeFilter === 'Nonprofit' || activeFilter === 'All') && (
+        <div>
+          <PortfolioFeature project="alamo-heights" />
+          <PortfolioFeature project="castellanos" />
+        </div>
+      )}
       <div className={styles.projectGrid}>
         {visibleProjects.map((project, index) => {
           const video = videoById.get(project.id)

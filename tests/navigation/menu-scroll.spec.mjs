@@ -30,6 +30,10 @@ for (const { label, path, heading } of destinations) {
     await page.waitForLoadState('load')
     await page.evaluate(() => document.fonts.ready.then(() => undefined))
     await expect(page.getByRole('heading', { level: 1, name: heading })).toBeInViewport()
+    // Temporary negative control confined to the local Playwright browser.
+    if (path === '/about') {
+      await page.evaluate(() => window.scrollTo({ top: 300, behavior: 'instant' }))
+    }
     await expect.poll(() => page.evaluate(() => scrollY)).toBe(0)
     // A single frame at zero can precede a late scroll restoration.
     const maxScroll = await page.evaluate(() => new Promise(resolve => {

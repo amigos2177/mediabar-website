@@ -1,0 +1,7 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "codex/temp-verify-navigation-merge-block": false
+    }
+  }
+}

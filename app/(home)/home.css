@@ -739,9 +739,9 @@
           color: #ff5a5a;
           border-color: var(--red);
         }
-        .mbp-home .reel-duo {
+        .mbp-home .film-grid {
           display: grid;
-          grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+          grid-template-columns: repeat(3, minmax(0, 1fr));
           gap: 20px;
         }
         .mbp-home .reel-card {
@@ -770,18 +770,7 @@
           border: none;
         }
         .mbp-home .reel-meta {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          gap: 14px;
-          align-items: start;
           padding: 18px 8px 8px;
-        }
-        .mbp-home .reel-index {
-          color: var(--red);
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.16em;
         }
         .mbp-home .reel-name {
           margin: -2px 0 6px;
@@ -920,6 +909,7 @@
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
+          .mbp-home .film-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
           .mbp-home .clients-grid { grid-template-columns: repeat(4, 1fr); }
           .mbp-home .client-cell:nth-child(4n) { border-right: none; }
           .mbp-home .featured-card { grid-template-columns: 1fr; }
@@ -934,7 +924,7 @@
         }
         @media (max-width: 768px) {
           .mbp-home .reel-section { padding: 76px 24px 84px; }
-          .mbp-home .reel-duo { grid-template-columns: 1fr; gap: 18px; }
+          .mbp-home .film-grid { grid-template-columns: 1fr; gap: 18px; }
           .mbp-home .reel-card:hover { transform: none; }
         }
         @media (max-width: 600px) {

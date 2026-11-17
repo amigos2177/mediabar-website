@@ -10,6 +10,61 @@ import { MediaBarAnswersFeature } from '../../components/MediaBarAnswersFeature'
 import VimeoPlayer from '../../components/VimeoPlayer'
 import { homepageFaqs } from '../../data/homepage-faqs'
 
+const featuredFilms = [
+  {
+    "id": "1077104073",
+    "name": "Demo Reel",
+    "title": "Media Bar Productions Demo Reel",
+    "detail": "A cross-section of our work",
+    "href": "/work/watch/2025-demo-reel",
+    "linkLabel": "Watch the 2025 demo reel",
+    "poster": "https://i.vimeocdn.com/video/2007121987-d46882b6b21b356f6dfc32d487245d5802d9508db9e6d9c699a70c7156f7da6c-d_1280?region=us"
+  },
+  {
+    "id": "1245953306",
+    "name": "RBFCU × Keldon Johnson",
+    "title": "RBFCU Keldon Johnson — Music",
+    "detail": "Spurs broadcast commercial · 0:30",
+    "href": "/work/rbfcu-keldon-johnson",
+    "linkLabel": "Explore the campaign",
+    "poster": "https://i.vimeocdn.com/video/2225225563-89d9c55909e025365eb90eeab2bd206ecee4173fc68b3880721481c32e055c6c-d_1280?region=us"
+  },
+  {
+    "id": "1180540640",
+    "name": "Upper Deck · Fleer Brilliants Superman",
+    "title": "Upper Deck Fleer Brilliants Superman",
+    "detail": "Animated product spot · 0:30",
+    "href": "/work/upper-deck-video-production",
+    "linkLabel": "Explore the animation",
+    "poster": "https://i.vimeocdn.com/video/2143088826-56135f2076b3f77710a0be575e322fd68adb53699cd66c09a4131a92d53658c2-d_1280?region=us"
+  },
+  {
+    "id": "946447253",
+    "name": "NAFA Conference Recap",
+    "title": "NAFA Conference Recap",
+    "detail": "Day two on the conference floor · 1:29",
+    "href": "/work/watch/nafa-conference-recap",
+    "linkLabel": "See the event project",
+    "poster": "https://i.vimeocdn.com/video/2092713706-9d1a0e7015828edf8e0a8d84c008d3e2ca70f844461c954092850ae214a9e460-d_1280?region=us"
+  },
+  {
+    "id": "1138383811",
+    "name": "Boot Ranch",
+    "title": "Boot Ranch lifestyle commercial",
+    "detail": "Golf community and Hill Country lifestyle · 0:30",
+    "href": "/work/watch/boot-ranch-golf-commercial",
+    "linkLabel": "Explore the project",
+    "poster": "https://i.vimeocdn.com/video/2084703048-a660f6c3242eafe247a52f09eed73a9b1806876ed35647c172e61243da5b0d68-d_960"
+  },
+  {
+    "id": "1203197473",
+    "name": "Commercials Reel",
+    "title": "Media Bar Productions Commercials Reel",
+    "detail": "Broadcast and digital campaigns",
+    "poster": "/images/commercials-reel-spurs-coyote.jpg"
+  }
+]
+
 const services = [
   {
     label: 'Corporate Video Production',
@@ -202,55 +257,34 @@ export default function HomePage() {
         <div className="reel-section-inner">
           <div className="reel-header">
             <div>
-              <p className="eyebrow">Selected Reels</p>
               <h2 className="section-title">See <em>The Work</em></h2>
             </div>
             <div className="reel-header-copy">
               <p className="reel-description">
-                A quick look at the stories, campaigns, and production craft we bring to
-                screens across Texas and beyond.
+                Watch a campaign spot, step onto the conference floor, or see how we bring collectible cards to life.
               </p>
               <Link href="/work" className="reel-all-link">
                 View all work <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
-          <div className="reel-duo">
-            <article className="reel-card">
-              <div className="reel-wrap">
-                <VimeoPlayer
-                  videoId="1077104073"
-                  title="Media Bar Productions Demo Reel"
-                  thumbnailUrl="https://i.vimeocdn.com/video/2007121987-d46882b6b21b356f6dfc32d487245d5802d9508db9e6d9c699a70c7156f7da6c-d_1280?region=us"
-                />
-              </div>
-              <div className="reel-meta">
-                <span className="reel-index">01</span>
-                <div>
-                  <h3 className="reel-name">Demo Reel</h3>
-                  <p className="reel-detail">Commercials · Events · Healthcare · Branded stories</p>
-                  <Link href="/work/watch/2025-demo-reel" className="reel-watch-link">
-                    Watch the 2025 demo reel <span aria-hidden="true">→</span>
-                  </Link>
+          <div className="film-grid">
+            {featuredFilms.map((film) => (
+              <article key={film.id} className="reel-card">
+                <div className="reel-wrap">
+                  <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.poster} />
                 </div>
-              </div>
-            </article>
-            <article className="reel-card">
-              <div className="reel-wrap">
-                <VimeoPlayer
-                  videoId="1203197473"
-                  title="Media Bar Productions Commercials Reel"
-                  thumbnailUrl="/images/commercials-reel-spurs-coyote.jpg"
-                />
-              </div>
-              <div className="reel-meta">
-                <span className="reel-index">02</span>
-                <div>
-                  <h3 className="reel-name">Commercials Reel</h3>
-                  <p className="reel-detail">Broadcast · Digital · Campaign production</p>
+                <div className="reel-meta">
+                  <h3 className="reel-name">{film.name}</h3>
+                  <p className="reel-detail">{film.detail}</p>
+                  {film.href && (
+                    <Link href={film.href} className="reel-watch-link">
+                      {film.linkLabel} <span aria-hidden="true">→</span>
+                    </Link>
+                  )}
                 </div>
-              </div>
-            </article>
+              </article>
+            ))}
           </div>
         </div>
       </section>

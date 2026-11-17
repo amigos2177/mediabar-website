@@ -8,9 +8,21 @@ import HomeHeroMedia from '../../components/HomeHeroMedia'
 import HomeRevealObserver from '../../components/HomeRevealObserver'
 import { MediaBarAnswersFeature } from '../../components/MediaBarAnswersFeature'
 import VimeoPlayer from '../../components/VimeoPlayer'
+import LiteYouTubeEmbed from '../../components/LiteYouTubeEmbed'
 import { homepageFaqs } from '../../data/homepage-faqs'
 
-const featuredFilms = [
+type HomepageFilm = {
+  id: string
+  name: string
+  title: string
+  detail: string
+  poster: string
+  youtube?: boolean
+  href?: string
+  linkLabel?: string
+}
+
+const featuredFilms: HomepageFilm[] = [
   {
     "id": "1077104073",
     "name": "Demo Reel",
@@ -64,6 +76,58 @@ const featuredFilms = [
     "poster": "/images/commercials-reel-spurs-coyote.jpg"
   }
 ]
+
+const campaignFilms: HomepageFilm[] = [
+  {
+    id: 'cQHqvEHFx2M',
+    youtube: true,
+    name: 'RBFCU · We Go Beyond Banking',
+    title: 'RBFCU — We Go Beyond Banking',
+    detail: 'The opening spot in a five-commercial campaign',
+    poster: 'https://i.ytimg.com/vi/cQHqvEHFx2M/maxresdefault.jpg',
+    href: '/work/rbfcu-go-beyond-banking#work',
+    linkLabel: 'Watch all five spots',
+  },
+  {
+    id: '945888440',
+    name: 'Knorr · Not Your Knorr-Dinary Drive-Thru',
+    title: 'Knorr — Not Your Knorr-Dinary Drive-Thru',
+    detail: 'Campaign film for Arc Worldwide · 1:36',
+    poster: 'https://i.vimeocdn.com/video/1852501696-24d97b7cd2dde64099b822d1517a816aa81efbc9362b946c524e2cf1032c3567-d_1280?region=us',
+    href: '/work/watch/knorr-not-your-knorr-dinary-drive-thru',
+    linkLabel: 'Explore the Knorr project',
+  },
+  {
+    id: '1180540309',
+    name: 'Cystic Fibrosis Foundation · A Day in the Life',
+    title: 'Cystic Fibrosis Foundation — A Day in the Life',
+    detail: 'Edited from client-shot phone footage · 5:35',
+    poster: 'https://i.vimeocdn.com/video/2142672933-fd491695db8d8740c46219b60bd3f67d11c7b42deb093c4d63e9e4707335ca16-d_960',
+  },
+]
+
+function FilmCard({ film }: { film: HomepageFilm }) {
+  return (
+    <article className="reel-card">
+      <div className="reel-wrap">
+        {film.youtube ? (
+          <LiteYouTubeEmbed youtubeId={film.id} title={film.title} thumbnailPath={film.poster} />
+        ) : (
+          <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.poster} />
+        )}
+      </div>
+      <div className="reel-meta">
+        <h3 className="reel-name">{film.name}</h3>
+        <p className="reel-detail">{film.detail}</p>
+        {film.href && (
+          <Link href={film.href} className="reel-watch-link">
+            {film.linkLabel} <span aria-hidden="true">→</span>
+          </Link>
+        )}
+      </div>
+    </article>
+  )
+}
 
 const services = [
   {
@@ -270,20 +334,7 @@ export default function HomePage() {
           </div>
           <div className="film-grid">
             {featuredFilms.map((film) => (
-              <article key={film.id} className="reel-card">
-                <div className="reel-wrap">
-                  <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.poster} />
-                </div>
-                <div className="reel-meta">
-                  <h3 className="reel-name">{film.name}</h3>
-                  <p className="reel-detail">{film.detail}</p>
-                  {film.href && (
-                    <Link href={film.href} className="reel-watch-link">
-                      {film.linkLabel} <span aria-hidden="true">→</span>
-                    </Link>
-                  )}
-                </div>
-              </article>
+              <FilmCard key={film.id} film={film} />
             ))}
           </div>
         </div>
@@ -418,6 +469,15 @@ export default function HomePage() {
               ))}
             </nav>
           </aside>
+        </div>
+      </section>
+
+      <section id="campaigns-and-stories" className="reel-section" data-reveal aria-labelledby="campaign-films-title">
+        <div className="reel-section-inner">
+          <h2 id="campaign-films-title" className="section-title">Campaigns <em>&amp; Stories</em></h2>
+          <div className="film-grid">
+            {campaignFilms.map((film) => <FilmCard key={film.id} film={film} />)}
+          </div>
         </div>
       </section>
 

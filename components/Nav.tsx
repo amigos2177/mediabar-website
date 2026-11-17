@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-html-link-for-pages -- Home, Our Work and About intentionally load a fresh document to start at the top, matching footer navigation. */
+/* eslint-disable @next/next/no-html-link-for-pages -- These header links load a fresh document so visitors start at the top, matching footer navigation. */
 'use client'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
@@ -20,11 +20,12 @@ const SERVICE_LINKS = [
 ]
 
 const TOP_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/work', label: 'Our Work' },
-  { href: '/photography', label: 'Photography' },
-  { href: '/studio', label: 'Studio' },
-  { href: '/about', label: 'About' },
+  { href: '/', label: 'Home', loadAtTop: true },
+  { href: '/video-production', label: 'Services', loadAtTop: true },
+  { href: '/work', label: 'Our Work', loadAtTop: true },
+  { href: '/photography', label: 'Photography', loadAtTop: true },
+  { href: '/studio', label: 'Studio', loadAtTop: true },
+  { href: '/about', label: 'About', loadAtTop: true },
   { href: '/about/awards', label: 'Awards' },
   { href: '/blog', label: 'Blog' },
   { href: '/clients', label: 'Clients' },
@@ -368,11 +369,11 @@ export default function Nav() {
 
         {/* Desktop center links */}
         <div className="mbp-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: '36px' }}>
-          <Link href="/video-production" className="mbp-nav-link">Services</Link>
+          <a href="/video-production" className="mbp-nav-link">Services</a>
           <a href="/work" className="mbp-nav-link">Our Work</a>
-          <Link href="/photography" className="mbp-nav-link">Photography</Link>
+          <a href="/photography" className="mbp-nav-link">Photography</a>
           <a href="/about" className="mbp-nav-link">About</a>
-          <Link href="/studio" className="mbp-nav-link">Studio</Link>
+          <a href="/studio" className="mbp-nav-link">Studio</a>
           <Link href="/blog" className="mbp-nav-link">Blog</Link>
         </div>
 
@@ -450,7 +451,7 @@ export default function Nav() {
               >
                 {l.label} <span aria-hidden="true" style={{ color: '#C9A84C', marginLeft: '8px' }}>↗</span>
               </a>
-            ) : l.href === '/' || l.href === '/work' || l.href === '/about' ? (
+            ) : l.loadAtTop ? (
               <a key={l.href} href={l.href} className="mbp-overlay-link" onClick={close}>{l.label}</a>
             ) : (
               <Link key={l.href} href={l.href} className="mbp-overlay-link" onClick={close}>

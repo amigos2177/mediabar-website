@@ -15,11 +15,11 @@ type Feature = {
   related?: { href: string; text: string }
 }
 
-const features: Record<'alamo-heights' | 'castellanos' | 'atma-recruiting' | 'cantu-law', Feature> = {
-  'alamo-heights': {
-    category: 'Nonprofit film', client: 'Alamo Heights School Foundation', heading: 'Hall of Fame Induction',
-    description: 'Guests and honorees come together for the Alamo Heights School Foundation’s Hall of Fame induction.',
-    cuts: [{ name: 'Hall of Fame Induction', url: 'https://vimeo.com/1247791705/a5b1ba2e36', poster: 'alamo-heights', duration: '2:32' }],
+const features: Record<'uncork-for-a-cure' | 'castellanos' | 'atma-recruiting' | 'cantu-law', Feature> = {
+  'uncork-for-a-cure': {
+    category: 'Nonprofit fundraiser', client: 'Cystic Fibrosis Foundation', heading: 'Uncork for a Cure',
+    description: 'Media Bar filmed Uncork for a Cure, a fundraiser for the Cystic Fibrosis Foundation.',
+    cuts: [{ name: 'Uncork for a Cure', url: 'https://vimeo.com/1066804582', poster: 'uncork-for-a-cure', duration: '6:58' }],
     related: { href: '#castellanos', text: 'Watch the Castellanos family story' },
   },
   castellanos: {

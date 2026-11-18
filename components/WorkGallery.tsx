@@ -5,7 +5,6 @@ import Link from 'next/link'
 import type { PortfolioVideo } from './VideoObjectSchema'
 import VimeoPlayer from './VimeoPlayer'
 import PortfolioFeature from '@/components/PortfolioFeature'
-import WorkFilmCards from './WorkFilmCards'
 import { workProjects } from '../data/work-projects'
 import styles from '../app/work/work.module.css'
 
@@ -53,7 +52,7 @@ export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
 
       {(activeFilter === 'Nonprofit' || activeFilter === 'All') && (
         <div>
-          <PortfolioFeature project="alamo-heights" />
+          <PortfolioFeature project="uncork-for-a-cure" />
           <PortfolioFeature project="castellanos" />
         </div>
       )}
@@ -67,7 +66,7 @@ export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
               className={`${styles.projectCard}${isWide ? ` ${styles.wideProject}` : ''}`}
               key={project.id}
             >
-              <div className={styles.projectMedia}>
+              <div className={styles.projectMedia} style={{ aspectRatio: project.aspectRatio || '16 / 9' }}>
                 <VimeoPlayer
                   videoId={project.id}
                   title={`${project.title} by Media Bar Productions`}
@@ -90,7 +89,29 @@ export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
                   </Link>
                 </div>
               </div>
-              {project.selectedVideos?.length ? <WorkFilmCards films={project.selectedVideos} compact /> : null}
+              {project.selectedVideos?.length ? (
+                <details className={styles.moreFilms}>
+                  <summary>{project.selectedVideos.length} more {project.selectedVideos.length === 1 ? 'film' : 'films'}</summary>
+                  <ul>
+                    {project.selectedVideos.map((film) => {
+                      const watchPage = workProjects.find((item) => item.id === film.id)
+                      return (
+                        <li key={film.id}>
+                          {watchPage ? (
+                            <Link href={`/work/watch/${watchPage.slug}`}>
+                              {film.title} <span>{film.runtime}</span>
+                            </Link>
+                          ) : (
+                            <a href={`https://vimeo.com/${film.id}`} target="_blank" rel="noopener noreferrer">
+                              {film.title} <span>{film.runtime} · Vimeo ↗</span>
+                            </a>
+                          )}
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </details>
+              ) : null}
             </article>
           )
         })}

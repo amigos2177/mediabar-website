@@ -54,6 +54,9 @@ export default function WorkPage() {
             </p>
             <div className={styles.heroActions}>
               <a href="#selected-work" className={styles.primaryAction}>Explore the work</a>
+              <Link href="/video-production/corporate#corporate-project-examples" className={styles.textAction}>
+                See corporate video examples <span aria-hidden="true">→</span>
+              </Link>
               <Link href="/contact" className={styles.textAction}>Start a project <span>↗</span></Link>
             </div>
           </div>

@@ -137,10 +137,6 @@ export function LocalBusinessJsonLd() {
       'Motion Graphics',
       'Medical Video Production',
     ],
-    parentOrganization: {
-      '@type': 'Organization',
-      name: 'The Creative Agenda, LLC',
-    },
     publishingPrinciples: `${BASE_URL}/about/editorial-policy`,
     subjectOf: [
       {
@@ -465,7 +461,7 @@ export function EducationalGuideJsonLd({
     ...(articleBody && { articleBody }),
     ...(articleSection && { articleSection }),
     ...(sameAs && { sameAs }),
-    ...(videoId && { video: { "@id": videoId } }),
+    ...(videoId && { video: { '@id': videoId } }),
     inLanguage: 'en-US',
     isAccessibleForFree: true,
     mainEntityOfPage: {
@@ -608,7 +604,7 @@ export function VideoObjectJsonLd({
     embedUrl,
     ...(duration && { duration }),
     ...(transcript && { transcript }),
-    ...(authorId && { author: { "@id": authorId } }),
+    ...(authorId && { author: { '@id': authorId } }),
     url,
     mainEntityOfPage: {
       '@type': 'WebPage',

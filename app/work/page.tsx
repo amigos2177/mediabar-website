@@ -67,6 +67,7 @@ export default function WorkPage() {
                 videoId="1077104073"
                 title="Media Bar Productions 2025 showreel"
                 thumbnailUrl={showreel?.thumbnailUrl as string | undefined}
+                lightbox
                 eager
               />
             </div>

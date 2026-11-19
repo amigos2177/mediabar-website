@@ -503,9 +503,9 @@ export default function CommercialsPage() {
           </div>
         </section>
 
-        <PortfolioFeature project="cantu-law" />
-        <RbfcuCommercialGallery />
-        <RbfcuCampaigns descriptions={{
+        <PortfolioFeature lightbox project="cantu-law" />
+        <RbfcuCommercialGallery lightbox />
+        <RbfcuCampaigns lightbox descriptions={{
           'rbfcu-keldon-johnson': 'Media Bar handled pre-production through post-production for a campaign introducing Spurs player Keldon Johnson as an RBFCU spokesperson. A tightly planned four-hour schedule accommodated a photo shoot and three commercials, expanding the original two-commercial plan. Delivery also included 10- and 15-second versions.',
           'rbfcu-resting-bank-face': 'Media Bar handled RBFCU’s Resting Bank Face campaign from pre-production through filming and post-production. The campaign includes four commercials featuring actors, with a full day of filming for each spot.',
         }} />
@@ -518,7 +518,7 @@ export default function CommercialsPage() {
           <p className="com-eyebrow">Automotive commercials</p>
           <h2 className="com-display com-section-title">World Car <em>San Antonio.</em></h2>
           <p className="com-section-intro">Two World Car commercials produced by Media Bar Productions.</p>
-          <WorkFilmCards films={collectionFilms('world-car')} />
+          <WorkFilmCards lightbox films={collectionFilms('world-car')} />
           <Link className="com-inline-link" href="/work/watch/showroom-windows-commercial">Also watch: Showroom Windows →</Link>
         </div></section>
 

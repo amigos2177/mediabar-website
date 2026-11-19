@@ -11,7 +11,7 @@ export type WorkFilm = {
   aspectRatio?: string
 }
 
-export default function WorkFilmCards({ films, compact = false }: { films: WorkFilm[]; compact?: boolean }) {
+export default function WorkFilmCards({ films, compact = false, lightbox = false }: { films: WorkFilm[]; compact?: boolean; lightbox?: boolean }) {
   const Heading = compact ? 'h4' : 'h3'
   return (
     <div className={`${styles.grid}${compact ? ` ${styles.compact}` : ''}`}>
@@ -20,7 +20,7 @@ export default function WorkFilmCards({ films, compact = false }: { films: WorkF
         return (
           <article className={styles.card} key={film.id}>
             <div className={styles.player} style={{ aspectRatio: film.aspectRatio || '16 / 9' }}>
-              <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.thumbnail} />
+              <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.thumbnail} lightbox={lightbox} aspectRatio={film.aspectRatio} />
             </div>
             <div className={styles.meta}><Heading>{film.title}</Heading><span>{film.runtime}</span></div>
             {film.aspectRatio === '1 / 1' ? <p className={styles.format}>Square format · 1080 × 1080</p> : null}

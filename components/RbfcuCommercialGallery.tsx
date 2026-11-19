@@ -2,8 +2,10 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import styles from './RbfcuCommercialGallery.module.css'
+
+import FilmDialog from './FilmDialog'
 
 const spots = [
   { vid: 'cQHqvEHFx2M', label: 'Spot 01 · Anthem', title: 'We Go Beyond Banking' },
@@ -13,12 +15,30 @@ const spots = [
   { vid: 'CuJdvSJ9bAE', label: 'Spot 05 · Life milestones', title: 'Forever Memories' },
 ]
 
-type Props = {
-  compact?: boolean
+function commercialPlayer(spot: (typeof spots)[number]) {
+  return (
+    <iframe
+      src={`https://www.youtube-nocookie.com/embed/${spot.vid}?autoplay=1&rel=0`}
+      title={`${spot.title}, RBFCU commercial by Media Bar Productions`}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    />
+  )
 }
 
-export default function RbfcuCommercialGallery({ compact = false }: Props) {
+type Props = {
+  compact?: boolean
+  lightbox?: boolean
+}
+
+export default function RbfcuCommercialGallery({ compact = false, lightbox = false }: Props) {
   const [playing, setPlaying] = useState<string | null>(null)
+  const dialog = useRef<HTMLDialogElement>(null)
+  const selectedSpot = spots.find((spot) => spot.vid === playing)
+  function playSpot(id: string) {
+    if (lightbox) dialog.current?.showModal()
+    setPlaying(id)
+  }
   const visibleSpots = compact ? spots.slice(0, 3) : spots
 
   return (
@@ -43,23 +63,19 @@ export default function RbfcuCommercialGallery({ compact = false }: Props) {
               <div
                 className={styles.media}
                 role="button"
+                aria-haspopup={lightbox ? 'dialog' : undefined}
                 tabIndex={0}
                 aria-label={`Play ${spot.title}`}
-                onClick={() => setPlaying(spot.vid)}
+                onClick={() => playSpot(spot.vid)}
                 onKeyDown={(event) => {
                   if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault()
-                    setPlaying(spot.vid)
+                    playSpot(spot.vid)
                   }
                 }}
               >
-                {playing === spot.vid ? (
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${spot.vid}?autoplay=1&rel=0`}
-                    title={`${spot.title}, RBFCU commercial by Media Bar Productions`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
+                {!lightbox && playing === spot.vid ? (
+                  commercialPlayer(spot)
                 ) : (
                   <>
                     <Image
@@ -81,6 +97,12 @@ export default function RbfcuCommercialGallery({ compact = false }: Props) {
             </article>
           ))}
         </div>
+
+        {lightbox && (
+          <FilmDialog dialog={dialog} title={selectedSpot?.title || 'RBFCU commercial'} onClose={() => setPlaying(null)}>
+            {selectedSpot && commercialPlayer(selectedSpot)}
+          </FilmDialog>
+        )}
 
         <div className={styles.actions}>
           <Link className={styles.primary} href="/work/rbfcu-go-beyond-banking#work">

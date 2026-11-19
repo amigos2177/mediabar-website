@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
 import { analyticsEvents } from '@/lib/analytics-events'
 import { trackAnalyticsEvent } from '@/lib/client-analytics'
@@ -9,6 +9,7 @@ type VimeoPlayerProps = {
   title: string
   thumbnailUrl?: string
   eager?: boolean
+  lightbox?: boolean
   embedImmediately?: boolean
 } & ({ videoId: string; videoUrl?: never } | { videoUrl: string; videoId?: never })
 
@@ -38,7 +39,9 @@ export default function VimeoPlayer({
   thumbnailUrl,
   eager = false,
   embedImmediately = false,
+  lightbox = false,
 }: VimeoPlayerProps) {
+  const dialog = useRef<HTMLDialogElement>(null)
   const [playing, setPlaying] = useState(false)
   const poster = thumbnailUrl || '/images/hero-aerial.jpg'
   const showPlayer = embedImmediately || playing
@@ -48,24 +51,30 @@ export default function VimeoPlayer({
   const privacy = source.hash ? `h=${encodeURIComponent(source.hash)}&` : ''
   const isLocalPoster = poster.startsWith('/')
 
+  const player = (
+    <iframe
+      src={`https://player.vimeo.com/video/${source.id}?${privacy}autoplay=${autoplay ? 1 : 0}&title=0&byline=0&portrait=0&color=CC0000&badge=0`}
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowFullScreen
+      loading={embedImmediately ? 'eager' : 'lazy'}
+      title={title}
+    />
+  )
+
   return (
     <div className="mbp-vimeo-player">
-      {showPlayer ? (
-        <iframe
-          src={`https://player.vimeo.com/video/${source.id}?${privacy}autoplay=${autoplay ? 1 : 0}&title=0&byline=0&portrait=0&color=CC0000&badge=0`}
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          loading={embedImmediately ? 'eager' : 'lazy'}
-          title={title}
-        />
+      {showPlayer && !lightbox ? (
+        player
       ) : (
         <button
           type="button"
           className="mbp-vimeo-poster"
           onClick={() => {
             trackAnalyticsEvent(analyticsEvents.portfolioVideoPlayed, { videoId: source.id, title })
+            if (lightbox) dialog.current?.showModal()
             setPlaying(true)
           }}
+          aria-haspopup={lightbox ? 'dialog' : undefined}
           aria-label={`Play film: ${title}`}
         >
           {isLocalPoster ? (
@@ -98,7 +107,62 @@ export default function VimeoPlayer({
         </button>
       )}
 
+      {lightbox && (
+        <dialog
+          ref={dialog}
+          className="film-dialog"
+          data-home-film-dialog=""
+          aria-label={title}
+          onClose={() => setPlaying(false)}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) dialog.current?.close()
+          }}
+        >
+          <div className="film-toolbar">
+            <span>{title}</span>
+            <button type="button" onClick={() => dialog.current?.close()}>Close <span aria-hidden="true">×</span></button>
+          </div>
+          <div className="film-screen">{playing && player}</div>
+        </dialog>
+      )}
+
       <style jsx>{`
+        .film-dialog {
+          position: fixed;
+          inset: 0;
+          margin: auto;
+          width: min(1200px, calc(100vw - 24px), calc(177.78dvh - 145px));
+          max-width: none;
+          max-height: calc(100dvh - 16px);
+          padding: 0;
+          border: 1px solid #444;
+          background: #111;
+          color: white;
+        }
+        .film-dialog::backdrop { background: rgb(0 0 0 / 88%); }
+        :global(html:has([data-home-film-dialog][open])) { overflow: hidden; }
+        .film-toolbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          padding: 4px 12px 4px 16px;
+          font-size: 15px;
+          line-height: 1.25;
+        }
+        .film-toolbar button {
+          min-height: 44px;
+          padding: 0 10px;
+          color: white;
+          background: transparent;
+          border: 0;
+          font: inherit;
+          white-space: nowrap;
+          cursor: pointer;
+        }
+        .film-toolbar button:focus-visible { outline: 2px solid white; outline-offset: -3px; }
+        .film-screen { position: relative; aspect-ratio: 16 / 9; background: black; }
+
         .mbp-vimeo-player {
           position: absolute;
           inset: 0;

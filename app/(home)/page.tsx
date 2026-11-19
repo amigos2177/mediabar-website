@@ -106,14 +106,14 @@ const campaignFilms: HomepageFilm[] = [
   },
 ]
 
-function FilmCard({ film }: { film: HomepageFilm }) {
+function FilmCard({ film, lightbox = false }: { film: HomepageFilm; lightbox?: boolean }) {
   return (
     <article className="reel-card">
       <div className="reel-wrap">
         {film.youtube ? (
           <LiteYouTubeEmbed youtubeId={film.id} title={film.title} thumbnailPath={film.poster} />
         ) : (
-          <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.poster} />
+          <VimeoPlayer videoId={film.id} title={film.title} thumbnailUrl={film.poster} lightbox={lightbox} />
         )}
       </div>
       <div className="reel-meta">
@@ -334,7 +334,7 @@ export default function HomePage() {
           </div>
           <div className="film-grid">
             {featuredFilms.map((film) => (
-              <FilmCard key={film.id} film={film} />
+              <FilmCard key={film.id} film={film} lightbox />
             ))}
           </div>
         </div>

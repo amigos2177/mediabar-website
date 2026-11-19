@@ -52,8 +52,8 @@ export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
 
       {(activeFilter === 'Nonprofit' || activeFilter === 'All') && (
         <div>
-          <PortfolioFeature project="uncork-for-a-cure" />
-          <PortfolioFeature project="castellanos" />
+          <PortfolioFeature lightbox project="uncork-for-a-cure" />
+          <PortfolioFeature lightbox project="castellanos" />
         </div>
       )}
       <div className={styles.projectGrid}>
@@ -71,6 +71,8 @@ export default function WorkGallery({ videos }: { videos: PortfolioVideo[] }) {
                   videoId={project.id}
                   title={`${project.title} by Media Bar Productions`}
                   thumbnailUrl={video?.thumbnailUrl as string | undefined}
+                  lightbox
+                  aspectRatio={project.aspectRatio}
                   eager={index < 2}
                 />
               </div>

@@ -48,7 +48,7 @@ const features: Record<'uncork-for-a-cure' | 'castellanos' | 'atma-recruiting' |
   },
 }
 
-export default function PortfolioFeature({ project }: { project: keyof typeof features }) {
+export default function PortfolioFeature({ project, lightbox = false }: { project: keyof typeof features; lightbox?: boolean }) {
   const feature = features[project]
   const [selected, setSelected] = useState(0)
   const cut = feature.cuts[selected]
@@ -57,7 +57,7 @@ export default function PortfolioFeature({ project }: { project: keyof typeof fe
   return (
     <section id={project} className={styles.feature} aria-labelledby={project + '-title'}>
       <div className={styles.media}>
-        <VimeoPlayer key={cut.url} videoUrl={cut.url} title={title} thumbnailUrl={'/images/portfolio-films/' + cut.poster + '.webp'} />
+        <VimeoPlayer lightbox={lightbox} key={cut.url} videoUrl={cut.url} title={title} thumbnailUrl={'/images/portfolio-films/' + cut.poster + '.webp'} />
       </div>
       <div>
         <p className={styles.label}>{feature.client} · {feature.category}</p>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import FilmDialog from './FilmDialog'
 import Image from 'next/image'
 import { analyticsEvents } from '@/lib/analytics-events'
 import { trackAnalyticsEvent } from '@/lib/client-analytics'
@@ -9,6 +10,7 @@ type VimeoPlayerProps = {
   title: string
   thumbnailUrl?: string
   eager?: boolean
+  aspectRatio?: string
   lightbox?: boolean
   embedImmediately?: boolean
 } & ({ videoId: string; videoUrl?: never } | { videoUrl: string; videoId?: never })
@@ -40,6 +42,7 @@ export default function VimeoPlayer({
   eager = false,
   embedImmediately = false,
   lightbox = false,
+  aspectRatio,
 }: VimeoPlayerProps) {
   const dialog = useRef<HTMLDialogElement>(null)
   const [playing, setPlaying] = useState(false)
@@ -108,61 +111,12 @@ export default function VimeoPlayer({
       )}
 
       {lightbox && (
-        <dialog
-          ref={dialog}
-          className="film-dialog"
-          data-home-film-dialog=""
-          aria-label={title}
-          onClose={() => setPlaying(false)}
-          onClick={(event) => {
-            if (event.target === event.currentTarget) dialog.current?.close()
-          }}
-        >
-          <div className="film-toolbar">
-            <span>{title}</span>
-            <button type="button" onClick={() => dialog.current?.close()}>Close <span aria-hidden="true">×</span></button>
-          </div>
-          <div className="film-screen">{playing && player}</div>
-        </dialog>
+        <FilmDialog dialog={dialog} title={title} aspectRatio={aspectRatio} onClose={() => setPlaying(false)}>
+          {playing && player}
+        </FilmDialog>
       )}
 
       <style jsx>{`
-        .film-dialog {
-          position: fixed;
-          inset: 0;
-          margin: auto;
-          width: min(1200px, calc(100vw - 24px), calc(177.78dvh - 145px));
-          max-width: none;
-          max-height: calc(100dvh - 16px);
-          padding: 0;
-          border: 1px solid #444;
-          background: #111;
-          color: white;
-        }
-        .film-dialog::backdrop { background: rgb(0 0 0 / 88%); }
-        :global(html:has([data-home-film-dialog][open])) { overflow: hidden; }
-        .film-toolbar {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 12px;
-          padding: 4px 12px 4px 16px;
-          font-size: 15px;
-          line-height: 1.25;
-        }
-        .film-toolbar button {
-          min-height: 44px;
-          padding: 0 10px;
-          color: white;
-          background: transparent;
-          border: 0;
-          font: inherit;
-          white-space: nowrap;
-          cursor: pointer;
-        }
-        .film-toolbar button:focus-visible { outline: 2px solid white; outline-offset: -3px; }
-        .film-screen { position: relative; aspect-ratio: 16 / 9; background: black; }
-
         .mbp-vimeo-player {
           position: absolute;
           inset: 0;

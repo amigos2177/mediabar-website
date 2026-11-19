@@ -31,7 +31,26 @@ export default function TrustBadge() {
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+
+    const cleanupObserver = new MutationObserver(() => {
+      const text = el.textContent ?? '';
+      if (text.includes('Widget not found!')) {
+        el.innerHTML = '';
+        el.style.display = 'none';
+        cleanupObserver.disconnect();
+      }
+    });
+
+    cleanupObserver.observe(el, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+
+    return () => {
+      observer.disconnect();
+      cleanupObserver.disconnect();
+    };
   }, [loaded]);
 
   return (

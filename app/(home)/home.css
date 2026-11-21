@@ -117,6 +117,11 @@
           font-size: clamp(15px, 1.8vw, 18px);
           line-height: 1.65;
         }
+        .mbp-home .hero-sub a {
+          color: #fff;
+          text-decoration: underline;
+          text-underline-offset: .15em;
+        }
         .mbp-home .hero-pills {
           display: flex;
           justify-content: center;

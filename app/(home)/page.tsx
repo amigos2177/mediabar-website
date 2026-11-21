@@ -273,9 +273,10 @@ export default function HomePage() {
             <span className="hero-headline-geo">A clear plan from the start.</span>
           </h1>
           <p className="hero-sub">
-            Media Bar Productions is a full-service video production company based in San Antonio.
-            We plan, film, and finish commercials, corporate films, interviews, and event content,
-            with one team handling pre-production through post-production.
+            We’re a San Antonio video production company making commercials, corporate films, and event videos.
+            For <Link href="/work/rbfcu-keldon-johnson">RBFCU</Link>, our crew filmed three Keldon Johnson
+            commercials and a photo shoot in four hours. For <Link href="/work/watch/st-engineering-brand-film">ST Engineering</Link>,
+            we filmed employees, facilities, and operations to show prospective hires the work they’d be joining.
           </p>
           <div className="hero-ctas">
             <Link href="/project-planner" className="btn-red" data-conversion-placement="home-hero">Start a Project</Link>

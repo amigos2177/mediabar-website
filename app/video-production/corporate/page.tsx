@@ -480,17 +480,17 @@ export default function CorporatePage() {
                 <h2 className="corp-display corp-section-title">Plan Locally. <em>Finish With Purpose.</em></h2>
               </div>
               <p className="corp-section-intro">
-                Explore the local production resources, finishing services, and campaign proof that
-                help San Antonio organizations move from a business brief to finished corporate content.
+                Meet the <Link href="/">San Antonio video production team</Link> behind these films,
+                or use the local shoot guide to plan filming at your office or event venue.
                 Custom estimates start with our{' '}
                 <Link href="/pricing">video production pricing</Link> guidance.
               </p>
             </div>
             <div className="corp-pathway-grid">
               <Link className="corp-pathway" href="/locations/san-antonio">
-                <h3>San Antonio Video Production</h3>
-                <p>See the local crew, studio, services, and production experience available across the city.</p>
-                <span>Explore local production →</span>
+                <h3>Plan a San Antonio Shoot</h3>
+                <p>Work out location access, interview timing, and the filming schedule before your crew arrives.</p>
+                <span>View the shoot planning guide →</span>
               </Link>
               <Link className="corp-pathway" href="/video-production/post-production">
                 <h3>Post-Production</h3>

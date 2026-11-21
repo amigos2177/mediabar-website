@@ -141,6 +141,7 @@ export default function VideoProductionPage() {
         .vps-hero h1{font-size:clamp(66px,8.5vw,118px);margin:18px 0 24px}
         .vps-hero h1 em{display:block;color:var(--gold);font-size:.56em;margin-top:9px}
         .vps-hero-deck{max-width:680px;color:rgba(255,255,255,.76);font-size:17px;line-height:1.75}
+        .vps-hero-deck a{color:inherit;text-decoration:underline;text-underline-offset:.18em}
         .vps-proof{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border:1px solid var(--line);background:rgba(9,9,9,.74);backdrop-filter:blur(10px)}
         .vps-proof-item{padding:21px 24px;border-right:1px solid var(--line)}
         .vps-proof-item:last-child{border-right:0}
@@ -279,7 +280,8 @@ export default function VideoProductionPage() {
                 <h1 className="vps-display">One Production Team. <em>Every Version You Need.</em></h1>
                 <p className="vps-hero-deck">
                   Explore complete video production services from creative and filming through
-                  post-production, all coordinated by one San Antonio team for organizations across Texas.
+                  post-production, all coordinated by{' '}
+                  <Link href="/">our San Antonio video production team</Link> for organizations across Texas.
                 </p>
                 <div className="vps-actions">
                   <Link className="vps-button vps-button-primary" href="/project-planner">Plan Your Project</Link>

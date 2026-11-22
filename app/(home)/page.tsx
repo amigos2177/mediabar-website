@@ -396,24 +396,22 @@ export default function HomePage() {
           <div className="answer-intro">
             <p className="eyebrow">San Antonio Video Production</p>
             <h2 className="answer-title" id="homepage-answers-title">
-              One Partner
-              <em>from first idea to final delivery.</em>
+              In our studio{' '}
+              <em>or on location?</em>
             </h2>
             <p>
-              Media Bar Productions is a full-service video production company based in
-              San Antonio, Texas. Since 2010, our team has helped organizations plan, film,
-              edit, and deliver video for audiences across Texas and beyond.
+              For interviews or product demonstrations, our San Antonio studio near
+              Loop 410 has a white stage, overhead lighting, and acoustic treatment.
+              Bring your own crew or have ours handle the shoot.
             </p>
             <p>
-              For RBFCU&apos;s Keldon Johnson campaign, we handled pre-production through
-              post-production, filming three commercials and a photo shoot within a four-hour
-              schedule. For ST Engineering, we produced a company film for employees and
-              prospective hires, filming people, facilities, and operations.
+              When the workplace is part of the story, we come to you. For a recruiting
+              film, that can mean interviewing employees and filming them at work.
+              For a conference, we plan around the speaker schedule and venue access.
             </p>
-            <ul className="home-project-links" aria-label="Production examples and local planning">
-              <li><Link href="/work/rbfcu-keldon-johnson">Explore the RBFCU Keldon Johnson campaign <span aria-hidden="true">→</span></Link></li>
-              <li><Link href="/work/watch/st-engineering-brand-film">Watch the ST Engineering company film <span aria-hidden="true">→</span></Link></li>
-              <li><Link href="/locations/san-antonio">Plan filming at your San Antonio location <span aria-hidden="true">→</span></Link></li>
+            <ul className="home-project-links" aria-label="Studio and location filming">
+              <li><Link href="/studio">See the studio and check availability <span aria-hidden="true">→</span></Link></li>
+              <li><Link href="/locations/san-antonio">Plan a shoot at your location <span aria-hidden="true">→</span></Link></li>
             </ul>
           </div>
           <div className="answer-grid">

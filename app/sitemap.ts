@@ -51,7 +51,7 @@ function collect(label: string, build: () => MetadataRoute.Sitemap): MetadataRou
 
 function staticPages(): MetadataRoute.Sitemap {
   return [
-    withLastmod(`${BASE}/`, CONTENT_REVIEW_UPDATED),
+    withLastmod(`${BASE}/`, '2026-11-22'),
 
     withLastmod(`${BASE}/about`, SITE_UPDATED),
     withLastmod(`${BASE}/about/awards`, SITE_UPDATED),
@@ -75,7 +75,7 @@ function staticPages(): MetadataRoute.Sitemap {
     withLastmod(`${BASE}/blog`, SEARCH_SPRINT_UPDATED),
     withLastmod(`${BASE}/pricing`, SITE_UPDATED),
     withLastmod(`${BASE}/how-we-work`, SITE_UPDATED),
-    withLastmod(`${BASE}/video-production`, '2026-08-10'),
+    withLastmod(`${BASE}/video-production`, '2026-11-21'),
 
     withLastmod(`${BASE}/video-production/corporate`, '2026-11-17'),
     withLastmod(`${BASE}/video-production/commercials`, '2026-11-17'),

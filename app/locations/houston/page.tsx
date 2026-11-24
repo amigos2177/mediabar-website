@@ -229,7 +229,7 @@ export default function HoustonPage() {
             <div className="hou-container">
               <div className="hou-hero-copy">
                 <p className="hou-eyebrow">Full-service Houston video production</p>
-                <h1 className="hou-display">Complex Industries. <em>Clear Stories.</em></h1>
+                <h1 className="hou-display">Houston Video Production. <em>Complex Industries. Clear Stories.</em></h1>
                 <p className="hou-hero-deck">
                   Media Bar gives Houston organizations one experienced Texas production team for
                   corporate films, technical stories, healthcare content, events, live streams, and

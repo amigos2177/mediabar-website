@@ -57,9 +57,14 @@ const relatedBySlug: Record<string, string[]> = {
     'corporate-video-multi-format-strategy',
   ],
   'raw-footage-ownership-video-production': [
+    'in-house-video-vs-production-company-texas',
     'best-video-production-san-antonio',
     'corporate-video-multi-format-strategy',
-    'hire-local-video-production-companies-san-antonio',
+  ],
+  'in-house-video-vs-production-company-texas': [
+    'raw-footage-ownership-video-production',
+    'best-video-production-san-antonio',
+    'corporate-video-multi-format-strategy',
   ],
   'recruiting-video-production': [
     'corporate-video-multi-format-strategy',

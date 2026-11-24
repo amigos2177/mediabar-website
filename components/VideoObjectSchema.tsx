@@ -6,6 +6,7 @@ export type PortfolioVideo = {
   duration?: string;
   contentUrl?: string;
   embedUrl?: string;
+  transcript?: string;
 };
 
 /**
@@ -32,6 +33,7 @@ export function VideoObjectSchema({
       ...(v.duration ? { duration: v.duration } : {}),
       ...(v.contentUrl ? { contentUrl: v.contentUrl } : {}),
       ...(v.embedUrl ? { embedUrl: v.embedUrl } : {}),
+      ...(v.transcript ? { transcript: v.transcript } : {}),
       url: pageUrl,
       mainEntityOfPage: {
         "@type": "WebPage",

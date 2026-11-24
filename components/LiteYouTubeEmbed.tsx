@@ -46,7 +46,7 @@ export default function LiteYouTubeEmbed({
       >
         <Image
           src={thumbnailPath}
-          alt=""
+          alt={title}
           fill
           priority={priority}
           sizes="(max-width: 900px) 100vw, 86rem"

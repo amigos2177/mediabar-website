@@ -33,7 +33,7 @@
   text-transform: uppercase;
 }
 
-.message h2 {
+.title {
   margin: 0;
   font-family: "Bebas Neue", Impact, sans-serif;
   font-size: clamp(32px, 3.2vw, 48px);
@@ -64,8 +64,11 @@
   justify-content: space-between;
   gap: 30px;
   padding: 0 22px;
+  border: 0;
   background: #d20b0b;
   color: #fff;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.15em;
@@ -73,6 +76,16 @@
   text-transform: uppercase;
   white-space: nowrap;
   transition: background-color 160ms ease, color 160ms ease;
+}
+
+.inlineLink {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.inlineLink:hover {
+  color: #c9a84c;
 }
 
 .primary:hover,
@@ -136,5 +149,129 @@
 
   .primary {
     width: 100%;
+  }
+}
+
+.formWrap {
+  width: min(1320px, 100%);
+  margin: 0 auto;
+  padding: 0 0 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(200px, 1.1fr) minmax(240px, 1.8fr) auto;
+  gap: 16px;
+  align-items: end;
+  padding-top: 24px;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  color: #a3a3a3;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.field input {
+  min-height: 46px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #141414;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.field input:focus {
+  outline: 2px solid #c9a84c;
+  outline-offset: 1px;
+  border-color: #c9a84c;
+}
+
+.submit {
+  min-height: 46px;
+  padding: 0 24px;
+  border: 1px solid #c9a84c;
+  background: #c9a84c;
+  color: #090909;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.submit:hover:not(:disabled) {
+  background: #fff;
+  border-color: #fff;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.errorText {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #ff6b6b;
+  font-size: 13px;
+}
+
+.successBox {
+  padding-top: 22px;
+}
+
+.successTitle {
+  margin: 0 0 6px;
+  color: #c9a84c;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.successCopy {
+  margin: 0;
+  color: #d4d4d4;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 980px) {
+  .form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .messageField,
+  .submit {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 680px) {
+  .form {
+    grid-template-columns: 1fr;
   }
 }

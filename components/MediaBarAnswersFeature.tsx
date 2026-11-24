@@ -35,7 +35,7 @@ export function MediaBarAnswersFeature({
         <header className={styles.header}>
           <p className={styles.eyebrow}>Media Bar Answers</p>
           <h2 id={`media-bar-answers-${placement}`}>
-            {title}
+            {title}{' '}
             <em>{emphasis}</em>
           </h2>
           <p className={styles.description}>{description}</p>
@@ -63,7 +63,7 @@ export function MediaBarAnswersFeature({
                 <div className={styles.image}>
                   <Image
                     src={episode.video.thumbnailPath}
-                    alt=""
+                    alt={`${episode.shortTitle} — Media Bar Answers Episode ${episode.episode}`}
                     fill
                     sizes={episodes.length === 1
                       ? '(max-width: 900px) 100vw, 56vw'

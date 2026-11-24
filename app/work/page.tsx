@@ -109,7 +109,7 @@ export default function WorkPage() {
           </div>
           <div className={styles.caseCopy}>
             <p className={styles.eyebrow}>Featured Case Study</p>
-            <h2>Five stories.<br /><em>One campaign.</em></h2>
+            <h2>Five stories.{' '}<br /><em>One campaign.</em></h2>
             <p>
               Media Bar partnered with RBFCU to produce five broadcast commercials
               built around real Texas lives, each with its own cast, location, and
@@ -160,7 +160,7 @@ export default function WorkPage() {
 
         <section className={styles.cta}>
           <p className={styles.eyebrow}>Have a project in mind?</p>
-          <h2>Let&apos;s make something<br /><em>worth watching.</em></h2>
+          <h2>Let&apos;s make something{' '}<br /><em>worth watching.</em></h2>
           <div className={styles.ctaActions}>
             <Link href="/contact" className={styles.primaryAction}>Plan your project</Link>
             <a href="tel:2102799442" className={styles.phone}>210-279-9442</a>

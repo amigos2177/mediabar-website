@@ -19,7 +19,7 @@ export default function VideoInquiryPage() {
         <section className={styles.grid} aria-labelledby="inquiry-title">
           <div className={styles.copy}>
             <p className={contact.eyebrow}>Media Bar Productions · San Antonio</p>
-            <h1 id="inquiry-title">Corporate video.<br />Commercial production.<br /><span>One local team.</span></h1>
+            <h1 id="inquiry-title">Corporate video.{' '}<br />Commercial production.{' '}<br /><span>One local team.</span></h1>
             <p>From strategy and scripting to crews, editing, color, captions, and final delivery. Tell us what you are planning; we will help define the scope.</p>
             <p className={styles.proof}>3 Lone Star Emmy Awards · 15 Telly Awards<br />Producing since 2010 · Your footage, yours to keep</p>
             <a className={contact.primaryButton} href="#project-inquiry">Discuss your project →</a>

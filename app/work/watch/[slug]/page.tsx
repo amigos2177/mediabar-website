@@ -80,12 +80,20 @@ export function generateStaticParams() {
 
 type Props = { params: Promise<{ slug: string }> }
 
+function buildWatchDescription(project: { title: string; category: string; year?: string }, video?: PortfolioVideo) {
+  const raw = video?.description?.trim() || ''
+  if (raw.length >= 110) return raw
+  const categoryLabel = project.category.toLowerCase()
+  const base = raw || `${project.title}, produced by Media Bar Productions in San Antonio.`
+  return `${base.replace(/\.$/, '')}. Full-service ${categoryLabel} video production, editing, and delivery across San Antonio and Texas.`
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const project = getWorkProject(slug)
   if (!project) return {}
   const video = getVideo(project.id)
-  const description = video?.description || `${project.title}, produced by Media Bar Productions in San Antonio.`
+  const description = buildWatchDescription(project, video)
   const canonical = `https://www.mediabarproductions.com/work/watch/${slug}`
 
   return {
@@ -114,7 +122,7 @@ export default async function WatchPage({ params }: Props) {
   const video = getVideo(project.id)
   if (!video) notFound()
 
-  const description = video.description || `${project.title}, produced by Media Bar Productions in San Antonio.`
+  const description = buildWatchDescription(project, video)
   const guidance = categoryGuidance[project.category]
   const relatedProjects = workProjects
     .filter((candidate) => candidate.slug !== project.slug)
@@ -132,7 +140,12 @@ export default async function WatchPage({ params }: Props) {
         { name: project.title, url: `/work/watch/${project.slug}` },
       ]} />
       <VideoObjectSchema
-        videos={[{ ...video, name: project.title }]}
+        videos={[{
+          ...video,
+          name: project.title,
+          description,
+          ...(project.transcript?.length ? { transcript: project.transcript.join(' ') } : {}),
+        }]}
         pageUrl={`https://www.mediabarproductions.com/work/watch/${project.slug}`}
       />
 

@@ -47,14 +47,14 @@ export default function AnimatedPatientEducationPage() {
 
       <section className={`${styles.section} ${styles.answer}`}>
         <div className={`${styles.wrap} ${styles.twoCol}`}>
-          <div><p className={styles.eyebrow}>The service, explained</p><h2>What is an animated<br />patient-education video?</h2></div>
+          <div><p className={styles.eyebrow}>The service, explained</p><h2>What is an animated{' '}<br />patient-education video?</h2></div>
           <div><p className={styles.copy}>An animated patient-education video uses characters, narration, and a simple story to explain what happens during a healthcare visit. Media Bar Productions creates these videos for dental, pediatric, and eye-care practices, with scripts and procedure details reviewed by the practice before animation.</p><p className={styles.copy}>Our San Antonio team handles creative development, character design, animation, editing, sound, and delivery. A focused story can run 15–20 seconds, with formats prepared for the places your patients will watch.</p></div>
         </div>
       </section>
 
       <section className={`${styles.section} ${styles.demo}`} id="demo">
         <div className={`${styles.wrap} ${styles.twoCol}`}>
-          <div><p className={styles.eyebrow}>A friendly first look</p><h2>Watch our animated<br />patient-education demo.</h2></div>
+          <div><p className={styles.eyebrow}>A friendly first look</p><h2>Watch our animated{' '}<br />patient-education demo.</h2></div>
           <div><p className={styles.copy}>Watch our short concept reel to see the character style, storytelling, and finishing we can bring to your practice. These examples demonstrate the creative approach; your video is developed around your team and visit experience.</p><a className={styles.secondary} href="https://vimeo.com/1229044258" target="_blank" rel="noopener noreferrer">Watch on Vimeo ↗</a></div>
         </div>
         <div className={`${styles.wrap} ${styles.reel}`}><div className={styles.player}><VimeoPlayer videoId="1229044258" title="Animated Patient Education Videos | Media Bar Productions" thumbnailUrl="/images/animation/eye-exam.webp" /></div><p className={styles.note}>Demonstration concepts · Animated patient education by Media Bar Productions</p></div>
@@ -62,7 +62,7 @@ export default function AnimatedPatientEducationPage() {
 
       <section className={styles.section}>
         <div className={styles.wrap}>
-          <p className={styles.eyebrow}>One question. One small story.</p><h2>Stories for dental, pediatric,<br />and eye-care practices.</h2>
+          <p className={styles.eyebrow}>One question. One small story.</p><h2>Stories for dental, pediatric,{' '}<br />and eye-care practices.</h2>
           <div className={styles.cards}>{[
             ['01', 'Dental cleaning videos', 'Introduce the chair, the friendly team, and what happens during a cleaning. Give families a simple story to watch together before they arrive.'],
             ['02', 'Pediatric checkup videos', 'Follow a character through familiar moments such as a height check and listening to a heartbeat, with details reviewed by your practice.'],
@@ -73,7 +73,7 @@ export default function AnimatedPatientEducationPage() {
 
       <section className={`${styles.section} ${styles.light}`}>
         <div className={`${styles.wrap} ${styles.twoCol}`}>
-          <div><p className={styles.eyebrow}>Made for your practice</p><h2>Familiar faces.<br />A story of your own.</h2><p className={styles.copy}>Build a welcoming animated world around your branding, colors, and an agreed practice setting. We can also explore a cartoon character inspired by your doctor, with the design approved before animation.</p></div>
+          <div><p className={styles.eyebrow}>Made for your practice</p><h2>Familiar faces.{' '}<br />A story of your own.</h2><p className={styles.copy}>Build a welcoming animated world around your branding, colors, and an agreed practice setting. We can also explore a cartoon character inspired by your doctor, with the design approved before animation.</p></div>
           <div className={styles.list}>{[
             ['A clear story', 'A script and storyboard built around one useful message.'],
             ['A distinctive look', 'Character and setting development with a visual approval step.'],
@@ -92,11 +92,11 @@ export default function AnimatedPatientEducationPage() {
         ].map(([number, title, copy]) => <article className={styles.card} key={number}><span className={styles.number}>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div>
       </section>
 
-      <section className={`${styles.section} ${styles.demo}`}><div className={`${styles.wrap} ${styles.twoCol}`}><div><p className={styles.eyebrow}>Start small. Build a series.</p><h2>One helpful story.<br />Or a whole collection.</h2></div><div><p className={styles.copy}>Start with one focused video, or develop recurring characters for a series of visits and helpful habits. We define the creative scope, delivery formats, revision rounds, price, and schedule before production begins.</p><Link className={styles.primary} href="/contact?service=animated-patient-education">Request a Video Quote</Link></div></div></section>
+      <section className={`${styles.section} ${styles.demo}`}><div className={`${styles.wrap} ${styles.twoCol}`}><div><p className={styles.eyebrow}>Start small. Build a series.</p><h2>One helpful story.{' '}<br />Or a whole collection.</h2></div><div><p className={styles.copy}>Start with one focused video, or develop recurring characters for a series of visits and helpful habits. We define the creative scope, delivery formats, revision rounds, price, and schedule before production begins.</p><Link className={styles.primary} href="/contact?service=animated-patient-education">Request a Video Quote</Link></div></div></section>
 
       <section className={styles.section}><div className={`${styles.wrap} ${styles.twoCol}`}><div><p className={styles.eyebrow}>Practical questions</p><h2>Animated video questions.</h2></div><div className={styles.faq}>{faqs.map(faq => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></div></section>
 
-      <section className={`${styles.section} ${styles.closing}`}><div className={styles.wrap}><p className={styles.eyebrow}>Your San Antonio production partner</p><h2>What should your young<br />patients meet first?</h2><p className={styles.copy}>Tell us about your practice and the experience you want to introduce. We will help turn it into a clear, welcoming story.</p><div className={styles.actions}><Link className={styles.primary} href="/contact?service=animated-patient-education">Let’s Talk About Your Video</Link><a className={styles.secondary} href="tel:2102799442">210-279-9442</a></div><p className={styles.related}>More from Media Bar: <Link href="/video-production/motion-graphics">Motion graphics &amp; animation</Link> · <Link href="/video-production/medical">Medical &amp; healthcare video</Link> · <Link href="/video-production/commercials">Commercial production</Link> · <Link href="/work">Explore our work</Link></p></div></section>
+      <section className={`${styles.section} ${styles.closing}`}><div className={styles.wrap}><p className={styles.eyebrow}>Your San Antonio production partner</p><h2>What should your young{' '}<br />patients meet first?</h2><p className={styles.copy}>Tell us about your practice and the experience you want to introduce. We will help turn it into a clear, welcoming story.</p><div className={styles.actions}><Link className={styles.primary} href="/contact?service=animated-patient-education">Let’s Talk About Your Video</Link><a className={styles.secondary} href="tel:+12102799442">210-279-9442</a></div><p className={styles.related}>More from Media Bar: <Link href="/video-production/motion-graphics">Motion graphics &amp; animation</Link> · <Link href="/video-production/medical">Medical &amp; healthcare video</Link> · <Link href="/video-production/commercials">Commercial production</Link> · <Link href="/work">Explore our work</Link></p></div></section>
     </main>
   </Layout>
 }

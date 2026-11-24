@@ -10,7 +10,7 @@ const path = '/work/upper-deck-video-production'
 const films = workProjects.find((project) => project.slug === 'fleer-brilliants-superman')!.selectedVideos!
 
 export const metadata: Metadata = {
-  title: 'Upper Deck Video Production Case Study | Media Bar Productions',
+  title: 'Upper Deck Video Production Case Study | Media Bar',
   description: 'Ten years and more than 50 videos for Upper Deck: conference coverage, athlete autograph signings, and work on two national animated commercials aired on ESPN.',
   alternates: { canonical: path },
   openGraph: {
@@ -30,7 +30,7 @@ export default function UpperDeckCaseStudy() {
           <header className={styles.hero}>
             <Link className={styles.back} href="/work">← Our work</Link>
             <p className={styles.eyebrow}>Upper Deck / Case Study</p>
-            <h1>10 years.<br /><span>More than 50 videos.</span></h1>
+            <h1>10 years.{' '}<br /><span>More than 50 videos.</span></h1>
             <p className={styles.intro}>From conferences and athlete autograph signings to national animated commercials, Media Bar Productions has worked with Upper Deck across a decade of video production.</p>
             <div className={styles.actions}>
               <a className={styles.primary} href="#selected-work">Watch selected work</a>
@@ -49,7 +49,7 @@ export default function UpperDeckCaseStudy() {
           </section>
 
           <section className={styles.relationship} aria-labelledby="relationship-title">
-            <div><p className={styles.eyebrow}>The partnership</p><h2 id="relationship-title">Quality. Deadlines.<br />Communication.</h2></div>
+            <div><p className={styles.eyebrow}>The partnership</p><h2 id="relationship-title">Quality. Deadlines.{' '}<br />Communication.</h2></div>
             <div><p>Across 10 years and more than 50 videos, our work with Upper Deck has covered different subjects, formats, and production needs.</p><p>Our focus throughout: quality production, meeting deadlines, and clear communication with the client.</p></div>
           </section>
 

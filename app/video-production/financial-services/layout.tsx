@@ -8,7 +8,7 @@ import { financialServicesFaqs } from './content'
 
 const path = '/video-production/financial-services'
 const description =
-  'Financial services video production in Texas for banks, credit unions, fintech, leadership, commercials, member stories, explainers, recruiting, and review-ready campaigns.'
+  'Financial services video production in Texas for banks, credit unions, and wealth firms. Compliance-ready commercials, leadership films, and member stories.'
 
 export const metadata = buildMetadata({
   title: 'Financial Services Video Production Texas | Media Bar',

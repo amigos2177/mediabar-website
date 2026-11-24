@@ -7,6 +7,7 @@ import Link from 'next/link'
 const SERVICE_LINKS = [
   { href: '/video-production/corporate', label: 'Corporate Video' },
   { href: '/video-production/commercials', label: 'Commercials' },
+  { href: '/video-production/financial-services', label: 'Financial Services Video' },
   { href: '/video-production/events', label: 'Event Coverage' },
   { href: '/video-production/interview', label: 'Interview & Discussion' },
   { href: '/video-production/medical', label: 'Medical Video' },
@@ -23,6 +24,8 @@ const TOP_LINKS = [
   { href: '/', label: 'Home', loadAtTop: true },
   { href: '/video-production', label: 'Services', loadAtTop: true },
   { href: '/work', label: 'Our Work', loadAtTop: true },
+  { href: '/pricing', label: 'Pricing', loadAtTop: true },
+  { href: '/how-we-work', label: 'How We Work', loadAtTop: true },
   { href: '/photography', label: 'Photography', loadAtTop: true },
   { href: '/studio', label: 'Studio', loadAtTop: true },
   { href: '/about', label: 'About', loadAtTop: true },
@@ -379,7 +382,7 @@ export default function Nav() {
 
         {/* Desktop right: phone + contact paths */}
         <div className="mbp-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: '24px', flexShrink: 0 }}>
-          <a className="mbp-header-phone" href="tel:2102799442" style={{ color: '#fff', textDecoration: 'none', fontFamily: "'Bebas Neue', cursive", fontSize: '22px', letterSpacing: '0.06em' }}>
+          <a className="mbp-header-phone" href="tel:+12102799442" style={{ color: '#fff', textDecoration: 'none', fontFamily: "'Bebas Neue', cursive", fontSize: '22px', letterSpacing: '0.06em' }}>
             210-279-9442
           </a>
           <Link href="/contact#contact-form" className="mbp-contact-btn">
@@ -476,7 +479,7 @@ export default function Nav() {
               >
                 Talk With Our Team
               </Link>
-              <a href="tel:2102799442" className="mbp-overlay-phone">
+              <a href="tel:+12102799442" className="mbp-overlay-phone">
                 210-279-9442
               </a>
             </div>

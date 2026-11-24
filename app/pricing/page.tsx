@@ -92,6 +92,33 @@ const estimateSections = [
   },
 ]
 
+const scopeComparison = [
+  {
+    type: 'Executive Interviews & Customer Testimonials',
+    crew: 'Focused 1-day studio or on-location crew (lighting, pro audio, teleprompter)',
+    deliverables: '1–3 edited interview stories, social cutdowns, captions, raw footage',
+    drivers: 'Number of interview subjects, B-roll locations, and review rounds',
+  },
+  {
+    type: 'Corporate Brand, Recruiting & Healthcare Films',
+    crew: 'Full production crew across 1–2 shoot days with pre-production planning',
+    deliverables: 'Flagship brand film (1–3 min), short web/social versions, captions, raw footage',
+    drivers: 'Scripting, multi-location logistics, clinical/compliance approvals, motion graphics',
+  },
+  {
+    type: 'Event, Conference & Live Stream Coverage',
+    crew: 'Multi-camera venue crew, live audio/switching, and dedicated roaming capture',
+    deliverables: 'Event highlight recap, keynote/session recordings, speaker clips, live stream archive',
+    drivers: 'Event duration, simultaneous rooms, live streaming redundancy, turnaround speed',
+  },
+  {
+    type: 'Broadcast TV, CTV & Paid Social Commercials',
+    crew: 'Commercial crew, casting/locations, art direction, and broadcast finishing',
+    deliverables: ':15 / :30 / :60 broadcast masters, CTV & vertical social cutdowns, legal/disclosure versions',
+    drivers: 'Talent/usage rights, locations, shoot days, VFX/animation, and market versioning',
+  },
+]
+
 const constants = [
   'An experienced production team',
   'A scope tied to your actual goal',
@@ -127,7 +154,7 @@ export default function PricingPage() {
               <Link href="/project-planner" className={styles.primaryAction}>
                 Start your estimate
               </Link>
-              <a href="tel:2102799442" className={styles.phoneAction}>
+              <a href="tel:+12102799442" className={styles.phoneAction}>
                 210-279-9442
               </a>
             </div>
@@ -168,7 +195,7 @@ export default function PricingPage() {
           <p className={styles.sectionLabel}>How pricing works</p>
           <div>
             <h2>
-              The budget follows
+              The budget follows{' '}
               <span>the production plan.</span>
             </h2>
             <p>
@@ -195,6 +222,39 @@ export default function PricingPage() {
           </div>
         </section>
 
+        <section className={styles.scopeTableSection} aria-labelledby="scope-comparison-title">
+          <div className={styles.scopeTableHeader}>
+            <p className={styles.sectionLabel}>Scope comparison</p>
+            <h2 id="scope-comparison-title">How common production scopes compare.</h2>
+            <p>
+              Every project is quoted around its actual brief, but comparing typical crew,
+              deliverables, and budget drivers makes planning faster before your first call.
+            </p>
+          </div>
+          <div className={styles.scopeTableWrap}>
+            <table className={styles.scopeTable}>
+              <thead>
+                <tr>
+                  <th scope="col">Project Type</th>
+                  <th scope="col">Typical Crew &amp; Shoot Scope</th>
+                  <th scope="col">Common Deliverables</th>
+                  <th scope="col">Primary Budget Drivers</th>
+                </tr>
+              </thead>
+              <tbody>
+                {scopeComparison.map((row) => (
+                  <tr key={row.type}>
+                    <th scope="row">{row.type}</th>
+                    <td>{row.crew}</td>
+                    <td>{row.deliverables}</td>
+                    <td>{row.drivers}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         <MediaBarAnswersFeature
           title="What shapes"
           emphasis="the estimate?"
@@ -211,7 +271,7 @@ export default function PricingPage() {
             <div>
               <p className={styles.eyebrow}>From idea to estimate</p>
               <h2>
-                A short path to
+                A short path to{' '}
                 <em>a useful number.</em>
               </h2>
             </div>

@@ -8,7 +8,7 @@ import { postProductionFaqs } from './content'
 
 const path = '/video-production/post-production'
 const description =
-  'Video editing and post-production services in San Antonio for editorial, color, sound, graphics, captions, and multi-channel delivery, including existing footage.'
+  'Video editing and post-production in San Antonio for editorial, color grading, sound mixing, graphics, captions, and multi-channel delivery from any footage.'
 
 export const metadata = buildMetadata({
   title: 'Video Editing & Post-Production San Antonio | Media Bar',

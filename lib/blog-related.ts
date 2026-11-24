@@ -12,9 +12,9 @@ const relatedBySlug: Record<string, string[]> = {
     'restaurant-video-production-san-antonio',
   ],
   'best-video-production-san-antonio': [
+    'raw-footage-ownership-video-production',
     'hire-local-video-production-companies-san-antonio',
     'corporate-video-multi-format-strategy',
-    'authentic-video-marketing-2026',
   ],
   'conference-video-production-guide': [
     'event-conference-video-production-texas',
@@ -52,9 +52,14 @@ const relatedBySlug: Record<string, string[]> = {
     'san-antonio-conference-video-services',
   ],
   'importance-of-video-production-services': [
+    'raw-footage-ownership-video-production',
     'best-video-production-san-antonio',
     'corporate-video-multi-format-strategy',
-    'authentic-video-marketing-2026',
+  ],
+  'raw-footage-ownership-video-production': [
+    'best-video-production-san-antonio',
+    'corporate-video-multi-format-strategy',
+    'hire-local-video-production-companies-san-antonio',
   ],
   'recruiting-video-production': [
     'corporate-video-multi-format-strategy',

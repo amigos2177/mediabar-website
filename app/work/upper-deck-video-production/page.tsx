@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
 import { BreadcrumbJsonLd } from '../../../components/JsonLd'
+import QuickContactBar from '../../../components/QuickContactBar'
 import WorkFilmCards from '../../../components/WorkFilmCards'
 import { workProjects } from '../../../data/work-projects'
 import styles from './page.module.css'
@@ -50,7 +51,10 @@ export default function UpperDeckCaseStudy() {
 
           <section className={styles.relationship} aria-labelledby="relationship-title">
             <div><p className={styles.eyebrow}>The partnership</p><h2 id="relationship-title">Quality. Deadlines.{' '}<br />Communication.</h2></div>
-            <div><p>Across 10 years and more than 50 videos, our work with Upper Deck has covered different subjects, formats, and production needs.</p><p>Our focus throughout: quality production, meeting deadlines, and clear communication with the client.</p></div>
+            <div>
+              <p>Across 10 years and more than 50 videos, our work with Upper Deck has spanned live corporate conferences, high-profile athlete autograph signings (including Mike Tyson, Connor McDavid, and Tiger Woods), product launch videos, and national animated commercials featuring Michael Jordan that aired on ESPN.</p>
+              <p>Long-term brand partnerships work when one production team can move cleanly across formats—from on-location <Link href="/video-production/events" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>conference coverage</Link> and <Link href="/video-production/commercials" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>commercial production</Link> to <Link href="/video-production/motion-graphics" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>motion graphics and animation</Link>—without losing brand consistency or missing release deadlines.</p>
+            </div>
           </section>
 
           <section id="selected-work" className={styles.section} aria-labelledby="films-title">
@@ -72,6 +76,7 @@ export default function UpperDeckCaseStudy() {
             <Link className={styles.primary} href="/project-planner">Start a project</Link>
           </section>
         </div>
+        <QuickContactBar />
       </main>
     </Layout>
   )

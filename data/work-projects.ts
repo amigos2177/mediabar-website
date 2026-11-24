@@ -15,8 +15,46 @@ export type WorkProject = {
   updated?: string
   caseStudyHref?: string
   feature?: boolean
+  noindex?: boolean
   transcript?: string[]
   projectNotes?: { heading: string; paragraphs: string[] }
+}
+
+/**
+ * Single-cut portfolio embeds that duplicate a parent campaign case study
+ * (/work/rbfcu-*, /work/upper-deck-video-production) or lack standalone
+ * transcripts/notes. Kept playable for visitors with `noindex, follow`
+ * and omitted from sitemap.xml to prevent index bloat and cannibalization.
+ */
+export const NOINDEX_WATCH_SLUGS = new Set<string>([
+  'rbfcu-keldon-johnson-music',
+  'rbfcu-keldon-johnson-psa-01',
+  'rbfcu-keldon-johnson-psa-02',
+  'rbfcu-resting-bank-face',
+  'rbfcu-resting-bank-face-doctor',
+  'rbfcu-resting-bank-face-intervention',
+  'rbfcu-resting-bank-face-interrogation',
+  'upper-deck-space-jam-30th',
+  'upper-deck-marvel-spider-verse',
+  'atma-energy-gary-genna-davis',
+  'atma-energy-curtis-prill',
+  'atma-energy-kenneth-graves',
+  'atma-energy-dave-searcy',
+  'atma-energy-brand-marketing',
+  'world-car-hyundai-san-antonio',
+  'world-car-kia-san-antonio',
+  'caroline-flowers-specialty-care',
+  'kiolbassa-commercial',
+  'showroom-windows-commercial',
+  'the-guild-collective-about-us',
+  'continental-tire',
+  'ypo-cim-summit',
+])
+
+export function isWatchPageIndexable(project: WorkProject): boolean {
+  if (project.noindex) return false
+  if (project.transcript?.length) return true
+  return !NOINDEX_WATCH_SLUGS.has(project.slug)
 }
 
 export const workProjects: WorkProject[] = [

@@ -6,7 +6,7 @@ import { BreadcrumbJsonLd } from '../../../../components/JsonLd'
 import { VideoObjectSchema, type PortfolioVideo } from '../../../../components/VideoObjectSchema'
 import VimeoPlayer from '../../../../components/VimeoPlayer'
 import workVideos from '../../../../data/work-videos.json'
-import { getWorkProject, getWorkCollectionTitle, workProjects } from '../../../../data/work-projects'
+import { getWorkProject, getWorkCollectionTitle, isWatchPageIndexable, workProjects } from '../../../../data/work-projects'
 import styles from './watch.module.css'
 import WorkFilmCards from '@/components/WorkFilmCards'
 
@@ -96,10 +96,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = buildWatchDescription(project, video)
   const canonical = `https://www.mediabarproductions.com/work/watch/${slug}`
 
+  const indexable = isWatchPageIndexable(project)
+
   return {
     title: project.seoTitle || `${project.title} | Media Bar Productions`,
     description,
     alternates: { canonical },
+    ...(!indexable ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: project.title,
       description,

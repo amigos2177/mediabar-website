@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { escapeSitemapXml } from '../lib/sitemap-xml'
 import { getPostIndex } from '../lib/blog'
 import workVideos from '../data/work-videos.json'
-import { workProjects } from '../data/work-projects'
+import { isWatchPageIndexable, workProjects } from '../data/work-projects'
 import type { PortfolioVideo } from '../components/VideoObjectSchema'
 import {
   MEDIA_BAR_ANSWERS_UPDATED,
@@ -117,7 +117,7 @@ function isoDurationToSeconds(duration?: string): number | undefined {
 
 function watchEntries(): MetadataRoute.Sitemap {
   const videos = workVideos as PortfolioVideo[]
-  return workProjects.flatMap((project) => {
+  return workProjects.filter(isWatchPageIndexable).flatMap((project) => {
     const video = videos.find((item) => item.embedUrl?.endsWith(`/${project.id}`))
     if (!video) return []
 

@@ -2,21 +2,33 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Layout from './Layout'
 import { BreadcrumbJsonLd } from './JsonLd'
+import QuickContactBar from './QuickContactBar'
 import WorkFilmCards from './WorkFilmCards'
 import { collectionFilms, rbfcuCampaigns } from '@/data/work-campaigns'
 import styles from '@/app/work/upper-deck-video-production/page.module.css'
 
 type Campaign = typeof rbfcuCampaigns[number]
-export function campaignMetadata(campaign: Campaign): Metadata {
+type CampaignHighlight = { number: string; title: string; copy: string }
+
+export function campaignMetadata(campaign: Campaign, seoDescription?: string): Metadata {
+  const description = seoDescription || campaign.deck
   return {
     title: `${campaign.title} | Media Bar Productions`,
-    description: campaign.deck,
+    description,
     alternates: { canonical: campaign.href },
-    openGraph: { title: campaign.title, description: campaign.deck, url: campaign.href, type: 'website', images: [{ url: collectionFilms(campaign.key)[0].thumbnail, alt: campaign.title }] },
+    openGraph: { title: campaign.title, description, url: campaign.href, type: 'website', images: [{ url: collectionFilms(campaign.key)[0].thumbnail, alt: campaign.title }] },
   }
 }
 
-export default function RbfcuCampaignPage({ campaign, description }: { campaign: Campaign; description?: string }) {
+export default function RbfcuCampaignPage({
+  campaign,
+  description,
+  highlights,
+}: {
+  campaign: Campaign
+  description?: string
+  highlights?: CampaignHighlight[]
+}) {
   return (
     <Layout>
       <BreadcrumbJsonLd items={[{ name: 'Home', url: '/' }, { name: 'Our Work', url: '/work' }, { name: campaign.title, url: campaign.href }]} />
@@ -34,6 +46,21 @@ export default function RbfcuCampaignPage({ campaign, description }: { campaign:
             <p className={styles.eyebrow}>The campaign</p><h2 id="films-title">Watch every spot.</h2>
             <WorkFilmCards films={collectionFilms(campaign.key)} />
           </section>
+          {highlights?.length ? (
+            <section className={styles.section} aria-labelledby="production-scope-title">
+              <p className={styles.eyebrow}>Production approach</p>
+              <h2 id="production-scope-title">How the campaign came together.</h2>
+              <div className={styles.scope}>
+                {highlights.map((item) => (
+                  <article key={item.number}>
+                    <span className={styles.number}>{item.number}</span>
+                    <h3>{item.title}</h3>
+                    <p>{item.copy}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
           <section className={styles.section} aria-labelledby="more-rbfcu-title">
             <p className={styles.eyebrow}>More RBFCU work</p><h2 id="more-rbfcu-title">Explore the campaigns.</h2>
             <div className={styles.actions}>
@@ -45,6 +72,7 @@ export default function RbfcuCampaignPage({ campaign, description }: { campaign:
           </section>
           <section className={styles.cta} aria-labelledby="cta-title"><p className={styles.eyebrow}>Your next production</p><h2 id="cta-title">Start with your campaign.</h2><p>Tell us the audience, message, channels, deadline, and deliverables. We will help shape a commercial production plan.</p><Link className={styles.primary} href="/project-planner">Start a project</Link></section>
         </div>
+        <QuickContactBar />
       </main>
     </Layout>
   )

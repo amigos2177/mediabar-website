@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import Layout from '@/components/Layout'
 import { BreadcrumbJsonLd } from '@/components/JsonLd'
+import QuickContactBar from '@/components/QuickContactBar'
 import styles from './page.module.css'
 
 const path = '/work/ae-forged-by-war-host-production'
@@ -40,7 +42,11 @@ export default function AeProjectPage() {
       <div className={styles.wrap}>
         <section id="our-role" className={styles.overview} aria-labelledby="role-title">
           <div><h2 id="role-title">Our role</h2></div>
-          <div className={styles.body}><p>A&E hired Media Bar Productions to film the host introduction for <cite>Forged by War: The Navy SEALs</cite>, a HISTORY documentary special.</p><p>Our five-person crew included two videographers, a producer, a teleprompter operator, and a digital imaging technician (DIT). Following filming, we handed the footage to A&E’s team.</p></div>
+          <div className={styles.body}>
+            <p>A&amp;E hired Media Bar Productions to film the host introduction for <cite>Forged by War: The Navy SEALs</cite>, a HISTORY documentary special.</p>
+            <p>Our five-person San Antonio crew included two videographers, a producer, a teleprompter operator, and a digital imaging technician (DIT). We built the studio lighting rig over a clean white backdrop, assembled camera-mounted teleprompter support, ran live multi-view monitoring on set, and managed verified media offload before handing the footage directly to A&amp;E’s post-production team.</p>
+            <p>Visiting networks, agencies, and national brands regularly bring Media Bar in as their local Texas production crew when a broadcast shoot requires studio control, reliable teleprompter operation, and clean technical handoff. Explore our <Link href="/studio" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>San Antonio production studio</Link>, <Link href="/video-production/interview" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>interview and host filming services</Link>, or <Link href="/locations/san-antonio" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>San Antonio shoot planning guide</Link>.</p>
+          </div>
         </section>
         <aside className={styles.credit} aria-label="On-screen production credit"><span>On-screen credit</span><p>Studio/Host Wrap<br /><strong>Media Bar Productions, LLC</strong></p></aside>
         <section className={styles.gallery} aria-labelledby="gallery-title">
@@ -56,6 +62,7 @@ export default function AeProjectPage() {
         </section>
 
       </div>
+      <QuickContactBar />
     </main>
   </Layout>
 }

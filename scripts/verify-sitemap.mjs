@@ -28,8 +28,8 @@ for tag in ['title','description','thumbnail_loc','player_loc']:
     assert fixture.find('s:url/v:video/v:'+tag,ns).text == expected, tag
 built=ET.fromstring(payload['built'])
 urls=built.findall('s:url',ns)
-assert len(urls) >= 100, len(urls)
-assert len(built.findall('.//v:video',ns)) >= 44
+assert len(urls) >= 75, len(urls)
+assert len(built.findall('.//v:video',ns)) >= 22
 assert len({item.find('s:loc',ns).text for item in urls}) == len(urls)
 print('Strict sitemap XML and reserved-character round trips pass: '+str(len(urls))+' URLs, '+str(len(built.findall('.//v:video',ns)))+' videos.')
 `], { input: JSON.stringify({fixture: xml, text, url, built: fs.readFileSync('.next/server/app/sitemap.xml.body', 'utf8')}), encoding: 'utf8' })

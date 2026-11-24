@@ -78,7 +78,7 @@ export function proxy(request: NextRequest) {
 
   // Block search engines from indexing non-production hosts (Vercel previews,
   // localhost, etc.). Production gets normal indexing.
-  const host = request.headers.get('host') ?? ''
+  const host = (request.headers.get('host') ?? '').split(':')[0].toLowerCase()
   const isProduction = PRODUCTION_HOSTS.has(host)
 
   const response = NextResponse.next()

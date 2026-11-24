@@ -11,7 +11,7 @@ interface BuildMetadataArgs {
 }
 
 export function buildMetadata({ title, description, path, ogImage }: BuildMetadataArgs): Metadata {
-  const url = path === '/' ? BASE_URL : `${BASE_URL}${path}`
+  const url = path === '/' ? `${BASE_URL}/` : `${BASE_URL}${path}`
   return {
     title,
     description,

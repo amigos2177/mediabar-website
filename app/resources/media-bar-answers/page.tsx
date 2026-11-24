@@ -95,7 +95,7 @@ export default function MediaBarAnswersPage() {
                 >
                   <Image
                     src={episode.video.thumbnailPath}
-                    alt=""
+                    alt={`${episode.shortTitle} — Media Bar Answers Episode ${episode.episode}`}
                     fill
                     loading={index === 0 ? 'eager' : 'lazy'}
                     sizes="(max-width: 760px) 100vw, 50vw"

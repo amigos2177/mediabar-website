@@ -26,15 +26,19 @@ const BASE_URL = 'https://www.mediabarproductions.com'
 const serviceCatalog = [
   ['Corporate Video Production', '/video-production/corporate'],
   ['Commercial Video Production', '/video-production/commercials'],
+  ['Financial Services Video Production', '/video-production/financial-services'],
   ['Event and Conference Video Production', '/video-production/events'],
   ['Interview Video Production', '/video-production/interview'],
   ['Medical and Healthcare Video Production', '/video-production/medical'],
+  ['Animated Patient Education Videos', '/video-production/animated-patient-education'],
   ['Aerial and Drone Video Production', '/video-production/aerial'],
   ['Motion Graphics and Animation', '/video-production/motion-graphics'],
   ['Live Streaming and Webcasting', '/video-production/live-streaming'],
   ['Post-Production and Video Editing', '/video-production/post-production'],
   ['Food and Beverage Video Production', '/video-production/food'],
   ['Real Estate Video Production', '/video-production/real-estate'],
+  ['Commercial and Event Photography', '/photography'],
+  ['Production Studio Rental', '/studio'],
 ] as const
 
 export function WebSiteJsonLd() {
@@ -61,10 +65,10 @@ export function WebSiteJsonLd() {
 export function LocalBusinessJsonLd() {
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
     '@id': BUSINESS_ID,
     name: 'Media Bar Productions',
-    alternateName: 'Media Bar',
+    alternateName: ['Media Bar', 'MediaBar Productions'],
     legalName: 'Media Bar Productions, LLC',
     url: 'https://www.mediabarproductions.com',
     logo: 'https://www.mediabarproductions.com/images/mediabar-logo.png',
@@ -109,11 +113,41 @@ export function LocalBusinessJsonLd() {
     },
     numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 2, maxValue: 10 },
     areaServed: [
-      { '@type': 'City', name: 'San Antonio', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Austin', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Dallas', addressRegion: 'TX' },
-      { '@type': 'City', name: 'Houston', addressRegion: 'TX' },
-      { '@type': 'State', name: 'Texas' },
+      {
+        '@type': 'City',
+        name: 'San Antonio',
+        containedInPlace: { '@type': 'State', name: 'Texas' },
+        sameAs: 'https://www.wikidata.org/wiki/Q975',
+      },
+      {
+        '@type': 'City',
+        name: 'Austin',
+        containedInPlace: { '@type': 'State', name: 'Texas' },
+        sameAs: 'https://www.wikidata.org/wiki/Q16559',
+      },
+      {
+        '@type': 'City',
+        name: 'Dallas',
+        containedInPlace: { '@type': 'State', name: 'Texas' },
+        sameAs: 'https://www.wikidata.org/wiki/Q16557',
+      },
+      {
+        '@type': 'City',
+        name: 'Fort Worth',
+        containedInPlace: { '@type': 'State', name: 'Texas' },
+        sameAs: 'https://www.wikidata.org/wiki/Q16558',
+      },
+      {
+        '@type': 'City',
+        name: 'Houston',
+        containedInPlace: { '@type': 'State', name: 'Texas' },
+        sameAs: 'https://www.wikidata.org/wiki/Q16555',
+      },
+      {
+        '@type': 'State',
+        name: 'Texas',
+        sameAs: 'https://www.wikidata.org/wiki/Q1439',
+      },
     ],
     sameAs: [
       'https://www.youtube.com/@MediaBarProductions',
@@ -122,6 +156,7 @@ export function LocalBusinessJsonLd() {
       'https://facebook.com/mediabarproductions',
       'https://x.com/mediabarsa',
       'https://www.tiktok.com/@mediabarsa',
+      'https://creativesintexas.com/creatives/media-bar-productions-llc',
     ],
     award: [
       '3 Lone Star Emmy Awards from NATAS',
@@ -131,11 +166,15 @@ export function LocalBusinessJsonLd() {
     knowsAbout: [
       'Corporate Video Production',
       'TV Commercial Production',
+      'Financial Services Video Production',
       'Event Video Production',
       'Live Streaming',
       'Aerial Drone Video',
       'Motion Graphics',
       'Medical Video Production',
+      'Animated Patient Education Videos',
+      'Commercial Photography',
+      'Production Studio Rental',
     ],
     publishingPrinciples: `${BASE_URL}/about/editorial-policy`,
     subjectOf: [
@@ -340,9 +379,10 @@ type PersonProps = {
   jobTitle: string
   image: string
   alumniOf?: PersonAlumni[]
+  hasCredential?: string[]
 }
 
-export function PersonJsonLd({ name, jobTitle, image, alumniOf }: PersonProps) {
+export function PersonJsonLd({ name, jobTitle, image, alumniOf, hasCredential }: PersonProps) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -365,6 +405,15 @@ export function PersonJsonLd({ name, jobTitle, image, alumniOf }: PersonProps) {
                   },
                 }
               : {}),
+          })),
+        }
+      : {}),
+    ...(hasCredential && hasCredential.length > 0
+      ? {
+          hasCredential: hasCredential.map((credential) => ({
+            '@type': 'EducationalOccupationalCredential',
+            credentialCategory: 'degree',
+            name: credential,
           })),
         }
       : {}),

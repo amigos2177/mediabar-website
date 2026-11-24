@@ -60,7 +60,7 @@ export default function Footer() {
             </p>
             <p style={{ fontSize: '13px', lineHeight: '1.8', color: '#B0B0B0' }}>
               San Antonio, TX<br />
-              <a href="tel:2102799442" style={{ color: '#B0B0B0', textDecoration: 'none' }}>210-279-9442</a><br />
+              <a href="tel:+12102799442" style={{ color: '#B0B0B0', textDecoration: 'none' }}>210-279-9442</a><br />
               <a
                 href="mailto:contact@mediabarproductions.com?subject=Media%20Bar%20website%20inquiry"
                 data-conversion-action="email_our_team"
@@ -76,6 +76,7 @@ export default function Footer() {
             <p style={colHeading}>Services</p>
             <a href="/video-production/corporate" className="mbp-footer-link" style={footerLink}>Corporate Video Production</a>
             <a href="/video-production/commercials" className="mbp-footer-link" style={footerLink}>Commercials</a>
+            <a href="/video-production/financial-services" className="mbp-footer-link" style={footerLink}>Financial Services</a>
             <a href="/video-production/events" className="mbp-footer-link" style={footerLink}>Events</a>
             <a href="/video-production/interview" className="mbp-footer-link" style={footerLink}>Interview</a>
             <a href="/video-production/medical" className="mbp-footer-link" style={footerLink}>Medical</a>
@@ -93,6 +94,8 @@ export default function Footer() {
             <p style={colHeading}>Company</p>
             <a href="/about" className="mbp-footer-link" style={footerLink}>About</a>
             <a href="/about/awards" className="mbp-footer-link" style={footerLink}>Awards</a>
+            <a href="/pricing" className="mbp-footer-link" style={footerLink}>Pricing & Estimates</a>
+            <a href="/how-we-work" className="mbp-footer-link" style={footerLink}>How We Work</a>
             <a href="/careers" className="mbp-footer-link" style={footerLink}>Crew & Careers</a>
             <a href="/business-spotlight" className="mbp-footer-link" style={footerLink}>Texas Business Spotlight</a>
             <a href="/clients" className="mbp-footer-link" style={footerLink}>Clients</a>

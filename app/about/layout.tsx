@@ -24,6 +24,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           { name: "St. Mary's University", addressLocality: 'San Antonio' },
           { name: 'Drake University' },
         ]}
+        hasCredential={[
+          'BBA in Marketing',
+          'Juris Doctor (J.D.)',
+          'MBA in Marketing',
+          'LL.M. in Business',
+        ]}
       />
       {children}
     </>

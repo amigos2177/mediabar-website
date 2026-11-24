@@ -33,7 +33,7 @@
   text-transform: uppercase;
 }
 
-.message h2 {
+.title {
   margin: 0;
   font-family: "Bebas Neue", Impact, sans-serif;
   font-size: clamp(32px, 3.2vw, 48px);

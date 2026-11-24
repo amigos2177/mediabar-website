@@ -2,7 +2,7 @@
 
 > Award-winning video production company in San Antonio, Texas.
 > 3 Lone Star Emmy Awards, 15 Telly Awards, 2025 Effie Awards Finalist (contributing production company), producing in San Antonio since March 2010.
-> Last updated: November 18, 2026.
+> Last updated: November 24, 2026.
 
 ## Primary page roles
 
@@ -35,6 +35,10 @@ lighting grids, cyc walls, teleprompter setups, and a control room.
 - [TV Commercials](https://www.mediabarproductions.com/video-production/commercials) -
   Broadcast-ready :15, :30, and :60 spots for
   regional and national campaigns.
+
+- [Financial Services Video](https://www.mediabarproductions.com/video-production/financial-services) -
+  Compliance-aware brand films, commercials, executive interviews,
+  member stories, and explainers for Texas banks, credit unions, and wealth firms.
 
 - [Event & Conference Video](https://www.mediabarproductions.com/video-production/events) -
   Multi-camera live coverage, highlight
@@ -129,11 +133,18 @@ Hours: Monday to Friday, 8:00 AM to 5:00 PM Central (Closed weekends)
 
 - [Services](https://www.mediabarproductions.com/video-production)
 - [Portfolio](https://www.mediabarproductions.com/work)
+- [Pricing & Custom Estimates](https://www.mediabarproductions.com/pricing)
+- [How We Work](https://www.mediabarproductions.com/how-we-work)
 - [About](https://www.mediabarproductions.com/about)
+- [Awards](https://www.mediabarproductions.com/about/awards)
 - [Studio](https://www.mediabarproductions.com/studio)
+- [Photography](https://www.mediabarproductions.com/photography)
+- [Texas Business Spotlight](https://www.mediabarproductions.com/business-spotlight)
 - [Blog](https://www.mediabarproductions.com/blog)
 - [Contact](https://www.mediabarproductions.com/contact)
 - [FAQ](https://www.mediabarproductions.com/faq)
+- [Texas Video Production Planning FAQ](https://www.mediabarproductions.com/resources/video-production-faq)
+- [Media Bar Answers Video Library](https://www.mediabarproductions.com/resources/media-bar-answers)
 - [YouTube](https://www.youtube.com/@MediaBarProductions)
 - [LinkedIn](https://www.linkedin.com/company/media-bar-productions-llc/)
 - [Instagram](https://www.instagram.com/mediabarsanantonio)

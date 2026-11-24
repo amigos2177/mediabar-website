@@ -10,10 +10,10 @@ const RATE_LIMIT_MAX_REQUESTS = 5
 const MAX_RATE_LIMIT_ENTRIES = 5_000
 
 const SERVICES = new Set([
-  'Corporate Video', 'Commercials', 'Event Coverage', 'Interview & Discussion',
-  'Medical Video', 'Aerial Video', 'Motion Graphics', 'Live Streaming',
-  'Post Production', 'Food Video', 'Real Estate Video', 'Studio Rental', 'Other',
-  'Photography',
+  'Corporate Video', 'Commercials', 'Financial Services Video', 'Event Coverage',
+  'Interview & Discussion', 'Medical Video', 'Animated Patient Education',
+  'Aerial Video', 'Motion Graphics', 'Live Streaming', 'Post Production',
+  'Food Video', 'Real Estate Video', 'Studio Rental', 'Other', 'Photography',
 ])
 const TIMELINES = new Set([
   'ASAP / Rush', 'Within 2 Weeks', 'Within a Month',

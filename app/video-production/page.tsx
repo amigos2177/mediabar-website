@@ -32,6 +32,7 @@ const serviceGroups = [
       'Turn expertise, leadership, customer experience, and complex subject matter into films people can understand and remember.',
     services: [
       ['Corporate Video Production', '/video-production/corporate'],
+      ['Financial Services Video', '/video-production/financial-services'],
       ['Interview & Discussion', '/video-production/interview'],
       ['Medical Video', '/video-production/medical'],
       ['Animated Patient Education', '/video-production/animated-patient-education'],

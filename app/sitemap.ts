@@ -124,8 +124,13 @@ function watchEntries(): MetadataRoute.Sitemap {
     const watchUrl = `${BASE}/work/watch/${project.slug}`
     const thumbnail = Array.isArray(video.thumbnailUrl) ? video.thumbnailUrl[0] : video.thumbnailUrl
     const lastModified = sitemapDate(video.uploadDate)
+    const rawDescription = video.description?.trim() || ''
+    const baseDescription =
+      rawDescription || `${project.title}, produced by Media Bar Productions in San Antonio.`
     const description =
-      video.description || `${project.title}, produced by Media Bar Productions in San Antonio.`
+      rawDescription.length >= 110
+        ? rawDescription
+        : `${baseDescription.replace(/\.$/, '')}. Full-service ${project.category.toLowerCase()} video production, editing, and delivery across San Antonio and Texas.`
     const duration = isoDurationToSeconds(video.duration)
     const canAttachVideo =
       Boolean(project.title)

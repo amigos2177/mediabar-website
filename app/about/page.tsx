@@ -197,7 +197,7 @@ export default function AboutPage() {
           <div className={styles.sectionHeading}>
             <div>
               <p className={styles.eyebrow}>On Set</p>
-              <h2>Good work is<br /><em>a team sport.</em></h2>
+              <h2>Good work is{' '}<br /><em>a team sport.</em></h2>
             </div>
             <p>
               Producers, directors, camera crews, audio specialists, editors, and
@@ -279,7 +279,7 @@ export default function AboutPage() {
           <div className={styles.sectionHeading}>
             <div>
               <p className={styles.eyebrow}>How we operate</p>
-              <h2>What clients<br /><em>can count on.</em></h2>
+              <h2>What clients{' '}<br /><em>can count on.</em></h2>
             </div>
             <p>
               A clear production process, direct relationships, and no mystery
@@ -327,7 +327,7 @@ export default function AboutPage() {
 
         <section className={styles.cta}>
           <p className={styles.eyebrow}>Your production partner</p>
-          <h2>Bring us the idea.<br /><em>We&apos;ll build the rest.</em></h2>
+          <h2>Bring us the idea.{' '}<br /><em>We&apos;ll build the rest.</em></h2>
           <div className={styles.ctaActions}>
             <Link href="/project-planner" className={styles.primaryAction}>Plan your project</Link>
             <Link href="/work" className={styles.secondaryAction}>See our work <span>↗</span></Link>

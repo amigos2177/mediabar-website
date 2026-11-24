@@ -296,6 +296,7 @@ export const workProjects: WorkProject[] = [
   {
     "id": "945888116",
     "slug": "unilever-heb-final-four-legacy",
+    "seoTitle": "Unilever & H-E-B Final Four Legacy | Media Bar",
     "title": "Unilever & H-E-B Final Four Legacy Project",
     "category": "Events",
     "year": "2023",

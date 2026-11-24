@@ -31,7 +31,7 @@ export default function AeProjectPage() {
         <div className={styles.heroCopy}>
           <a className={styles.back} href="/work">← Our work</a>
           <p className={styles.kicker}>A&E / Behind the scenes</p>
-          <h1>Forged by War:<br /><span>The Navy SEALs</span></h1>
+          <h1>Forged by War:{' '}<br /><span>The Navy SEALs</span></h1>
           <p className={styles.subtitle}>Behind the host introduction.</p>
           
         </div>

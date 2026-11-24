@@ -33,7 +33,7 @@ export default function BusinessSpotlightPage() {
           <div className={styles.heroCopy}>
             <Image className={styles.seriesLogo} src="/images/business-spotlight/texas-business-spotlight-red-wide.jpg" alt="Texas Business Spotlight — YouTube series" width={1792} height={1008} sizes="(max-width: 480px) 260px, 330px" preload />
             <p className={styles.eyebrow}>A YouTube series by Media Bar Productions</p>
-            <h1 id="spotlight-title">Every business<br />has a <em>story.</em></h1>
+            <h1 id="spotlight-title">Every business{' '}<br />has a <em>story.</em></h1>
             <p className={styles.heroDeck}>Three local businesses. The first three stories in a new YouTube series.</p>
             <p className={styles.heroDescription}>Texas Business Spotlight introduces the people, places, and work behind local businesses. We’re starting in San Antonio, Boerne, and New Braunfels, with three complimentary features produced by Media Bar.</p>
             <div className={styles.actions}><a href="#apply" className={styles.button}>{closed ? 'Application status' : 'Share your story'}<span aria-hidden="true">↗</span></a><a href="#details" className={styles.textLink}>Read the details ↓</a></div>
@@ -47,22 +47,22 @@ export default function BusinessSpotlightPage() {
         <div className={styles.locationBar}><span>Your story. Told here.</span><p>San Antonio <b aria-hidden="true">/</b> Boerne <b aria-hidden="true">/</b> New Braunfels</p></div>
 
         <section className={styles.section} id="included" aria-labelledby="included-title">
-          <div className={styles.sectionHeading}><p className={styles.eyebrow}>What we’ll make together</p><h2 id="included-title">A conversation.<br />A look at your world.<br /><em>Your story on film.</em></h2><p>The approved feature premieres on <a className={styles.channelLink} href="https://www.youtube.com/@MediaBarProductions" target="_blank" rel="noopener noreferrer">Media Bar Productions’ YouTube channel ↗</a>. You can share that link as soon as it’s live. Your downloadable files follow seven days later.</p></div>
+          <div className={styles.sectionHeading}><p className={styles.eyebrow}>What we’ll make together</p><h2 id="included-title">A conversation.{' '}<br />A look at your world.{' '}<br /><em>Your story on film.</em></h2><p>The approved feature premieres on <a className={styles.channelLink} href="https://www.youtube.com/@MediaBarProductions" target="_blank" rel="noopener noreferrer">Media Bar Productions’ YouTube channel ↗</a>. You can share that link as soon as it’s live. Your downloadable files follow seven days later.</p></div>
           <div className={styles.inclusions}>{inclusions.map(([number, title, copy]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
         </section>
 
         <section className={styles.releaseTimeline} aria-labelledby="release-title">
-          <div><p className={styles.eyebrow}>How the release works</p><h2 id="release-title">Your approval first.<br /><em>YouTube first release.</em></h2></div>
+          <div><p className={styles.eyebrow}>How the release works</p><h2 id="release-title">Your approval first.{' '}<br /><em>YouTube first release.</em></h2></div>
           <ol><li><span>Before publication</span><h3>Review it privately.</h3><p>We send you a private review. Two rounds of revisions help us get the feature ready for your approval.</p></li><li><span>Publication day</span><h3>Your episode goes live.</h3><p>We publish the approved feature on our YouTube channel. You’re welcome to share the YouTube link right away.</p></li><li><span>Seven days later</span><h3>The files are yours to use.</h3><p>We provide download access to your finished feature and approximately one minute of selected B-roll clips for your own marketing.</p></li></ol>
         </section>
 
         <section className={styles.selection} aria-labelledby="selection-title">
-          <div><p className={styles.eyebrow}>Who we’re looking for</p><h2 id="selection-title">There’s more to your business<br />than what you sell.</h2><p>A shop, a restaurant, a workshop, a professional service. We’re interested in the people and work that make a business its own.</p><p>You don’t need a large following or experience on camera.</p></div>
+          <div><p className={styles.eyebrow}>Who we’re looking for</p><h2 id="selection-title">There’s more to your business{' '}<br />than what you sell.</h2><p>A shop, a restaurant, a workshop, a professional service. We’re interested in the people and work that make a business its own.</p><p>You don’t need a large following or experience on camera.</p></div>
           <div className={styles.selectionList}><h3>How we’ll choose the three</h3><ul><li><strong>A story with something to say.</strong> A beginning, a turning point, a process, or a perspective worth sharing.</li><li><strong>Something to show.</strong> Real work, people, products, or a place we can film.</li><li><strong>Readiness to participate.</strong> An available interview subject, location access, and a responsive point of contact.</li><li><strong>A mix of businesses.</strong> Different industries and perspectives across the pilot.</li></ul><p>Selection is editorial, not first come, first served. Applying does not guarantee a place.</p></div>
         </section>
 
         <section className={styles.details} id="details" aria-labelledby="details-title">
-          <div className={styles.sectionHeading}><p className={styles.eyebrow}>Before you apply</p><h2 id="details-title">Clear expectations.<br /><em>Room for a good story.</em></h2><p>This is one pilot round with three businesses. No purchase, subscription, or paid upgrade is required.</p></div>
+          <div className={styles.sectionHeading}><p className={styles.eyebrow}>Before you apply</p><h2 id="details-title">Clear expectations.{' '}<br /><em>Room for a good story.</em></h2><p>This is one pilot round with three businesses. No purchase, subscription, or paid upgrade is required.</p></div>
           <div className={styles.rules}>
             <details open><summary>Eligibility &amp; filming area</summary><p>Your business must be operating in San Antonio, Boerne, or New Braunfels. An owner or authorized representative must apply. The interview and business footage are filmed at one business location in one of these cities.</p></details>
             <details><summary>Scheduling &amp; preparation</summary><p>Selected businesses will coordinate one on-location visit with our team for the interview and footage of the business in action. We’ll agree on the filming date and the delivery schedule before confirming participation. One person should coordinate access, participants, and feedback. If your availability changes, tell us promptly so we can discuss rescheduling or offer the place to an alternate.</p></details>
@@ -75,7 +75,7 @@ export default function BusinessSpotlightPage() {
         </section>
 
         <section className={styles.application} id="apply" aria-labelledby="apply-title">
-          <div className={styles.applicationIntro}><p className={styles.eyebrow}>Your story starts here</p><h2 id="apply-title">Tell us what<br />we haven’t seen.</h2><p>What would you want people to know about your business that they might not see from the outside?</p><p>No pitch deck. No application video. Just tell us in your own words.</p><Link href="/work" className={styles.textLink}>Explore our work ↗</Link></div>
+          <div className={styles.applicationIntro}><p className={styles.eyebrow}>Your story starts here</p><h2 id="apply-title">Tell us what{' '}<br />we haven’t seen.</h2><p>What would you want people to know about your business that they might not see from the outside?</p><p>No pitch deck. No application video. Just tell us in your own words.</p><Link href="/work" className={styles.textLink}>Explore our work ↗</Link></div>
           {closed ? <div className={styles.success}><h3>Applications are currently closed.</h3><p>Thank you for your interest in the Business Spotlight pilot. Check back here for any future opportunities.</p></div> : <SpotlightForm preview={preview} />}
         </section>
       </main>

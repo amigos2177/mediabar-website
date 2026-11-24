@@ -104,6 +104,8 @@ export default function Footer() {
             <a href="/work" className="mbp-footer-link" style={footerLink}>Work</a>
             <a href="/project-planner" className="mbp-footer-link" style={footerLink}>Project Planner</a>
             <a href="/work/rbfcu-go-beyond-banking" className="mbp-footer-link" style={footerLink}>RBFCU Case Study</a>
+            <a href="/work/upper-deck-video-production" className="mbp-footer-link" style={footerLink}>Upper Deck Case Study</a>
+            <a href="/work/ae-forged-by-war-host-production" className="mbp-footer-link" style={footerLink}>A&amp;E Documentary Production</a>
             <a href="/faq" className="mbp-footer-link" style={footerLink}>FAQ</a>
             <a href="/resources/video-production-faq" className="mbp-footer-link" style={footerLink}>Video Production Guide</a>
             <a href="/resources/media-bar-answers" className="mbp-footer-link" style={footerLink}>Media Bar Answers</a>

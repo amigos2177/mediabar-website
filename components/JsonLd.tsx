@@ -156,8 +156,11 @@ export function LocalBusinessJsonLd() {
       'https://facebook.com/mediabarproductions',
       'https://x.com/mediabarsa',
       'https://www.tiktok.com/@mediabarsa',
+      'https://clutch.co/profile/media-bar-productions',
       'https://creativesintexas.com/creatives/media-bar-productions-llc',
+      'https://share.google/JwT8u7a8BDjvsl7qB',
     ],
+    hasMap: 'https://share.google/JwT8u7a8BDjvsl7qB',
     award: [
       '3 Lone Star Emmy Awards from NATAS',
       '15 Telly Awards',
@@ -380,9 +383,10 @@ type PersonProps = {
   image: string
   alumniOf?: PersonAlumni[]
   hasCredential?: string[]
+  sameAs?: string[]
 }
 
-export function PersonJsonLd({ name, jobTitle, image, alumniOf, hasCredential }: PersonProps) {
+export function PersonJsonLd({ name, jobTitle, image, alumniOf, hasCredential, sameAs }: PersonProps) {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -417,6 +421,7 @@ export function PersonJsonLd({ name, jobTitle, image, alumniOf, hasCredential }:
           })),
         }
       : {}),
+    ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
     worksFor: {
       '@id': BUSINESS_ID,
     },

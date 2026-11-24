@@ -30,6 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           'MBA in Marketing',
           'LL.M. in Business',
         ]}
+        sameAs={['https://www.linkedin.com/in/rubenfgarcia/']}
       />
       {children}
     </>

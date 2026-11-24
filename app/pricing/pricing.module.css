@@ -760,3 +760,77 @@
     gap: 55px;
   }
 }
+
+.scopeTableSection {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 96px clamp(20px, 4vw, 48px);
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.scopeTableHeader {
+  max-width: 780px;
+  margin-bottom: 40px;
+}
+
+.scopeTableHeader h2 {
+  margin: 14px 0 16px;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.06;
+}
+
+.scopeTableHeader p:last-child {
+  margin: 0;
+  color: #999994;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.scopeTableWrap {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: #0d0d0d;
+}
+
+.scopeTable {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.scopeTable th,
+.scopeTable td {
+  padding: 20px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.scopeTable thead th {
+  color: #c9a84c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.scopeTable tbody th {
+  color: #fff;
+  font-weight: 600;
+  width: 24%;
+}
+
+.scopeTable tbody td {
+  color: #b5b5b0;
+}
+
+.scopeTable tbody tr:last-child th,
+.scopeTable tbody tr:last-child td {
+  border-bottom: 0;
+}
